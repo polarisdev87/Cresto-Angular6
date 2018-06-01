@@ -17,20 +17,20 @@ export class AuthGuardService implements CanActivate {
     return this._store.select('auth').pipe(
       take(1),
       switchMap((user: AuthState) => {
-        if  (state.url === '/login/reg/twofactor') {
-          return of(true);
-        }
-        if (user.isLogged && state.url === '/login/reg/sign-in') {
-          this._router.navigate(['/backoffice']);
-          return of(false);
-        }
-        if (!user.isLogged && state.url === '/login/reg/sign-up') {
-          return of(true);
-        }
-        if (!user.isLogged && state.url !== '/login/reg/sign-in') {
-          this._router.navigate(['login']);
-          return of(false);
-        }
+        // if  (state.url === '/login/reg/twofactor') {
+        //   return of(true);
+        // }
+        // if (user.isLogged && state.url === '/login/reg/sign-in') {
+        //   this._router.navigate(['/backoffice']);
+        //   return of(false);
+        // }
+        // if (!user.isLogged && state.url === '/login/reg/sign-up') {
+        //   return of(true);
+        // }
+        // if (!user.isLogged && state.url !== '/login/reg/sign-in') {
+        //   this._router.navigate(['login']);
+        //   return of(false);
+        // }
         return of(true);
       })
     );

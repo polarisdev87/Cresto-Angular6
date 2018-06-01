@@ -1,0 +1,66 @@
+<nav class="navbar navbar-inverse pmd-navbar pmd-z-depth">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+
+      <a class="navbar-brand" href="/">
+        <img src="assets/images/logo.png" class="logo" alt="Logo"> Crest Token
+      </a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="https://ico.cresttoken.com/dashboard?user_id={{userId}}&token={{token}}">Dashboard</a>
+        </li>
+        <li>
+          <a href="https://ico.cresttoken.com/buy?user_id={{userId}}&token={{token}}">Buy Tokens</a>
+        </li>
+        <li>
+          <a href="https://ico.cresttoken.com/wallet?user_id={{userId}}&token={{token}}"> Wallet </a>
+        </li>
+        <li>
+          <a [routerLink]="['/comingsoon']"> Staking </a>
+        </li>
+        <li>
+          <a [routerLink]="['/comingsoon']"> Exchange </a>
+        </li>
+        <li>
+          <a [routerLink]="['/comingsoon']"> Campaign </a>
+        </li>
+        <li>
+          <a [routerLink]="['/myreferrals']"> My Referrals </a>
+        </li>
+
+        <li class="dropdown">
+
+            <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+              Profile
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- <li *ngIf="!user.twofactorEnabled">
+                <a [routerLink]="['/twofasetup']"> 2 FA Setup</a>
+              </li> -->
+              <!-- <li *ngIf="user.twofactorEnabled">
+                <a [routerLink]="['/disabletwofa']"> Disable 2 FA</a>
+              </li> -->
+              <li><a [routerLink]="['/editprofile']">Edit Profile</a></li>
+              <li><a [routerLink]="['/changepassword']">Change Password</a></li>
+
+            </ul>
+        </li>
+
+
+        <li>
+          <a (click)="logout()"> Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,109 @@
+<div class="logincard">
+  <div class="pmd-card card-default pmd-z-depth">
+
+    <div class="register-card">
+      <div class="pmd-card-title card-header-border text-center">
+        <div class="loginlogo">
+          <a href="/">
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+        <h3>
+          <strong>Register</strong>
+        </h3>
+      </div>
+      <form [formGroup]="form">
+        <div class="social-btn">
+          <button class="loginBtn loginBtn--facebook" (click)="facebookLogin()">
+            Login with Facebook
+          </button>
+
+          <button class="loginBtn loginBtn--google" (click)="googleLogin()">
+            Login with Google
+          </button>
+
+        </div>
+        <div class="pmd-card-body">
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Firstname</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              </div>
+              <input type="text" formControlName="name" class="form-control" id="usernameInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Lastname</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              </div>
+              <input type="text" formControlName="surname" class="form-control" id="usernameInput">
+            </div>
+          </div>
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Username</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              </div>
+              <input type="text" formControlName="username" class="form-control" id="usernameInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Email address</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">email</i>
+              </div>
+              <input type="text" formControlName="email" class="form-control" id="emailInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">lock_outline</i>
+              </div>
+              <input type="password" formControlName="password" class="form-control" id="passwordInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Confirm Password</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">lock_outline</i>
+              </div>
+              <input type="password" formControlName="confirmPassword" class="form-control" id="cpasswordInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Referral Code</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">group</i>
+              </div>
+              <input type="text" formControlName="referredBy" class="form-control" id="emailInput">
+            </div>
+          </div>
+
+          <!-- <re-captcha (resolved)="resolved($event)" siteKey="6LdY0FYUAAAAAP5egDwbqt1cJESBG0ywrdhUR0cg"></re-captcha> -->
+        </div>
+
+
+        <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
+          <input type="submit" class="btn pmd-ripple-effect btn-success btn-block" (click)="signupSubmit()" value="Sign Up">
+          <p class="redirection-link">Already have an account?
+            <a [routerLink]="['/login']" class="register-login">Sign In</a>. </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

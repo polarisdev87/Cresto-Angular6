@@ -31,7 +31,19 @@ import { RouterModule } from '@angular/router';
     StoreModule.forRoot(reducers, { }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', loadChildren: './login/login.module#LoginModule' },
+      { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },
+      {
+        path: 'reset-password',
+        loadChildren: './reset-password/reset-password.module#ResetPasswordModule',
+      },
+      {
+        path: 'backoffice',
+        loadChildren: './backoffice/backoffice.module#BackofficeModule',
+      }
+    ]),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router'
     }),

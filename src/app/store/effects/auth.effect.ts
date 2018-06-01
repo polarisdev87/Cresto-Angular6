@@ -62,7 +62,7 @@ export class AuthEffects {
   public logout$: Observable<Action> = this.actions$
     .ofType(AuthActions.LOGOUT).pipe(
       tap(() => this._authService.removeFromLocalStorage('token')),
-      tap(() => this._router.navigate(['/login/reg/sign-in'])),
+      tap(() => this._router.navigate(['/login'])),
       map(() => new AuthActions.LogoutSuccess()),
       catchError((err: Error, caught: Observable<Action>) => {
         // tslint:disable-next-line

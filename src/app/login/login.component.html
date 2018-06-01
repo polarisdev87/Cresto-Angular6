@@ -1,0 +1,81 @@
+<div class="logincard" loader [show]="loader$ | async">
+  <div class="pmd-card card-default pmd-z-depth">
+    <div class="login-card">
+
+      <div>
+        <div class="pmd-card-title card-header-border text-center">
+          <div class="loginlogo">
+            <a href="/">
+              <img src="assets/images/logo.png" alt="Logo">
+            </a>
+          </div>
+          <h3>
+            <strong>Sign In</strong>
+          </h3>
+        </div>
+
+        <div class="social-btn">
+          <button class="loginBtn loginBtn--facebook" (click)="facebookLogin()">
+            Login with Facebook
+          </button>
+
+          <button class="loginBtn loginBtn--google" (click)="googleLogin()">
+            Login with Google
+          </button>
+
+        </div>
+
+        <form class="pmd-card-body" [formGroup]="form">
+          <div class="alert alert-success" role="alert"> Oh snap! Change a few things up and try submitting again. </div>
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Username</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              </div>
+              <input type="text" formControlName="email" class="form-control" id="usernameInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">lock_outline</i>
+              </div>
+              <input type="password" formControlName="password" class="form-control" id="passwordInput">
+            </div>
+          </div>
+
+          <div class="form-group pmd-textfield pmd-textfield-floating-label">
+            <label for="inputError1" class="control-label pmd-input-group-label">OTP (IF 2FA ENABLED)</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              </div>
+              <input type="text" formControlName="tfa" class="form-control" id="tokenInput">
+            </div>
+          </div>
+
+          <!-- <re-captcha (resolved)="resolved($event)" siteKey="6LdY0FYUAAAAAP5egDwbqt1cJESBG0ywrdhUR0cg"></re-captcha> -->
+
+        </form>
+
+        <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
+          <div class="form-group clearfix">
+            <span class="pull-right forgot-password">
+              <a [routerLink]="['/reset-password']">Forgot password?</a>
+            </span>
+          </div>
+
+          <!-- <button class="btn pmd-ripple-effect btn-success btn-block" [disabled]="signInForm.invalid" class="btn btn-red">Login</button> -->
+
+          <input type="submit" class="btn pmd-ripple-effect btn-success btn-block" [disabled]="form.invalid" (click)="login(form.value)" value="Login">
+
+          <p class="redirection-link">Don't have an account?
+            <a [routerLink]="['/signup']" class="login-register">Sign Up</a>. </p>
+        </div>
+
+      </div>
+
+    </div>
