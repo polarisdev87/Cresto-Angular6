@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "title": "Стол",
+      "code": 10167,
+      "brand": "Fromental",
+      "price": 15000,
+      "img": "assets/table.jpg"
+    },
+    {
+      "id": "1",
+      "title": "Зеркало",
+      "code": 11169,
+      "brand": "Ikea",
+      "price": 500,
+      "img": "assets/mirror.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Полка",
+      "code": 12145,
+      "brand": "Luca",
+      "price": 2500,
+      "img": "assets/shelf.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Обои",
+      "code": 23478,
+      "brand": "Moda",
+      "price": 1240,
+      "img": "assets/wallpaper.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Кравать",
+      "code": 19436,
+      "brand": "Corra",
+      "price": 20000,
+      "img": "assets/bed.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Стул",
+      "code": 34879,
+      "brand": "Tello",
+      "price": 3000,
+      "img": "assets/chair.png"
+    },
+    {
+      "id": "6",
+      "title": "Текстиль",
+      "code": 42343,
+      "brand": "Miran",
+      "price": 4599,
+      "img": "assets/textile.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Диван",
+      "code": 214657,
+      "brand": "Jummo",
+      "price": 18000,
+      "img": "assets/sofa.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Холодильник",
+      "code": 13705,
+      "brand": "Facillo",
+      "price": 23000,
+      "img": "assets/fridge.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Лампа",
+      "code": 325778,
+      "brand": "Pirravvito",
+      "price": 400,
+      "img": "assets/lamp.jpg"
+    }
+  ]
+}

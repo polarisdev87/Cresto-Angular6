@@ -1,0 +1,9 @@
+export const environment: Env = {
+  production: true,
+  host: {
+    api: {
+      url: 'http://localhost:8090',
+      prefix: ''
+    }
+  }
+};
