@@ -1,18 +1,18 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {EditProfileComponent} from './editprofile.component';
 import {RouterModule} from "@angular/router";
+import {DisabletwofaComponent} from "./disabletwofa.component";
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: EditProfileComponent}
+      {path: '', component: DisabletwofaComponent}
     ]),
     FormsModule
   ],
-  declarations: [EditProfileComponent]
+  declarations: [DisabletwofaComponent]
 })
-export class EditProfileModule {
+export class DisableTwoFaModule {
 }

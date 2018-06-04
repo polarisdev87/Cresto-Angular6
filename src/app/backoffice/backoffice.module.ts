@@ -1,8 +1,8 @@
-import { UiModule } from './../shared/module/ui/ui.module';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BackofficeComponent } from './backoffice.component';
+import {UiModule} from './../shared/module/ui/ui.module';
+import {RouterModule} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BackofficeComponent} from './backoffice.component';
 
 @NgModule({
   imports: [
@@ -13,9 +13,10 @@ import { BackofficeComponent } from './backoffice.component';
         path: '',
         component: BackofficeComponent,
         children: [
-          { path: '', redirectTo: 'buy', pathMatch: 'full' },
-          { path: 'buy', loadChildren: './buy/buy.module#BuyModule' },
-          { path: 'editprofile', loadChildren: './editprofile/editprofile.module#EditProfile'},
+          {path: '', redirectTo: 'buy', pathMatch: 'full'},
+          {path: 'buy', loadChildren: './buy/buy.module#BuyModule'},
+          {path: 'editprofile', loadChildren: './editprofile/editprofile.module#EditProfileModule'},
+          {path: 'disabletwofa', loadChildren: './disabletwofa/disabletwofa.module#DisableTwoFaModule'}
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
@@ -24,4 +25,5 @@ import { BackofficeComponent } from './backoffice.component';
   ],
   declarations: [BackofficeComponent]
 })
-export class BackofficeModule { }
+export class BackofficeModule {
+}
