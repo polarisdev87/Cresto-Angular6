@@ -1,16 +1,42 @@
 type User = {
-  id: number;
+  _id: number;
+  username: string;
   email: string;
   password: string;
-  name: string;
-  surname: string;
-  username: string,
+  remember: boolean;
   role: string;
-  expiresIn?: number;
-  accessToken?: string;
-  tfa: boolean;
+  hash: string;
+  timeOfHashLife: string;
   tempToken: string;
-}
+  tempSecret: string;
+  dataURL: string;
+  otpURL: string;
+  expiresIn: number;
+  accessToken: string;
+  profile: {
+    firstname: string,
+    lastname: string,
+    country?: string,
+    etherbase?: string
+  },
+  topcoins: number,
+  referredBy: string,
+  referrals: any[],
+  isVerified: boolean,
+  twofactorEnabled: boolean,
+  verificationToken: string,
+  twofactor: any,
+  google: {
+    id: String,
+    token: String
+  },
+  facebook: {
+    id: String,
+    token: String
+  }
+};
+
+
 
 type PasswordData = {
   currentPassword?: string;
