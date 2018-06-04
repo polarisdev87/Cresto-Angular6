@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
 import { ChangepasswordModule } from "./changepassword/changepassword.module";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,7 @@ import { ChangepasswordModule } from "./changepassword/changepassword.module";
       }
     ])
   ],
-  declarations: [BackofficeComponent]
+  declarations: [BackofficeComponent, ProfileComponent]
 })
 export class BackofficeModule {
 }
