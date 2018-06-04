@@ -15,6 +15,7 @@ import { BackofficeComponent } from './backoffice.component';
         children: [
           { path: '', redirectTo: 'buy', pathMatch: 'full' },
           { path: 'buy', loadChildren: './buy/buy.module#BuyModule' },
+          { path: 'editprofile', loadChildren: './editprofile/editprofile.module#EditProfile'},
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
