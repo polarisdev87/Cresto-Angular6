@@ -3,7 +3,6 @@ import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BackofficeComponent} from './backoffice.component';
-import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -22,8 +21,7 @@ import {FormsModule} from "@angular/forms";
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
       }
-    ]),
-    FormsModule
+    ])
   ],
   declarations: [BackofficeComponent]
 })
