@@ -9,7 +9,7 @@ export const getAuthUser: MemoizedSelector<StoreStates, User | {}> = createSelec
 
 export const getUserTfa: MemoizedSelector<StoreStates, boolean> = createSelector(
   getAuthState,
-  (state: AuthState) => (state.user as User).tfa
+  (state: AuthState) => (state.user as User).twofactorEnabled
 );
 
 export const getUserLoader: MemoizedSelector<StoreStates, boolean> = createSelector(

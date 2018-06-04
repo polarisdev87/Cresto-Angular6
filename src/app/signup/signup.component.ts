@@ -1,5 +1,6 @@
+import { ValidatorsService } from './../shared/services/validators.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { SignUp } from '../store/actions';
 
@@ -15,18 +16,25 @@ export class SignupComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _store: Store<StoreStates>,
+    private _validatorsService: ValidatorsService
   ) { }
 
   ngOnInit() {
     this.form = this._fb.group({
-      name: [''],
-      surname: [''],
-      username: [''],
-      email: [''],
-      password: [''],
-      confirmPassword: [''],
+      username: ['', Validators.required],
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
       referredBy: [''],
-    });
+      profile: this._fb.group({
+        firstname: ['', Validators.required],
+        lastname:  ['', Validators.required],
+      })
+    },
+    {
+      validator: this._validatorsService.checkPasswordsMatch
+    }
+  );
   }
 
   public save(user: User): void {
