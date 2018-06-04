@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { BackofficeComponent } from './backoffice.component';
       }
     ])
   ],
-  declarations: [BackofficeComponent]
+  declarations: [BackofficeComponent, ProfileComponent]
 })
 export class BackofficeModule {
 }
