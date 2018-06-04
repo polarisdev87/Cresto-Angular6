@@ -1,4 +1,3 @@
-import { logout } from './../../../../store/reducers/index';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Logout } from '../../../../store/actions';
