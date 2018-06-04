@@ -29,8 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(user: User): void {
-    console.log(user);
-
     this._store.dispatch(new Login(user));
   }
 

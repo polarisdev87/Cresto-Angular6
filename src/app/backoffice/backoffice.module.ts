@@ -1,8 +1,8 @@
-import {UiModule} from './../shared/module/ui/ui.module';
-import {RouterModule} from '@angular/router';
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {BackofficeComponent} from './backoffice.component';
+import { UiModule } from './../shared/module/ui/ui.module';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackofficeComponent } from './backoffice.component';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -18,7 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
           {path: 'buy', loadChildren: './buy/buy.module#BuyModule'},
           {path: 'editprofile', loadChildren: './editprofile/editprofile.module#EditProfileModule'},
           {path: 'disabletwofa', loadChildren: './disabletwofa/disabletwofa.module#DisableTwoFaModule'},
-          {path: 'setuptwofa', loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'}
+          {path: 'setuptwofa', loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'},
+          {path: 'comingsoon', loadChildren: './comingsoon/comingsoon.module#ComingsoonModule'},
+          {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'}
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]

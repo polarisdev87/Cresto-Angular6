@@ -1,0 +1,32 @@
+<div class="info pmd-card pmd-z-depth">
+  <p><b><u>Would you like to earn BONUS for each person you refer ?</u></b></p>
+  <p>
+    Share your personal referral link given below and when people click on it and sign up for new account, you will
+    earn a percentage of their contribution. They will also earn a bonus when they do the same, so everybody wins
+  </p>
+  <p class="btn-success">Your personal invite link : <a style="color: white"
+                                                        href="https://www.cresttoken.com/?&referral={{username}}">https://www.cresttoken.com/?&referral={{username}}</a>
+  </p>
+</div>
+<div class="container-fluid full-width-container value-added-detail-page">
+  <div class="table-responsive pmd-card pmd-z-depth" *ngIf="referrals.length > 0">
+    <table class="table table-mc-red pmd-table">
+      <thead>
+      <tr>
+        <th>S/N</th>
+        <th>Referral Username</th>
+        <th>Date Registered</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let referral of referrals; let i = index" id="{{referrals._id}}">
+        <td>{{i + 1}}</td>
+        <td data-title="Order ID">{{referral.username}}</td>
+        <td data-title="Sender Address">{{referral.createdAt | date:'yyyy-MM-dd HH:mm a z':'+0900'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <h1 *ngIf="!isLoaded"> Loading ... </h1>
+  <h1 *ngIf="referrals.length < 1 && isLoaded"> You don't have any referrals as of now. </h1>
+</div>
