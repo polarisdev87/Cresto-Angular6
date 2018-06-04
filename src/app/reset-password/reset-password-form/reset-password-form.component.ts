@@ -21,7 +21,7 @@ export class ResetPasswordFormComponent {
     private _validatorsService: ValidatorsService
   ) {
     this.form = this._fb.group({
-      code: ['', [Validators.required]],
+      // code: ['', [Validators.required]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
     }, {

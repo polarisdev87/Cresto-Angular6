@@ -77,7 +77,7 @@ export class AuthEffects {
       map((action: AuthActions.SetPassword) => action.payload),
       switchMap((value: PasswordData) => this._authService.setPassword(value).pipe(
         map((success: boolean) => new AuthActions.SetPasswordSuccess(success)),
-        tap(() => this._router.navigate(['/backoffice'])),
+        tap(() => this._router.navigate(['/login'])),
         catchError((err: Error, caught: Observable<Action>) => {
           // tslint:disable-next-line
           console.log(err);
