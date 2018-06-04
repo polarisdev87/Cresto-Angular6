@@ -18,7 +18,8 @@ import { BackofficeComponent } from './backoffice.component';
           {path: 'editprofile', loadChildren: './editprofile/editprofile.module#EditProfileModule'},
           {path: 'disabletwofa', loadChildren: './disabletwofa/disabletwofa.module#DisableTwoFaModule'},
           {path: 'setuptwofa', loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'},
-          {path: 'comingsoon', loadChildren: './comingsoon/comingsoon.module#ComingsoonModule'}
+          {path: 'comingsoon', loadChildren: './comingsoon/comingsoon.module#ComingsoonModule'},
+          {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'}
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
