@@ -12,9 +12,11 @@ export class ValidatorsService {
   public checkPasswordsMatch(control: AbstractControl): ValidationErrors | null {
     const password: AbstractControl | null = control.get('password');
     const confirmPassword: AbstractControl | null = control.get('confirmPassword');
-    if (!(password && confirmPassword)) {
+    if (!password || !confirmPassword) {
       return null;
     }
-    return password.value === confirmPassword.value ? null : { nomatch: true };
+    return password.value === confirmPassword.value
+      ? null
+      : { nomatch: true };
   }
 }
