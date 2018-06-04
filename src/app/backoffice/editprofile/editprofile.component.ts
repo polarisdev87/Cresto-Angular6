@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './editprofile.component.html',
   styleUrls: ['./editprofile.component.css']
 })
-export class EditprofileComponent implements OnInit {
+export class EditProfileComponent implements OnInit {
   firstname;
   lastname;
   country = '';
@@ -13,7 +13,7 @@ export class EditprofileComponent implements OnInit {
   userid;
 
   ngOnInit() {
-    
+
   }
 
   onSave() {
