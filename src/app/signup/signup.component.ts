@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  public signUp(user: User): void {
+  public save(user: User): void {
     this._store.dispatch(new SignUp(user));
   }
 

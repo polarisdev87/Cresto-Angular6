@@ -12,7 +12,7 @@
           <strong>Register</strong>
         </h3>
       </div>
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="save(form.value)">
         <div class="social-btn">
           <button class="loginBtn loginBtn--facebook" (click)="facebookLogin()">
             Login with Facebook
@@ -98,7 +98,7 @@
 
 
         <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-          <input type="submit" class="btn pmd-ripple-effect btn-success btn-block" (click)="signupSubmit()" value="Sign Up">
+          <button [disabled]="form.invalid" class="btn pmd-ripple-effect btn-success btn-block">Sign Up</button>
           <p class="redirection-link">Already have an account?
             <a [routerLink]="['/login']" class="register-login">Sign In</a>. </p>
         </div>

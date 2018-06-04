@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loader$ = this._store.select(getUserLoader);
     this.form = this._fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required]],
       password: [''],
       tfa: ['']
     });
