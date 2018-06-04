@@ -1,0 +1,28 @@
+<div *ngIf = "!unauthorized">
+  <div class="container-fluid full-width-container value-added-detail-page">
+    <div class="table-responsive pmd-card pmd-z-depth" *ngIf = "referrals.length > 0">
+      <table class="table table-mc-red pmd-table">
+        <thead>
+        <tr>
+          <th>Referral User ID</th>
+          <th>Referral Username</th>
+          <th>Referral Email ID</th>
+          <th>Referral Signup Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let referral of referrals" id="{{referrals._id}}">
+          <td data-title="Referral User ID">{{referral._id}}</td>
+          <td data-title="Referral Username">{{referral.username}}</td>
+          <td data-title="Referral Email ID">{{referral.email}}</td>
+          <td data-title="Referral Signup Date">{{referral.createdAt | date:'yyyy-MM-dd HH:mm a z':'+0900'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <h1 *ngIf = "!isLoaded"> Loading ... </h1>
+    <h1 *ngIf = "referrals.length < 1 && isLoaded"> This user doesn't have any referrals as of now. </h1>
+  </div>
+</div>
+<h1 *ngIf = "unauthorized"> Unauthorized User </h1>
+<h1 *ngIf = "servererror"> Server Error </h1>
