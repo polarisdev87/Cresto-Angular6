@@ -1,3 +1,4 @@
+import { SocialNetworkService } from './shared/services/social-network.service';
 import { SettingsService } from './shared/services/settings.service';
 import { TwoFactorService } from './shared/services/twofactor.service';
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -57,6 +58,7 @@ import { RouterModule } from '@angular/router';
     ValidatorsService,
     TwoFactorService,
     SettingsService,
+    SocialNetworkService,
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     { provide: DOMAIN_TOKEN, useValue: DOMAIN },
     { provide: PREFIX_TOKEN, useValue: PREFIX },

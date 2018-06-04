@@ -5,5 +5,8 @@ export const environment: Env = {
       url: 'http://localhost:8090',
       prefix: ''
     }
+  },
+  facebookConfig: {
+    appId: string
   }
 };
