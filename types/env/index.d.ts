@@ -8,5 +8,8 @@ type Env = {
   },
   facebookConfig: {
     appId: string
+  },
+  googleConfig: {
+    appId: string
   }
 };

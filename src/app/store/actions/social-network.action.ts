@@ -23,3 +23,18 @@ export class FacebookLoginFail implements Action {
   public constructor(public payload: any) {}
 }
 
+
+export class GoogleLogin implements Action {
+  public readonly type: string = GOOGLE_LOGIN;
+}
+
+export class GoogleLoginSuccess implements Action {
+  public readonly type: string = GOOGLE_LOGIN_SUCCESS;
+  public constructor(public payload: any) {}
+}
+
+export class GoogleLoginFail implements Action {
+  public readonly type: string = GOOGLE_LOGIN_FAIL;
+  public constructor(public payload: any) {}
+}
+

@@ -21,6 +21,9 @@ import { ValidatorsService } from './shared/services/validators.service';
 import { DOMAIN_TOKEN, DOMAIN, PREFIX, PREFIX_TOKEN } from './config';
 import { AppInterceptorsService } from './shared/services/app-interceptors.service';
 import { RouterModule } from '@angular/router';
+import { AuthServiceConfig, AuthService as GoogleAuthService } from 'angular5-social-login';
+import { getAuthServiceConfigs } from './google-config';
+
 
 @NgModule({
   declarations: [
@@ -59,10 +62,15 @@ import { RouterModule } from '@angular/router';
     TwoFactorService,
     SettingsService,
     SocialNetworkService,
+    GoogleAuthService,
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     { provide: DOMAIN_TOKEN, useValue: DOMAIN },
     { provide: PREFIX_TOKEN, useValue: PREFIX },
-    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true, }
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true, },
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
   ],
   bootstrap: [AppComponent]
 })
