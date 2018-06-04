@@ -13,7 +13,7 @@ export class EditprofileComponent implements OnInit {
   userid;
 
   ngOnInit() {
-    this.userid = JSON.parse(localStorage.getItem('auth_user')).id;
+    
   }
 
   onSave() {
