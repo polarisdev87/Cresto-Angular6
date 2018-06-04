@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
+import { ChangepasswordModule } from "./changepassword/changepassword.module";
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { BackofficeComponent } from './backoffice.component';
           {path: 'disabletwofa', loadChildren: './disabletwofa/disabletwofa.module#DisableTwoFaModule'},
           {path: 'setuptwofa', loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'},
           {path: 'comingsoon', loadChildren: './comingsoon/comingsoon.module#ComingsoonModule'},
-          {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'}
+          {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'},
+          {path: 'changepassword', loadChildren: './changepassword/changepassword.module#ChangepasswordModule'}
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
