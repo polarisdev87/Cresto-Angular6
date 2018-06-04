@@ -95,6 +95,7 @@ export class AuthEffects {
         tap(() => this._router.navigate(['/login'])),
         catchError((err: Error, caught: Observable<Action>) => {
           // tslint:disable-next-line
+          of(new AuthActions.SendResetPasswordEmailFail(err))
           console.log(err);
           return caught;
         })

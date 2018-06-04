@@ -18,6 +18,8 @@ export class ResetPasswordEmailComponent {
   ) {}
 
   public sendResetPasswordEmail(email: string): void {
+    console.log(new SendResetPasswordEmail(email));
+
     this._store.dispatch(new SendResetPasswordEmail(email));
     this.email.reset();
   }

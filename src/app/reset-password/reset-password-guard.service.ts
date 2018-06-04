@@ -13,7 +13,6 @@ export class ResetPasswordGuardService implements CanActivate {
   ) { }
 
   public canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    // return of(true);
     return this._authService.checkPasswordHash(route.params.id).pipe(
       switchMap((data: { isValidKey: boolean }) => {
         if (!data.isValidKey) {
