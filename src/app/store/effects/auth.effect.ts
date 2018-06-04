@@ -43,7 +43,10 @@ export class AuthEffects {
         switchMap((data: User) => this._authService.tokenToLocalStorage(data)),
         map((data: User) => new AuthActions.LoginSuccess(data)),
         tap(() => this._router.navigate(['/backoffice'])),
-        catchError((err: Error) => of(new AuthActions.LoginFail(err)))
+        catchError((err: Error) => {
+          alert('Invalid username or password');
+          return of(new AuthActions.LoginFail(err));
+        })
       )),
     );
 
@@ -53,7 +56,10 @@ export class AuthEffects {
       map((action: AuthActions.SignUp) => action.payload),
       switchMap((user: User) => this._authService.signUp(user).pipe(
         map((data: User) => new AuthActions.SignUpSuccess(data)),
-        tap(() => this._router.navigate(['/login/congratulations'])),
+        tap(() => {
+          alert('A verification mail has sent to your email. Please verify it.');
+          this._router.navigate(['/login']);
+        }),
         catchError((err: Error) => of(new AuthActions.SignUpFail(err)))
       )),
     );
@@ -92,7 +98,10 @@ export class AuthEffects {
       map((action: AuthActions.SendResetPasswordEmail) => action.payload),
       switchMap((email: string) => this._authService.sendResetPasswordEmail(email).pipe(
         map((success: boolean) => new AuthActions.SendResetPasswordEmailSuccess(success)),
-        tap(() => this._router.navigate(['/login'])),
+        tap(() => {
+          alert('We have sent email to reset password');
+          this._router.navigate(['/login']);
+        }),
         catchError((err: Error, caught: Observable<Action>) => {
           // tslint:disable-next-line
           of(new AuthActions.SendResetPasswordEmailFail(err))
