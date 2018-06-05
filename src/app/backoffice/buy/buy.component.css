@@ -9,11 +9,11 @@
 }
 
 .step {
-  margin: 15px 0px;
+  margin: 15px 0;
   font-size: 14px;
 }
 
-.purchase-btn{
+.purchase-btn {
 
 }
 
@@ -49,9 +49,8 @@
   display: flex;
 }
 
-
 .countdown .measurements {
-  margin: 0px 5px !important;
+  margin: 0 5px !important;
 }
 
 .countdown .measurements-text {

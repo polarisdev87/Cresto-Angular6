@@ -25,9 +25,8 @@ import { ProfileComponent } from './profile/profile.component';
           {path: 'changepassword', loadChildren: './changepassword/changepassword.module#ChangepasswordModule'},
           {path: 'users', loadChildren: './user/user.module#UserModule'},
           {path: 'verifytwofactor', loadChildren: './verifytwofactor/verifytwofactor.module#VerifytwofactorModule'},
-          {path: 'verificationpending', loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule'
-          }
-          // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
+          {path: 'verificationpending', loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule'},
+          {path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'}
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
       }

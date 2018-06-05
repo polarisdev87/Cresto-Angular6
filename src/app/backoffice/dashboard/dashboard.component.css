@@ -1,0 +1,15 @@
+aside {
+  padding-top: 0px;
+}
+
+.pending {
+  background: yellow;
+}
+
+.running {
+  background: green;
+}
+
+.finished {
+  background: blue;
+}
