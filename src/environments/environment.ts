@@ -7,7 +7,7 @@ export const environment: Env = {
      }
   },
   facebookConfig: {
-    appId: '2079541355597187'
+    appId: '638930499778589'
   },
   googleConfig: {
     appId: '49469185526-hi4ofpunkdk6qsr2nglv0vt6kkbskgdd.apps.googleusercontent.com'
