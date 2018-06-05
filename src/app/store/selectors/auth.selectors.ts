@@ -17,3 +17,8 @@ export const getUserLoader: MemoizedSelector<StoreStates, boolean> = createSelec
   (state: AuthState) => state.loading
 );
 
+export const isLoggedSelector: MemoizedSelector<StoreStates, boolean> = createSelector(
+  getAuthState,
+  (state: AuthState) => state.isLogged
+);
+

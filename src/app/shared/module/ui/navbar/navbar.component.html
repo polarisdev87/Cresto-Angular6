@@ -16,22 +16,22 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="https://ico.cresttoken.com/dashboard?user_id={{userId}}&token={{token}}">Dashboard</a>
+          <a [routerLink]="['dashboard']">Dashboard</a>
         </li>
         <li>
-          <a href="https://ico.cresttoken.com/buy?user_id={{userId}}&token={{token}}">Buy Tokens</a>
+          <a [routerLink]="['buy']">Buy Tokens</a>
         </li>
         <li>
           <a href="https://ico.cresttoken.com/wallet?user_id={{userId}}&token={{token}}"> Wallet </a>
         </li>
         <li>
-          <a [routerLink]="['comingsoon']"> Staking </a>
+          <a [routerLink]="['comingsoon']" *ngAcl="['comingsoon', 'GET']"> Staking </a>
         </li>
         <li>
-          <a [routerLink]="['comingsoon']"> Exchange </a>
+          <a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']"> Exchange </a>
         </li>
         <li>
-          <a [routerLink]="['comingsoon']"> Campaign </a>
+          <a [routerLink]="['/backoffice', '/comingsoon']" *ngAcl="['comingsoon', 'GET']"> Campaign </a>
         </li>
         <li>
           <a [routerLink]="['myreferrals']"> My Referrals </a>
@@ -44,12 +44,12 @@
             <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <!-- <li *ngIf="!user.twofactorEnabled">
-                <a [routerLink]="['/twofasetup']"> 2 FA Setup</a>
-              </li> -->
-              <!-- <li *ngIf="user.twofactorEnabled">
-                <a [routerLink]="['/disabletwofa']"> Disable 2 FA</a>
-              </li> -->
+              <li *ngIf="!user?.twofactorEnabled">
+                <a [routerLink]="['setuptwofa']"> 2 FA Setup</a>
+              </li>
+              <li *ngIf="user?.twofactorEnabled">
+                <a [routerLink]="['disabletwofa']"> Disable 2 FA</a>
+              </li>
               <li><a [routerLink]="['editprofile']">Edit Profile</a></li>
               <li><a [routerLink]="['changepassword']">Change Password</a></li>
 
@@ -57,6 +57,12 @@
         </li>
 
 
+        <li>
+          <a [routerLink]="['users']" *ngAcl="['users', 'GET']">Users</a>
+        </li>
+        <li>
+          <a [routerLink]="['referrals']" *ngAcl="['referrals', 'GET']">Referrals</a>
+        </li>
         <li>
           <a (click)="logout()"> Log out</a>
         </li>

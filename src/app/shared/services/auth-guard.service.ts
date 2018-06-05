@@ -1,37 +1,40 @@
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, CanLoad } from '@angular/router';
 import { Observable, of } from 'rxjs';
-
 import { switchMap, take } from 'rxjs/operators';
+import { isLoggedSelector } from '../../store/selectors';
+import { Route } from '@angular/compiler/src/core';
+
 @Injectable()
-export class AuthGuardService implements CanActivate {
+export class AuthGuardService implements CanLoad {
 
   public constructor(
     private _store: Store<StoreStates>,
     private _router: Router,
   ) {}
 
-  public canActivate(...params: (ActivatedRouteSnapshot | RouterStateSnapshot)[]): Observable<boolean> {
-    const [, state] = params;
-    return this._store.select('auth').pipe(
+  public canLoad(route: Route): Observable<boolean> {
+    const url: string = (route as any).path;
+
+    return this._store.select(isLoggedSelector).pipe(
       take(1),
-      switchMap((user: AuthState) => {
-        // if  (state.url === '/login/reg/twofactor') {
-        //   return of(true);
-        // }
-        // if (user.isLogged && state.url === '/login/reg/sign-in') {
-        //   this._router.navigate(['/backoffice']);
-        //   return of(false);
-        // }
-        // if (!user.isLogged && state.url === '/login/reg/sign-up') {
-        //   return of(true);
-        // }
-        // if (!user.isLogged && state.url !== '/login/reg/sign-in') {
-        //   this._router.navigate(['login']);
-        //   return of(false);
-        // }
-        return of(true);
+      switchMap((isLogged: boolean) => {
+        console.log(isLogged);
+
+        if (!isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
+          return of(true);
+        }
+
+        if (isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
+          this._router.navigate(['/backoffice']);
+          return of(false);
+        }
+
+        if (!isLogged) {
+          this._router.navigate(['/login']);
+        }
+        return of(isLogged);
       })
     );
 

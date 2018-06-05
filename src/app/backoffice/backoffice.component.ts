@@ -1,4 +1,7 @@
+import { AclRequest } from './../store/actions/acl.actions';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { GetCurrentUser } from '../store/actions';
 
 @Component({
   selector: 'app-backoffice',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackofficeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _store: Store<StoreStates>
+  ) { }
 
   ngOnInit() {
+    this._store.dispatch(new GetCurrentUser());
+    this._store.dispatch(new AclRequest());
   }
 
 }
