@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyreferralsComponent } from './myreferrals.component';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
