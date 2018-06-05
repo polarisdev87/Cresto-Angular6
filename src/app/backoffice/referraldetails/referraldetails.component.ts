@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ReferralDetailsComponent {
   isLoaded = false;
-  referrals = [];
   unauthorized = false;
   servererror = false;
 }
