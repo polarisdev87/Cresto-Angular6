@@ -56,6 +56,10 @@ import { AccessGuardService } from './shared/services/access-guard.service';
         path: 'backoffice',
         loadChildren: './backoffice/backoffice.module#BackofficeModule',
         canLoad: [AuthGuardService]
+      },
+      {
+        path: '**' ,
+        redirectTo: 'login'
       }
     ]),
     StoreRouterConnectingModule.forRoot({

@@ -72,6 +72,10 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
           {
             path: 'dashboard',
             loadChildren: './dashboard/dashboard.module#DashboardModule'
+          },
+          {
+            path: '**' ,
+            loadChildren: './dashboard/dashboard.module#DashboardModule'
           }
         ]
       }
