@@ -37,15 +37,24 @@ import { getAuthServiceConfigs } from './google-config';
     EffectsModule.forRoot(effects),
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: 'login', loadChildren: './login/login.module#LoginModule' },
-      { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },
+      {
+        path: 'login',
+        loadChildren: './login/login.module#LoginModule',
+        canLoad: [AuthGuardService]
+      },
+      {
+        path: 'signup',
+        loadChildren: './signup/signup.module#SignupModule',
+        canLoad: [AuthGuardService] },
       {
         path: 'reset-password',
         loadChildren: './reset-password/reset-password.module#ResetPasswordModule',
+        canLoad: [AuthGuardService]
       },
       {
         path: 'backoffice',
         loadChildren: './backoffice/backoffice.module#BackofficeModule',
+        canLoad: [AuthGuardService]
       }
     ]),
     StoreRouterConnectingModule.forRoot({

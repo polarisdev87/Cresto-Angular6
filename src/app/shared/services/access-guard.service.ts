@@ -7,7 +7,7 @@ import { isLoggedSelector } from '../../store/selectors';
 import { Route } from '@angular/compiler/src/core';
 
 @Injectable()
-export class AuthGuardService implements CanLoad {
+export class AccessGuardService implements CanLoad {
 
   public constructor(
     private _store: Store<StoreStates>,

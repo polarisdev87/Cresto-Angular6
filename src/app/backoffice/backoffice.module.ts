@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
-import { ChangepasswordModule } from "./changepassword/changepassword.module";
+import { ChangepasswordModule } from './changepassword/changepassword.module';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
