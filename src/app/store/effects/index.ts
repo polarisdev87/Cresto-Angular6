@@ -1,3 +1,4 @@
+import { SocialNetworkEffects } from './social-network.effect';
 import { PersonalInfoEffects } from './personal-info.effects';
 import { PasswordEffects } from './password.effects';
 import { AclEffects } from './acl.effect';
@@ -13,5 +14,6 @@ export const effects = [
   PasswordEffects,
   PersonalInfoEffects,
   TwoFactorEffects,
+  SocialNetworkEffects
 ];
 

@@ -1,9 +1,11 @@
+import { FacebookLogin, GoogleLogin } from './../store/actions/social-network.action';
 import { getUserLoader } from './../store/selectors/auth.selectors';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Login } from '../store/actions';
 import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -28,8 +30,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(user: User): void {
+  login(user: User) {
     this._store.dispatch(new Login(user));
+  }
+
+  facebookLogin() {
+    this._store.dispatch(new FacebookLogin());
+  }
+
+  googleLogin() {
+    this._store.dispatch(new GoogleLogin());
   }
 
 }
