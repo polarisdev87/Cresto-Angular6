@@ -15,9 +15,8 @@ export class BackofficeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('dispa');
-
     this._store.dispatch(new GetCurrentUser());
+    this._store.dispatch(new AclRequest());
   }
 
 }

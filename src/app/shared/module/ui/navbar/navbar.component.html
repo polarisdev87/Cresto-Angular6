@@ -24,17 +24,17 @@
         <li>
           <a href="https://ico.cresttoken.com/wallet?user_id={{userId}}&token={{token}}"> Wallet </a>
         </li>
-        <li>
-          <a [routerLink]="['/comingsoon']"> Staking </a>
+        <!-- <li>
+          <a [routerLink]="['comingsoon']"> Staking </a>
         </li>
         <li>
-          <a [routerLink]="['/comingsoon']"> Exchange </a>
+          <a [routerLink]="['comingsoon']"> Exchange </a>
         </li>
         <li>
-          <a [routerLink]="['/comingsoon']"> Campaign </a>
-        </li>
+          <a [routerLink]="['comingsoon']"> Campaign </a>
+        </li> -->
         <li>
-          <a [routerLink]="['/myreferrals']"> My Referrals </a>
+          <a [routerLink]="['myreferrals']"> My Referrals </a>
         </li>
 
         <li class="dropdown">
@@ -50,17 +50,22 @@
               <li *ngIf="user.twofactorEnabled">
                 <a [routerLink]="['/disabletwofa']"> Disable 2 FA</a>
               </li> -->
-              <li><a [routerLink]="['/editprofile']">Edit Profile</a></li>
-              <li><a [routerLink]="['/changepassword']">Change Password</a></li>
+              <li><a [routerLink]="['editprofile']">Edit Profile</a></li>
+              <li><a [routerLink]="['changepassword']">Change Password</a></li>
 
             </ul>
         </li>
 
 
         <li>
-          <a [routerLink]="['/backoffice', 'users']" routerLinkActive="primary">Users</a>
+          <a [routerLink]="['/backoffice', 'users']" *ngAcl="['users', 'GET']">Users</a>
         </li>
-
+        <li>
+          <a [routerLink]="['/backoffice', 'referrals']" *ngAcl="['referrals', 'GET']">Referrals</a>
+        </li>
+        <li>
+          <a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']">Comingsoon</a>
+        </li>
         <li>
           <a (click)="logout()"> Log out</a>
         </li>

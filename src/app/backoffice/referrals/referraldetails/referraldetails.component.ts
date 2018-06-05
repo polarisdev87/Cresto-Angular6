@@ -9,4 +9,5 @@ export class ReferralDetailsComponent {
   isLoaded = false;
   unauthorized = false;
   servererror = false;
+  referrals = []
 }

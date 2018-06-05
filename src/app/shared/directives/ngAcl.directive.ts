@@ -1,5 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 @Directive({
   selector: '[ngAcl]'
@@ -16,7 +17,8 @@ export class NgAclDirective {
 
   // value format : ['/widgets/exchangeRate', 'PUT']
   @Input() public set ngAcl(value: string[]) {
-    this._store.select('acl').subscribe((aclMap: Acl) => {
+    this._store.select('acl')
+    .subscribe((aclMap: Acl) => {
       if (aclMap[value[0]] && aclMap[value[0]].includes('*')) {
         this._viewContainer.createEmbeddedView(this._templateRef);
         return;

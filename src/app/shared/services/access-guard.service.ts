@@ -17,15 +17,15 @@ export class AccessGuardService implements CanLoad {
 
   public canLoad(route: Route) {
     const url: string = (route as any).path;
-    // return false
+    console.log(url);
+
     return this._store.select('acl').pipe(
+      take(1),
       filter((acl: AclState) => !isEmpty(acl)),
       switchMap((acl: AclState) => {
-        console.log('234234', acl);
-
-        return of(true);
+        console.log(23424234, Object.keys(acl).includes(url));
+        return of(Object.keys(acl).includes(url));
       }),
-      take(1)
     );
 
   }
