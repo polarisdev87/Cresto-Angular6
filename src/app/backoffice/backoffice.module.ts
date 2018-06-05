@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
-import { ChangepasswordModule } from "./changepassword/changepassword.module";
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -24,7 +23,10 @@ import { ProfileComponent } from './profile/profile.component';
           {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'},
           {path: 'referrals', loadChildren: './referrals/referrals.module#ReferralsModule'},
           {path: 'changepassword', loadChildren: './changepassword/changepassword.module#ChangepasswordModule'},
-          {path: 'users', loadChildren: './user/user.module#UserModule'}
+          {path: 'users', loadChildren: './user/user.module#UserModule'},
+          {path: 'verifytwofactor', loadChildren: './verifytwofactor/verifytwofactor.module#VerifytwofactorModule'},
+          {path: 'verificationpending', loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule'
+          }
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]
