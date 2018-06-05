@@ -1,3 +1,4 @@
+import { AclRequest } from './../../../../store/actions/acl.actions';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Logout } from '../../../../store/actions';
@@ -12,6 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(private _store: Store<any>) { }
 
   ngOnInit() {
+    this._store.dispatch(new AclRequest());
   }
 
   logout() {

@@ -1,8 +1,9 @@
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, CanLoad } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, CanLoad, CanActivate } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
+import { filter, switchMap, take } from 'rxjs/operators';
+import { isEmpty } from 'lodash';
 import { isLoggedSelector } from '../../store/selectors';
 import { Route } from '@angular/compiler/src/core';
 
@@ -14,28 +15,17 @@ export class AccessGuardService implements CanLoad {
     private _router: Router,
   ) {}
 
-  public canLoad(route: Route): Observable<boolean> {
+  public canLoad(route: Route) {
     const url: string = (route as any).path;
+    // return false
+    return this._store.select('acl').pipe(
+      filter((acl: AclState) => !isEmpty(acl)),
+      switchMap((acl: AclState) => {
+        console.log('234234', acl);
 
-    return this._store.select(isLoggedSelector).pipe(
-      take(1),
-      switchMap((isLogged: boolean) => {
-        console.log(isLogged);
-
-        if (!isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
-          return of(true);
-        }
-
-        if (isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
-          this._router.navigate(['/backoffice']);
-          return of(false);
-        }
-
-        if (!isLogged) {
-          this._router.navigate(['/login']);
-        }
-        return of(isLogged);
-      })
+        return of(true);
+      }),
+      take(1)
     );
 
   }

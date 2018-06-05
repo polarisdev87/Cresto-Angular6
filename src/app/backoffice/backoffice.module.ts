@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
 import { ChangepasswordModule } from './changepassword/changepassword.module';
 import { ProfileComponent } from './profile/profile.component';
+import { AccessGuardService } from '../shared/services/access-guard.service';
 
 @NgModule({
   imports: [
@@ -22,9 +23,21 @@ import { ProfileComponent } from './profile/profile.component';
           {path: 'setuptwofa', loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'},
           {path: 'comingsoon', loadChildren: './comingsoon/comingsoon.module#ComingsoonModule'},
           {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'},
-          {path: 'referrals', loadChildren: './referrals/referrals.module#ReferralsModule'},
-          {path: 'changepassword', loadChildren: './changepassword/changepassword.module#ChangepasswordModule'},
-          {path: 'users', loadChildren: './user/user.module#UserModule'}
+          {
+            path: 'referrals',
+            loadChildren: './referrals/referrals.module#ReferralsModule',
+            canLoad: [ AccessGuardService ]
+          },
+          {
+            path: 'changepassword',
+            loadChildren: './changepassword/changepassword.module#ChangepasswordModule',
+            canLoad: [ AccessGuardService ]
+          },
+          {
+            path: 'users',
+            loadChildren: './user/user.module#UserModule',
+            canLoad: [ AccessGuardService ]
+          }
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
           // { path: 'whitelist', loadChildren: 'app/backoffice/whitelist/whitelist.module#WhitelistModule' },
         ]

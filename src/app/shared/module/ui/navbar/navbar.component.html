@@ -46,8 +46,8 @@
             <ul class="dropdown-menu">
               <!-- <li *ngIf="!user.twofactorEnabled">
                 <a [routerLink]="['/twofasetup']"> 2 FA Setup</a>
-              </li> -->
-              <!-- <li *ngIf="user.twofactorEnabled">
+              </li>
+              <li *ngIf="user.twofactorEnabled">
                 <a [routerLink]="['/disabletwofa']"> Disable 2 FA</a>
               </li> -->
               <li><a [routerLink]="['/editprofile']">Edit Profile</a></li>
@@ -56,6 +56,10 @@
             </ul>
         </li>
 
+
+        <li>
+          <a [routerLink]="['/backoffice', 'users']" routerLinkActive="primary">Users</a>
+        </li>
 
         <li>
           <a (click)="logout()"> Log out</a>

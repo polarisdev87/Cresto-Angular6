@@ -23,6 +23,7 @@ import { AppInterceptorsService } from './shared/services/app-interceptors.servi
 import { RouterModule } from '@angular/router';
 import { AuthServiceConfig, AuthService as GoogleAuthService } from 'angular5-social-login';
 import { getAuthServiceConfigs } from './google-config';
+import { AccessGuardService } from './shared/services/access-guard.service';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { getAuthServiceConfigs } from './google-config';
     AuthService,
     LocalStorageService,
     AuthGuardService,
+    AccessGuardService,
     AclService,
     ValidatorsService,
     TwoFactorService,

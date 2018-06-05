@@ -1,3 +1,4 @@
+import { AuthService } from './../../shared/services/auth.service';
 import { LoginSuccess } from './../actions/auth.action';
 import { SocialNetworkService } from './../../shared/services/social-network.service';
 import { FacebookLogin, FacebookLoginFail, GOOGLE_LOGIN, GoogleLoginFail } from './../actions/social-network.action';
@@ -20,6 +21,7 @@ export class SocialNetworkEffects {
     .ofType(FACEBOOK_LOGIN).pipe(
       switchMap(() => this._socialNetworkService.facebookLogin()),
       switchMap((result: any) => this._socialNetworkService.successFbLogin(result.authResponse.accessToken).pipe(
+        switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
         map((user: User) => new LoginSuccess(user)),
         tap(() => this._router.navigate(['/backoffice'])),
         catchError((err: Error) => {
@@ -36,6 +38,7 @@ export class SocialNetworkEffects {
     .ofType(GOOGLE_LOGIN).pipe(
       switchMap(() => this._socialNetworkService.googleSignIn()),
       switchMap((token: string) => this._socialNetworkService.googleSuccessLogin(token).pipe(
+        switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
         map((user: User) => new LoginSuccess(user)),
         tap(() => this._router.navigate(['/backoffice'])),
         catchError((err: Error) => {
@@ -51,6 +54,7 @@ export class SocialNetworkEffects {
     private actions$: Actions,
     private _settingsService: SettingsService,
     private _socialNetworkService: SocialNetworkService,
-    private _router: Router
+    private _router: Router,
+    private _authService: AuthService,
   ) { }
 }
