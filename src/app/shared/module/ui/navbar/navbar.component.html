@@ -24,15 +24,15 @@
         <li>
           <a href="https://ico.cresttoken.com/wallet?user_id={{userId}}&token={{token}}"> Wallet </a>
         </li>
-        <!-- <li>
-          <a [routerLink]="['comingsoon']"> Staking </a>
+        <li>
+          <a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']"> Staking </a>
         </li>
         <li>
-          <a [routerLink]="['comingsoon']"> Exchange </a>
+          <a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']"> Exchange </a>
         </li>
         <li>
-          <a [routerLink]="['comingsoon']"> Campaign </a>
-        </li> -->
+          <a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']"> Campaign </a>
+        </li>
         <li>
           <a [routerLink]="['myreferrals']"> My Referrals </a>
         </li>
@@ -62,9 +62,6 @@
         </li>
         <li>
           <a [routerLink]="['/backoffice', 'referrals']" *ngAcl="['referrals', 'GET']">Referrals</a>
-        </li>
-        <li>
-          <a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']">Comingsoon</a>
         </li>
         <li>
           <a (click)="logout()"> Log out</a>

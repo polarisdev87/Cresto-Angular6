@@ -23,7 +23,6 @@ export class AccessGuardService implements CanLoad {
       take(1),
       filter((acl: AclState) => !isEmpty(acl)),
       switchMap((acl: AclState) => {
-        console.log(23424234, Object.keys(acl).includes(url));
         return of(Object.keys(acl).includes(url));
       }),
     );
