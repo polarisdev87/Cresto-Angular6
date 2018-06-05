@@ -103,7 +103,7 @@ export function reducer(state: AuthState = initialLoggedState(), action: any): A
         loaded: false,
         loading: false,
         loginError: '',
-        signUpError: action.payload.error.error
+        signUpError: action.payload
       };
     }
 
