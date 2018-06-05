@@ -1,3 +1,4 @@
+import { FacebookLogin, GoogleLogin } from './../store/actions/social-network.action';
 import { ValidatorsService } from './../shared/services/validators.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -39,6 +40,14 @@ export class SignupComponent implements OnInit {
 
   public save(user: User): void {
     this._store.dispatch(new SignUp(user));
+  }
+
+  facebookLogin() {
+    this._store.dispatch(new FacebookLogin());
+  }
+
+  googleLogin() {
+    this._store.dispatch(new GoogleLogin());
   }
 
 }

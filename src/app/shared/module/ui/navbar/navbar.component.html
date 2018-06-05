@@ -22,7 +22,7 @@
           <a [routerLink]="['buy']">Buy Tokens</a>
         </li>
         <li>
-          <a href="https://ico.cresttoken.com/wallet?user_id={{userId}}&token={{token}}"> Wallet </a>
+          <a> Wallet </a>
         </li>
         <li>
           <a [routerLink]="['comingsoon']" *ngAcl="['comingsoon', 'GET']"> Staking </a>
@@ -44,10 +44,10 @@
             <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li *ngIf="!user?.twofactorEnabled">
+              <li *ngIf="!(user$ | async)?.twofactorEnabled">
                 <a [routerLink]="['setuptwofa']"> 2 FA Setup</a>
               </li>
-              <li *ngIf="user?.twofactorEnabled">
+              <li *ngIf="(user$ | async)?.twofactorEnabled">
                 <a [routerLink]="['disabletwofa']"> Disable 2 FA</a>
               </li>
               <li><a [routerLink]="['editprofile']">Edit Profile</a></li>
