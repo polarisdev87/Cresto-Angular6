@@ -20,8 +20,6 @@ export class AuthGuardService implements CanLoad {
     return this._store.select(isLoggedSelector).pipe(
       take(1),
       switchMap((isLogged: boolean) => {
-        console.log(isLogged);
-
         if (!isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
           return of(true);
         }

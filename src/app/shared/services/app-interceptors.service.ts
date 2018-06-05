@@ -8,6 +8,8 @@ import { HttpErrorResponse, HttpHeaders, HttpRequest, HttpResponse } from '@angu
 import { HttpHandler } from '@angular/common/http';
 import { catchError, filter, map } from 'rxjs/operators';
 import { TwoFactorLoginSuccess, Logout } from '../../store/actions';
+import { throwError } from 'rxjs';
+
 @Injectable()
 export class AppInterceptorsService implements HttpInterceptor {
 
@@ -38,7 +40,7 @@ export class AppInterceptorsService implements HttpInterceptor {
           if (err.status === 403 || err.status === 401) {
             this._store.dispatch(new Logout());
           }
-          return Observable.throw(err);
+          return throwError(err);
         })
       );
   }
