@@ -17,7 +17,6 @@ export class AccessGuardService implements CanLoad {
 
   public canLoad(route: Route) {
     const url: string = (route as any).path;
-    console.log(url);
 
     return this._store.select('acl').pipe(
       take(1),
