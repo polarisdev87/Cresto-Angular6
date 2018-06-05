@@ -10,7 +10,7 @@ import { ReferralDetailsComponent } from "../referraldetails/referraldetails.com
     CommonModule,
     RouterModule.forChild([
       {path: '', component: ReferralsComponent},
-      {path: 'referrals/:id', component: ReferralDetailsComponent}
+      {path: ':id', component: ReferralDetailsComponent}
     ]),
   ],
   declarations: [ReferralsComponent, ReferralDetailsComponent]
