@@ -1,0 +1,35 @@
+<div *ngIf="!unauthorized">
+  <div class="container-fluid full-width-container value-added-detail-page">
+    <div class="table-responsive pmd-card pmd-z-depth">
+      <table class="table table-mc-red pmd-table">
+        <thead>
+        <tr>
+          <th>S/N</th>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Referral Count</th>
+          <th>Expand</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users; let i = index" id="{{user._id}}">
+          <td>{{i + 1}}</td>
+          <td data-title="User ID">{{user._id}}</td>
+          <td data-title="Username">{{user.username}}</td>
+          <td data-title="User Email">{{user.email}}</td>
+          <td data-title="Referral Count">{{user.referrals.length}}</td>
+          <td>
+            <button
+              class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm child-table-expand direct-expand">
+              <i class="material-icons md-dark pmd-sm"></i>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<h1 *ngIf="unauthorized"> Unauthorized User </h1>
+<h1 *ngIf="servererror"> Server Error </h1>

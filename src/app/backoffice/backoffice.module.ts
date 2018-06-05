@@ -22,6 +22,7 @@ import { ProfileComponent } from './profile/profile.component';
           {path: 'setuptwofa', loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'},
           {path: 'comingsoon', loadChildren: './comingsoon/comingsoon.module#ComingsoonModule'},
           {path: 'myreferrals', loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'},
+          {path: 'referrals', loadChildren: './referrals/referrals.module#ReferralsModule'},
           {path: 'changepassword', loadChildren: './changepassword/changepassword.module#ChangepasswordModule'},
           {path: 'users', loadChildren: './user/user.module#UserModule'}
           // { path: 'dashboard', loadChildren: 'app/backoffice/dashboard/dashboard.module#DashboardModule' },
