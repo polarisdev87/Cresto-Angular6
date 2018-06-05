@@ -5,5 +5,11 @@ type Env = {
        url: string,
        prefix: string
      }
+  },
+  facebookConfig: {
+    appId: string
+  },
+  googleConfig: {
+    appId: string
   }
 };
