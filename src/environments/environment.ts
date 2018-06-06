@@ -4,13 +4,13 @@ export const environment: Env = {
     api: {
       url: 'http://localhost:8090',
       prefix: ''
-     }
+    }
   },
   cresttoken: {
     api: {
       url: 'http://wallet.cresttoken.com/api',
       prefix: ''
-     }
+    }
   },
   facebookConfig: {
     appId: '638930499778589'

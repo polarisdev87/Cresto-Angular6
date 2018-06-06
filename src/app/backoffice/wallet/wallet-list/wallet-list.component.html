@@ -1,0 +1,30 @@
+<div class="container-fluid full-width-container value-added-detail-page">
+  <h2>Wallets</h2>
+
+  <div class="table-responsive pmd-card pmd-z-depth">
+    <table class="table table-mc-red pmd-table table-striped">
+      <thead >
+      <tr >
+        <th >Coin</th>
+        <th >Balance</th>
+        <th >Actions</th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr class="table_row" *ngFor="let item of wallets">
+        <th class="th_coin"><img src="" alt=""><span class="coin_name">{{item.asset.code | uppercase}} </span></th>
+        <th class="text-center">{{item.balance}}</th>
+        <th>
+          <div class="theme-autorization" *ngIf="item.top_up_address">
+            <a  style="margin-right: 20px;">Deposit</a>
+            <a style="margin-right: 20px;">Withdrawal</a>
+          </div>
+          <div  *ngIf="!item.top_up_address">
+            <a  style="margin-right: 20px;">Buy</a>
+          </div>
+        </th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
