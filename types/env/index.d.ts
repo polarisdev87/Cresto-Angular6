@@ -6,6 +6,12 @@ type Env = {
        prefix: string
      }
   },
+  cresttoken: {
+    api: {
+       url: string,
+       prefix: string
+     }
+  },
   facebookConfig: {
     appId: string
   },

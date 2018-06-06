@@ -20,7 +20,7 @@ import { LocalStorageService } from './shared/services/localStorage.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AclService } from './shared/services/acl.service';
 import { ValidatorsService } from './shared/services/validators.service';
-import { DOMAIN_TOKEN, DOMAIN, PREFIX, PREFIX_TOKEN } from './config';
+import { DOMAIN_TOKEN, DOMAIN, PREFIX, PREFIX_TOKEN, CRESTOOKEN_DOMAIN, CRESTOOKEN_DOMAIN_TOKEN } from './config';
 import { AppInterceptorsService } from './shared/services/app-interceptors.service';
 import { RouterModule } from '@angular/router';
 import { AuthServiceConfig, AuthService as GoogleAuthService } from 'angular5-social-login';
@@ -85,6 +85,7 @@ import { AccessGuardService } from './shared/services/access-guard.service';
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     { provide: DOMAIN_TOKEN, useValue: DOMAIN },
     { provide: PREFIX_TOKEN, useValue: PREFIX },
+    { provide: CRESTOOKEN_DOMAIN_TOKEN, useValue: CRESTOOKEN_DOMAIN },
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true, },
     {
       provide: AuthServiceConfig,

@@ -1,16 +1,15 @@
-import { Inject, Injectable } from '@angular/core';
+import { CRESTOOKEN_DOMAIN_TOKEN } from '../../config';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from './localStorage.service';
-import { DOMAIN_TOKEN, PREFIX_TOKEN } from '../../config';
 
 @Injectable()
 export class WalletHttpService extends HttpClient {
 
   public constructor(
     _httpHandler: HttpHandler,
-    @Inject(DOMAIN_TOKEN) private _domain: string,
-    @Inject(PREFIX_TOKEN) private _prefix: string,
+    @Inject(CRESTOOKEN_DOMAIN_TOKEN) private _domain: string,
     private _localStorageService: LocalStorageService,
   ) {
     super(_httpHandler);
@@ -43,11 +42,9 @@ export class WalletHttpService extends HttpClient {
 
   // tslint:disable-next-line
   private _requestMethod<T>(url: string, body: any, method: string = 'POST', headers?: any, params?: any): Observable<HttpEvent<T>> {
-    console.log(`http://wallet.cresttoken.com/api${url}`);
-
     return this.request(new HttpRequest(
       method,
-      `http://wallet.cresttoken.com/api${url}`,
+      `${this._domain}${url}`,
       body,
       { headers, params }
     ));

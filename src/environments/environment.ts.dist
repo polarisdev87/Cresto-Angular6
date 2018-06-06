@@ -6,6 +6,12 @@ export const environment: Env = {
       prefix: ''
     }
   },
+  cresttoken: {
+    api: {
+      url: 'http://wallet.cresttoken.com/api',
+      prefix: ''
+     }
+  },
   facebookConfig: {
     appId: string
   }
