@@ -20,10 +20,12 @@ export function reducer(state: any = initialState, action: any): any {
     }
 
     case ROUNDS_SUCCESS: {
+      const data = action.payload && action.payload.rounds ? action.payload.rounds : [];
+
       return {
         ...state,
         isLoading: false,
-        data: action.payload
+        data
       };
     }
 

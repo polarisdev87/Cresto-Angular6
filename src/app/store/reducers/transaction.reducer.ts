@@ -19,10 +19,12 @@ export function reducer(state: any = initialState, action: any): any {
     }
 
     case TRANSACTION_SUCCESS: {
+      const data = action.payload && action.payload.transactions ? action.payload.transactions : [];
+
       return {
         ...state,
         isLoading: false,
-        data: action.payload
+        data
       };
     }
 

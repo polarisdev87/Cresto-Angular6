@@ -19,10 +19,12 @@ export function reducer(state: any = initialState, action: any): any {
     }
 
     case ASSETS_SUCCESS: {
+      const data = action.payload && action.payload.assets ? action.payload.assets : [];
+
       return {
         ...state,
         isLoading: false,
-        data: action.payload
+        data
       };
     }
 

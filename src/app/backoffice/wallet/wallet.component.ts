@@ -1,3 +1,4 @@
+import { getStateData } from './../../store/selectors/wallets.selector';
 import { WalletRequest, AssetsRequest, TransactionRequest } from './../../store/actions/wallets.action';
 import { getAuthUserId } from './../../store/selectors/auth.selectors';
 import { Observable } from 'rxjs';
@@ -12,7 +13,7 @@ import { filter } from 'rxjs/operators';
 })
 export class WalletComponent implements OnInit {
 
-  rounds$: Observable<any>;
+  assets$: Observable<any>;
   wallets$: Observable<any>;
   transaction$: Observable<any>;
 
@@ -21,9 +22,9 @@ export class WalletComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.rounds$ = this._store.select('rounds');
-    this.wallets$ = this._store.select('wallets');
-    this.transaction$ = this._store.select('transaction');
+    this.assets$ = this._store.select(getStateData('assets'));
+    this.wallets$ = this._store.select(getStateData('wallets'));
+    this.transaction$ = this._store.select(getStateData('transaction'));
 
     this._store.select(getAuthUserId)
     .pipe(

@@ -1,3 +1,4 @@
+import { getStateData } from './../../store/selectors/wallets.selector';
 import { switchMap, filter } from 'rxjs/operators';
 import { getAuthUserId } from './../../store/selectors/auth.selectors';
 import { WalletRequest, AssetsRequest } from './../../store/actions/wallets.action';
@@ -10,6 +11,13 @@ import { of, Observable } from 'rxjs';
   styleUrls: ['./buy.component.css']
 })
 export class BuyComponent implements OnInit {
+
+  logos = {
+    btc: 'assets/images/bitcoin.png',
+    eth: 'assets/images/ether.png',
+    cstt: 'assets/images/logo.png'
+  };
+
   assets$: Observable<any>;
   wallets$: Observable<any>;
 
@@ -18,8 +26,8 @@ export class BuyComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.assets$ = this._store.select('assets');
-    this.wallets$ = this._store.select('wallets');
+    this.assets$ = this._store.select(getStateData('assets'));
+    this.wallets$ = this._store.select(getStateData('wallets'));
 
     this._store.select(getAuthUserId)
     .pipe(
