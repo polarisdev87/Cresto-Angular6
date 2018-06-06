@@ -1,3 +1,4 @@
+import { getStateData } from './../../store/selectors/wallets.selector';
 import { WalletRequest, RoundsRequest } from './../../store/actions/wallets.action';
 import { filter } from 'rxjs/operators';
 import { getAuthUserId } from './../../store/selectors/auth.selectors';
@@ -19,8 +20,8 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.rounds$ = this._store.select('rounds');
-    this.wallets$ = this._store.select('wallets');
+    this.rounds$ = this._store.select(getStateData('rounds'));
+    this.wallets$ = this._store.select(getStateData('wallets'));
 
     this._store.select(getAuthUserId)
     .pipe(
