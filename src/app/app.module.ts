@@ -1,3 +1,5 @@
+import { WalletsService } from './shared/services/wallets.service';
+import { WalletHttpService } from './shared/services/wallet-http.service';
 import { SocialNetworkService } from './shared/services/social-network.service';
 import { SettingsService } from './shared/services/settings.service';
 import { TwoFactorService } from './shared/services/twofactor.service';
@@ -68,6 +70,8 @@ import { AccessGuardService } from './shared/services/access-guard.service';
   ],
   providers: [
     HttpService,
+    WalletHttpService,
+    WalletsService,
     AuthService,
     LocalStorageService,
     AuthGuardService,

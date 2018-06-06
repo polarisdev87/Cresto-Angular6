@@ -1,25 +1,29 @@
-import { switchMap, filter } from 'rxjs/operators';
+import { WalletRequest, AssetsRequest, TransactionRequest } from './../../store/actions/wallets.action';
 import { getAuthUserId } from './../../store/selectors/auth.selectors';
-import { WalletRequest, AssetsRequest } from './../../store/actions/wallets.action';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { of, Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 @Component({
-  selector: 'app-buy',
-  templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.css']
+  selector: 'app-wallet',
+  templateUrl: './wallet.component.html',
+  styleUrls: ['./wallet.component.css']
 })
-export class BuyComponent implements OnInit {
-  assets$: Observable<any>;
+export class WalletComponent implements OnInit {
+
+  rounds$: Observable<any>;
   wallets$: Observable<any>;
+  transaction$: Observable<any>;
 
   constructor(
     private _store: Store<StoreStates>
   ) { }
 
   ngOnInit() {
-    this.assets$ = this._store.select('assets');
+    this.rounds$ = this._store.select('rounds');
     this.wallets$ = this._store.select('wallets');
+    this.transaction$ = this._store.select('transaction');
 
     this._store.select(getAuthUserId)
     .pipe(
@@ -28,7 +32,7 @@ export class BuyComponent implements OnInit {
     .subscribe((id) => {
       this._store.dispatch(new WalletRequest(id));
       this._store.dispatch(new AssetsRequest());
+      this._store.dispatch(new TransactionRequest(id));
     });
   }
-
 }

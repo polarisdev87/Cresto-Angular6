@@ -7,6 +7,10 @@ import * as fromAuthActions from '../actions';
 
 import * as fromAcl from './acl.reducer';
 import * as fromStatusPopup from './statusPopup.reducer';
+import * as fromWallets from './wallets.reducer';
+import * as fromAssets from './assets.reducer';
+import * as fromRounds from './rounds.reducer';
+import * as fromTransaction from './transaction.reducer';
 
 export interface IRouterStateUrl {
   url: string;
@@ -20,6 +24,10 @@ export interface IRootState {
   auth: AuthState;
   acl: AclState;
   statusPopup: StatusPopup;
+  wallets: any;
+  assets: any;
+  rounds: any;
+  transaction: any;
 }
 
 export const reducers: ActionReducerMap<IRootState> = {
@@ -27,6 +35,10 @@ export const reducers: ActionReducerMap<IRootState> = {
   auth: fromAuth.reducer,
   acl: fromAcl.reducer,
   statusPopup: fromStatusPopup.reducer,
+  wallets: fromWallets.reducer,
+  assets: fromAssets.reducer,
+  rounds: fromRounds.reducer,
+  transaction: fromTransaction.reducer
 };
 
 export function logoutAndClearState(reducer: ActionReducer<StoreStates>): ActionReducer<StoreStates> {
