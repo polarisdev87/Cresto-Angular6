@@ -74,6 +74,10 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
             loadChildren: './dashboard/dashboard.module#DashboardModule'
           },
           {
+            path: 'wallet',
+            loadChildren: './wallet/wallet.module#WalletModule'
+          },
+          {
             path: '**' ,
             loadChildren: './dashboard/dashboard.module#DashboardModule'
           }

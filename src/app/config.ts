@@ -6,3 +6,6 @@ export const DOMAIN_TOKEN: InjectionToken<string> = new InjectionToken(DOMAIN);
 
 export const PREFIX: string = environment.host.api.prefix;
 export const PREFIX_TOKEN: InjectionToken<string> = new InjectionToken(PREFIX);
+
+export const CRESTOOKEN_DOMAIN: string = environment.cresttoken.api.url;
+export const CRESTOOKEN_DOMAIN_TOKEN: InjectionToken<string> = new InjectionToken(CRESTOOKEN_DOMAIN);
