@@ -8,7 +8,7 @@ export const getAuthUser: MemoizedSelector<StoreStates, User | {}> = createSelec
   (state: AuthState) => state.user
 );
 
-export const getAuthUserId: MemoizedSelector<StoreStates, User | {}> = createSelector(
+export const getAuthUserId: MemoizedSelector<StoreStates, string> = createSelector(
   getAuthState,
   (state: AuthState) => (state.user as any)._id
 );

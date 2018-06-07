@@ -33,7 +33,7 @@ export class BuyComponent implements OnInit {
 
     this._store.select(getAuthUserId)
     .pipe(
-      filter((id: string | null) => Boolean(id))
+      filter((id: string) => Boolean(id))
     )
     .subscribe((id) => {
       this._store.dispatch(new WalletRequest(id));
