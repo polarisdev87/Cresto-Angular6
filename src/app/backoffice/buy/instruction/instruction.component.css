@@ -1,0 +1,58 @@
+.buytokens {
+  display: flex;
+  flex-direction: column;
+}
+
+.buytokens .container-fluid {
+  margin: 0;
+  flex: 0.5;
+}
+
+.step {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.purchase-btn {
+
+}
+
+.container-account {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%
+}
+
+.item {
+  width: 25%;
+  height: 150px;
+  background: white;
+  margin: 10px;
+}
+
+.live-rate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-form-instructions {
+  display: flex;
+}
+
+.countdown .measurements {
+  margin: 0 5px !important;
+}
+
+.countdown .measurements-text {
+  display: none !important;
+}
