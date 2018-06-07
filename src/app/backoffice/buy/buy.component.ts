@@ -11,6 +11,8 @@ import { of, Observable } from 'rxjs';
   styleUrls: ['./buy.component.css']
 })
 export class BuyComponent implements OnInit {
+  senderAddress;
+  currency;
 
   logos = {
     btc: 'assets/images/bitcoin.png',
