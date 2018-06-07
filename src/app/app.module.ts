@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
 import { AuthServiceConfig, AuthService as GoogleAuthService } from 'angular5-social-login';
 import { getAuthServiceConfigs } from './google-config';
 import { AccessGuardService } from './shared/services/access-guard.service';
-
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { AccessGuardService } from './shared/services/access-guard.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NoopAnimationsModule,
     StoreModule.forRoot(reducers, { }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
