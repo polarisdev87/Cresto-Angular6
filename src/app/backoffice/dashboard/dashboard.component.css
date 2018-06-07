@@ -6,12 +6,12 @@ aside {
   background: yellow;
 }
 
-.running {
+.ongoing {
   background: green;
   color: #fff;
 }
 
-.finished {
+.next {
   background: blue;
   color: #fff;
 }
@@ -32,7 +32,7 @@ aside {
 }
 
 .dashboard-table th {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .dashboard-table td {
