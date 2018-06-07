@@ -1,3 +1,9 @@
+import {
+  CALCULATE_SUMM_REQUEST,
+  CalculateSumRequest, CalculateSumSuccess,
+  CalculateSumFail, BUY_TOKENS_REQUEST,
+  BuyTokensRequest, BuyTokensSuccess,
+   BuyTokensFail } from './../actions/buy-token.action';
 import { WalletsService } from './../../shared/services/wallets.service';
 import {
   WALLET_REQUEST,
@@ -76,6 +82,41 @@ export class WalletsEffects {
           // tslint:disable-next-line
           console.log(err);
           return of(new TransactionLoadFail(err));
+        })
+      )),
+  );
+
+  @Effect()
+  public calculateToken$: Observable<Action> = this.actions$
+    .ofType(CALCULATE_SUMM_REQUEST).pipe(
+      map((action: CalculateSumRequest) => action.payload),
+      switchMap((data: CalculateTokensSum) => this._walletsService.calculateTokens(data).pipe(
+        map((res: TokenPrice) => new CalculateSumSuccess(res.price)),
+        catchError((err: Error) => {
+          // tslint:disable-next-line
+          console.log(err);
+          return of(new CalculateSumFail(err));
+        })
+      )),
+  );
+
+  @Effect()
+  public buyTokens$: Observable<Action> = this.actions$
+    .ofType(BUY_TOKENS_REQUEST).pipe(
+      map((action: BuyTokensRequest) => action.payload),
+      switchMap((data: CalculateTokensSum) => this._walletsService.buyTokens(data).pipe(
+        map((res: any) => {
+          console.log(res);
+          // TODO thats becouse of API data convention has different data format
+          if (!res) {
+            return new BuyTokensFail(res);
+          }
+          return new BuyTokensSuccess(res);
+        }),
+        catchError((err: Error) => {
+          // tslint:disable-next-line
+          console.log(err);
+          return of(new BuyTokensFail(err));
         })
       )),
   );

@@ -1,26 +1,36 @@
-import { WalletHttpService } from './wallet-http.service';
 import { Observable } from 'rxjs';
+import { WalletHttpService } from './wallet-http.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class WalletsService {
 
-  public constructor(private _http: WalletHttpService) { }
+  constructor(private _http: WalletHttpService) { }
 
-  public getUserWallets(userId: string): Observable<any> {
+  getUserWallets(userId: string): Observable<any> {
     return this._http.authorizedRequest(`/user/${userId}/wallets`, '', 'GET');
   }
 
-  public assets(): Observable<any> {
+  assets(): Observable<any> {
     return this._http.authorizedRequest(`/assets`, '', 'GET');
   }
 
-  public transaction(userId: string): Observable<User> {
+  transaction(userId: string): Observable<User> {
     return this._http.authorizedRequest(`/user/${userId}/wallets/transactions`, '', 'GET');
   }
 
-  public rounds(): Observable<User> {
+  rounds(): Observable<User> {
     return this._http.authorizedRequest(`/rounds`, '', 'GET');
+  }
+
+  calculateTokens(data: CalculateTokensSum): Observable<TokenPrice> {
+    const {quote_asset_id, amount} = data;
+    return this._http.authorizedRequest(`/user/${data.userId}/wallets/calculate_price`, { quote_asset_id, amount }, 'POST');
+  }
+
+  buyTokens(data: CalculateTokensSum): Observable<any> {
+    const {quote_asset_id, amount} = data;
+    return this._http.authorizedRequest(`/user/${data.userId}/wallets/buy`, { quote_asset_id, amount }, 'POST');
   }
 
 
