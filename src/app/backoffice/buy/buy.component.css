@@ -14,7 +14,35 @@
 }
 
 .purchase-btn {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+.purchase-btn:last-child {
+  margin-right: 0;
+}
 
+.purchase-btn button {
+  display: inline-block;
+  margin-right: 20px;
+  background-color: #259b24;
+  min-width: 88px;
+  padding: 5px 14px;
+  color: rgba(255, 255, 255, .87);
+  border: 0;
+  text-transform: uppercase;
+}
+
+.purchase-btn button:hover {
+  background-color: #0a8f08;
+}
+
+.purchase-btn button:focus {
+  outline: 0;
+}
+
+.purchase-btn button:last-child {
+  margin-right: 0;
 }
 
 .container-account {

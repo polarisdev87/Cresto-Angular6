@@ -5,6 +5,9 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from "@angular/forms";
 import { InstructionComponent } from './instruction/instruction.component';
 import { BuyTokenFormComponent } from './buy-token-form/buy-token-form.component';
+import { UiModule } from "../../shared/module/ui/ui.module";
+import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
+
 
 @NgModule({
   imports: [
@@ -13,7 +16,9 @@ import { BuyTokenFormComponent } from './buy-token-form/buy-token-form.component
     RouterModule.forChild([
       {path: '', component: BuyComponent}
     ]),
+    UiModule
   ],
-  declarations: [BuyComponent, InstructionComponent, BuyTokenFormComponent]
+  declarations: [BuyComponent, InstructionComponent, BuyTokenFormComponent, DepositPopupComponent],
+  entryComponents: [DepositPopupComponent]
 })
 export class BuyModule { }

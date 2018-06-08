@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from "@angular/material";
 
 @Component({
@@ -7,11 +7,14 @@ import { MAT_DIALOG_DATA } from "@angular/material";
   styleUrls: ['./deposit-modal.component.css']
 })
 export class DepositModalComponent implements OnInit {
+  @Input()
+  wallets;
+
   address;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-
   }
 
   ngOnInit() {

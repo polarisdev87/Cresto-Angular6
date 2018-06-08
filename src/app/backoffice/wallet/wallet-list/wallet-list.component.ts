@@ -22,11 +22,7 @@ export class WalletListComponent {
     })
   }
 
-  openWithdrawalPopup(test) {
-    this.dialog.open(WithdrawalModalComponent, {
-      data: {
-        test: 'asdasdsdsdasd'
-      }
-    })
+  openWithdrawalPopup() {
+    this.dialog.open(WithdrawalModalComponent)
   }
 }
