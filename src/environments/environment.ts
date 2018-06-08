@@ -16,6 +16,7 @@ export const environment: Env = {
     appId: '638930499778589'
   },
   googleConfig: {
-    appId: '49469185526-hi4ofpunkdk6qsr2nglv0vt6kkbskgdd.apps.googleusercontent.com'
+    appId: '49469185526-hi4ofpunkdk6qsr2nglv0vt6kkbskgdd.apps.googleusercontent.com',
+    capthca: '6Lcl_l0UAAAAAFgvTjXTbwYPaX2kQvcnxXm_iMqK'
   }
 };
