@@ -20,8 +20,6 @@ import {
   TransactionLoadSuccess,
   TRANSACTION_REQUEST
 } from './../actions/wallets.action';
-import { AclService } from '../../shared/services/acl.service';
-import * as AclActions from '../actions';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';

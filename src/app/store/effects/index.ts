@@ -1,3 +1,4 @@
+import { WithdrawalEffects } from './withdrawal.effect';
 import { WalletsEffects } from './wallets.effect';
 import { SocialNetworkEffects } from './social-network.effect';
 import { PersonalInfoEffects } from './personal-info.effects';
@@ -16,6 +17,7 @@ export const effects = [
   PersonalInfoEffects,
   TwoFactorEffects,
   SocialNetworkEffects,
-  WalletsEffects
+  WalletsEffects,
+  WithdrawalEffects,
 ];
 

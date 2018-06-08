@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from "@angular/material";
-import { DepositModalComponent } from "./deposit-modal/deposit-modal.component";
-import { WithdrawalModalComponent } from "./withdrawal-modal/withdrawal-modal.component";
+import { MatDialog } from '@angular/material';
+import { DepositModalComponent } from './deposit-modal/deposit-modal.component';
+import { WithdrawalModalComponent } from './withdrawal-modal/withdrawal-modal.component';
 
 @Component({
   selector: 'app-wallet-list',
@@ -14,15 +14,17 @@ export class WalletListComponent {
 
   constructor(
     public dialog: MatDialog
-  ){}
+  ) {}
 
   openDepositPopup(address) {
     this.dialog.open(DepositModalComponent, {
      data: {address}
-    })
+    });
   }
 
-  openWithdrawalPopup() {
-    this.dialog.open(WithdrawalModalComponent)
+  openWithdrawalPopup(wallet_id: string) {
+    this.dialog.open(WithdrawalModalComponent, {
+      data: { wallet_id}
+    });
   }
 }

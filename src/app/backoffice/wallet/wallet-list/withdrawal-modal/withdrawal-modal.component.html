@@ -1,19 +1,20 @@
-<div class="modal-container">
+<div class="modal-container" [formGroup]="withdrawalForm">
   <h3 class="modal-title">Withdrawal funds</h3>
   <div class="modal-body">
     <label>
       <span class="label-title">Wallet address</span>
-      <input type="text">
+      <input type="text" formControlName="cstt_address">
     </label>
     <label>
       <span class="label-title">Amount</span>
-      <input type="text">
+      <input type="text" formControlName="amount">
     </label>
   </div>
   <div class="btn-wr">
-    <button>Send</button>
+    <button (click)="withdrawal()" [disabled]="withdrawalForm.invalid">Send</button>
   </div>
-  <span>Fee:</span>
-  <span>Available:</span>
-  <span>Total:</span>
+  <span>Fee: {{withdrawalData.fee }}</span>
+  <span>Available: {{withdrawalData.available }}</span>
+  <span>Total: {{withdrawalData.total }}</span>
+  <div>{{error$ | async}}</div>
 </div>

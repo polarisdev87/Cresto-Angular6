@@ -12,6 +12,7 @@ import * as fromAssets from './assets.reducer';
 import * as fromRounds from './rounds.reducer';
 import * as fromTransaction from './transaction.reducer';
 import * as fromBuyToken from './buy-tokens.reducer';
+import * as fromWithdrawal from './withdrawal.reducer';
 
 export interface IRouterStateUrl {
   url: string;
@@ -30,6 +31,7 @@ export interface IRootState {
   rounds: any;
   transaction: any;
   tokenPurchase: any;
+  withdrawal: any;
 }
 
 export const reducers: ActionReducerMap<IRootState> = {
@@ -42,6 +44,7 @@ export const reducers: ActionReducerMap<IRootState> = {
   rounds: fromRounds.reducer,
   transaction: fromTransaction.reducer,
   tokenPurchase: fromBuyToken.reducer,
+  withdrawal: fromWithdrawal.reducer,
 };
 
 export function logoutAndClearState(reducer: ActionReducer<StoreStates>): ActionReducer<StoreStates> {
