@@ -30,7 +30,8 @@ export class SignupComponent implements OnInit {
       profile: this._fb.group({
         firstname: ['', Validators.required],
         lastname:  ['', Validators.required],
-      })
+      }),
+      recaptchaReactive: [null, Validators.required]
     },
     {
       validator: this._validatorsService.checkPasswordsMatch

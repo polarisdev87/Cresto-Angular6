@@ -27,6 +27,7 @@ import { AuthServiceConfig, AuthService as GoogleAuthService } from 'angular5-so
 import { getAuthServiceConfigs } from './google-config';
 import { AccessGuardService } from './shared/services/access-guard.service';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
+    RecaptchaModule.forRoot(),
     StoreModule.forRoot(reducers, { }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
@@ -91,7 +93,11 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
-    }
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: { siteKey: environment.googleConfig.capthca } as RecaptchaSettings,
+    },
   ],
   bootstrap: [AppComponent]
 })
