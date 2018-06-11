@@ -19,7 +19,7 @@
             <a (click)="openWithdrawalPopup(item.id)">Withdrawal</a>
           </div>
           <div *ngIf="!item.top_up_address">
-            <a [routerLink]="['buy']">Buy</a>
+            <a [routerLink]="['/buy']">Buy</a>
           </div>
         </th>
       </tr>
