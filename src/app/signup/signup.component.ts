@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { FacebookLogin, GoogleLogin } from './../store/actions/social-network.action';
 import { ValidatorsService } from './../shared/services/validators.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,16 +18,20 @@ export class SignupComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _store: Store<StoreStates>,
-    private _validatorsService: ValidatorsService
+    private _validatorsService: ValidatorsService,
+    private _route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    console.log(this._route.snapshot.queryParams['referral']);
+
+    const referralLink: string = this._route.snapshot.queryParams['referral'] || '';
     this.form = this._fb.group({
       username: ['', Validators.required],
       email: ['', Validators.email],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      referredBy: [''],
+      referredBy: [referralLink],
       profile: this._fb.group({
         firstname: ['', Validators.required],
         lastname:  ['', Validators.required],

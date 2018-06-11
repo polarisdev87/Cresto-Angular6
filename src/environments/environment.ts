@@ -18,5 +18,6 @@ export const environment: Env = {
   googleConfig: {
     appId: '49469185526-hi4ofpunkdk6qsr2nglv0vt6kkbskgdd.apps.googleusercontent.com',
     capthca: '6Lcl_l0UAAAAAFgvTjXTbwYPaX2kQvcnxXm_iMqK'
-  }
+  },
+  domain: 'http://localhost:4200',
 };
