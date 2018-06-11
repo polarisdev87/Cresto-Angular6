@@ -18,5 +18,6 @@ type Env = {
   googleConfig: {
     appId: string,
     capthca: string
-  }
+  },
+  domain: string,
 };
