@@ -23,8 +23,6 @@ export class SignupComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this._route.snapshot.queryParams['referral']);
-
     const referralLink: string = this._route.snapshot.queryParams['referral'] || '';
     this.form = this._fb.group({
       username: ['', Validators.required],
