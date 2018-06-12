@@ -31,6 +31,10 @@ Updated	 :	03.30.2018
 @font-face { font-family: 'Poppins'; src: url("../../assets/fonts/Poppins-Medium.eot"); src: local("Poppins Medium"), local("Poppins-Medium"), url("../../assets/fonts/Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Poppins-Medium.woff2") format("woff2"), url("../../assets/fonts/Poppins-Medium.woff") format("woff"), url("../../assets/fonts/Poppins-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; }
 @font-face { font-family: 'Poppins'; src: url("../../assets/fonts/Poppins-Regular.eot"); src: local("Poppins Regular"), local("Poppins-Regular"), url("../../assets/fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Poppins-Regular.woff2") format("woff2"), url("../../assets/fonts/Poppins-Regular.woff") format("woff"), url("../../assets/fonts/Poppins-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 /*! 02.0 - RESET */
+.body-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
 .body-wrapper { font-family: "Poppins", sans-serif; color: #3c3c3c; font-size: 15px; line-height: 1.86; font-weight: 300; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; }
 
 .body-wrapper { color: #fff; background: #10122d; }
@@ -2033,7 +2037,7 @@ a:hover, a:focus, a:active { color: #8255fd; }
 .theme-light .site-header.has-fixed .brand-name { color: #00e65c; }
 .theme-light .site-header.has-fixed .navbar-nav > li:hover a { color: #00e65c; }
 .theme-light .site-header.has-fixed .navbar-nav > li > a { color: #fff; }
-.theme-light .site-header.has-fixed .navbar-nav > li > a.nav-link.active { color: #00e65c; }
+.theme-light .site-header.has-fixed .navbar-nav > .nav-item.active > a { color: #00e65c; }
 
 .theme-light .navbar .navbar-nav .dropdown-menu .dropdown-item {color: #fff;}
 .theme-light .navbar .navbar-nav .dropdown-menu .dropdown-item:hover { color: #05386B;; }
@@ -2069,7 +2073,7 @@ a:hover, a:focus, a:active { color: #8255fd; }
 }
 
 .btn::before {
-  background-image: -webkit-linear-gradient(left, #00ff7f 0%, #05386B 100%) !important;
+  background-image: -webkit-linear-gradient(to left, #00ff7f 0%, #05386B 100%) !important;
   background-image: linear-gradient(to right, #00ff7f 0%, #05386B 100%) !important;
 }
 
@@ -2117,7 +2121,7 @@ p.color-secondary {  color: white; }
 /* Roadmap colour */
 .theme-light .single-roadmap::before {
 
-  background-image: -webkit-linear-gradient(top, #05386B 0%, #00ff7f 100%);
+  background-image: -webkit-linear-gradient(to top, #05386B 0%, #00ff7f 100%);
   background-image: linear-gradient(to bottom, #05386B 0%, #00ff7f 100%) ;
 
 }
@@ -2403,3 +2407,4 @@ p {
   background-image: linear-gradient(to top left, rgba(5, 56, 107,0.65) 0%,rgba(5, 56, 107,0.65) 40%, rgba(0, 255, 127,0.65) 100%) !important;
   opacity: 1;
 }
+
