@@ -2,7 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FacebookLogin, GoogleLogin } from './../store/actions/social-network.action';
 import { ValidatorsService } from './../shared/services/validators.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { SignUp } from '../store/actions';
 
@@ -19,27 +19,28 @@ export class SignupComponent implements OnInit {
     private _fb: FormBuilder,
     private _store: Store<StoreStates>,
     private _validatorsService: ValidatorsService,
-    private _route: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-    const referralLink: string = this._route.snapshot.queryParams['referral'] || '';
-    this.form = this._fb.group({
-      username: ['', Validators.required],
-      email: ['', Validators.email],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-      referredBy: [referralLink],
-      profile: this._fb.group({
-        firstname: ['', Validators.required],
-        lastname:  ['', Validators.required],
-      }),
-      recaptchaReactive: [null, Validators.required]
-    },
-    {
-      validator: this._validatorsService.checkPasswordsMatch
-    }
-  );
+    this._store.select('referral').subscribe((ref: string) => {
+      this.form = this._fb.group({
+          username: ['', Validators.required],
+          email: ['', Validators.email],
+          password: ['', Validators.required],
+          confirmPassword: ['', Validators.required],
+          referredBy: [ref],
+          profile: this._fb.group({
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+          }),
+          recaptchaReactive: [null, Validators.required]
+        },
+        {
+          validator: this._validatorsService.checkPasswordsMatch
+        }
+      );
+    });
   }
 
   public save(user: User): void {
@@ -53,5 +54,4 @@ export class SignupComponent implements OnInit {
   googleLogin() {
     this._store.dispatch(new GoogleLogin());
   }
-
 }
