@@ -6,7 +6,7 @@ import { TwoFactorService } from './shared/services/twofactor.service';
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { effects } from './store/effects';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
@@ -31,7 +31,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,8 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
     RouterModule.forRoot([
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+      { path: '', loadChildren: './landing/landing.module#LandingModule'},
       {
         path: 'login',
         loadChildren: './login/login.module#LoginModule',
@@ -51,7 +52,8 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
       {
         path: 'signup',
         loadChildren: './signup/signup.module#SignupModule',
-        canLoad: [AuthGuardService] },
+        canLoad: [AuthGuardService]
+      },
       {
         path: 'reset-password',
         loadChildren: './reset-password/reset-password.module#ResetPasswordModule',

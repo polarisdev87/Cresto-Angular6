@@ -1,6 +1,7 @@
 import { environment } from '../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { RefferralsService } from './referrals.service';
+import { Store } from "@ngrx/store";
 
 @Component({
   selector: 'app-myreferrals',
@@ -14,10 +15,14 @@ export class MyreferralsComponent implements OnInit {
   referrals = [];
   referalLink;
 
-  constructor(private _referralsService: RefferralsService) {}
+  constructor (
+    private _store: Store<StoreStates>
+  ) {
+  }
+
   ngOnInit() {
-    this._referralsService.getReferralLink().subscribe((referalLink: string) => {
-      this.referalLink = `${environment.domain}/signup?referral=${referalLink}`;
+    this._store.select('referral').subscribe((ref: string) => {
+      this.referalLink = `${environment.domain}?referral=${ref}`;
     });
   }
 }
