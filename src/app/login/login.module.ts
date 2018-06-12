@@ -15,7 +15,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
     RecaptchaFormsModule,
     RouterModule.forChild([
       {
-        path: '', component: LoginComponent
+        path: 'login', component: LoginComponent
       }
     ])
   ],
