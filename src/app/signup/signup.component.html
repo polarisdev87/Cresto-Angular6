@@ -1,6 +1,5 @@
 <div class="logincard">
   <div class="pmd-card card-default pmd-z-depth">
-
     <div class="register-card">
       <div class="pmd-card-title card-header-border text-center">
         <div class="loginlogo">
@@ -17,17 +16,14 @@
           <button class="loginBtn loginBtn--facebook" (click)="facebookLogin()">
             Login with Facebook
           </button>
-
           <button class="loginBtn loginBtn--google" (click)="googleLogin()">
             Login with Google
           </button>
-
         </div>
         <div class="pmd-card-body">
-
           <div formGroupName="profile">
             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-              <label for="inputError1" class="control-label pmd-input-group-label">Firstname</label>
+              <label class="control-label pmd-input-group-label">Firstname</label>
               <div class="input-group">
                 <div class="input-group-addon">
                   <i class="material-icons md-dark pmd-sm">perm_identity</i>
@@ -35,9 +31,8 @@
                 <input type="text" formControlName="firstname" class="form-control" id="usernameInput">
               </div>
             </div>
-
             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-              <label for="inputError1" class="control-label pmd-input-group-label">Lastname</label>
+              <label class="control-label pmd-input-group-label">Lastname</label>
               <div class="input-group">
                 <div class="input-group-addon">
                   <i class="material-icons md-dark pmd-sm">perm_identity</i>
@@ -48,7 +43,7 @@
           </div>
 
           <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Username</label>
+            <label class="control-label pmd-input-group-label">Username</label>
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="material-icons md-dark pmd-sm">perm_identity</i>
@@ -58,7 +53,7 @@
           </div>
 
           <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Email address</label>
+            <label class="control-label pmd-input-group-label">Email address</label>
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="material-icons md-dark pmd-sm">email</i>
@@ -68,7 +63,7 @@
           </div>
 
           <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
+            <label class="control-label pmd-input-group-label">Password</label>
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="material-icons md-dark pmd-sm">lock_outline</i>
@@ -78,7 +73,7 @@
           </div>
 
           <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Confirm Password</label>
+            <label class="control-label pmd-input-group-label">Confirm Password</label>
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="material-icons md-dark pmd-sm">lock_outline</i>
@@ -87,8 +82,12 @@
             </div>
           </div>
 
+
+
+
+
           <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Referral Code</label>
+            <label class="control-label pmd-input-group-label">Referral Code</label>
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="material-icons md-dark pmd-sm">group</i>
@@ -97,10 +96,10 @@
             </div>
           </div>
 
+
+
           <re-captcha formControlName="recaptchaReactive"></re-captcha>
         </div>
-
-
         <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
           <button [disabled]="form.invalid" class="btn pmd-ripple-effect btn-success btn-block">Sign Up</button>
           <p class="redirection-link">Already have an account?
@@ -108,6 +107,5 @@
         </div>
       </form>
     </div>
-
   </div>
 </div>

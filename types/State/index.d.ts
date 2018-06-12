@@ -39,3 +39,10 @@ type AuthState = {
 
 type AclState = Acl | {};
 type StatusPopup = any;
+
+type WalletState = {
+  isLoading: boolean;
+  isLoaded: boolean;
+  data: WalletData[],
+  generatedAddress: string
+}

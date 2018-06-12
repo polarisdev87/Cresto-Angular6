@@ -13,6 +13,8 @@ import * as fromRounds from './rounds.reducer';
 import * as fromTransaction from './transaction.reducer';
 import * as fromBuyToken from './buy-tokens.reducer';
 import * as fromWithdrawal from './withdrawal.reducer';
+import * as fromReferral from './referal.reducer';
+
 
 export interface IRouterStateUrl {
   url: string;
@@ -26,12 +28,13 @@ export interface IRootState {
   auth: AuthState;
   acl: AclState;
   statusPopup: StatusPopup;
-  wallets: any;
+  wallets: WalletState;
   assets: any;
   rounds: any;
   transaction: any;
   tokenPurchase: any;
   withdrawal: any;
+  referral: any;
 }
 
 export const reducers: ActionReducerMap<IRootState> = {
@@ -45,6 +48,7 @@ export const reducers: ActionReducerMap<IRootState> = {
   transaction: fromTransaction.reducer,
   tokenPurchase: fromBuyToken.reducer,
   withdrawal: fromWithdrawal.reducer,
+  referral: fromReferral.reducer
 };
 
 export function logoutAndClearState(reducer: ActionReducer<StoreStates>): ActionReducer<StoreStates> {

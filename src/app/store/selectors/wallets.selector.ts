@@ -5,3 +5,8 @@ export const getStateData = (stateName: string): MemoizedSelector<object, any> =
   (state: any) => state.data
 );
 
+export const getGeneratedWalletAddress = createSelector(
+  createFeatureSelector<WalletState>('wallets'),
+  (state: WalletState) => state.generatedAddress
+);
+

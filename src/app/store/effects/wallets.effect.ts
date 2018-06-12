@@ -18,7 +18,11 @@ import {
   TransactionRequest,
   TransactionLoadFail,
   TransactionLoadSuccess,
-  TRANSACTION_REQUEST
+  TRANSACTION_REQUEST,
+  GENERATE_WALLET_ADDRESS_REQUEST,
+  GenerateWalletAddressRequest,
+  GenerateWalletAddressSuccess,
+  GenerateWalletAddressFail
 } from './../actions/wallets.action';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
@@ -115,6 +119,20 @@ export class WalletsEffects {
           // tslint:disable-next-line
           console.log(err);
           return of(new BuyTokensFail(err));
+        })
+      )),
+  );
+
+  @Effect()
+  public generateWalletAddress$: Observable<Action> = this.actions$
+    .ofType(GENERATE_WALLET_ADDRESS_REQUEST).pipe(
+      map((action: GenerateWalletAddressRequest) => action.payload),
+      switchMap((data: GenerateWalletAddress) => this._walletsService.generateWalletAddress(data).pipe(
+        map((res: {address: string}) => new GenerateWalletAddressSuccess({...data, ...res})),
+        catchError((err: Error) => {
+          // tslint:disable-next-line
+          console.log(err);
+          return of(new GenerateWalletAddressFail(err));
         })
       )),
   );

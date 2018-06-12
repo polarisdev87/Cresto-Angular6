@@ -14,10 +14,14 @@ export class MyreferralsComponent implements OnInit {
   referrals = [];
   referalLink;
 
-  constructor(private _referralsService: RefferralsService) {}
+  constructor (
+    private _referralsService: RefferralsService
+  ) {
+  }
+
   ngOnInit() {
     this._referralsService.getReferralLink().subscribe((referalLink: string) => {
-      this.referalLink = `${environment.domain}/signup?referral=${referalLink}`;
+      this.referalLink = `${environment.domain}?ref=${referalLink}`;
     });
   }
 }
