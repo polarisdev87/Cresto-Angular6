@@ -21,8 +21,8 @@ export class MyreferralsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._store.select('referral').subscribe((ref: string) => {
-      this.referalLink = `${environment.domain}?referral=${ref}`;
+    this._referralsService.getReferralLink().subscribe((referalLink: string) => {
+      this.referalLink = `${environment.domain}?ref=${referalLink}`;
     });
   }
 }
