@@ -26,3 +26,19 @@ type WithdrawalBody = {
   amount: number,
   cstt_address: number
 }
+
+type GenerateWalletAddress = {
+  userId: string,
+  wallet_id: number,
+  address?: string,
+}
+
+
+type WalletData = {
+  id: number
+  code: string
+  chain: string
+  balance: number
+  usd_balance: number
+  top_up_address: string
+}

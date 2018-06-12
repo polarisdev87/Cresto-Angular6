@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
 export class WalletComponent implements OnInit {
 
   assets$: Observable<any>;
-  wallets$: Observable<any>;
+  wallets$: Observable<WalletData[]>;
   transaction$: Observable<any>;
 
   constructor(

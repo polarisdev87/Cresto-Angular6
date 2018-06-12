@@ -17,7 +17,7 @@
           <!-- TODO generate if item.top_up_address not exist when open openDepositPopup -->
           <!-- check item.asset.code !== 'cstt' -->
           <div class="theme-autorization" *ngIf="item.asset.code !== 'cstt'">
-            <a (click)="openDepositPopup(item.top_up_address)">Deposit</a>
+            <a (click)="openDepositPopup(item.top_up_address, item.id)">Deposit</a>
             <a (click)="openWithdrawalPopup(item.id)">Withdrawal</a>
           </div>
           <div *ngIf="item.asset.code === 'cstt'">

@@ -28,7 +28,7 @@ export interface IRootState {
   auth: AuthState;
   acl: AclState;
   statusPopup: StatusPopup;
-  wallets: any;
+  wallets: WalletState;
   assets: any;
   rounds: any;
   transaction: any;
