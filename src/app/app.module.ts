@@ -64,6 +64,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
         loadChildren: './backoffice/backoffice.module#BackofficeModule',
         canLoad: [AuthGuardService]
       },
+      { path: ':referralHash', loadChildren: './landing/landing.module#LandingModule'},
       {
         path: '**' ,
         redirectTo: 'login'
