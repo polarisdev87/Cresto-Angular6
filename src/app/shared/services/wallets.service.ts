@@ -44,8 +44,6 @@ export class WalletsService {
   }
 
   generateWalletAddress(data: GenerateWalletAddress): Observable<{address: string}> {
-    console.log(data);
-
     return this._http.authorizedRequest(`/user/${data.userId}/wallets/${data.wallet_id}/generate_address`, '', 'POST');
   }
 }
