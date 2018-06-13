@@ -14,8 +14,8 @@ export class LandingComponent implements OnInit {
     private _store: Store<StoreStates>
   ) {}
   ngOnInit() {
-    const referralLink: string = this._activateroute.snapshot.queryParams['ref'] || '';
-    this._store.dispatch(new SetReferalLink(referralLink));
+    const referralHash: string = this._activateroute.snapshot.params['referralHash'] || '';
+    this._store.dispatch(new SetReferalLink(referralHash));
 
     const el1 = document.createElement('script');
     const el2 = document.createElement('script');

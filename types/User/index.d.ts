@@ -21,7 +21,7 @@ type User = {
   },
   topcoins: number,
   referredBy: string,
-  referrals: any[],
+  referralHash: string,
   isVerified: boolean,
   twofactorEnabled: boolean,
   verificationToken: string,
