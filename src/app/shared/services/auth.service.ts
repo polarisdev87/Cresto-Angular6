@@ -55,4 +55,8 @@ export class AuthService {
     return of(true);
   }
 
+  public recendVerificationEmail(username: string): Observable<any> {
+    return this._http.nonAuthorizedRequest(`/email/verification/resend/${username}`, '', 'GET');
+  }
+
 }
