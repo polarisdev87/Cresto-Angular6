@@ -1,0 +1,140 @@
+@import "../../../assets/css/variables"
+
+header
+  width: 100%
+  background: url("../../../../src/assets/images/header-bg.jpg") no-repeat top center/cover
+  padding-top: 125px
+  padding-bottom: 115px
+.top-header-wrapper
+  padding: 20px 0
+  width: 100%
+  display: flex
+  position: absolute
+  top: 0
+.logo-wrapper
+  min-width: 255px
+  display: flex
+.logo
+  display: inline-flex
+  align-items: center
+  width: 100%
+  &__images
+    margin-right: 10px
+    max-width: 85px
+    max-height: 85px
+  &__text
+    display: inline-flex
+    font-size: 25px
+    color: $green
+    font-family: $montserrat-bold
+
+.navigation-wrapper
+  width: 100%
+  height: 100%
+  display: inline-flex
+  align-items: center
+  flex-direction: row
+  justify-content: flex-end
+
+.main-nav
+  display: inline-flex
+  align-items: center
+  flex-direction: row
+  font-family: $montserrat-regular
+  li
+    display: inline-flex
+    margin-left: 35px
+    &:first-child
+      margin-left: 0
+    a
+      display: inline-flex
+      color: $white
+      cursor: pointer
+      font-size: 16px
+      transition: $transition
+      &:hover,
+      &.active
+        color: $green
+    &.whitepaper
+      a
+        font-family: $montserrat-bold
+
+.header-btn-wrapper
+  margin-left: 45px
+  a
+    margin-right: 5px
+    &:last-child
+      margin-right: 0
+.btn-green
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  background: $green
+  color: $black
+  border-radius: 30px
+  padding: 0 30px
+  min-height: 43px
+  text-transform: uppercase
+  font-family: $montserrat-bold
+  font-size: 15px
+  border: 1px solid transparent
+  transition: $transition
+  &:hover
+    background: transparent
+    color: $green
+    border: 1px solid $green
+
+
+.banner
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  max-width: 850px
+  margin: 80px auto 0 auto
+  h1
+    color: $white
+    font-size: 48px
+    font-family: $montserrat-bold
+    line-height: 1.3
+    margin-bottom: 5px
+    span
+      display: inline-block
+      color: $green
+  .note
+    display: inline-block
+    color: $white
+    font-size: 16px
+    font-family: $montserrat-regular
+    margin-bottom: 40px
+
+.timer-wrapper
+  margin-bottom: 45px
+  padding-bottom: 40px
+  p
+    font-family: $montserrat-light
+    color: $white
+    font-size: 32px
+    margin-bottom: 40px
+
+.banner-btn
+  color: $black
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  background: $yellow
+  font-size: 26px
+  height: 67px
+  width: 100%
+  max-width: 340px
+  text-transform: uppercase
+  font-family: $montserrat-extraBold
+  border-radius: 35px
+  cursor: pointer
+  border: 1px solid transparent
+  transition: $transition
+  &:hover
+    background: transparent
+    border: 1px solid $yellow
+    color: $yellow
+
