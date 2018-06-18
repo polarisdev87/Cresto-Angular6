@@ -5,6 +5,7 @@ header
   background: url("../../../../src/assets/images/header-bg.jpg") no-repeat top center/cover
   padding-top: 125px
   padding-bottom: 115px
+  position: relative
 .top-header-wrapper
   padding: 20px 0
   width: 100%
@@ -92,7 +93,22 @@ header
   align-items: center
   max-width: 850px
   margin: 80px auto 0 auto
+  position: relative
+  z-index: 10
+  &:before
+    content: ''
+    display: inline-block
+    background: radial-gradient(circle, rgba(29, 29, 29, 1) 40%, rgba(29, 29, 29, 0) 70%)
+    width: 800px
+    height: 800px
+    border-radius: 50%
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: -1
   h1
+
     color: $white
     font-size: 48px
     font-family: $montserrat-bold
@@ -137,4 +153,13 @@ header
     background: transparent
     border: 1px solid $yellow
     color: $yellow
+
+#particles-js
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  top: 0
+  bottom: 0
+  width: 100%
+  max-width: 1250px
 
