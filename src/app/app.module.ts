@@ -46,6 +46,14 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
 
       { path: '', loadChildren: './landing/landing.module#LandingModule'},
       {
+        path: 'email/verification/check/:hash',
+        loadChildren: './email-verification/email-verification.module#EmailVerificationModule',
+      },
+      {
+        path: 'email/verification',
+        loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule',
+      },
+      {
         path: 'login',
         loadChildren: './login/login.module#LoginModule',
         canLoad: [AuthGuardService]

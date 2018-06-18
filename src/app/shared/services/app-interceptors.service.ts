@@ -40,6 +40,9 @@ export class AppInterceptorsService implements HttpInterceptor {
           if (err.status === 403 || err.status === 401) {
             this._store.dispatch(new Logout());
           }
+          if (err.status === 402) {
+            this._store.dispatch(new Go({path: ['email', 'verification'], query: { username: (err as any).error.data.username }}));
+          }
           return throwError(err);
         })
       );
