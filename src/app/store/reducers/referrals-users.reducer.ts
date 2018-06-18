@@ -3,7 +3,7 @@ import { GET_REFERRAL_USERS, GET_REFERRAL_USERS_FAIL, GET_REFERRAL_USERS_SUCCESS
 export const initialState: any = {
   isLoading: false,
   isLoaded: false,
-  user: []
+  data: []
 };
 
 export function reducer(state: any = initialState, action: any): any {
@@ -11,8 +11,7 @@ export function reducer(state: any = initialState, action: any): any {
     case GET_REFERRAL_USERS: {
       return {
         ...state,
-        isLoading: true,
-        isLoaded: false
+        isLoading: true
       };
     }
 
@@ -20,7 +19,7 @@ export function reducer(state: any = initialState, action: any): any {
       return {
         ...state,
         isLoading: false,
-        user: []
+        data: action.payload
       };
     }
     case GET_REFERRAL_USERS_FAIL: {
