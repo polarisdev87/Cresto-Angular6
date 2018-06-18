@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import { HeaderComponent } from './header/header.component';
 import { WhatTokenComponent } from './what-token/what-token.component';
 import { WhyTokenComponent } from './why-token/why-token.component';
+import { TokenSaleComponent } from './token-sale/token-sale.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { WhyTokenComponent } from './why-token/why-token.component';
       }
     ])
   ],
-  declarations: [LandingComponent, HeaderComponent, WhatTokenComponent, WhyTokenComponent],
+  declarations: [LandingComponent, HeaderComponent, WhatTokenComponent, WhyTokenComponent, TokenSaleComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class LandingModule {
