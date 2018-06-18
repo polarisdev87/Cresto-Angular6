@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {LandingComponent} from './landing.component';
 import {RouterModule} from "@angular/router";
 import { HeaderComponent } from './header/header.component';
+import { WhatTokenComponent } from './what-token/what-token.component';
+import { WhyTokenComponent } from './why-token/why-token.component';
 
 @NgModule({
   imports: [
@@ -13,7 +15,7 @@ import { HeaderComponent } from './header/header.component';
       }
     ])
   ],
-  declarations: [LandingComponent, HeaderComponent],
+  declarations: [LandingComponent, HeaderComponent, WhatTokenComponent, WhyTokenComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class LandingModule {
