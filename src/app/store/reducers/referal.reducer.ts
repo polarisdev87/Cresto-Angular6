@@ -1,11 +1,11 @@
-import { SET_REFERAL_LINK } from "../actions";
+import { SET_REFERAL_LINK } from '../actions';
 
 export const initialState = '';
 
 export function reducer(state: any = initialState, action: any): any {
   switch (action.type) {
     case SET_REFERAL_LINK: {
-      return action.payload
+      return action.payload;
     }
 
     default: {

@@ -1,3 +1,4 @@
+import { ReferralsService } from './shared/services/referral.service';
 import { WalletsService } from './shared/services/wallets.service';
 import { WalletHttpService } from './shared/services/wallet-http.service';
 import { SocialNetworkService } from './shared/services/social-network.service';
@@ -96,6 +97,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
     SettingsService,
     SocialNetworkService,
     GoogleAuthService,
+    ReferralsService,
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     { provide: DOMAIN_TOKEN, useValue: DOMAIN },
     { provide: PREFIX_TOKEN, useValue: PREFIX },
