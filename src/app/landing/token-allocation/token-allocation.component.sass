@@ -1,0 +1,48 @@
+@import "../landing.component"
+.token-allocation-wr
+  padding-top: 120px
+  padding-bottom: 120px
+  font-family: $montserrat-regular
+  .landing-title
+    padding-bottom: 80px
+.allocation-row
+  display: flex
+  flex-wrap: wrap
+  .allocation-cell
+    width: 50%
+    text-align: center
+    &:last-child
+      .allocation-img
+        padding-top: 4px
+        img
+          width: 84%
+          max-width: 510px
+  .allocation-title
+    font-family: $montserrat-bold
+    font-size: 24px
+    color: #032a11
+    padding-bottom: 65px
+  .allocation-img
+    position: relative
+    left: -19px
+    img
+      width: 90%
+      max-width: 540px
+
+@media only screen and (max-width: 768px)
+  .allocation-row
+    .allocation-cell
+      width: 100%
+      margin-bottom: 60px
+@media only screen and (max-width: 640px)
+  .allocation-row
+    .allocation-img
+      position: relative
+      left: -10px
+@media only screen and (max-width: 600px)
+  .token-allocation-wr,
+  .what-makes-wr
+    padding-top: 60px
+  .allocation-row
+    .allocation-title
+      padding-bottom: 25px

@@ -1,26 +1,22 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  public show: boolean = false;
-  public fixed: string = '';
+  public show = false;
+  public fixed = '';
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
-    let scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY;
+    console.log(scrollPosition);
     if ( scrollPosition > 150 ) {
       this.fixed = 'fixed';
-      return
+      return;
     }
     if (this.fixed && scrollPosition < 50) {
       this.fixed = '';

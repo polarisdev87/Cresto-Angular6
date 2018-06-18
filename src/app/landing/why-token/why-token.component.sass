@@ -1,1 +1,53 @@
 @import "../landing.component"
+.why-token-wr
+  padding-top: 118px
+  padding-bottom: 80px
+  .landing-row
+    width: 100%
+    display: flex
+    flex-wrap: nowrap
+    align-items: center
+    .cell
+      width: 50%
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      &:first-child
+        margin-right: 35px
+      &:last-child
+        display: flex
+        justify-content: flex-end
+        margin-left: 0
+        padding-top: 5%
+  .why-token-text
+    display: flex
+    align-self: baseline
+    flex-wrap: wrap
+
+@media only screen and (max-width: 900px)
+  .why-token-wr
+    .why-token-title
+      font-size: 18px
+      margin-bottom: 30px
+
+@media only screen and (max-width: 768px)
+  .why-token-wr
+    padding-top: 60px
+    .landing-row
+      flex-wrap: wrap
+      .cell
+        width: 100%
+        &:first-child
+          order: 2
+        &:last-child
+          order: 1
+  .why-token-img
+    width: 100%
+    padding-bottom: 0
+    img
+      display: block
+      max-width: 400px
+      margin: 0 auto
+@media only screen and (max-width: 600px)
+  .why-token-wr
+    padding-top: 60px
