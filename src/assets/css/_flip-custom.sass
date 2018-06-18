@@ -1,0 +1,47 @@
+@import "variables"
+
+.flip-clock-wrapper
+  margin: 0 !important
+
+.flip-clock-label
+  top: calc(100% + 20px) !important
+  color: #636363 !important
+  font-family: $montserrat-light !important
+  font-size: 16px
+  text-transform: uppercase
+  right: -110px !important
+
+@media screen and (max-width: 500px)
+  .flip-clock-wrapper ul
+    width: 35px
+    height: 55px
+
+  .flip-clock-wrapper ul li
+    line-height: 55px
+
+  .flip-clock-wrapper ul li a div div.inn
+    font-size: 40px
+
+  .flip-clock-divider
+    width: 10px
+    height: 50px
+
+  .flip-clock-dot
+    width: 6px
+    height: 6px
+    left: 3px
+  .flip-clock-dot.top
+    top: 20px
+  .flip-clock-dot.bottom
+    bottom: 5px
+
+  .flip-clock-divider
+    &.hours
+      .flip-clock-label
+        left: -20px
+    &.minutes
+      .flip-clock-label
+        left: -8px
+    &.seconds
+      .flip-clock-label
+        left: -5px

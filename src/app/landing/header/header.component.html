@@ -1,6 +1,6 @@
 <header style="display: none;">
   <div id="particles-js"></div>
-  <div class="top-header-wrapper">
+  <div [class]="'top-header-wrapper '+ fixed">
     <div class="main-container">
       <div class="wrapper">
         <div class="logo-wrapper">
@@ -9,7 +9,10 @@
             <span class="logo__text">Crest Token</span>
           </a>
         </div>
-        <div class="navigation-wrapper">
+        <a id="hamburger-icon" title="Menu" (click)="show = !show" [ngClass]="{active: show}">
+          <span class="line"></span>
+        </a>
+        <div class="navigation-wrapper" [ngClass]="{open: show}">
           <ul class="main-nav">
             <li><a href="#">What is Crest Token</a></li>
             <li><a href="#">Token Sale</a></li>
