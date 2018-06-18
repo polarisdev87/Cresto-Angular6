@@ -3,18 +3,29 @@
 header
   width: 100%
   background: url("../../../../src/assets/images/header-bg.jpg") no-repeat top center/cover
-  padding-top: 125px
   padding-bottom: 115px
   position: relative
+  overflow: hidden
+  padding-top: 120px
 .top-header-wrapper
   padding: 20px 0
   width: 100%
   display: flex
   position: absolute
   top: 0
+  transition: $transition
+  &.fixed
+    position: fixed
+    background: #000
+    z-index: 15
+    top: 0
+    padding: 10px 0
+    transition: $transition
 .logo-wrapper
   min-width: 255px
   display: flex
+  position: relative
+  z-index: 20
 .logo
   display: inline-flex
   align-items: center
@@ -163,3 +174,90 @@ header
   width: 100%
   max-width: 1250px
 
+#hamburger-icon
+  position: absolute
+  right: 0
+  top: 50%
+  transform: translateY(-50%)
+  width: 40px
+  height: 30px
+  display: none
+  align-items: center
+  justify-content: center
+  transition: $transition
+  .line
+    display: inline-block
+    width: 100%
+    height: 3px
+    border-radius: 3px
+    background: $white
+    transition: $transition
+    &:before
+      content: ''
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      height: 3px
+      border-radius: 3px
+      background: $white
+      transition: $transition
+    &:after
+      content: ''
+      width: 100%
+      position: absolute
+      bottom: 0
+      left: 0
+      height: 3px
+      border-radius: 3px
+      background: $white
+      transition: $transition
+  &.active
+    .line
+      background: transparent
+      &:before
+        transform: rotate(45deg)
+        top: 50%
+      &:after
+        transform: rotate(-45deg)
+        top: 50%
+
+
+
+@media screen and (max-width: 1200px)
+  #hamburger-icon
+    display: inline-flex
+    z-index: 20
+  .navigation-wrapper
+    display: none
+    &.open
+      display: inline-flex
+      position: absolute
+      top: -20px
+      left: -15px
+      background: #262626
+      width: 100vw
+      height: 100vh
+      z-index: 15
+      padding-top: 120px
+      flex-direction: column
+      justify-content: flex-start
+    .main-nav
+      flex-direction: column
+      margin-bottom: 20px
+      li
+        margin-left: 0
+        margin-bottom: 15px
+    .header-btn-wrapper
+      margin-left: 0
+
+@media screen and (max-width: 500px)
+  .banner
+    h1
+      font-size: 35px
+  .logo
+    &__images
+      max-width: 55px
+      max-height: 55px
+    &__text
+      font-size: 20px

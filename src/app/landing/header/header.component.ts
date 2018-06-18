@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public show: boolean = false;
+  public fixed: string = '';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    let scrollPosition = window.scrollY;
+    console.log(scrollPosition);
+    if ( scrollPosition > 150 ) {
+      this.fixed = 'fixed';
+      return
+    }
+    if (this.fixed && scrollPosition < 50) {
+      this.fixed = '';
+    }
+  }
 }
