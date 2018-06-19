@@ -9,6 +9,7 @@ import { WhatMakesComponent } from './what-makes/what-makes.component';
 import { TokenAllocationComponent } from './token-allocation/token-allocation.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
 import { TokenSaleComponent } from './token-sale/token-sale.component';
+import { ParticipateComponent } from './participate/participate.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { TokenSaleComponent } from './token-sale/token-sale.component';
       }
     ])
   ],
-  declarations: [LandingComponent, HeaderComponent, WhatTokenComponent, WhyTokenComponent, WhatMakesComponent, TokenAllocationComponent, RoadmapComponent, TokenSaleComponent],
+  declarations: [LandingComponent, HeaderComponent, WhatTokenComponent, WhyTokenComponent, WhatMakesComponent, TokenAllocationComponent, RoadmapComponent, TokenSaleComponent, ParticipateComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class LandingModule {
