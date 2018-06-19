@@ -13,7 +13,6 @@ export class HeaderComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition);
     if ( scrollPosition > 150 ) {
       this.fixed = 'fixed';
       return;
