@@ -39,8 +39,6 @@ export class SocialNetworkService {
   successFbLogin(access_token): Observable<User> {
     return this._store.select('referral').pipe(
       switchMap((referredBy: string) => {
-        console.log(referredBy);
-
         return this._http.nonAuthorizedRequest('/facebook', { access_token, referredBy }, 'POST');
       })
     );
