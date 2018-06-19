@@ -9,7 +9,8 @@
   width: 100%
   padding: 250px 0
   .line
-    width: 75%
+    width: 85%
+    margin: 0 auto
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -77,16 +78,73 @@
           top: 175px
           min-height: 125px
 
-@media only screen and (max-width: 1390px)
+@media only screen and (max-width: 1150px)
+  .roadmap-row .line li .line-content
+    .title
+      font-size: 18px
+    .text
+      font-size: 14px
+
+@media only screen and (max-width: 840px)
   .roadmap-row
+    padding: 40px 0
+    br
+      display: none
     .line
-      width: 80%
-      margin: 0 auto
-      li .line-content
-        .title
-          font-size: 18px
-        .text
-          font-size: 14px
+      width: 100%
+      padding-top: 0
+      height: auto
+      display: block
+      background: linear-gradient(#b2e0c3, #b2e0c3) no-repeat 21px center
+      background-size: 3px 93%
+      li
+        display: block
+        width: 100%
+        height: auto
+        border-radius: 0
+        background: 0 0
+        padding-left: 80px
+        margin-right: 0
+        margin-bottom: 40px
+        min-height: auto
+        &:nth-child(even)
+          .line-content
+            min-height: auto
+          &:after
+            display: block
+            position: absolute
+            width: 15px
+            height: 15px
+            min-width: 15px
+            min-height: 15px
+            border-radius: 50%
+            background-color: $green
+            left: 15px
+            top: 15px
+        &:before
+          left: 0
+          top: 0
+          transform: inherit
+        &:after
+          display: block
+          position: absolute
+          width: 15px
+          height: 15px
+          min-width: 15px
+          min-height: 15px
+          border-radius: 50%
+          background-color: $green
+          left: 15px
+          top: 15px
+        .line-content
+          position: static
+          width: 100%
+          transform: inherit
+          text-align: left
+
+
+
+
 
 
 @media only screen and (max-width: 768px)
