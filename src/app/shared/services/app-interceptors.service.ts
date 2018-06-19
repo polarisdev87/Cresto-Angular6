@@ -28,6 +28,9 @@ export class AppInterceptorsService implements HttpInterceptor {
         filter((res: HttpResponse<{ data: T } | T>) => res instanceof HttpResponse),
         map((res: HttpResponse<{ data: T  } | T>) => {
           if (res.status !== 206) {
+            if ((res.body as any).status === 'error') {
+              throw new Error((res.body as any).message);
+            }
             // tslint:disable-next-line: no-any
             return /assets\/i18n/.test(jsonReq.url) ? res : (res.body as any).data;
           }
