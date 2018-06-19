@@ -14,6 +14,7 @@ import * as fromTransaction from './transaction.reducer';
 import * as fromBuyToken from './buy-tokens.reducer';
 import * as fromWithdrawal from './withdrawal.reducer';
 import * as fromReferral from './referal.reducer';
+import * as fromReferralUsers from './referrals-users.reducer';
 
 
 export interface IRouterStateUrl {
@@ -35,6 +36,7 @@ export interface IRootState {
   tokenPurchase: any;
   withdrawal: any;
   referral: any;
+  referralUsers: any;
 }
 
 export const reducers: ActionReducerMap<IRootState> = {
@@ -48,7 +50,8 @@ export const reducers: ActionReducerMap<IRootState> = {
   transaction: fromTransaction.reducer,
   tokenPurchase: fromBuyToken.reducer,
   withdrawal: fromWithdrawal.reducer,
-  referral: fromReferral.reducer
+  referral: fromReferral.reducer,
+  referralUsers: fromReferralUsers.reducer
 };
 
 export function logoutAndClearState(reducer: ActionReducer<StoreStates>): ActionReducer<StoreStates> {

@@ -1,4 +1,3 @@
-import { ActivatedRoute } from '@angular/router';
 import { FacebookLogin, GoogleLogin } from './../store/actions/social-network.action';
 import { ValidatorsService } from './../shared/services/validators.service';
 import { Component, OnInit } from '@angular/core';

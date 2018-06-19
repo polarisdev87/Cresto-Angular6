@@ -1,0 +1,24 @@
+<div class="logincard">
+  <div class="pmd-card card-default pmd-z-depth">
+    <div class="login-card">
+      <div class="pmd-card-title card-header-border text-center">
+        <div class="loginlogo">
+          <a>
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+      </div>
+      <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
+        <p class="redirection-link" *ngIf="!error">
+          Thanks for your verification
+        </p>
+        <p class="redirection-link" *ngIf="error">
+          Something went wrong, or verification token is not valid.
+        </p>
+        <p class="redirection-link">
+          <a [routerLink]="['/login']" class="login-register">Go to login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,5 +14,4 @@ export class SettingsService {
   public editUserPassword(passwordData: PasswordData): Observable<User> {
     return this._http.authorizedRequest(`/account/password`, passwordData, 'PUT');
   }
-
 }

@@ -26,10 +26,9 @@ export function reducer(
     }
 
     case BUY_TOKENS_FAIL: {
-      alert('Max or Min value exeeded');
       return {
         ...state,
-        error: 'Max or Min value exeeded or not_enough_funds'
+        error: action.payload
       };
     }
 

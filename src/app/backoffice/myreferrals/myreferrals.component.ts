@@ -1,27 +1,37 @@
 import { environment } from '../../../environments/environment';
-import { Component, OnInit } from '@angular/core';
-import { RefferralsService } from './referrals.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable, Subscription } from 'rxjs';
+import { GetReferralUsers } from '../../store/actions/referrals-users.action';
 
 @Component({
   selector: 'app-myreferrals',
   templateUrl: './myreferrals.component.html',
-  styleUrls: ['./myreferrals.component.css'],
-  providers: [RefferralsService]
+  styleUrls: ['./myreferrals.component.css']
 })
-export class MyreferralsComponent implements OnInit {
-  isLoaded = false;
-  username;
-  referrals = [];
-  referalLink;
+export class MyreferralsComponent implements OnInit, OnDestroy {
+  public referralLink;
+  public userSubscription: Subscription;
+  referralUsers$: Observable<User[]>;
+  loader$: Observable<boolean>;
 
-  constructor (
-    private _referralsService: RefferralsService
-  ) {
+  public constructor(
+    private _store: Store<StoreStates>
+  ) {}
+
+  public ngOnInit(): void {
+    this.referralUsers$ = this._store.select('referralUsers', 'data');
+    this.loader$ = this._store.select('referralUsers', 'isLoading');
+    this._store.dispatch(new GetReferralUsers());
+
+
+    this.userSubscription = this._store.select('auth', 'user').subscribe((user: User) => {
+      this.referralLink = `${environment.domain}/${user.referralHash}`;
+    });
+    this._store.dispatch(new GetReferralUsers());
   }
 
-  ngOnInit() {
-    this._referralsService.getReferralLink().subscribe((referalLink: string) => {
-      this.referalLink = `${environment.domain}?ref=${referalLink}`;
-    });
+  public ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
   }
 }

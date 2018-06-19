@@ -28,7 +28,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class WalletsEffects {
@@ -107,15 +107,10 @@ export class WalletsEffects {
     .ofType(BUY_TOKENS_REQUEST).pipe(
       map((action: BuyTokensRequest) => action.payload),
       switchMap((data: CalculateTokensSum) => this._walletsService.buyTokens(data).pipe(
-        map((res: any) => {
-          console.log(res);
-          // TODO thats becouse of API data convention has different data format
-          if (!res) {
-            return new BuyTokensFail(res);
-          }
-          return new BuyTokensSuccess(res);
-        }),
+        map((res: any) => new BuyTokensSuccess(res)),
+        tap(() => alert('Success')),
         catchError((err: Error) => {
+          alert(err);
           // tslint:disable-next-line
           console.log(err);
           return of(new BuyTokensFail(err));

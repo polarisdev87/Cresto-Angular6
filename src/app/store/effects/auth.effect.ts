@@ -43,8 +43,12 @@ export class AuthEffects {
         switchMap((data: User) => this._authService.tokenToLocalStorage(data)),
         map((data: User) => new AuthActions.LoginSuccess(data)),
         tap(() => this._router.navigate(['/backoffice'])),
-        catchError((err: Error) => {
-          alert('Invalid username or password');
+        catchError((err: any) => {
+          console.log(err.status);
+
+          if (err.status !== 402) {
+            alert('Invalid username or password');
+          }
           return of(new AuthActions.LoginFail(err));
         })
       )),
