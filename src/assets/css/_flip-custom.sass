@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 500px)
   .flip-clock-wrapper ul
-    width: 35px
+    width: 33px
     height: 55px
 
   .flip-clock-wrapper ul li
@@ -45,3 +45,22 @@
     &.seconds
       .flip-clock-label
         left: -5px
+@media screen and (max-width: 330px)
+  .flip-clock-wrapper ul
+    width: 30px
+    height: 50px
+  .flip-clock-wrapper ul li
+    line-height: 50px
+  .flip-clock-divider
+    &.hours
+      .flip-clock-label
+        font-size: 13px
+        left: -30px
+    &.minutes
+      .flip-clock-label
+        font-size: 13px
+        left: -18px
+    &.seconds
+      .flip-clock-label
+        font-size: 13px
+        left: -15px

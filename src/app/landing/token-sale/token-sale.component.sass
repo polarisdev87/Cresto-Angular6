@@ -4,12 +4,117 @@
   width: 100%
   padding: 115px 0
   background: url("../../../../src/assets/images/header-bg.jpg") no-repeat top center/cover
+  .wrapper
+    flex-direction: column
 .header-wrapper
   width: 100%
   margin-bottom: 80px
+  position: relative
+  z-index: 5
+  h3
+    padding-bottom: 5px
   .sub-title
     width: 100%
     text-align: center
     font-family: $montserrat-light
     font-size: 18px
     color: $white
+.items-wrapper
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+  position: relative
+  z-index: 5
+  margin-bottom: 30px
+  &:before
+    content: ''
+    display: inline-block
+    background: radial-gradient(circle, rgba(29, 29, 29, 1) 40%, rgba(29, 29, 29, 0) 70%)
+    width: 800px
+    height: 800px
+    border-radius: 50%
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: -1
+  .item
+    width: 100%
+    max-width: 345px
+    display: inline-flex
+    flex-direction: column
+    margin-bottom: 55px
+    h6
+      font-family: $montserrat-light
+      font-size: 18px
+      color: $green
+      margin-bottom: 10px
+    p
+      font-family: $montserrat-bold
+      color: $white
+      font-size: 28px
+      margin-bottom: 12px
+    .sub-info
+      color: $white
+      text-align: left
+      font-size: 21px
+      font-family: $montserrat-light
+      span
+        display: inline-block
+        &.ml-15
+          margin-left: 15px
+#particles-token
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+
+.bottom-block
+  display: flex
+  flex-direction: column
+  align-items: center
+  position: relative
+  z-index: 5
+  .timer-wrapper
+    position: relative
+    z-index: 5
+    display: flex
+    align-items: center
+    flex-direction: column
+    margin-bottom: 45px
+    padding-bottom: 40px
+    p
+      font-family: $montserrat-light
+      color: $white
+      font-size: 32px
+      margin-bottom: 40px
+
+@media screen and (max-width: 1200px)
+  .items-wrapper
+    .item
+      text-align: center
+      padding: 0 10px
+      .sub-info
+        display: inline-flex
+        align-items: center
+        justify-content: center
+
+@media screen and (max-width: 1065px)
+  .items-wrapper
+    .item
+      width: 50%
+      max-width: inherit
+      text-align: center
+      padding: 0 10px
+
+@media screen and (max-width: 800px)
+  .items-wrapper
+    &:before
+      display: none
+    .item
+      width: 100%
+  #particles-token
+    display: none
