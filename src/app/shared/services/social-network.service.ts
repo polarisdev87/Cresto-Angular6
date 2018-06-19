@@ -1,7 +1,7 @@
 import { HttpService } from './http.service';
 import { LoginSuccess } from './../../store/actions/auth.action';
 import { Store } from '@ngrx/store';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 declare var FB: any;
 import { from, of, Observable } from 'rxjs';
@@ -37,7 +37,11 @@ export class SocialNetworkService {
   }
 
   successFbLogin(access_token): Observable<User> {
-    return this._http.nonAuthorizedRequest('/facebook', { access_token }, 'POST');
+    return this._store.select('referral').pipe(
+      switchMap((referredBy: string) => {
+        return this._http.nonAuthorizedRequest('/facebook', { access_token, referredBy }, 'POST');
+      })
+    );
   }
 
   googleSignIn(): Observable<string> {
@@ -49,6 +53,10 @@ export class SocialNetworkService {
   }
 
   googleSuccessLogin(access_token: string): Observable<User> {
-    return this._http.nonAuthorizedRequest('/google', { access_token }, 'POST');
+    return this._store.select('referral').pipe(
+      switchMap((referredBy: string) => {
+        return this._http.nonAuthorizedRequest('/google', { access_token, referredBy }, 'POST');
+      })
+    );
   }
 }
