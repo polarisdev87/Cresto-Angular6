@@ -290,15 +290,15 @@ $('#gototop').click(function() {      // When arrow is clicked
 		});
 	}
 
-	// Preloader
-	var $preload = $('#preloader'), $loader = $('#loader');
-	if ($preload.length > 0) {
-		$win.on('load', function() {
-			$loader.fadeOut(300);
-			$body_m.addClass("loaded");
-			$preload.delay(700).fadeOut(300);
-		});
-	}
+	// // Preloader
+	// var $preload = $('#preloader'), $loader = $('#loader');
+	// if ($preload.length > 0) {
+	// 	$win.on('load', function() {
+	// 		$loader.fadeOut(300);
+	// 		$body_m.addClass("loaded");
+	// 		$preload.delay(700).fadeOut(300);
+	// 	});
+	// }
 
 
 
