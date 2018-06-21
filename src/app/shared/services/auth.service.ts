@@ -2,12 +2,15 @@ import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { LocalStorageService } from './localStorage.service';
+import { Store } from '@ngrx/store';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
   public constructor(
     private _localStorageService: LocalStorageService,
     private _http: HttpService,
+    private _store: Store<any>,
   ) { }
 
   public setPassword(passwordDataquery: PasswordData): Observable<boolean> {
@@ -37,8 +40,11 @@ export class AuthService {
   }
 
   public signUp(user: User): Observable<User> {
-    const password: string = user.password;
-    return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, password});
+    return this._store.select('referral').pipe(
+      switchMap((referredBy: string) => {
+        return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy });
+      })
+    );
   }
 
   public tokenToLocalStorage(user: User): Observable<User | null> {
