@@ -12,11 +12,12 @@ import { TokenSaleComponent } from './token-sale/token-sale.component';
 import { TeamComponent } from './team/team.component';
 import { ParticipateComponent } from './participate/participate.component';
 import { MembersComponent } from './members/members.component';
-import { FooterComponent } from './footer/footer.component';
+import { UiModule } from "../shared/module/ui/ui.module";
 
 @NgModule({
   imports: [
     CommonModule,
+    UiModule,
     RouterModule.forChild([
       {
         path: '', component: LandingComponent
@@ -34,8 +35,7 @@ import { FooterComponent } from './footer/footer.component';
     TokenSaleComponent,
     ParticipateComponent,
     MembersComponent,
-    TeamComponent,
-    FooterComponent
+    TeamComponent
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })

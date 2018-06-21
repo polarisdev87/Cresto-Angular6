@@ -1,22 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { SetReferalLink } from "../store/actions/";
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.sass']
+  selector: 'app-header-auth',
+  templateUrl: './header-auth.component.html',
+  styleUrls: ['./header-auth.component.sass']
 })
-export class LandingComponent implements OnInit {
-  constructor(
-    private _activateroute: ActivatedRoute,
-    private _store: Store<StoreStates>
-  ) {}
-  ngOnInit() {
-    const referralLink: string = this._activateroute.snapshot.queryParams['ref'] || '';
-    this._store.dispatch(new SetReferalLink(referralLink));
+export class HeaderAuthComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit() {
     const el1 = document.createElement('script');
     const el2 = document.createElement('script');
     const el3 = document.createElement('script');
@@ -32,4 +25,5 @@ export class LandingComponent implements OnInit {
     } ;
     document.body.appendChild(el1);
   }
+
 }

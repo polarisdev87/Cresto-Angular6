@@ -1,0 +1,31 @@
+<header>
+  <div id="particles-js"></div>
+  <div [class]="'top-header-wrapper '+ fixed">
+    <div class="main-container">
+      <div class="wrapper">
+        <div class="logo-wrapper">
+          <a href="#" class="logo">
+            <img class="logo__images" src="assets/images/logo.png" alt="logo">
+            <span class="logo__text">Crest Token</span>
+          </a>
+        </div>
+        <a id="hamburger-icon" title="Menu" (click)="show = !show" [ngClass]="{active: show}">
+          <span class="line"></span>
+        </a>
+        <div class="navigation-wrapper" [ngClass]="{open: show}">
+          <ul class="main-nav">
+            <li><a href="#">What is Crest Token</a></li>
+            <li><a href="#">Token Sale</a></li>
+            <li><a href="#">Roadmap</a></li>
+            <li><a href="#">Team</a></li>
+            <li class="whitepaper"><a href="#">Whitepaper</a></li>
+          </ul>
+          <div class="header-btn-wrapper">
+            <a class="login btn-green" [routerLink]="['/backoffice']">login</a>
+            <a class="signup btn-green" [routerLink]="['/signup']">sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

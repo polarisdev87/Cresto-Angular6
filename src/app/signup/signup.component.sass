@@ -1,0 +1,131 @@
+@import "../landing/landing.component"
+.sign-up-wrapper
+  header
+    padding-bottom: 0
+  .main-content
+    padding: 75px 0 100px 0
+    background: #f8f8f8
+    .wrapper
+      flex-direction: column
+  h1
+    font-family: $montserrat-bold
+    font-size: 36px
+    color: #032a11
+    margin-bottom: 30px
+    width: 100%
+    text-align: center
+  .loginBtnSocial
+    width: 100%
+    max-width: 535px
+    margin: 0 auto 40px auto
+    display: flex
+    justify-content: space-between
+    .loginBtn
+      width: 250px
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      height: 52px
+      border: none
+      outline: none
+      border-radius: 3px
+      color: $white
+      font-family: $montserrat-semibold
+      font-size: 16px
+      cursor: pointer
+      &__facebook
+        background: #4267b2
+        .fa
+          display: inline-flex
+          margin-right: 15px
+          font-size: 29px
+      &__google
+        background: #4285f4
+        justify-content: flex-start
+        img
+          display: inline-flex
+          margin-left: 10px
+          margin-right: 20px
+          width: auto
+
+  .form-wrapper
+    width: 100%
+    max-width: 535px
+    background: $white
+    margin: 0 auto
+    padding: 35px 30px 50px 30px
+    .inputGroup
+      width: 100%
+      display: flex
+      flex-direction: row
+      position: relative
+      margin-bottom: 15px
+      .inputGroup-icons
+        position: absolute
+        display: inline-flex
+        width: 58px
+        left: 0
+        top: 0
+        bottom: 0
+        background: #f8f8f8
+        border: 1px solid #dfdfdf
+        justify-content: center
+        align-items: center
+        img
+          width: auto
+      input
+        width: 100%
+        height: 50px
+        padding-left: 70px
+        outline: none
+        border: 1px solid #dfdfdf
+        color: $black
+        font-size: 18px
+        font-family: $montserrat-regular
+    .captcha-wrapper
+      width: 100%
+      display: flex
+      justify-content: center
+      margin-top: 35px
+      margin-bottom: 35px
+    .button-wrapper
+      width: 100%
+      display: flex
+      flex-direction: column
+      align-items: center
+      .btn-signin
+        display: inline-flex
+        width: 100%
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        max-width: 304px
+        border-radius: 35px
+        height: 53px
+        border: 1px solid transparent
+        background: $green
+        color: $black
+        text-transform: uppercase
+        font-family: $montserrat-bold
+        font-size: 18px
+        transition: $transition
+        margin-bottom: 44px
+        &:hover
+          background: transparent
+          border-color: $green
+          color: $green
+        &[disabled]
+          background: #f8f8f8
+          cursor: default
+          &:hover
+            border: transparent
+            background-color: #f8f8f8
+            color: $black
+    .redirection-link
+      font-family: $montserrat-light
+      color: $black
+      font-size: 16px
+      .register-login
+        font-family: $montserrat-bold
+        color: $black
+        cursor: pointer
