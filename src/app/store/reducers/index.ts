@@ -85,3 +85,5 @@ export class CustomSerializer
     return { url, queryParams, params };
   }
 }
+
+export const metaReducers: MetaReducer<any>[] = [logoutAndClearState];

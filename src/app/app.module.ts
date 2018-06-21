@@ -1,3 +1,4 @@
+import { metaReducers } from './store/reducers';
 import { ReferralsService } from './shared/services/referral.service';
 import { WalletsService } from './shared/services/wallets.service';
 import { WalletHttpService } from './shared/services/wallet-http.service';
@@ -39,7 +40,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
     HttpClientModule,
     NoopAnimationsModule,
     RecaptchaModule.forRoot(),
-    StoreModule.forRoot(reducers, { }),
+    StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
     RouterModule.forRoot([
