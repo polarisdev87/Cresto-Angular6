@@ -43,9 +43,9 @@
               <re-captcha formControlName="recaptchaReactive"></re-captcha>
             </div>
             <div class="button-wrapper">
-              <button class="btn-signin" [disabled]="form.invalid" (click)="login(form.value)" value="Login">Login</button>
-              <p class="redirection-link">Already have an account?
-                <a [routerLink]="['/login']" class="register-login">Sign In</a>. </p>
+              <button class="btn-login" [disabled]="form.invalid" (click)="login(form.value)" value="Login">Login</button>
+              <p class="redirection-link">Don't have an account?
+                <a [routerLink]="['/signup']" class="register-login">Sign Up</a>. </p>
             </div>
           </form>
         </div>

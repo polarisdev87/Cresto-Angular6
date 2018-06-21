@@ -90,14 +90,14 @@
       width: 100%
       display: flex
       justify-content: center
-      margin-top: 35px
+      margin-top: 15px
       margin-bottom: 35px
     .button-wrapper
       width: 100%
       display: flex
       flex-direction: column
       align-items: center
-      .btn-signin
+      .btn-login
         display: inline-flex
         width: 100%
         justify-content: center
@@ -107,17 +107,17 @@
         border-radius: 35px
         height: 53px
         border: 1px solid transparent
-        background: $green
+        background: #ffc80a
         color: $black
         text-transform: uppercase
         font-family: $montserrat-bold
         font-size: 18px
         transition: $transition
-        margin-bottom: 44px
+        margin-bottom: 38px
         &:hover
           background: transparent
-          border-color: $green
-          color: $green
+          border-color: #ffc80a
+          color: #ffc80a
         &[disabled]
           background: #f8f8f8
           cursor: default
@@ -129,6 +129,8 @@
       font-family: $montserrat-light
       color: $black
       font-size: 16px
+      padding: 0 !important
+      margin: 0 !important
       .register-login
         font-family: $montserrat-bold
         color: $black
