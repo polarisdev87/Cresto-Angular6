@@ -1,0 +1,41 @@
+@import "../../../../backoffice/backoffice.component"
+.sidebar
+  font-family: $OpenSansSemiBold
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  width: 100%
+  max-width: 90px
+  background-color: $bg-sidebar
+  padding: 25px 0 0 15px
+  transition: $transition
+  box-shadow: 1px 0 51px rgba(23, 24, 50, 0.27)
+  .log-out
+    text-align: right
+    padding-right: 20px
+    padding-bottom: 45px
+    height: 70px
+    a
+      opacity: 0
+      height: 0
+      display: inline-block
+      font-size: 12px
+      color: transparent
+      line-height: 16px
+      cursor: pointer
+      transition: opacity  ease 0.3s
+      .icon-logout,
+      span
+        display: inline-block
+        vertical-align: middle
+      .icon-logout
+        margin-right: 17px
+  &:hover
+    max-width: 220px
+    .log-out
+      a
+        opacity: 1
+        height: auto
+        color: $green
+  .settings-wr

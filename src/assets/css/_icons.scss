@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Icons";
+  src: url('assets/fonts/icons/Icons.eot');
+  src: url('assets/fonts/icons/Icons.eot?#iefix') format('eot'),
+  url('assets/fonts/icons/Icons.woff2') format('woff2'),
+  url('assets/fonts/icons/Icons.ttf') format('truetype'),
+  url('assets/fonts/icons/Icons.svg#Icons') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "Icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == Token {
+    $char: "\E001";
+  }
+  @if $filename == USD {
+    $char: "\E002";
+  }
+  @if $filename == bitcoin {
+    $char: "\E003";
+  }
+  @if $filename == building {
+    $char: "\E004";
+  }
+  @if $filename == dollar-symbol {
+    $char: "\E005";
+  }
+  @if $filename == ether {
+    $char: "\E006";
+  }
+  @if $filename == home {
+    $char: "\E007";
+  }
+  @if $filename == logout {
+    $char: "\E008";
+  }
+  @if $filename == settings {
+    $char: "\E009";
+  }
+  @if $filename == shoppingCart {
+    $char: "\E00A";
+  }
+  @if $filename == team {
+    $char: "\E00B";
+  }
+  @if $filename == transfer {
+    $char: "\E00C";
+  }
+  @if $filename == user {
+    $char: "\E00D";
+  }
+  @if $filename == wallet {
+    $char: "\E00E";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    } @else {
+      @include icon-styles;
+    }
+    content: icon-char($filename);
+  }
+}
+
+.icon-Token {
+  @include icon(Token);
+}
+.icon-USD {
+  @include icon(USD);
+}
+.icon-bitcoin {
+  @include icon(bitcoin);
+}
+.icon-building {
+  @include icon(building);
+}
+.icon-dollar-symbol {
+  @include icon(dollar-symbol);
+}
+.icon-ether {
+  @include icon(ether);
+}
+.icon-home {
+  @include icon(home);
+}
+.icon-logout {
+  @include icon(logout);
+}
+.icon-settings {
+  @include icon(settings);
+}
+.icon-shoppingCart {
+  @include icon(shoppingCart);
+}
+.icon-team {
+  @include icon(team);
+}
+.icon-transfer {
+  @include icon(transfer);
+}
+.icon-user {
+  @include icon(user);
+}
+.icon-wallet {
+  @include icon(wallet);
+}

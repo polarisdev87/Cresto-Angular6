@@ -6,7 +6,7 @@ import { GetCurrentUser } from '../store/actions';
 @Component({
   selector: 'app-backoffice',
   templateUrl: './backoffice.component.html',
-  styleUrls: ['./backoffice.component.css']
+  styleUrls: ['./backoffice.component.sass']
 })
 export class BackofficeComponent implements OnInit {
 
@@ -18,5 +18,4 @@ export class BackofficeComponent implements OnInit {
     this._store.dispatch(new GetCurrentUser());
     this._store.dispatch(new AclRequest());
   }
-
 }

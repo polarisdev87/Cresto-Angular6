@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
-import { ChangepasswordModule } from './changepassword/changepassword.module';
 import { ProfileComponent } from './profile/profile.component';
 import { AccessGuardService } from '../shared/services/access-guard.service';
 
@@ -23,8 +22,9 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
           },
           {
             path: 'buy',
-            loadChildren: './buy/buy.module#BuyModule'}
-            ,
+            loadChildren: './buy/buy.module#BuyModule'
+          }
+          ,
           {
             path: 'editprofile',
             loadChildren: './editprofile/editprofile.module#EditProfileModule'
@@ -40,7 +40,7 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
           {
             path: 'comingsoon',
             loadChildren: './comingsoon/comingsoon.module#ComingsoonModule',
-            canLoad: [ AccessGuardService ]
+            canLoad: [AccessGuardService]
           },
           {
             path: 'myreferrals',
@@ -49,17 +49,17 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
           {
             path: 'referrals',
             loadChildren: './referrals/referrals.module#ReferralsModule',
-            canLoad: [ AccessGuardService ]
+            canLoad: [AccessGuardService]
           },
           {
             path: 'changepassword',
             loadChildren: './changepassword/changepassword.module#ChangepasswordModule',
-            canLoad: [ AccessGuardService ]
+            canLoad: [AccessGuardService]
           },
           {
             path: 'users',
             loadChildren: './user/user.module#UserModule',
-            canLoad: [ AccessGuardService ]
+            canLoad: [AccessGuardService]
           },
           {
             path: 'verifytwofactor',
@@ -74,7 +74,7 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
             loadChildren: './wallet/wallet.module#WalletModule'
           },
           {
-            path: '**' ,
+            path: '**',
             loadChildren: './dashboard/dashboard.module#DashboardModule'
           }
         ]

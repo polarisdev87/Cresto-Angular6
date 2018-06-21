@@ -3,7 +3,7 @@
 
 (function($){
 	'use strict';
-	var $win = $(window), $body_m = $('body'), $navbar = $('.navbar');
+	var $win = $(window), $body_m = $('body'), $navbar = $('.sidebar');
 
 	// Touch Class
 	if (!("ontouchstart" in document.documentElement)) {
@@ -75,7 +75,7 @@ $('#gototop').click(function() {      // When arrow is clicked
 	// Active page menu when click
 	/// Cache selectors
       var lastId,
-        topMenu = $(".navbar-nav"),
+        topMenu = $(".sidebar-nav"),
         topMenuHeight = topMenu.outerHeight()+15,
         // All list items
         menuItems = topMenu.find(".scroll-link"),
@@ -145,12 +145,12 @@ $('#gototop').click(function() {      // When arrow is clicked
 
 	}
 	$win.on('resize', function() {
-		$('.navbar-collapse').removeClass('in');
+		$('.sidebar-collapse').removeClass('in');
 		$dropdown_menu.children('.dropdown-menu').fadeOut("400");
 	});
 
 	// remove ani
-	var $navtoggler = $('.navbar-toggler'), $trannav =$('.is-transparent');
+	var $navtoggler = $('.sidebar-toggler'), $trannav =$('.is-transparent');
 	if ($navtoggler.length > 0) {
 		$navtoggler.on("click",function(){
 			$('.remove-animation').removeClass('animated');
@@ -170,7 +170,7 @@ $('#gototop').click(function() {      // When arrow is clicked
 
 	// Nav collapse
 	$('.menu-link').on("click",function() {
-		$('.navbar-collapse').collapse('hide');
+		$('.sidebar-collapse').collapse('hide');
 		$trannav.removeClass('active');
 	});
 
