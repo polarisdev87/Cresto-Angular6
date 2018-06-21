@@ -1,3 +1,4 @@
+import { ReferralsService } from './shared/services/referral.service';
 import { WalletsService } from './shared/services/wallets.service';
 import { WalletHttpService } from './shared/services/wallet-http.service';
 import { SocialNetworkService } from './shared/services/social-network.service';
@@ -45,6 +46,14 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
 
       { path: '', loadChildren: './landing/landing.module#LandingModule'},
       {
+        path: 'email/verification/check/:hash',
+        loadChildren: './email-verification/email-verification.module#EmailVerificationModule',
+      },
+      {
+        path: 'email/verification',
+        loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule',
+      },
+      {
         path: 'login',
         loadChildren: './login/login.module#LoginModule',
         canLoad: [AuthGuardService]
@@ -64,6 +73,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
         loadChildren: './backoffice/backoffice.module#BackofficeModule',
         canLoad: [AuthGuardService]
       },
+      { path: ':referralHash', loadChildren: './landing/landing.module#LandingModule'},
       {
         path: '**' ,
         redirectTo: 'login'
@@ -87,6 +97,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
     SettingsService,
     SocialNetworkService,
     GoogleAuthService,
+    ReferralsService,
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     { provide: DOMAIN_TOKEN, useValue: DOMAIN },
     { provide: PREFIX_TOKEN, useValue: PREFIX },

@@ -66,10 +66,6 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
             loadChildren: './verifytwofactor/verifytwofactor.module#VerifytwofactorModule'
           },
           {
-            path: 'verificationpending',
-            loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule'
-          },
-          {
             path: 'dashboard',
             loadChildren: './dashboard/dashboard.module#DashboardModule'
           },

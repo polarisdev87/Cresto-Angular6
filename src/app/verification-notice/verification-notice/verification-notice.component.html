@@ -1,0 +1,8 @@
+<div class="notice">
+  <h1>
+    Looks like your email verification is pending! Please click on the vefication link sent to: {{username}}
+  </h1>
+
+  <a type="button" class="btn pmd-ripple-effect btn-primary btn-block" (click)="resendVerificationEmail()">Resend Email</a>
+  <a type="button" class="btn pmd-ripple-effect btn-primary btn-block" [routerLink]="['login']">Login</a>
+</div>

@@ -7,6 +7,7 @@ import { AclEffects } from './acl.effect';
 import { RouterEffects } from './router.effect';
 import { AuthEffects } from './auth.effect';
 import { TwoFactorEffects } from './twofactor.effect';
+import { ReferralsUsersEffect } from './referrals-users.effect';
 
 // tslint:disable-next-line: typedef
 export const effects = [
@@ -19,5 +20,6 @@ export const effects = [
   SocialNetworkEffects,
   WalletsEffects,
   WithdrawalEffects,
+  ReferralsUsersEffect
 ];
 
