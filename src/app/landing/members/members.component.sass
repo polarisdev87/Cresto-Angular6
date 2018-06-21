@@ -1,0 +1,95 @@
+@import "../landing.component"
+.members-wr
+  background-color: #f8f8f8
+  padding: 150px 0
+  .landing-title
+    padding-bottom: 75px
+
+.members-row
+  .members-item
+    width: 32%
+    max-width: 360px
+
+.members-second-row
+  .members-item
+    width: 48%
+    max-width: 575px
+
+.members-row,
+.members-second-row
+  width: 100%
+  display: flex
+  justify-content: space-between
+  .members-content
+    background-color: #ffffff
+    padding: 30px 30px 0 30px
+    margin-bottom: 15px
+    height: 100%
+  .members-item
+    margin-bottom: 105px
+    .desc
+      font-family: $montserrat-light
+      font-size: 13px
+      color: #7d7d7d
+      padding-left: 2px
+      padding-right: 5px
+      display: block
+  .members-item-img
+    padding-bottom: 30px
+    img
+      width: auto
+      height: 52px
+      max-width: 60px
+  .members-title
+    font-family: $montserrat-bold
+    color: $green
+    font-size: 21px
+    padding-bottom: 24px
+  .members-text
+    font-family: $montserrat-light
+    font-size: 18px
+    color: #000
+    line-height: 1.4
+
+@media only screen and (max-width: 1000px)
+  .members-row,
+  .members-second-row
+    .members-text
+      font-size: 16px
+
+@media only screen and (max-width: 850px)
+  .members-row,
+  .members-second-row
+    .members-item-img img
+      height: 40px
+      max-width: 45px
+    .members-text
+      font-size: 14px
+    .members-title
+      font-size: 18px
+    .members-content
+      padding: 20px 20px 0 20px
+
+@media only screen and (max-width: 768px)
+  .members-wr
+    padding-top: 60px
+  .members-row,
+  .members-second-row
+    .members-item
+      margin-bottom: 75px
+  .members-row
+    flex-wrap: wrap
+    .members-item
+      width: 48%
+      &:last-child
+        width: 100%
+        max-width: 100%
+        margin-bottom: 75px
+
+@media only screen and (max-width: 600px)
+  .members-row,
+  .members-second-row
+    flex-wrap: wrap
+    .members-item
+      width: 100%
+      max-width: 100%

@@ -8,7 +8,7 @@ import { SignUp } from '../store/actions';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.sass']
 })
 export class SignupComponent implements OnInit {
 
@@ -22,24 +22,18 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._store.select('referral').subscribe((ref: string) => {
       this.form = this._fb.group({
           username: ['', Validators.required],
           email: ['', Validators.email],
           password: ['', Validators.required],
-          confirmPassword: ['', Validators.required],
-          referredBy: [ref],
           profile: this._fb.group({
-            firstname: ['', Validators.required],
-            lastname: ['', Validators.required],
+            firstname: ['', Validators.required]
           }),
           recaptchaReactive: [null, Validators.required]
         },
         {
           validator: this._validatorsService.checkPasswordsMatch
-        }
-      );
-    });
+        });
   }
 
   public save(user: User): void {

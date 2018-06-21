@@ -1,0 +1,57 @@
+@import "../landing.component"
+.what-makes-wr
+  background-color: #f8f8f8
+  padding-top: 118px
+  padding-bottom: 80px
+  .landing-title
+    padding-bottom: 80px
+
+.what-makes-row
+  display: flex
+  flex-wrap: wrap
+  .cell
+    width: 25%
+
+.what-makes-item
+  max-width: 272px
+  padding: 0 10px
+  margin: 0 auto 80px auto
+  min-height: 30px
+  font-family: $montserrat-light
+  font-size: 17px
+  color: #000
+  line-height: 1.4
+  text-align: center
+  .item-img
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 auto 25px auto
+    width: 127px
+    height: 127px
+    border-radius: 50%
+    border: 5px solid $green
+    background-color: #fff
+    img
+      width: 70%
+
+@media only screen and (max-width: 850px)
+  .what-makes-row
+    .cell
+      width: 50%
+  .what-makes-item
+    font-size: 16px
+    margin-bottom: 40px
+
+@media only screen and (max-width: 768px)
+  .what-token-wr
+    padding-top: 60px
+
+@media only screen and (max-width: 600px)
+  .what-token-wr
+    padding-top: 30px
+  .what-makes-row
+    .cell
+      width: 100%
+  .what-makes-item
+    font-size: 14px

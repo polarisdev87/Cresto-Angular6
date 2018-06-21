@@ -1,0 +1,65 @@
+@import "../landing.component"
+.participate-wr
+  width: 100%
+  padding: 150px 0
+  .participate-row
+    padding-top: 75px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    .cell
+      width: 20%
+    .num
+      width: 45px
+      height: 45px
+      border: 5px solid $green
+      border-radius: 50%
+      background-color: #fff
+      font-size: 24px
+      line-height: 37px
+      color: $green
+      font-family: $montserrat-bold
+      margin: 0 auto 40px auto
+      text-align: center
+    .participate-img
+      padding-bottom: 28px
+      img
+        max-width: 90px
+        height: 70px
+        display: block
+        margin: 0 auto
+    .text
+      display: block
+      font-family: $montserrat-light
+      font-size: 18px
+      color: #000
+      text-align: center
+
+@media only screen and (max-width: 1150px)
+  .participate-wr
+    .participate-row
+      .text
+        font-size: 14px
+
+@media only screen and (max-width: 840px)
+  .participate-wr
+    .participate-row
+      flex-wrap: wrap
+      justify-content: flex-start
+      .cell
+        width: 33.3%
+        margin-bottom: 60px
+
+@media only screen and (max-width: 768px)
+  .participate-wr
+    padding-top: 60px
+
+@media only screen and (max-width: 600px)
+  .participate-wr
+    .participate-row
+      .cell
+        width: 50%
+      .participate-img img
+        max-width: 55px
+      .text
+        padding: 0 5px

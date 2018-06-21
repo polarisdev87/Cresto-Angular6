@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 308.9 249.9" style="enable-background:new 0 0 308.9 249.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);fill:#29ABE2;}
+	.st1{clip-path:url(#SVGID_2_);fill:#E6E6E6;}
+	.st2{clip-path:url(#SVGID_2_);fill:#2496B5;}
+	.st3{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+	.st4{clip-path:url(#SVGID_2_);fill:#FC7A51;}
+	.st5{clip-path:url(#SVGID_2_);fill:#2BE0C6;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="308.9" height="249.9"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st0" d="M308.9,17.3v179.2c0,8.4-6.8,15.1-15.1,15.1H15.1c-8.4,0-15.1-6.8-15.1-15.1V17.3C0,7.8,7.8,0,17.3,0h274.3
+		C301.1,0,308.9,7.8,308.9,17.3"/>
+	<rect x="21" y="21" class="st1" width="266.9" height="169.6"/>
+	<rect x="117.5" y="211.7" class="st2" width="74" height="23.1"/>
+	<path class="st0" d="M247,249.9H61.9c0-4.2,1.7-8,4.4-10.7c2.7-2.7,6.5-4.4,10.7-4.4h154.9C240.3,234.8,247,241.6,247,249.9"/>
+	<rect x="37.8" y="69.3" class="st3" width="138" height="121.4"/>
+	<rect x="189.7" y="35.3" class="st4" width="82.1" height="10.3"/>
+	<rect x="189.7" y="51.6" class="st0" width="82.1" height="10.3"/>
+	<rect x="37.8" y="51.6" class="st4" width="138" height="10.3"/>
+	<rect x="51.6" y="170.6" class="st0" width="110.4" height="10.3"/>
+	<rect x="37.8" y="35.3" class="st0" width="138" height="10.3"/>
+	<rect x="189.7" y="69.3" class="st0" width="82.1" height="10.3"/>
+	<rect x="189.7" y="133.9" class="st0" width="25.6" height="10.3"/>
+	<rect x="189.7" y="153.4" class="st0" width="25.6" height="10.3"/>
+	<rect x="189.7" y="172.8" class="st0" width="82.1" height="10.3"/>
+	<polygon class="st4" points="82.3,154.1 62.6,132.8 54.3,144.1 47.9,139.3 61.9,120.2 80.7,140.5 110.1,87.4 132.5,123.4 
+		158.8,76.5 165.8,80.5 132.9,139.2 110.5,103.2 	"/>
+	<rect x="189.7" y="87" class="st4" width="35.7" height="31.4"/>
+	<rect x="236.1" y="87" class="st5" width="35.7" height="31.4"/>
+	<path class="st3" d="M175.8,69.3h-51.3l13.5,44.4l20.8-37.1l7,3.9l-24.5,43.8l11.2,36.9c0.6-0.1,1.2-0.2,1.9-0.2h21.4V69.3"/>
+</g>
+</svg>

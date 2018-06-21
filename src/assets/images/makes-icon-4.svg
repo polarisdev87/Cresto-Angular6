@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 144.6 131" style="enable-background:new 0 0 144.6 131;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#343434;}
+	.st1{fill:#8C8C8C;}
+	.st2{fill:#3D3D3C;}
+	.st3{fill:#161616;}
+	.st4{fill:#3A3A39;}
+	.st5{clip-path:url(#SVGID_2_);fill:#F7941F;}
+	.st6{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+</style>
+<polygon class="st0" points="112.6,0 111.9,2.4 111.9,71.3 112.6,72 144.6,53.1 "/>
+<polygon class="st1" points="112.3,0 80.2,53.1 112.3,72 112.3,38.6 "/>
+<polygon class="st2" points="112.3,78.1 111.9,78.6 111.9,103.1 112.3,104.3 144.3,59.2 "/>
+<polygon class="st1" points="112.3,104.3 112.3,78.1 80.2,59.2 "/>
+<polygon class="st3" points="112.3,72 144.3,53.1 112.3,38.6 "/>
+<polygon class="st4" points="80.3,53.1 112.3,72 112.3,38.6 "/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="33.2" width="97.8" height="97.8"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st5" d="M96.4,93.9c-6.5,26.2-33.1,42.2-59.3,35.6C10.9,123-5.1,96.5,1.5,70.3C8,44,34.5,28.1,60.7,34.6
+		C86.9,41.2,102.9,67.7,96.4,93.9L96.4,93.9z"/>
+	<path class="st6" d="M70.5,75.1c1-6.5-4-10-10.8-12.3l2.2-8.8l-5.4-1.3l-2.1,8.6c-1.4-0.4-2.9-0.7-4.3-1l2.2-8.6l-5.4-1.3L44.7,59
+		c-1.2-0.3-2.3-0.5-3.4-0.8l0,0l-7.4-1.8l-1.4,5.7c0,0,4,0.9,3.9,1c2.2,0.5,2.6,2,2.5,3.1l-2.5,10c0.1,0,0.3,0.1,0.6,0.2l-0.6-0.1
+		l-3.5,14.1c-0.3,0.7-0.9,1.7-2.5,1.3c0.1,0.1-3.9-1-3.9-1l-2.7,6.1l7,1.7c1.3,0.3,2.6,0.7,3.8,1l-2.2,8.9l5.4,1.3l2.2-8.8
+		c1.5,0.4,2.9,0.8,4.3,1.1l-2.2,8.8l5.4,1.3l2.2-8.9c9.2,1.7,16,1,18.9-7.2c2.3-6.7-0.1-10.5-4.9-13C67.1,82.2,69.8,79.9,70.5,75.1
+		L70.5,75.1z M58.2,92.3c-1.7,6.7-12.9,3.1-16.5,2.2l2.9-11.8C48.3,83.6,59.9,85.4,58.2,92.3L58.2,92.3z M59.9,75
+		C58.4,81.1,49,78,46,77.2l2.7-10.7C51.7,67.3,61.5,68.7,59.9,75"/>
+</g>
+</svg>
