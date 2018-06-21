@@ -1,8 +1,10 @@
 @import "../../assets/css/variables"
 *
   box-sizing: border-box
+
 a
   text-decoration: none
+
 img
   width: 100%
   display: inline-block
@@ -34,6 +36,7 @@ h3
     color: $landing-title-color
   &.green
     color: $green
+
 .landing-text
   font-family: $montserrat-light
   font-size: 18px
@@ -83,26 +86,29 @@ input::-webkit-input-placeholder
   font-size: 18px
   font-family: $montserrat-light
   opacity: 1
+
 input::-moz-placeholder
   color: #a1a1a1
   font-size: 18px
   font-family: $montserrat-light
   opacity: 1
+
 input:-ms-input-placeholder
   color: #a1a1a1
   font-size: 18px
   font-family: $montserrat-light
   opacity: 1
+
 input:-moz-placeholder
   color: #a1a1a1
   font-size: 18px
   font-family: $montserrat-light
   opacity: 1
 
-
 @media only screen and (max-width: 900px)
   .landing-text
     font-size: 16px
+
 @media only screen and (max-width: 600px)
   .landing-text
     font-size: 14px
@@ -110,3 +116,39 @@ input:-moz-placeholder
     &.landing-title
       font-size: 26px
 
+@media only screen and (max-width: 550px)
+  .login-wr,
+  .sign-up-wrapper
+    .main-container
+      .loginBtnSocial
+        flex-direction: column
+        align-items: center
+        margin-bottom: 0 !important
+        .loginBtn
+          margin-bottom: 25px
+
+@media only screen and (max-width: 400px)
+  input::-webkit-input-placeholder
+    color: #a1a1a1
+    font-size: 14px
+    font-family: $montserrat-light
+    opacity: 1
+  input::-moz-placeholder
+    color: #a1a1a1
+    font-size: 14px
+    font-family: $montserrat-light
+    opacity: 1
+  input:-ms-input-placeholder
+    color: #a1a1a1
+    font-size: 14px
+    font-family: $montserrat-light
+    opacity: 1
+  input:-moz-placeholder
+    color: #a1a1a1
+    font-size: 14px
+    font-family: $montserrat-light
+    opacity: 1
+  .login-wr,
+  .sign-up-wrapper
+    .form-wrapper .captcha-wrapper
+      transform: scale(0.8)

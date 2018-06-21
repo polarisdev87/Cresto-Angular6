@@ -1,81 +1,55 @@
-<div class="logincard" loader [show]="loader$ | async">
-  <div class="pmd-card card-default pmd-z-depth">
-    <div class="login-card">
-
-      <div>
-        <div class="pmd-card-title card-header-border text-center">
-          <div class="loginlogo">
-            <a href="/">
-              <img src="assets/images/logo.png" alt="Logo">
-            </a>
-          </div>
-          <h3>
-            <strong>Sign In</strong>
-          </h3>
-        </div>
-
-        <div class="social-btn">
-          <button class="loginBtn loginBtn--facebook" (click)="facebookLogin()">
+<div class="login-wr" loader [show]="loader$ | async">
+  <app-header-auth></app-header-auth>
+  <div class="main-content">
+    <div class="main-container">
+      <div class="wrapper">
+        <h1>Login</h1>
+        <div class="loginBtnSocial">
+          <button class="loginBtn loginBtn__facebook" (click)="facebookLogin()">
+            <i class="fa fa-facebook-official"></i>
             Login with Facebook
           </button>
-
-          <button class="loginBtn loginBtn--google" (click)="googleLogin()">
+          <button class="loginBtn loginBtn__google" (click)="googleLogin()">
+            <img src="assets/images/google-icon.png" alt="google">
             Login with Google
           </button>
-
         </div>
-
-        <form class="pmd-card-body" [formGroup]="form">
-          <div class="alert alert-success" role="alert"> Oh snap! Change a few things up and try submitting again. </div>
-          <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Username</label>
+        <div class="form-wrapper">
+          <form [formGroup]="form">
             <div class="input-group">
-              <div class="input-group-addon">
-                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              <div class="inputGroup-icons">
+                <img src="assets/images/edit-icon.png" alt="Username">
               </div>
-              <input type="text" formControlName="username" class="form-control" id="usernameInput">
+              <input placeholder="User Name" type="text" formControlName="username" class="form-control">
             </div>
-          </div>
-
-          <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
+            <!-- password -->
             <div class="input-group">
-              <div class="input-group-addon">
-                <i class="material-icons md-dark pmd-sm">lock_outline</i>
+              <div class="inputGroup-icons">
+                <img src="assets/images/lock-icon.png" alt="password">
               </div>
-              <input type="password" formControlName="password" class="form-control" id="passwordInput">
+              <input placeholder="Password" type="password" formControlName="password" class="form-control">
             </div>
-          </div>
-
-          <!-- <div class="form-group pmd-textfield pmd-textfield-floating-label">
-            <label for="inputError1" class="control-label pmd-input-group-label">OTP (IF 2FA ENABLED)</label>
+            <!-- OTP -->
             <div class="input-group">
-              <div class="input-group-addon">
-                <i class="material-icons md-dark pmd-sm">perm_identity</i>
+              <div class="inputGroup-icons">
+                <img src="assets/images/lock-icon.png" alt="password">
               </div>
-              <input type="text" formControlName="tfa" class="form-control" id="tokenInput">
+              <input placeholder="OTP (If 2FA Enabled)" type="text" formControlName="tfa" class="form-control">
             </div>
-          </div> -->
-
-          <re-captcha formControlName="recaptchaReactive"></re-captcha>
-
-        </form>
-
-        <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-          <div class="form-group clearfix">
-            <span class="pull-right forgot-password">
-              <a [routerLink]="['/reset-password']">Forgot password?</a>
-            </span>
-          </div>
-
-          <!-- <button class="btn pmd-ripple-effect btn-success btn-block" [disabled]="signInForm.invalid" class="btn btn-red">Login</button> -->
-
-          <input type="submit" class="btn pmd-ripple-effect btn-success btn-block" [disabled]="form.invalid" (click)="login(form.value)" value="Login">
-
-          <p class="redirection-link">Don't have an account?
-            <a [routerLink]="['/signup']" class="login-register">Sign Up</a>. </p>
+            <div class="form-group">
+              <a class="forgot-pass" [routerLink]="['/reset-password']">Forgot password?</a>
+            </div>
+            <div class="captcha-wrapper">
+              <re-captcha formControlName="recaptchaReactive"></re-captcha>
+            </div>
+            <div class="button-wrapper">
+              <button [disabled]="form.invalid" class="btn-signin">Login</button>
+              <p class="redirection-link">Already have an account?
+                <a [routerLink]="['/login']" class="register-login">Sign In</a>. </p>
+            </div>
+          </form>
         </div>
-
       </div>
-
     </div>
+  </div>
+</div>

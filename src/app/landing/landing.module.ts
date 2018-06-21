@@ -1,7 +1,7 @@
 import {NO_ERRORS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {LandingComponent} from './landing.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { WhatTokenComponent } from './what-token/what-token.component';
 import { WhyTokenComponent } from './why-token/why-token.component';
@@ -12,7 +12,7 @@ import { TokenSaleComponent } from './token-sale/token-sale.component';
 import { TeamComponent } from './team/team.component';
 import { ParticipateComponent } from './participate/participate.component';
 import { MembersComponent } from './members/members.component';
-import { UiModule } from "../shared/module/ui/ui.module";
+import {UiModule} from '../shared/module/ui/ui.module';
 
 @NgModule({
   imports: [

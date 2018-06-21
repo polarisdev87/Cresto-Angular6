@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SignupComponent } from './signup.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
-import {UiModule} from "../shared/module/ui/ui.module";
+import { UiModule } from '../shared/module/ui/ui.module';
 
 @NgModule({
   imports: [

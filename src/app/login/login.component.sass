@@ -1,5 +1,5 @@
 @import "../landing/landing.component"
-.sign-up-wrapper
+.login-wr
   header
     padding-bottom: 0
   .main-content
@@ -14,6 +14,10 @@
     margin-bottom: 30px
     width: 100%
     text-align: center
+  .forgot-pass
+    font-family: $montserrat-light
+    font-size: 16px
+    color: #2a2a2a
   .loginBtnSocial
     width: 100%
     max-width: 535px
@@ -47,14 +51,13 @@
           margin-left: 10px
           margin-right: 20px
           width: auto
-
   .form-wrapper
     width: 100%
     max-width: 535px
     background: $white
     margin: 0 auto
     padding: 35px 30px 50px 30px
-    .inputGroup
+    .input-group
       width: 100%
       display: flex
       flex-direction: row
@@ -131,7 +134,7 @@
         cursor: pointer
 
 @media only screen and (max-width: 400px)
-  .sign-up-wrapper
+  .login-wr
     .form-wrapper
       padding: 20px 10px 30px 10px
       .input-group
