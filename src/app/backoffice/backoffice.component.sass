@@ -2,12 +2,19 @@
 
 *
   box-sizing: border-box
+
 .back-office
   background-color: $bg-back-office
   min-height: 100vh
   position: relative
+
 a
   text-decoration: none
+  cursor: pointer
+
+a, button
+  &:focus
+    outline: 0
 
 img
   width: 100%

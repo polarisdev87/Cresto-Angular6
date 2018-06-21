@@ -1,5 +1,6 @@
 @import "../../../../backoffice/backoffice.component"
 .sidebar
+  overflow: hidden
   font-family: $OpenSansSemiBold
   position: fixed
   left: 0
@@ -11,10 +12,14 @@
   padding: 25px 0 0 15px
   transition: $transition
   box-shadow: 1px 0 51px rgba(23, 24, 50, 0.27)
+  color: #ffffff
+  .sidebar-text
+    opacity: 0
+    color: transparent
+    transition: opacity  ease 0.32s
   .log-out
     text-align: right
     padding-right: 20px
-    padding-bottom: 45px
     height: 70px
     a
       opacity: 0
@@ -38,4 +43,37 @@
         opacity: 1
         height: auto
         color: $green
+    .sidebar-text
+      color: #ffffff
+      opacity: 1
+
+  .sidebar-item
+    margin-bottom: 28px
+    > a
+      display: flex
+      align-items: center
+      flex-wrap: nowrap
+      width: 100%
+      padding: 8px 0
+      transition: $transition
+      background-position: 100% 0
+      background-size: 7px 1px
+      &:hover
+        background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
   .settings-wr
+    padding-top: 45px
+    padding-bottom: 52px
+    font-family: $OpenSansRegular
+    font-size: 14px
+    padding-left: 19px
+    i
+      font-size: 22px
+      line-height: 22px
+      display: inline-block
+    .user
+      font-size: 12px
+    .setting
+      font-size: 14px
+  .sidebar-text
+    padding-left: 33px
+    display: inline-block
