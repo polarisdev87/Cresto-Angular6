@@ -1,4 +1,4 @@
-import { UiModule } from './../shared/module/ui/ui.module';
+import { UiModule } from '../shared/module/ui/ui.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

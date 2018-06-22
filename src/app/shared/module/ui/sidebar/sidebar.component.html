@@ -5,7 +5,6 @@
       <span>Log out</span>
     </a>
   </div>
-
   <div class="settings-wr">
     <div class="sidebar-item user">
       <a>
@@ -20,73 +19,70 @@
       </a>
     </div>
   </div>
-  <!--<div class="icon-Token"></div>-->
-  <!--<div class="icon-USD"></div>-->
-  <!--<div class="icon-bitcoin"></div>-->
-  <!--<div class="icon-building"></div>-->
-  <!--<div class="icon-dollar-symbol"></div>-->
-  <!--<div class="icon-ether"></div>-->
-  <!--<div class="icon-home"></div>-->
-  <!--<div class="icon-settings"></div>-->
-  <!--<div class="icon-shoppingCart"></div>-->
-  <!--<div class="icon-team"></div>-->
-  <!--<div class="icon-transfer"></div>-->
-  <!--<div class="icon-user"></div>-->
-  <!--<div class="icon-wallet"></div>-->
-
-
-  <!--<a class="sidebar-brand" href="/">-->
-  <!--<img src="assets/images/logo.png" class="logo" alt="Logo">-->
-  <!--Crest Token-->
-  <!--</a>-->
-  <!--<ul class="">-->
-    <!--<li>-->
-      <!--<a [routerLink]="['dashboard']">Dashboard</a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['buy']">Buy Tokens</a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['wallet']"> Wallet </a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['comingsoon']" *ngAcl="['comingsoon', 'GET']"> Staking </a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['/backoffice', 'comingsoon']" *ngAcl="['comingsoon', 'GET']"> Exchange </a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['/backoffice', '/comingsoon']" *ngAcl="['comingsoon', 'GET']"> Campaign </a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['myreferrals']"> My Referrals </a>-->
-    <!--</li>-->
-    <!--<li class="drop">-->
-      <!--<a class="drop-toggle" type="button" data-toggle="drop">-->
-        <!--Profile-->
-        <!--<span class="caret"></span>-->
-      <!--</a>-->
-      <!--<ul class="drop-menu">-->
-        <!--<li *ngIf="!(user$ | async)?.twofactorEnabled">-->
-          <!--<a [routerLink]="['setuptwofa']"> 2 FA Setup</a>-->
-        <!--</li>-->
-        <!--<li *ngIf="(user$ | async)?.twofactorEnabled">-->
-          <!--<a [routerLink]="['disabletwofa']"> Disable 2 FA</a>-->
-        <!--</li>-->
-        <!--<li>-->
-          <!--<a [routerLink]="['editprofile']">Edit Profile</a>-->
-        <!--</li>-->
-        <!--<li>-->
-          <!--<a [routerLink]="['changepassword']">Change Password</a>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['users']" *ngAcl="['users', 'GET']">Users</a>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<a [routerLink]="['referrals']" *ngAcl="['referrals', 'GET']">Referrals</a>-->
-    <!--</li>-->
-
-  <!--</ul>-->
+  <div class="balance-wr">
+    <div class="balance-title">Your balance</div>
+    <div class="sidebar-item">
+      <span class="currency">Btc</span>
+      <span class="val">114</span>
+    </div>
+    <div class="sidebar-item">
+      <span class="currency">Eth</span>
+      <span class="val">58</span>
+    </div>
+    <div class="sidebar-item">
+      <span class="currency">Cstt</span>
+      <span class="val">386</span>
+    </div>
+    <div class="sidebar-item">
+      <span class="currency">Usd</span>
+      <span class="val">10000000</span>
+    </div>
+  </div>
+  <ul class="navigate">
+    <li class="active">
+      <a [routerLink]="['dashboard']">
+        <i class="icon-home"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['buy']">
+        <i class="icon-shoppingCart"></i>
+        <span>Buy Tokens</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['wallet']">
+        <i class="icon-wallet"></i>
+        <span>Wallet</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['']">
+        <i class="icon-team"></i>
+        <span>My team</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/backoffice', '/comingsoon']">
+        <!-- *ngAcl="['comingsoon', 'GET']"> -->
+        <i class="icon-building"></i>
+        <span>Campaign</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/backoffice', '/comingsoon']">
+        <!-- *ngAcl="['comingsoon', 'GET']" -->
+        <i class="icon-transfer"></i>
+        <span>Exchange</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/backoffice', '/comingsoon']">
+        <!-- *ngAcl="['comingsoon', 'GET']" -->
+        <i class="icon-dollar-symbol"></i>
+        <span>Staking</span>
+      </a>
+    </li>
+  </ul>
 </div>
