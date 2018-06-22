@@ -13,6 +13,7 @@ export class LandingComponent implements OnInit {
     private _activateroute: ActivatedRoute,
     private _store: Store<StoreStates>
   ) {}
+
   ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.params['referralHash'] || '';
     this._store.dispatch(new SetReferalLink(referralHash));
@@ -31,5 +32,21 @@ export class LandingComponent implements OnInit {
       document.body.appendChild(el4);
     } ;
     document.body.appendChild(el1);
+
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+        document.getElementById("to-top").style.display = "flex";
+      } else {
+        document.getElementById("to-top").style.display = "none";
+      }
+    }
+  }
+
+  scrollTotop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 }

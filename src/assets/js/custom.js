@@ -250,12 +250,12 @@ $(document).ready(function() {
 
   /// Cache selectors
   let lastId,
-    topMenu = $(".main-nav"),
-    navMobile = $('.navigation-wrapper'),
-    mobileNav = $('.hamburger-icon'),
-    topMenuHeight = topMenu.outerHeight()+15,
+    topMenu = $(".main-nav");
+    navMobile = $(".navigation-wrapper");
+    mobileNav = $(".hamburger-icon");
+    topMenuHeight = topMenu.outerHeight()+15;
     // All list items
-    menuItems = topMenu.find(".scroll"),
+    menuItems = topMenu.find(".scroll");
     // Anchors corresponding to menu items
     scrollItems = menuItems.map(function(){
       let item = $($(this).attr("href"));
@@ -265,7 +265,7 @@ $(document).ready(function() {
   // Bind click handler to menu items
   // so we can get a fancy scroll animation
   menuItems.click(function(e){
-    let href = $(this).attr("href"),
+    let href = $(this).attr("href");
       offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
     navMobile.removeClass('open');
     mobileNav.removeClass('active');
@@ -297,6 +297,5 @@ $(document).ready(function() {
         .end().filter("[href='#"+id+"']").parent().addClass("active");
     }
   });
-
 
 });

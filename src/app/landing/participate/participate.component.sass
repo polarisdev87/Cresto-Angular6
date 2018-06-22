@@ -53,13 +53,26 @@
 @media only screen and (max-width: 768px)
   .participate-wr
     padding-top: 60px
+    padding-bottom: 60px
 
 @media only screen and (max-width: 600px)
   .participate-wr
     .participate-row
+      justify-content: center
       .cell
         width: 50%
+        &:last-child
+          margin-bottom: 0
       .participate-img img
         max-width: 55px
       .text
         padding: 0 5px
+
+@media only screen and (max-width: 475px)
+  .participate-wr
+    .participate-row
+      justify-content: center
+      .cell
+        width: 50%
+        .num
+          margin-bottom: 12px

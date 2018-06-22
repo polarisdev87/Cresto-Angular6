@@ -13,6 +13,7 @@ header
   display: flex
   position: absolute
   top: 0
+  z-index: 25
   transition: $transition
   &.fixed
     position: fixed
@@ -181,8 +182,8 @@ header
   right: 0
   top: 50%
   transform: translateY(-50%)
-  width: 40px
-  height: 30px
+  width: 30px
+  height: 25px
   display: none
   align-items: center
   justify-content: center
@@ -255,11 +256,15 @@ header
 
 @media screen and (max-width: 500px)
   .banner
+    margin: 40px auto 0 auto
     h1
-      font-size: 35px
+      font-size: 30px
   .logo
     &__images
       max-width: 55px
       max-height: 55px
     &__text
       font-size: 20px
+  .timer-wrapper
+    padding: 0
+    margin: 0
