@@ -1,29 +1,55 @@
-<div class="dashboard">
-  <h2 class="title">Crest Token Sale Rounds Schedule</h2>
-  <table class="dashboard-table">
-    <thead>
-    <tr>
-      <th>ICO Round</th>
-      <th>CSTT Supply</th>
-      <th>Price</th>
-      <th>Minimum</th>
-      <th>Maximum</th>
-      <th>Status</th>
-      <th>Free Tokens</th>
-      <th>Free Tokens Recipients</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let round of rounds$ | async">
-      <td>{{round.title}}</td>
-      <td>{{round.supply}}</td>
-      <td>{{round.price}}</td>
-      <td>{{round.min_buy}}</td>
-      <td>{{round.max_buy}}</td>
-      <td [class]="round.stage | lowercase">{{round.stage}}</td>
-      <td>{{round.free_tokens}}</td>
-      <td>{{round.free_tokens_recipients}}</td>
-    </tr>
-    </tbody>
-  </table>
+<div class="dashboard-wr">
+  <div class="dashboard-cell">
+    <div class="timer-wr">
+      <ul class="timer">
+        <li>
+          04 <span>Days</span>
+        </li>
+        <li class="separator">:</li>
+        <li>
+          21 <span>Hours</span>
+        </li>
+        <li class="separator">:</li>
+        <li>
+          45 <span>Min</span>
+        </li>
+        <li class="separator">:</li>
+        <li>
+          13 <span>Sec</span>
+        </li>
+      </ul>
+    </div>
+    <app-instruction></app-instruction>
+  </div>
+  <div class="dashboard-cell">
+    <app-call-action></app-call-action>
+
+
+    <table class="dashboard-table">
+      <thead>
+      <tr>
+        <th>ICO Round</th>
+        <th>CSTT Supply</th>
+        <th>Price</th>
+        <th>Minimum</th>
+        <th>Maximum</th>
+        <th>Status</th>
+        <th>Free Tokens</th>
+        <th>Free Tokens Recipients</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let round of rounds$ | async">
+        <td>{{round.title}}</td>
+        <td>{{round.supply}}</td>
+        <td>{{round.price}}</td>
+        <td>{{round.min_buy}}</td>
+        <td>{{round.max_buy}}</td>
+        <td [class]="round.stage | lowercase">{{round.stage}}</td>
+        <td>{{round.free_tokens}}</td>
+        <td>{{round.free_tokens_recipients}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

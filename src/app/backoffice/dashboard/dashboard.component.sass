@@ -1,0 +1,30 @@
+@import "../backoffice.component"
+.dashboard-wr
+  display: flex
+  flex-wrap: nowrap
+  .dashboard-cell
+    width: 40%
+    &:last-child
+      width: 60%
+  .timer-wr
+    text-align: center
+    width: 100%
+    padding-bottom: 45px
+  .timer
+    width: 100%
+    max-width: 325px
+    text-align: center
+    display: inline-block
+    li
+      display: inline-block
+      vertical-align: top
+      font-family: $OpenSansLight
+      font-size: 52px
+      color: #ffffff
+      span
+        display: block
+        font-family: $OpenSansRegular
+        font-size: 14px
+        color: #868991
+      &.separator
+        padding-right: 15px

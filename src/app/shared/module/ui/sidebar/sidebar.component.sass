@@ -12,9 +12,24 @@
   width: 0
 
 .sidebar::-webkit-scrollbar
+  display: none !important
+
+
+.sidebar::-webkit-scrollbar
   display: none
 
+.sidebar::-webkit-scrollbar
+  display: none
+
+#content browser,
+.browserStack > browser
+  margin-right: -17px !important
+  margin-bottom: -17px !important
+  overflow-y: scroll
+  overflow-x: hidden
+
 .sidebar
+  overflow: -moz-scrollbars-none
   overflow-y: scroll
   font-family: $OpenSansSemiBold
   position: fixed
@@ -120,8 +135,8 @@
       padding-bottom: 10px
       &:last-child
         padding-bottom: 0
-      &.active
-        a:hover
+      a
+        &:hover
           transition: $transition
           background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
           i
@@ -130,6 +145,11 @@
             color: $backOffice-green !important
             display: inline-block
             opacity: 1
+        &.active
+          transition: $transition
+          background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $backOffice-green
     a
       display: flex
       max-height: 40px
@@ -188,3 +208,5 @@
       opacity: 1
       width: auto
       color: #ffffff
+.sidebar::-moz-scrollbar
+  display: none !important
