@@ -21,26 +21,14 @@
   </div>
   <div class="balance-wr">
     <div class="balance-title">Your balance</div>
-    <div class="sidebar-item">
-      <span class="currency">Btc</span>
-      <span class="val">114</span>
-    </div>
-    <div class="sidebar-item">
-      <span class="currency">Eth</span>
-      <span class="val">58</span>
-    </div>
-    <div class="sidebar-item">
-      <span class="currency">Cstt</span>
-      <span class="val">386</span>
-    </div>
-    <div class="sidebar-item">
-      <span class="currency">Usd</span>
-      <span class="val">10000000</span>
+    <div *ngFor="let item of assets$ | async" class="sidebar-item">
+      <span class="currency">{{item.code | uppercase}}</span>
+      <span class="val">{{item.usd_price }}</span>
     </div>
   </div>
   <ul class="navigate">
-    <li class="active">
-      <a [routerLink]="['dashboard']">
+    <li>
+      <a class="active" [routerLink]="['dashboard']">
         <i class="icon-home"></i>
         <span>Dashboard</span>
       </a>

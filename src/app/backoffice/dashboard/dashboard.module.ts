@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
+import { InstructionComponent } from './instruction/instruction.component';
+import { CallActionComponent } from './call-action/call-action.component';
 
 @NgModule({
   imports: [
@@ -10,6 +12,6 @@ import { RouterModule } from "@angular/router";
       { path: '', component: DashboardComponent}
     ]),
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent, InstructionComponent, CallActionComponent]
 })
 export class DashboardModule { }

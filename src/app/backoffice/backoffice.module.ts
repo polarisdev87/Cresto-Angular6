@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BackofficeComponent } from './backoffice.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AccessGuardService } from '../shared/services/access-guard.service';
+import { BackofficeFooterComponent } from './backoffice-footer/backoffice-footer.component';
 
 @NgModule({
   imports: [
@@ -81,7 +82,7 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
       }
     ])
   ],
-  declarations: [BackofficeComponent, ProfileComponent]
+  declarations: [BackofficeComponent, ProfileComponent, BackofficeFooterComponent]
 })
 export class BackofficeModule {
 }

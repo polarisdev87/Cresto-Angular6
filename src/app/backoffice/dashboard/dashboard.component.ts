@@ -1,7 +1,7 @@
-import { getStateData } from './../../store/selectors/wallets.selector';
-import { RoundsRequest } from './../../store/actions/wallets.action';
+import { getStateData } from '../../store/selectors/wallets.selector';
+import { RoundsRequest } from '../../store/actions/wallets.action';
 import { filter } from 'rxjs/operators';
-import { getAuthUserId } from './../../store/selectors/auth.selectors';
+import { getAuthUserId } from '../../store/selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent implements OnInit {
   rounds$: Observable<any>;

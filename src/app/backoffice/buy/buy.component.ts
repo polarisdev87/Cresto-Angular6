@@ -4,9 +4,9 @@ import { AssetsRequest, WalletRequest } from './../../store/actions/wallets.acti
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MatDialog } from "@angular/material";
-import { DepositPopupComponent } from "./deposit-popup/deposit-popup.component";
-import { getStateData } from "../../store/selectors/wallets.selector";
+import { MatDialog } from '@angular/material';
+import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
+import { getStateData } from '../../store/selectors/wallets.selector';
 
 @Component({
   selector: 'app-buy',

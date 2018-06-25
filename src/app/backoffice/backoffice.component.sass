@@ -2,11 +2,14 @@
 
 *
   box-sizing: border-box
+body, html
+  overflow-y: hidden !important
 
 .back-office
   background-color: $bg-back-office
   min-height: 100vh
   position: relative
+  overflow: hidden
 
 a
   text-decoration: none
@@ -22,3 +25,15 @@ img
 
 .back-office
   padding: 15px 50px 0 105px
+
+.backoffice-btn
+  line-height: 60px
+  border-radius: 30px
+  color: #51565e
+  font-family: $OpenSansSemiBold
+  font-size: 24px
+  display: inline-block
+  padding-left: 40px
+  padding-right: 40px
+  &.yellow
+    background: linear-gradient(to right, #fde040 0%, #ffc000 100%) no-repeat 0 0

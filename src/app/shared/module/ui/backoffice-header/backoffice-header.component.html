@@ -5,11 +5,14 @@
   </div>
   <div class="currency-date">
     <ul>
-      <li><i class="icon-bitcoin"></i>BTC = $6,787.51</li>
-      <li><i class="icon-ether"></i>ETH = $0.25</li>
-      <li><i class="icon-Token"></i>CSTT = $530.47</li>
-      <li><i class="icon-USD"></i>USD = $530.47</li>
+      <li *ngFor="let item of assets$ | async">
+        <i class="icon-bitcoin"></i>
+        {{item.code | uppercase}} = {{item.usd_price}}
+      </li>
+      <!--<li><i class="icon-bitcoin"></i></li>-->
+      <!--<li><i class="icon-ether"></i>ETH = $0.25</li>-->
+      <!--<li><i class="icon-Token"></i>CSTT = $530.47</li>-->
+      <!--<li><i class="icon-USD"></i>USD = $530.47</li>-->
     </ul>
   </div>
-
 </header>
