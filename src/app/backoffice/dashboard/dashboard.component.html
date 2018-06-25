@@ -23,33 +23,34 @@
   </div>
   <div class="dashboard-cell">
     <app-call-action></app-call-action>
-    <table class="dashboard-table">
-      <thead>
-      <tr>
-        <th>ICO Round</th>
-        <th>CSTT Supply</th>
-        <th>Price ($)</th>
-        <th>Minimum</th>
-        <th>Maximum</th>
-        <th>Free Tokens</th>
-        <th>Free Tokens Recipients</th>
-        <th>Status</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let round of rounds$ | async">
-        <td>{{round.title}}</td>
-        <td>{{round.supply}}</td>
-        <td>{{round.price}}</td>
-        <td>{{round.min_buy}}</td>
-        <td>{{round.max_buy}}</td>
-        <td>{{round.free_tokens}}</td>
-        <td>{{round.free_tokens_recipients}}</td>
-        <td [class]="round.stage | lowercase">{{round.stage}}</td>
-      </tr>
-      </tbody>
-    </table>
-
-
+    <app-backoffice-table
+      [dashboardTableHead]="dashboardTableHead"
+      [rounds]="rounds$ | async"
+      [columns]="[
+        {value: 'title'},
+        {value: 'supply'},
+        {value: 'price'},
+        {value: 'min_buy'},
+        {value: 'max_buy'},
+        {value: 'free_tokens'},
+        {value: 'free_tokens_recipients'},
+        {value: 'stage', type: 'ongoing'}
+        ]"
+    >
+    </app-backoffice-table>
+    <!--<app-backoffice-table-->
+      <!--[dashboardTableHead]="dashboardTableHead"-->
+      <!--[rounds]="rounds$ | async"-->
+      <!--[columns]="[-->
+        <!--{value:'title', class: ''},-->
+        <!--{value:'price'},-->
+        <!--{value:'min_buy', type: 'c'},-->
+        <!--{value:'max_buy', type: ''},-->
+        <!--{value:'free_tokens', type: ''},-->
+        <!--{value:'free_tokens_recipients', type: ''},-->
+        <!--{value:'stage', type: ''}-->
+        <!--]"-->
+    <!--&gt;-->
+    <!--</app-backoffice-table>-->
   </div>
 </div>

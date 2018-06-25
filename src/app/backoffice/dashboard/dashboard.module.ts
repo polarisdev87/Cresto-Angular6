@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { InstructionComponent } from './instruction/instruction.component';
 import { CallActionComponent } from './call-action/call-action.component';
+import { UiModule } from '../../shared/module/ui/ui.module';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { CallActionComponent } from './call-action/call-action.component';
     RouterModule.forChild([
       { path: '', component: DashboardComponent}
     ]),
+    UiModule
   ],
   declarations: [DashboardComponent, InstructionComponent, CallActionComponent]
 })

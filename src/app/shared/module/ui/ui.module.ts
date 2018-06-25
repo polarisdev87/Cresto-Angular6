@@ -7,6 +7,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FooterComponent } from './footer/footer.component';
 import { BackofficeHeaderComponent } from './backoffice-header/backoffice-header.component';
+import { BackofficeTableComponent } from './backoffice-table/backoffice-table.component';
+import { RowPipe } from './backoffice-table/row.pipe';
 
 @NgModule({
   imports: [
@@ -14,8 +16,24 @@ import { BackofficeHeaderComponent } from './backoffice-header/backoffice-header
     RouterModule,
     MatDialogModule
   ],
-  declarations: [SidebarComponent, NgAclDirective, HeaderAuthComponent, FooterComponent, BackofficeHeaderComponent],
-  exports: [SidebarComponent, NgAclDirective, MatDialogModule, HeaderAuthComponent, FooterComponent, BackofficeHeaderComponent],
+  declarations: [
+    SidebarComponent,
+    NgAclDirective,
+    HeaderAuthComponent,
+    FooterComponent,
+    BackofficeHeaderComponent,
+    BackofficeTableComponent,
+    RowPipe
+  ],
+  exports: [
+    SidebarComponent,
+    NgAclDirective,
+    MatDialogModule,
+    HeaderAuthComponent,
+    FooterComponent,
+    BackofficeHeaderComponent,
+    BackofficeTableComponent
+  ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}]
 })
 export class UiModule {

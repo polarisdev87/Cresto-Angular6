@@ -13,15 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   rounds$: Observable<any>;
-
   constructor(
     private _store: Store<StoreStates>
   ) {
   }
-
+  public dashboardTableHead = [
+    'ICO Round', 'CSTT Supply', 'Price ($)', 'Minimum', 'Maximum', 'Free Tokens', 'Free Tokens Recipients', 'Status'
+  ];
   ngOnInit() {
     this.rounds$ = this._store.select(getStateData('rounds'));
-
     this._store.select(getAuthUserId)
       .pipe(
         filter((id: string | null) => Boolean(id))
