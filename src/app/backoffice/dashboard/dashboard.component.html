@@ -23,19 +23,17 @@
   </div>
   <div class="dashboard-cell">
     <app-call-action></app-call-action>
-
-
     <table class="dashboard-table">
       <thead>
       <tr>
         <th>ICO Round</th>
         <th>CSTT Supply</th>
-        <th>Price</th>
+        <th>Price ($)</th>
         <th>Minimum</th>
         <th>Maximum</th>
-        <th>Status</th>
         <th>Free Tokens</th>
         <th>Free Tokens Recipients</th>
+        <th>Status</th>
       </tr>
       </thead>
       <tbody>
@@ -45,11 +43,13 @@
         <td>{{round.price}}</td>
         <td>{{round.min_buy}}</td>
         <td>{{round.max_buy}}</td>
-        <td [class]="round.stage | lowercase">{{round.stage}}</td>
         <td>{{round.free_tokens}}</td>
         <td>{{round.free_tokens_recipients}}</td>
+        <td [class]="round.stage | lowercase">{{round.stage}}</td>
       </tr>
       </tbody>
     </table>
+
+
   </div>
 </div>
