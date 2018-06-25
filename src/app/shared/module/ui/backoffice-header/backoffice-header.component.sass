@@ -23,22 +23,25 @@ header
     color: $accent-color
     text-shadow: 0 0 15px rgba(0, 231, 199, 1)
 
+
 .currency-date
-  ul
-    margin-right: 50px
-    display: flex
-    flex-direction: row
-    li
+  margin-right: 50px
+  display: flex
+  flex-direction: row
+  font-family: $OpenSansRegular
+  font-size: 16px
+  color: #c0c9d1
+  li
+    display: inline-flex
+    align-items: center
+
+
+    color: $white
+    margin-left: 70px
+    &:first-child
+      margin-left: 0
+    i
       display: inline-flex
-      align-items: center
-      font-family: $OpenSansRegular
-      font-size: 16px
-      color: $white
-      margin-left: 70px
-      &:first-child
-        margin-left: 0
-      i
-        display: inline-flex
-        margin-right: 10px
-        font-size: 20px
-        color: #8a8d9a
+      margin-right: 10px
+      font-size: 20px
+      color: #c0c9d1
