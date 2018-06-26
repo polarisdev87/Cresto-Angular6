@@ -1,15 +1,376 @@
-<div class='back-office-table' [ngClass]="{'scroll': scroll}">
-  <table >
+<div class='back-office-table'>
+  <table [ngClass]="{'scroll': scroll}">
     <thead>
     <tr>
       <th *ngFor="let i of dashboardTableHead">{{i}}</th>
     </tr>
     </thead>
+    <ng-scrollbar [trackY]="false" [trackX]="false">
     <tbody>
     <tr *ngFor="let round of rounds" [class]="round.stage | lowercase">
       <td [class]="item.type" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
     </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
+    <tr class="ongoing">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="ongoing"><span>ongoing</span></td>
+    </tr>
+    <tr class="pending">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="pending"><span>Pending</span></td>
+    </tr>
+    <tr class="next">
+      <td><span>Pre Sale</span></td>
+      <td><span>1000000</span></td>
+      <td><span>0.25</span></td>
+      <td><span>100</span></td>
+      <td><span>10000</span></td>
+      <td><span>50</span></td>
+      <td><span>1000</span></td>
+      <td class="next"><span>Next</span></td>
+    </tr>
     </tbody>
+    </ng-scrollbar>
   </table>
 </div>
-

@@ -9,12 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { BackofficeHeaderComponent } from './backoffice-header/backoffice-header.component';
 import { BackofficeTableComponent } from './backoffice-table/backoffice-table.component';
 import { RowPipe } from './backoffice-table/row.pipe';
+import { ScrollbarModule } from 'ngx-scrollbar';
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MatDialogModule
+    MatDialogModule,
+    ScrollbarModule
   ],
   declarations: [
     SidebarComponent,

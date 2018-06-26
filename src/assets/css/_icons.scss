@@ -14,7 +14,6 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
   text-decoration: none;
   text-transform: none;
 }
@@ -26,47 +25,74 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == Token {
+  @if $filename == Exclamation {
     $char: "\E001";
   }
-  @if $filename == USD {
+  @if $filename == Token {
     $char: "\E002";
   }
-  @if $filename == bitcoin {
+  @if $filename == USD {
     $char: "\E003";
   }
-  @if $filename == building {
+  @if $filename == bitcoin {
     $char: "\E004";
   }
-  @if $filename == dollar-symbol {
+  @if $filename == building {
     $char: "\E005";
   }
-  @if $filename == ether {
+  @if $filename == close {
     $char: "\E006";
   }
-  @if $filename == home {
+  @if $filename == dollar-symbol {
     $char: "\E007";
   }
-  @if $filename == logout {
+  @if $filename == email {
     $char: "\E008";
   }
-  @if $filename == settings {
+  @if $filename == ether {
     $char: "\E009";
   }
-  @if $filename == shoppingCart {
+  @if $filename == home {
     $char: "\E00A";
   }
-  @if $filename == team {
+  @if $filename == live-chat {
     $char: "\E00B";
   }
-  @if $filename == transfer {
+  @if $filename == logog-crest-token {
     $char: "\E00C";
   }
-  @if $filename == user {
+  @if $filename == logout {
     $char: "\E00D";
   }
-  @if $filename == wallet {
+  @if $filename == next {
     $char: "\E00E";
+  }
+  @if $filename == pending {
+    $char: "\E00F";
+  }
+  @if $filename == send-mail {
+    $char: "\E010";
+  }
+  @if $filename == settings {
+    $char: "\E011";
+  }
+  @if $filename == shoppingCart {
+    $char: "\E012";
+  }
+  @if $filename == team {
+    $char: "\E013";
+  }
+  @if $filename == tick {
+    $char: "\E014";
+  }
+  @if $filename == transfer {
+    $char: "\E015";
+  }
+  @if $filename == user {
+    $char: "\E016";
+  }
+  @if $filename == wallet {
+    $char: "\E017";
   }
 
   @return $char;
@@ -83,6 +109,9 @@
   }
 }
 
+.icon-Exclamation {
+  @include icon(Exclamation);
+}
 .icon-Token {
   @include icon(Token);
 }
@@ -95,8 +124,14 @@
 .icon-building {
   @include icon(building);
 }
+.icon-close {
+  @include icon(close);
+}
 .icon-dollar-symbol {
   @include icon(dollar-symbol);
+}
+.icon-email {
+  @include icon(email);
 }
 .icon-ether {
   @include icon(ether);
@@ -104,8 +139,23 @@
 .icon-home {
   @include icon(home);
 }
+.icon-live-chat {
+  @include icon(live-chat);
+}
+.icon-logog-crest-token {
+  @include icon(logog-crest-token);
+}
 .icon-logout {
   @include icon(logout);
+}
+.icon-next {
+  @include icon(next);
+}
+.icon-pending {
+  @include icon(pending);
+}
+.icon-send-mail {
+  @include icon(send-mail);
 }
 .icon-settings {
   @include icon(settings);
@@ -116,6 +166,9 @@
 .icon-team {
   @include icon(team);
 }
+.icon-tick {
+  @include icon(tick);
+}
 .icon-transfer {
   @include icon(transfer);
 }
@@ -125,3 +178,5 @@
 .icon-wallet {
   @include icon(wallet);
 }
+
+

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewChild } from '@angular/core';
+import { ScrollbarComponent } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-backoffice-table',
@@ -11,4 +12,6 @@ export class BackofficeTableComponent {
   @Input() rounds;
   @Input() columns;
   @Input() scroll;
+
+  @ViewChild(ScrollbarComponent) scrollRef: ScrollbarComponent;
 }

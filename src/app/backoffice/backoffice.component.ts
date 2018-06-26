@@ -17,5 +17,18 @@ export class BackofficeComponent implements OnInit {
   ngOnInit() {
     this._store.dispatch(new GetCurrentUser());
     this._store.dispatch(new AclRequest());
+
+    const el1 = document.createElement('script');
+    const el2 = document.createElement('script');
+
+    el1.src = 'assets/js/jquery.bundle.js';
+    el1.onload = () => {
+      el2.src = 'assets/js/scroll-table.js';
+      document.body.appendChild(el2);
+    };
+    document.body.appendChild(el1);
   }
+
+
+
 }

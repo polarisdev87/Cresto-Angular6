@@ -6,11 +6,13 @@ import { BackofficeComponent } from './backoffice.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AccessGuardService } from '../shared/services/access-guard.service';
 import { BackofficeFooterComponent } from './backoffice-footer/backoffice-footer.component';
+// import { ScrollbarModule } from 'ngx-scrollbar';
 
 @NgModule({
   imports: [
     CommonModule,
     UiModule,
+    // ScrollbarModule,
     RouterModule.forChild([
       {
         path: '',
