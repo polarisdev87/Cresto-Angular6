@@ -10,4 +10,5 @@ export class BackofficeTableComponent {
   @Input() dashboardTableHead;
   @Input() rounds;
   @Input() columns;
+  @Input() scroll;
 }

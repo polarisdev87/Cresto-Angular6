@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RowPipe implements PipeTransform {
 
-  transform(row: { [key: string]: string }, ks: { value: string, type: string }[]): any {
+  transform(row: { [key: string]: string }, ks: { value: string, type: any }[]): any {
     // should think about this
     return ks
       .map((obj) => {

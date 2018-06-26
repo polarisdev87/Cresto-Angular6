@@ -12,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent implements OnInit {
-  rounds$: Observable<any>;
+  public rounds$: Observable<any>;
+  public scroll;
   constructor(
     private _store: Store<StoreStates>
   ) {
@@ -26,7 +27,7 @@ export class DashboardComponent implements OnInit {
       .pipe(
         filter((id: string | null) => Boolean(id))
       )
-      .subscribe((id) => {
+      .subscribe(() => {
         this._store.dispatch(new RoundsRequest());
       });
   }

@@ -21,11 +21,12 @@
     </div>
     <app-instruction></app-instruction>
   </div>
-  <div class="dashboard-cell">
+  <div class="dashboard-cell" *ngIf="rounds$ | async as rounds">
     <app-call-action></app-call-action>
     <app-backoffice-table
       [dashboardTableHead]="dashboardTableHead"
-      [rounds]="rounds$ | async"
+      [rounds]="rounds"
+      [scroll]="true"
       [columns]="[
         {value: 'title'},
         {value: 'supply'},
@@ -34,23 +35,8 @@
         {value: 'max_buy'},
         {value: 'free_tokens'},
         {value: 'free_tokens_recipients'},
-        {value: 'stage', type: 'ongoing'}
-        ]"
-    >
+        {value: 'stage'}
+        ]">
     </app-backoffice-table>
-    <!--<app-backoffice-table-->
-      <!--[dashboardTableHead]="dashboardTableHead"-->
-      <!--[rounds]="rounds$ | async"-->
-      <!--[columns]="[-->
-        <!--{value:'title', class: ''},-->
-        <!--{value:'price'},-->
-        <!--{value:'min_buy', type: 'c'},-->
-        <!--{value:'max_buy', type: ''},-->
-        <!--{value:'free_tokens', type: ''},-->
-        <!--{value:'free_tokens_recipients', type: ''},-->
-        <!--{value:'stage', type: ''}-->
-        <!--]"-->
-    <!--&gt;-->
-    <!--</app-backoffice-table>-->
   </div>
 </div>

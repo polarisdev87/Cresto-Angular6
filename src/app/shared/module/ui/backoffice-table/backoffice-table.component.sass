@@ -13,6 +13,12 @@
       font-size: 14px
       color: #8b8e9b
       padding-bottom: 19px
+      &:nth-child(3)
+        min-width: 80px
+      &:nth-child(4)
+        min-width: 80px
+      &:nth-child(5)
+        min-width: 80px
     td, th
       text-align: left
       &:last-child
@@ -21,6 +27,7 @@
       font-size: 16px
       opacity: 0.8
       border-radius: 9px
+
       tr
         td
           padding: 34px 0 32px 0
@@ -93,6 +100,17 @@
               top: -6px
             &:after
               bottom: -7px
+          td
+            &:first-child span
+              display: inline-block
+              &:after
+                background-color: #00bdff
+                box-shadow: 0 0 21px rgba(0, 189, 255, 0.71)
+            &:last-child span
+              color: #00bdff
+              display: block
+              background: url("../../../../../assets/images/next-icon.png") no-repeat 0 4px
+
         &.pending
           &:hover td
             &:before,
@@ -104,15 +122,49 @@
               top: -6px
             &:after
               bottom: -7px
-//&.ongoing span
-//  color: #00ebc9
-//  display: inline-block
-//  &:after
-//    background-color: #00ebc9
-//    box-shadow: 0 0 21px rgba(0, 235, 201, 0.71)
-//  &.next span
-//    color: #00bdff
-//    display: inline-block
-//    &:after
-//      background-color: #00bdff
-//      box-shadow: 0 0 21px rgba(0, 189, 255, 0.71)
+          td
+            &:first-child span
+              display: inline-block
+              &:after
+                background-color: #fec700
+                box-shadow: 0 0 21px rgba(254, 199, 0, 0.71)
+            &:last-child span
+              color: #fec700
+              display: block
+              background: url("../../../../../assets/images/prnding-icon.png") no-repeat 0 5px
+  &.scroll
+    table
+      tbody
+        display: table
+        height: 600px
+        overflow: auto
+      thead
+        width: calc( 100% - 1em )
+      thead, tbody tr
+        display: table
+        width: 100%
+
+
+tbody::-webkit-scrollbar-thumb
+  background: transparent
+  -webkit-border-radius: 0
+  height: 0
+  width: 0
+
+tbody::-webkit-scrollbar
+  background: transparent
+  -webkit-border-radius: 0
+  height: 0
+  width: 0
+
+tbody::-webkit-scrollbar
+  display: none !important
+
+
+tbody::-webkit-scrollbar
+  display: none
+
+tbody::-webkit-scrollbar
+  display: none
+tbody::-moz-scrollbar
+  display: none !important

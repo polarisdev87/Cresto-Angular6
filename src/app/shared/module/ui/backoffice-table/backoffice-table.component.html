@@ -1,5 +1,5 @@
-<div class="back-office-table">
-  <table>
+<div class='back-office-table' [ngClass]="{'scroll': scroll}">
+  <table >
     <thead>
     <tr>
       <th *ngFor="let i of dashboardTableHead">{{i}}</th>
