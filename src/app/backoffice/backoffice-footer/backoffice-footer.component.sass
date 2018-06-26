@@ -1,0 +1,39 @@
+@import "../../../assets/css/variables"
+
+footer
+  margin-left: 35px
+  border-top: 1px solid #2b3c46
+  font-family: $OpenSansRegular
+  padding: 20px 0
+  color: $backoffice-text-color
+  font-size: 14px
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  .support-wrapper
+    display: flex
+    flex-direction: row
+    align-items: center
+  .chat-wrapper
+    display: flex
+    flex-direction: row
+    align-items: center
+    ul
+      display: flex
+      flex-direction: row
+      li
+        margin-left: 45px
+        a
+          text-decoration: none
+          color: $backoffice-text-color
+          font-size: 16px
+          transition: $transition
+          &:hover
+            color: $accent-color
+  .tel-wrapper
+    margin-left: 80px
+  .help-wrapper
+    margin-left: 50px
+    .emptyGreen
+      height: 30px

@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./backoffice-footer.component.sass']
 })
 export class BackofficeFooterComponent {
+  public buttonStateHelp = {
+    name: 'Help',
+    class: 'emptyGreen'
+  }
 }
