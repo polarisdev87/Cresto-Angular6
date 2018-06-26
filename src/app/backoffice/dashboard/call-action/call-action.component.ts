@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-call-action',
@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./call-action.component.sass']
 })
 export class CallActionComponent {
+
+  public buttonState1 = {
+    name: 'Make deposit',
+    class: 'redBig'
+  };
 }

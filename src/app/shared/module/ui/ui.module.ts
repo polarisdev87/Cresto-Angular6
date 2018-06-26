@@ -7,6 +7,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FooterComponent } from './footer/footer.component';
 import { BackofficeHeaderComponent } from './backoffice-header/backoffice-header.component';
+import { ButtonComponent } from './button/button.component';
 import { BackofficeTableComponent } from './backoffice-table/backoffice-table.component';
 import { RowPipe } from './backoffice-table/row.pipe';
 
@@ -23,7 +24,8 @@ import { RowPipe } from './backoffice-table/row.pipe';
     FooterComponent,
     BackofficeHeaderComponent,
     BackofficeTableComponent,
-    RowPipe
+    RowPipe,
+    ButtonComponent
   ],
   exports: [
     SidebarComponent,
@@ -32,7 +34,8 @@ import { RowPipe } from './backoffice-table/row.pipe';
     HeaderAuthComponent,
     FooterComponent,
     BackofficeHeaderComponent,
-    BackofficeTableComponent
+    BackofficeTableComponent,
+    ButtonComponent
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}]
 })
