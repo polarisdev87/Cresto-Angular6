@@ -11,8 +11,6 @@ import { ButtonComponent } from './button/button.component';
 import { BackofficeTableComponent } from './backoffice-table/backoffice-table.component';
 import { RowPipe } from './backoffice-table/row.pipe';
 import { ScrollbarModule } from 'ngx-scrollbar';
-import { TestingComponent } from './testing/testing.component';
-
 
 @NgModule({
   imports: [
@@ -29,8 +27,7 @@ import { TestingComponent } from './testing/testing.component';
     BackofficeHeaderComponent,
     BackofficeTableComponent,
     RowPipe,
-    ButtonComponent,
-    TestingComponent
+    ButtonComponent
   ],
   exports: [
     SidebarComponent,
@@ -40,8 +37,7 @@ import { TestingComponent } from './testing/testing.component';
     FooterComponent,
     BackofficeHeaderComponent,
     BackofficeTableComponent,
-    ButtonComponent,
-    TestingComponent
+    ButtonComponent
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}]
 })
