@@ -1,4 +1,7 @@
+
+
 <div class="sidebar">
+  <ng-scrollbar class="sample">
   <div class="log-out">
     <a (click)="logout()">
       <i class="icon-logout"></i>
@@ -28,19 +31,19 @@
   </div>
   <ul class="navigate">
     <li>
-      <a class="active" [routerLink]="['dashboard']">
+      <a routerLinkActive="active" [routerLink]="['dashboard']">
         <i class="icon-home"></i>
         <span>Dashboard</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="['buy']">
+      <a routerLinkActive="active" [routerLink]="['buy']">
         <i class="icon-shoppingCart"></i>
         <span>Buy Tokens</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="['wallet']">
+      <a routerLinkActive="active" [routerLink]="['wallet']">
         <i class="icon-wallet"></i>
         <span>Wallet</span>
       </a>
@@ -73,4 +76,7 @@
       </a>
     </li>
   </ul>
+  </ng-scrollbar>
 </div>
+
+

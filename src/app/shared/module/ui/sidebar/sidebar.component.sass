@@ -30,7 +30,6 @@
 
 .sidebar
   overflow: -moz-scrollbars-none
-  overflow-y: scroll
   font-family: $OpenSansSemiBold
   position: fixed
   z-index: 100
@@ -209,5 +208,11 @@
       opacity: 1
       width: auto
       color: #c0c9d1
-.sidebar::-moz-scrollbar
-  display: none !important
+.sample
+  ng-scrollbar
+    background-color: #F8F8F8
+    padding: 1em
+  .ng-scrollbar
+    background-color: rgba(0, 0, 0, 0.15)
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5)
+    border-radius: 3px

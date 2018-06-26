@@ -5,8 +5,6 @@
       <th *ngFor="let i of dashboardTableHead">{{i}}</th>
     </tr>
     </thead>
-
-
     <ng-scrollbar class="sample">
     <tbody>
     <tr *ngFor="let round of rounds" [class]="round.stage | lowercase">
