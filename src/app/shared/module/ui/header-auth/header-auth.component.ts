@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderAuthComponent implements OnInit {
 
+  public show = false;
+
   constructor() { }
 
   ngOnInit() {

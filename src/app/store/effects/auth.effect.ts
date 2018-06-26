@@ -61,6 +61,7 @@ export class AuthEffects {
       switchMap((user: User) => this._authService.signUp(user).pipe(
         map((data: User) => new AuthActions.SignUpSuccess(data)),
         tap(() => {
+          // alert('Thanks for registration.');
           alert('A verification mail has sent to your email. Please verify it.');
           this._router.navigate(['/login']);
         }),
