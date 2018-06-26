@@ -16,13 +16,13 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a [routerLink]="['dashboard']">Dashboard</a>
+          <a [routerLink]="['dashboard']" *ngAcl="['dashboard', 'GET']">Dashboard</a>
         </li>
         <li>
-          <a [routerLink]="['buy']">Buy Tokens</a>
+          <a [routerLink]="['buy']" *ngAcl="['buy', 'GET']">Buy Tokens</a>
         </li>
         <li>
-          <a [routerLink]="['wallet']"> Wallet </a>
+          <a [routerLink]="['wallet']" *ngAcl="['wallet', 'GET']"> Wallet </a>
         </li>
         <li>
           <a [routerLink]="['comingsoon']" *ngAcl="['comingsoon', 'GET']"> Staking </a>
@@ -34,10 +34,10 @@
           <a [routerLink]="['/backoffice', '/comingsoon']" *ngAcl="['comingsoon', 'GET']"> Campaign </a>
         </li>
         <li>
-          <a [routerLink]="['myreferrals']"> My Referrals </a>
+          <a [routerLink]="['myreferrals']" *ngAcl="['myreferrals', 'GET']"> My Referrals </a>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown" *ngAcl="['profile', 'GET']">
 
             <a class="dropdown-toggle" type="button" data-toggle="dropdown">
               Profile
