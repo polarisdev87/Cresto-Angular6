@@ -1,0 +1,95 @@
+@import "../../backoffice.component"
+.buy-form
+  background-color: #222833
+  border-radius: 7px
+  padding: 75px 0 80px 0
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  box-shadow: $box-shadow-block
+  margin-bottom: 55px
+  .buy-form-title
+    font-family: $OpenSansSemiBold
+    font-size: 24px
+    color: #c0c9d1
+    padding-bottom: 28px
+    display: block
+    width: 100%
+    text-align: center
+  form
+    display: block
+    width: 100%
+    max-width: 685px
+    .form-group
+      display: block
+      margin-bottom: 55px
+      span
+        display: block
+        width: 100%
+        font-family: $OpenSansRegular
+        font-size: 14px
+        color: #737d84
+        padding-bottom: 10px
+
+  .total
+    font-family: $OpenSansSemiBold
+    font-size: 18px
+    color: #c0c9d1
+    text-align: center
+
+    span
+      display: inline-block
+      vertical-align: middle
+    .total-title
+      font-family: $OpenSansRegular
+      font-size: 14px
+      color: #737d84
+      padding-right: 35px
+
+.currency-wr
+  .currency-title
+    font-family: $OpenSansRegular
+    font-size: 14px
+    color: #737d84
+    padding-bottom: 17px
+  .select-currency
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-between
+    padding-bottom: 35px
+    .btc,
+    .eth
+      width: 47%
+      display: flex
+      align-items: center
+      justify-content: center
+      background-color: #2c333d
+      border-radius: 6px
+      color: #808490
+      padding: 19px 0
+      cursor: pointer
+      transition: $transition
+      .content
+        span
+          display: block
+          font-family: $OpenSansRegular
+          font-size: 14px
+        .icon-title
+          font-family: $OpenSansSemiBold
+          text-transform: uppercase
+          font-size: 16px
+    .btc:hover
+      box-shadow: 0 0 24px rgba(218, 161, 38, 0.5)
+    .eth:hover
+      box-shadow: 0 0 24px rgba(101, 198, 54, 0.5)
+
+.currency-btn
+  text-align: center
+  margin-top: 45px
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0

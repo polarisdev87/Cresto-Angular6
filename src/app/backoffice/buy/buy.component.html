@@ -1,28 +1,37 @@
-<div class="buytokens">
-  <div class="container-account">
-    <div class="item live-rate pmd-z-depth">
-      <div *ngFor="let item of assets$ | async">
-        <img [src]="logos[item.code]" width="30px">
-        <span> {{item.code | uppercase}} = {{item.usd_price | currency}} </span>
-      </div>
-    </div>
-    <div class="item balance pmd-z-depth" *ngFor="let item of wallets$ | async">
-      <img [src]="logos[item.asset.code]" width="60px">
-      <div>
-        <span> $ {{item?.usd_balance}} </span>
-        <br>
-        <span>{{item.balance}} {{item.asset.code | uppercase }}</span>
-      </div>
+<div class="buy-wr">
+  <div class="buy-cell">
+    <div class="buy-content">
+      <app-timer></app-timer>
+      <app-buy-instruction></app-buy-instruction>
     </div>
   </div>
-  <div class="container-form-instructions">
-    <div class="container-fluid full-width-container inbox">
-      <app-buy-token-form></app-buy-token-form>
-      <div class="purchase-btn" *ngFor="let item of wallets$ | async">
-        <button *ngIf="item.top_up_address" (click)="openPopup(item.top_up_address)" type="button">deposit your
-          bitcoin
-        </button>
+  <div class="buy-cell">
+    <app-buy-token-form></app-buy-token-form>
+    <div class="make-deposit-wr">
+      <div class="btn-wr">
+        <app-button [routerLink]="'/backoffice/wallet'" [buttonState]="makeDepositLink"></app-button>
       </div>
+      <div class="text-wr">
+        <h6 class="make-deposit-title">Deposit</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.</p>
+      </div>
+
     </div>
+
+
+    <!--<div class="purchase-btn" *ngFor="let item of wallets$ | async">-->
+    <!--<button *ngIf="item.top_up_address" (click)="openPopup(item.top_up_address)" type="button">deposit your bitcoin-->
+    <!--</button>-->
+    <!--</div>-->
   </div>
 </div>
+
+
+
+
+
+
+
+
+

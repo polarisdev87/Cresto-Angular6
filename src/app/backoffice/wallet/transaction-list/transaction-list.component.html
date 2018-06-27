@@ -1,28 +1,37 @@
-<div  class="container-fluid full-width-container value-added-detail-page">
-  <h2>Transaction List</h2>
-  <div  class="table-responsive pmd-card pmd-z-depth">
-    <table class="table table-mc-red pmd-table table-striped">
-      <thead >
-      <tr>
-        <th >Created Date</th>
-        <th >Coin</th>
-        <th >Amount</th>
-        <th >Type</th>
-        <th >Status</th>
-        <th >Hash</th>
-      </tr>
-      </thead>
-      <tbody >
-      <tr class="table_row" *ngFor="let item of transactions">
-        <th>{{item.created_at}}</th>
-        <th>{{item.asset_code | uppercase}}</th>
-        <th>{{item.amount}}</th>
-        <th>{{item.transaction_type}}</th>
-        <th>{{item.status}}</th>
-        <th *ngIf="item.hash"><a target="_blank" [href]="item.check_hash_url">{{item.hash}}</a></th>
-        <th *ngIf="!item.hash">-</th>
-      </tr>
-      </tbody>
-    </table>
+<!--<div  class="container-fluid full-width-container value-added-detail-page">-->
+  <!--<h2>Transaction List</h2>-->
+  <!--<div  class="table-responsive pmd-card pmd-z-depth">-->
+    <!--<table class="table table-mc-red pmd-table table-striped">-->
+      <!--<thead >-->
+      <!--<tr>-->
+        <!--<th >Created Date</th>-->
+        <!--<th >Coin</th>-->
+        <!--<th >Amount</th>-->
+        <!--<th >Type</th>-->
+        <!--<th >Status</th>-->
+        <!--<th >Hash</th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody >-->
+      <!--<tr class="table_row" *ngFor="let item of transactions">-->
+        <!--<th>{{item.created_at}}</th>-->
+        <!--<th>{{item.asset_code | uppercase}}</th>-->
+        <!--<th>{{item.amount}}</th>-->
+        <!--<th>{{item.transaction_type}}</th>-->
+        <!--<th>{{item.status}}</th>-->
+        <!--<th *ngIf="item.hash"><a target="_blank" [href]="item.check_hash_url">{{item.hash}}</a></th>-->
+        <!--<th *ngIf="!item.hash">-</th>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="transaction-table-wrapper">
+  <h2>History</h2>
+  <div class="transaction-tabletransaction-table">
+    <app-backoffice-table
+      [dashboardTableHead]="transactionsHistoryHead"
+      [scroll]="false"
+    ></app-backoffice-table>
   </div>
 </div>

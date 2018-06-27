@@ -8,7 +8,7 @@ export const environment: Env = {
   },
   cresttoken: {
     api: {
-      url: 'http://wallet.cresttoken.com/api',
+      url: 'https://wallet.cresttoken.com/api',
       prefix: ''
     }
   },
