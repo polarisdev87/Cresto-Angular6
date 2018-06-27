@@ -1,0 +1,18 @@
+export const environment: Env = {
+  production: true,
+  host: {
+    api: {
+      url: 'http://localhost:8090',
+      prefix: ''
+    }
+  },
+  cresttoken: {
+    api: {
+      url: 'http://wallet.cresttoken.com/api',
+      prefix: ''
+     }
+  },
+  facebookConfig: {
+    appId: string
+  }
+};

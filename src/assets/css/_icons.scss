@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "Icons";
+  src: url('assets/fonts/icons/Icons.eot');
+  src: url('assets/fonts/icons/Icons.eot?#iefix') format('eot'),
+  url('assets/fonts/icons/Icons.woff2') format('woff2'),
+  url('assets/fonts/icons/Icons.ttf') format('truetype'),
+  url('assets/fonts/icons/Icons.svg#Icons') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "Icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == Exclamation {
+    $char: "\E001";
+  }
+  @if $filename == Token {
+    $char: "\E002";
+  }
+  @if $filename == USD {
+    $char: "\E003";
+  }
+  @if $filename == bitcoin {
+    $char: "\E004";
+  }
+  @if $filename == building {
+    $char: "\E005";
+  }
+  @if $filename == close {
+    $char: "\E006";
+  }
+  @if $filename == dollar-symbol {
+    $char: "\E007";
+  }
+  @if $filename == email {
+    $char: "\E008";
+  }
+  @if $filename == ether {
+    $char: "\E009";
+  }
+  @if $filename == home {
+    $char: "\E00A";
+  }
+  @if $filename == live-chat {
+    $char: "\E00B";
+  }
+  @if $filename == logog-crest-token {
+    $char: "\E00C";
+  }
+  @if $filename == logout {
+    $char: "\E00D";
+  }
+  @if $filename == next {
+    $char: "\E00E";
+  }
+  @if $filename == pending {
+    $char: "\E00F";
+  }
+  @if $filename == send-mail {
+    $char: "\E010";
+  }
+  @if $filename == settings {
+    $char: "\E011";
+  }
+  @if $filename == shoppingCart {
+    $char: "\E012";
+  }
+  @if $filename == team {
+    $char: "\E013";
+  }
+  @if $filename == tick {
+    $char: "\E014";
+  }
+  @if $filename == transfer {
+    $char: "\E015";
+  }
+  @if $filename == user {
+    $char: "\E016";
+  }
+  @if $filename == wallet {
+    $char: "\E017";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    } @else {
+      @include icon-styles;
+    }
+    content: icon-char($filename);
+  }
+}
+
+.icon-Exclamation {
+  @include icon(Exclamation);
+}
+.icon-Token {
+  @include icon(Token);
+}
+.icon-USD {
+  @include icon(USD);
+}
+.icon-bitcoin {
+  @include icon(bitcoin);
+}
+.icon-building {
+  @include icon(building);
+}
+.icon-close {
+  @include icon(close);
+}
+.icon-dollar-symbol {
+  @include icon(dollar-symbol);
+}
+.icon-email {
+  @include icon(email);
+}
+.icon-ether {
+  @include icon(ether);
+}
+.icon-home {
+  @include icon(home);
+}
+.icon-live-chat {
+  @include icon(live-chat);
+}
+.icon-logog-crest-token {
+  @include icon(logog-crest-token);
+}
+.icon-logout {
+  @include icon(logout);
+}
+.icon-next {
+  @include icon(next);
+}
+.icon-pending {
+  @include icon(pending);
+}
+.icon-send-mail {
+  @include icon(send-mail);
+}
+.icon-settings {
+  @include icon(settings);
+}
+.icon-shoppingCart {
+  @include icon(shoppingCart);
+}
+.icon-team {
+  @include icon(team);
+}
+.icon-tick {
+  @include icon(tick);
+}
+.icon-transfer {
+  @include icon(transfer);
+}
+.icon-user {
+  @include icon(user);
+}
+.icon-wallet {
+  @include icon(wallet);
+}
+
+

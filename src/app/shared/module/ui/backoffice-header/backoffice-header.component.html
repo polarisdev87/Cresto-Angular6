@@ -1,0 +1,12 @@
+<header>
+  <div class="logo">
+    <img [src]="logo" alt="logo">
+    <p>rest Token</p>
+  </div>
+  <ul class="currency-date">
+    <li *ngFor="let item of assets$ | async">
+      <i class="icon-bitcoin"></i>
+      {{item.code | uppercase}} = {{item.usd_price}}
+    </li>
+  </ul>
+</header>

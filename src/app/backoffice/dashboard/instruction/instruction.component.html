@@ -1,0 +1,13 @@
+<div class="instruction-wr">
+  <div class="instruction-title">Welcome to the Crest Token ICO</div>
+  <div class="instruction-desc">
+    Make sure you follow these two important steps for
+    you to participate in our ICO. <br>
+  </div>
+  <div class="instruction-content">
+    <div *ngFor="let item of welcomeList" class="instruction-item">
+      <span class="step">{{item.label}}</span>
+      <p>{{item.text}}</p>
+    </div>
+  </div>
+</div>
