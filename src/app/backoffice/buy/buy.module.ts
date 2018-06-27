@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BuyTokenFormComponent } from './buy-token-form/buy-token-form.component';
 import { UiModule } from '../../shared/module/ui/ui.module';
 import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
-
+import { BuyTokenSelectComponent } from './buy-token-form/buy-token-select/buy-token-select.component';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
     ]),
     UiModule
   ],
-  declarations: [BuyComponent, BuyTokenFormComponent, DepositPopupComponent],
+  declarations: [BuyComponent, BuyTokenFormComponent, DepositPopupComponent, BuyTokenSelectComponent],
   entryComponents: [DepositPopupComponent]
 })
 export class BuyModule { }

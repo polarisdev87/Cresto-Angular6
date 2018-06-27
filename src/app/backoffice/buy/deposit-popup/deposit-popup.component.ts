@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA } from "@angular/material";
 @Component({
   selector: 'app-deposit-popup',
   templateUrl: './deposit-popup.component.html',
-  styleUrls: ['./deposit-popup.component.css']
+  styleUrls: ['./deposit-popup.component.sass']
 })
 export class DepositPopupComponent {
   address;

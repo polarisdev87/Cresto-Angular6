@@ -37,3 +37,40 @@ img
   padding-right: 40px
   &.yellow
     background: linear-gradient(to right, #fde040 0%, #ffc000 100%) no-repeat 0 0
+
+.form-group
+  position: relative
+  & + .form-group
+    margin-top: 30px
+
+.form-label
+  position: absolute
+  left: 0
+  top: 15px
+  color: #747f85
+  z-index: 10
+  transition: transform 150ms ease-out, font-size 150ms ease-out
+  font-family: $OpenSansRegular
+  font-size: 16px
+
+.focused .form-label
+  transform: translateY(-125%)
+  font-size: 13px
+  top: 8px
+
+.form-input
+  height: 45px
+  position: relative
+  width: 100%
+  outline: 0
+  border: 0
+  color: #ffffff
+  transition: box-shadow 150ms ease-out
+  font-family: $OpenSansRegular
+  font-size: 13px
+  display: block
+  border-bottom: 1px solid #303642
+  padding: 5px 3px
+  background-color: transparent
+  &.filled
+    border-bottom: 1px solid #ffffff

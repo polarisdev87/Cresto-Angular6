@@ -1,6 +1,6 @@
 import { filter } from 'rxjs/operators';
-import { getAuthUserId } from './../../store/selectors/auth.selectors';
-import { AssetsRequest, WalletRequest } from './../../store/actions/wallets.action';
+import { getAuthUserId } from '../../store/selectors';
+import { AssetsRequest, WalletRequest } from '../../store/actions/wallets.action';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { getStateData } from '../../store/selectors/wallets.selector';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.css']
+  styleUrls: ['./buy.component.sass']
 })
 export class BuyComponent implements OnInit {
   @Input()
@@ -53,5 +53,10 @@ export class BuyComponent implements OnInit {
         this._store.dispatch(new WalletRequest(id));
         this._store.dispatch(new AssetsRequest());
       });
+  }
+
+  public makeDepositLink = {
+    name: 'Make deposit',
+    class: 'emptyGreen'
   }
 }

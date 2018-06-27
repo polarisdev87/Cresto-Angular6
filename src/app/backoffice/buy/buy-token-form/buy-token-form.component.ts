@@ -1,7 +1,7 @@
 import { getAuthUserId } from './../../../store/selectors/auth.selectors';
-import { CalculateSumRequest, BuyTokensRequest } from './../../../store/actions/buy-token.action';
+import { BuyTokensRequest, CalculateSumRequest } from './../../../store/actions/buy-token.action';
 import { Store } from '@ngrx/store';
-import { of, Observable, combineLatest } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { debounceTime, map } from 'rxjs/operators';
 @Component({
   selector: 'app-buy-token-form',
   templateUrl: './buy-token-form.component.html',
-  styleUrls: ['./buy-token-form.component.css']
+  styleUrls: ['./buy-token-form.component.sass']
 })
 export class BuyTokenFormComponent implements OnInit {
   // TODO select from store
@@ -18,14 +18,16 @@ export class BuyTokenFormComponent implements OnInit {
     3: 'ETH'
   };
 
-  total$: Observable<number>;
+  // total$: Observable<number>;
   userId$: Observable<string>;
   tokenPrice$: Observable<number>;
 
   tokensform: FormGroup;
+
   constructor(
     private _store: Store<StoreStates>,
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.tokenPrice$ = this._store.select('tokenPurchase').pipe(
@@ -53,7 +55,6 @@ export class BuyTokenFormComponent implements OnInit {
     });
   }
 
-
   buy() {
     combineLatest(
       this.userId$,
@@ -69,5 +70,10 @@ export class BuyTokenFormComponent implements OnInit {
     ).subscribe((data: CalculateTokensSum) => {
       this._store.dispatch(new BuyTokensRequest(data));
     });
+  }
+
+  public buttonStateBuy = {
+    name: 'Click To Purchase',
+    class: 'redBig'
   }
 }
