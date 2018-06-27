@@ -1,6 +1,6 @@
 import { getAuthUserId } from './../../../store/selectors/auth.selectors';
 import { GenerateWalletAddressRequest } from './../../../store/actions/wallets.action';
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DepositModalComponent } from './deposit-modal/deposit-modal.component';
 import { WithdrawalModalComponent } from './withdrawal-modal/withdrawal-modal.component';
@@ -9,6 +9,7 @@ import { getGeneratedWalletAddress } from '../../../store/selectors/wallets.sele
 import { filter } from 'rxjs/operators';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-wallet-list',
   templateUrl: './wallet-list.component.html',
   styleUrls: ['./wallet-list.component.sass']
