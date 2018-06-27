@@ -1,7 +1,19 @@
-th
-  font-size: 18px !important
-  font-weight: 600 !important
-.theme-autorization
-  a
-    cursor: pointer
-    margin-right: 20px
+@import "../../../../assets/css/variables"
+
+.wallets-list-wrapper
+  display: flex
+  width: 100%
+  align-items: center
+  justify-content: space-between
+  box-sizing: border-box
+  .wallet
+    width: 33%
+    max-width: 561px
+    padding: 43px 100px 43px 80px
+    border-radius: 15px
+    background: $widget-bg
+    box-sizing: border-box
+    margin-right: 10px
+    box-shadow: $box-shadow-block
+    &:last-child
+      margin-right: 0

@@ -17,6 +17,16 @@ export class WalletListComponent implements OnInit {
   @Input()
   wallets;
 
+  depositBtnState = {
+    name: 'Deposit',
+    class: 'emptyGreen'
+  };
+
+  withdrawalBtnState = {
+    name: 'Withdrawal',
+    class: 'emptyRed'
+  };
+
   constructor(
     public dialog: MatDialog,
     private _store: Store<StoreStates>,

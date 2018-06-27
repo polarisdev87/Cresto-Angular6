@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
-  styleUrls: ['./wallet.component.css']
+  styleUrls: ['./wallet.component.sass']
 })
 export class WalletComponent implements OnInit {
 
