@@ -29,6 +29,9 @@
 <div class="transaction-table-wrapper">
   <h2>History</h2>
   <div class="transaction-tabletransaction-table">
-    <app-backoffice-table></app-backoffice-table>
+    <app-backoffice-table
+      [dashboardTableHead]="transactionsHistoryHead"
+      [scroll]="false"
+    ></app-backoffice-table>
   </div>
 </div>

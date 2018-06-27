@@ -10,13 +10,13 @@
   </div>
   <div class="settings-wr">
     <div class="sidebar-item user">
-      <a>
+      <a class="disabled">
         <i class="icon-user"></i>
         <span class="sidebar-text">jasonnewsted</span>
       </a>
     </div>
     <div class="sidebar-item setting">
-      <a>
+      <a class="disabled">
         <i class="icon-settings"></i>
         <span class="sidebar-text">Settings</span>
       </a>
@@ -48,28 +48,31 @@
         <span>Wallet</span>
       </a>
     </li>
-    <li>
-      <a [routerLink]="['']">
+    <li class="disabled">
+      <a>
         <i class="icon-team"></i>
         <span>My team</span>
       </a>
     </li>
-    <li>
-      <a [routerLink]="['/backoffice', '/comingsoon']">
+    <li class="disabled">
+      <a>
+        <!--[routerLink]="['/backoffice', '/comingsoon']"-->
         <!-- *ngAcl="['comingsoon', 'GET']"> -->
         <i class="icon-building"></i>
         <span>Campaign</span>
       </a>
     </li>
-    <li>
-      <a [routerLink]="['/backoffice', '/comingsoon']">
+    <li class="disabled">
+      <a>
+        <!--[routerLink]="['/backoffice', '/comingsoon']"-->
         <!-- *ngAcl="['comingsoon', 'GET']" -->
         <i class="icon-transfer"></i>
         <span>Exchange</span>
       </a>
     </li>
-    <li>
-      <a [routerLink]="['/backoffice', '/comingsoon']">
+    <li class="disabled">
+      <a>
+        <!--[routerLink]="['/backoffice', '/comingsoon']-->
         <!-- *ngAcl="['comingsoon', 'GET']" -->
         <i class="icon-dollar-symbol"></i>
         <span>Staking</span>

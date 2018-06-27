@@ -1,49 +1,20 @@
-<div class="section section-custom billinfo">
-  <!--section-title -->
-  <h2>Buy CSTT</h2>
-  <!--section-title end -->
-  <!-- section content start-->
-  <div class="pmd-card pmd-z-depth">
-    <div class="pmd-card-body">
-      <form [formGroup]="tokensform" id="booktokensform" class="form-horizontal" role="form">
-
-        <div class="form-group pmd-textfield">
-          <label class="col-sm-4 control-label">CSTT Amount :</label>
-          <div class="col-sm-8">
-            <input type="number" formControlName="amount" class="form-control input-sm" id="inputSenderAddress" placeholder="Enter CSTT amount to buy">
-            <span class="pmd-textfield-focused"></span>
-          </div>
-        </div>
-
-
-
-        <div class="form-group pmd-textfield pmd-textfield-floating-label pmd-textfield-floating-label-active pmd-textfield-floating-label-completed">
-          <label class="col-sm-4 control-label">Currency :</label>
-          <div class="col-sm-8">
-            <select formControlName="currency" class="select-simple form-control pmd-select2 select2-hidden-accessible" tabindex="-1"
-              aria-hidden="true">
-              <option value="1">BTC</option>
-              <option value="3" selected>ETH</option>
-
-            </select>
-          </div>
-          <span class="pmd-textfield-focused"></span>
-        </div>
-
-        <div class="form-group pmd-textfield">
-          <label class="col-sm-4 control-label">Total ETH :</label>
-          <div class="col-sm-8">
-            {{tokenPrice$ | async}} {{currencies[tokensform.value.currency]}}
-          </div>
-        </div>
-
-        <div class="form-group purchase-btn">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="button" class="btn btn-success pmd-checkbox-ripple-effect" (click)="buy()">Click To Purchase</button>
-          </div>
-        </div>
-      </form>
+<div class="buy-form">
+  <h2 class="buy-form-title">Buy CSTT</h2>
+  <form [formGroup]="tokensform" role="form">
+    <div class="form-group" [ngClass]="{focused: isActive}">
+      <label class="form-label" for="amount">CSTT Amount :</label>
+      <input (focus)='toggleClass()' (blur)='toggleClass()' id="amount" formControlName="amount" class="form-input" type="number" />
     </div>
-  </div>
-  <!-- section content end -->
+    <div class="currency-wr">
+      <div class="currency-title">Select currency:</div>
+      <app-buy-token-select formControlName="currency"></app-buy-token-select>
+      <div class="total">
+        <span class="total-title">Total ETH :</span>
+        <span>{{tokenPrice$ | async}} {{currencies[tokensform.value.currency]}}</span>
+      </div>
+    </div>
+    <div class="currency-btn">
+      <app-button (click)="buy()" [buttonState]="buttonStateBuy"></app-button>
+    </div>
+  </form>
 </div>

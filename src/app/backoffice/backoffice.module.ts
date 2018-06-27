@@ -20,7 +20,7 @@ import { BackofficeFooterComponent } from './backoffice-footer/backoffice-footer
         children: [
           {
             path: '',
-            redirectTo: 'buy',
+            redirectTo: 'dashboard',
             pathMatch: 'full'
           },
           {
