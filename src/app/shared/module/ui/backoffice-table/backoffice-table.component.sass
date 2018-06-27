@@ -1,27 +1,4 @@
 @import "../../../../backoffice/backoffice.component"
-//tbody::-webkit-scrollbar-thumb
-//  background: transparent
-//  -webkit-border-radius: 0
-//  height: 0
-//  width: 0
-//
-//tbody::-webkit-scrollbar
-//  background: transparent
-//  -webkit-border-radius: 0
-//  height: 0
-//  width: 0
-//
-//tbody::-webkit-scrollbar
-//  display: none !important
-//
-//tbody::-webkit-scrollbar
-//  display: none
-//
-//tbody::-webkit-scrollbar
-//  display: none
-//
-//tbody::-moz-scrollbar
-//  display: none !important
 
 .back-office-table
   width: 100%
@@ -87,7 +64,6 @@
                 border-radius: 50%
                 background-color: transparent
                 box-shadow: 0 0 21px transparent
-        /* borders */
         &.ongoing
           &:hover td
             &:before,
@@ -149,7 +125,6 @@
               color: #fec700
               display: block
               background: url("../../../../../assets/images/prnding-icon.png") no-repeat 0 5px
-
   table.scroll
     width: 100%
     border-collapse: collapse
@@ -172,14 +147,19 @@
     padding-bottom: 5px
     padding-right: 5px
 
-
 .sample
   height: 600px
   ng-scrollbar
     background-color: #F8F8F8
-    padding: 1em
   .ng-scrollbar
     background-color: rgba(0, 0, 0, 0.15)
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5)
     border-radius: 3px
 
+.scroll-wr
+  height: 600px
+  ng-scrollbar
+    background-color: transparent
+  .ng-scrollbar
+    background-color: transparent
+    box-shadow: none
