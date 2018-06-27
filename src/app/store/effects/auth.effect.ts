@@ -6,6 +6,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Injectable()
 export class AuthEffects {
@@ -42,7 +43,10 @@ export class AuthEffects {
         filter((data: any) => data.status !== 206),
         switchMap((data: User) => this._authService.tokenToLocalStorage(data)),
         map((data: User) => new AuthActions.LoginSuccess(data)),
-        tap(() => this._router.navigate(['/backoffice'])),
+        tap(() => {
+          this._router.navigate(['/backoffice']);
+          this._localStorageService.removeItem('referralHash');
+        }),
         catchError((err: any) => {
           console.log(err.status);
 
@@ -64,6 +68,7 @@ export class AuthEffects {
           // alert('Thanks for registration.');
           alert('A verification mail has sent to your email. Please verify it.');
           this._router.navigate(['/login']);
+          this._localStorageService.removeItem('referralHash');
         }),
         catchError((err: Error) => of(new AuthActions.SignUpFail(err)))
       )),
@@ -120,6 +125,7 @@ export class AuthEffects {
   public constructor(
     private actions$: Actions,
     private _authService: AuthService,
-    private _router: Router
+    private _router: Router,
+    private _localStorageService: LocalStorageService,
   ) { }
 }
