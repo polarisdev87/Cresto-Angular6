@@ -20,4 +20,4 @@ export const environment: Env = {
     capthca: '6Lcl_l0UAAAAAFgvTjXTbwYPaX2kQvcnxXm_iMqK'
   },
   domain: 'http://localhost:4200',
-};
+ };
