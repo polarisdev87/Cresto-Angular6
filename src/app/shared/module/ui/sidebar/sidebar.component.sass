@@ -51,7 +51,7 @@
   .log-out
     text-align: right
     padding-right: 20px
-    height: 70px
+    height: 60px
     a
       opacity: 0
       height: 0
@@ -81,7 +81,7 @@
       &:hover
         background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
   .settings-wr
-    padding-bottom: 10px
+    padding-bottom: 30px
     padding-left: 19px
     font-family: $OpenSansRegular
     font-size: 14px
@@ -90,24 +90,28 @@
       font-size: 22px
       line-height: 22px
       display: inline-block
-    .user
-      font-size: 12px
-    .setting
-      font-size: 14px
+    .sidebar-item
+      margin-bottom: 10px
+      &.user
+        i
+          font-size: 22px
+      &.setting
+        i
+          font-size: 29px
   .sidebar-text
     padding-left: 33px
     display: inline-block
   .balance-wr
     padding-left: 10px
     padding-top: 15px
-    padding-bottom: 14px
+    padding-bottom: 65px
     background: linear-gradient(to bottom, #35373c 50%, #6b6f79 50%) no-repeat 0 100% / 80% 2px
     .balance-title
       font-family: $OpenSansRegular
       font-size: 14px
       text-align: right
       padding-right: 45px
-      margin-bottom: 30px
+      margin-bottom: 15px
       height: 20px
       overflow: hidden
     .sidebar-item
@@ -132,7 +136,7 @@
     padding-top: 38px
     padding-left: 17px
     li
-      padding-bottom: 10px
+      padding-bottom: 30px
       &:last-child
         padding-bottom: 0
       a
