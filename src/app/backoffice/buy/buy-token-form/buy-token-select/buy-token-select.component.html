@@ -1,13 +1,17 @@
 <div class="select-currency">
   <div class="btc" (click)="selectCoin(1)" [ngClass]="{active:currentCoin === 1}">
-    <div class="icon"></div>
+    <div class="icon icon-btc">
+      <i class="icon-bitcoin"></i>
+    </div>
     <div class="content">
       <span class="icon-title">BTC=23</span>
       <span>$ 154,634.98</span>
     </div>
   </div>
   <div class="eth" (click)="selectCoin(3)" [ngClass]="{active:currentCoin === 3}">
-    <div class="icon"></div>
+    <div class="icon icon-eth">
+      <i class="icon-ether"></i>
+    </div>
     <div class="content">
       <span class="icon-title">ETH=37</span>
       <span>$ 54,645</span>
