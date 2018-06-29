@@ -11,7 +11,8 @@ import { getStateData } from '../../store/selectors/wallets.selector';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.sass']
+  styleUrls: ['./buy.component.sass'],
+
 })
 export class BuyComponent implements OnInit {
   @Input()
