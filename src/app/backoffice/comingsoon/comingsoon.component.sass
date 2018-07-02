@@ -1,0 +1,65 @@
+@import "../../../assets/css/variables"
+
+h1,h2
+    text-align: center
+.coming-pay-wrappper 
+  display: inline-block
+  background-image: url(../../../assets/images/come-paying.png)
+  width: 100%
+  .elipse-big
+      display: flex
+      background-color: rgba(26,35,46,0.7)
+      width: 490px
+      height: 490px
+      border-radius: 100%
+      margin: auto
+      margin-top: 130px 
+      margin-bottom: 230px
+      box-shadow: 0 0 38px 5px rgba(24,248,188,0.5) 
+      .text-in-circle
+          margin: auto
+          max-width: 430px
+          .head-text
+              color: $grey-light
+              margin-bottom: 25px 
+              font-family: $OpenSansSemiBold
+              font-size: 24px
+          .paragraph-text
+              text-align: center
+              margin-bottom: 40px 
+              font-family: $OpenSansRegular
+              font-size: 16px
+              color: $comingsoon-grey
+          .come-soon
+              color: $grey-light
+              position: relative
+              font-family: $OpenSansSemiBold
+              letter-spacing: 19px
+              &:after
+                  display: block
+                  content: ""
+                  position: absolute
+                  left: 50%
+                  top: calc(100% + 25px)
+                  transform: translateX(-50%)
+                  width: 100%
+                  height: 2px
+                  background-color: $accent-color
+                  max-width: 325px
+              
+              
+
+         
+
+      .elipse-small
+          position: absolute
+          left: calc(43% - 15px)
+          top: calc(26%)
+          background-color: rgba(0,231,199,0.8) 
+          box-shadow: 0 0 20px 5px rgba(24,248,188,0.5) 
+          width: 37px
+          height: 37px
+          border-radius: 100%
+          
+
+  

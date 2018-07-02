@@ -54,10 +54,8 @@
         <span>My team</span>
       </a>
     </li>
-    <li class="disabled">
-      <a>
-        <!--[routerLink]="['/backoffice', '/comingsoon']"-->
-        <!-- *ngAcl="['comingsoon', 'GET']"> -->
+    <li>
+      <a [routerLink]="['/backoffice/comingsoon']" *ngAcl="['comingsoon', 'GET']">
         <i class="icon-building"></i>
         <span>Campaign</span>
       </a>
