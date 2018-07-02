@@ -47,11 +47,6 @@ import { AccessGuardService } from '../shared/services/access-guard.service';
             loadChildren: './myreferrals/myreferrals.module#MyreferralsModule'
           },
           {
-            path: 'referrals',
-            loadChildren: './referrals/referrals.module#ReferralsModule',
-            canLoad: [ AccessGuardService ]
-          },
-          {
             path: 'changepassword',
             loadChildren: './changepassword/changepassword.module#ChangepasswordModule',
             canLoad: [ AccessGuardService ]
