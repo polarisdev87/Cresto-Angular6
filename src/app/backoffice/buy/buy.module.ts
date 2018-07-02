@@ -7,6 +7,7 @@ import { BuyTokenFormComponent } from './buy-token-form/buy-token-form.component
 import { UiModule } from '../../shared/module/ui/ui.module';
 import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
 import { BuyTokenSelectComponent } from './buy-token-form/buy-token-select/buy-token-select.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   imports: [
