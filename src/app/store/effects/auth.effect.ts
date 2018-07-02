@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, tap, debounceTime } from 'rxjs/operators';
 import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Injectable()
@@ -105,6 +105,7 @@ export class AuthEffects {
   @Effect()
   public setResetpasswordEmail$: Observable<Action> = this.actions$
     .ofType(AuthActions.SEND_RESET_PASSWORD_EMAIL).pipe(
+      debounceTime(500),
       map((action: AuthActions.SendResetPasswordEmail) => action.payload),
       switchMap((email: string) => this._authService.sendResetPasswordEmail(email).pipe(
         map((success: boolean) => new AuthActions.SendResetPasswordEmailSuccess(success)),
