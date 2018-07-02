@@ -70,7 +70,10 @@ export class AuthEffects {
           this._router.navigate(['/login']);
           this._localStorageService.removeItem('referralHash');
         }),
-        catchError((err: Error) => of(new AuthActions.SignUpFail(err)))
+        catchError((err: Error) => {
+          alert('Invalid username or email already exists');
+          return of(new AuthActions.SignUpFail(err));
+        })
       )),
     );
 
