@@ -29,6 +29,8 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material';
+import { PopupComponent } from '../../backoffice/buy/popup/popup.component';
 
 @Injectable()
 export class WalletsEffects {
@@ -110,7 +112,11 @@ export class WalletsEffects {
         map((res: any) => new BuyTokensSuccess(res)),
         tap(() => alert('Success')),
         catchError((err: Error) => {
-          alert(err);
+          this._dialog.open(PopupComponent, {
+            data: {
+              message: err
+            }
+          })
           // tslint:disable-next-line
           console.log(err);
           return of(new BuyTokensFail(err));
@@ -135,5 +141,6 @@ export class WalletsEffects {
   public constructor(
     private actions$: Actions,
     private _walletsService: WalletsService,
+    private _dialog: MatDialog,
   ) { }
 }
