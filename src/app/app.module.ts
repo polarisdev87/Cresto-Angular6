@@ -30,15 +30,19 @@ import { getAuthServiceConfigs } from './google-config';
 import { AccessGuardService } from './shared/services/access-guard.service';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { UiModule } from './shared/module/ui/ui.module';
+import { PopupComponent } from './backoffice/buy/popup/popup.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
+    UiModule,
     RecaptchaModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
@@ -113,6 +117,7 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
       useValue: { siteKey: environment.googleConfig.capthca } as RecaptchaSettings,
     },
   ],
+  entryComponents: [PopupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

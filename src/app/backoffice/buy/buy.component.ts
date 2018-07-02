@@ -30,12 +30,12 @@ export class BuyComponent implements OnInit {
 
   constructor(
     private _store: Store<StoreStates>,
-    public dialog: MatDialog
+    private _dialog: MatDialog
   ) {
   }
 
   openPopup(address) {
-    this.dialog.open(DepositPopupComponent, {
+    this._dialog.open(DepositPopupComponent, {
       data: {
         address: address
       }
