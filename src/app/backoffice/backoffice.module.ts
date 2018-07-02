@@ -41,8 +41,36 @@ import { BackofficeFooterComponent } from './backoffice-footer/backoffice-footer
             loadChildren: './setuptwofa/setuptwofa.module#SetupTwoFaModule'
           },
           {
-            path: 'comingsoon',
+            path: 'campaign',
             loadChildren: './comingsoon/comingsoon.module#ComingsoonModule',
+            data: {
+              title: 'Campaign',
+              subtitle: `Our ampaign platfor will allow you to earn up to 2.25% daily passice,
+              income when you allocate the dollor value of your Crest token to run one of our profitable ad campaigns.`,
+              backgroundImg: '../../../assets/images/come-paying.png'
+            },
+            canLoad: [AccessGuardService]
+          },
+          {
+            path: 'exchenge',
+            loadChildren: './comingsoon/comingsoon.module#ComingsoonModule',
+            data: {
+              title: 'Compaing',
+              subtitle: `Our ampaign platfor will allow you to earn up to 2.25% daily passice,
+              income when you allocate the dollor value of your Crest token to run one of our profitable ad campaigns.`,
+              backgroundImg: '../../../assets/images/come-paying.png'
+            },
+            canLoad: [AccessGuardService]
+          },
+          {
+            path: 'staking',
+            loadChildren: './comingsoon/comingsoon.module#ComingsoonModule',
+            data: {
+              title: 'Compaing',
+              subtitle: `Our ampaign platfor will allow you to earn up to 2.25% daily passice 
+              income when you allocate the dollor value of your Crest token to run one of our profitable ad campaigns.`,
+              backgroundImg: '../../../assets/images/come-paying.png'
+            },
             canLoad: [AccessGuardService]
           },
           {

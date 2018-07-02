@@ -55,27 +55,23 @@
       </a>
     </li>
     <li>
-      <a [routerLink]="['/backoffice/comingsoon']" *ngAcl="['comingsoon', 'GET']">
+      <a [routerLink]="['/backoffice/compaing']" *ngAcl="['compaing', 'GET']">
         <i class="icon-building"></i>
         <span>Campaign</span>
       </a>
     </li>
-    <li class="disabled">
-      <a>
-        <!--[routerLink]="['/backoffice', '/comingsoon']"-->
-        <!-- *ngAcl="['comingsoon', 'GET']" -->
-        <i class="icon-transfer"></i>
-        <span>Exchange</span>
-      </a>
-    </li>
-    <li class="disabled">
-      <a>
-        <!--[routerLink]="['/backoffice', '/comingsoon']-->
-        <!-- *ngAcl="['comingsoon', 'GET']" -->
-        <i class="icon-dollar-symbol"></i>
-        <span>Staking</span>
-      </a>
-    </li>
+    <li>
+        <a [routerLink]="['/backoffice/exchenge']" *ngAcl="['exchenge', 'GET']">
+          <i class="icon-building"></i>
+          <span>Campaign</span>
+        </a>
+      </li>
+      <li>
+          <a [routerLink]="['/backoffice/staking']" *ngAcl="['staking', 'GET']">
+            <i class="icon-building"></i>
+            <span>Campaign</span>
+          </a>
+        </li>
   </ul>
   </ng-scrollbar>
 </div>
