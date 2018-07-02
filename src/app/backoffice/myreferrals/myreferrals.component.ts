@@ -7,13 +7,17 @@ import { GetReferralUsers } from '../../store/actions/referrals-users.action';
 @Component({
   selector: 'app-myreferrals',
   templateUrl: './myreferrals.component.html',
-  styleUrls: ['./myreferrals.component.css']
+  styleUrls: ['./myreferrals.component.sass']
 })
 export class MyreferralsComponent implements OnInit, OnDestroy {
   public referralLink;
   public userSubscription: Subscription;
   referralUsers$: Observable<User[]>;
   loader$: Observable<boolean>;
+
+  public referralUsersHeaders = [
+    'Username', 'Date Registered', 'Campaign Size', 'Commission'
+  ];
 
   public constructor(
     private _store: Store<StoreStates>
