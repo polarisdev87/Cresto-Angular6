@@ -25,6 +25,7 @@ export class SocialNetworkEffects {
         map((user: User) => new LoginSuccess(user)),
         tap(() => this._router.navigate(['/backoffice'])),
         catchError((err: Error) => {
+          alert('Email already exists or somethink went wrong');
           console.log(err);
           return of(new FacebookLoginFail(err));
         })
@@ -42,6 +43,7 @@ export class SocialNetworkEffects {
         map((user: User) => new LoginSuccess(user)),
         tap(() => this._router.navigate(['/backoffice'])),
         catchError((err: Error) => {
+          alert('Email already exists or somethink went wrong');
           console.log(err);
           return of(new GoogleLoginFail(err));
         })
