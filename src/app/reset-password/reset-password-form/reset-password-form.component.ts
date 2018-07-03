@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import * as fromActions from '../../store/actions';
+import { SetPassword } from '../store/actions/password.actions';
 
 @Component({
   selector: 'app-reset-password-form',
@@ -34,7 +34,7 @@ export class ResetPasswordFormComponent {
       password,
       hash: this._activatedRoute.snapshot.params.id
     };
-    this._store.dispatch(new fromActions.SetPassword(passwordData));
+    this._store.dispatch(new SetPassword(passwordData));
   }
 
 }
