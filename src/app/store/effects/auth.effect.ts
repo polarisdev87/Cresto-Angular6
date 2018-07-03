@@ -90,42 +90,6 @@ export class AuthEffects {
       })
     );
 
-  @Effect()
-  public setPassword$: Observable<Action> = this.actions$
-    .ofType(AuthActions.SET_PASSWORD).pipe(
-      map((action: AuthActions.SetPassword) => action.payload),
-      switchMap((value: PasswordData) => this._authService.setPassword(value).pipe(
-        map((success: boolean) => new AuthActions.SetPasswordSuccess(success)),
-        tap(() => this._router.navigate(['/login'])),
-        catchError((err: Error, caught: Observable<Action>) => {
-          // tslint:disable-next-line
-          console.log(err);
-          return caught;
-        })
-      )),
-    );
-
-  @Effect()
-  public setResetpasswordEmail$: Observable<Action> = this.actions$
-    .ofType(AuthActions.SEND_RESET_PASSWORD_EMAIL).pipe(
-      debounceTime(500),
-      map((action: AuthActions.SendResetPasswordEmail) => action.payload),
-      switchMap((email: string) => this._authService.sendResetPasswordEmail(email).pipe(
-        map((success: boolean) => new AuthActions.SendResetPasswordEmailSuccess(success)),
-        tap(() => {
-          alert('We have sent email to reset password');
-          this._router.navigate(['/login']);
-        }),
-        catchError((err: Error, caught: Observable<Action>) => {
-          // tslint:disable-next-line
-          of(new AuthActions.SendResetPasswordEmailFail(err))
-          console.log(err);
-          return caught;
-        })
-      )),
-
-    );
-
   public constructor(
     private actions$: Actions,
     private _authService: AuthService,
