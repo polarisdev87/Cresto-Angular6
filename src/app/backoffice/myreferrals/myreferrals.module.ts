@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 import { MyreferralsComponent } from './myreferrals.component';
 import { RouterModule } from '@angular/router';
 import { NgxLoaderIndicatorModule } from 'ngx-loader-indicator';
+import { ReferralLinkComponent } from './referral-link/referral-link.component';
+import { UiModule } from '../../shared/module/ui/ui.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    UiModule,
     RouterModule.forChild([
       {path: '', component: MyreferralsComponent}
     ]),
     NgxLoaderIndicatorModule.forRoot(),
   ],
-  declarations: [MyreferralsComponent]
+  declarations: [MyreferralsComponent, ReferralLinkComponent]
 })
 export class MyreferralsModule { }

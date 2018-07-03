@@ -1,4 +1,4 @@
-<div class="info pmd-card pmd-z-depth">
+<!-- <div class="info pmd-card pmd-z-depth">
   <p><b><u>Would you like to earn BONUS for each person you refer ?</u></b></p>
   <p>
     Share your personal referral link given below and when people click on it and sign up for new account, you will
@@ -30,4 +30,11 @@
     </table>
   </div>
   <h1 *ngIf="(referralUsers$ | async).length < 1">You don't have any referrals as of now.</h1>
+</div> -->
+
+<div class="referral-link-wrapper">
+  <app-referral-link [referralLink]='referralLink'></app-referral-link>
+</div>
+<div class="referral-list">
+  <app-backoffice-table [dashboardTableHead] = "referralUsersHeaders"></app-backoffice-table>
 </div>
