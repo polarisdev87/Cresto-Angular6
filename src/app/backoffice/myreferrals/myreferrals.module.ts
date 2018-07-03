@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NgxLoaderIndicatorModule } from 'ngx-loader-indicator';
 import { ReferralLinkComponent } from './referral-link/referral-link.component';
 import { UiModule } from '../../shared/module/ui/ui.module';
+import { CopypasteDirective } from '../../shared/directives/copypaste.directive';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { UiModule } from '../../shared/module/ui/ui.module';
     ]),
     NgxLoaderIndicatorModule.forRoot(),
   ],
-  declarations: [MyreferralsComponent, ReferralLinkComponent]
+  declarations: [MyreferralsComponent, ReferralLinkComponent, CopypasteDirective]
 })
 export class MyreferralsModule { }

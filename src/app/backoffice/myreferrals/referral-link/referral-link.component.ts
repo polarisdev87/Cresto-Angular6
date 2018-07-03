@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./referral-link.component.sass']
 })
 export class ReferralLinkComponent {
-
   public copyButton = {
     name: 'Copy address',
     class: 'emptyGreen'
