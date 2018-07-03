@@ -35,6 +35,11 @@
 <div class="referral-link-wrapper">
   <app-referral-link [referralLink]='referralLink'></app-referral-link>
 </div>
+
 <div class="referral-list">
+  <div class="referral-list-header">
+    <h4>My team members</h4>
+    <span>100 members referred</span>
+  </div>
   <app-backoffice-table [dashboardTableHead] = "referralUsersHeaders"></app-backoffice-table>
 </div>
