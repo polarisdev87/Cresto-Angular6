@@ -86,7 +86,7 @@ export class AuthEffects {
       catchError((err: Error) => {
         // tslint:disable-next-line
         console.log(err);
-        return of(err);
+        return of(new AuthActions.LogoutFail());
       })
     );
 

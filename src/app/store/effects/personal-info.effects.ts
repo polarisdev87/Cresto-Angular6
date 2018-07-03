@@ -4,9 +4,9 @@ import {Actions, Effect} from '@ngrx/effects';
 import {Action} from '@ngrx/store';
 import {OpenStatusPopup} from '../actions';
 import {catchError, map, switchMap} from 'rxjs/operators';
-import {EDIT_PERSONAL_INFO, EditPersonalInfo, EditPersonalInfoSuccess} from '../actions/personal-info.actions';
+import {EDIT_PERSONAL_INFO, EditPersonalInfo, EditPersonalInfoFail, EditPersonalInfoSuccess} from '../actions/personal-info.actions';
 import {SettingsService} from '../../shared/services/settings.service';
-import of =
+import {of} from 'rxjs/observable/of';
 
 @Injectable()
 export class PersonalInfoEffects {
@@ -22,7 +22,7 @@ export class PersonalInfoEffects {
       catchError((err: Error) => {
         // tslint:disable-next-line
         console.log(err);
-        return of(err);
+        return of(new EditPersonalInfoFail());
       })
     );
 

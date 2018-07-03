@@ -1,18 +1,19 @@
-import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
-import { catchError, filter, map, switchMap, tap, debounceTime } from 'rxjs/operators';
-import { AuthService } from '../../../shared/services/auth.service';
+import {Router} from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Actions, Effect} from '@ngrx/effects';
+import {Action} from '@ngrx/store';
+import {Observable, of} from 'rxjs';
+import {catchError, debounceTime, map, switchMap, tap} from 'rxjs/operators';
+import {AuthService} from '../../../shared/services/auth.service';
 import {
-  SendResetPasswordEmail,
-  SendResetPasswordEmailSuccess,
-  SendResetPasswordEmailFail,
   SEND_RESET_PASSWORD_EMAIL,
-  SetPasswordSuccess,
+  SendResetPasswordEmail,
+  SendResetPasswordEmailFail,
+  SendResetPasswordEmailSuccess,
   SET_PASSWORD,
-  SetPassword, SetPasswordFail
+  SetPassword,
+  SetPasswordFail,
+  SetPasswordSuccess
 } from '../actions/password.actions';
 
 @Injectable()
@@ -50,12 +51,12 @@ export class PasswordEffects {
           return of(new SendResetPasswordEmailFail(err));
         })
       )),
-
     );
 
   public constructor(
     private actions$: Actions,
     private _authService: AuthService,
     private _router: Router,
-  ) { }
+  ) {
+  }
 }
