@@ -12,7 +12,7 @@ import {
   SEND_RESET_PASSWORD_EMAIL,
   SetPasswordSuccess,
   SET_PASSWORD,
-  SetPassword
+  SetPassword, SetPasswordFail
 } from '../actions/password.actions';
 
 @Injectable()
@@ -25,10 +25,10 @@ export class PasswordEffects {
       switchMap((value: PasswordData) => this._authService.setPassword(value).pipe(
         map((success: boolean) => new SetPasswordSuccess(success)),
         tap(() => this._router.navigate(['/login'])),
-        catchError((err: Error, caught: Observable<Action>) => {
+        catchError((err: Error) => {
           // tslint:disable-next-line
           console.log(err);
-          return caught;
+          return of(new SetPasswordFail(false));
         })
       )),
     );
@@ -44,11 +44,10 @@ export class PasswordEffects {
           alert('We have sent email to reset password');
           this._router.navigate(['/login']);
         }),
-        catchError((err: Error, caught: Observable<Action>) => {
+        catchError((err: Error) => {
           // tslint:disable-next-line
-          of(new SendResetPasswordEmailFail(err))
           console.log(err);
-          return caught;
+          return of(new SendResetPasswordEmailFail(err));
         })
       )),
 

@@ -1,12 +1,12 @@
-import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import * as fromActions from '../actions';
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { EDIT_PERSONAL_INFO, EditPersonalInfo, EditPersonalInfoSuccess } from '../actions/personal-info.actions';
-import { OpenStatusPopup } from '../actions';
-import { SettingsService } from '../../shared/services/settings.service';
+import {Observable} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Actions, Effect} from '@ngrx/effects';
+import {Action} from '@ngrx/store';
+import {OpenStatusPopup} from '../actions';
+import {catchError, map, switchMap} from 'rxjs/operators';
+import {EDIT_PERSONAL_INFO, EditPersonalInfo, EditPersonalInfoSuccess} from '../actions/personal-info.actions';
+import {SettingsService} from '../../shared/services/settings.service';
+import of =
 
 @Injectable()
 export class PersonalInfoEffects {
@@ -19,15 +19,16 @@ export class PersonalInfoEffects {
         new EditPersonalInfoSuccess(user),
         new OpenStatusPopup({type: 'Success', message: 'You successfully change the info'})
       ]),
-      catchError((err: Error, caught: Observable<Action>) => {
+      catchError((err: Error) => {
         // tslint:disable-next-line
         console.log(err);
-        return caught;
+        return of(err);
       })
-  );
+    );
 
   public constructor(
     private actions$: Actions,
     private _settingsService: SettingsService,
-  ) { }
+  ) {
+  }
 }
