@@ -1,18 +1,19 @@
-import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
-import { catchError, filter, map, switchMap, tap, debounceTime } from 'rxjs/operators';
-import { AuthService } from '../../../shared/services/auth.service';
+import {Router} from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Actions, Effect} from '@ngrx/effects';
+import {Action} from '@ngrx/store';
+import {Observable, of} from 'rxjs';
+import {catchError, debounceTime, map, switchMap, tap} from 'rxjs/operators';
+import {AuthService} from '../../../shared/services/auth.service';
 import {
-  SendResetPasswordEmail,
-  SendResetPasswordEmailSuccess,
-  SendResetPasswordEmailFail,
   SEND_RESET_PASSWORD_EMAIL,
-  SetPasswordSuccess,
+  SendResetPasswordEmail,
+  SendResetPasswordEmailFail,
+  SendResetPasswordEmailSuccess,
   SET_PASSWORD,
-  SetPassword
+  SetPassword,
+  SetPasswordFail,
+  SetPasswordSuccess
 } from '../actions/password.actions';
 
 @Injectable()
@@ -25,10 +26,10 @@ export class PasswordEffects {
       switchMap((value: PasswordData) => this._authService.setPassword(value).pipe(
         map((success: boolean) => new SetPasswordSuccess(success)),
         tap(() => this._router.navigate(['/login'])),
-        catchError((err: Error, caught: Observable<Action>) => {
+        catchError((err: Error) => {
           // tslint:disable-next-line
           console.log(err);
-          return caught;
+          return of(new SetPasswordFail(false));
         })
       )),
     );
@@ -44,19 +45,18 @@ export class PasswordEffects {
           alert('We have sent email to reset password');
           this._router.navigate(['/login']);
         }),
-        catchError((err: Error, caught: Observable<Action>) => {
+        catchError((err: Error) => {
           // tslint:disable-next-line
-          of(new SendResetPasswordEmailFail(err))
           console.log(err);
-          return caught;
+          return of(new SendResetPasswordEmailFail(err));
         })
       )),
-
     );
 
   public constructor(
     private actions$: Actions,
     private _authService: AuthService,
     private _router: Router,
-  ) { }
+  ) {
+  }
 }
