@@ -4,9 +4,14 @@
   display: inline-block
   width: 100%
   margin: -10px 0 0 20px
-  h1,h2
+  h1
       font-size: 24px
       text-align: center
+  h2
+      font-size: 24px
+      text-align: center
+
+
   .elipse-big
       display: flex
       background-color: rgba(26,35,46,0.7)
@@ -22,12 +27,13 @@
           max-width: 430px
           .head-text
               color: $grey-light
-              margin-bottom: 25px 
+              margin-bottom: 15px 
               font-family: $OpenSansSemiBold
               font-size: 24px
+              text-transform: uppercase
           .paragraph-text
               text-align: center
-              margin-bottom: 40px 
+              margin-bottom: 30px 
               font-family: $OpenSansRegular
               font-size: 16px
               color: $comingsoon-grey
@@ -36,6 +42,11 @@
               position: relative
               font-family: $OpenSansSemiBold
               letter-spacing: 19px
+              text-align: center
+              margin-right: -19px
+              h2
+                  margin-right: -19px
+                  display: inline-block
               &:after
                   display: block
                   content: ""
@@ -54,8 +65,8 @@
 
       .elipse-small
           position: absolute
-          left: calc(44% - 20px)
-          top: calc(26% + 20px)
+          left: calc(44% - 15px)
+          top: calc(26% - 10px)
           background-color: rgba(0,231,199,0.8) 
           box-shadow: 0 0 20px 5px rgba(24,248,188,0.5) 
           width: 37px
