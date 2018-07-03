@@ -6,6 +6,7 @@ import { BackofficeComponent } from './backoffice.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AccessGuardService } from '../shared/services/access-guard.service';
 import { BackofficeFooterComponent } from './backoffice-footer/backoffice-footer.component';
+import {SettingsModule} from './settings/settings.module';
 // import { ScrollbarModule } from 'ngx-scrollbar';
 
 @NgModule({
@@ -101,6 +102,10 @@ import { BackofficeFooterComponent } from './backoffice-footer/backoffice-footer
           {
             path: 'wallet',
             loadChildren: './wallet/wallet.module#WalletModule'
+          },
+          {
+            path: 'settings',
+            loadChildren: './settings/settings.module#SettingsModule'
           },
           {
             path: '**',
