@@ -1,9 +1,9 @@
 import { getAuthUser } from './../../../../store/selectors/auth.selectors';
 import { Observable } from 'rxjs';
-import { AclRequest } from './../../../../store/actions/acl.actions';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Logout } from '../../../../store/actions';
+import { AclRequest } from '../../../../backoffice/store/actions/acl.actions';
 
 @Component({
   selector: 'app-navbar',
