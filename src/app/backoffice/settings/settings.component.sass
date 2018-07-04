@@ -1,5 +1,13 @@
 .settings-wrapper
-  display: grid
-  grid-template-columns: repeat(2, 1fr)
-  grid-gap: 24px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    > div 
+      width: 50%
+      &:first-child
+            padding-left: 12px
+            /* padding-right: 15px; */
+            display: grid
+            grid-template-rows: 1fr 1fr
+            grid-gap: 30px
 
