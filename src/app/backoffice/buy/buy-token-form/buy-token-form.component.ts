@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { combineLatest, Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { debounceTime, map } from 'rxjs/operators';
+import { filter, debounceTime, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-buy-token-form',
@@ -43,7 +43,10 @@ export class BuyTokenFormComponent implements OnInit {
 
     combineLatest(
       this.userId$,
-      this.tokensform.valueChanges.pipe(debounceTime(300)),
+      this.tokensform.valueChanges.pipe(
+        debounceTime(300),
+        // filter(( data: { amount: number, currency: number }) => Boolean(data.amount > 0 ))
+      ),
       (userId: string, data: { amount: number, currency: number }) => {
         const {amount, currency: quote_asset_id} = data;
         return {
