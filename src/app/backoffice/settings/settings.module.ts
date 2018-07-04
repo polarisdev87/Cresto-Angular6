@@ -5,10 +5,16 @@ import {SettingsComponent} from './settings.component';
 import { PasswordComponent } from './password/password.component';
 import { TwoFactorAuthComponent } from './two-factor-auth/two-factor-auth.component';
 import {PersonalInformationComponent} from './personal-information/personal-information.component';
+import {UiModule} from '../../shared/module/ui/ui.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LableDirective} from '../lable.directive';
 
 @NgModule({
   imports: [
     CommonModule,
+    UiModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {path: '', component: SettingsComponent}
     ])
@@ -17,7 +23,8 @@ import {PersonalInformationComponent} from './personal-information/personal-info
     SettingsComponent,
     PasswordComponent,
     TwoFactorAuthComponent,
-    PersonalInformationComponent
+    PersonalInformationComponent,
+    LableDirective
   ]
 })
 export class SettingsModule { }

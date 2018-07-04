@@ -1,3 +1,16 @@
-<p>
-  personal-information works!
-</p>
+<div class="personal-information-wrapper">
+  <h2>Personal  Information</h2>
+  <form>
+    <div class="name-wrapper">
+      <label for="name">Name</label>
+      <span class="icon-building" (click)="setDisabledState()"></span>
+      <input type="text" id="name" value="Robert Williams" [disabled]="switch" formControlName="userName">
+    </div>
+    <label for="email">Email</label>
+    <input type="text" id="email" value="robert@gmail.com"  [disabled]="switch" formControlName="userEmail">
+    <label for="sponsor">Sponsor</label>
+    <input type="text" id="sponsor" value="crestreferral001" [disabled]="switch" formControlName="userSponsor">
+  </form>
+</div>
+
+<!-- regular expresion for email input: [a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3} -->
