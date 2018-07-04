@@ -36,10 +36,22 @@
   <app-referral-link [referralLink]='referralLink'></app-referral-link>
 </div>
 
-<div class="referral-list">
+<div class="referral-list" *ngIf="roundsReferralsUsers$ | async as roundsReferralsUsers">
   <div class="referral-list-header">
     <h4>My team members</h4>
     <span>100 members referred</span>
   </div>
-  <app-backoffice-table [dashboardTableHead] = "referralUsersHeaders"></app-backoffice-table>
+  <app-backoffice-table let i = 10;
+    [dashboardTableHead] = "referralUsersHeaders"
+    [rounds]="roundsReferralsUsers"
+    [scroll]="false"
+    [columns]="[
+        {value: '_id'},
+        {value: 'username'},
+        {value: 'createdAt'}
+        ]">
+
+
+    <span>{{roundsReferralsUsers}}</span>
+  </app-backoffice-table>
 </div>

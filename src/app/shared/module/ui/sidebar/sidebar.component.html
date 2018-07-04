@@ -51,25 +51,25 @@
       </a>
     </li>
     <li>
-      <a [routerLink]="['/backoffice', 'myreferrals']">
+      <a routerLinkActive="active" [routerLink]="['/backoffice', 'myreferrals']">
         <i class="icon-team"></i>
         <span>My team</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="['/backoffice/campaign']"  *ngAcl="['campaign', 'GET']">
+      <a routerLinkActive="active" [routerLink]="['/backoffice/campaign']"  *ngAcl="['campaign', 'GET']">
         <i class="icon-building"></i>
         <span>Campaign</span>
       </a>
     </li>
     <li>
-        <a [routerLink]="['/backoffice/exchenge']" *ngAcl="['exchenge', 'GET']">
+        <a routerLinkActive="active" [routerLink]="['/backoffice/exchenge']" *ngAcl="['exchenge', 'GET']">
           <i class="icon-transfer"></i>
           <span>Exchenge</span>
         </a>
       </li>
       <li>
-          <a [routerLink]="['/backoffice/staking']" *ngAcl="['staking', 'GET']">
+          <a routerLinkActive="active" [routerLink]="['/backoffice/staking']" *ngAcl="['staking', 'GET']">
             <i class="icon-dollar-symbol"></i>
             <span>Staking</span>
           </a>
