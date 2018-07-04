@@ -78,6 +78,7 @@
       transition: $transition
       background-position: 100% 0
       background-size: 7px 1px
+      color: #c0c9d1
       &:hover
         background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
   .settings-wr
@@ -98,6 +99,21 @@
       &.setting
         i
           font-size: 29px
+      a
+        &:hover
+          transition: $transition
+          background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $accent-color
+          span
+            color: $accent-color !important
+            display: inline-block
+            opacity: 1
+        &.active
+          transition: $transition
+          background: url("../../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $accent-color
   .sidebar-text
     padding-left: 33px
     display: inline-block
