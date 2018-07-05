@@ -9,7 +9,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class TwoFactorAuthComponent implements OnInit {
 
-  coco = 'enableAuthenticatorSupport';
+  coco = 'enableAuthenticatorSupport'; 
 
   buttonState2authDef = {
     name: 'Enable',
@@ -26,7 +26,6 @@ export class TwoFactorAuthComponent implements OnInit {
 
   constructor() {
     this.myForm = new FormGroup({
-
       'loginPassword': new FormControl('', Validators.required),
       'googleCode': new FormControl('', Validators.required)
     });
