@@ -10,13 +10,12 @@ import { GetReferralUsers } from '../../store/actions/referrals-users.action';
   styleUrls: ['./myreferrals.component.sass']
 })
 export class MyreferralsComponent implements OnInit, OnDestroy {
+  public roundsReferralsUsers$: Observable<User[]>;
   public referralLink;
   public userSubscription: Subscription;
-  referralUsers$: Observable<User[]>;
   loader$: Observable<boolean>;
-
   public referralUsersHeaders = [
-    'Username', 'Date Registered', 'Campaign Size', 'Commission'
+    'S/N', 'Referral Username', 'Date Registered'
   ];
 
   public constructor(
@@ -24,7 +23,7 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
   ) {}
 
   public ngOnInit(): void {
-    this.referralUsers$ = this._store.select('referralUsers', 'data');
+    this.roundsReferralsUsers$ = this._store.select('referralUsers', 'data');
     this.loader$ = this._store.select('referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
 
@@ -33,9 +32,11 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
       this.referralLink = `${environment.domain}/${user.referralHash}`;
     });
     this._store.dispatch(new GetReferralUsers());
+
   }
 
   public ngOnDestroy(): void {
     this.userSubscription.unsubscribe();
   }
+
 }
