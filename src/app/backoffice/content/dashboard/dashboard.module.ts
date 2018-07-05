@@ -4,12 +4,12 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { CallActionComponent } from './call-action/call-action.component';
 import { InstructionComponent } from './instruction/instruction.component';
-import { UiModule } from '../../../shared/module/ui/ui.module';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    UiModule,
+    SharedModule,
     RouterModule.forChild([
       {path: '', component: DashboardComponent}
     ]),

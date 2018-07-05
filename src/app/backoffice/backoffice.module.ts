@@ -6,16 +6,18 @@ import {BackofficeFooterComponent} from './backoffice-footer/backoffice-footer.c
 import {BackofficeHeaderComponent} from './backoffice-header/backoffice-header.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {ScrollbarModule} from 'ngx-scrollbar';
-import {UiModule} from './../shared/module/ui/ui.module';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {AclEffects} from './store/effects/acl.effects';
 import {reducers} from './store/reducers';
 import {routes} from './routes';
+import {SharedModule} from './shared/shared.module';
+import {UiModule} from '../shared/module/ui/ui.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     UiModule,
     ScrollbarModule,
     RouterModule.forChild(routes),

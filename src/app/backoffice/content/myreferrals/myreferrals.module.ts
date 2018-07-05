@@ -4,18 +4,17 @@ import { MyreferralsComponent } from './myreferrals.component';
 import { RouterModule } from '@angular/router';
 import { NgxLoaderIndicatorModule } from 'ngx-loader-indicator';
 import { ReferralLinkComponent } from './referral-link/referral-link.component';
-import { UiModule } from '../../../shared/module/ui/ui.module';
-import { CopypasteDirective } from '../../../shared/directives/copypaste.directive';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    UiModule,
+    SharedModule,
     RouterModule.forChild([
       {path: '', component: MyreferralsComponent}
     ]),
     NgxLoaderIndicatorModule.forRoot(),
   ],
-  declarations: [MyreferralsComponent, ReferralLinkComponent, CopypasteDirective]
+  declarations: [MyreferralsComponent, ReferralLinkComponent]
 })
 export class MyreferralsModule { }
