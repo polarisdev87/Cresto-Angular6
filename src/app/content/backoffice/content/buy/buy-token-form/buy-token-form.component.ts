@@ -1,10 +1,11 @@
-import {Store} from '@ngrx/store';
-import {combineLatest, Observable, of} from 'rxjs';
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {debounceTime, map} from 'rxjs/operators';
-import { getAuthUserId } from '../../../../../store/selectors';
+import { Store } from '@ngrx/store';
+import { combineLatest, Observable, of } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { debounceTime, map } from 'rxjs/operators';
 import { CalculateSumRequest, BuyTokensRequest } from '../store/actions/buy-tokens.action';
+import { IRootState } from '../../../../../store/reducers';
+import { getAuthUserId } from '../../../../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-buy-token-form',
@@ -31,7 +32,7 @@ export class BuyTokenFormComponent implements OnInit {
   tokensform: FormGroup;
 
   constructor(
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
   ) {
   }
 
@@ -52,7 +53,7 @@ export class BuyTokenFormComponent implements OnInit {
         // filter(( data: { amount: number, currency: number }) => Boolean(data.amount > 0 ))
       ),
       (userId: string, data: { amount: number, currency: number }) => {
-        const {amount, currency: quote_asset_id} = data;
+        const { amount, currency: quote_asset_id } = data;
         return {
           userId,
           quote_asset_id,
@@ -69,7 +70,7 @@ export class BuyTokenFormComponent implements OnInit {
       this.userId$,
       of(this.tokensform.value),
       (userId: string, data: { amount: number, currency: number }) => {
-        const {amount, currency: quote_asset_id} = data;
+        const { amount, currency: quote_asset_id } = data;
         return {
           userId,
           quote_asset_id,

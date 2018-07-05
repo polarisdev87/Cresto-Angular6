@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SetPassword } from '../store/actions/password.actions';
+import { IRootState } from '../../../store/reducers';
 
 @Component({
   selector: 'app-reset-password-form',
@@ -16,7 +17,7 @@ export class ResetPasswordFormComponent {
 
   public constructor(
     private _fb: FormBuilder,
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
     private _activatedRoute: ActivatedRoute,
     private _validatorsService: ValidatorsService
   ) {
@@ -25,8 +26,8 @@ export class ResetPasswordFormComponent {
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
     }, {
-      validator: this._validatorsService.equalValidator
-    });
+        validator: this._validatorsService.equalValidator
+      });
   }
 
   public save({ password }: PasswordData): void {

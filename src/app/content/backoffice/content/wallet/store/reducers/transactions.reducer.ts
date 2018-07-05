@@ -1,4 +1,4 @@
-import { TRANSACTION_REQUEST, TRANSACTION_SUCCESS, TRANSACTION_FAIL } from '../actions/wallets.action';
+import { TRANSACTION_REQUEST, TRANSACTION_SUCCESS, TRANSACTION_FAIL } from '../actions/transaction.actions';
 
 export const initialState: any = {
   isLoading: false,

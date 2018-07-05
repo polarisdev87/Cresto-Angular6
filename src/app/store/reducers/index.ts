@@ -3,12 +3,8 @@ import { ActionReducer, ActionReducerMap, createFeatureSelector, MemoizedSelecto
 import { routerReducer, RouterReducerState, RouterStateSerializer } from '@ngrx/router-store';
 
 import * as fromAuth from './auth.reducer';
-import * as fromAuthActions from '../actions';
 
-import * as fromStatusPopup from './statusPopup.reducer';
-import * as fromWallets from './wallets.reducer';
-import * as fromTransaction from './transaction.reducer';
-import * as fromWithdrawal from './withdrawal.reducer';
+import { LOGOUT_SUCCESS, AuthActions } from '../actions/auth.action';
 
 
 export interface IRouterStateUrl {
@@ -21,25 +17,17 @@ export interface IRouterStateUrl {
 export interface IRootState {
   routerReducer: RouterReducerState<IRouterStateUrl>;
   auth: AuthState;
-  statusPopup: StatusPopup;
-  wallets: WalletState;
-  transaction: any;
-  withdrawal: any;
 }
 
 export const reducers: ActionReducerMap<IRootState> = {
   routerReducer,
   auth: fromAuth.reducer,
-  statusPopup: fromStatusPopup.reducer,
-  wallets: fromWallets.reducer,
-  transaction: fromTransaction.reducer,
-  withdrawal: fromWithdrawal.reducer,
 };
 
-export function logoutAndClearState(reducer: ActionReducer<StoreStates>): ActionReducer<StoreStates> {
-  return function (state: StoreStates | undefined, action: fromAuthActions.AuthActions): StoreStates {
+export function logoutAndClearState(reducer: ActionReducer<IRootState>): ActionReducer<IRootState> {
+  return function (state: IRootState | undefined, action: AuthActions): IRootState {
     switch (action.type) {
-      case fromAuthActions.LOGOUT_SUCCESS: {
+      case LOGOUT_SUCCESS: {
         state = undefined;
       }
     }
@@ -47,7 +35,7 @@ export function logoutAndClearState(reducer: ActionReducer<StoreStates>): Action
   };
 }
 
-export const logout: MetaReducer<StoreStates> = logoutAndClearState;
+export const logout: MetaReducer<IRootState> = logoutAndClearState;
 
 
 // TODO to separate file

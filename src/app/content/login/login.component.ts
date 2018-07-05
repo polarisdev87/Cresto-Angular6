@@ -3,8 +3,9 @@ import { getUserLoader } from './../../store/selectors/auth.selectors';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Login } from '../../store/actions';
 import { Observable } from 'rxjs';
+import { IRootState } from '../../store/reducers';
+import { Login } from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
   ) {
   }
 

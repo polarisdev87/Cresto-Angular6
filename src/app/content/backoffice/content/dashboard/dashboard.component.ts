@@ -1,11 +1,10 @@
-import { RoundsEffects } from './store/effects/rounds.effects';
-import { getStateData } from '../../../../store/selectors/wallets.selector';
 import { filter } from 'rxjs/operators';
-import { getAuthUserId } from '../../../../store/selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { RoundsRequest } from './store/actions/rounds.actions';
+import { IRootState } from '../../../../store/reducers';
+import { getAuthUserId } from '../../../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +15,7 @@ export class DashboardComponent implements OnInit {
   public rounds$: Observable<any>;
   public scroll;
   constructor(
-    private _store: Store<StoreStates>
+    private _store: Store<IRootState>
   ) {
   }
   public dashboardTableHead = [

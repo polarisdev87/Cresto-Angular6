@@ -3,6 +3,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable, Subscription} from 'rxjs';
 import {GetReferralUsers} from './store/actions/referrals-users.action';
+import { IRootState } from '../../../../store/reducers';
 
 @Component({
   selector: 'app-myreferrals',
@@ -19,7 +20,7 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
   ];
 
   public constructor(
-    private _store: Store<StoreStates>
+    private _store: Store<IRootState>
   ) {
   }
 

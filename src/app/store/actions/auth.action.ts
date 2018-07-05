@@ -17,9 +17,6 @@ export const GET_CURRENT_USER: string = '[Auth] GET_CURRENT_USER ..';
 export const GET_CURRENT_USER_SUCCESS: string = '[Auth] GET_CURRENT_USER SUCCESS';
 export const GET_CURRENT_USER_FAIL: string = '[Auth] GET_CURRENT_USER FAIL';
 
-export const TWO_FACTOR_LOGIN: string = '[Auth] TWO_FACTOR_LOGIN ..';
-export const TWO_FACTOR_LOGIN_SUCCESS: string = '[Auth] TWO_FACTOR_LOGIN SUCCESS';
-export const TWO_FACTOR_LOGIN_FAIL: string = '[Auth] TWO_FACTOR_LOGIN_FAIL';
 
 /* LOGIN */
 // tslint:disable-next-line: max-classes-per-file
@@ -37,24 +34,6 @@ export class LoginSuccess implements Action {
 // tslint:disable-next-line: max-classes-per-file
 export class LoginFail implements Action {
   public readonly type: string = LOGIN_FAIL;
-  public constructor(public payload: Error) {}
-}
-
-// tslint:disable-next-line: max-classes-per-file
-export class TwoFactorLogin implements Action {
-  public readonly type: string = TWO_FACTOR_LOGIN;
-  public constructor(public payload: any) {}
-}
-
-// tslint:disable-next-line: max-classes-per-file
-export class TwoFactorLoginSuccess implements Action {
-  public readonly type: string = TWO_FACTOR_LOGIN_SUCCESS;
-  public constructor(public payload: any) {}
-}
-
-// tslint:disable-next-line: max-classes-per-file
-export class TwoFactorLoginFail implements Action {
-  public readonly type: string = TWO_FACTOR_LOGIN_FAIL;
   public constructor(public payload: Error) {}
 }
 

@@ -1,9 +1,10 @@
-import {getAuthUser} from '../../../store/selectors';
-import {Observable} from 'rxjs';
-import {Component, Input, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Logout} from '../../../store/actions';
-import {getStateData} from '../../../store/selectors/wallets.selector';
+
+import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { IRootState } from '../../../store/reducers';
+import { getAuthUser } from '../../../store/selectors/auth.selectors';
+import { Logout } from '../../../store/actions/auth.action';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,13 +20,13 @@ export class SidebarComponent implements OnInit {
   assets$: Observable<any>;
   wallets$: Observable<any>;
 
-  constructor(private _store: Store<StoreStates>) {
+  constructor(private _store: Store<IRootState>) {
   }
 
   ngOnInit() {
     this.user$ = this._store.select(getAuthUser);
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
-    this.wallets$ = this._store.select(getStateData('wallets'));
+    this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
   }
 
   logout() {

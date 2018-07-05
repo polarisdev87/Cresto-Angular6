@@ -1,16 +1,12 @@
 import { AuthService } from './../../shared/services/auth.service';
 import { LoginSuccess } from './../actions/auth.action';
 import { SocialNetworkService } from './../../shared/services/social-network.service';
-import { FacebookLogin, FacebookLoginFail, GOOGLE_LOGIN, GoogleLoginFail } from './../actions/social-network.action';
+import { FacebookLoginFail, GOOGLE_LOGIN, GoogleLoginFail } from './../actions/social-network.action';
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import * as fromActions from '../actions';
 import { catchError, tap, map, switchMap } from 'rxjs/operators';
-import { EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordSuccess, EditUserPasswordFail } from '../actions/password.actions';
-import { OpenStatusPopup } from '../actions';
-import { SettingsService } from '../../shared/services/settings.service';
 import { FACEBOOK_LOGIN } from '../actions/social-network.action';
 import { Router } from '@angular/router';
 
@@ -54,7 +50,6 @@ export class SocialNetworkEffects {
 
   public constructor(
     private actions$: Actions,
-    private _settingsService: SettingsService,
     private _socialNetworkService: SocialNetworkService,
     private _router: Router,
     private _authService: AuthService,

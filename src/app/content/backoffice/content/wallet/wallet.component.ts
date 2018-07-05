@@ -1,10 +1,11 @@
-import {getStateData} from './../../../../store/selectors/wallets.selector';
-import {TransactionRequest, WalletRequest} from './../../../../store/actions/wallets.action';
-import {getAuthUserId} from './../../../../store/selectors/auth.selectors';
-import {Observable} from 'rxjs';
-import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {filter} from 'rxjs/operators';
+import { getAuthUserId } from './../../../../store/selectors/auth.selectors';
+import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs/operators';
+import { WalletRequest } from '../../store/actions/wallets.action';
+import { IRootState } from '../../../../store/reducers';
+import { TransactionRequest } from './store/actions/transaction.actions';
 
 @Component({
   selector: 'app-wallet',
@@ -15,17 +16,17 @@ export class WalletComponent implements OnInit {
 
   assets$: Observable<any>;
   wallets$: Observable<WalletData[]>;
-  transaction$: Observable<any>;
+  transactions$: Observable<any>;
 
   constructor(
-    private _store: Store<StoreStates>
+    private _store: Store<IRootState>
   ) {
   }
 
   ngOnInit() {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
-    this.wallets$ = this._store.select(getStateData('wallets'));
-    this.transaction$ = this._store.select(getStateData('transaction'));
+    this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
+    this.transactions$ = this._store.select('walletList', 'transactions', 'data');
 
     this._store.select(getAuthUserId)
       .pipe(

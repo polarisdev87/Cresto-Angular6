@@ -1,12 +1,12 @@
-import {AuthService} from '../../shared/services/auth.service';
-import {Router} from '@angular/router';
+import { AuthService } from '../../shared/services/auth.service';
+import { Router } from '@angular/router';
 import * as AuthActions from '../actions/auth.action';
-import {Injectable} from '@angular/core';
-import {Actions, Effect} from '@ngrx/effects';
-import {Action} from '@ngrx/store';
-import {Observable, of} from 'rxjs';
-import {catchError, filter, map, switchMap, tap} from 'rxjs/operators';
-import {LocalStorageService} from '../../shared/services/localStorage.service';
+import { Injectable } from '@angular/core';
+import { Actions, Effect } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
+import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Injectable()
 export class AuthEffects {
@@ -18,19 +18,8 @@ export class AuthEffects {
         switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
         map((data: User) => new AuthActions.LoginSuccess(data))
       )),
-    );
+  );
 
-  @Effect()
-  public twoFactorVerify$: Observable<Action> = this.actions$
-    .ofType(AuthActions.TWO_FACTOR_LOGIN).pipe(
-      map((action: AuthActions.TwoFactorLogin) => action.payload),
-      switchMap((body: { token: string }) => this._authService.verifyTwoFactor(body).pipe(
-        switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
-        map((data: User) => new AuthActions.LoginSuccess(data)),
-        tap(() => this._router.navigate(['/backoffice'])),
-        catchError((err: Error) => of(new AuthActions.LoginFail(err)))
-      )),
-    );
 
   @Effect()
   public login$: Observable<Action> = this.actions$
@@ -56,7 +45,7 @@ export class AuthEffects {
           return of(new AuthActions.LoginFail(err));
         })
       )),
-    );
+  );
 
   @Effect()
   public signUp$: Observable<Action> = this.actions$
@@ -75,7 +64,7 @@ export class AuthEffects {
           return of(new AuthActions.SignUpFail(err));
         })
       )),
-    );
+  );
 
   @Effect()
   public logout$: Observable<Action> = this.actions$

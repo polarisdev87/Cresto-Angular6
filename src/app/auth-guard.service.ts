@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
-import { isLoggedSelector } from './store/selectors/index';
+import { isLoggedSelector } from './store/selectors/auth.selectors';
 import { Route } from '@angular/compiler/src/core';
+import { IRootState } from './store/reducers';
 
 @Injectable()
 export class AuthGuardService implements CanLoad {
 
   public constructor(
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
     private _router: Router,
   ) {}
 

@@ -1,12 +1,12 @@
 import { getAuthUserId } from './../../../../../store/selectors/auth.selectors';
-import { GenerateWalletAddressRequest } from './../../../../../store/actions/wallets.action';
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DepositModalComponent } from './deposit-modal/deposit-modal.component';
 import { WithdrawalModalComponent } from './withdrawal-modal/withdrawal-modal.component';
 import { Store } from '@ngrx/store';
-import { getGeneratedWalletAddress } from '../../../../../store/selectors/wallets.selector';
 import { filter } from 'rxjs/operators';
+import { GenerateWalletAddressRequest } from '../../../store/actions/wallets.action';
+import { IRootState } from '../../../../../store/reducers';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -30,11 +30,11 @@ export class WalletListComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private _store: Store<StoreStates>,
-  ) {}
+    private _store: Store<IRootState>,
+  ) { }
 
   ngOnInit() {
-    this._store.select(getGeneratedWalletAddress).pipe(
+    this._store.select('backoffice', 'wallets', 'generatedAddress').pipe(
       filter((address: string) => Boolean(address))
     ).subscribe((address: string) => {
       this.dialog.open(DepositModalComponent, { data: { address } });
@@ -49,7 +49,7 @@ export class WalletListComponent implements OnInit {
       return;
     }
     this.dialog.open(DepositModalComponent, {
-     data: {address}
+      data: { address }
     });
   }
 

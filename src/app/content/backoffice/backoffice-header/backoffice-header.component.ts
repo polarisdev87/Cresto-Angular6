@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { Store } from '@ngrx/store';
-import { getStateData } from '../../../store/selectors/wallets.selector';
+import { IRootState } from '../../../store/reducers';
 
 @Component({
   selector: 'app-backoffice-header',
@@ -13,7 +13,7 @@ export class BackofficeHeaderComponent implements OnInit {
   assets$: Observable<any>;
 
   constructor(
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
   ) { }
 
   ngOnInit() {

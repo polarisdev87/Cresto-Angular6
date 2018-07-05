@@ -1,13 +1,13 @@
-import {getStateData} from './../../../../../../store/selectors/wallets.selector';
-import {CalculateWithdrawalFeeRequest, ClearWithdrawal, WithdrawalRequest} from './../../../../../../store/actions/withdrawal.action';
-import {Store} from '@ngrx/store';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
-import {getAuthUserId} from '../../../../../../store/selectors';
-import {map} from 'rxjs/operators';
-import {Observable, of} from 'rxjs';
-import {WalletService} from '../../wallet.service';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { Store } from '@ngrx/store';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { getAuthUserId } from '../../../../../../store/selectors/auth.selectors';
+import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { WalletService } from '../../wallet.service';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { IRootState } from '../../../../../../store/reducers';
+import { ClearWithdrawal, WithdrawalRequest, CalculateWithdrawalFeeRequest } from '../../store/actions/withdrawal.action';
 
 @Component({
   selector: 'app-withdrawal-modal',
@@ -22,16 +22,15 @@ export class WithdrawalModalComponent implements OnInit, OnDestroy {
 
   constructor(
     private _fb: FormBuilder,
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
     private _walletService: WalletService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
   }
 
   ngOnInit() {
-    this._store.select(getStateData('withdrawal')).subscribe((data: WithdrawalRes) => this.withdrawalData = data);
-
-    this.error$ = this._store.select('withdrawal').pipe(map((data: any) => data.error));
+    this._store.select('walletList', 'withdrawal', 'data').subscribe((data: WithdrawalRes) => this.withdrawalData = data);
+    this.error$ = this._store.select('walletList', 'withdrawal', 'error');
 
     this.withdrawalForm = this._fb.group({
       cstt_address: ['', Validators.required],
@@ -43,8 +42,8 @@ export class WithdrawalModalComponent implements OnInit, OnDestroy {
 
     this._walletService.calculateWithdrawalData(this.userId$, amount$)
       .subscribe((data: CalculateFee) => {
-        const {wallet_id} = this.data;
-        this._store.dispatch(new CalculateWithdrawalFeeRequest({...data, wallet_id}));
+        const { wallet_id } = this.data;
+        this._store.dispatch(new CalculateWithdrawalFeeRequest({ ...data, wallet_id }));
       });
   }
 

@@ -1,10 +1,3 @@
-type StoreStates = {
-  auth: AuthState,
-  acl: AclState,
-  personalInfo: PersonalInfoState,
-  password: PasswordState,
-  statusPopup: StatusPopup,
-};
 
 type SettingsState = {
   personalInfo: PersonalInfoState,
@@ -38,7 +31,6 @@ type AuthState = {
 };
 
 type AclState = Acl | {};
-type StatusPopup = any;
 
 type WalletState = {
   isLoading: boolean;
