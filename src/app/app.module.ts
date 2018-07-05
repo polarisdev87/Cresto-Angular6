@@ -26,7 +26,7 @@ import {AuthService as GoogleAuthService, AuthServiceConfig} from 'angular5-soci
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from 'ng-recaptcha';
 import {UiModule} from './shared/module/ui/ui.module';
-import {PopupComponent} from './backoffice/content/buy/popup/popup.component';
+import {PopupComponent} from './content/backoffice/content/buy/popup/popup.component';
 import {routes} from './routes';
 
 @NgModule({
