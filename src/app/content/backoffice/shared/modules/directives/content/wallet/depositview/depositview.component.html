@@ -1,0 +1,40 @@
+<div class="deposit-wrapper">
+  <div class="deposit-content">
+    <div class="pay-atention-wrapper" *ngIf="confirmButton">
+      <div class="pay-attention">
+        <h1> Please pay attention! You selected:</h1>
+      </div>
+      <div class="deposit-currency">
+        <i class="icon-bitcoin"></i>
+        <span class="sidebar-text">Bitcoin BTC</span>
+      </div>
+      <div class="deposit-attention">
+        <p>Attention:</p>
+      </div>
+      <div class="deposit-no-mistake">
+        <p>Please do not mistakenly deposit other assets with the same name, ity can not be retrieved!</p>
+      </div>
+      <div class="deposit-confirm">
+        <button type="button" (click)="confirmSelected()">Confirm</button>
+      </div>
+    </div>
+
+    <div class="deposit-currency-wrapper" *ngIf="!confirmButton">
+      <div class="pay-attention">
+        <h1> Deposit Bitcoin</h1>
+      </div>
+      <div class="deposit-currency">
+        <p>Only send bitcoin (BTC) to this adress. Sending any other digital asset, including Bitcoin Cash, will result in permanent loss.</p>
+      </div>
+      <div class="deposit-attention">
+        <h2>Your BTC adress is</h2>
+      </div>
+      <form>
+          <input readonly value="94589034idfhg89h35gbnuerguy" type="text"> 
+      </form>
+      <div class="button-copy-adress">
+          <app-button (click)="confirmSelected()" [buttonState]="depositBtn" ></app-button>
+      </div>
+    </div>
+  </div>
+</div>

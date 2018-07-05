@@ -8,6 +8,9 @@ import { TransactionListComponent } from './transaction-list/transaction-list.co
 import { DepositModalComponent } from './wallet-list/deposit-modal/deposit-modal.component';
 import { WithdrawalModalComponent } from './wallet-list/withdrawal-modal/withdrawal-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DepositviewComponent } from '../../shared/modules/directives/content/wallet/depositview/depositview.component';
+import { FormsModule } from '@angular/forms';
+import { HelpComponent } from '../../shared/modules/directives/content/wallet/help/help.component';
 import { SharedModule } from '../../shared/modules/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -17,15 +20,17 @@ import { effects } from './store/effects';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       { path: '', component: WalletComponent }
     ]),
     SharedModule,
     ReactiveFormsModule,
+    FormsModule,
     StoreModule.forFeature('walletList', reducers),
     EffectsModule.forFeature(effects),
   ],
-  declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent],
+  declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent, HelpComponent, DepositviewComponent],
   entryComponents: [DepositModalComponent, WithdrawalModalComponent],
   providers: [WalletService]
 })
