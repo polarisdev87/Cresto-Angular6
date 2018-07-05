@@ -1,11 +1,12 @@
-import { LOGOUT_SUCCESS } from './../actions/auth.action';
-import * as fromAclActions from '../actions';
+import { ACL_SUCCESS } from '../actions/acl.actions';
+import { LOGOUT_SUCCESS } from '../../../store/actions';
+
 export const initialState: AclState = {};
 
 // tslint:disable-next-line: no-any
 export function reducer(state: AclState = initialState, action: any): AclState {
   switch (action.type) {
-    case fromAclActions.ACL_SUCCESS: {
+    case ACL_SUCCESS: {
       return action.payload;
     }
 

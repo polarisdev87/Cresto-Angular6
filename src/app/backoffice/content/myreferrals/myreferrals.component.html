@@ -24,7 +24,7 @@
       <tr *ngFor="let user of referralUsers$ | async; let i = index" id="{{user._id}}" loader [show]="loader$ | async">
         <td>{{i + 1}}</td>
         <td data-title="Order ID">{{user.username}}</td>
-        <td data-title="Sender Address">{{user.createdAt | date:'yyyy-MM-dd HH:mm a z':'+0900'}}</td>
+        <td data-title="Sender Address">{{user.createdAt | date:'yyyy-MM-dd HH:mm a'}}</td>
       </tr>
       </tbody>
     </table>

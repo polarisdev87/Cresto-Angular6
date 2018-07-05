@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { FormControl, Validators } from '@angular/forms';
 import { Component, ViewEncapsulation } from '@angular/core';
 import * as fromActions from '../../store/actions';
-import { SendResetPasswordEmail } from '../../store/actions';
+import { SendResetPasswordEmail } from '../store/actions/password.actions';
 
 @Component({
   selector: 'app-reset-password-email',
@@ -18,8 +18,6 @@ export class ResetPasswordEmailComponent {
   ) {}
 
   public sendResetPasswordEmail(email: string): void {
-    console.log(new SendResetPasswordEmail(email));
-
     this._store.dispatch(new SendResetPasswordEmail(email));
     this.email.reset();
   }

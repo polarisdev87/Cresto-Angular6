@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/index';
-import { Store } from '@ngrx/store';
-import { getStateData } from '../../store/selectors/wallets.selector';
-import { AclRequest } from '../../store/actions/index';
+import {Component, Input, OnInit} from '@angular/core';
+import {Observable} from 'rxjs/index';
+import {Store} from '@ngrx/store';
+import {getStateData} from '../../store/selectors/wallets.selector';
 
 @Component({
   selector: 'app-backoffice-header',
@@ -21,7 +20,6 @@ export class BackofficeHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._store.dispatch(new AclRequest());
     this.assets$ = this._store.select(getStateData('assets'));
     this.wallets$ = this._store.select(getStateData('wallets'));
   }

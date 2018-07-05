@@ -5,7 +5,6 @@ import { routerReducer, RouterReducerState, RouterStateSerializer } from '@ngrx/
 import * as fromAuth from './auth.reducer';
 import * as fromAuthActions from '../actions';
 
-import * as fromAcl from './acl.reducer';
 import * as fromStatusPopup from './statusPopup.reducer';
 import * as fromWallets from './wallets.reducer';
 import * as fromAssets from './assets.reducer';
@@ -27,7 +26,6 @@ export interface IRouterStateUrl {
 export interface IRootState {
   routerReducer: RouterReducerState<IRouterStateUrl>;
   auth: AuthState;
-  acl: AclState;
   statusPopup: StatusPopup;
   wallets: WalletState;
   assets: any;
@@ -42,7 +40,6 @@ export interface IRootState {
 export const reducers: ActionReducerMap<IRootState> = {
   routerReducer,
   auth: fromAuth.reducer,
-  acl: fromAcl.reducer,
   statusPopup: fromStatusPopup.reducer,
   wallets: fromWallets.reducer,
   assets: fromAssets.reducer,

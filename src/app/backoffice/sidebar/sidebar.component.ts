@@ -1,6 +1,5 @@
 import { getAuthUser } from '../../store/selectors';
 import { Observable } from 'rxjs';
-import { AclRequest } from '../../store/actions';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Logout } from '../../store/actions';
@@ -25,7 +24,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this._store.select(getAuthUser);
-    this._store.dispatch(new AclRequest());
     this.assets$ = this._store.select(getStateData('assets'));
     this.wallets$ = this._store.select(getStateData('wallets'));
   }

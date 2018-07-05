@@ -15,4 +15,9 @@ export class EditPersonalInfoSuccess implements Action {
   public constructor(public payload: User) {}
 }
 
+export class EditPersonalInfoFail implements Action {
+  public readonly type: string = EDIT_PERSONAL_INFO_FAIL;
+  public constructor() {}
+}
+
 export type PersonalInfoActions = EditPersonalInfo;
