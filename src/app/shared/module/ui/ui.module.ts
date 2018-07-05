@@ -2,11 +2,10 @@ import { NgAclDirective } from './../../directives/ngAcl.directive';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from '../../../backoffice/sidebar/sidebar.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FooterComponent } from './footer/footer.component';
-import { BackofficeHeaderComponent } from './backoffice-header/backoffice-header.component';
 import { ButtonComponent } from './button/button.component';
 import { BackofficeTableComponent } from './backoffice-table/backoffice-table.component';
 import { RowPipe } from './backoffice-table/row.pipe';
@@ -22,11 +21,9 @@ import { BuyInstructionComponent } from './buy-instruction/buy-instruction.compo
     ScrollbarModule
   ],
   declarations: [
-    SidebarComponent,
     NgAclDirective,
     HeaderAuthComponent,
     FooterComponent,
-    BackofficeHeaderComponent,
     BackofficeTableComponent,
     RowPipe,
     ButtonComponent,
@@ -34,12 +31,10 @@ import { BuyInstructionComponent } from './buy-instruction/buy-instruction.compo
     BuyInstructionComponent
   ],
   exports: [
-    SidebarComponent,
     NgAclDirective,
     MatDialogModule,
     HeaderAuthComponent,
     FooterComponent,
-    BackofficeHeaderComponent,
     BackofficeTableComponent,
     ButtonComponent,
     TimerComponent,
