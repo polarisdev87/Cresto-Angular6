@@ -6,11 +6,17 @@ import { BackofficeComponent } from './backoffice.component';
 import { ChangepasswordModule } from './changepassword/changepassword.module';
 import { ProfileComponent } from './profile/profile.component';
 import { AccessGuardService } from '../shared/services/access-guard.service';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { AclEffects } from './store/effects/acl.effects';
+import { reducers } from './store/reducers';
 
 @NgModule({
   imports: [
     CommonModule,
     UiModule,
+    StoreModule.forFeature('backoffice', reducers),
+    EffectsModule.forFeature([AclEffects]),
     RouterModule.forChild([
       {
         path: '',

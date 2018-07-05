@@ -17,7 +17,7 @@ export class NgAclDirective {
 
   // value format : ['/widgets/exchangeRate', 'PUT']
   @Input() public set ngAcl(value: string[]) {
-    this._store.select('acl')
+    this._store.select('backoffice', 'acl')
     .subscribe((aclMap: Acl) => {
       if (aclMap[value[0]] && aclMap[value[0]].includes('*')) {
         this._viewContainer.createEmbeddedView(this._templateRef);
