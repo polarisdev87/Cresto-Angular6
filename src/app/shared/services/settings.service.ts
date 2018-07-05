@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpService } from './http.service';
+import { HttpService } from '../../http.service';
 
 @Injectable()
 export class SettingsService {

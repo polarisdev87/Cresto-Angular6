@@ -13,21 +13,14 @@ export const LOGOUT: string = '[Auth] LOGOUT ..';
 export const LOGOUT_SUCCESS: string = '[Auth] LOGOUT Success';
 export const LOGOUT_FAIL: string = '[Auth] LOGOUT Fail';
 
-export const SET_PASSWORD: string = '[Auth] SET_PASSWORD ..';
-export const SET_PASSWORD_SUCCESS: string = '[Auth] SET_PASSWORD_SUCCESS';
-export const SET_PASSWORD_FAIL: string = '[Auth] SET_PASSWORD_FAIL';
+export const FACEBOOK_LOGIN = '[Auth Social] Facebook Login ...';
+export const FACEBOOK_LOGIN_SUCCESS = '[Auth Social] Facebook Login Sucess';
+export const FACEBOOK_LOGIN_FAIL = '[Auth Social] Facebook Login Fail';
 
-export const SEND_RESET_PASSWORD_EMAIL: string = '[Auth] SEND_RESET_PASSWORD_EMAIL ..';
-export const SEND_RESET_PASSWORD_EMAIL_SUCCESS: string = '[Auth] SEND_RESET_PASSWORD_EMAIL_SUCCESS ..';
-export const SEND_RESET_PASSWORD_EMAIL_FAIL: string = '[Auth] SEND_RESET_PASSWORD_EMAIL_FAIL ..';
+export const GOOGLE_LOGIN = '[Auth Social] GOOGLE Login ...';
+export const GOOGLE_LOGIN_SUCCESS = '[Auth Social] GOOGLE Login Sucess';
+export const GOOGLE_LOGIN_FAIL = '[Auth Social] GOOGLE Login Fail';
 
-export const GET_CURRENT_USER: string = '[Auth] GET_CURRENT_USER ..';
-export const GET_CURRENT_USER_SUCCESS: string = '[Auth] GET_CURRENT_USER SUCCESS';
-export const GET_CURRENT_USER_FAIL: string = '[Auth] GET_CURRENT_USER FAIL';
-
-export const TWO_FACTOR_LOGIN: string = '[Auth] TWO_FACTOR_LOGIN ..';
-export const TWO_FACTOR_LOGIN_SUCCESS: string = '[Auth] TWO_FACTOR_LOGIN SUCCESS';
-export const TWO_FACTOR_LOGIN_FAIL: string = '[Auth] TWO_FACTOR_LOGIN_FAIL';
 
 /* LOGIN */
 // tslint:disable-next-line: max-classes-per-file
@@ -45,24 +38,6 @@ export class LoginSuccess implements Action {
 // tslint:disable-next-line: max-classes-per-file
 export class LoginFail implements Action {
   public readonly type: string = LOGIN_FAIL;
-  public constructor(public payload: Error) {}
-}
-
-// tslint:disable-next-line: max-classes-per-file
-export class TwoFactorLogin implements Action {
-  public readonly type: string = TWO_FACTOR_LOGIN;
-  public constructor(public payload: any) {}
-}
-
-// tslint:disable-next-line: max-classes-per-file
-export class TwoFactorLoginSuccess implements Action {
-  public readonly type: string = TWO_FACTOR_LOGIN_SUCCESS;
-  public constructor(public payload: any) {}
-}
-
-// tslint:disable-next-line: max-classes-per-file
-export class TwoFactorLoginFail implements Action {
-  public readonly type: string = TWO_FACTOR_LOGIN_FAIL;
   public constructor(public payload: Error) {}
 }
 
@@ -102,51 +77,33 @@ export class LogoutFail implements Action {
   public readonly type: string = LOGOUT_FAIL;
 }
 
-// tslint:disable-next-line
-export class SetPassword implements Action {
-  public readonly type: string = SET_PASSWORD;
-  public constructor(public payload: PasswordData) { }
+export class FacebookLogin implements Action {
+  public readonly type: string = FACEBOOK_LOGIN;
 }
 
-// tslint:disable-next-line
-export class SetPasswordSuccess implements Action {
-  public readonly type: string = SET_PASSWORD_SUCCESS;
-  public constructor(public payload: boolean) { }
+export class FacebookLoginSuccess implements Action {
+  public readonly type: string = FACEBOOK_LOGIN_SUCCESS;
+  public constructor(public payload: any) {}
 }
 
-// tslint:disable-next-line
-export class SetPasswordFail implements Action {
-  public readonly type: string = SET_PASSWORD_SUCCESS;
-  public constructor(public payload: boolean) { }
+export class FacebookLoginFail implements Action {
+  public readonly type: string = FACEBOOK_LOGIN_FAIL;
+  public constructor(public payload: any) {}
 }
 
-// tslint:disable-next-line
-export class SendResetPasswordEmail implements Action {
-  public readonly type: string = SEND_RESET_PASSWORD_EMAIL;
-  public constructor(public payload: string) { }
+
+export class GoogleLogin implements Action {
+  public readonly type: string = GOOGLE_LOGIN;
 }
 
-// tslint:disable-next-line
-export class SendResetPasswordEmailSuccess implements Action {
-  public readonly type: string = SEND_RESET_PASSWORD_EMAIL_SUCCESS;
-  public constructor(public payload: boolean) { }
+export class GoogleLoginSuccess implements Action {
+  public readonly type: string = GOOGLE_LOGIN_SUCCESS;
+  public constructor(public payload: any) {}
 }
 
-// tslint:disable-next-line
-export class SendResetPasswordEmailFail implements Action {
-  public readonly type: string = SEND_RESET_PASSWORD_EMAIL_FAIL;
-  public constructor(public payload: Error) { }
-}
-
-// tslint:disable-next-line
-export class GetCurrentUser implements Action {
-  public readonly type: string = GET_CURRENT_USER;
-}
-
-// tslint:disable-next-line
-export class GetCurrentUserSuccess implements Action {
-  public readonly type: string = GET_CURRENT_USER_SUCCESS;
-  public constructor(public payload: User) { }
+export class GoogleLoginFail implements Action {
+  public readonly type: string = GOOGLE_LOGIN_FAIL;
+  public constructor(public payload: any) {}
 }
 
 export type AuthActions
@@ -158,7 +115,4 @@ export type AuthActions
   | SignUpFail
   | Logout
   | LogoutSuccess
-  | LogoutFail
-  | SetPassword
-  | SetPasswordSuccess
-  | SetPasswordFail;
+  | LogoutFail;

@@ -1,0 +1,238 @@
+@import "../backoffice.component"
+.sidebar::-webkit-scrollbar-thumb
+  background: transparent
+  -webkit-border-radius: 0
+  height: 0
+  width: 0
+
+.sidebar::-webkit-scrollbar
+  background: transparent
+  -webkit-border-radius: 0
+  height: 0
+  width: 0
+
+.sidebar::-webkit-scrollbar
+  display: none !important
+
+
+.sidebar::-webkit-scrollbar
+  display: none
+
+.sidebar::-webkit-scrollbar
+  display: none
+
+#content browser,
+.browserStack > browser
+  margin-right: -17px !important
+  margin-bottom: -17px !important
+  overflow-y: scroll
+  overflow-x: hidden
+
+.sidebar
+  overflow: -moz-scrollbars-none
+  font-family: $OpenSansSemiBold
+  position: fixed
+  z-index: 100
+  left: 0
+  top: 0
+  bottom: 0
+  width: 100%
+  max-width: 90px
+  background-color: $bg-sidebar
+  padding: 25px 0 40px 15px
+  transition: $transition
+  box-shadow: 1px 0 51px rgba(23, 24, 50, 0.27)
+  color: #c0c9d1
+  .sidebar-text,
+  .balance-title
+    opacity: 0
+    color: transparent
+    transition: opacity ease 0.32s
+  .log-out
+    text-align: right
+    padding-right: 20px
+    height: 60px
+    a
+      opacity: 0
+      height: 0
+      display: inline-block
+      font-size: 12px
+      color: transparent
+      line-height: 16px
+      cursor: pointer
+      transition: opacity ease 0.3s
+      .icon-logout,
+      span
+        display: inline-block
+        vertical-align: middle
+      .icon-logout
+        margin-right: 17px
+  .sidebar-item
+    margin-bottom: 20px
+    > a
+      display: flex
+      align-items: center
+      flex-wrap: nowrap
+      width: 100%
+      padding: 8px 0
+      transition: $transition
+      background-position: 100% 0
+      background-size: 7px 1px
+      color: #c0c9d1
+      &:hover
+        background: url("../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+  .settings-wr
+    padding-bottom: 30px
+    padding-left: 19px
+    font-family: $OpenSansRegular
+    font-size: 14px
+    background: linear-gradient(to bottom, #35373c 50%, #6b6f79 50%) no-repeat 0 100% / 80% 2px
+    i
+      font-size: 22px
+      line-height: 22px
+      display: inline-block
+    .sidebar-item
+      margin-bottom: 10px
+      &.user
+        i
+          font-size: 22px
+      &.setting
+        i
+          font-size: 29px
+      a
+        &:hover
+          transition: $transition
+          background: url("../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $accent-color
+          span
+            color: $accent-color !important
+            display: inline-block
+            opacity: 1
+        &.active
+          transition: $transition
+          background: url("../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $accent-color
+  .sidebar-text
+    padding-left: 33px
+    display: inline-block
+  .balance-wr
+    padding-left: 10px
+    padding-top: 15px
+    padding-bottom: 65px
+    background: linear-gradient(to bottom, #35373c 50%, #6b6f79 50%) no-repeat 0 100% / 80% 2px
+    .balance-title
+      font-family: $OpenSansRegular
+      font-size: 14px
+      text-align: right
+      padding-right: 45px
+      margin-bottom: 15px
+      height: 20px
+      overflow: hidden
+    .sidebar-item
+      display: flex
+      flex-wrap: nowrap
+      span
+        display: inline-block
+        font-family: $OpenSansLight
+        font-size: 14px
+        text-align: center
+      .currency
+        text-transform: uppercase
+        min-width: 38px
+      .val
+        padding-left: 22px
+        font-family: $OpenSansRegular
+        opacity: 0
+        width: 0
+        color: transparent
+        transition: opacity ease 0.32s
+  .navigate
+    padding-top: 38px
+    padding-left: 17px
+    li
+      padding-bottom: 30px
+      &:last-child
+        padding-bottom: 0
+      a
+        &:hover
+          transition: $transition
+          background: url("../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $accent-color
+          span
+            color: $accent-color !important
+            display: inline-block
+            opacity: 1
+        &.active
+          transition: $transition
+          background: url("../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+          i
+            color: $accent-color
+    a
+      display: flex
+      max-height: 40px
+      padding: 7px 0
+      flex-wrap: nowrap
+      align-items: center
+      font-family: $montserrat-regular
+      font-size: 14px
+      line-height: 22px
+      transition: $transition
+      background-position: 100% 0
+      background-size: 7px 1px
+      i
+        font-size: 22px
+        color: #c0c9d1
+        display: inline-block
+        min-width: 22px
+        text-align: center
+      span
+        display: inline-block
+        padding-left: 31px
+        opacity: 0
+        color: transparent
+        transition: opacity ease 0.32s
+        height: 22px
+        min-width: 120px
+      &:hover
+        transition: $transition
+        background: url("../../../../assets/images/sidebar-link-hover.png") repeat-y 100% 0 / 38px 1px
+        i
+          color: $accent-color
+        span
+          color: $accent-color !important
+          display: inline-block
+          opacity: 1
+  &:hover
+    max-width: 220px
+    .navigate
+      a span
+        color: #c0c9d1
+        opacity: 1
+    .settings-wr,
+    .balance-wr
+      background-size: 94% 2px
+    .log-out
+      a
+        opacity: 1
+        height: auto
+        color: $accent-color
+    .sidebar-text,
+    .balance-title
+      color: #c0c9d1
+      opacity: 1
+    .balance-wr .sidebar-item .val
+      display: inline-block
+      opacity: 1
+      width: auto
+      color: #c0c9d1
+.sample
+  ng-scrollbar
+    background-color: #F8F8F8
+    padding: 1em
+  .ng-scrollbar
+    background-color: rgba(0, 0, 0, 0.15)
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5)
+    border-radius: 3px

@@ -1,0 +1,79 @@
+
+
+<div class="sidebar">
+  <ng-scrollbar class="sample">
+  <div class="log-out">
+    <a (click)="logout()">
+      <i class="icon-logout"></i>
+      <span>Log out</span>
+    </a>
+  </div>
+  <div class="settings-wr">
+    <div class="sidebar-item user">
+      <a class="disabled">
+        <i class="icon-user"></i>
+        <span class="sidebar-text">jasonnewsted</span>
+      </a>
+    </div>
+    <div class="sidebar-item setting">
+      <a routerLinkActive="active" [routerLink]="['settings']">
+        <i class="icon-settings"></i>
+        <span class="sidebar-text">Settings</span>
+      </a>
+    </div>
+  </div>
+  <div class="balance-wr">
+    <div class="balance-title">Your balance</div>
+    <div *ngFor="let item of wallets$ | async" class="sidebar-item">
+      <span class="currency">{{item.asset.code | uppercase}}</span>
+      <span class="val">{{item.balance }}</span>
+    </div>
+  </div>
+  <ul class="navigate">
+    <li>
+      <a routerLinkActive="active" [routerLink]="['dashboard']">
+        <i class="icon-home"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLink]="['buy']">
+        <i class="icon-shoppingCart"></i>
+        <span>Buy Tokens</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLink]="['wallet']">
+        <i class="icon-wallet"></i>
+        <span>Wallet</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLink]="['/backoffice', 'myreferrals']">
+        <i class="icon-team"></i>
+        <span>My team</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLink]="['/backoffice/campaign']"  *appNgAcl="['campaign', 'GET']">
+        <i class="icon-building"></i>
+        <span>Campaign</span>
+      </a>
+    </li>
+    <li>
+        <a routerLinkActive="active" [routerLink]="['/backoffice/exchenge']" *appNgAcl="['exchenge', 'GET']">
+          <i class="icon-transfer"></i>
+          <span>Exchenge</span>
+        </a>
+      </li>
+      <li>
+          <a routerLinkActive="active" [routerLink]="['/backoffice/staking']" *appNgAcl="['staking', 'GET']">
+            <i class="icon-dollar-symbol"></i>
+            <span>Staking</span>
+          </a>
+        </li>
+  </ul>
+  </ng-scrollbar>
+</div>
+
+

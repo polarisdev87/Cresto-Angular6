@@ -1,37 +1,33 @@
-import { metaReducers } from './store/reducers';
-import { ReferralsService } from './shared/services/referral.service';
-import { WalletsService } from './shared/services/wallets.service';
-import { WalletHttpService } from './shared/services/wallet-http.service';
-import { SocialNetworkService } from './shared/services/social-network.service';
-import { SettingsService } from './shared/services/settings.service';
-import { TwoFactorService } from './shared/services/twofactor.service';
-import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
-import { effects } from './store/effects';
-import { BrowserModule } from '@angular/platform-browser';
-import {  NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from './../environments/environment';
-import { EffectsModule } from '@ngrx/effects';
-import { reducers, CustomSerializer } from './store/reducers';
-import { HttpService } from './shared/services/http.service';
-import { AuthService } from './shared/services/auth.service';
-import { LocalStorageService } from './shared/services/localStorage.service';
-import { AuthGuardService } from './shared/services/auth-guard.service';
-import { AclService } from './shared/services/acl.service';
-import { ValidatorsService } from './shared/services/validators.service';
-import { DOMAIN_TOKEN, DOMAIN, PREFIX, PREFIX_TOKEN, CRESTOOKEN_DOMAIN, CRESTOOKEN_DOMAIN_TOKEN } from './config';
-import { AppInterceptorsService } from './shared/services/app-interceptors.service';
-import { RouterModule } from '@angular/router';
-import { AuthServiceConfig, AuthService as GoogleAuthService } from 'angular5-social-login';
-import { getAuthServiceConfigs } from './google-config';
-import { AccessGuardService } from './shared/services/access-guard.service';
+import {CustomSerializer, metaReducers, reducers} from './store/reducers';
+import {WalletsService} from './shared/services/wallets.service';
+import {WalletHttpService} from './shared/services/wallet-http.service';
+import {SocialNetworkService} from './shared/services/social-network.service';
+import {SettingsService} from './shared/services/settings.service';
+import {TwoFactorService} from './shared/services/twofactor.service';
+import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-store';
+import {effects} from './store/effects';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AppComponent} from './app.component';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from './../environments/environment';
+import {EffectsModule} from '@ngrx/effects';
+import {HttpService} from './http.service';
+import {AuthService} from './shared/services/auth.service';
+import {LocalStorageService} from './shared/services/localStorage.service';
+import {AuthGuardService} from './auth-guard.service';
+import {ValidatorsService} from './shared/services/validators.service';
+import {CRESTOOKEN_DOMAIN, CRESTOOKEN_DOMAIN_TOKEN, DOMAIN, DOMAIN_TOKEN, getAuthServiceConfigs, PREFIX, PREFIX_TOKEN} from './config';
+import {AppInterceptorsService} from './app-interceptors.service';
+import {RouterModule} from '@angular/router';
+import {AuthService as GoogleAuthService, AuthServiceConfig} from 'angular5-social-login';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
-import { UiModule } from './shared/module/ui/ui.module';
-import { PopupComponent } from './backoffice/content/buy/popup/popup.component';
+import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from 'ng-recaptcha';
+import {UiModule} from './shared/module/ui/ui.module';
+import {PopupComponent} from './content/backoffice/content/buy/popup/popup.component';
+import {routes} from './routes';
 
 @NgModule({
   declarations: [
@@ -44,46 +40,10 @@ import { PopupComponent } from './backoffice/content/buy/popup/popup.component';
     NoopAnimationsModule,
     UiModule,
     RecaptchaModule.forRoot(),
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
-    RouterModule.forRoot([
-
-      { path: '', loadChildren: './landing/landing.module#LandingModule'},
-      {
-        path: 'email/verification/check/:hash',
-        loadChildren: './email-verification/email-verification.module#EmailVerificationModule',
-      },
-      {
-        path: 'email/verification',
-        loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule',
-      },
-      {
-        path: 'login',
-        loadChildren: './login/login.module#LoginModule',
-        canLoad: [AuthGuardService]
-      },
-      {
-        path: 'signup',
-        loadChildren: './signup/signup.module#SignupModule',
-        canLoad: [AuthGuardService]
-      },
-      {
-        path: 'reset-password',
-        loadChildren: './reset-password/reset-password.module#ResetPasswordModule',
-        canLoad: [AuthGuardService]
-      },
-      {
-        path: 'backoffice',
-        loadChildren: './backoffice/backoffice.module#BackofficeModule',
-        canLoad: [AuthGuardService]
-      },
-      { path: ':referralHash', loadChildren: './landing/landing.module#LandingModule'},
-      {
-        path: '**' ,
-        redirectTo: 'login'
-      }
-    ]),
+    RouterModule.forRoot(routes),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router'
     }),
@@ -95,29 +55,27 @@ import { PopupComponent } from './backoffice/content/buy/popup/popup.component';
     AuthService,
     LocalStorageService,
     AuthGuardService,
-    AccessGuardService,
-    AclService,
     ValidatorsService,
     TwoFactorService,
     SettingsService,
     SocialNetworkService,
     GoogleAuthService,
-    ReferralsService,
-    { provide: RouterStateSerializer, useClass: CustomSerializer },
-    { provide: DOMAIN_TOKEN, useValue: DOMAIN },
-    { provide: PREFIX_TOKEN, useValue: PREFIX },
-    { provide: CRESTOOKEN_DOMAIN_TOKEN, useValue: CRESTOOKEN_DOMAIN },
-    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true, },
+    {provide: RouterStateSerializer, useClass: CustomSerializer},
+    {provide: DOMAIN_TOKEN, useValue: DOMAIN},
+    {provide: PREFIX_TOKEN, useValue: PREFIX},
+    {provide: CRESTOOKEN_DOMAIN_TOKEN, useValue: CRESTOOKEN_DOMAIN},
+    {provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true},
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
     },
     {
       provide: RECAPTCHA_SETTINGS,
-      useValue: { siteKey: environment.googleConfig.capthca } as RecaptchaSettings,
+      useValue: {siteKey: environment.googleConfig.capthca} as RecaptchaSettings,
     },
   ],
   entryComponents: [PopupComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
