@@ -10,6 +10,7 @@ import { WithdrawalModalComponent } from './wallet-list/withdrawal-modal/withdra
 import { UiModule } from '../../../shared/module/ui/ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DepositviewComponent } from './depositview/depositview.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { DepositviewComponent } from './depositview/depositview.component';
     ]),
     UiModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent, DepositviewComponent],
   entryComponents: [DepositModalComponent, WithdrawalModalComponent],
