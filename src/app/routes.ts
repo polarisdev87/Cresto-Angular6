@@ -2,36 +2,36 @@ import {AuthGuardService} from './auth-guard.service';
 
 export const routes = [
 
-  {path: '', loadChildren: './landing/landing.module#LandingModule'},
+  {path: '', loadChildren: './content/landing/landing.module#LandingModule'},
   {
     path: 'email/verification/check/:hash',
-    loadChildren: './email-verification/email-verification.module#EmailVerificationModule',
+    loadChildren: './content/email-verification/email-verification.module#EmailVerificationModule',
   },
   {
     path: 'email/verification',
-    loadChildren: './verification-notice/verification-notice.module#VerificationNoticeModule',
+    loadChildren: './content/verification-notice/verification-notice.module#VerificationNoticeModule',
   },
   {
     path: 'login',
-    loadChildren: './login/login.module#LoginModule',
+    loadChildren: './content/login/login.module#LoginModule',
     canLoad: [AuthGuardService]
   },
   {
     path: 'signup',
-    loadChildren: './signup/signup.module#SignupModule',
+    loadChildren: './content/signup/signup.module#SignupModule',
     canLoad: [AuthGuardService]
   },
   {
     path: 'reset-password',
-    loadChildren: './reset-password/reset-password.module#ResetPasswordModule',
+    loadChildren: './content/reset-password/reset-password.module#ResetPasswordModule',
     canLoad: [AuthGuardService]
   },
   {
     path: 'backoffice',
-    loadChildren: './backoffice/backoffice.module#BackofficeModule',
+    loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
     canLoad: [AuthGuardService]
   },
-  {path: ':referralHash', loadChildren: './landing/landing.module#LandingModule'},
+  {path: ':referralHash', loadChildren: './content/landing/landing.module#LandingModule'},
   {
     path: '**',
     redirectTo: 'login'

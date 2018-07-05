@@ -22,7 +22,7 @@ import {Action} from '@ngrx/store';
 import {Observable, of} from 'rxjs';
 import {catchError, map, switchMap, tap} from 'rxjs/operators';
 import {MatDialog} from '@angular/material';
-import {PopupComponent} from '../../backoffice/content/buy/popup/popup.component';
+import {PopupComponent} from '../../content/backoffice/content/buy/popup/popup.component';
 
 @Injectable()
 export class WalletsEffects {
