@@ -11,10 +11,12 @@ import { UiModule } from '../../../shared/module/ui/ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DepositviewComponent } from './depositview/depositview.component';
 import { FormsModule } from '@angular/forms';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {path: '', component: WalletComponent}
     ]),
@@ -22,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent, DepositviewComponent],
+  declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent, HelpComponent, DepositviewComponent],
   entryComponents: [DepositModalComponent, WithdrawalModalComponent],
   providers: [WalletService]
 })
