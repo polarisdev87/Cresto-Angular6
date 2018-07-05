@@ -31,7 +31,7 @@ import { AccessGuardService } from './shared/services/access-guard.service';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
 import { UiModule } from './shared/module/ui/ui.module';
-import { PopupComponent } from './backoffice/buy/popup/popup.component';
+import { PopupComponent } from './backoffice/content/buy/popup/popup.component';
 
 @NgModule({
   declarations: [

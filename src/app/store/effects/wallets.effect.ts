@@ -30,7 +30,7 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
-import { PopupComponent } from '../../backoffice/buy/popup/popup.component';
+import { PopupComponent } from '../../backoffice/content/buy/popup/popup.component';
 
 @Injectable()
 export class WalletsEffects {
@@ -116,7 +116,7 @@ export class WalletsEffects {
             data: {
               message: err
             }
-          })
+          });
           // tslint:disable-next-line
           console.log(err);
           return of(new BuyTokensFail(err));
