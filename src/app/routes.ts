@@ -1,4 +1,4 @@
-import {AuthGuardService} from './shared/services/auth-guard.service';
+import {AuthGuardService} from './auth-guard.service';
 
 export const routes = [
 

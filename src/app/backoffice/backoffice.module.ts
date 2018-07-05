@@ -8,13 +8,13 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 import {ScrollbarModule} from 'ngx-scrollbar';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
-import {AclEffects} from './store/effects/acl.effects';
 import {reducers} from './store/reducers';
 import {routes} from './routes';
 import {SharedModule} from './shared/modules/shared.module';
 import {UiModule} from '../shared/module/ui/ui.module';
-import {AclService} from './shared/services/acl.service';
-import {AccessGuardService} from './shared/services/access-guard.service';
+import {AclService} from './acl.service';
+import {AccessGuardService} from './access-guard.service';
+import {effects} from './store/effects';
 
 @NgModule({
   imports: [
@@ -24,7 +24,7 @@ import {AccessGuardService} from './shared/services/access-guard.service';
     ScrollbarModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('backoffice', reducers),
-    EffectsModule.forFeature([AclEffects]),
+    EffectsModule.forFeature(effects),
   ],
   declarations: [BackofficeComponent, SidebarComponent, BackofficeHeaderComponent, BackofficeFooterComponent],
   providers: [

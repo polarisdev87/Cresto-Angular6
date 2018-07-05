@@ -1,5 +1,5 @@
 import {BackofficeComponent} from './backoffice.component';
-import {AccessGuardService} from './shared/services/access-guard.service';
+import {AccessGuardService} from './access-guard.service';
 
 export const routes = [
   {

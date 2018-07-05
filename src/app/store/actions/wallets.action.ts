@@ -4,10 +4,6 @@ export const WALLET_REQUEST = '[WALLET] WALLET REQUEST ..';
 export const WALLET_SUCCESS = '[WALLET] WALLET Success';
 export const WALLET_FAIL = '[WALLET] WALLET Fail';
 
-export const ASSETS_REQUEST = '[WALLET] ASSETS REQUEST ..';
-export const ASSETS_SUCCESS = '[WALLET] ASSETS Success';
-export const ASSETS_FAIL = '[WALLET] ASSETS Fail';
-
 export const ROUNDS_REQUEST = '[WALLET] ROUNDS REQUEST ..';
 export const ROUNDS_SUCCESS = '[WALLET] ROUNDS Success';
 export const ROUNDS_FAIL = '[WALLET] ROUNDS Fail';
@@ -35,21 +31,6 @@ export class WalletLoadSuccess implements Action {
 
 export class WalletLoadFail implements Action {
   public readonly type: string = WALLET_FAIL;
-  public constructor(public payload: Error) {}
-}
-
-
-export class AssetsRequest implements Action {
-  public readonly type: string = ASSETS_REQUEST;
-}
-
-export class AssetsLoadSuccess implements Action {
-  public readonly type: string = ASSETS_SUCCESS;
-  public constructor(public payload: any) {}
-}
-
-export class AssetsLoadFail implements Action {
-  public readonly type: string = ASSETS_FAIL;
   public constructor(public payload: Error) {}
 }
 

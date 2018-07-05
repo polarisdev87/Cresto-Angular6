@@ -1,5 +1,4 @@
-import {  ASSETS_REQUEST, ASSETS_SUCCESS, ASSETS_FAIL } from './../actions/wallets.action';
-import { StatusPopupTypes } from '../actions/statusPopup.action';
+import {ASSETS_FAIL, ASSETS_REQUEST, ASSETS_SUCCESS} from '../actions/assets.actions';
 
 export const initialState: any = {
   isLoading: false,

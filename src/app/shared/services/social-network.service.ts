@@ -1,4 +1,4 @@
-import { HttpService } from './http.service';
+import { HttpService } from '../../http.service';
 import { LoginSuccess } from './../../store/actions/auth.action';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs/operators';

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {GetCurrentUser} from '../store/actions';
 import {AclRequest} from './store/actions/acl.actions';
+import {AssetsRequest} from './store/actions/assets.actions';
 
 @Component({
   selector: 'app-backoffice',
@@ -18,5 +19,6 @@ export class BackofficeComponent implements OnInit {
   ngOnInit() {
     this._store.dispatch(new GetCurrentUser());
     this._store.dispatch(new AclRequest());
+    this._store.dispatch(new AssetsRequest());
   }
 }

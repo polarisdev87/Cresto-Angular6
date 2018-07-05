@@ -1,5 +1,5 @@
 // import { LocalStorageService } from './localStorage.service';
-import { Go } from './../../store/actions/router.action';
+import { Go } from './store/actions/router.action';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { HttpInterceptor } from '@angular/common/http';
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { HttpErrorResponse, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { HttpHandler } from '@angular/common/http';
 import { catchError, filter, map } from 'rxjs/operators';
-import { TwoFactorLoginSuccess, Logout } from '../../store/actions';
+import { TwoFactorLoginSuccess, Logout } from './store/actions/index';
 import { throwError } from 'rxjs';
 
 @Injectable()

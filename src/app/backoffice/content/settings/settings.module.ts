@@ -6,7 +6,6 @@ import {PasswordComponent} from './password/password.component';
 import {TwoFactorAuthComponent} from './two-factor-auth/two-factor-auth.component';
 import {PersonalInformationComponent} from './personal-information/personal-information.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {LableDirective} from '../../lable.directive';
 import {SharedModule} from '../../shared/modules/shared.module';
 
 @NgModule({
@@ -24,7 +23,6 @@ import {SharedModule} from '../../shared/modules/shared.module';
     PasswordComponent,
     TwoFactorAuthComponent,
     PersonalInformationComponent,
-    LableDirective
   ]
 })
 export class SettingsModule {

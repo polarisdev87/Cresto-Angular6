@@ -1,10 +1,10 @@
-import { getStateData } from './../../../store/selectors/wallets.selector';
-import { WalletRequest, AssetsRequest, TransactionRequest } from './../../../store/actions/wallets.action';
-import { getAuthUserId } from './../../../store/selectors/auth.selectors';
-import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { filter } from 'rxjs/operators';
+import {getStateData} from './../../../store/selectors/wallets.selector';
+import {TransactionRequest, WalletRequest} from './../../../store/actions/wallets.action';
+import {getAuthUserId} from './../../../store/selectors/auth.selectors';
+import {Observable} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-wallet',
@@ -19,21 +19,21 @@ export class WalletComponent implements OnInit {
 
   constructor(
     private _store: Store<StoreStates>
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-    this.assets$ = this._store.select(getStateData('assets'));
+    this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getStateData('wallets'));
     this.transaction$ = this._store.select(getStateData('transaction'));
 
     this._store.select(getAuthUserId)
-    .pipe(
-      filter((id: string | null) => Boolean(id))
-    )
-    .subscribe((id) => {
-      this._store.dispatch(new WalletRequest(id));
-      this._store.dispatch(new AssetsRequest());
-      this._store.dispatch(new TransactionRequest(id));
-    });
+      .pipe(
+        filter((id: string | null) => Boolean(id))
+      )
+      .subscribe((id) => {
+        this._store.dispatch(new WalletRequest(id));
+        this._store.dispatch(new TransactionRequest(id));
+      });
   }
 }

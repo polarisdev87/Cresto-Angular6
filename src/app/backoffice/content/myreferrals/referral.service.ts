@@ -1,4 +1,4 @@
-import { HttpService } from '../../../shared/services/http.service';
+import { HttpService } from '../../../http.service';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 

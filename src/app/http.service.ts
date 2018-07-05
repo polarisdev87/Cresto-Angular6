@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LocalStorageService } from './localStorage.service';
-import { DOMAIN_TOKEN, PREFIX_TOKEN } from '../../config';
+import { LocalStorageService } from './shared/services/localStorage.service';
+import { DOMAIN_TOKEN, PREFIX_TOKEN } from './config';
 
 @Injectable()
 export class HttpService extends HttpClient {

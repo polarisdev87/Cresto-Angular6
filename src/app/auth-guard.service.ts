@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
-import { isLoggedSelector } from '../../store/selectors';
+import { isLoggedSelector } from './store/selectors/index';
 import { Route } from '@angular/compiler/src/core';
 
 @Injectable()

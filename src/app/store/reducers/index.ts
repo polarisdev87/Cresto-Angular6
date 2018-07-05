@@ -7,7 +7,6 @@ import * as fromAuthActions from '../actions';
 
 import * as fromStatusPopup from './statusPopup.reducer';
 import * as fromWallets from './wallets.reducer';
-import * as fromAssets from './assets.reducer';
 import * as fromRounds from './rounds.reducer';
 import * as fromTransaction from './transaction.reducer';
 import * as fromBuyToken from './buy-tokens.reducer';
@@ -26,7 +25,6 @@ export interface IRootState {
   auth: AuthState;
   statusPopup: StatusPopup;
   wallets: WalletState;
-  assets: any;
   rounds: any;
   transaction: any;
   tokenPurchase: any;
@@ -38,7 +36,6 @@ export const reducers: ActionReducerMap<IRootState> = {
   auth: fromAuth.reducer,
   statusPopup: fromStatusPopup.reducer,
   wallets: fromWallets.reducer,
-  assets: fromAssets.reducer,
   rounds: fromRounds.reducer,
   transaction: fromTransaction.reducer,
   tokenPurchase: fromBuyToken.reducer,

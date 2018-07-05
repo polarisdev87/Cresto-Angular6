@@ -20,7 +20,7 @@ export class BackofficeHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.assets$ = this._store.select(getStateData('assets'));
+    this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getStateData('wallets'));
   }
 
