@@ -1,12 +1,9 @@
-import {filter} from 'rxjs/operators';
-import {getAuthUserId} from '../../../../store/selectors';
-import {Component, Input, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs';
-import {MatDialog} from '@angular/material';
-import {DepositPopupComponent} from './deposit-popup/deposit-popup.component';
-import {getStateData} from '../../../../store/selectors/wallets.selector';
-import {WalletRequest} from '../../../../store/actions/wallets.action';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material';
+import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
+import { IRootState } from '../../../../store/reducers';
 
 @Component({
   selector: 'app-buy',
@@ -27,9 +24,13 @@ export class BuyComponent implements OnInit {
 
   assets$: Observable<any>;
   wallets$: Observable<any>;
+  makeDepositLink = {
+    name: 'Make deposit',
+    class: 'emptyGreen'
+  };
 
   constructor(
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
     private _dialog: MatDialog
   ) {
   }
@@ -44,19 +45,5 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
-    this.wallets$ = this._store.select(getStateData('wallets'));
-
-    this._store.select(getAuthUserId)
-      .pipe(
-        filter((id: string | null) => Boolean(id))
-      )
-      .subscribe((id) => {
-        this._store.dispatch(new WalletRequest(id));
-      });
   }
-
-  public makeDepositLink = {
-    name: 'Make deposit',
-    class: 'emptyGreen'
-  };
 }

@@ -1,16 +1,8 @@
-import {WalletsService} from './../../shared/services/wallets.service';
 import {
   GENERATE_WALLET_ADDRESS_REQUEST,
   GenerateWalletAddressFail,
   GenerateWalletAddressRequest,
   GenerateWalletAddressSuccess,
-  ROUNDS_REQUEST,
-  RoundsLoadFail,
-  RoundsLoadSuccess,
-  TRANSACTION_REQUEST,
-  TransactionLoadFail,
-  TransactionLoadSuccess,
-  TransactionRequest,
   WALLET_REQUEST,
   WalletLoadFail,
   WalletLoadSuccess,
@@ -22,7 +14,7 @@ import {Action} from '@ngrx/store';
 import {Observable, of} from 'rxjs';
 import {catchError, map, switchMap, tap} from 'rxjs/operators';
 import {MatDialog} from '@angular/material';
-import {PopupComponent} from '../../content/backoffice/content/buy/popup/popup.component';
+import { WalletsService } from '../../../../shared/services/wallets.service';
 
 @Injectable()
 export class WalletsEffects {
@@ -41,32 +33,6 @@ export class WalletsEffects {
       )),
     );
 
-  @Effect()
-  public roundsWallets$: Observable<Action> = this.actions$
-    .ofType(ROUNDS_REQUEST).pipe(
-      switchMap(() => this._walletsService.rounds().pipe(
-        map((data: any) => new RoundsLoadSuccess(data)),
-        catchError((err: Error) => {
-          // tslint:disable-next-line
-          console.log(err);
-          return of(new RoundsLoadFail(err));
-        })
-      )),
-    );
-
-  @Effect()
-  public transactionWallets$: Observable<Action> = this.actions$
-    .ofType(TRANSACTION_REQUEST).pipe(
-      map((action: TransactionRequest) => action.payload),
-      switchMap((userId: string) => this._walletsService.transaction(userId).pipe(
-        map((data: any) => new TransactionLoadSuccess(data)),
-        catchError((err: Error) => {
-          // tslint:disable-next-line
-          console.log(err);
-          return of(new TransactionLoadFail(err));
-        })
-      )),
-    );
 
   @Effect()
   public generateWalletAddress$: Observable<Action> = this.actions$

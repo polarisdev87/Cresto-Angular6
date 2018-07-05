@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {GetCurrentUser} from '../../store/actions';
-import {AclRequest} from './store/actions/acl.actions';
-import {AssetsRequest} from './store/actions/assets.actions';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AclRequest } from './store/actions/acl.actions';
+import { AssetsRequest } from './store/actions/assets.actions';
+import { IRootState } from '../../store/reducers';
+import { GetCurrentUser } from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-backoffice',
@@ -12,7 +13,7 @@ import {AssetsRequest} from './store/actions/assets.actions';
 export class BackofficeComponent implements OnInit {
 
   constructor(
-    private _store: Store<StoreStates>
+    private _store: Store<IRootState>
   ) {
   }
 

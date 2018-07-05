@@ -1,9 +1,10 @@
 import { Store } from '@ngrx/store';
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { take } from 'rxjs/operators';
+import { IRootState } from '../../../../../store/reducers';
 
 @Directive({
-  selector: '[ngAcl]'
+  selector: '[appNgAcl]'
 })
 
 export class NgAclDirective {
@@ -12,11 +13,11 @@ export class NgAclDirective {
     // tslint:disable-next-line
     private _templateRef: TemplateRef<any>,
     private _viewContainer: ViewContainerRef,
-    private _store: Store<StoreStates>
+    private _store: Store<IRootState>
   ) {}
 
   // value format : ['/widgets/exchangeRate', 'PUT']
-  @Input() public set ngAcl(value: string[]) {
+  @Input() public set appNgAcl(value: string[]) {
     this._store.select('backoffice', 'acl')
     .subscribe((aclMap: Acl) => {
       if (aclMap[value[0]] && aclMap[value[0]].includes('*')) {

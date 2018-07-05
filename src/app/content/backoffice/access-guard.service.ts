@@ -5,12 +5,13 @@ import {of} from 'rxjs';
 import {filter, switchMap, take} from 'rxjs/operators';
 import {isEmpty} from 'lodash';
 import {Route} from '@angular/compiler/src/core';
+import { IRootState } from '../../store/reducers';
 
 @Injectable()
 export class AccessGuardService implements CanLoad {
 
   public constructor(
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
   ) {
   }
 

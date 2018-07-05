@@ -1,10 +1,10 @@
-import { getStateData } from '../../../../store/selectors/wallets.selector';
-import { RoundsRequest } from '../../../../store/actions/wallets.action';
 import { filter } from 'rxjs/operators';
-import { getAuthUserId } from '../../../../store/selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { RoundsRequest } from './store/actions/rounds.actions';
+import { IRootState } from '../../../../store/reducers';
+import { getAuthUserId } from '../../../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,14 +15,15 @@ export class DashboardComponent implements OnInit {
   public rounds$: Observable<any>;
   public scroll;
   constructor(
-    private _store: Store<StoreStates>
+    private _store: Store<IRootState>
   ) {
   }
   public dashboardTableHead = [
     'ICO Round', 'CSTT Supply', 'Price ($)', 'Minimum', 'Maximum', 'Free Tokens', 'Free Tokens Recipients', 'Status'
   ];
   ngOnInit() {
-    this.rounds$ = this._store.select(getStateData('rounds'));
+    this.rounds$ = this._store.select('dashboard', 'rounds', 'data');
+
     this._store.select(getAuthUserId)
       .pipe(
         filter((id: string | null) => Boolean(id))

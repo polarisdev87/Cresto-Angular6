@@ -6,7 +6,7 @@ import * as RouterActions from '../actions/router.action';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { IRouterPayload } from '../actions';
+import { IRouterPayload } from '../actions/router.action';
 
 @Injectable()
 export class RouterEffects {

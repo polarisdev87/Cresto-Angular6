@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Store} from '@ngrx/store';
-import {LocalStorageService} from '../../shared/services/localStorage.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-landing',
@@ -11,7 +10,6 @@ import {LocalStorageService} from '../../shared/services/localStorage.service';
 export class LandingComponent implements OnInit {
   constructor(
     private _activateroute: ActivatedRoute,
-    private _store: Store<StoreStates>,
     private _localStorageService: LocalStorageService,
   ) {
   }

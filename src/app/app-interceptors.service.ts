@@ -1,4 +1,3 @@
-// import { LocalStorageService } from './localStorage.service';
 import { Go } from './store/actions/router.action';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
@@ -7,15 +6,15 @@ import { Observable } from 'rxjs';
 import { HttpErrorResponse, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { HttpHandler } from '@angular/common/http';
 import { catchError, filter, map } from 'rxjs/operators';
-import { TwoFactorLoginSuccess, Logout } from './store/actions/index';
 import { throwError } from 'rxjs';
+import { IRootState } from './store/reducers';
+import { Logout } from './store/actions/auth.action';
 
 @Injectable()
 export class AppInterceptorsService implements HttpInterceptor {
 
   public constructor(
-    private _store: Store<StoreStates>,
-    // private _localStorageService: LocalStorageService,
+    private _store: Store<IRootState>,
   ) {}
 
   // tslint:disable-next-line
@@ -27,17 +26,11 @@ export class AppInterceptorsService implements HttpInterceptor {
       .handle(jsonReq).pipe(
         filter((res: HttpResponse<{ data: T } | T>) => res instanceof HttpResponse),
         map((res: HttpResponse<{ data: T  } | T>) => {
-          if (res.status !== 206) {
-            if ((res.body as any).status === 'error') {
-              throw new Error((res.body as any).message);
-            }
-            // tslint:disable-next-line: no-any
-            return /assets\/i18n/.test(jsonReq.url) ? res : (res.body as any).data;
+          if ((res.body as any).status === 'error') {
+            throw new Error((res.body as any).message);
           }
           // tslint:disable-next-line: no-any
-          this._store.dispatch(new TwoFactorLoginSuccess((res.body as any).data));
-          this._store.dispatch(new Go({path: ['login', 'reg', 'twofactor']}));
-          return {status: 206};
+          return /assets\/i18n/.test(jsonReq.url) ? res : (res.body as any).data;
         }),
         catchError((err: HttpErrorResponse) => {
           if (err.status === 403 || err.status === 401) {

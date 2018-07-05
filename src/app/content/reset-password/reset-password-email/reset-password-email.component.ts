@@ -2,6 +2,7 @@ import { Store } from '@ngrx/store';
 import { FormControl, Validators } from '@angular/forms';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { SendResetPasswordEmail } from '../store/actions/password.actions';
+import { IRootState } from '../../../store/reducers';
 
 @Component({
   selector: 'app-reset-password-email',
@@ -13,7 +14,7 @@ export class ResetPasswordEmailComponent {
   public email: FormControl = new FormControl('', [Validators.required, Validators.email]);
 
   public constructor(
-    private _store: Store<StoreStates>,
+    private _store: Store<IRootState>,
   ) {}
 
   public sendResetPasswordEmail(email: string): void {

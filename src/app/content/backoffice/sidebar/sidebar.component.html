@@ -55,19 +55,19 @@
       </a>
     </li>
     <li>
-      <a routerLinkActive="active" [routerLink]="['/backoffice/campaign']"  *ngAcl="['campaign', 'GET']">
+      <a routerLinkActive="active" [routerLink]="['/backoffice/campaign']"  *appNgAcl="['campaign', 'GET']">
         <i class="icon-building"></i>
         <span>Campaign</span>
       </a>
     </li>
     <li>
-        <a routerLinkActive="active" [routerLink]="['/backoffice/exchenge']" *ngAcl="['exchenge', 'GET']">
+        <a routerLinkActive="active" [routerLink]="['/backoffice/exchenge']" *appNgAcl="['exchenge', 'GET']">
           <i class="icon-transfer"></i>
           <span>Exchenge</span>
         </a>
       </li>
       <li>
-          <a routerLinkActive="active" [routerLink]="['/backoffice/staking']" *ngAcl="['staking', 'GET']">
+          <a routerLinkActive="active" [routerLink]="['/backoffice/staking']" *appNgAcl="['staking', 'GET']">
             <i class="icon-dollar-symbol"></i>
             <span>Staking</span>
           </a>
