@@ -11,8 +11,9 @@ import {EffectsModule} from '@ngrx/effects';
 import {AclEffects} from './store/effects/acl.effects';
 import {reducers} from './store/reducers';
 import {routes} from './routes';
-import {SharedModule} from './shared/shared.module';
+import {SharedModule} from './shared/modules/shared.module';
 import {UiModule} from '../shared/module/ui/ui.module';
+import {AclService} from './shared/services/acl.service';
 
 @NgModule({
   imports: [
@@ -24,7 +25,10 @@ import {UiModule} from '../shared/module/ui/ui.module';
     StoreModule.forFeature('backoffice', reducers),
     EffectsModule.forFeature([AclEffects]),
   ],
-  declarations: [BackofficeComponent, SidebarComponent, BackofficeHeaderComponent, BackofficeFooterComponent]
+  declarations: [BackofficeComponent, SidebarComponent, BackofficeHeaderComponent, BackofficeFooterComponent],
+  providers: [
+    AclService,
+  ]
 })
 export class BackofficeModule {
 }

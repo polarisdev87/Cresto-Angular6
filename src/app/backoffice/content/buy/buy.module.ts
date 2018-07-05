@@ -6,7 +6,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BuyTokenFormComponent} from './buy-token-form/buy-token-form.component';
 import {DepositPopupComponent} from './deposit-popup/deposit-popup.component';
 import {BuyTokenSelectComponent} from './buy-token-form/buy-token-select/buy-token-select.component';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../shared/modules/shared.module';
 import {BuyInstructionComponent} from './buy-instruction/buy-instruction.component';
 
 @NgModule({

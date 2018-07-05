@@ -7,7 +7,7 @@ import {TwoFactorAuthComponent} from './two-factor-auth/two-factor-auth.componen
 import {PersonalInformationComponent} from './personal-information/personal-information.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LableDirective} from '../../lable.directive';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../shared/modules/shared.module';
 
 @NgModule({
   imports: [

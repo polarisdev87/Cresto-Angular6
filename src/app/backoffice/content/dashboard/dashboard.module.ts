@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { CallActionComponent } from './call-action/call-action.component';
 import { InstructionComponent } from './instruction/instruction.component';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../shared/modules/shared.module';
 
 @NgModule({
   imports: [

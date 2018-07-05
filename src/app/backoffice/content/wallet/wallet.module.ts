@@ -8,7 +8,7 @@ import {TransactionListComponent} from './transaction-list/transaction-list.comp
 import {DepositModalComponent} from './wallet-list/deposit-modal/deposit-modal.component';
 import {WithdrawalModalComponent} from './wallet-list/withdrawal-modal/withdrawal-modal.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../shared/modules/shared.module';
 
 @NgModule({
   imports: [

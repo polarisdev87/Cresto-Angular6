@@ -4,7 +4,7 @@ import { MyreferralsComponent } from './myreferrals.component';
 import { RouterModule } from '@angular/router';
 import { NgxLoaderIndicatorModule } from 'ngx-loader-indicator';
 import { ReferralLinkComponent } from './referral-link/referral-link.component';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../shared/modules/shared.module';
 
 @NgModule({
   imports: [
