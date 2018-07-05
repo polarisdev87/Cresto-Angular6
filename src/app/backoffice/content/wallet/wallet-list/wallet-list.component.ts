@@ -18,6 +18,13 @@ export class WalletListComponent implements OnInit {
   @Input()
   wallets;
 
+  state = 'CSTT';
+
+  CSTTBtnState = {
+    name: 'Buy',
+    class: 'redBig'
+  }
+
   depositBtnState = {
     name: 'Deposit',
     class: 'emptyGreen'
