@@ -9,17 +9,21 @@ import { DepositModalComponent } from './wallet-list/deposit-modal/deposit-modal
 import { WithdrawalModalComponent } from './wallet-list/withdrawal-modal/withdrawal-modal.component';
 import { UiModule } from '../../../shared/module/ui/ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HelpComponent } from './help/help.component';
+import { FormsModule } from '@angular/forms';
+import { LableDirective } from '../../lable.directive';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {path: '', component: WalletComponent}
     ]),
     UiModule,
     ReactiveFormsModule,
   ],
-  declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent],
+  declarations: [WalletComponent, WalletListComponent, TransactionListComponent, DepositModalComponent, WithdrawalModalComponent, HelpComponent, LableDirective],
   entryComponents: [DepositModalComponent, WithdrawalModalComponent],
   providers: [WalletService]
 })
