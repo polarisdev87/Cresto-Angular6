@@ -1,11 +1,9 @@
-import { FacebookLogin, GoogleLogin } from './../../store/actions/social-network.action';
-import { getUserLoader } from './../../store/selectors/auth.selectors';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IRootState } from '../../store/reducers';
-import { Login } from '../../store/actions/auth.action';
+import { Login, FacebookLogin, GoogleLogin } from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loader$ = this._store.select(getUserLoader);
+    this.loader$ = this._store.select('auth', 'loading');
     this.form = this._fb.group({
       username: ['', [Validators.required]],
       password: [''],

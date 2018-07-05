@@ -40,11 +40,13 @@ export class AuthService {
   }
 
   public signUp(user: User): Observable<User> {
-    return this._store.select('referral').pipe(
-      switchMap((referredBy: string) => {
-        return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy });
-      })
-    );
+    let referredBy = '';
+    try {
+      referredBy = this._localStorageService.getItem('referralHash');
+    } catch (err) {
+      console.log(err);
+    }
+    return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy });
   }
 
   public tokenToLocalStorage(user: User): Observable<User | null> {

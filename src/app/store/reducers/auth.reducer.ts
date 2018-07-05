@@ -2,7 +2,6 @@ import { SIGN_UP_SUCCESS, LOGIN_SUCCESS, LOGIN_FAIL, SIGN_UP, SIGN_UP_FAIL, LOGO
 
 export const initialState: AuthState = {
   isLogged: false,
-  user: {},
   loaded: false,
   loading: false,
   loginError: '',
@@ -36,7 +35,6 @@ export function reducer(state: AuthState = initialLoggedState(), action: any): A
         isLogged: true,
         loginError: '',
         signUpError: '',
-        user: action.payload,
       };
     }
 

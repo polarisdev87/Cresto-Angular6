@@ -1,10 +1,9 @@
-import { FacebookLogin, GoogleLogin } from '../../store/actions/social-network.action';
 import { ValidatorsService } from '../../shared/services/validators.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../store/reducers';
-import { SignUp } from '../../store/actions/auth.action';
+import { SignUp, FacebookLogin, GoogleLogin } from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-signup',

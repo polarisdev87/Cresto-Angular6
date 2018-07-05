@@ -1,4 +1,3 @@
-import { getAuthUserId } from './../../../../../store/selectors/auth.selectors';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DepositModalComponent } from './deposit-modal/deposit-modal.component';
@@ -43,7 +42,7 @@ export class WalletListComponent implements OnInit {
 
   openDepositPopup(address, wallet_id) {
     if (!address) {
-      this._store.select(getAuthUserId).subscribe((userId: string) => {
+      this._store.select('backoffice', 'user', '_id').subscribe((userId: string) => {
         this._store.dispatch(new GenerateWalletAddressRequest({ userId, wallet_id }));
       });
       return;

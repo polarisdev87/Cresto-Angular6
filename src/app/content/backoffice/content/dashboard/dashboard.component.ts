@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { RoundsRequest } from './store/actions/rounds.actions';
 import { IRootState } from '../../../../store/reducers';
-import { getAuthUserId } from '../../../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +23,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.rounds$ = this._store.select('dashboard', 'rounds', 'data');
 
-    this._store.select(getAuthUserId)
+    this._store.select('backoffice', 'user', '_id')
       .pipe(
         filter((id: string | null) => Boolean(id))
       )

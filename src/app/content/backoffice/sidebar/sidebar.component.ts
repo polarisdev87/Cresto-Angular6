@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../../store/reducers';
-import { getAuthUser } from '../../../store/selectors/auth.selectors';
 import { Logout } from '../../../store/actions/auth.action';
 
 @Component({
@@ -24,10 +23,7 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user$ = this._store.select(getAuthUser);
-    this._store.select('backoffice', 'wallets', 'data').subscribe((a)=>{
-      console.log(a)
-    })
+    this.user$ = this._store.select('backoffice', 'user');
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
   }
