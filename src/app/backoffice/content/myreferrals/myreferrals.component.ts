@@ -1,8 +1,8 @@
-import { environment } from '../../../../environments/environment';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
-import { GetReferralUsers } from '../../../store/actions/referrals-users.action';
+import {environment} from '../../../../environments/environment';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {Observable, Subscription} from 'rxjs';
+import {GetReferralUsers} from './store/actions/referrals-users.action';
 
 @Component({
   selector: 'app-myreferrals',
@@ -20,11 +20,12 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
 
   public constructor(
     private _store: Store<StoreStates>
-  ) {}
+  ) {
+  }
 
   public ngOnInit(): void {
-    this.roundsReferralsUsers$ = this._store.select('referralUsers', 'data');
-    this.loader$ = this._store.select('referralUsers', 'isLoading');
+    this.roundsReferralsUsers$ = this._store.select('referrals', 'referralUsers', 'data');
+    this.loader$ = this._store.select('referrals', 'referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
 
 

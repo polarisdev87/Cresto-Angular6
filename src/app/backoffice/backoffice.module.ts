@@ -14,6 +14,7 @@ import {routes} from './routes';
 import {SharedModule} from './shared/modules/shared.module';
 import {UiModule} from '../shared/module/ui/ui.module';
 import {AclService} from './shared/services/acl.service';
+import {AccessGuardService} from './shared/services/access-guard.service';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import {AclService} from './shared/services/acl.service';
   declarations: [BackofficeComponent, SidebarComponent, BackofficeHeaderComponent, BackofficeFooterComponent],
   providers: [
     AclService,
+    AccessGuardService,
   ]
 })
 export class BackofficeModule {

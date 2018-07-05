@@ -1,4 +1,4 @@
-import { SET_REFERAL_LINK } from '../actions';
+import {SET_REFERAL_LINK} from '../actions/referal.action';
 
 export function reducer(state: any = initialState(), action: any): any {
   switch (action.type) {

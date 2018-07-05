@@ -1,5 +1,4 @@
 import {CustomSerializer, metaReducers, reducers} from './store/reducers';
-import {ReferralsService} from './shared/services/referral.service';
 import {WalletsService} from './shared/services/wallets.service';
 import {WalletHttpService} from './shared/services/wallet-http.service';
 import {SocialNetworkService} from './shared/services/social-network.service';
@@ -24,7 +23,6 @@ import {CRESTOOKEN_DOMAIN, CRESTOOKEN_DOMAIN_TOKEN, DOMAIN, DOMAIN_TOKEN, getAut
 import {AppInterceptorsService} from './shared/services/app-interceptors.service';
 import {RouterModule} from '@angular/router';
 import {AuthService as GoogleAuthService, AuthServiceConfig} from 'angular5-social-login';
-import {AccessGuardService} from './shared/services/access-guard.service';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from 'ng-recaptcha';
 import {UiModule} from './shared/module/ui/ui.module';
@@ -57,13 +55,11 @@ import {routes} from './routes';
     AuthService,
     LocalStorageService,
     AuthGuardService,
-    AccessGuardService,
     ValidatorsService,
     TwoFactorService,
     SettingsService,
     SocialNetworkService,
     GoogleAuthService,
-    ReferralsService,
     {provide: RouterStateSerializer, useClass: CustomSerializer},
     {provide: DOMAIN_TOKEN, useValue: DOMAIN},
     {provide: PREFIX_TOKEN, useValue: PREFIX},

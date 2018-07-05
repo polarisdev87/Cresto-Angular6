@@ -1,6 +1,6 @@
-import { ActivatedRouteSnapshot, Params, RouterStateSnapshot } from '@angular/router';
-import { ActionReducer, ActionReducerMap, createFeatureSelector, MemoizedSelector, MetaReducer } from '@ngrx/store';
-import { routerReducer, RouterReducerState, RouterStateSerializer } from '@ngrx/router-store';
+import {ActivatedRouteSnapshot, Params, RouterStateSnapshot} from '@angular/router';
+import {ActionReducer, ActionReducerMap, createFeatureSelector, MemoizedSelector, MetaReducer} from '@ngrx/store';
+import {routerReducer, RouterReducerState, RouterStateSerializer} from '@ngrx/router-store';
 
 import * as fromAuth from './auth.reducer';
 import * as fromAuthActions from '../actions';
@@ -12,8 +12,6 @@ import * as fromRounds from './rounds.reducer';
 import * as fromTransaction from './transaction.reducer';
 import * as fromBuyToken from './buy-tokens.reducer';
 import * as fromWithdrawal from './withdrawal.reducer';
-import * as fromReferral from './referal.reducer';
-import * as fromReferralUsers from './referrals-users.reducer';
 
 
 export interface IRouterStateUrl {
@@ -33,8 +31,6 @@ export interface IRootState {
   transaction: any;
   tokenPurchase: any;
   withdrawal: any;
-  referral: any;
-  referralUsers: any;
 }
 
 export const reducers: ActionReducerMap<IRootState> = {
@@ -47,12 +43,10 @@ export const reducers: ActionReducerMap<IRootState> = {
   transaction: fromTransaction.reducer,
   tokenPurchase: fromBuyToken.reducer,
   withdrawal: fromWithdrawal.reducer,
-  referral: fromReferral.reducer,
-  referralUsers: fromReferralUsers.reducer
 };
 
 export function logoutAndClearState(reducer: ActionReducer<StoreStates>): ActionReducer<StoreStates> {
-  return function(state: StoreStates | undefined, action: fromAuthActions.AuthActions): StoreStates {
+  return function (state: StoreStates | undefined, action: fromAuthActions.AuthActions): StoreStates {
     switch (action.type) {
       case fromAuthActions.LOGOUT_SUCCESS: {
         state = undefined;
@@ -72,14 +66,14 @@ export const getRouterState: MemoizedSelector<object, RouterReducerState<IRouter
 export class CustomSerializer
   implements RouterStateSerializer<IRouterStateUrl> {
   public serialize(routerState: RouterStateSnapshot): IRouterStateUrl {
-    const { url, root: { queryParams } } = routerState;
+    const {url, root: {queryParams}} = routerState;
 
     let state: ActivatedRouteSnapshot = routerState.root;
     while (state.firstChild) {
       state = state.firstChild;
     }
-    const { params } = state;
-    return { url, queryParams, params };
+    const {params} = state;
+    return {url, queryParams, params};
   }
 }
 

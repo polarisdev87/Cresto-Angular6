@@ -1,5 +1,5 @@
 import {BackofficeComponent} from './backoffice.component';
-import {AccessGuardService} from '../shared/services/access-guard.service';
+import {AccessGuardService} from './shared/services/access-guard.service';
 
 export const routes = [
   {
@@ -13,7 +13,8 @@ export const routes = [
       },
       {
         path: 'buy',
-        loadChildren: './content/buy/buy.module#BuyModule'
+        loadChildren: './content/buy/buy.module#BuyModule',
+        canLoad: [AccessGuardService]
       },
       {
         path: 'campaign',
@@ -48,23 +49,28 @@ export const routes = [
       },
       {
         path: 'myreferrals',
-        loadChildren: './content/myreferrals/myreferrals.module#MyreferralsModule'
+        loadChildren: './content/myreferrals/myreferrals.module#MyreferralsModule',
+        canLoad: [AccessGuardService]
       },
       {
         path: 'dashboard',
-        loadChildren: './content/dashboard/dashboard.module#DashboardModule'
+        loadChildren: './content/dashboard/dashboard.module#DashboardModule',
+        canLoad: [AccessGuardService]
       },
       {
         path: 'wallet',
-        loadChildren: './content/wallet/wallet.module#WalletModule'
+        loadChildren: './content/wallet/wallet.module#WalletModule',
+        canLoad: [AccessGuardService]
       },
       {
         path: 'settings',
-        loadChildren: './content/settings/settings.module#SettingsModule'
+        loadChildren: './content/settings/settings.module#SettingsModule',
+        canLoad: [AccessGuardService]
       },
       {
         path: '**',
-        loadChildren: './content/dashboard/dashboard.module#DashboardModule'
+        loadChildren: './content/dashboard/dashboard.module#DashboardModule',
+        canLoad: [AccessGuardService]
       }
     ]
   }

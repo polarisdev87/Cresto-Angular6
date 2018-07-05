@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { Store } from "@ngrx/store";
-import { SetReferalLink } from "../store/actions/";
-import { LocalStorageService } from '../shared/services/localStorage.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {LocalStorageService} from '../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-landing',
@@ -14,13 +13,15 @@ export class LandingComponent implements OnInit {
     private _activateroute: ActivatedRoute,
     private _store: Store<StoreStates>,
     private _localStorageService: LocalStorageService,
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.params['referralHash'];
     if (referralHash) {
       this._localStorageService.setItem('referralHash', referralHash);
-      this._store.dispatch(new SetReferalLink(referralHash));
+      // TODO should changed with
+      // this._store.dispatch(new SetReferalLink(referralHash));
     }
 
     const el1 = document.createElement('script');
@@ -35,17 +36,19 @@ export class LandingComponent implements OnInit {
       document.body.appendChild(el2);
       document.body.appendChild(el3);
       document.body.appendChild(el4);
-    } ;
+    };
     document.body.appendChild(el1);
 
 
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () {
+      scrollFunction();
+    };
 
     function scrollFunction() {
       if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-        document.getElementById("to-top").style.display = "flex";
+        document.getElementById('to-top').style.display = 'flex';
       } else {
-        document.getElementById("to-top").style.display = "none";
+        document.getElementById('to-top').style.display = 'none';
       }
     }
   }
