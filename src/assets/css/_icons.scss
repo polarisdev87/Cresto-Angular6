@@ -14,6 +14,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
   text-decoration: none;
   text-transform: none;
 }
@@ -25,74 +26,86 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == Exclamation {
+  @if $filename == Exclamation  {
     $char: "\E001";
   }
-  @if $filename == Token {
+  @if $filename == Logog-crest-token {
     $char: "\E002";
   }
-  @if $filename == USD {
+  @if $filename == Token {
     $char: "\E003";
   }
-  @if $filename == bitcoin {
+  @if $filename == USD {
     $char: "\E004";
   }
-  @if $filename == building {
+  @if $filename == bitcoin {
     $char: "\E005";
   }
-  @if $filename == close {
+  @if $filename == building {
     $char: "\E006";
   }
-  @if $filename == dollar-symbol {
+  @if $filename == close {
     $char: "\E007";
   }
-  @if $filename == email {
+  @if $filename == dollar-symbol {
     $char: "\E008";
   }
-  @if $filename == ether {
+  @if $filename == email {
     $char: "\E009";
   }
-  @if $filename == home {
+  @if $filename == email_adress {
     $char: "\E00A";
   }
-  @if $filename == live-chat {
+  @if $filename == ether {
     $char: "\E00B";
   }
-  @if $filename == logog-crest-token {
+  @if $filename == eye-01 {
     $char: "\E00C";
   }
-  @if $filename == logout {
+  @if $filename == eye_hide {
     $char: "\E00D";
   }
-  @if $filename == next {
+  @if $filename == home {
     $char: "\E00E";
   }
-  @if $filename == pending {
+  @if $filename == live_chat {
     $char: "\E00F";
   }
-  @if $filename == send-mail {
+  @if $filename == logout {
     $char: "\E010";
   }
-  @if $filename == settings {
+  @if $filename == next {
     $char: "\E011";
   }
-  @if $filename == shoppingCart {
+  @if $filename == noun_accepted_1494985 {
     $char: "\E012";
   }
-  @if $filename == team {
+  @if $filename == pending {
     $char: "\E013";
   }
-  @if $filename == tick {
+  @if $filename == send-mail {
     $char: "\E014";
   }
-  @if $filename == transfer {
+  @if $filename == settings {
     $char: "\E015";
   }
-  @if $filename == user {
+  @if $filename == shoppingCart {
     $char: "\E016";
   }
-  @if $filename == wallet {
+  @if $filename == team {
     $char: "\E017";
+  }
+  @if $filename == tick {
+    $char: "\E018";
+  }
+  @if $filename == transfer {
+    $char: "\E019";
+  }
+  @if $filename == user {
+    $char: "\E01A";
+  }
+  @if $filename == wallet {
+    $char: "\E01B";
   }
 
   @return $char;
@@ -109,8 +122,11 @@
   }
 }
 
-.icon-Exclamation {
-  @include icon(Exclamation);
+.icon-Exclamation  {
+  @include icon(Exclamation );
+}
+.icon-Logog-crest-token {
+  @include icon(Logog-crest-token);
 }
 .icon-Token {
   @include icon(Token);
@@ -133,23 +149,32 @@
 .icon-email {
   @include icon(email);
 }
+.icon-email_adress {
+  @include icon(email_adress);
+}
 .icon-ether {
   @include icon(ether);
+}
+.icon-eye-01 {
+  @include icon(eye-01);
+}
+.icon-eye_hide {
+  @include icon(eye_hide);
 }
 .icon-home {
   @include icon(home);
 }
-.icon-live-chat {
-  @include icon(live-chat);
-}
-.icon-logog-crest-token {
-  @include icon(logog-crest-token);
+.icon-live_chat {
+  @include icon(live_chat);
 }
 .icon-logout {
   @include icon(logout);
 }
 .icon-next {
   @include icon(next);
+}
+.icon-noun_accepted_1494985 {
+  @include icon(noun_accepted_1494985);
 }
 .icon-pending {
   @include icon(pending);
