@@ -1,13 +1,3 @@
-import {
-  BUY_TOKENS_REQUEST,
-  BuyTokensFail,
-  BuyTokensRequest,
-  BuyTokensSuccess,
-  CALCULATE_SUMM_REQUEST,
-  CalculateSumFail,
-  CalculateSumRequest,
-  CalculateSumSuccess
-} from './../actions/buy-token.action';
 import {WalletsService} from './../../shared/services/wallets.service';
 import {
   GENERATE_WALLET_ADDRESS_REQUEST,
@@ -74,40 +64,6 @@ export class WalletsEffects {
           // tslint:disable-next-line
           console.log(err);
           return of(new TransactionLoadFail(err));
-        })
-      )),
-    );
-
-  @Effect()
-  public calculateToken$: Observable<Action> = this.actions$
-    .ofType(CALCULATE_SUMM_REQUEST).pipe(
-      map((action: CalculateSumRequest) => action.payload),
-      switchMap((data: CalculateTokensSum) => this._walletsService.calculateTokens(data).pipe(
-        map((res: TokenPrice) => new CalculateSumSuccess(res.price)),
-        catchError((err: Error) => {
-          // tslint:disable-next-line
-          console.log(err);
-          return of(new CalculateSumFail(err));
-        })
-      )),
-    );
-
-  @Effect()
-  public buyTokens$: Observable<Action> = this.actions$
-    .ofType(BUY_TOKENS_REQUEST).pipe(
-      map((action: BuyTokensRequest) => action.payload),
-      switchMap((data: CalculateTokensSum) => this._walletsService.buyTokens(data).pipe(
-        map((res: any) => new BuyTokensSuccess(res)),
-        tap(() => alert('Success')),
-        catchError((err: Error) => {
-          this._dialog.open(PopupComponent, {
-            data: {
-              message: err
-            }
-          });
-          // tslint:disable-next-line
-          console.log(err);
-          return of(new BuyTokensFail(err));
         })
       )),
     );

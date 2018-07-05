@@ -1,10 +1,10 @@
 import {getAuthUserId} from './../../../../store/selectors/auth.selectors';
-import {BuyTokensRequest, CalculateSumRequest} from './../../../../store/actions/buy-token.action';
 import {Store} from '@ngrx/store';
 import {combineLatest, Observable, of} from 'rxjs';
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {debounceTime, map} from 'rxjs/operators';
+import { CalculateSumRequest, BuyTokensRequest } from '../store/actions/buy-tokens.action';
 
 @Component({
   selector: 'app-buy-token-form',
@@ -32,7 +32,7 @@ export class BuyTokenFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tokenPrice$ = this._store.select('tokenPurchase').pipe(
+    this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price)
     );
     this.tokensform = new FormGroup({

@@ -9,7 +9,6 @@ import * as fromStatusPopup from './statusPopup.reducer';
 import * as fromWallets from './wallets.reducer';
 import * as fromRounds from './rounds.reducer';
 import * as fromTransaction from './transaction.reducer';
-import * as fromBuyToken from './buy-tokens.reducer';
 import * as fromWithdrawal from './withdrawal.reducer';
 
 
@@ -27,7 +26,6 @@ export interface IRootState {
   wallets: WalletState;
   rounds: any;
   transaction: any;
-  tokenPurchase: any;
   withdrawal: any;
 }
 
@@ -38,7 +36,6 @@ export const reducers: ActionReducerMap<IRootState> = {
   wallets: fromWallets.reducer,
   rounds: fromRounds.reducer,
   transaction: fromTransaction.reducer,
-  tokenPurchase: fromBuyToken.reducer,
   withdrawal: fromWithdrawal.reducer,
 };
 
