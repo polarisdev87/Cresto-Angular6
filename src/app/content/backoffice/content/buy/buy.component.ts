@@ -27,6 +27,10 @@ export class BuyComponent implements OnInit {
 
   assets$: Observable<any>;
   wallets$: Observable<any>;
+  makeDepositLink = {
+    name: 'Make deposit',
+    class: 'emptyGreen'
+  };
 
   constructor(
     private _store: Store<StoreStates>,
@@ -54,9 +58,4 @@ export class BuyComponent implements OnInit {
         this._store.dispatch(new WalletRequest(id));
       });
   }
-
-  public makeDepositLink = {
-    name: 'Make deposit',
-    class: 'emptyGreen'
-  };
 }

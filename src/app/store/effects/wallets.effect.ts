@@ -4,9 +4,6 @@ import {
   GenerateWalletAddressFail,
   GenerateWalletAddressRequest,
   GenerateWalletAddressSuccess,
-  ROUNDS_REQUEST,
-  RoundsLoadFail,
-  RoundsLoadSuccess,
   TRANSACTION_REQUEST,
   TransactionLoadFail,
   TransactionLoadSuccess,
@@ -37,19 +34,6 @@ export class WalletsEffects {
           // tslint:disable-next-line
           console.log(err);
           return of(new WalletLoadFail(err));
-        })
-      )),
-    );
-
-  @Effect()
-  public roundsWallets$: Observable<Action> = this.actions$
-    .ofType(ROUNDS_REQUEST).pipe(
-      switchMap(() => this._walletsService.rounds().pipe(
-        map((data: any) => new RoundsLoadSuccess(data)),
-        catchError((err: Error) => {
-          // tslint:disable-next-line
-          console.log(err);
-          return of(new RoundsLoadFail(err));
         })
       )),
     );

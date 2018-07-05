@@ -1,10 +1,11 @@
+import { RoundsEffects } from './store/effects/rounds.effects';
 import { getStateData } from '../../../../store/selectors/wallets.selector';
-import { RoundsRequest } from '../../../../store/actions/wallets.action';
 import { filter } from 'rxjs/operators';
 import { getAuthUserId } from '../../../../store/selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { RoundsRequest } from './store/actions/rounds.actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,8 @@ export class DashboardComponent implements OnInit {
     'ICO Round', 'CSTT Supply', 'Price ($)', 'Minimum', 'Maximum', 'Free Tokens', 'Free Tokens Recipients', 'Status'
   ];
   ngOnInit() {
-    this.rounds$ = this._store.select(getStateData('rounds'));
+    this.rounds$ = this._store.select('dashboard', 'rounds', 'data');
+
     this._store.select(getAuthUserId)
       .pipe(
         filter((id: string | null) => Boolean(id))

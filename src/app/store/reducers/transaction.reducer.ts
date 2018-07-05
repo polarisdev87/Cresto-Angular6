@@ -1,5 +1,4 @@
-import { StatusPopupTypes } from '../actions/statusPopup.action';
-import { ROUNDS_REQUEST, TRANSACTION_REQUEST, TRANSACTION_SUCCESS, TRANSACTION_FAIL } from '../actions/wallets.action';
+import { TRANSACTION_REQUEST, TRANSACTION_SUCCESS, TRANSACTION_FAIL } from '../actions/wallets.action';
 
 export const initialState: any = {
   isLoading: false,

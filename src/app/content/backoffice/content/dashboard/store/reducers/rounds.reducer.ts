@@ -1,6 +1,4 @@
-import { ROUNDS_SUCCESS, ROUNDS_FAIL } from './../actions/wallets.action';
-import { StatusPopupTypes } from '../actions/statusPopup.action';
-import { ROUNDS_REQUEST } from '../actions/wallets.action';
+import { ROUNDS_REQUEST, ROUNDS_SUCCESS, ROUNDS_FAIL } from '../actions/rounds.actions';
 
 export const initialState: any = {
   isLoading: false,
