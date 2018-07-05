@@ -1,0 +1,43 @@
+@import "../backoffice.component"
+
+header
+  width: 100%
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  padding: 25px 0 25px 30px
+
+.logo
+  display: flex
+  flex-direction: row
+  align-items: center
+  width: 100%
+  max-width: 190px
+  cursor: pointer
+  img
+    max-width: 35px
+  p
+    font-size: 18px
+    font-family: $OpenSansLight
+    color: $accent-color
+    text-shadow: 0 0 15px rgba(0, 231, 199, 1)
+
+.currency-date
+  display: flex
+  flex-direction: row
+  font-family: $OpenSansRegular
+  font-size: 16px
+  color: #c0c9d1
+  li
+    display: inline-flex
+    align-items: center
+    color: $white
+    margin-left: 70px
+    &:first-child
+      margin-left: 0
+    i
+      display: inline-flex
+      margin-right: 10px
+      font-size: 20px
+      color: #c0c9d1
