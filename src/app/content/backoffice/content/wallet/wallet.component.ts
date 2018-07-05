@@ -33,7 +33,6 @@ export class WalletComponent implements OnInit {
         filter((id: string | null) => Boolean(id))
       )
       .subscribe((id) => {
-        this._store.dispatch(new WalletRequest(id));
         this._store.dispatch(new TransactionRequest(id));
       });
   }

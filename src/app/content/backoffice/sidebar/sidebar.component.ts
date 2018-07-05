@@ -25,6 +25,9 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this._store.select(getAuthUser);
+    this._store.select('backoffice', 'wallets', 'data').subscribe((a)=>{
+      console.log(a)
+    })
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
   }
