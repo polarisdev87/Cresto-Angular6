@@ -5,7 +5,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
 import { CalculateSumRequest, BuyTokensRequest } from '../store/actions/buy-tokens.action';
 import { IRootState } from '../../../../../store/reducers';
-import { getAuthUserId } from '../../../../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-buy-token-form',
@@ -44,7 +43,7 @@ export class BuyTokenFormComponent implements OnInit {
       amount: new FormControl('', [Validators.pattern('0123456789')]),
       currency: new FormControl(1, [Validators.required])
     });
-    this.userId$ = this._store.select(getAuthUserId);
+    this.userId$ = this._store.select('backoffice', 'user', '_id');
 
     combineLatest(
       this.userId$,

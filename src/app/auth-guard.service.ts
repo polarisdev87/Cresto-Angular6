@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
-import { isLoggedSelector } from './store/selectors/auth.selectors';
 import { Route } from '@angular/compiler/src/core';
 import { IRootState } from './store/reducers';
 
@@ -18,7 +17,7 @@ export class AuthGuardService implements CanLoad {
   public canLoad(route: Route): Observable<boolean> {
     const url: string = (route as any).path;
 
-    return this._store.select(isLoggedSelector).pipe(
+    return this._store.select('auth', 'isLogged').pipe(
       take(1),
       switchMap((isLogged: boolean) => {
         if (!isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {

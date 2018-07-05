@@ -1,7 +1,6 @@
 import { Store } from '@ngrx/store';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { getAuthUserId } from '../../../../../../store/selectors/auth.selectors';
 import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { WalletService } from '../../wallet.service';
@@ -37,7 +36,7 @@ export class WithdrawalModalComponent implements OnInit, OnDestroy {
       amount: [0, Validators.required]
     });
 
-    this.userId$ = this._store.select(getAuthUserId);
+    this.userId$ = this._store.select('backoffice', 'user', '_id');
     const amount$ = this.withdrawalForm.controls['amount'].valueChanges;
 
     this._walletService.calculateWithdrawalData(this.userId$, amount$)

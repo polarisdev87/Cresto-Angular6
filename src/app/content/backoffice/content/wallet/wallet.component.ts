@@ -1,4 +1,3 @@
-import { getAuthUserId } from './../../../../store/selectors/auth.selectors';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -28,7 +27,7 @@ export class WalletComponent implements OnInit {
     this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
     this.transactions$ = this._store.select('walletList', 'transactions', 'data');
 
-    this._store.select(getAuthUserId)
+    this._store.select('backoffice', 'user', '_id')
       .pipe(
         filter((id: string | null) => Boolean(id))
       )

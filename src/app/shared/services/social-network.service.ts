@@ -1,3 +1,4 @@
+import { LocalStorageService } from './localStorage.service';
 import { HttpService } from '../../http.service';
 import { LoginSuccess } from './../../store/actions/auth.action';
 import { Store } from '@ngrx/store';
@@ -18,6 +19,7 @@ export class SocialNetworkService {
     private _store: Store<any>,
     private _http: HttpService,
     private _googleService: AuthService,
+    private _localStorageService: LocalStorageService,
   ) {
     (FB as any).init({
       appId,
@@ -37,11 +39,14 @@ export class SocialNetworkService {
   }
 
   successFbLogin(access_token): Observable<User> {
-    return this._store.select('referral').pipe(
-      switchMap((referredBy: string) => {
-        return this._http.nonAuthorizedRequest('/facebook', { access_token, referredBy }, 'POST');
-      })
-    );
+    let referredBy = '';
+    try {
+      referredBy = this._localStorageService.getItem('referralHash');
+    } catch (err) {
+      console.log(err);
+    }
+    return this._http.nonAuthorizedRequest('/facebook', { access_token, referredBy }, 'POST');
+
   }
 
   googleSignIn(): Observable<string> {
@@ -53,10 +58,12 @@ export class SocialNetworkService {
   }
 
   googleSuccessLogin(access_token: string): Observable<User> {
-    return this._store.select('referral').pipe(
-      switchMap((referredBy: string) => {
-        return this._http.nonAuthorizedRequest('/google', { access_token, referredBy }, 'POST');
-      })
-    );
+    let referredBy = '';
+    try {
+      referredBy = this._localStorageService.getItem('referralHash');
+    } catch (err) {
+      console.log(err);
+    }
+    return this._http.nonAuthorizedRequest('/google', { access_token, referredBy }, 'POST');
   }
 }
