@@ -11,4 +11,5 @@ export class BackofficeFooterComponent {
     name: 'Help',
     class: 'emptyGreen'
   }
+
 }
