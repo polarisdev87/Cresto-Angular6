@@ -1,0 +1,20 @@
+<div class="wallet-item-wrapper" >
+
+
+  <div class="left-col">
+    <div class="wallet-name bitcoin">
+      {{item.tittle}}
+    </div>
+    <div class="wallet-date">
+      <span>{{item.balance}} {{item.asset.code | uppercase }}</span>
+      <span>$ {{item.usd_balance}}</span>
+    </div>
+  </div>
+  <div class="right-col">
+    <div class="depositBtn-wrap">
+      <app-button [routerLink]="['../../buy']" [buttonState]="CSTTBtnState" class="app-button"></app-button>
+    </div>
+  </div>
+
+
+</div>

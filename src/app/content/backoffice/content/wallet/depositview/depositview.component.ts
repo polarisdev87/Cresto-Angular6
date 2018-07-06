@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import {Component, ViewEncapsulation, Input} from '@angular/core';
 
 @Component({
   selector: 'app-depositview',
@@ -7,7 +6,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./depositview.component.sass'],
   encapsulation: ViewEncapsulation.None
 })
-export class DepositviewComponent implements OnInit {
+export class DepositviewComponent {
+
+  @Input()
+  public coin;
 
   confirmButton = true;
 
@@ -16,10 +18,7 @@ export class DepositviewComponent implements OnInit {
     class: 'emptyGreen'
   };
 
-  constructor() { }
 
-  ngOnInit() {
-  }
   confirmSelected() {
     this.confirmButton = !this.confirmButton;
   }

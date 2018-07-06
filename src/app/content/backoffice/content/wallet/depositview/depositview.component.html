@@ -5,8 +5,8 @@
         <h1> Please pay attention! You selected:</h1>
       </div>
       <div class="deposit-currency">
-        <i class="icon-bitcoin"></i>
-        <span class="sidebar-text">Bitcoin BTC</span>
+        <i class="{{coin.icon}}"></i>
+        <span class="sidebar-text">{{coin.asset.code | uppercase}}</span>
       </div>
       <div class="deposit-attention">
         <p>Attention:</p>
@@ -36,10 +36,12 @@
         <h2>Your BTC adress is</h2>
       </div>
       <form>
-          <input readonly value="94589034idfhg89h35gbnuerguy" type="text">
+          <input readonly [value]="coin.top_up_address"
+                 appCopypaste #c="copypaste"
+                 type="text">
       </form>
       <div class="button-copy-adress">
-          <app-button (click)="confirmSelected()" [buttonState]="depositBtn" ></app-button>
+          <app-button (click)="c.copy()" [buttonState]="depositBtn" ></app-button>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../../store/reducers';
+import {getAssets} from '../store/selectors/assets.selector';
 
 @Component({
   selector: 'app-backoffice-header',
@@ -17,7 +18,7 @@ export class BackofficeHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.assets$ = this._store.select('backoffice', 'assets', 'data');
+    this.assets$ = this._store.select(getAssets);
   }
 
 }

@@ -1,11 +1,11 @@
-@import "../../../../../../backoffice.component"
+@import "../../../backoffice.component"
 
 .deposit-wrapper
     width: 100%
     display: flex
     justify-content: center
     align-items: center
-    border-radius: 10px   
+    border-radius: 10px
     background-color: $bg-sidebar
     .deposit-content
         text-align: center
@@ -16,7 +16,7 @@
                 font-family: $OpenSansSemiBold
                 color: $grey-light
                 font-size: 16px
-            .deposit-currency 
+            .deposit-currency
                 display: flex
                 align-items: center
                 justify-content: center
@@ -24,11 +24,14 @@
                 color: $backoffice-text-color
                 font-family: $OpenSansRegular
                 font-size: 24px
-                .icon-bitcoin
+                .icon-bitcoin,
+                .icon-ether
                     font-size: 44px
                     color: $bitcoin-color
                     display: inline-flex
-                    margin-right: 20px 
+                    margin-right: 20px
+                .icon-ether
+                  color: #65c636
                 .sidebar-text
                     display: inline-flex
             .deposit-attention
@@ -36,7 +39,7 @@
                 color: $backoffice-text-color
                 font-family: $OpenSansSemiBold
                 font-size: 16px
-            .deposit-no-mistake 
+            .deposit-no-mistake
                 margin-bottom: 42px
                 color: $backoffice-text-color
                 font-family: $OpenSansRegular
@@ -49,20 +52,20 @@
                     height: 50px
                     font-family: $OpenSansSemiBold
                     font-size: 16px
-                    background-color: $button-color-red 
+                    background-color: $button-color-red
                     border-radius: 50px
                     color: $buttton-color-white
-                    border: none 
+                    border: none
                     box-shadow: 0 0 5px 5px $button-red-shadow
 
         .deposit-currency-wrapper
             .pay-attention
-                margin-top: 66px
-                margin-bottom: 17px
+                margin-top: 75px
+                margin-bottom: 25px
                 font-family: $OpenSansSemiBold
                 color: $grey-light
-                font-size: 16px
-            .deposit-currency 
+                font-size: 24px
+            .deposit-currency
                 display: flex
                 align-items: center
                 justify-content: center
@@ -82,7 +85,7 @@
                     border: none
                     font-family: $OpenSansRegular
                     background-color: $bg-back-office
-                    outline: none 
+                    outline: none
                     font-size: 16px
                     color: $comingsoon-grey
                     text-align: center
@@ -101,6 +104,5 @@
 
                 background-color: $bg-back-office
                 box-shadow: 0 0 5px 5px $button-red-shadow
-                border-radius: 100% 
+                border-radius: 100%
 
-                

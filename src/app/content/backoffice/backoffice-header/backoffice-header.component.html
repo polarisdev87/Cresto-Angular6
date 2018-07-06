@@ -5,7 +5,7 @@
   </div>
   <ul class="currency-date">
     <li *ngFor="let item of assets$ | async">
-      <i class="icon-bitcoin"></i>
+      <i class="{{item.icon}}"></i>
       {{item.code | uppercase}} = {{item.usd_price}}
     </li>
   </ul>

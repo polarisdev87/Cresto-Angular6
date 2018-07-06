@@ -1,6 +1,26 @@
 <div class="wallets-wrapper">
-  <app-wallet-list [wallets]="wallets$ | async"></app-wallet-list>
-  <app-depositview></app-depositview> 
-  <app-help></app-help>
-  <app-transaction-list [transactions]="transactions$ | async"></app-transaction-list>
+  <div class="wallets-list-wrapper">
+
+    <ng-template ngFor let-item [ngForOf]="wallets$ | async">
+      <div [ngClass]=" {close: currentCoin, active: currentCoin?.asset?.code === item.asset.code } "
+           class="wallet {{item.asset.code}} " *ngIf="item.asset.code !== 'cstt'">
+        <app-other-coin-thumbnail
+          [item]="item"
+          [fullMode]="!currentCoin"
+          (setDeposit)="currentCoin = $event"
+          (click)="setCoin(item)"
+        ></app-other-coin-thumbnail>
+
+      </div>
+      <div class="wallet {{item.asset.code}} " *ngIf="item.asset.code === 'cstt' && !currentCoin">
+        <app-own-coin-thumbnail [item]="item"></app-own-coin-thumbnail>
+      </div>
+
+    </ng-template>
+  </div>
+
+
+  <app-depositview *ngIf="currentCoin" [coin]="currentCoin"></app-depositview>
+  <!--<app-help></app-help>-->
+  <app-transaction-list [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
 </div>

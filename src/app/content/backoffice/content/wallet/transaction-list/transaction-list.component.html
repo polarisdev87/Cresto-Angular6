@@ -26,12 +26,47 @@
     <!--</table>-->
   <!--</div>-->
 <!--</div>-->
+
+
 <div class="transaction-table-wrapper">
   <h2>History</h2>
   <div class="transaction-tabletransaction-table">
     <app-backoffice-table
       [dashboardTableHead]="transactionsHistoryHead"
+      [rounds]="transactions"
+      [columns]="[
+        {value: 'created_at'},
+        {value: 'asset_code'},
+        {value: 'amount'},
+        {value: 'transaction_type'},
+        {value: 'status'},
+        {value: 'hash'}
+      ]"
       [scroll]="false"
+
     ></app-backoffice-table>
+
   </div>
 </div>
+
+<!--<div class="back-office-table">-->
+  <!--<div class="back-office-table__item">-->
+    <!--<p>Created</p>-->
+    <!--<p>Date (JMT)	</p>-->
+    <!--<p>Coin</p>-->
+    <!--<p>Amount</p>-->
+    <!--<p>Type</p>-->
+    <!--<p>Status</p>-->
+    <!--<p>Hash</p>-->
+  <!--</div>-->
+  <!--<div class="back-office-table__item" *ngFor="let item of transactions">-->
+    <!--<div>{{item.created_at}}</div>-->
+    <!--<div>{{item.asset_code | uppercase}}</div>-->
+    <!--<div>{{item.amount}}</div>-->
+    <!--<div>{{item.transaction_type}}</div>-->
+    <!--<div>{{item.status}}</div>-->
+    <!--<div *ngIf="item.hash"><a target="_blank" [href]="item.check_hash_url">{{item.hash}}</a></div>-->
+    <!--<div *ngIf="!item.hash">-</div>-->
+  <!--</div>-->
+<!--</div>-->
+
