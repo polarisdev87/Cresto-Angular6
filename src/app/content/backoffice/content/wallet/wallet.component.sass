@@ -10,7 +10,7 @@
   display: flex
   width: 100%
   align-items: center
-  justify-content: space-between
+  justify-content: center
   box-sizing: border-box
   margin-bottom: 20px
   .wallet
@@ -86,14 +86,53 @@
 
       &:last-child
         margin-right: 0
-  .close.active
-    box-shadow: 0 0 15px 3px rgba(0, 231, 199, .3)
+  //.close.active
+  //  box-shadow: 0 0 15px 3px rgba(0, 231, 199, .3)
+  //  .wallet-item-wrapper
+  //    .left-col
+  //      .wallet-name::before
+  //        border-color: rgba(0, 231, 199, .3)
+  //        background: #00e7c7
+  //        box-shadow: 0 0 15px 3px rgba(0, 231, 199, .3)
+  .btc.wallet
     .wallet-item-wrapper
       .left-col
         .wallet-name::before
-          border-color: rgba(0, 231, 199, .3)
-          background: #00e7c7
-          box-shadow: 0 0 15px 3px rgba(0, 231, 199, .3)
+          border-color: #daa126
+  .eth.wallet
+    .wallet-item-wrapper
+      .left-col
+        .wallet-name::before
+          border-color: #65c636
+  .cstt.wallet
+    .wallet-item-wrapper
+      .left-col
+        .wallet-name::before
+          border-color: #00e7c7
+
+  .btc.close
+    .wallet-item-wrapper
+      .left-col
+        .wallet-name::before
+          border-color: #daa126
+          background: #daa126
+          box-shadow: 0 0 15px 3px rgba(218, 161, 38, .3)
+  .eth.close
+    .wallet-item-wrapper
+      .left-col
+        .wallet-name::before
+          border-color: #65c636
+          background: #65c636
+          box-shadow: 0 0 15px 3px rgba(101, 198, 54, .3)
+
+  .active.close.btc
+    box-shadow: 0 0 15px 3px rgba(218, 161, 38, .3)
+  .active.close.eth
+    box-shadow: 0 0 15px 3px rgba(101, 198, 54, .3)
+
+  .close.btc:hover,
+  .close.eth:hover
+    cursor: pointer
 
   .close
     padding: 20px 40px

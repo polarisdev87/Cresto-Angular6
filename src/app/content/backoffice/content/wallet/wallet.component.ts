@@ -1,10 +1,10 @@
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { filter } from 'rxjs/operators';
-import { WalletRequest } from '../../store/actions/wallets.action';
-import { IRootState } from '../../../../store/reducers';
-import { TransactionRequest } from './store/actions/transaction.actions';
+import {Store} from '@ngrx/store';
+import {filter} from 'rxjs/operators';
+import {WalletRequest} from '../../store/actions/wallets.action';
+import {IRootState} from '../../../../store/reducers';
+import {TransactionRequest} from './store/actions/transaction.actions';
 import {getWalletsData} from '../../store/selectors/assets.selector';
 
 @Component({
@@ -38,5 +38,12 @@ export class WalletComponent implements OnInit {
       .subscribe((id) => {
         this._store.dispatch(new TransactionRequest(id));
       });
+  }
+
+  public setCoin(coin) {
+    if (!this.currentCoin) {
+      return;
+    }
+    this.currentCoin = coin;
   }
 }
