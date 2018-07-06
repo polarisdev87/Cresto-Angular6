@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password.component.sass']
 })
 export class PasswordComponent implements OnInit {
-  view:boolean = true;
-  changeClassAndtype:boolean = true;
-  changeClassAndTypeenter:boolean = true;
-  changeClassAndTypecomfirm:boolean = true;
+  view = true;
+  changeClassAndtype = true;
+  changeClassAndTypeenter = true;
+  changeClassAndTypecomfirm = true;
 
   constructor() { }
 
