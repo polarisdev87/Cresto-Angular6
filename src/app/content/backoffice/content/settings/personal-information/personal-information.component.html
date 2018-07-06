@@ -1,10 +1,12 @@
 <div class="personal-information-wrapper">
   <h2>Personal  Information</h2>
-  <form>
+  <form [formGroup]="myForm">
     <div class="name-wrapper">
       <label for="name">Name</label>
-      <span class="icon-building" (click)="setDisabledState()"></span>
-      <input type="text" id="name" value="Robert Williams" [disabled]="switch">
+      <button class="icon-building"  *ngIf="switch" (click)="setDisabledState()"></button>
+      <button class="icon-tick"  *ngIf="!switch" (click)="setDisabledState()" [disabled]="isControlInvalid('userName')"></button>
+      <input type="text" id="name"  class="form-control" formControlName="userName">
+      <span class="warning" *ngIf="isControlInvalid('userName')">Can not be empty</span>
     </div>
     <label for="email">Email</label>
     <input type="text" id="email" value="robert@gmail.com" readonly>
@@ -12,4 +14,3 @@
     <input type="text" id="sponsor" value="crestreferral001" readonly>
   </form>
 </div>
-

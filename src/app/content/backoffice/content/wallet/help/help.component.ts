@@ -20,7 +20,6 @@ export class HelpComponent {
     this.toggleClassActive = !this.toggleClassActive;
   }
 
-
   toggleClassIsActive() {
     this.isActive = !this.isActive;
   }
