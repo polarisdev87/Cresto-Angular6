@@ -50,62 +50,65 @@
   @if $filename == dollar-symbol {
     $char: "\E008";
   }
-  @if $filename == email {
+  @if $filename == edit {
     $char: "\E009";
   }
-  @if $filename == email_adress {
+  @if $filename == email {
     $char: "\E00A";
   }
-  @if $filename == ether {
+  @if $filename == email_adress {
     $char: "\E00B";
   }
-  @if $filename == eye-01 {
+  @if $filename == ether {
     $char: "\E00C";
   }
-  @if $filename == eye_hide {
+  @if $filename == eye-01 {
     $char: "\E00D";
   }
-  @if $filename == home {
+  @if $filename == eye_hide {
     $char: "\E00E";
   }
-  @if $filename == live_chat {
+  @if $filename == home {
     $char: "\E00F";
   }
-  @if $filename == logout {
+  @if $filename == live_chat {
     $char: "\E010";
   }
-  @if $filename == next {
+  @if $filename == logout {
     $char: "\E011";
   }
-  @if $filename == noun_accepted_1494985 {
+  @if $filename == next {
     $char: "\E012";
   }
-  @if $filename == pending {
+  @if $filename == noun_accepted_1494985 {
     $char: "\E013";
   }
-  @if $filename == send-mail {
+  @if $filename == pending {
     $char: "\E014";
   }
-  @if $filename == settings {
+  @if $filename == send-mail {
     $char: "\E015";
   }
-  @if $filename == shoppingCart {
+  @if $filename == settings {
     $char: "\E016";
   }
-  @if $filename == team {
+  @if $filename == shoppingCart {
     $char: "\E017";
   }
-  @if $filename == tick {
+  @if $filename == team {
     $char: "\E018";
   }
-  @if $filename == transfer {
+  @if $filename == tick {
     $char: "\E019";
   }
-  @if $filename == user {
+  @if $filename == transfer {
     $char: "\E01A";
   }
-  @if $filename == wallet {
+  @if $filename == user {
     $char: "\E01B";
+  }
+  @if $filename == wallet {
+    $char: "\E01C";
   }
 
   @return $char;
@@ -145,6 +148,9 @@
 }
 .icon-dollar-symbol {
   @include icon(dollar-symbol);
+}
+.icon-edit {
+  @include icon(edit);
 }
 .icon-email {
   @include icon(email);
@@ -203,5 +209,3 @@
 .icon-wallet {
   @include icon(wallet);
 }
-
-

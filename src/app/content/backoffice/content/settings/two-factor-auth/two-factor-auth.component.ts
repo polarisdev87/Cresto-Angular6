@@ -5,7 +5,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   selector: 'app-two-factor-auth',
   templateUrl: './two-factor-auth.component.html',
   styleUrls: ['./two-factor-auth.component.sass'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class TwoFactorAuthComponent implements OnInit {
 
