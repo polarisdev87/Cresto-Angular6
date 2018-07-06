@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-password',
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.sass']
 })
 export class PasswordComponent implements OnInit {
-  view = true;
-  changeClassAndtype = true;
-  changeClassAndTypeenter = true;
-  changeClassAndTypecomfirm = true;
+  view:boolean = true;
+  changeClassAndtype:boolean = true;
+  changeClassAndTypeenter:boolean = true;
+  changeClassAndTypecomfirm:boolean = true;
 
+  buttonChangePass = {
+    name: 'Change',
+    class: 'emptyGreen'
+  };
+
+  buttonConfirm= {
+    name: 'Confirm',
+    class: 'emptyGreen'
+  };
   constructor() { }
 
   ngOnInit() {
