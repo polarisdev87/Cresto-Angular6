@@ -21,8 +21,8 @@ export const routes = [
         loadChildren: './content/comingsoon/comingsoon.module#ComingsoonModule',
         data: {
           title: 'CAMPAIGN',
-          subtitle: `Our ampaign platform will allow you to earn up to 2.25% daily passice,
-              income when you allocate the dollor value of your Crest token to run one of our profitable ad campaigns.`,
+          subtitle: `Our Campaign platform will allow you to earn up to 2.25% daily passive income,
+              when you allocate the dollar value of your Crest token to run one of our profitable ad campaigns.`,
           backgroundImg: '../../../assets/images/come-paying.png'
         },
         canLoad: [AccessGuardService]
@@ -32,7 +32,7 @@ export const routes = [
         loadChildren: './content/comingsoon/comingsoon.module#ComingsoonModule',
         data: {
           title: 'EXCHANGE',
-          subtitle: `Our internal Exchange will allow you to buy and sell Bitcoin, Ethereum, CSTT tokens.`,
+          subtitle: `Our internal Exchange will allow you to buy and sell Bitcoin, Ethereum and CSTT tokens.`,
           backgroundImg: '../../../assets/images/exchange.png'
         },
         canLoad: [AccessGuardService]
@@ -42,7 +42,7 @@ export const routes = [
         loadChildren: './content/comingsoon/comingsoon.module#ComingsoonModule',
         data: {
           title: 'STAKING',
-          subtitle: `Our staking platform allows you to earn monthly dividens in the form of CSTT tokens (up to 10%)when you Stake your coins for 30 days or more.`,
+          subtitle: `Our staking platform allows you to earn monthly dividends in the form of CSTT tokens (up to 10%), when you tokens for 30 days or more.`,
           backgroundImg: '../../../assets/images/staking.png'
         },
         canLoad: [AccessGuardService]
