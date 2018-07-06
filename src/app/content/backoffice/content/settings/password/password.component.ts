@@ -17,9 +17,9 @@ export class PasswordComponent implements OnInit {
     class: 'emptyGreen'
   };
 
-  buttonConfirm= {
+  buttonConfirm = {
     name: 'Confirm',
-    class: 'emptyGreen'
+    class: 'emptyConfirm'
   };
   constructor() { }
 
