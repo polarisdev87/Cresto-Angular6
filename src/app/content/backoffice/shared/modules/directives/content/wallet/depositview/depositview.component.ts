@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class DepositviewComponent implements OnInit {
 
-  confirmButton:boolean = true;
+  confirmButton = true;
 
   depositBtn = {
     name: 'Copy address',
