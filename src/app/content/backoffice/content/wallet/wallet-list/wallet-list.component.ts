@@ -1,11 +1,11 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { DepositModalComponent } from './deposit-modal/deposit-modal.component';
-import { WithdrawalModalComponent } from './withdrawal-modal/withdrawal-modal.component';
-import { Store } from '@ngrx/store';
-import { filter } from 'rxjs/operators';
-import { GenerateWalletAddressRequest } from '../../../store/actions/wallets.action';
-import { IRootState } from '../../../../../store/reducers';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {DepositModalComponent} from './deposit-modal/deposit-modal.component';
+import {WithdrawalModalComponent} from './withdrawal-modal/withdrawal-modal.component';
+import {Store} from '@ngrx/store';
+import {filter} from 'rxjs/operators';
+import {GenerateWalletAddressRequest} from '../../../store/actions/wallets.action';
+import {IRootState} from '../../../../../store/reducers';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -17,51 +17,48 @@ export class WalletListComponent implements OnInit {
   @Input()
   wallets;
 
-  state = 'CSTT';
+  @Output()
+  public setDeposit = new EventEmitter();
 
-  CSTTBtnState = {
-    name: 'Buy',
-    class: 'redBig'
-  }
+  public fullMode = true;
 
-  depositBtnState = {
-    name: 'Deposit',
-    class: 'emptyGreen'
-  };
 
-  withdrawalBtnState = {
-    name: 'Withdrawal',
-    class: 'emptyRed'
-  };
 
   constructor(
     public dialog: MatDialog,
     private _store: Store<IRootState>,
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this._store.select('backoffice', 'wallets', 'generatedAddress').pipe(
       filter((address: string) => Boolean(address))
     ).subscribe((address: string) => {
-      this.dialog.open(DepositModalComponent, { data: { address } });
+      this.dialog.open(DepositModalComponent, {data: {address}});
     });
   }
 
   openDepositPopup(address, wallet_id) {
     if (!address) {
       this._store.select('backoffice', 'user', '_id').subscribe((userId: string) => {
-        this._store.dispatch(new GenerateWalletAddressRequest({ userId, wallet_id }));
+        this._store.dispatch(new GenerateWalletAddressRequest({userId, wallet_id}));
       });
       return;
     }
     this.dialog.open(DepositModalComponent, {
-      data: { address }
+      data: {address}
     });
   }
 
   openWithdrawalPopup(wallet_id: string) {
     this.dialog.open(WithdrawalModalComponent, {
-      data: { wallet_id }
+      data: {wallet_id}
     });
+  }
+
+
+  public setDepositCoin(coin) {
+    this.fullMode = false;
+    this.setDeposit.next(coin);
   }
 }

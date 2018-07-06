@@ -29,69 +29,105 @@
     <!--</table>-->
   <!--</div>-->
 <!--</div>-->
-<div [ngSwitch]="state">
-  <div class="wallets-list-wrapper" *ngSwitchCase="'open'" >
-    <div class="wallet {{state}}" *ngFor="let item of wallets">
-      <div class="left-col">
-        <div class="wallet-name bitcoin">
-          Bitcoin wallet
-        </div>
-        <div class="wallet-date">
-          <span>0,00338066 BTC</span>
-          <span>$ 6539.54</span>
-        </div>
-      </div>
-      <div class="right-col">
-        <div class="depositBtn-wrap">
-          <app-button [buttonState]="depositBtnState" class="app-button"></app-button>
-        </div>
-        <div class="withdrawalBtn-wrap">
-          <app-button [buttonState]="withdrawalBtnState" class="app-button"></app-button>
-        </div>
-      </div>
-    </div>
+<div class="wallets-list-wrapper">
+  <div class="wallet {{item.asset.code}} active"   *ngFor="let item of wallets ">
+    <app-other-coin-thumbnail
+      [item]="item"
+      [fullMode]="fullMode"
+      (setDeposit)="setDepositCoin(item)"
+    ></app-other-coin-thumbnail>
+    <!--<div class="" [ngSwitch]="item.asset.code">-->
+      <!--<div  class="wallet-item-wrapper" *ngSwitchCase="'btc'" >-->
+
+
+        <!--<div class="left-col">-->
+          <!--<div class="wallet-name bitcoin">-->
+            <!--{{item.tittle}}-->
+          <!--</div>-->
+          <!--<div class="wallet-date">-->
+            <!--<span>{{item.balance}} {{item.asset.code | uppercase }}</span>-->
+            <!--<span>$ {{item.usd_balance}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right-col">-->
+          <!--<div class="depositBtn-wrap">-->
+            <!--<app-button [buttonState]="depositBtnState" class="app-button"></app-button>-->
+          <!--</div>-->
+          <!--<div class="withdrawalBtn-wrap">-->
+            <!--<app-button [buttonState]="withdrawalBtnState" class="app-button"></app-button>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+
+
+      <!--</div>-->
+      <!--<div  class="wallet-item-wrapper" *ngSwitchCase="'eth'" >-->
+
+
+        <!--<div class="left-col">-->
+          <!--<div class="wallet-name bitcoin">-->
+            <!--{{item.tittle}}-->
+          <!--</div>-->
+          <!--<div class="wallet-date">-->
+            <!--<span>{{item.balance}} {{item.asset.code | uppercase }}</span>-->
+            <!--<span>$ {{item.usd_balance}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right-col">-->
+          <!--<div class="depositBtn-wrap">-->
+            <!--<app-button [buttonState]="depositBtnState"-->
+                        <!--(click)="setDepositCoin(item)"-->
+                        <!--class="app-button"></app-button>-->
+          <!--</div>-->
+          <!--<div class="withdrawalBtn-wrap">-->
+            <!--<app-button [buttonState]="withdrawalBtnState" class="app-button"></app-button>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+
+
+      <!--</div>-->
+      <!--<div class="wallet-item-wrapper" *ngSwitchCase="'cstt'" >-->
+
+
+        <!--<div class="left-col">-->
+          <!--<div class="wallet-name bitcoin">-->
+            <!--{{item.tittle}}-->
+          <!--</div>-->
+          <!--<div class="wallet-date">-->
+            <!--<span>{{item.balance}} {{item.asset.code | uppercase }}</span>-->
+            <!--<span>$ {{item.usd_balance}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right-col">-->
+          <!--<div class="depositBtn-wrap">-->
+            <!--<app-button [routerLink]="['../../buy']" [buttonState]="CSTTBtnState" class="app-button"></app-button>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+
+      <!--</div>-->
+      <!--<div class="wallet-item-wrapper" *ngSwitchCase="'close'" >-->
+
+
+        <!--<div class="left-col">-->
+          <!--<div class="wallet-name bitcoin">-->
+            <!--{{item.tittle}}-->
+          <!--</div>-->
+          <!--<div class="wallet-date">-->
+            <!--<span>{{item.balance}} {{item.asset.code | uppercase }}</span>-->
+            <!--<span>$ {{item.usd_balance}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+
+      <!--</div>-->
+    <!--</div>-->
   </div>
-  <div class="wallets-list-wrapper" *ngSwitchCase="'CSTT'" >
-
-
-    <div class="wallet {{state}}" *ngFor="let item of wallets">
-      <div class="left-col">
-        <div class="wallet-name bitcoin">
-          Bitcoin wallet
-        </div>
-        <div class="wallet-date">
-          <span>0,00338066 BTC</span>
-          <span>$ 6539.54</span>
-        </div>
-      </div>
-      <div class="right-col">
-        <div class="depositBtn-wrap">
-          <app-button [buttonState]="CSTTBtnState" class="app-button"></app-button>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-  <div class="wallets-list-wrapper" *ngSwitchCase="'close'" >
-
-
-    <div class="wallet {{state}} active" *ngFor="let item of wallets">
-      <div class="left-col">
-        <div class="wallet-name bitcoin">
-          Bitcoin wallet
-        </div>
-        <div class="wallet-date">
-          <span>0,00338066 BTC</span>
-          <span>$ 6539.54</span>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-
-
-
-
 </div>
+
+
