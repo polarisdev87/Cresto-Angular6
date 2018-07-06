@@ -18,7 +18,7 @@ export class InstructionComponent {
     },
     {
       label: 'Pre-Sale ICO',
-      text: 'price is $0.25 per token, with min/max token purchase of 100/10,000 CSTT. This will allow our early ' +
+      text: 'Price is $0.25 per token, with min/max token purchase of 100/10,000 CSTT. This will allow our early ' +
       'supporters to partake at the lowest price possible. 100% of raised fund will go towards promoting the ICO ' +
       'and kick-off full platform development.'
     },

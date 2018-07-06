@@ -4,6 +4,8 @@
   display: inline-block
   width: 100%
   margin: -10px 0 0 20px
+  background-repeat: no-repeat
+  background-size: cover
   h1
       font-size: 24px
       text-align: center
@@ -15,6 +17,7 @@
   .elipse-big
       display: flex
       background-color: rgba(26,35,46,0.7)
+      position: relative
       width: 490px
       height: 490px
       border-radius: 100%
@@ -25,6 +28,7 @@
       .text-in-circle
           margin: auto
           max-width: 430px
+          position: relative
           .head-text
               color: $grey-light
               margin-bottom: 15px
@@ -58,19 +62,14 @@
                   height: 2px
                   background-color: $accent-color
                   max-width: 325px
-
-
-
-
-
-      .elipse-small
-          position: absolute
-          left: calc(44% - 15px)
-          top: calc(26% - 10px)
-          background-color: rgba(0,231,199,0.8)
-          box-shadow: 0 0 20px 5px rgba(24,248,188,0.5)
-          width: 37px
-          height: 37px
-          border-radius: 100%
+  .elipse-small
+      position: absolute
+      left: 50px
+      top: 52px
+      background-color: rgba(0,231,199,0.8)
+      box-shadow: 0 0 20px 5px rgba(24,248,188,0.5)
+      width: 37px
+      height: 37px
+      border-radius: 100%
 
 
