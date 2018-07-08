@@ -1,5 +1,9 @@
+import { EditUserRequest } from './../../../store/actions/user.actions';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { IRootState } from '../../../../../store/reducers';
 
 @Component({
   selector: 'app-personal-information',
@@ -8,33 +12,27 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class PersonalInformationComponent implements OnInit {
 
-  public switch: boolean = true;
-  myForm: FormGroup;
+  public switch = true;
+  public user$: Observable<User>;
+  public name: FormControl = new FormControl({value: '', disabled: true}, [Validators.required]);
 
-  constructor(private formBuilder: FormBuilder) { 
-    this.myForm = formBuilder.group({
-      "userName": [{value: "Robert Williams", disabled:true}, [Validators.required]]
-    });
+  public constructor(
+    private _store: Store<IRootState>,
+  ) {}
+
+  public ngOnInit() {
+    this.user$ = this._store.select('backoffice', 'user');
+    this._store.select('backoffice', 'user').subscribe((user: User) => this.name.setValue(user.name));
   }
 
-  ngOnInit() {
-  }
-
-  setDisabledState() {
+  public setDisabledState(): void {
     this.switch = !this.switch;
-    this.switch 
-    ? this.myForm.get('userName').disable()
-    : this.myForm.get('userName').enable()
+    this.switch
+      ? this.name.disable()
+      : this.name.enable();
   }
 
-  isControlInvalid(controlName: string): boolean {
-    const control = this.myForm.controls[controlName];
-    
-     const result = control.invalid && control.touched;
-
-
-    
-     return result;
-    }
-
+  public editProfile(): void {
+    this._store.dispatch(new EditUserRequest({ name: this.name.value }));
+  }
 }

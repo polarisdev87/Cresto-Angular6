@@ -1,6 +1,6 @@
 type PasswordState = {
   updated: boolean;
-  error: boolean;
+  error: string;
 };
 
 type AuthState = {
