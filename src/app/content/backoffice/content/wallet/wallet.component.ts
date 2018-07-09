@@ -20,6 +20,7 @@ export class WalletComponent implements OnInit {
   transactions$: Observable<any>;
 
   public currentCoin;
+  withdrawalToched = true;
 
   constructor(
     private _store: Store<IRootState>

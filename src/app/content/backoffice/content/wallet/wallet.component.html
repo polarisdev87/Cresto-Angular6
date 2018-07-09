@@ -21,6 +21,7 @@
 
 
   <app-depositview *ngIf="currentCoin" [coin]="currentCoin"></app-depositview>
+  <app-withdrawal-founds  *ngIf="withdrawalToched"  ></app-withdrawal-founds>
   <!--<app-help></app-help>-->
   <app-transaction-list [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
 </div>
