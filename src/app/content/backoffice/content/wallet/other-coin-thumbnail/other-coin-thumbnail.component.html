@@ -1,4 +1,4 @@
-<div  class="wallet-item-wrapper"  *ngIf="fullMode; else shortMode" >
+<div class="wallet-item-wrapper" *ngIf="fullMode; else shortMode">
 
   <div class="left-col">
     <div class="wallet-name bitcoin">
@@ -16,7 +16,10 @@
                   class="app-button"></app-button>
     </div>
     <div class="withdrawalBtn-wrap">
-      <app-button [buttonState]="withdrawalBtnState" class="app-button"></app-button>
+      <app-button
+        [buttonState]="withdrawalBtnState"
+        (click)="setWithdrawalCoin(item)"
+        class="app-button"></app-button>
     </div>
   </div>
 

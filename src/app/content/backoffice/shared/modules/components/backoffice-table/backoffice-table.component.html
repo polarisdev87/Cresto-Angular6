@@ -2,19 +2,19 @@
     <table [ngClass]="{'scroll': scroll}">
       <thead>
       <tr>
-        <th *ngFor="let i of dashboardTableHead">{{i}}</th>
+        <th *ngFor="let i of dashboardTableHead, let ind=index ">{{i}}</th>
       </tr>
       </thead>
       <ng-scrollbar *ngIf="scroll" class="sample">
         <tbody>
-        <tr *ngFor="let round of rounds" [class]="round.stage | lowercase">
+        <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
           <td [class]="item.type" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
         </tr>
         </tbody>
       </ng-scrollbar>
       <tbody *ngIf="!scroll">
-      <tr *ngFor="let round of rounds" [class]="round.stage | lowercase">
-        <td [class]="item.type" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
+      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
+        <td [class]="item.type" *ngFor="let item of round | row:columns"><span>{{item.value || ind+1}}</span></td>
       </tr>
       </tbody>
     </table>

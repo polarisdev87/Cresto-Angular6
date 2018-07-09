@@ -16,6 +16,8 @@ export class OtherCoinThumbnailComponent {
   @Output()
   public setDeposit = new EventEmitter();
 
+  @Output() setWithdrawal = new EventEmitter();
+
   CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'
@@ -33,6 +35,10 @@ export class OtherCoinThumbnailComponent {
 
   public setDepositCoin(coin) {
     this.setDeposit.next(coin);
+  }
+
+  setWithdrawalCoin(coin) {
+    this.setWithdrawal.emit(coin);
   }
 
 }
