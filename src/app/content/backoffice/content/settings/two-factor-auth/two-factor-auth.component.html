@@ -20,14 +20,13 @@
       <div class="QRcode-wrapper">
         <img [src]="(tfaData$ | async)?.dataURL" alt="qr">
         <div class="QRcode-wrapper__content">
-          <p>1 Install an authentificator app on your mobile device if you don't already have one. We support these options</p>
-          <p>2 Scan QR code with the authentificator (or tap it in mobile browser)</p>
-          <p>3 Please write down or pront a copy of the 16-digit secret code and put it in a safe place</p>
-          <p>4 If your phone gets lost, stolen or erasted, you will need this code to link Cresttoken to a new authentificator app install once again
+          <p>1 Install an authenticator app on your mobile device if you don't already have one. We support these options</p>
+          <p>2 Scan QR code with the authenticator (or tap it in mobile browser)</p>
+          <p>3 Please write down or print a copy of the 16-digit secret code and put it in a safe place.</p>
+          <p>4 If your phone gets lost, stolen or erased, you will need this code to link Crest Token to a new authenticator app, to install once again.
           </p>
         </div>
       </div>
-      <p class="two-factor-auth__content-name">Enter the 2-step verification code provided by your authentication app</p>
       <p class="two-factor-auth__content-name error" *ngIf="enableTfaCode.invalid">
         Enter the 2-step verification code provided by your authentication app
       </p>
