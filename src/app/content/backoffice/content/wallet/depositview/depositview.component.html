@@ -30,10 +30,14 @@
         <h1> Deposit Bitcoin</h1>
       </div>
       <div class="deposit-currency">
-        <p>Only send bitcoin (BTC) to this adress. Sending any other digital asset, including Bitcoin Cash, will result in permanent loss.</p>
+        <p>Only send
+          {{coin.asset.code === 'btc' ? 'bitcoin': 'ethereum' }}
+          ({{coin.asset.code | uppercase}}) to this adress. Sending any other digital asset, including
+          {{coin.asset.code === 'btc' ? 'Bitcoin': 'Ethereum' }}
+          Cash, will result in permanent loss.</p>
       </div>
       <div class="deposit-attention">
-        <h2>Your BTC adress is</h2>
+        <h2>Your {{coin.asset.code | uppercase}} adress is</h2>
       </div>
       <form>
           <input readonly [value]="coin.top_up_address"
