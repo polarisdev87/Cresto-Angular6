@@ -1,5 +1,10 @@
-import {Component, forwardRef} from '@angular/core';
+import {Component, forwardRef, OnInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Observable } from 'rxjs';
+import {IRootState} from '../../../../../../store/reducers';
+import {Store} from '@ngrx/store';
+import {getWalletsDatas} from '../../../../store/selectors/assets.selector';
+
 
 @Component({
   selector: 'app-buy-token-select',
@@ -13,12 +18,26 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     }
   ]
 })
-export class BuyTokenSelectComponent implements ControlValueAccessor {
+export class BuyTokenSelectComponent implements ControlValueAccessor, OnInit {
+
+  wallets$: Observable<WalletData[]>;
+
 
   private _onChange;
   private _onTouched;
 
   public currentCoin = 1;
+  public coinCur = 1;
+
+  constructor(
+    private _store: Store<IRootState>
+  ) {
+  }
+
+  ngOnInit() {
+    this.wallets$ = this._store.select(getWalletsDatas);
+  }
+
 
   public selectCoin(coin: number) {
     this.currentCoin = coin;
@@ -36,4 +55,5 @@ export class BuyTokenSelectComponent implements ControlValueAccessor {
   public registerOnTouched(fn: any): void {
     this._onTouched = fn;
   }
+
 }
