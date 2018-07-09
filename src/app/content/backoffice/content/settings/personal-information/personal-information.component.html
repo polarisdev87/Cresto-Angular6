@@ -1,16 +1,20 @@
 <div class="personal-information-wrapper">
   <h2>Personal  Information</h2>
-  <form [formGroup]="myForm">
+  <form>
     <div class="name-wrapper">
       <label for="name">Name</label>
       <button class="icon-building"  *ngIf="switch" (click)="setDisabledState()"></button>
-      <button class="icon-tick"  *ngIf="!switch" (click)="setDisabledState()" [disabled]="isControlInvalid('userName')"></button>
-      <input type="text" id="name"  class="form-control" formControlName="userName">
-      <span class="warning" *ngIf="isControlInvalid('userName')">Can not be empty</span>
+      <button class="icon-tick"
+        *ngIf="!switch"
+        (click)="setDisabledState()"
+        [disabled]="name.invalid"
+        (click)="editProfile()"></button>
+      <input type="text" class="form-control" [formControl]="name">
+      <span class="warning" *ngIf="name.invalid">Can not be empty</span>
     </div>
     <label for="email">Email</label>
-    <input type="text" id="email" value="robert@gmail.com" readonly>
+    <input type="text" [value]="(user$ | async)?.email" readonly>
     <label for="sponsor">Sponsor</label>
-    <input type="text" id="sponsor" value="crestreferral001" readonly>
+    <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
   </form>
 </div>

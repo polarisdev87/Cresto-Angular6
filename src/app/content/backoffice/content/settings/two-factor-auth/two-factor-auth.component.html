@@ -1,124 +1,61 @@
-<div class="two-factor-auth-wrapper" [ngSwitch]="coco">
-  <div class="{{coco}}" *ngSwitchCase="'def'">
-    <span class="two-factor-auth__title">
-      Setup 2 Factor Authentication
-    </span>
-    <p class="two-factor-auth__content-name">
-      Goodle Authentication
-    </p>
-    <p class="two-factor-auth__content">
-      Used for withdrawals and security modification
-    </p>
-    <app-button [buttonState]="buttonState2authDef" ></app-button>
+<div class="two-factor-auth-wrapper" [ngSwitch]="twofactorState" loader [show]="isLoading$ | async">
+
+  <div class="enableAuthenticatorSupport" *ngSwitchCase="'def'">
+    <span class="two-factor-auth__title">Setup 2 Factor Authentication</span>
+    <p class="two-factor-auth__content-name">Goodle Authentication</p>
+    <p class="two-factor-auth__content">Used for withdrawals and security modification</p>
+    <button class="btn emptyRed" (click)="enableTfaSetup()">Enable</button>
   </div>
-  <div class="{{coco}}" *ngSwitchCase="'desableAuthenticatorSupport'">
-    <span class="two-factor-auth__title">
-      Setup 2 Factor Authentication
-    </span>
-    <p class="two-factor-auth__content-name">
-      Disable Authenticator support
-    </p>
-    <p class="two-factor-auth__content">
-      Used for withdrawals and security modification
-    </p>
 
+  <div class="enableAuthenticatorSupport" *ngSwitchCase="'enableAuthenticatorSupport'">
+    <span class="two-factor-auth__title">Setup 2 Factor Authentication</span>
+    <p class="two-factor-auth__content-name">Enable Authenticator support</p>
 
-    <form [formGroup]="myForm" (ngSubmit)="submit()">
-      <div
-        [ngClass]="{toched:l.active}"
-        class="form-group-factor">
-
-        <label>
-          Login Password
-        </label>
-        <input
-          appLable #l="lable"
-          type="text"
-          formControlName="loginPassword" >
-      </div>
-
-      <div
-        [ngClass]="{toched:c.active}"
-        class="form-group-factor">
-
-        <label>
-          Google Authentication code
-        </label>
-        <input
-          appLable #c="lable"
-          type="text"
-          formControlName="googleCode">
-
-      </div>
-      <app-button [buttonState]="buttonState2authDesableAuthenticatorSupport" ></app-button>
-    </form>
-
-
-
-  </div>
-  <div class="{{coco}}" *ngSwitchCase="'enableAuthenticatorSupport'">
-    <span class="two-factor-auth__title">
-      Setup 2 Factor Authentication
-    </span>
-    <p class="two-factor-auth__content-name">
-      Enable Authenticator support
-    </p>
-
-    <form [formGroup]="enableAuthenticatorSupportForm" (ngSubmit)="submit()">
+    <form>
       <div class="form-group-enable">
-
-        <label>
-          Authenticator: Secret code
-        </label>
-        <input
-          type="text"
-          readonly
-          placeholder="34u534jh89ug8erjgioh5ojti459"
-          formControlName="secretCode" >
+        <label>Authenticator: Secret code</label>
+        <input type="text" readonly [placeholder]="(tfaData$ | async)?.tempSecret">
       </div>
-      <p class="two-factor-auth__content">
-        Please save this Secret code for recovery of authenticator code
-      </p>
+      <p class="two-factor-auth__content">Please save this Secret code for recovery of authenticator code</p>
       <div class="QRcode-wrapper">
-        <img src="" alt="">
+        <img [src]="(tfaData$ | async)?.dataURL" alt="qr">
         <div class="QRcode-wrapper__content">
-          <p>
-            1 Install an authentificator app on your mobile device if you don't already have one. We support these options
-          </p>
-          <p>
-            2 Scan QR code with the authentificator (or tap it in mobile browser)
-          </p>
-          <p>
-            3 Please write down or pront a copy of the 16-digit secret code and put it in a safe place
-          </p>
-          <p>
-            4 If your phone gets lost, stolen or erasted, you will need this code to link Cresttoken to a new authentificator app install once again
+          <p>1 Install an authentificator app on your mobile device if you don't already have one. We support these options</p>
+          <p>2 Scan QR code with the authentificator (or tap it in mobile browser)</p>
+          <p>3 Please write down or pront a copy of the 16-digit secret code and put it in a safe place</p>
+          <p>4 If your phone gets lost, stolen or erasted, you will need this code to link Cresttoken to a new authentificator app install once again
           </p>
         </div>
       </div>
-      <p class="two-factor-auth__content-name">
+      <p class="two-factor-auth__content-name">Enter the 2-step verification code provided by your authentication app</p>
+      <p class="two-factor-auth__content-name error" *ngIf="enableTfaCode.invalid">
         Enter the 2-step verification code provided by your authentication app
       </p>
-      <p class="two-factor-auth__content-name error"
-         *ngIf="enableAuthenticatorSupportForm.invalid"
-      >
-        Enter the 2-step verification code provided by your authentication app
-      </p>
-      <div
-        [ngClass]="{toched:c.active}"
-        class="form-group-factor">
-
-        <label>
-          Code provided
-        </label>
-        <input
-          appLable #c="lable"
-          type="number"
-          formControlName="codeProvided">
-
+      <div [ngClass]="{toched:c.active}" class="form-group-factor">
+        <label>Code provided</label>
+        <input appLable #c="lable" type="number" [formControl]="enableTfaCode">
       </div>
-      <app-button [buttonState]="buttonState2authDesableAuthenticatorSupport" ></app-button>
+      <button class="btn emptyRed" [disabled]="enableTfaCode.invalid" (click)="enableTfa()">Confirm</button>
     </form>
 
+  </div>
+
+  <div class="enableAuthenticatorSupport" *ngSwitchCase="'desableAuthenticatorSupport'">
+    <span class="two-factor-auth__title">Setup 2 Factor Authentication</span>
+    <p class="two-factor-auth__content-name">Disable Authenticator support</p>
+    <p class="two-factor-auth__content">Used for withdrawals and security modification</p>
+
+    <form [formGroup]="disableTfaForm" (ngSubmit)="disableTfa(disableTfaForm.value)">
+      <div [ngClass]="{toched:l.active}" class="form-group-factor">
+        <label>Login Password</label>
+        <input appLable #l="lable" type="password" formControlName="password">
+      </div>
+
+      <div [ngClass]="{toched:c.active}" class="form-group-factor">
+        <label>Google Authentication code</label>
+        <input appLable #c="lable" type="text" formControlName="token">
+      </div>
+      <button class="btn emptyRed">Confirm</button>
+    </form>
   </div>
 </div>

@@ -1,6 +1,7 @@
 type User = {
   _id: number;
   username: string;
+  name: string;
   email: string;
   password: string;
   remember: boolean;
@@ -13,13 +14,6 @@ type User = {
   otpURL: string;
   expiresIn: number;
   accessToken: string;
-  profile: {
-    firstname: string,
-    lastname: string,
-    country?: string,
-    etherbase?: string
-  },
-  topcoins: number,
   referredBy: string,
   referralHash: string,
   isVerified: boolean,
@@ -37,9 +31,25 @@ type User = {
 };
 
 
+type UserToCreate = {
+  username: string,
+  email: string,
+  password: string,
+  name: string
+}
+
+
+type UserToEdit = {
+  name: string
+}
 
 type PasswordData = {
   currentPassword?: string;
   password: string;
   hash?: string
+};
+
+type EditPasswordData = {
+  currentPassword?: string;
+  password?: string;
 };

@@ -22,21 +22,19 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.form = this._fb.group({
-          username: ['', Validators.required],
-          email: ['', Validators.email],
-          password: ['', Validators.required],
-          profile: this._fb.group({
-            firstname: ['', Validators.required]
-          }),
-          recaptchaReactive: [null, Validators.required]
-        },
-        {
-          validator: this._validatorsService.checkPasswordsMatch
-        });
+    this.form = this._fb.group({
+      username: ['', Validators.required],
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      name: ['', Validators.required],
+      recaptchaReactive: [null, Validators.required]
+    },
+      {
+        validator: this._validatorsService.checkPasswordsMatch
+      });
   }
 
-  public save(user: User): void {
+  public save(user: UserToCreate): void {
     this._store.dispatch(new SignUp(user));
   }
 

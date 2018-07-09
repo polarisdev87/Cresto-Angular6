@@ -12,7 +12,7 @@
     <div class="sidebar-item user">
       <a class="disabled">
         <i class="icon-user"></i>
-        <span class="sidebar-text">jasonnewsted</span>
+        <span class="sidebar-text">{{(user$ | async)?.username}}</span>
       </a>
     </div>
     <div class="sidebar-item setting">

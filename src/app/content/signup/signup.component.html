@@ -16,14 +16,11 @@
         <div class="form-wrapper">
           <form [formGroup]="form" (ngSubmit)="save(form.value)">
 
-            <div formGroupName="profile">
-
-              <div class="inputGroup">
-                <div class="inputGroup-icons">
-                  <img src="assets/images/user-icon.png" alt="user">
-                </div>
-                <input type="text" placeholder="Name" formControlName="firstname" class="form-control">
+            <div class="inputGroup">
+              <div class="inputGroup-icons">
+                <img src="assets/images/user-icon.png" alt="user">
               </div>
+              <input type="text" placeholder="Name" formControlName="name" class="form-control">
             </div>
 
             <div class="inputGroup">

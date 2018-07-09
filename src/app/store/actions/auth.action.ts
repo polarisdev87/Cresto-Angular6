@@ -45,13 +45,13 @@ export class LoginFail implements Action {
 // tslint:disable-next-line: max-classes-per-file
 export class SignUp implements Action {
   public readonly type: string = SIGN_UP;
-  public constructor(public payload: any) {}
+  public constructor(public payload: UserToCreate) {}
 }
 
 // tslint:disable-next-line: max-classes-per-file
 export class SignUpSuccess implements Action {
   public readonly type: string = SIGN_UP_SUCCESS;
-  public constructor(public payload: any) {}
+  public constructor(public payload: User) {}
 }
 
 // tslint:disable-next-line: max-classes-per-file
