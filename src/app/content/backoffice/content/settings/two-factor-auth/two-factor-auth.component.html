@@ -14,7 +14,7 @@
     <form>
       <div class="form-group-enable">
         <label>Authenticator: Secret code</label>
-        <input type="text" readonly [placeholder]="(tfaData$ | async)?.tempSecret">
+        <input type="text" readonly [value]="(tfaData$ | async)?.tempSecret">
       </div>
       <p class="two-factor-auth__content">Please save this Secret code for recovery of authenticator code</p>
       <div class="QRcode-wrapper">
