@@ -28,6 +28,7 @@ import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from 'ng-recaptc
 import {UiModule} from './shared/module/ui/ui.module';
 import {PopupComponent} from './content/backoffice/content/buy/popup/popup.component';
 import {routes} from './routes';
+import { SharedModule } from './content/backoffice/shared/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {routes} from './routes';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     HttpClientModule,
     NoopAnimationsModule,
     UiModule,
