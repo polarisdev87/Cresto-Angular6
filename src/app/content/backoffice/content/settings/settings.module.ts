@@ -11,7 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from './store/effects';
 import { reducers } from './store/reducers';
-
+import { NgxLoaderIndicatorModule } from 'ngx-loader-indicator';
 @NgModule({
   imports: [
     CommonModule,
@@ -23,6 +23,9 @@ import { reducers } from './store/reducers';
     ]),
     StoreModule.forFeature('settings', reducers),
     EffectsModule.forFeature(effects),
+    NgxLoaderIndicatorModule.forRoot({loaderStyles: {
+      background: 'transparent'
+    }}),
   ],
   declarations: [
     SettingsComponent,

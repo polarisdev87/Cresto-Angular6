@@ -14,6 +14,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./password.component.sass']
 })
 export class PasswordComponent implements OnInit {
+  isLoading$: Observable<boolean>;
   isCurrentPasswordValid$: Observable<boolean>;
   error$: Observable<string>;
   form: FormGroup;
@@ -34,6 +35,7 @@ export class PasswordComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLoading$ = this._store.select('settings', 'editPassword', 'isLoading');
     // TODO figure out design for error handling
     this.error$ = this._store.select('settings', 'editPassword', 'error');
     this.isCurrentPasswordValid$ = this._store.select('settings', 'editPassword', 'isCurrentPasswordValid');

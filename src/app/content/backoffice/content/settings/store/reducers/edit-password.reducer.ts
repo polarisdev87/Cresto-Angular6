@@ -8,7 +8,7 @@ export interface EditPasswordState {
   error: null | string;
 }
 export const initialState: EditPasswordState = {
-  isLoading: true,
+  isLoading: false,
   isCurrentPasswordValid: false,
   updated: false,
   error: null

@@ -31,10 +31,6 @@ export class AuthService {
     return this._http.nonAuthorizedRequest(`/auth/signin`, {...user, password});
   }
 
-  public verifyTwoFactor(body: { token: string }): Observable<User> {
-    return this._http.nonAuthorizedRequest(`/auth/twofactor/verify`, body, 'POST');
-  }
-
   public getCurrentUser(): Observable<User> {
     return this._http.authorizedRequest(`/account`, '', 'GET');
   }

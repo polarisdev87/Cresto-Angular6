@@ -14,7 +14,6 @@ type User = {
   otpURL: string;
   expiresIn: number;
   accessToken: string;
-  topcoins: number,
   referredBy: string,
   referralHash: string,
   isVerified: boolean,
