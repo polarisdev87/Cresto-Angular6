@@ -1,10 +1,10 @@
-import {RouterModule} from '@angular/router';
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material';
-import {HeaderAuthComponent} from './header-auth/header-auth.component';
-import {FooterComponent} from './footer/footer.component';
-import {ScrollbarModule} from 'ngx-scrollbar';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
+import { HeaderAuthComponent } from './header-auth/header-auth.component';
+import { FooterComponent } from './footer/footer.component';
+import { ScrollbarModule } from 'ngx-scrollbar';
 
 @NgModule({
   imports: [

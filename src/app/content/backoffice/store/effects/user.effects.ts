@@ -1,10 +1,16 @@
+import { Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material';
-import { EDIT_USER, EditUserRequest, EditUserSuccess, EditUserFail, GetCurrentUserFail } from './../actions/user.actions';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
-import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
+import {
+  EDIT_USER,
+  EditUserFail,
+  EditUserRequest,
+  EditUserSuccess,
+  GetCurrentUserFail
+} from './../actions/user.actions';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { AuthService } from '../../../../shared/services/auth.service';
 import { GET_CURRENT_USER, GetCurrentUserSuccess } from '../actions/user.actions';
 import { SettingsService } from '../../../../shared/services/settings.service';

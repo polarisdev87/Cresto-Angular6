@@ -1,4 +1,4 @@
-import { CALCULATE_SUMM_SUCCESS, BUY_TOKENS_SUCCESS, BUY_TOKENS_FAIL } from '../actions/buy-tokens.action';
+import { BUY_TOKENS_FAIL, BUY_TOKENS_SUCCESS, CALCULATE_SUMM_SUCCESS } from '../actions/buy-tokens.action';
 
 export const initialState = {
   price: 0,

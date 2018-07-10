@@ -11,7 +11,7 @@ export class HeaderComponent {
   public fixed = '';
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
+  public onWindowScroll() {
     const scrollPosition = window.scrollY;
     if ( scrollPosition > 150 ) {
       this.fixed = 'fixed';

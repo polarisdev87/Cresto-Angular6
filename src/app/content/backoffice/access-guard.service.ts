@@ -1,10 +1,10 @@
-import {Store} from '@ngrx/store';
-import {Injectable} from '@angular/core';
-import {CanLoad} from '@angular/router';
-import {of} from 'rxjs';
-import {filter, switchMap, take} from 'rxjs/operators';
-import {isEmpty} from 'lodash';
-import {Route} from '@angular/compiler/src/core';
+import { Store } from '@ngrx/store';
+import { Injectable } from '@angular/core';
+import { CanLoad } from '@angular/router';
+import { of } from 'rxjs';
+import { filter, switchMap, take } from 'rxjs/operators';
+import { isEmpty } from 'lodash';
+import { Route } from '@angular/compiler/src/core';
 import { IRootState } from '../../store/reducers';
 
 @Injectable()

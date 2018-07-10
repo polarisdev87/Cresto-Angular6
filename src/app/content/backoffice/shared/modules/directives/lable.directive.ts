@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appLable]',
@@ -7,6 +7,12 @@ import {Directive, ElementRef, HostListener} from '@angular/core';
 export class LableDirective {
 
   public active = false;
+
+  public constructor(
+    private _elementRef: ElementRef
+  ) {
+  }
+
 
   @HostListener('focus')
   public onFocus() {
@@ -19,10 +25,4 @@ export class LableDirective {
       ? true
       : false;
   }
-
-  public constructor(
-    private _elementRef: ElementRef
-  ) {
-  }
-
 }

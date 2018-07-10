@@ -1,4 +1,4 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -8,7 +8,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 })
 export class ButtonComponent {
   @Input()
-  buttonState = {
+  public buttonState = {
     name: String,
     class: String
   };

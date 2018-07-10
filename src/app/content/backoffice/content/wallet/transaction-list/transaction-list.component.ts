@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-transaction-list',
@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class TransactionListComponent  {
   @Input()
-  transactions;
-  public transactionsHistoryHead =['Created Date (JMT)', 'Coin', 'Amount', 'Type', 'Status', 'Hash'];
+  public transactions;
+  public transactionsHistoryHead = ['Created Date (JMT)', 'Coin', 'Amount', 'Type', 'Status', 'Hash'];
 
 }

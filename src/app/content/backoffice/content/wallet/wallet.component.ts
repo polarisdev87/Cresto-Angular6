@@ -1,11 +1,10 @@
-import {Observable} from 'rxjs';
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {filter} from 'rxjs/operators';
-import {WalletRequest} from '../../store/actions/wallets.action';
-import {IRootState} from '../../../../store/reducers';
-import {TransactionRequest} from './store/actions/transaction.actions';
-import {getWalletsData} from '../../store/selectors/assets.selector';
+import { Observable } from 'rxjs';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs/operators';
+import { IRootState } from '../../../../store/reducers';
+import { TransactionRequest } from './store/actions/transaction.actions';
+import { getWalletsData } from '../../store/selectors/assets.selector';
 
 @Component({
   selector: 'app-wallet',
@@ -15,18 +14,18 @@ import {getWalletsData} from '../../store/selectors/assets.selector';
 })
 export class WalletComponent implements OnInit {
 
-  assets$: Observable<any>;
-  wallets$: Observable<WalletData[]>;
-  transactions$: Observable<any>;
+  public assets$!: Observable<any>;
+  public wallets$!: Observable<WalletData[]>;
+  public transactions$!: Observable<any>;
 
   public currentCoin;
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getWalletsData);
     this.transactions$ = this._store.select('walletList', 'transactions', 'data');
@@ -36,6 +35,9 @@ export class WalletComponent implements OnInit {
         filter((id: string | null) => Boolean(id))
       )
       .subscribe((id) => {
+        if (id === null) {
+          return;
+        }
         this._store.dispatch(new TransactionRequest(id));
       });
   }

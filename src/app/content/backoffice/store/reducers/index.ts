@@ -1,18 +1,18 @@
-import {ActionReducerMap} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 import * as acl from './acl.reducer';
 import * as assets from './assets.reducer';
 import * as fromWallets from './wallets.reducer';
 import * as fromUser from './user.reducer';
 
-export interface BackofficeState {
+export interface IBackofficeState {
   acl: Acl;
   assets: any;
   wallets: WalletState;
   user: User;
 }
 
-export const reducers: ActionReducerMap<BackofficeState> = {
+export const reducers: ActionReducerMap<IBackofficeState> = {
   acl: acl.reducer,
   assets: assets.reducer,
   wallets: fromWallets.reducer,
