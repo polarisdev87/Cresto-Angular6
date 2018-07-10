@@ -5,7 +5,7 @@ import { filter } from 'rxjs/operators';
 import { IRootState } from '../../../../store/reducers';
 import { TransactionRequest } from './store/actions/transaction.actions';
 import { getWalletsData } from '../../store/selectors/assets.selector';
-import {PurchaseRequest} from "./store/actions/purchase.action";
+import { PurchaseRequest } from './store/actions/purchase.action';
 
 @Component({
   selector: 'app-wallet',
@@ -22,7 +22,7 @@ export class WalletComponent implements OnInit {
 
   public crestokenFlag = true;
   public currentCoin;
-  withdrawalToched;
+  public withdrawalToched;
 
   public constructor(
     private _store: Store<IRootState>

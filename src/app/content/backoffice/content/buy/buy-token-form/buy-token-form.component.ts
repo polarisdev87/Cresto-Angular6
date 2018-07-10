@@ -28,7 +28,10 @@ export class BuyTokenFormComponent implements OnInit {
   public userId$!: Observable<string>;
   public tokenPrice$!: Observable<number>;
 
-  public tokensform!: FormGroup;
+  public tokensform = new FormGroup({
+    amount: new FormControl('', [Validators.pattern('0123456789')]),
+    currency: new FormControl(1, [Validators.required])
+  });
 
   public constructor(
     private _store: Store<IRootState>,
@@ -39,10 +42,6 @@ export class BuyTokenFormComponent implements OnInit {
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price)
     );
-    this.tokensform = new FormGroup({
-      amount: new FormControl('', [Validators.pattern('0123456789')]),
-      currency: new FormControl(1, [Validators.required])
-    });
     this.userId$ = this._store.select('backoffice', 'user', '_id');
 
     combineLatest(

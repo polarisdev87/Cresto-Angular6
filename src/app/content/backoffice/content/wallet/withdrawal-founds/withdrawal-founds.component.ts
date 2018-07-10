@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-withdrawal-founds',
@@ -7,7 +7,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./withdrawal-founds.component.sass']
 })
 export class WithdrawalFoundsComponent implements OnInit {
-  @Input() coin;
+  @Input() public coin;
 
 
   public buttonStateBuy = {
@@ -17,17 +17,17 @@ export class WithdrawalFoundsComponent implements OnInit {
 
   // in component we can get which coin we chose by input coin
 
-  withdrawalForm: FormGroup = new FormGroup({
+  public withdrawalForm: FormGroup = new FormGroup({
 
     'walletAddress': new FormControl(Validators.required),
     'amount': new FormControl(Validators.required),
     '2FACode': new FormControl(Validators.required)
   });
 
-  constructor() {
+  public constructor() {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }

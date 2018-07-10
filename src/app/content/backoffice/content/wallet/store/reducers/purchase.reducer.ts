@@ -1,4 +1,4 @@
-import {PURCHASE_REQUEST, PURCHASE_SUCCESS, PURCHASE_FAIL} from './../actions/purchase.action';
+import { PURCHASE_FAIL, PURCHASE_REQUEST, PURCHASE_SUCCESS } from './../actions/purchase.action';
 
 export const initialState: PurchaseState = {
   isLoading: false,

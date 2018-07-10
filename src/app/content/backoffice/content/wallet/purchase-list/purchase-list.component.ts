@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-purchase-list',
@@ -8,11 +8,11 @@ import {Component, Input, OnInit} from '@angular/core';
 export class PurchaseListComponent implements OnInit {
   @Input()
   public purchase;
-  public purchaseHead =['Created', 'Coin', 'Amount', 'Unit Price($)', 'Paid with', 'Total paid'];
+  public purchaseHead = ['Created', 'Coin', 'Amount', 'Unit Price($)', 'Paid with', 'Total paid'];
 
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }

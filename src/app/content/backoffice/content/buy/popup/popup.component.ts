@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class PopupComponent {
 
 
-  constructor(
+  public constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router
   ) { }
