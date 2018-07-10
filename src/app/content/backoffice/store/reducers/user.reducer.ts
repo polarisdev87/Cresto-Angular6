@@ -1,4 +1,7 @@
-import { DELETE_TWOFACTOR_SUCCESS, VERIFY_TWOFACTOR_SUCCESS } from './../../content/settings/store/actions/twofactor.actions';
+import {
+  DELETE_TWOFACTOR_SUCCESS,
+  VERIFY_TWOFACTOR_SUCCESS
+} from './../../content/settings/store/actions/twofactor.actions';
 import { EDIT_USER_SUCCESS } from './../actions/user.actions';
 import { GET_CURRENT_USER_SUCCESS } from '../actions/user.actions';
 

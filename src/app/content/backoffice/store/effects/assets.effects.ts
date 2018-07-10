@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {Actions, Effect} from '@ngrx/effects';
-import {Action} from '@ngrx/store';
-import {Observable, of} from 'rxjs';
-import {catchError, map, switchMap} from 'rxjs/operators';
-import {ASSETS_REQUEST, AssetsLoadFail, AssetsLoadSuccess} from '../actions/assets.actions';
-import {WalletsService} from '../../../../shared/services/wallets.service';
+import { Injectable } from '@angular/core';
+import { Actions, Effect } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { ASSETS_REQUEST, AssetsLoadFail, AssetsLoadSuccess } from '../actions/assets.actions';
+import { WalletsService } from '../../../../shared/services/wallets.service';
 
 @Injectable()
 export class AssetsEffects {

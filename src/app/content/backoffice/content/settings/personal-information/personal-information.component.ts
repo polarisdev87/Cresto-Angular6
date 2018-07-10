@@ -13,7 +13,7 @@ import { IRootState } from '../../../../../store/reducers';
 export class PersonalInformationComponent implements OnInit {
 
   public switch = true;
-  public user$: Observable<User>;
+  public user$!: Observable<User>;
   public name: FormControl = new FormControl({value: '', disabled: true}, [Validators.required]);
 
   public constructor(

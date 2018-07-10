@@ -8,19 +8,19 @@ import { Component } from '@angular/core';
 })
 export class HelpComponent {
 
-  toggleClassActive = false;
-  isActive = false;
+  public toggleClassActive = false;
+  public isActive = false;
 
   public submitButton = {
     name: 'Submit',
     class: 'emptyGreen'
   };
 
-  toggleClass() {
+  public toggleClass() {
     this.toggleClassActive = !this.toggleClassActive;
   }
 
-  toggleClassIsActive() {
+  public toggleClassIsActive() {
     this.isActive = !this.isActive;
   }
 

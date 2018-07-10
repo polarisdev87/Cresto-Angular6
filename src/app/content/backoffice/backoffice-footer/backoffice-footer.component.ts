@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-backoffice-footer',
@@ -10,6 +10,6 @@ export class BackofficeFooterComponent {
   public buttonStateHelp = {
     name: 'Help',
     class: 'emptyGreen'
-  }
+  };
 
 }

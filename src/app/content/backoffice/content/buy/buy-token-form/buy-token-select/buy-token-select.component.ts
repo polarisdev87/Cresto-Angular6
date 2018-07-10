@@ -1,6 +1,6 @@
-import {Component, forwardRef} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-
+import { Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+type Cb = (_: number) => void;
 @Component({
   selector: 'app-buy-token-select',
   templateUrl: './buy-token-select.component.html',
@@ -14,11 +14,9 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
   ]
 })
 export class BuyTokenSelectComponent implements ControlValueAccessor {
+  public currentCoin: number = 1;
 
-  private _onChange;
-  private _onTouched;
-
-  public currentCoin = 1;
+  private _onChange!: Cb;
 
   public selectCoin(coin: number) {
     this.currentCoin = coin;
@@ -29,11 +27,10 @@ export class BuyTokenSelectComponent implements ControlValueAccessor {
     this.currentCoin = coin;
   }
 
-  public registerOnChange(fn: any): void {
+  public registerOnChange(fn: Cb): void {
     this._onChange = fn;
   }
 
-  public registerOnTouched(fn: any): void {
-    this._onTouched = fn;
+  public registerOnTouched(_fn: Cb): void {
   }
 }

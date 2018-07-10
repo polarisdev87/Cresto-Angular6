@@ -13,37 +13,37 @@ import { IRootState } from '../../../../store/reducers';
 })
 export class BuyComponent implements OnInit {
   @Input()
-  wallets;
-  currency;
+  public wallets;
+  public currency;
 
-  logos = {
+  public logos = {
     btc: 'assets/images/bitcoin.png',
     eth: 'assets/images/ether.png',
     cstt: 'assets/images/logo.png'
   };
 
-  assets$: Observable<any>;
-  wallets$: Observable<any>;
-  makeDepositLink = {
+  public assets$!: Observable<any>;
+  public wallets$!: Observable<any>;
+  public makeDepositLink = {
     name: 'Make deposit',
     class: 'emptyGreen'
   };
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>,
     private _dialog: MatDialog
   ) {
   }
 
-  openPopup(address) {
+  public openPopup(address) {
     this._dialog.open(DepositPopupComponent, {
       data: {
-        address: address
+        address
       }
     });
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
   }
 }

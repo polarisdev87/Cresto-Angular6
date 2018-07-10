@@ -9,18 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificationNoticeComponent implements OnInit {
 
-  username: string;
+  public username!: string;
 
-  constructor(
+  public constructor(
     private _authService: AuthService,
     private _router: ActivatedRoute,
   ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this._router.queryParams.subscribe((data: { username: string }) => this.username = data['username']);
   }
 
-  resendVerificationEmail() {
+  public resendVerificationEmail() {
     this._authService.recendVerificationEmail(this.username)
     .subscribe(() => alert(`Email successfully sent to: ${this.username}`));
   }
