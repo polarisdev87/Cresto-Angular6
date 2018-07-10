@@ -14,7 +14,7 @@
         ></app-other-coin-thumbnail>
 
       </div>
-      <div class="wallet {{item.asset.code}} " *ngIf="item.asset.code === 'cstt' && !currentCoin && !withdrawalToched">
+      <div class="wallet {{item.asset.code}} " (click) = "outputTable()" *ngIf="item.asset.code === 'cstt'  && !currentCoin && !withdrawalToched">
         <app-own-coin-thumbnail [item]="item"></app-own-coin-thumbnail>
       </div>
 
@@ -25,5 +25,7 @@
   <app-depositview *ngIf="currentCoin" [coin]="currentCoin"></app-depositview>
   <app-withdrawal-founds  *ngIf="withdrawalToched" [coin]="withdrawalToched" ></app-withdrawal-founds>
   <!--<app-help></app-help>-->
-  <app-transaction-list [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+  <app-transaction-list *ngIf = "crestokenFlag" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+  <app-purchase-list *ngIf = "!crestokenFlag" [purchase]="purchase$ "></app-purchase-list>
+  <!--<app-transaction-list [transactions]="purchase$ | async "></app-transaction-list>-->
 </div>

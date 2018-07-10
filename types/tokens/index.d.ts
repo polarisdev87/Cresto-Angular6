@@ -35,10 +35,19 @@ type GenerateWalletAddress = {
 
 
 type WalletData = {
-  id: number
-  code: string
-  chain: string
-  balance: number
-  usd_balance: number
+  id: number,
+  code: string,
+  chain: string,
+  balance: number,
+  usd_balance: number,
   top_up_address: string
+}
+
+type PurchaseData = {
+  id: number,
+  code: string,
+  balance: number,
+  usd_balance: number,
+  date: string,
+  amount: number
 }
