@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, ViewChild } from '@angular/core';
-import { ScrollbarComponent } from 'ngx-scrollbar';
+import {ChangeDetectionStrategy, Component, Input, ViewChild} from '@angular/core';
+import {ScrollbarComponent} from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-backoffice-table',
@@ -14,4 +14,14 @@ export class BackofficeTableComponent {
   @Input() scroll;
 
   @ViewChild(ScrollbarComponent) scrollRef: ScrollbarComponent;
+
+  changeCoinString(str) {
+    if (str === 'btc') {
+      return 'Bitcoin';
+    } else if (str === 'eth') {
+      return 'Ethereum';
+    } else if (str) {
+      return str;
+    }
+  }
 }
