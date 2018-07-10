@@ -16,17 +16,17 @@ export class OtherCoinThumbnailComponent {
   @Output()
   public setDeposit = new EventEmitter();
 
-  CSTTBtnState = {
+  public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'
   };
 
-  depositBtnState = {
+  public depositBtnState = {
     name: 'Deposit',
     class: 'emptyGreen'
   };
 
-  withdrawalBtnState = {
+  public withdrawalBtnState = {
     name: 'Withdrawal',
     class: 'emptyRed'
   };

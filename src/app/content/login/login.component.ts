@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.loader$ = this._store.select('auth', 'loading');
     this.form = this._fb.group({
       username: ['', [Validators.required]],
@@ -30,15 +30,15 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(user: User) {
+  public login(user: User) {
     this._store.dispatch(new Login(user));
   }
 
-  facebookLogin() {
+  public facebookLogin() {
     this._store.dispatch(new FacebookLogin());
   }
 
-  googleLogin() {
+  public googleLogin() {
     this._store.dispatch(new GoogleLogin());
   }
 }

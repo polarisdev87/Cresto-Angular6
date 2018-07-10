@@ -11,15 +11,15 @@ export class DepositviewComponent {
   @Input()
   public coin;
 
-  confirmButton = true;
+  public confirmButton = true;
 
-  depositBtn = {
+  public depositBtn = {
     name: 'Copy address',
     class: 'emptyGreen'
   };
 
 
-  confirmSelected() {
+  public confirmSelected() {
     this.confirmButton = !this.confirmButton;
   }
 

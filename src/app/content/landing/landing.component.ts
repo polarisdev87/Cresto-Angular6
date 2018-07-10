@@ -14,7 +14,7 @@ export class LandingComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.params['referralHash'];
     if (referralHash) {
       this._localStorageService.setItem('referralHash', referralHash);
@@ -51,7 +51,7 @@ export class LandingComponent implements OnInit {
     }
   }
 
-  scrollTotop() {
+  public scrollTotop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }

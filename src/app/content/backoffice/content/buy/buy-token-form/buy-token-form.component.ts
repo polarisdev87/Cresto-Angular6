@@ -13,7 +13,7 @@ import { IRootState } from '../../../../../store/reducers';
 })
 export class BuyTokenFormComponent implements OnInit {
   // TODO select from store
-  currencies = {
+  public currencies = {
     1: 'BTC',
     3: 'ETH'
   };
@@ -25,17 +25,17 @@ export class BuyTokenFormComponent implements OnInit {
   };
 
   // total$: Observable<number>;
-  userId$: Observable<string>;
-  tokenPrice$: Observable<number>;
+  public userId$: Observable<string>;
+  public tokenPrice$: Observable<number>;
 
-  tokensform: FormGroup;
+  public tokensform: FormGroup;
 
   constructor(
     private _store: Store<IRootState>,
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price)
     );
@@ -64,7 +64,7 @@ export class BuyTokenFormComponent implements OnInit {
     });
   }
 
-  buy() {
+  public buy() {
     combineLatest(
       this.userId$,
       of(this.tokensform.value),

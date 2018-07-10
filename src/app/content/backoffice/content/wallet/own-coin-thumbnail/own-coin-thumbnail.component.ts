@@ -10,17 +10,17 @@ export class OwnCoinThumbnailComponent {
   @Input()
   public item;
 
-  CSTTBtnState = {
+  public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'
   };
 
-  depositBtnState = {
+  public depositBtnState = {
     name: 'Deposit',
     class: 'emptyGreen'
   };
 
-  withdrawalBtnState = {
+  public withdrawalBtnState = {
     name: 'Withdrawal',
     class: 'emptyRed'
-  };}
+  }; }

@@ -19,7 +19,7 @@ export class BackofficeComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this._store.dispatch(new GetCurrentUser());
     this._store.dispatch(new AclRequest());
     this._store.dispatch(new AssetsRequest());

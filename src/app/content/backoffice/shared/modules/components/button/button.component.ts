@@ -8,7 +8,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 })
 export class ButtonComponent {
   @Input()
-  buttonState = {
+  public buttonState = {
     name: String,
     class: String
   };

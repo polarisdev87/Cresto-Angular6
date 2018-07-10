@@ -31,14 +31,24 @@
       true,
       240
     ],
-    "member-access": false,
+    "member-access": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "check-accessor",
+          "check-constructor",
+          "check-parameter-property"
+        ]
+      }
+    },
     "member-ordering": [
       true,
       {
         "order": [
           "static-field",
-          "instance-field",
           "static-method",
+          "instance-field",
           "instance-method"
         ]
       }

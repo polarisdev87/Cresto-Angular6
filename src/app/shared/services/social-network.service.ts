@@ -1,22 +1,17 @@
 import { LocalStorageService } from './localStorage.service';
 import { HttpService } from '../../http.service';
-import { LoginSuccess } from './../../store/actions/auth.action';
-import { Store } from '@ngrx/store';
-import { map, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-declare var FB: any;
-import { from, of, Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-const appId: string = environment.facebookConfig.appId;
-import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angular5-social-login';
+import { AuthService, GoogleLoginProvider } from 'angular5-social-login';
 
-@Injectable({
-  providedIn: 'root'
-})
+declare var FB: any;
+const appId: string = environment.facebookConfig.appId;
+
+@Injectable()
 export class SocialNetworkService {
 
   constructor(
-    private _store: Store<any>,
     private _http: HttpService,
     private _googleService: AuthService,
     private _localStorageService: LocalStorageService,
@@ -30,40 +25,40 @@ export class SocialNetworkService {
     });
   }
 
-  facebookLogin(): Observable<any> {
+  public facebookLogin(): Observable<any> {
     return from(
-      new Promise((resolve, reject) => {
-        (FB as any).login((response) => resolve(response), { scope: 'public_profile, email' });
+      new Promise((resolve) => {
+        (FB as any).login((response) => resolve(response), {scope: 'public_profile, email'});
       })
     );
   }
 
-  successFbLogin(access_token): Observable<User> {
+  public successFbLogin(access_token): Observable<User> {
     let referredBy = '';
     try {
       referredBy = this._localStorageService.getItem('referralHash');
     } catch (err) {
       console.log(err);
     }
-    return this._http.nonAuthorizedRequest('/facebook', { access_token, referredBy }, 'POST');
+    return this._http.nonAuthorizedRequest('/facebook', {access_token, referredBy}, 'POST');
 
   }
 
-  googleSignIn(): Observable<string> {
-    return from(new Promise((res, rej) => {
+  public googleSignIn(): Observable<string> {
+    return from(new Promise((res) => {
       this._googleService.signIn(GoogleLoginProvider.PROVIDER_ID).then((userData: any) => {
         res(userData.token);
       });
     }));
   }
 
-  googleSuccessLogin(access_token: string): Observable<User> {
+  public googleSuccessLogin(access_token: string): Observable<User> {
     let referredBy = '';
     try {
       referredBy = this._localStorageService.getItem('referralHash');
     } catch (err) {
       console.log(err);
     }
-    return this._http.nonAuthorizedRequest('/google', { access_token, referredBy }, 'POST');
+    return this._http.nonAuthorizedRequest('/google', {access_token, referredBy}, 'POST');
   }
 }

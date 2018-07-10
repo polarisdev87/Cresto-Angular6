@@ -14,7 +14,7 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
   public roundsReferralsUsers$: Observable<User[]>;
   public referralLink;
   public userSubscription: Subscription;
-  loader$: Observable<boolean>;
+  public loader$: Observable<boolean>;
   public referralUsersHeaders = [
     'S/N', 'Referral Username', 'Date Registered'
   ];

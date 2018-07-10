@@ -5,7 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class TransactionsPipePipe implements PipeTransform {
 
-  transform(transactions: any[], coin: any): any {
+  public transform(transactions: any[], coin: any): any {
     if (!coin) {
       return transactions;
     }

@@ -10,6 +10,6 @@ export class BackofficeFooterComponent {
   public buttonStateHelp = {
     name: 'Help',
     class: 'emptyGreen'
-  }
+  };
 
 }

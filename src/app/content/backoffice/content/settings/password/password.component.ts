@@ -14,15 +14,15 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./password.component.sass']
 })
 export class PasswordComponent implements OnInit {
-  isLoading$: Observable<boolean>;
-  isCurrentPasswordValid$: Observable<boolean>;
-  error$: Observable<string>;
-  form: FormGroup;
-  currentPassword: FormControl = new FormControl('', [Validators.required]);
+  public isLoading$: Observable<boolean>;
+  public isCurrentPasswordValid$: Observable<boolean>;
+  public error$: Observable<string>;
+  public form: FormGroup;
+  public currentPassword: FormControl = new FormControl('', [Validators.required]);
 
-  changeClassAndtype = true;
-  changeClassAndTypeenter = true;
-  changeClassAndTypecomfirm = true;
+  public changeClassAndtype = true;
+  public changeClassAndTypeenter = true;
+  public changeClassAndTypecomfirm = true;
 
   constructor(
     private _store: Store<IRootState>,
@@ -34,7 +34,7 @@ export class PasswordComponent implements OnInit {
     }, { validator: PasswordValidators.checkPasswordMatch });
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.isLoading$ = this._store.select('settings', 'editPassword', 'isLoading');
     // TODO figure out design for error handling
     this.error$ = this._store.select('settings', 'editPassword', 'error');
@@ -47,23 +47,23 @@ export class PasswordComponent implements OnInit {
     });
   }
 
-  checkCurrentPassword(currentPassword: string): void {
+  public checkCurrentPassword(currentPassword: string): void {
     this._store.dispatch(new CheckUserPassword({ currentPassword }));
   }
 
-  editUserPassword(value: EditPasswordData): void {
+  public editUserPassword(value: EditPasswordData): void {
     this._store.dispatch(new EditUserPassword({...value, currentPassword: this.currentPassword.value}));
   }
 
-  changeClassAndType() {
+  public changeClassAndType() {
     this.changeClassAndtype = !this.changeClassAndtype;
   }
 
-  changeClassAndTypeEnter() {
+  public changeClassAndTypeEnter() {
     this.changeClassAndTypeenter = !this.changeClassAndTypeenter;
   }
 
-  changeClassAndTypeComfirm() {
+  public changeClassAndTypeComfirm() {
     this.changeClassAndTypecomfirm = !this.changeClassAndTypecomfirm;
   }
 }

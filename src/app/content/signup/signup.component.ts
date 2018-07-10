@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.form = this._fb.group({
       username: ['', Validators.required],
       email: ['', Validators.email],
@@ -38,11 +38,11 @@ export class SignupComponent implements OnInit {
     this._store.dispatch(new SignUp(user));
   }
 
-  facebookLogin() {
+  public facebookLogin() {
     this._store.dispatch(new FacebookLogin());
   }
 
-  googleLogin() {
+  public googleLogin() {
     this._store.dispatch(new GoogleLogin());
   }
 }

@@ -14,11 +14,11 @@ import { skip } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None
 })
 export class TwoFactorAuthComponent implements OnInit {
-  tfaData$: Observable<TwoFactorState['tfaData']>;
-  twofactorState = 'def';
-  disableTfaForm: FormGroup;
-  enableTfaCode: FormControl = new FormControl('', Validators.required);
-  isLoading$: Observable<boolean>;
+  public tfaData$: Observable<TwoFactorState['tfaData']>;
+  public twofactorState = 'def';
+  public disableTfaForm: FormGroup;
+  public enableTfaCode: FormControl = new FormControl('', Validators.required);
+  public isLoading$: Observable<boolean>;
 
   constructor(
     private _fb: FormBuilder,
@@ -30,7 +30,7 @@ export class TwoFactorAuthComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.isLoading$ = this._store.select('settings', 'tfa', 'isLoading');
     this.tfaData$ = this._store.select('settings', 'tfa', 'tfaData');
     this._store.select('backoffice', 'user', 'twofactorEnabled').pipe(
@@ -44,21 +44,21 @@ export class TwoFactorAuthComponent implements OnInit {
     });
   }
 
-  changeTfaState(value: string) {
+  public changeTfaState(value: string) {
     this.twofactorState = value;
   }
 
-  enableTfaSetup() {
+  public enableTfaSetup() {
     this.changeTfaState('enableAuthenticatorSupport');
     this._store.dispatch(new TwoFactorSetup());
   }
 
-  enableTfa() {
+  public enableTfa() {
     this._store.dispatch(new VerifyTwoFactor({ token: this.enableTfaCode.value}));
     this.enableTfaCode.reset();
   }
 
-  disableTfa() {
+  public disableTfa() {
     this._store.dispatch(new DeleteTwoFactor({...this.disableTfaForm.value}));
     this.disableTfaForm.reset();
   }

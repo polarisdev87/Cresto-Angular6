@@ -15,9 +15,9 @@ import {getWalletsData} from '../../store/selectors/assets.selector';
 })
 export class WalletComponent implements OnInit {
 
-  assets$: Observable<any>;
-  wallets$: Observable<WalletData[]>;
-  transactions$: Observable<any>;
+  public assets$: Observable<any>;
+  public wallets$: Observable<WalletData[]>;
+  public transactions$: Observable<any>;
 
   public currentCoin;
 
@@ -26,7 +26,7 @@ export class WalletComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getWalletsData);
     this.transactions$ = this._store.select('walletList', 'transactions', 'data');

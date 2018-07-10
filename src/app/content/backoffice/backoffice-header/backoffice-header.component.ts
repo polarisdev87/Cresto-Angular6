@@ -10,14 +10,14 @@ import {getAssets} from '../store/selectors/assets.selector';
   styleUrls: ['./backoffice-header.component.sass']
 })
 export class BackofficeHeaderComponent implements OnInit {
-  logo = 'assets/images/backoffice-logo.png';
-  assets$: Observable<any>;
+  public logo = 'assets/images/backoffice-logo.png';
+  public assets$: Observable<any>;
 
   constructor(
     private _store: Store<IRootState>,
   ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.assets$ = this._store.select(getAssets);
   }
 

@@ -5,7 +5,7 @@ import { Observable, combineLatest } from 'rxjs';
 export class WalletService {
   public constructor() {}
 
-  calculateWithdrawalData(...sources: Observable<any>[]): Observable<CalculateFee> {
+  public calculateWithdrawalData(...sources: Observable<any>[]): Observable<CalculateFee> {
    return combineLatest(
       sources,
       (userId: string, amount: number) => {
@@ -18,7 +18,7 @@ export class WalletService {
   }
 
 
-  withdrawal(...sources: Observable<any>[]): Observable<WithdrawalBody> {
+  public withdrawal(...sources: Observable<any>[]): Observable<WithdrawalBody> {
     return combineLatest(
       sources,
       (userId: string, data: { amount: number, cstt_address: number }) => {
