@@ -2,8 +2,8 @@
   <h2>Personal  Information</h2>
   <form>
     <div class="name-wrapper">
-      <label for="name">Name</label>
-      <button class="icon-building"  *ngIf="switch" (click)="setDisabledState()"></button>
+      <label>Name</label>
+      <button class="icon-edit"  *ngIf="switch" (click)="setDisabledState()"></button>
       <button class="icon-tick"
         *ngIf="!switch"
         (click)="setDisabledState()"
@@ -12,9 +12,9 @@
       <input type="text" class="form-control" [formControl]="name">
       <span class="warning" *ngIf="name.invalid">Can not be empty</span>
     </div>
-    <label for="email">Email</label>
+    <label>Email</label>
     <input type="text" [value]="(user$ | async)?.email" readonly>
-    <label for="sponsor">Sponsor</label>
+    <label>Sponsor</label>
     <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
   </form>
 </div>

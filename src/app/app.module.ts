@@ -31,6 +31,7 @@ import { RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings } from 'ng-recap
 import { UiModule } from './shared/module/ui/ui.module';
 import { PopupComponent } from './content/backoffice/content/buy/popup/popup.component';
 import { routes } from './routes';
+import { SharedModule } from './content/backoffice/shared/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { routes } from './routes';
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
+    SharedModule,
     UiModule,
     RecaptchaModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),

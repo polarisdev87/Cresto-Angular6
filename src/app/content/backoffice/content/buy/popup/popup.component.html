@@ -1,3 +1,12 @@
-<p>
-  {{data.message}}
-</p>
+<div class="popup-wrapper" >
+  <button class="icon-close" matDialogClose></button>
+  <span class="icon-Exclamation"></span>
+  <p>
+    You don't have enough BTC on your account.
+    <br>
+    Please,make a deposit to buy CSTT
+  </p>
+  <div class="button-wrapper">
+      <button class="btn emptyGreen" matDialogClose (click)="toWallet()">Deposit BTC</button>
+  </div>
+</div>
