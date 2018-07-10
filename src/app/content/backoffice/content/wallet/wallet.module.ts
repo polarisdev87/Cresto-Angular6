@@ -16,6 +16,8 @@ import { effects } from './store/effects';
 import { OwnCoinThumbnailComponent } from './own-coin-thumbnail/own-coin-thumbnail.component';
 import { OtherCoinThumbnailComponent } from './other-coin-thumbnail/other-coin-thumbnail.component';
 import { TransactionsPipePipe } from './transactions-pipe.pipe';
+import { WithdrawalFoundsComponent } from './withdrawal-founds/withdrawal-founds.component';
+import { PurchaseListComponent } from './purchase-list/purchase-list.component';
 
 @NgModule({
   imports: [
@@ -31,7 +33,8 @@ import { TransactionsPipePipe } from './transactions-pipe.pipe';
     EffectsModule.forFeature(effects),
   ],
   declarations: [WalletComponent, TransactionListComponent, HelpComponent,
-    DepositviewComponent, OwnCoinThumbnailComponent, OtherCoinThumbnailComponent, TransactionsPipePipe],
+    DepositviewComponent, OwnCoinThumbnailComponent,
+    OtherCoinThumbnailComponent, TransactionsPipePipe, WithdrawalFoundsComponent, PurchaseListComponent],
   providers: [WalletService]
 })
 export class WalletModule {

@@ -1,5 +1,22 @@
 @import "../../../backoffice.component"
 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+  transition: background-color 5000s ease-in-out 0s
+
+input:-webkit-autofill
+  //-webkit-box-shadow: 0 0 0 50px white inset /* Change the color to your own background color */
+  -webkit-text-fill-color: $grey-light
+
+input:-webkit-autofill:focus
+  //-webkit-box-shadow: 0 0 0 50px white inset /*your box-shadow*/,0 0 0 50px white inset;
+  -webkit-text-fill-color: $grey-light
+
+
+
 .personal-information-wrapper
   width: 100%
   max-width: 850px
@@ -49,7 +66,7 @@ form
         color: red
         font-family: $OpenSansRegular
 
-.icon-building
+.icon-edit
     position: absolute
     right: 10px
     bottom: 30px
@@ -59,7 +76,7 @@ form
     background: none
     border: none
     outline: none
-    font-size: 18px
+    font-size: 30px
     &:hover
         opacity: 1
 .icon-tick

@@ -14,4 +14,14 @@ export class BackofficeTableComponent {
   @Input() public scroll;
 
   @ViewChild(ScrollbarComponent) public scrollRef!: ScrollbarComponent;
+
+  public changeCoinString(str) {
+    if (str === 'btc') {
+      return 'Bitcoin';
+    } else if (str === 'eth') {
+      return 'Ethereum';
+    } else if (str) {
+      return str;
+    }
+  }
 }

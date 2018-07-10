@@ -48,4 +48,8 @@ export class WalletsService {
   public generateWalletAddress(data: GenerateWalletAddress): Observable<{ address: string }> {
     return this._http.authorizedRequest(`/user/${data.userId}/wallets/${data.wallet_id}/generate_address`, '', 'POST');
   }
+
+  getPurchaseData(userId: string): Observable<any> {
+    return this._http.authorizedRequest(`/cstt/purchases/${userId}`, '', 'GET');
+  }
 }

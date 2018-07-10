@@ -43,7 +43,7 @@ export const routes = [
         data: {
           title: 'STAKING',
           subtitle: `Our staking platform allows you to earn monthly dividends in the
-          form of CSTT tokens (up to 10%), when you tokens for 30 days or more.`,
+          form of CSTT tokens (up to 10%), when you stake tokens for 30 days or more.`,
           backgroundImg: '../../../assets/images/staking.png'
         },
         canLoad: [AccessGuardService]

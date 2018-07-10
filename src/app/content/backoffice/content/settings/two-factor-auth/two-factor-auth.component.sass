@@ -9,6 +9,11 @@
   padding: 50px
   // width: 50%
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    margin: 0
+
   .two-factor-auth__title
     font-family: $OpenSansSemiBold
     font-size: 24px
@@ -42,6 +47,7 @@
     grid-gap: 22px
     button
       width: 150px
+      justify-self: center
     button:hover
       cursor: pointer
     form

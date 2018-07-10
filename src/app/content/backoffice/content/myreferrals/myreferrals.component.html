@@ -5,14 +5,14 @@
 <div class="referral-list" *ngIf="roundsReferralsUsers$ | async as roundsReferralsUsers">
   <div class="referral-list-header">
     <h4>My team members</h4>
-    <span>100 members referred</span>
+    <span>{{roundsReferralsUsers.length}} members referred</span>
   </div>
   <app-backoffice-table
     [dashboardTableHead] = "referralUsersHeaders"
     [rounds]="roundsReferralsUsers"
     [scroll]="false"
     [columns]="[
-        {value: '_id'},
+        {value: 'something which we can`t find in this array'},
         {value: 'username'},
         {value: 'createdAt'}
         ]">

@@ -1,3 +1,11 @@
-<p>
-  {{data.message}}
-</p>
+<div class="popup-wrapper" >
+
+  <button *ngIf="data.iconClose" class="icon-close" matDialogClose></button>
+  <span *ngIf="data.iconClass" class="{{data.iconClass}}"></span>
+  <p>
+    {{data.message}}
+  </p>
+  <div *ngIf="data.btnClass" class="button-wrapper">
+      <button class="btn {{data.btnClass}}" matDialogClose (click)="toWallet()">{{data.btnTextContent}}</button>
+  </div>
+</div>

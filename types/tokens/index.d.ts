@@ -43,3 +43,12 @@ type WalletData = {
   top_up_address?: string
   asset?: string
 };
+
+type PurchaseData = {
+  id: number,
+  code: string,
+  balance: number,
+  usd_balance: number,
+  date: string,
+  amount: number
+};

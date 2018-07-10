@@ -1,0 +1,20 @@
+<div class="transaction-table-wrapper">
+  <h2>History</h2>
+  <div class="transaction-tabletransaction-table">
+    <app-backoffice-table
+      [dashboardTableHead]="purchaseHead"
+      [rounds]="purchase | async"
+      [columns]="[
+        {value: 'created_at'},
+        {value: 'asset_code'},
+        {value: 'paid_amount'},
+        {value: 'transaction_type'},
+        {value: 'status'},
+        {value: 'hash'}
+      ]"
+      [scroll]="false"
+
+    ></app-backoffice-table>
+
+  </div>
+</div>

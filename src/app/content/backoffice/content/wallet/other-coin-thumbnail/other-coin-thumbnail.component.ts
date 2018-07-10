@@ -16,6 +16,9 @@ export class OtherCoinThumbnailComponent {
   @Output()
   public setDeposit = new EventEmitter();
 
+  @Output()
+  public setWithdrawal = new EventEmitter();
+
   // tslint:disable-next-line
   public CSTTBtnState = {
     name: 'Buy',
@@ -34,6 +37,10 @@ export class OtherCoinThumbnailComponent {
 
   public setDepositCoin(coin) {
     this.setDeposit.next(coin);
+  }
+
+  public setWithdrawalCoin(coin) {
+    this.setWithdrawal.emit(coin);
   }
 
 }

@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 import { IRootState } from '../../../../store/reducers';
 import { TransactionRequest } from './store/actions/transaction.actions';
 import { getWalletsData } from '../../store/selectors/assets.selector';
+import {PurchaseRequest} from "./store/actions/purchase.action";
 
 @Component({
   selector: 'app-wallet',
@@ -17,8 +18,11 @@ export class WalletComponent implements OnInit {
   public assets$!: Observable<any>;
   public wallets$!: Observable<WalletData[]>;
   public transactions$!: Observable<any>;
+  public purchase$!: Observable<any>;
 
+  public crestokenFlag = true;
   public currentCoin;
+  withdrawalToched;
 
   public constructor(
     private _store: Store<IRootState>
@@ -29,6 +33,7 @@ export class WalletComponent implements OnInit {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getWalletsData);
     this.transactions$ = this._store.select('walletList', 'transactions', 'data');
+    this.purchase$ = this._store.select('walletList', 'purchase', 'data');
 
     this._store.select('backoffice', 'user', '_id')
       .pipe(
@@ -39,6 +44,7 @@ export class WalletComponent implements OnInit {
           return;
         }
         this._store.dispatch(new TransactionRequest(id));
+        this._store.dispatch(new PurchaseRequest(id));
       });
   }
 
@@ -47,5 +53,17 @@ export class WalletComponent implements OnInit {
       return;
     }
     this.currentCoin = coin;
+  }
+
+  public withdrawalTochedActive(coin) {
+    if (!this.withdrawalToched) {
+      return;
+    }
+    this.withdrawalToched = coin;
+  }
+
+  public outputTable() {
+    this.crestokenFlag = false;
+
   }
 }

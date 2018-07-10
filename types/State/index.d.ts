@@ -18,5 +18,10 @@ type WalletState = {
   isLoaded: boolean;
   data: any[],
   generatedAddress: string | null
-};
+}
 
+type PurchaseState = {
+  isLoading: boolean;
+  isLoaded: boolean;
+  data: PurchaseData[]
+}

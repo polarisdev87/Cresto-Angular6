@@ -15,6 +15,7 @@ import { AuthService } from '../../../../shared/services/auth.service';
 import { GET_CURRENT_USER, GetCurrentUserSuccess } from '../actions/user.actions';
 import { SettingsService } from '../../../../shared/services/settings.service';
 import { PopupComponent } from '../../content/buy/popup/popup.component';
+// import { isBoolean } from 'util';
 
 @Injectable()
 export class UserEffects {
@@ -31,7 +32,7 @@ export class UserEffects {
           return of(new GetCurrentUserFail(err));
         })
       )),
-  );
+    );
 
   @Effect()
   public editUser$: Observable<Action> = this.actions$
@@ -39,14 +40,22 @@ export class UserEffects {
       map((action: EditUserRequest) => action.payload),
       switchMap((user: UserToEdit) => this._settingsService.editPersonalInfo(user).pipe(
         map((data: UserToCreate) => new EditUserSuccess(data)),
-        tap(() => this._dialog.open(PopupComponent, { data: { message: 'Success' } })),
+        tap(() => this._dialog.open(PopupComponent, {
+          data: {
+            iconClose: 'icon-close',
+            iconClass: 'icon-tick',
+            message: 'SUCCESS',
+            btnClass: '',
+            btnTextContent: ''
+          }
+        })),
         catchError((err: Error) => {
           // tslint:disable-next-line
           console.log(err);
           return of(new EditUserFail(err));
         })
       )),
-  );
+    );
 
   public constructor(
     private actions$: Actions,
