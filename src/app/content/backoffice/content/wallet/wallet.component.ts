@@ -18,7 +18,7 @@ export class WalletComponent implements OnInit {
   public assets$!: Observable<any>;
   public wallets$!: Observable<WalletData[]>;
   public transactions$!: Observable<any>;
-  public purchase$: Observable<any>;
+  public purchase$!: Observable<any>;
 
   public crestokenFlag = true;
   public currentCoin;

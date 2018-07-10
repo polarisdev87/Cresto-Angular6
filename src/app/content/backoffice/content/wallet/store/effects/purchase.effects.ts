@@ -8,7 +8,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
 import {Action} from '@ngrx/store';
 import {Observable, of} from 'rxjs';
-import {catchError, map, switchMap, tap} from 'rxjs/operators';
+import {catchError, map, switchMap} from 'rxjs/operators';
 import { WalletsService } from '../../../../../../shared/services/wallets.service';
 
 @Injectable()
