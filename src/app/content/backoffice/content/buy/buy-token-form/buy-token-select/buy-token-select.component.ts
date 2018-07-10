@@ -21,21 +21,19 @@ type Cb = (_: number) => void;
 })
 export class BuyTokenSelectComponent implements ControlValueAccessor, OnInit {
   public currentCoin: number = 1;
-  public wallets$: Observable<WalletData[]>;
+  public wallets$!: Observable<WalletData[]>;
+
+  public coinCur = 1;
 
   private _onChange!: Cb;
 
-  private _onTouched;
 
-  public currentCoin = 1;
-  public coinCur = 1;
-
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.wallets$ = this._store.select(getWalletsDatas);
   }
 
@@ -53,8 +51,7 @@ export class BuyTokenSelectComponent implements ControlValueAccessor, OnInit {
     this._onChange = fn;
   }
 
-  public registerOnTouched(fn: any): void {
-    this._onTouched = fn;
+  public registerOnTouched(_fn: any): void {
   }
 
 }

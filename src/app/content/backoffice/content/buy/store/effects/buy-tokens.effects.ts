@@ -38,7 +38,11 @@ export class BuyTokensEffects {
         catchError((err: Error) => {
           this._dialog.open(PopupComponent, {
             data: {
-              message: err
+              iconClose: 'icon-close',
+              iconClass: 'icon-Exclamation',
+              message: 'You don\'t have enough BTC on your account. Please, make a deposit to buy CSTT',
+              btnClass: 'emptyGreen',
+              btnTextContent: 'Deposit BTC'
             }
           });
           // tslint:disable-next-line
