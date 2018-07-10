@@ -1,11 +1,10 @@
-import {Observable} from 'rxjs';
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {filter} from 'rxjs/operators';
-import {WalletRequest} from '../../store/actions/wallets.action';
-import {IRootState} from '../../../../store/reducers';
-import {TransactionRequest} from './store/actions/transaction.actions';
-import {getWalletsData} from '../../store/selectors/assets.selector';
+import { Observable } from 'rxjs';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs/operators';
+import { IRootState } from '../../../../store/reducers';
+import { TransactionRequest } from './store/actions/transaction.actions';
+import { getWalletsData } from '../../store/selectors/assets.selector';
 
 @Component({
   selector: 'app-wallet',
@@ -21,7 +20,7 @@ export class WalletComponent implements OnInit {
 
   public currentCoin;
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {
   }

@@ -2,9 +2,9 @@ import { TwoFactorState } from './../store/reducers/twofactor.reducer';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IRootState } from '../../../../../store/reducers';
-import { TwoFactorSetup, DeleteTwoFactor, VerifyTwoFactor } from '../store/actions/twofactor.actions';
+import { DeleteTwoFactor, TwoFactorSetup, VerifyTwoFactor } from '../store/actions/twofactor.actions';
 import { skip } from 'rxjs/operators';
 
 @Component({
@@ -20,7 +20,7 @@ export class TwoFactorAuthComponent implements OnInit {
   public enableTfaCode: FormControl = new FormControl('', Validators.required);
   public isLoading$: Observable<boolean>;
 
-  constructor(
+  public constructor(
     private _fb: FormBuilder,
     private _store: Store<IRootState>,
   ) {

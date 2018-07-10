@@ -1,4 +1,4 @@
-import {ActionReducerMap} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 import * as fromBuyToken from './buy-tokens.reducer';
 

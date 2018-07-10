@@ -27,11 +27,9 @@ export class CalculateWithdrawalFeeFail implements Action {
 }
 
 
-
 export class ClearWithdrawal implements Action {
   public readonly type: string = CLEAR_WITHDRAWAL;
 }
-
 
 
 export class WithdrawalRequest implements Action {

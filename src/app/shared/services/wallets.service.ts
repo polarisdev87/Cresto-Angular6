@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class WalletsService {
 
-  constructor(private _http: WalletHttpService) { }
+  public constructor(private _http: WalletHttpService) { }
 
   public getUserWallets(userId: string): Observable<any> {
     return this._http.authorizedRequest(`/user/${userId}/wallets`, '', 'GET');

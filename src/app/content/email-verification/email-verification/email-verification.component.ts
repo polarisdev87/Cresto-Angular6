@@ -11,7 +11,7 @@ export class EmailVerificationComponent implements OnInit {
 
   public error = false;
 
-  constructor(
+  public constructor(
     private _activatedRoute: ActivatedRoute,
     private _emailVerificationService: EmailVerificationService
   ) { }

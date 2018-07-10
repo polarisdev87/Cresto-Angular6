@@ -1,4 +1,4 @@
-import {GENERATE_WALLET_ADDRESS_SUCCESS, WALLET_FAIL, WALLET_REQUEST, WALLET_SUCCESS} from './../actions/wallets.action';
+import { GENERATE_WALLET_ADDRESS_SUCCESS, WALLET_FAIL, WALLET_REQUEST, WALLET_SUCCESS } from './../actions/wallets.action';
 
 export const initialState: WalletState = {
   isLoading: false,

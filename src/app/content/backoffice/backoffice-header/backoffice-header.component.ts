@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../../store/reducers';
-import {getAssets} from '../store/selectors/assets.selector';
+import { getAssets } from '../store/selectors/assets.selector';
 
 @Component({
   selector: 'app-backoffice-header',
@@ -13,7 +13,7 @@ export class BackofficeHeaderComponent implements OnInit {
   public logo = 'assets/images/backoffice-logo.png';
   public assets$: Observable<any>;
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>,
   ) { }
 

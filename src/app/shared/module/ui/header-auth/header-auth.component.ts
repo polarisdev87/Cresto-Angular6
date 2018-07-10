@@ -9,7 +9,7 @@ export class HeaderAuthComponent implements OnInit {
 
   public show = false;
 
-  constructor() { }
+  public constructor() { }
 
   public ngOnInit() {
     const el1 = document.createElement('script');

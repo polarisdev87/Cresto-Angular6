@@ -1,4 +1,4 @@
-import { ROUNDS_REQUEST, ROUNDS_SUCCESS, ROUNDS_FAIL } from '../actions/rounds.actions';
+import { ROUNDS_FAIL, ROUNDS_REQUEST, ROUNDS_SUCCESS } from '../actions/rounds.actions';
 
 export const initialState: any = {
   isLoading: false,

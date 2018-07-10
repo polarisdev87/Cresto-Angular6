@@ -11,7 +11,7 @@ export class VerificationNoticeComponent implements OnInit {
 
   public username: string;
 
-  constructor(
+  public constructor(
     private _authService: AuthService,
     private _router: ActivatedRoute,
   ) { }

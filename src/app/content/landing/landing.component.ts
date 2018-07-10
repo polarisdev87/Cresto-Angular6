@@ -8,7 +8,7 @@ import { LocalStorageService } from '../../shared/services/localStorage.service'
   styleUrls: ['./landing.component.sass']
 })
 export class LandingComponent implements OnInit {
-  constructor(
+  public constructor(
     private _activateroute: ActivatedRoute,
     private _localStorageService: LocalStorageService,
   ) {

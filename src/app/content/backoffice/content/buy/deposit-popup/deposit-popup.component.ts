@@ -1,5 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-deposit-popup',
@@ -9,7 +9,7 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 export class DepositPopupComponent {
   public address;
 
-  constructor(
+  public constructor(
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
   }

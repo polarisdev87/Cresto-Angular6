@@ -1,4 +1,4 @@
-import {createFeatureSelector, createSelector} from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 const ASSETS = {
   btc: {
@@ -14,8 +14,6 @@ const ASSETS = {
     tittle: 'CSTT wallet'
   },
 };
-
-
 
 
 export const getAssets = createSelector(
@@ -36,5 +34,4 @@ export const getWalletsData = createSelector(
     });
   }
 );
-
 

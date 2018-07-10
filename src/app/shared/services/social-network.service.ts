@@ -11,7 +11,7 @@ const appId: string = environment.facebookConfig.appId;
 @Injectable()
 export class SocialNetworkService {
 
-  constructor(
+  public constructor(
     private _http: HttpService,
     private _googleService: AuthService,
     private _localStorageService: LocalStorageService,

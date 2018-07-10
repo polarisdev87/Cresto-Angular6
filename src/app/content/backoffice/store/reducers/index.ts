@@ -1,4 +1,4 @@
-import {ActionReducerMap} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 import * as acl from './acl.reducer';
 import * as assets from './assets.reducer';

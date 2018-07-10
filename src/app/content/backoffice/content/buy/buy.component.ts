@@ -29,7 +29,7 @@ export class BuyComponent implements OnInit {
     class: 'emptyGreen'
   };
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>,
     private _dialog: MatDialog
   ) {
@@ -38,7 +38,7 @@ export class BuyComponent implements OnInit {
   public openPopup(address) {
     this._dialog.open(DepositPopupComponent, {
       data: {
-        address: address
+        address
       }
     });
   }

@@ -1,5 +1,5 @@
 import { MatDialog } from '@angular/material';
-import { CheckUserPassword, CheckUserPasswordSuccess, CheckUserPasswordFail, EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordSuccess, EditUserPasswordFail } from './../actions/edit-pasword.actions';
+import { CheckUserPassword, CheckUserPasswordFail, CheckUserPasswordSuccess, EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordFail, EditUserPasswordSuccess } from './../actions/edit-pasword.actions';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';

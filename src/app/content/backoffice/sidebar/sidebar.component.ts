@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
   public assets$: Observable<any>;
   public wallets$: Observable<any>;
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {}
 

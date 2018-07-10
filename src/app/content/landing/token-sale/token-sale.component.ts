@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TokenSaleComponent implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
   public ngOnInit() {
   }

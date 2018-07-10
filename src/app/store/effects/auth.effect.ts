@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
 import { LocalStorageService } from '../../shared/services/localStorage.service';
 import { SocialNetworkService } from '../../shared/services/social-network.service';
-import { GoogleLoginFail, LOGIN, Login, LoginSuccess, LoginFail, SIGN_UP, SignUp, SignUpSuccess, SignUpFail, LOGOUT, LogoutSuccess, LogoutFail, FACEBOOK_LOGIN, FacebookLoginFail, GOOGLE_LOGIN } from '../actions/auth.action';
+import { FACEBOOK_LOGIN, FacebookLoginFail, GOOGLE_LOGIN, GoogleLoginFail, Login, LOGIN, LoginFail, LoginSuccess, LOGOUT, LogoutFail, LogoutSuccess, SIGN_UP, SignUp, SignUpFail, SignUpSuccess } from '../actions/auth.action';
 
 @Injectable()
 export class AuthEffects {

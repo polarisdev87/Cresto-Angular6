@@ -1,5 +1,5 @@
 import { CheckUserPassword, EditUserPassword } from './../store/actions/edit-pasword.actions';
-import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { IRootState } from '../../myreferrals/store/reducers';
 import { Store } from '@ngrx/store';
@@ -24,7 +24,7 @@ export class PasswordComponent implements OnInit {
   public changeClassAndTypeenter = true;
   public changeClassAndTypecomfirm = true;
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>,
     private _fb: FormBuilder,
   ) {

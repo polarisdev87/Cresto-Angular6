@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IRootState } from '../../store/reducers';
-import { Login, FacebookLogin, GoogleLogin } from '../../store/actions/auth.action';
+import { FacebookLogin, GoogleLogin, Login } from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   public loader$: Observable<boolean>;
   public form: FormGroup;
 
-  constructor(
+  public constructor(
     private _fb: FormBuilder,
     private _store: Store<IRootState>,
   ) {

@@ -1,5 +1,5 @@
-import { CHECK_USER_PASSWORD, CHECK_USER_PASSWORD_SUCCESS, EDIT_USER_PASSWORD, CHECK_USER_PASSWORD_FAIL } from './../actions/edit-pasword.actions';
-import { PasswordActions, EDIT_USER_PASSWORD_SUCCESS, EDIT_USER_PASSWORD_FAIL } from '../actions/edit-pasword.actions';
+import { CHECK_USER_PASSWORD, CHECK_USER_PASSWORD_FAIL, CHECK_USER_PASSWORD_SUCCESS, EDIT_USER_PASSWORD } from './../actions/edit-pasword.actions';
+import { EDIT_USER_PASSWORD_FAIL, EDIT_USER_PASSWORD_SUCCESS, PasswordActions } from '../actions/edit-pasword.actions';
 
 export interface EditPasswordState {
   isLoading: boolean;

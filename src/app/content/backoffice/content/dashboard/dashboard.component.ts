@@ -13,7 +13,7 @@ import { IRootState } from '../../../../store/reducers';
 export class DashboardComponent implements OnInit {
   public rounds$: Observable<any>;
   public scroll;
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {
   }

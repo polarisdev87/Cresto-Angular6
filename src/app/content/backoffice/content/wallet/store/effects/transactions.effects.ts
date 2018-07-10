@@ -3,7 +3,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { TRANSACTION_REQUEST, TransactionRequest, TransactionLoadSuccess, TransactionLoadFail } from '../actions/transaction.actions';
+import { TRANSACTION_REQUEST, TransactionLoadFail, TransactionLoadSuccess, TransactionRequest } from '../actions/transaction.actions';
 import { WalletsService } from '../../../../../../shared/services/wallets.service';
 
 @Injectable()

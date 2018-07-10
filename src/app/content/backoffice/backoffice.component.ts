@@ -14,7 +14,7 @@ import { GetCurrentUser } from './store/actions/user.actions';
 })
 export class BackofficeComponent implements OnInit {
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {
   }

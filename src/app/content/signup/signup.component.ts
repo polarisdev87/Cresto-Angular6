@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../store/reducers';
-import { SignUp, FacebookLogin, GoogleLogin } from '../../store/actions/auth.action';
+import { FacebookLogin, GoogleLogin, SignUp } from '../../store/actions/auth.action';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor(
+  public constructor(
     private _fb: FormBuilder,
     private _store: Store<IRootState>,
     private _validatorsService: ValidatorsService,

@@ -3,7 +3,7 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
-import { CalculateSumRequest, BuyTokensRequest } from '../store/actions/buy-tokens.action';
+import { BuyTokensRequest, CalculateSumRequest } from '../store/actions/buy-tokens.action';
 import { IRootState } from '../../../../../store/reducers';
 
 @Component({
@@ -30,7 +30,7 @@ export class BuyTokenFormComponent implements OnInit {
 
   public tokensform: FormGroup;
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>,
   ) {
   }
