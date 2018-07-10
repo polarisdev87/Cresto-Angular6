@@ -11,7 +11,7 @@ import { getAssets } from '../store/selectors/assets.selector';
 })
 export class BackofficeHeaderComponent implements OnInit {
   public logo = 'assets/images/backoffice-logo.png';
-  public assets$: Observable<any>;
+  public assets$!: Observable<any>;
 
   public constructor(
     private _store: Store<IRootState>,

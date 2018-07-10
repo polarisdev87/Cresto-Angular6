@@ -24,26 +24,28 @@ export class WalletsService {
   }
 
   public calculateTokens(data: CalculateTokensSum): Observable<TokenPrice> {
-    const {quote_asset_id, amount} = data;
-    return this._http.authorizedRequest(`/user/${data.userId}/wallets/calculate_price`, { quote_asset_id, amount }, 'POST');
+    const { quote_asset_id, amount } = data;
+    return this._http
+      .authorizedRequest(`/user/${data.userId}/wallets/calculate_price`, { quote_asset_id, amount }, 'POST');
   }
 
   public buyTokens(data: CalculateTokensSum): Observable<any> {
-    const {quote_asset_id, amount} = data;
+    const { quote_asset_id, amount } = data;
     return this._http.authorizedRequest(`/user/${data.userId}/wallets/buy`, { quote_asset_id, amount }, 'POST');
   }
 
   public calculateWithdrawalFee(data: CalculateFee): Observable<WithdrawalRes> {
-    const {wallet_id, amount} = data;
-    return this._http.authorizedRequest(`/user/${data.userId}/wallets/calculate_withdrawal_fee`, { wallet_id, amount }, 'POST');
+    const { wallet_id, amount } = data;
+    return this._http
+      .authorizedRequest(`/user/${data.userId}/wallets/calculate_withdrawal_fee`, { wallet_id, amount }, 'POST');
   }
 
   public withdrawal(data: WithdrawalBody): Observable<WithdrawalRes> {
-    const {cstt_address, amount} = data;
+    const { cstt_address, amount } = data;
     return this._http.authorizedRequest(`/user/${data.userId}/wallets/withdraw`, { cstt_address, amount }, 'POST');
   }
 
-  public generateWalletAddress(data: GenerateWalletAddress): Observable<{address: string}> {
+  public generateWalletAddress(data: GenerateWalletAddress): Observable<{ address: string }> {
     return this._http.authorizedRequest(`/user/${data.userId}/wallets/${data.wallet_id}/generate_address`, '', 'POST');
   }
 }

@@ -11,8 +11,8 @@ import { FacebookLogin, GoogleLogin, Login } from '../../store/actions/auth.acti
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-  public loader$: Observable<boolean>;
-  public form: FormGroup;
+  public loader$!: Observable<boolean>;
+  public form!: FormGroup;
 
   public constructor(
     private _fb: FormBuilder,

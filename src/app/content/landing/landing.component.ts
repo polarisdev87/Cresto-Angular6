@@ -43,11 +43,15 @@ export class LandingComponent implements OnInit {
     };
 
     function scrollFunction() {
-      if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-        document.getElementById('to-top').style.display = 'flex';
-      } else {
-        document.getElementById('to-top').style.display = 'none';
+      const el = document.getElementById('to-top');
+      if (el === null) {
+        return;
       }
+      if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+        el.style.display = 'flex';
+        return;
+      }
+      el.style.display = 'none';
     }
   }
 

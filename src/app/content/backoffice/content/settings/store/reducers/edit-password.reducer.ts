@@ -1,13 +1,16 @@
-import { CHECK_USER_PASSWORD, CHECK_USER_PASSWORD_FAIL, CHECK_USER_PASSWORD_SUCCESS, EDIT_USER_PASSWORD } from './../actions/edit-pasword.actions';
+import {
+  CHECK_USER_PASSWORD,
+  CHECK_USER_PASSWORD_FAIL, CHECK_USER_PASSWORD_SUCCESS, EDIT_USER_PASSWORD
+} from './../actions/edit-pasword.actions';
 import { EDIT_USER_PASSWORD_FAIL, EDIT_USER_PASSWORD_SUCCESS, PasswordActions } from '../actions/edit-pasword.actions';
 
-export interface EditPasswordState {
+export interface IEditPasswordState {
   isLoading: boolean;
   isCurrentPasswordValid: boolean;
   updated: boolean;
   error: null | string;
 }
-export const initialState: EditPasswordState = {
+export const initialState: IEditPasswordState = {
   isLoading: false,
   isCurrentPasswordValid: false,
   updated: false,
@@ -15,7 +18,7 @@ export const initialState: EditPasswordState = {
 };
 
 export function reducer(
-  state: EditPasswordState = initialState,
+  state: IEditPasswordState = initialState,
   action: PasswordActions
 ): any {
   switch (action.type) {

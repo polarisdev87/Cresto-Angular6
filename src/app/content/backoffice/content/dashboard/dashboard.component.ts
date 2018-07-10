@@ -11,15 +11,17 @@ import { IRootState } from '../../../../store/reducers';
   styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent implements OnInit {
-  public rounds$: Observable<any>;
+  public rounds$!: Observable<any>;
   public scroll;
+  public dashboardTableHead = [
+    'ICO Round', 'CSTT Supply', 'Price ($)', 'Minimum', 'Maximum', 'Free Tokens', 'Free Tokens Recipients', 'Status'
+  ];
+
   public constructor(
     private _store: Store<IRootState>
   ) {
   }
-  public dashboardTableHead = [
-    'ICO Round', 'CSTT Supply', 'Price ($)', 'Minimum', 'Maximum', 'Free Tokens', 'Free Tokens Recipients', 'Status'
-  ];
+
   public ngOnInit() {
     this.rounds$ = this._store.select('dashboard', 'rounds', 'data');
 

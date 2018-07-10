@@ -19,10 +19,13 @@ import { AuthService } from './shared/services/auth.service';
 import { LocalStorageService } from './shared/services/localStorage.service';
 import { AuthGuardService } from './auth-guard.service';
 import { ValidatorsService } from './shared/services/validators.service';
-import { CRESTOOKEN_DOMAIN, CRESTOOKEN_DOMAIN_TOKEN, DOMAIN, DOMAIN_TOKEN, getAuthServiceConfigs, PREFIX, PREFIX_TOKEN } from './config';
+import {
+  CRESTOOKEN_DOMAIN, CRESTOOKEN_DOMAIN_TOKEN,
+  DOMAIN, DOMAIN_TOKEN, getAuthServiceConfigs, PREFIX, PREFIX_TOKEN
+} from './config';
 import { AppInterceptorsService } from './app-interceptors.service';
 import { RouterModule } from '@angular/router';
-import {AuthService as GoogleAuthService, AuthServiceConfig } from 'angular5-social-login';
+import { AuthService as GoogleAuthService, AuthServiceConfig } from 'angular5-social-login';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 import { UiModule } from './shared/module/ui/ui.module';
@@ -40,7 +43,7 @@ import { routes } from './routes';
     NoopAnimationsModule,
     UiModule,
     RecaptchaModule.forRoot(),
-    StoreModule.forRoot(reducers, {metaReducers}),
+    StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
     RouterModule.forRoot(routes),
@@ -60,18 +63,18 @@ import { routes } from './routes';
     SettingsService,
     SocialNetworkService,
     GoogleAuthService,
-    {provide: RouterStateSerializer, useClass: CustomSerializer},
-    {provide: DOMAIN_TOKEN, useValue: DOMAIN},
-    {provide: PREFIX_TOKEN, useValue: PREFIX},
-    {provide: CRESTOOKEN_DOMAIN_TOKEN, useValue: CRESTOOKEN_DOMAIN},
-    {provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true},
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
+    { provide: DOMAIN_TOKEN, useValue: DOMAIN },
+    { provide: PREFIX_TOKEN, useValue: PREFIX },
+    { provide: CRESTOOKEN_DOMAIN_TOKEN, useValue: CRESTOOKEN_DOMAIN },
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorsService, multi: true },
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
     },
     {
       provide: RECAPTCHA_SETTINGS,
-      useValue: {siteKey: environment.googleConfig.capthca} as RecaptchaSettings,
+      useValue: { siteKey: environment.googleConfig.capthca } as RecaptchaSettings,
     },
   ],
   entryComponents: [PopupComponent],

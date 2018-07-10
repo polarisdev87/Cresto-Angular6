@@ -10,6 +10,7 @@ export class OwnCoinThumbnailComponent {
   @Input()
   public item;
 
+  // tslint:disable-next-line
   public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'

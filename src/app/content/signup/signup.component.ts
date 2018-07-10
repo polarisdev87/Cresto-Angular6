@@ -12,7 +12,7 @@ import { FacebookLogin, GoogleLogin, SignUp } from '../../store/actions/auth.act
 })
 export class SignupComponent implements OnInit {
 
-  public form: FormGroup;
+  public form!: FormGroup;
 
   public constructor(
     private _fb: FormBuilder,

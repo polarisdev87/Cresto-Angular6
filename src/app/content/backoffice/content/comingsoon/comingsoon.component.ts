@@ -8,13 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ComingsoonComponent implements OnInit {
 
-  public title: string;
-  public subtitle: string;
-  public backgroundImg: string;
+  public title!: string;
+  public subtitle!: string;
+  public backgroundImg!: string;
 
   public constructor(
     private _activatedRoute: ActivatedRoute
   ) { }
+
   public ngOnInit(): void {
     this._activatedRoute.data.subscribe((data) => {
       this.title = data.title;

@@ -11,10 +11,10 @@ import { IRootState } from '../../../../store/reducers';
   styleUrls: ['./myreferrals.component.sass']
 })
 export class MyreferralsComponent implements OnInit, OnDestroy {
-  public roundsReferralsUsers$: Observable<User[]>;
+  public roundsReferralsUsers$!: Observable<User[]>;
   public referralLink;
-  public userSubscription: Subscription;
-  public loader$: Observable<boolean>;
+  public userSubscription!: Subscription;
+  public loader$!: Observable<boolean>;
   public referralUsersHeaders = [
     'S/N', 'Referral Username', 'Date Registered'
   ];
@@ -30,9 +30,10 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
     this._store.dispatch(new GetReferralUsers());
 
 
-    this.userSubscription = this._store.select('backoffice', 'user', 'referralHash').subscribe((referralHash: string) => {
-      this.referralLink = `${environment.domain}/${referralHash}`;
-    });
+    this.userSubscription = this._store.select('backoffice', 'user', 'referralHash')
+      .subscribe((referralHash: string) => {
+        this.referralLink = `${environment.domain}/${referralHash}`;
+      });
   }
 
   public ngOnDestroy(): void {

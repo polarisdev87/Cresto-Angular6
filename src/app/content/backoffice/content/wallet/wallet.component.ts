@@ -14,9 +14,9 @@ import { getWalletsData } from '../../store/selectors/assets.selector';
 })
 export class WalletComponent implements OnInit {
 
-  public assets$: Observable<any>;
-  public wallets$: Observable<WalletData[]>;
-  public transactions$: Observable<any>;
+  public assets$!: Observable<any>;
+  public wallets$!: Observable<WalletData[]>;
+  public transactions$!: Observable<any>;
 
   public currentCoin;
 
@@ -35,6 +35,9 @@ export class WalletComponent implements OnInit {
         filter((id: string | null) => Boolean(id))
       )
       .subscribe((id) => {
+        if (id === null) {
+          return;
+        }
         this._store.dispatch(new TransactionRequest(id));
       });
   }

@@ -11,9 +11,9 @@ import { Logout } from '../../../store/actions/auth.action';
   styleUrls: ['./sidebar.component.sass']
 })
 export class SidebarComponent implements OnInit {
-  public user$: Observable<User>;
-  public assets$: Observable<any>;
-  public wallets$: Observable<any>;
+  public user$!: Observable<User>;
+  public assets$!: Observable<any>;
+  public wallets$!: Observable<any>;
 
   public constructor(
     private _store: Store<IRootState>

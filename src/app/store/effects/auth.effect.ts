@@ -7,20 +7,14 @@ import { Observable, of } from 'rxjs';
 import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
 import { LocalStorageService } from '../../shared/services/localStorage.service';
 import { SocialNetworkService } from '../../shared/services/social-network.service';
-import { FACEBOOK_LOGIN, FacebookLoginFail, GOOGLE_LOGIN, GoogleLoginFail, Login, LOGIN, LoginFail, LoginSuccess, LOGOUT, LogoutFail, LogoutSuccess, SIGN_UP, SignUp, SignUpFail, SignUpSuccess } from '../actions/auth.action';
+import {
+  FACEBOOK_LOGIN, FacebookLoginFail,
+  GOOGLE_LOGIN, GoogleLoginFail, Login, LOGIN, LoginFail,
+  LoginSuccess, LOGOUT, LogoutFail, LogoutSuccess, SIGN_UP, SignUp, SignUpFail, SignUpSuccess
+} from '../actions/auth.action';
 
 @Injectable()
 export class AuthEffects {
-
-  // @Effect()
-  // public getCurrentUser$: Observable<Action> = this.actions$
-  //   .ofType(GET_CURRENT_USER).pipe(
-  //     switchMap(() => this._authService.getCurrentUser().pipe(
-  //       switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
-  //       map((data: User) => new LoginSuccess(data))
-  //     )),
-  // );
-
 
   @Effect()
   public login$: Observable<Action> = this.actions$
@@ -38,8 +32,6 @@ export class AuthEffects {
           this._localStorageService.removeItem('referralHash');
         }),
         catchError((err: any) => {
-          console.log(err.status);
-
           if (err.status !== 402) {
             alert('Invalid username or password');
           }
@@ -90,11 +82,10 @@ export class AuthEffects {
         tap(() => this._router.navigate(['/backoffice'])),
         catchError((err: Error) => {
           alert('Email already exists or somethink went wrong');
-          console.log(err);
           return of(new FacebookLoginFail(err));
         })
       )
-    ),
+      ),
   );
 
   @Effect()
@@ -107,11 +98,10 @@ export class AuthEffects {
         tap(() => this._router.navigate(['/backoffice'])),
         catchError((err: Error) => {
           alert('Email already exists or somethink went wrong');
-          console.log(err);
           return of(new GoogleLoginFail(err));
         })
       )
-    ),
+      ),
   );
 
   public constructor(

@@ -1,5 +1,8 @@
 import { MatDialog } from '@angular/material';
-import { CheckUserPassword, CheckUserPasswordFail, CheckUserPasswordSuccess, EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordFail, EditUserPasswordSuccess } from './../actions/edit-pasword.actions';
+import {
+  CheckUserPassword, CheckUserPasswordFail,
+  CheckUserPasswordSuccess, EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordFail, EditUserPasswordSuccess
+} from './../actions/edit-pasword.actions';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
@@ -21,8 +24,8 @@ export class EditPasswordEffects {
         catchError((err: Error) => {
           // TODO figure out design for error handling
           this._dialog.open(PopupComponent, { data: { message: 'Current password is not valid' } }),
-          // tslint:disable-next-line
-          console.log(err);
+            // tslint:disable-next-line
+            console.log(err);
           return of(new CheckUserPasswordFail(err));
         })
       )),
@@ -41,8 +44,8 @@ export class EditPasswordEffects {
             : 'Something went wrong';
           this._dialog.open(PopupComponent, { data: { message } }),
 
-          // tslint:disable-next-line
-          console.log(err);
+            // tslint:disable-next-line
+            console.log(err);
           return of(new EditUserPasswordFail(err));
         })
       )),

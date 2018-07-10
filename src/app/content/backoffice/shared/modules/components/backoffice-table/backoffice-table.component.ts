@@ -13,5 +13,5 @@ export class BackofficeTableComponent {
   @Input() public columns;
   @Input() public scroll;
 
-  @ViewChild(ScrollbarComponent) public scrollRef: ScrollbarComponent;
+  @ViewChild(ScrollbarComponent) public scrollRef!: ScrollbarComponent;
 }

@@ -16,6 +16,7 @@ type AclState = Acl | {};
 type WalletState = {
   isLoading: boolean;
   isLoaded: boolean;
-  data: WalletData[],
-  generatedAddress: string
-}
+  data: any[],
+  generatedAddress: string | null
+};
+

@@ -1,4 +1,7 @@
-import { GET_REFERRAL_USERS, GET_REFERRAL_USERS_FAIL, GET_REFERRAL_USERS_SUCCESS } from '../actions/referrals-users.action';
+import {
+  GET_REFERRAL_USERS, GET_REFERRAL_USERS_FAIL,
+  GET_REFERRAL_USERS_SUCCESS
+} from '../actions/referrals-users.action';
 
 export const initialState: any = {
   isLoading: false,

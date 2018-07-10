@@ -1,4 +1,7 @@
-import { LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS } from '../actions/auth.action';
+import {
+  LOGIN, LOGIN_FAIL,
+  LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS
+} from '../actions/auth.action';
 
 export const initialState: AuthState = {
   isLogged: false,

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificationNoticeComponent implements OnInit {
 
-  public username: string;
+  public username!: string;
 
   public constructor(
     private _authService: AuthService,

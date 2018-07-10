@@ -8,6 +8,12 @@ export class LableDirective {
 
   public active = false;
 
+  public constructor(
+    private _elementRef: ElementRef
+  ) {
+  }
+
+
   @HostListener('focus')
   public onFocus() {
     this.active = true;
@@ -19,10 +25,4 @@ export class LableDirective {
       ? true
       : false;
   }
-
-  public constructor(
-    private _elementRef: ElementRef
-  ) {
-  }
-
 }

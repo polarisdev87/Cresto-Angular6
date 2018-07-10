@@ -1,4 +1,4 @@
-import { TwoFactorState } from './../store/reducers/twofactor.reducer';
+import { ITwoFactorState } from './../store/reducers/twofactor.reducer';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
@@ -14,11 +14,11 @@ import { skip } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None
 })
 export class TwoFactorAuthComponent implements OnInit {
-  public tfaData$: Observable<TwoFactorState['tfaData']>;
+  public tfaData$!: Observable<ITwoFactorState['tfaData']>;
   public twofactorState = 'def';
-  public disableTfaForm: FormGroup;
+  public disableTfaForm!: FormGroup;
   public enableTfaCode: FormControl = new FormControl('', Validators.required);
-  public isLoading$: Observable<boolean>;
+  public isLoading$!: Observable<boolean>;
 
   public constructor(
     private _fb: FormBuilder,

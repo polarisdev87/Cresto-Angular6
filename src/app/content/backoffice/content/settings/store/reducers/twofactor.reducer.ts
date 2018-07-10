@@ -10,7 +10,7 @@ import {
   VERIFY_TWOFACTOR_SUCCESS
 } from './../actions/twofactor.actions';
 
-export interface TwoFactorState {
+export interface ITwoFactorState {
   twoFactor: boolean;
   isLoading: boolean;
   isLoaded: boolean;
@@ -19,9 +19,9 @@ export interface TwoFactorState {
     tempSecret: string;
     dataURL: string;
     otpURL: string;
-  };
+  } | null;
 }
-export const initialState: TwoFactorState = {
+export const initialState: ITwoFactorState = {
   isLoading: false,
   isLoaded: false,
   twoFactor: false,
@@ -29,7 +29,7 @@ export const initialState: TwoFactorState = {
 };
 
 // tslint:disable-next-line: no-any
-export function reducer(state: TwoFactorState = initialState, action: any): TwoFactorState {
+export function reducer(state: ITwoFactorState = initialState, action: any): ITwoFactorState {
   switch (action.type) {
 
     case VERIFY_TWOFACTOR:

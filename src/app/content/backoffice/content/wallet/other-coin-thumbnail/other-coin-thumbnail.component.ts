@@ -16,6 +16,7 @@ export class OtherCoinThumbnailComponent {
   @Output()
   public setDeposit = new EventEmitter();
 
+  // tslint:disable-next-line
   public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'

@@ -28,6 +28,9 @@ export class BackofficeComponent implements OnInit {
         filter((id: string | null) => Boolean(id))
       )
       .subscribe((id) => {
+        if (id === null) {
+          return;
+        }
         this._store.dispatch(new WalletRequest(id));
       });
   }

@@ -16,7 +16,7 @@ type Cb = (_: number) => void;
 export class BuyTokenSelectComponent implements ControlValueAccessor {
   public currentCoin: number = 1;
 
-  private _onChange: Cb;
+  private _onChange!: Cb;
 
   public selectCoin(coin: number) {
     this.currentCoin = coin;

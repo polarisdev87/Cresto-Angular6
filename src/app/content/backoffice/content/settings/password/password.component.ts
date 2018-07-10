@@ -14,10 +14,10 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./password.component.sass']
 })
 export class PasswordComponent implements OnInit {
-  public isLoading$: Observable<boolean>;
-  public isCurrentPasswordValid$: Observable<boolean>;
-  public error$: Observable<string>;
-  public form: FormGroup;
+  public isLoading$!: Observable<boolean>;
+  public isCurrentPasswordValid$!: Observable<boolean>;
+  public error$!: Observable<string>;
+  public form!: FormGroup;
   public currentPassword: FormControl = new FormControl('', [Validators.required]);
 
   public changeClassAndtype = true;

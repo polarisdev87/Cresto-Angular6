@@ -25,10 +25,10 @@ export class BuyTokenFormComponent implements OnInit {
   };
 
   // total$: Observable<number>;
-  public userId$: Observable<string>;
-  public tokenPrice$: Observable<number>;
+  public userId$!: Observable<string>;
+  public tokenPrice$!: Observable<number>;
 
-  public tokensform: FormGroup;
+  public tokensform!: FormGroup;
 
   public constructor(
     private _store: Store<IRootState>,
@@ -52,10 +52,10 @@ export class BuyTokenFormComponent implements OnInit {
         // filter(( data: { amount: number, currency: number }) => Boolean(data.amount > 0 ))
       ),
       (userId: string, data: { amount: number, currency: number }) => {
-        const { amount, currency: quote_asset_id } = data;
+        const { amount, currency: quoteAssetId } = data;
         return {
           userId,
-          quote_asset_id,
+          quote_asset_id: quoteAssetId,
           amount
         };
       }
@@ -69,10 +69,10 @@ export class BuyTokenFormComponent implements OnInit {
       this.userId$,
       of(this.tokensform.value),
       (userId: string, data: { amount: number, currency: number }) => {
-        const { amount, currency: quote_asset_id } = data;
+        const { amount, currency: quoteAssetId } = data;
         return {
           userId,
-          quote_asset_id,
+          quote_asset_id: quoteAssetId,
           amount
         };
       }
