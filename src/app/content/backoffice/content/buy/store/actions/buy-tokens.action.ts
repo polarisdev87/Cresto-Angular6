@@ -10,7 +10,6 @@ export const BUY_TOKENS_SUCCESS = '[BUY TOKENS] BUY_TOKENS_SUCCESS';
 export const BUY_TOKENS_FAIL = '[BUY TOKENS] BUY_TOKENS_FAIL';
 
 
-
 export class CalculateSumRequest implements Action {
   public readonly type: string = CALCULATE_SUMM_REQUEST;
   public constructor(public payload: CalculateTokensSum) {}

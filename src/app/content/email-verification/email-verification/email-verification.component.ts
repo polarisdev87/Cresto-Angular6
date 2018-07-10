@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailVerificationComponent implements OnInit {
 
-  error = false;
+  public error = false;
 
-  constructor(
+  public constructor(
     private _activatedRoute: ActivatedRoute,
     private _emailVerificationService: EmailVerificationService
   ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     const hash: string = this._activatedRoute.snapshot.params.hash;
     this._emailVerificationService.checkEmail(hash).subscribe(
       () => {},

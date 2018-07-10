@@ -8,10 +8,20 @@ import { ScrollbarComponent } from 'ngx-scrollbar';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BackofficeTableComponent {
-  @Input() dashboardTableHead;
-  @Input() rounds;
-  @Input() columns;
-  @Input() scroll;
+  @Input() public dashboardTableHead;
+  @Input() public rounds;
+  @Input() public columns;
+  @Input() public scroll;
 
-  @ViewChild(ScrollbarComponent) scrollRef: ScrollbarComponent;
+  @ViewChild(ScrollbarComponent) public scrollRef!: ScrollbarComponent;
+
+  public changeCoinString(str) {
+    if (str === 'btc') {
+      return 'Bitcoin';
+    } else if (str === 'eth') {
+      return 'Ethereum';
+    } else if (str) {
+      return str;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import { environment } from '../environments/environment';
 import { InjectionToken } from '@angular/core';
-import {AuthServiceConfig, GoogleLoginProvider} from 'angular5-social-login';
+import { AuthServiceConfig, GoogleLoginProvider } from 'angular5-social-login';
 
 export const DOMAIN: string = environment.host.api.url;
 export const DOMAIN_TOKEN: InjectionToken<string> = new InjectionToken(DOMAIN);

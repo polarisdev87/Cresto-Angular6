@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap  } from 'rxjs/operators';
 import { AclService } from '../../acl.service';
-import { ACL_REQUEST, LoadAclSuccess, LoadAclFail } from '../actions/acl.actions';
+import { ACL_REQUEST, LoadAclFail, LoadAclSuccess } from '../actions/acl.actions';
 
 @Injectable()
 export class AclEffects {

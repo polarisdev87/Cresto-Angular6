@@ -1,12 +1,12 @@
 import {
   CALCULATE_WITHDRAWAL_FEE_REQUEST,
+  CalculateWithdrawalFeeFail,
   CalculateWithdrawalFeeRequest,
   CalculateWithdrawalFeeSuccess,
-  CalculateWithdrawalFeeFail,
   WITHDRAWAL_REQUEST,
+  WithdrawalFail,
   WithdrawalRequest,
-  WithdrawalSuccess,
-  WithdrawalFail
+  WithdrawalSuccess
 } from './../actions/withdrawal.action';
 
 import { Injectable } from '@angular/core';
@@ -46,7 +46,6 @@ export class WithdrawalEffects {
         })
       )),
   );
-
 
 
   public constructor(

@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, Input} from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-depositview',
@@ -11,15 +11,15 @@ export class DepositviewComponent {
   @Input()
   public coin;
 
-  confirmButton = true;
+  public confirmButton = true;
 
-  depositBtn = {
+  public depositBtn = {
     name: 'Copy address',
     class: 'emptyGreen'
   };
 
 
-  confirmSelected() {
+  public confirmSelected() {
     this.confirmButton = !this.confirmButton;
   }
 

@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-popup',
@@ -20,8 +20,8 @@ export class PopupComponent {
   //   class: 'emptyGreen',
   // };
 
-public toWallet() :void {
+public toWallet(): void {
   this.router.navigate(['backoffice/wallet']);
-}
+  }
 
 }

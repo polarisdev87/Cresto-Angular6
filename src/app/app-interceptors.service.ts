@@ -15,7 +15,7 @@ export class AppInterceptorsService implements HttpInterceptor {
 
   public constructor(
     private _store: Store<IRootState>,
-  ) {}
+  ) { }
 
   // tslint:disable-next-line
   public intercept<T extends { data: any, message?: string }>
@@ -25,7 +25,7 @@ export class AppInterceptorsService implements HttpInterceptor {
     return next
       .handle(jsonReq).pipe(
         filter((res: HttpResponse<{ data: T } | T>) => res instanceof HttpResponse),
-        map((res: HttpResponse<{ data: T  } | T>) => {
+        map((res: HttpResponse<{ data: T } | T>) => {
           if ((res.body as any).status === 'error') {
             throw new Error((res.body as any).message);
           }
@@ -37,7 +37,10 @@ export class AppInterceptorsService implements HttpInterceptor {
             this._store.dispatch(new Logout());
           }
           if (err.status === 402) {
-            this._store.dispatch(new Go({path: ['email', 'verification'], query: { username: (err as any).error.data.username }}));
+            this._store
+              .dispatch(
+                new Go({ path: ['email', 'verification'], query: { username: (err as any).error.data.username } })
+              );
           }
           return throwError(err);
         })

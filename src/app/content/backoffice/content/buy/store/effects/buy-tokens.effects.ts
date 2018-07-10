@@ -4,7 +4,10 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
-import { CalculateSumFail, CalculateSumRequest, CALCULATE_SUMM_REQUEST, BuyTokensFail, BuyTokensSuccess, BuyTokensRequest, BUY_TOKENS_REQUEST, CalculateSumSuccess } from '../actions/buy-tokens.action';
+import {
+  BUY_TOKENS_REQUEST, BuyTokensFail, BuyTokensRequest,
+  BuyTokensSuccess, CALCULATE_SUMM_REQUEST, CalculateSumFail, CalculateSumRequest, CalculateSumSuccess
+} from '../actions/buy-tokens.action';
 import { PopupComponent } from '../../popup/popup.component';
 import { WalletsService } from '../../../../../../shared/services/wallets.service';
 
@@ -35,7 +38,11 @@ export class BuyTokensEffects {
         catchError((err: Error) => {
           this._dialog.open(PopupComponent, {
             data: {
-              message: err
+              iconClose: 'icon-close',
+              iconClass: 'icon-Exclamation',
+              message: 'You don\'t have enough BTC on your account. Please, make a deposit to buy CSTT',
+              btnClass: 'emptyGreen',
+              btnTextContent: 'Deposit BTC'
             }
           });
           // tslint:disable-next-line

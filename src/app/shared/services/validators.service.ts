@@ -1,4 +1,4 @@
-import { FormGroup, ValidationErrors, AbstractControl } from '@angular/forms';
+import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 import { Injectable } from '@angular/core';
 
 @Injectable()

@@ -1,6 +1,5 @@
 import { Store } from '@ngrx/store';
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { take } from 'rxjs/operators';
 import { IRootState } from '../../../../../store/reducers';
 
 @Directive({

@@ -14,12 +14,12 @@ import { GetCurrentUser } from './store/actions/user.actions';
 })
 export class BackofficeComponent implements OnInit {
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this._store.dispatch(new GetCurrentUser());
     this._store.dispatch(new AclRequest());
     this._store.dispatch(new AssetsRequest());
@@ -28,6 +28,9 @@ export class BackofficeComponent implements OnInit {
         filter((id: string | null) => Boolean(id))
       )
       .subscribe((id) => {
+        if (id === null) {
+          return;
+        }
         this._store.dispatch(new WalletRequest(id));
       });
   }

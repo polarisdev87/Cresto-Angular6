@@ -1,10 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Actions, Effect} from '@ngrx/effects';
-import {Action} from '@ngrx/store';
-import {Observable, of} from 'rxjs';
-import {catchError, map, switchMap, tap} from 'rxjs/operators';
-import {MatDialog} from '@angular/material';
-import { ROUNDS_REQUEST, RoundsLoadSuccess, RoundsLoadFail } from '../actions/rounds.actions';
+import { Injectable } from '@angular/core';
+import { Actions, Effect } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { ROUNDS_REQUEST, RoundsLoadFail, RoundsLoadSuccess } from '../actions/rounds.actions';
 import { WalletsService } from '../../../../../../shared/services/wallets.service';
 
 @Injectable()
@@ -26,7 +25,6 @@ export class RoundsEffects {
   public constructor(
     private actions$: Actions,
     private _walletsService: WalletsService,
-    private _dialog: MatDialog,
   ) {
   }
 }

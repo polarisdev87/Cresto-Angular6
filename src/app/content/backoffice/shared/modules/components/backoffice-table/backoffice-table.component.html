@@ -13,8 +13,8 @@
         </tbody>
       </ng-scrollbar>
       <tbody *ngIf="!scroll">
-      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
-        <td [class]="item.type" *ngFor="let item of round | row:columns"><span>{{item.value || ind+1}}</span></td>
+      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status | lowercase">
+        <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span>{{  changeCoinString(item.value) || ind+1}}</span></td>
       </tr>
       </tbody>
     </table>

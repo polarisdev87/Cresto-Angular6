@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-other-coin-thumbnail',
@@ -16,19 +16,21 @@ export class OtherCoinThumbnailComponent {
   @Output()
   public setDeposit = new EventEmitter();
 
-  @Output() setWithdrawal = new EventEmitter();
+  @Output()
+  public setWithdrawal = new EventEmitter();
 
-  CSTTBtnState = {
+  // tslint:disable-next-line
+  public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'
   };
 
-  depositBtnState = {
+  public depositBtnState = {
     name: 'Deposit',
     class: 'emptyGreen'
   };
 
-  withdrawalBtnState = {
+  public withdrawalBtnState = {
     name: 'Withdrawal',
     class: 'emptyRed'
   };
@@ -37,7 +39,7 @@ export class OtherCoinThumbnailComponent {
     this.setDeposit.next(coin);
   }
 
-  setWithdrawalCoin(coin) {
+  public setWithdrawalCoin(coin) {
     this.setWithdrawal.emit(coin);
   }
 
