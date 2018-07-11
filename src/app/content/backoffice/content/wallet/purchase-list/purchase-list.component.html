@@ -6,13 +6,14 @@
       [rounds]="purchase | async"
       [columns]="[
         {value: 'created_at'},
-        {value: 'asset_code'},
-        {value: 'paid_amount'},
-        {value: 'transaction_type'},
-        {value: 'status'},
-        {value: 'hash'}
+        {value: 'coin'},
+        {value: 'amount'},
+        {value: 'unit_price'},
+        {value: 'paidWith'},
+        {value: 'paid_amount'}
       ]"
       [scroll]="false"
+      [emptyMassege]="'purchases'"
 
     ></app-backoffice-table>
 

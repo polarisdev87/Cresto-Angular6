@@ -6,6 +6,8 @@ import { IRootState } from '../../../../store/reducers';
 import { TransactionRequest } from './store/actions/transaction.actions';
 import { getWalletsData } from '../../store/selectors/assets.selector';
 import { PurchaseRequest } from './store/actions/purchase.action';
+import { getWalletsListPurchase } from './store/selectors/purchase.selector';
+import { getWalletsListTransactions } from './store/selectors/transaction.selector';
 
 @Component({
   selector: 'app-wallet',
@@ -20,9 +22,9 @@ export class WalletComponent implements OnInit {
   public transactions$!: Observable<any>;
   public purchase$!: Observable<any>;
 
-  public crestokenFlag = true;
-  public currentCoin;
-  public withdrawalToched;
+  public crestokenBuySellTable = true;
+  public currentCoin = false ;
+  public withdrawalToched = false;
 
   public constructor(
     private _store: Store<IRootState>
@@ -32,8 +34,8 @@ export class WalletComponent implements OnInit {
   public ngOnInit() {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getWalletsData);
-    this.transactions$ = this._store.select('walletList', 'transactions', 'data');
-    this.purchase$ = this._store.select('walletList', 'purchase', 'data');
+    this.transactions$ = this._store.select(getWalletsListTransactions);
+    this.purchase$ = this._store.select( getWalletsListPurchase );
 
     this._store.select('backoffice', 'user', '_id')
       .pipe(
@@ -63,7 +65,7 @@ export class WalletComponent implements OnInit {
   }
 
   public outputTable() {
-    this.crestokenFlag = false;
+    this.crestokenBuySellTable = false;
 
   }
 }

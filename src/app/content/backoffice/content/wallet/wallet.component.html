@@ -2,11 +2,14 @@
   <div class="wallets-list-wrapper">
 
     <ng-template ngFor let-item [ngForOf]="wallets$ | async">
-      <div [ngClass]=" {close: currentCoin || withdrawalToched, active: currentCoin?.asset?.code === item.asset.code || withdrawalToched?.asset?.code === item.asset.code } "
+      <div [ngClass]=" {close: currentCoin || withdrawalToched || !crestokenBuySellTable ,
+                        active: currentCoin?.asset?.code === item.asset.code || withdrawalToched?.asset?.code === item.asset.code,
+                        crestokenBuySellTable: !crestokenBuySellTable } "
            class="wallet {{item.asset.code}} " *ngIf="item.asset.code !== 'cstt'">
         <app-other-coin-thumbnail
           [item]="item"
           [fullMode]="!currentCoin && !withdrawalToched "
+          [crestokenBuySellTableBoolean]="crestokenBuySellTable"
           (setWithdrawal)="withdrawalToched = $event"
           (setDeposit)="currentCoin = $event"
           (click)="setCoin(item)"
@@ -14,8 +17,16 @@
         ></app-other-coin-thumbnail>
 
       </div>
-      <div class="wallet {{item.asset.code}} " (click) = "outputTable()" *ngIf="item.asset.code === 'cstt'  && !currentCoin && !withdrawalToched">
-        <app-own-coin-thumbnail [item]="item"></app-own-coin-thumbnail>
+      <div
+        class="wallet {{item.asset.code}} "
+        [ngClass]="{close: !crestokenBuySellTable }"
+        (click) = "outputTable()"
+        *ngIf="item.asset.code === 'cstt'  && !currentCoin && !withdrawalToched"
+      >
+        <app-own-coin-thumbnail
+          [item]="item"
+          [crestokenBuySellTableBoolean]="crestokenBuySellTable"
+        ></app-own-coin-thumbnail>
       </div>
 
     </ng-template>
@@ -25,7 +36,7 @@
   <app-depositview *ngIf="currentCoin" [coin]="currentCoin"></app-depositview>
   <app-withdrawal-founds  *ngIf="withdrawalToched" [coin]="withdrawalToched" ></app-withdrawal-founds>
   <!--<app-help></app-help>-->
-  <app-transaction-list *ngIf = "crestokenFlag" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
-  <app-purchase-list *ngIf = "!crestokenFlag" [purchase]="purchase$ "></app-purchase-list>
+  <app-transaction-list *ngIf = "crestokenBuySellTable" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+  <app-purchase-list *ngIf = "!crestokenBuySellTable" [purchase]="purchase$ "></app-purchase-list>
   <!--<app-transaction-list [transactions]="purchase$ | async "></app-transaction-list>-->
 </div>
