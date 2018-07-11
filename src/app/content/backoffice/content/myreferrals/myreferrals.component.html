@@ -12,10 +12,12 @@
     [rounds]="roundsReferralsUsers"
     [scroll]="false"
     [columns]="[
-        {value: 'something which we can`t find in this array'},
+        {value: 'counter'},
         {value: 'username'},
         {value: 'createdAt'}
-        ]">
+        ]"
+    [emptyMassege]="'referrals'"
+  >
 
 
     <span>{{roundsReferralsUsers}}</span>

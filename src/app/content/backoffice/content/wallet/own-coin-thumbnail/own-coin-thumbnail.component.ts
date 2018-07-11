@@ -10,18 +10,12 @@ export class OwnCoinThumbnailComponent {
   @Input()
   public item;
 
+  @Input()
+  public crestokenBuySellTableBoolean;
+
   // tslint:disable-next-line
   public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'
   };
-
-  public depositBtnState = {
-    name: 'Deposit',
-    class: 'emptyGreen'
-  };
-
-  public withdrawalBtnState = {
-    name: 'Withdrawal',
-    class: 'emptyRed'
-  }; }
+}
