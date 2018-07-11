@@ -11,21 +11,23 @@
   width: 100%
   flex-direction: row
   align-items: center
-  justify-content: space-between
+  justify-content: center
   box-sizing: border-box
   margin-bottom: 20px
   .wallet
     height: 180px
     width: 33%
+    margin: 0 20px
     max-width: 561px
     padding: 43px 100px 43px 80px
     border-radius: 15px
     background: $widget-bg
     box-sizing: border-box
     box-shadow: $box-shadow-block
-    //display: flex
-    //align-items: center
-    //justify-content: space-between
+    &:last-child
+      margin-right: 0
+    &:first-child
+      margin-left: 0
     .wallet-item-wrapper
       display: flex
       flex-direction: row
