@@ -19,5 +19,9 @@ export class TwoFactorService {
     return this._http.authorizedRequest(`/twofactor/delete`, body, 'POST');
   }
 
+  public checkTfaCode(body: {tfaCode: string}): Observable<User> {
+    return this._http.authorizedRequest(`/twofactor/checkTfaCode`, body, 'POST');
+  }
+
 
 }

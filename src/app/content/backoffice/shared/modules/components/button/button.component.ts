@@ -12,4 +12,7 @@ export class ButtonComponent {
     name: String,
     class: String
   };
+
+  @Input()
+  public disabled: boolean = false;
 }
