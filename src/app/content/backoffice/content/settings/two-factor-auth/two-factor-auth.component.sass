@@ -1,12 +1,14 @@
 @import "../../../backoffice.component"
 
 .two-factor-auth-wrapper
-  min-height: 320px
+  max-width: 855px
+  min-height: 325px
   background: #222833
   border-radius: 8px
   color: #c0c9d1
   font-family: $OpenSansRegular
-  padding: 50px
+  padding: 35px
+  margin-left: 15px
   // width: 50%
 
   input[type=number]::-webkit-inner-spin-button,
@@ -17,13 +19,16 @@
   .two-factor-auth__title
     font-family: $OpenSansSemiBold
     font-size: 24px
+    margin-top: 10px
 
   .two-factor-auth__content-name
     font-size: 18px
+    margin-top: 10px
 
   .two-factor-auth__content
       font-size: 16px
       color: #8e9aa2
+      margin-top: 15px 
 
   .form-group-factor
     display: grid
@@ -48,6 +53,7 @@
     button
       width: 150px
       justify-self: center
+      margin-top: 20px
     button:hover
       cursor: pointer
     form
@@ -63,6 +69,7 @@
           position: absolute
           top: 21px
           transition: ease all 1s
+          margin-top: 20px
         input
           font-size: 18px
           color: #c0c9d1
@@ -73,6 +80,7 @@
           height: 62px
           padding: 20px 0
           z-index: 1
+          margin-top: 25px 
       .form-group-factor.toched
         label
           transition: ease all 1s
@@ -85,6 +93,7 @@
       color: #8e9aa2
     form
       text-align: left
+      padding: 15px 40px 0 40px
       .form-group-enable
         display: grid
         grid-gap: 15px
@@ -96,15 +105,18 @@
           text-align: center
           color: #c0c9d1
           font-size: 16px
+          margin-top: 10px 
         .two-factor-auth__content
           font-size: 16px
       .QRcode-wrapper
         display: grid
         grid-template-columns: 244px 1fr
         grid-gap: 30px
+        margin-top: 15px
         .QRcode-wrapper__content
           display: grid
           grid-gap: 12px 0
+          margin-left: 30px 
       .two-factor-auth__content-name
         text-align: center
       .error
