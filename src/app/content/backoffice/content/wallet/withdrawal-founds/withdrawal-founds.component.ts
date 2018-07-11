@@ -1,4 +1,4 @@
-import { switchMap, debounceTime, catchError } from 'rxjs/operators';
+import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 import { TwoFactorService } from './../../../../../shared/services/twofactor.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
