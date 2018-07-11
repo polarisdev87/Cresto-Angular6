@@ -1,7 +1,7 @@
-<div class="wallet-item-wrapper" *ngIf="fullMode; else shortMode">
+<div class="wallet-item-wrapper" *ngIf="fullMode && crestokenBuySellTableBoolean; else shortMode">
 
   <div class="left-col">
-    <div class="wallet-name bitcoin">
+    <div class="wallet-name ">
       {{item.tittle}}
     </div>
     <div class="wallet-date">
@@ -28,7 +28,7 @@
 <ng-template #shortMode>
   <div class="wallet-item-wrapper">
     <div class="left-col">
-      <div class="wallet-name bitcoin">
+      <div class="wallet-name ">
         {{item.tittle}}
       </div>
       <div class="wallet-date">

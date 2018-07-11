@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { GetReferralUsers } from './store/actions/referrals-users.action';
 import { IRootState } from '../../../../store/reducers';
+import { getReferralUsers } from './store/selectors/referralUsers.selector';
 
 @Component({
   selector: 'app-myreferrals',
@@ -25,7 +26,7 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.roundsReferralsUsers$ = this._store.select('referrals', 'referralUsers', 'data');
+    this.roundsReferralsUsers$ = this._store.select(getReferralUsers );
     this.loader$ = this._store.select('referrals', 'referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
 

@@ -13,9 +13,14 @@
         </tbody>
       </ng-scrollbar>
       <tbody *ngIf="!scroll">
-      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status | lowercase">
-        <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span>{{  changeCoinString(item.value) || ind+1}}</span></td>
+      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status || round.coin+'tr' | lowercase">
+        <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span>{{  item.value }}</span></td>
       </tr>
       </tbody>
     </table>
+</div>
+<div class="emptyMassege-wrapper" *ngIf="rounds.length === 0 ">
+  <h5>
+    You don't have any {{ emptyMassege }} as of now.
+  </h5>
 </div>
