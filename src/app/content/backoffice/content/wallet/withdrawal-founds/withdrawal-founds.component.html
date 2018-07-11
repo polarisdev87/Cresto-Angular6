@@ -11,15 +11,15 @@
     </div>
     <div  [ngClass]="{focused:g.active}"  class="form-group" >
       <label class="form-label" >Please input your 2FA code</label>
-      <input  appLable #g="lable" formControlName="2FACode" class="form-input" type="number" />
+      <input  appLable #g="lable" formControlName="tfaCode" class="form-input" type="number" />
     </div>
     <div class="currency-btn">
-      <app-button (click)="withdrawal()"  [buttonState]="buttonStateBuy"></app-button>
+      <app-button (click)="withdrawal()" [buttonState]="buttonStateBuy" [disabled]="withdrawalForm.invalid"></app-button>
     </div>
     <div class="currency-wr">
 
       <div class="total">
-        <span class="total-title">Fee:0.001 BTC ( Deducted from balance ) </span>
+        <span class="total-title">Fee: {{(withdrawalData$ | async)?.fee }} {{coin?.asset?.code | uppercase}} ( Deducted from balance ) </span>
       </div>
     </div>
 

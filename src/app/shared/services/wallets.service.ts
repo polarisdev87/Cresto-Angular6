@@ -35,14 +35,14 @@ export class WalletsService {
   }
 
   public calculateWithdrawalFee(data: CalculateFee): Observable<WithdrawalRes> {
-    const { wallet_id, amount } = data;
+    const { wallet_id, amount, userId } = data;
     return this._http
-      .authorizedRequest(`/user/${data.userId}/wallets/calculate_withdrawal_fee`, { wallet_id, amount }, 'POST');
+      .authorizedRequest(`/user/${userId}/wallets/calculate_withdrawal_fee`, { wallet_id, amount }, 'POST');
   }
 
   public withdrawal(data: WithdrawalBody): Observable<WithdrawalRes> {
-    const { cstt_address, amount } = data;
-    return this._http.authorizedRequest(`/user/${data.userId}/wallets/withdraw`, { cstt_address, amount }, 'POST');
+    const { cstt_address, amount, userId } = data;
+    return this._http.authorizedRequest(`/user/${userId}/wallets/withdraw`, { cstt_address, amount }, 'POST');
   }
 
   public generateWalletAddress(data: GenerateWalletAddress): Observable<{ address: string }> {

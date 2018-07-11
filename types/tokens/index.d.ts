@@ -22,7 +22,7 @@ type WithdrawalRes = {
 
 
 type WithdrawalBody = {
-  userId: string,
+  userId?: string,
   amount: number,
   cstt_address: number
 };
