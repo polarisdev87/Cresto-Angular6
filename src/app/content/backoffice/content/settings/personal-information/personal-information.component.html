@@ -12,9 +12,11 @@
       <input type="text" class="form-control" [formControl]="name">
       <span class="warning" *ngIf="name.invalid">Can not be empty</span>
     </div>
-    <label>Email</label>
-    <input type="text" [value]="(user$ | async)?.email" readonly>
-    <label>Sponsor</label>
-    <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
+    <div class="input-wrapper">
+      <label>Email</label>
+      <input type="text" [value]="(user$ | async)?.email" readonly>
+      <label>Sponsor</label>
+      <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
+    </div>
   </form>
 </div>
