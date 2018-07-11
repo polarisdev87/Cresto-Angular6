@@ -13,6 +13,9 @@ export class OtherCoinThumbnailComponent {
   @Input()
   public fullMode;
 
+  @Input()
+  public crestokenBuySellTableBoolean;
+
   @Output()
   public setDeposit = new EventEmitter();
 

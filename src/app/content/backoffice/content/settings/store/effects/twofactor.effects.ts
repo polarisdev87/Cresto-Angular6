@@ -27,17 +27,34 @@ export class TwoFactorEffects {
   public verifyTfoFactor$: Observable<Action> = this.actions$
     .ofType(VERIFY_TWOFACTOR).pipe(
       map((action: VerifyTwoFactor) => action.payload),
-      switchMap((body: {token: string}) => this._twoFactorService.verifyTwoFactor(body).pipe(
+      switchMap((body: { token: string }) => this._twoFactorService.verifyTwoFactor(body).pipe(
         map(() => new VerifyTwoFactorSuccess(true)),
-        tap(() => this._dialog.open(PopupComponent, { data: { message: 'Success' } })),
+        tap(() => this._dialog.open(PopupComponent, {
+          data: {
+            iconClose: 'icon-close',
+            iconClass: 'icon-tick',
+            message: 'GOOGLE AUTHENTICATION ENABLED',
+            btnClass: '',
+            btnTextContent: ''
+          }
+        })),
         catchError((err: Error) => {
           // tslint:disable-next-line
           console.log(err);
-          this._dialog.open(PopupComponent, { data: { message: 'Code is not valid, try again' } });
+          this._dialog.open(PopupComponent, {
+            data: {
+              iconClose: 'icon-close',
+              iconClass: 'icon-Exclamation',
+              message: 'Code is not valid, try again',
+              btnClass: '',
+              btnTextContent: ''
+            }
+
+          });
           return of(new VerifyTwoFactorFail(err));
         }),
       )),
-  );
+    );
 
   @Effect()
   public setupTwoFactor$: Observable<Action> = this.actions$
@@ -50,30 +67,41 @@ export class TwoFactorEffects {
           return of(new TwoFactorSetupFail(err));
         }),
       )),
-  );
+    );
 
   @Effect()
   public deleteTwoFactor$: Observable<Action> = this.actions$
     .ofType(DELETE_TWOFACTOR).pipe(
       map((action: DeleteTwoFactor) => action.payload),
-      switchMap((body: {token: string}) => this._twoFactorService.deleteTfoFactor(body).pipe(
+      switchMap((body: { token: string }) => this._twoFactorService.deleteTfoFactor(body).pipe(
         map((user: User) => new DeleteTwoFactorSuccess(user)),
-        tap(() => this._dialog.open(PopupComponent, { data: { message: 'Success' } })),
+        tap(() => this._dialog.open(PopupComponent, {data: {message: 'Success'}})),
         catchError((err: any) => {
           // tslint:disable-next-line
           console.log(err);
-          const message: string = err && err.error && err.error.error
-            ? err.error.error
-            : 'Something went wrong';
-          this._dialog.open(PopupComponent, { data: { message } });
+          // Don't delete this commit!
+          // const message: string = err && err.error && err.error.error
+          //   ? err.error.error
+          //   : 'Something went wrong';
+          this._dialog.open(PopupComponent, {
+            data: {
+              iconClose: 'icon-close',
+              iconClass: 'icon-Exclamation',
+              message: 'Something went wrong',
+              btnClass: '',
+              btnTextContent: ''
+            }
+
+          });
           return of(new DeleteTwoFactorFail(err));
         }),
       )),
-  );
+    );
 
   public constructor(
     private actions$: Actions,
     private _twoFactorService: TwoFactorService,
     private _dialog: MatDialog,
-  ) { }
+  ) {
+  }
 }
