@@ -1,4 +1,4 @@
-<div class="wallet-item-wrapper" >
+<div class="wallet-item-wrapper" *ngIf="crestokenBuySellTableBoolean; else shortMode" >
 
 
   <div class="left-col">
@@ -18,3 +18,20 @@
 
 
 </div>
+
+
+<ng-template #shortMode>
+  <div class="wallet-item-wrapper">
+    <div class="left-col">
+      <div class="wallet-name bitcoin">
+        {{item.tittle}}
+      </div>
+      <div class="wallet-date">
+        <span>{{item.balance}} {{item.asset.code | uppercase }}</span>
+        <span>$ {{item.usd_balance}}</span>
+      </div>
+    </div>
+  </div>
+
+
+</ng-template>
