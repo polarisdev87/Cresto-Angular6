@@ -1,0 +1,12 @@
+<header>
+  <div routerLink="../backoffice/dashboard" class="logo">
+    <img [src]="logo" alt="logo">
+    <p>rest Token</p>
+  </div>
+  <ul class="currency-date">
+    <li *ngFor="let item of assets$ | async">
+      <i class="{{item.icon}}"></i>
+      {{item.code | uppercase}} = {{item.usd_price}}
+    </li>
+  </ul>
+</header>

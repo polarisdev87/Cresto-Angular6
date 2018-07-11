@@ -1,5 +1,5 @@
 import { CRESTOOKEN_DOMAIN_TOKEN } from '../../config';
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from './localStorage.service';

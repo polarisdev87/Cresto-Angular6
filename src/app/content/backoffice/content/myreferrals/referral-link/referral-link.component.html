@@ -1,0 +1,16 @@
+<div class="referral-link-description-wrapper">
+  <h3>Would you like to earn BONUS for each person you refer ?</h3>
+  <p> Share your personal referral link given below and when people click on it and sign up for new account,
+      you will earn a percentage of their campaign contribution. 
+      They will also earn a bonus when they do the same, so everybody wins </p>
+  <h5>Your personal referral link :</h5>
+  <form>
+    <input type="text"
+    appCopypaste
+    #c="copypaste"
+    value="{{referralLink}}">
+  </form>
+  <div class="buttonWrapper">
+    <app-button [buttonState]='copyButton' (click)="c.copy()"></app-button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="dashboard-wr">
+  <div class="dashboard-cell">
+    <app-timer></app-timer>
+    <app-instruction></app-instruction>
+  </div>
+  <div class="dashboard-cell" *ngIf="rounds$ | async as rounds">
+    <app-call-action></app-call-action>
+    <app-backoffice-table
+      [dashboardTableHead]="dashboardTableHead"
+      [rounds]="rounds"
+      [scroll]="true"
+      [columns]="[
+        {value: 'title'},
+        {value: 'supply'},
+        {value: 'price'},
+        {value: 'min_buy'},
+        {value: 'max_buy'},
+        {value: 'free_tokens'},
+        {value: 'free_tokens_recipients'},
+        {value: 'stage'}
+        ]"
+      [emptyMassege]="'ICO Round'"
+    >
+    </app-backoffice-table>
+  </div>
+</div>

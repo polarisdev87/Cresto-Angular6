@@ -1,0 +1,36 @@
+<div class="buy-wr">
+  <div class="buy-cell">
+    <div class="buy-content">
+      <app-timer></app-timer>
+      <app-buy-instruction></app-buy-instruction>
+    </div>
+  </div>
+  <div class="buy-cell">
+    <app-buy-token-form></app-buy-token-form>
+    <div class="make-deposit-wr">
+      <div class="btn-wr">
+        <app-button [routerLink]="'/backoffice/wallet'" [buttonState]="makeDepositLink"></app-button>
+      </div>
+      <div class="text-wr">
+        <h6 class="make-deposit-title">Deposit</h6>
+        <p>If you have not done so, kindly make a deposit in order to buy CSTT tokens. You can deposit Ethereum (ETH) or Bitcoin (BTC)</p>
+      </div>
+
+    </div>
+
+
+    <!--<div class="purchase-btn" *ngFor="let item of wallets$ | async">-->
+    <!--<button *ngIf="item.top_up_address" (click)="openPopup(item.top_up_address)" type="button">deposit your bitcoin-->
+    <!--</button>-->
+    <!--</div>-->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

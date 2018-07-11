@@ -1,0 +1,22 @@
+<div class="personal-information-wrapper">
+  <h2>Personal  Information</h2>
+  <form>
+    <div class="name-wrapper">
+      <label>Name</label>
+      <button class="icon-edit"  *ngIf="switch" (click)="setDisabledState()"></button>
+      <button class="icon-tick"
+        *ngIf="!switch"
+        (click)="setDisabledState()"
+        [disabled]="name.invalid"
+        (click)="editProfile()"></button>
+      <input type="text" class="form-control" [formControl]="name">
+      <span class="warning" *ngIf="name.invalid">Can not be empty</span>
+    </div>
+    <div class="input-wrapper">
+      <label>Email</label>
+      <input type="text" [value]="(user$ | async)?.email" readonly>
+      <label>Sponsor</label>
+      <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
+    </div>
+  </form>
+</div>

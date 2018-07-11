@@ -1,0 +1,131 @@
+@import "../../../backoffice.component"
+
+.two-factor-auth-wrapper
+  max-width: 855px
+  min-height: 325px
+  background: #222833
+  border-radius: 8px
+  color: #c0c9d1
+  font-family: $OpenSansRegular
+  padding: 35px
+  margin-left: 15px
+  // width: 50%
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+  .two-factor-auth__title
+    font-family: $OpenSansSemiBold
+    font-size: 24px
+    margin-top: 10px
+
+  .two-factor-auth__content-name
+    font-size: 18px
+    margin-top: 10px
+
+  .two-factor-auth__content
+      font-size: 16px
+      color: #8e9aa2
+      margin-top: 15px 
+
+  .form-group-factor
+    display: grid
+    text-align: left
+
+  .def
+    display: grid
+    grid-template-rows: 1fr 1fr 1fr
+    text-align: center
+    grid-gap: 22px
+
+    button
+      width: 150px
+      color: orange
+
+  .desableAuthenticatorSupport,
+  .enableAuthenticatorSupport
+    display: grid
+    //grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+    text-align: center
+    grid-gap: 22px
+    button
+      width: 150px
+      justify-self: center
+      margin-top: 20px
+    button:hover
+      cursor: pointer
+    form
+      display: grid
+      grid-gap: 18px 0
+
+      .form-group-factor
+        position: relative
+        font-family: $OpenSansRegular
+        label
+          font-size: 16px
+          color: #8e9aa2
+          position: absolute
+          top: 21px
+          transition: ease all 1s
+          margin-top: 20px
+        input
+          font-size: 18px
+          color: #c0c9d1
+          outline: none
+          background: transparent
+          border: none
+          border-bottom: solid 1px #c0c9d1
+          height: 62px
+          padding: 20px 0
+          z-index: 1
+          margin-top: 25px 
+      .form-group-factor.toched
+        label
+          transition: ease all 1s
+          top: 0
+          font-size: 10px
+
+  .enableAuthenticatorSupport
+    label
+      font-size: 16px
+      color: #8e9aa2
+    form
+      text-align: left
+      padding: 15px 40px 0 40px
+      .form-group-enable
+        display: grid
+        grid-gap: 15px
+        input
+          height: 34px
+          outline: none
+          background: #191f27
+          border: none
+          text-align: center
+          color: #c0c9d1
+          font-size: 16px
+          margin-top: 10px 
+        .two-factor-auth__content
+          font-size: 16px
+      .QRcode-wrapper
+        display: grid
+        grid-template-columns: 244px 1fr
+        grid-gap: 30px
+        margin-top: 15px
+        .QRcode-wrapper__content
+          display: grid
+          grid-gap: 12px 0
+          margin-left: 30px 
+      .two-factor-auth__content-name
+        text-align: center
+      .error
+        color: #ec3e5f
+        text-align: left
+
+
+
+
+
+
+

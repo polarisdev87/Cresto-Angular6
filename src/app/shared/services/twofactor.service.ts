@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpService } from './http.service';
+import { HttpService } from '../../http.service';
 
 @Injectable()
 export class TwoFactorService {
@@ -17,6 +17,10 @@ export class TwoFactorService {
 
   public deleteTfoFactor(body: {token: string}): Observable<User> {
     return this._http.authorizedRequest(`/twofactor/delete`, body, 'POST');
+  }
+
+  public checkTfaCode(body: {tfaCode: string}): Observable<User> {
+    return this._http.authorizedRequest(`/twofactor/checkTfaCode`, body, 'POST');
   }
 
 

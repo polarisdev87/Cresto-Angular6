@@ -1,16 +1,13 @@
-import { HttpService } from './http.service';
+import { HttpService } from '../../http.service';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { LocalStorageService } from './localStorage.service';
-import { Store } from '@ngrx/store';
-import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
   public constructor(
     private _localStorageService: LocalStorageService,
     private _http: HttpService,
-    private _store: Store<any>,
   ) { }
 
   public setPassword(passwordDataquery: PasswordData): Observable<boolean> {
@@ -31,20 +28,19 @@ export class AuthService {
     return this._http.nonAuthorizedRequest(`/auth/signin`, {...user, password});
   }
 
-  public verifyTwoFactor(body: { token: string }): Observable<User> {
-    return this._http.nonAuthorizedRequest(`/auth/twofactor/verify`, body, 'POST');
-  }
-
   public getCurrentUser(): Observable<User> {
     return this._http.authorizedRequest(`/account`, '', 'GET');
   }
 
   public signUp(user: User): Observable<User> {
-    return this._store.select('referral').pipe(
-      switchMap((referredBy: string) => {
-        return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy });
-      })
-    );
+    let referredBy = '';
+    try {
+      referredBy = this._localStorageService.getItem('referralHash');
+    } catch (err) {
+      // tslint:disable-next-line:no-console
+      console.log(err);
+    }
+    return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy });
   }
 
   public tokenToLocalStorage(user: User): Observable<User | null> {

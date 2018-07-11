@@ -1,0 +1,55 @@
+<div class="login-wr" loader [show]="loader$ | async">
+  <app-header-auth></app-header-auth>
+  <div class="main-content">
+    <div class="main-container">
+      <div class="wrapper">
+        <h1>Login</h1>
+        <div class="loginBtnSocial">
+          <button class="loginBtn loginBtn__facebook" (click)="facebookLogin()">
+            <i class="fa fa-facebook-official"></i>
+            Login with Facebook
+          </button>
+          <button class="loginBtn loginBtn__google" (click)="googleLogin()">
+            <img src="assets/images/google-icon.png" alt="google">
+            Login with Google
+          </button>
+        </div>
+        <div class="form-wrapper">
+          <form [formGroup]="form">
+            <div class="input-group">
+              <div class="inputGroup-icons">
+                <img src="assets/images/edit-icon.png" alt="Username">
+              </div>
+              <input placeholder="User Name" type="text" formControlName="username" class="form-control">
+            </div>
+            <!-- password -->
+            <div class="input-group">
+              <div class="inputGroup-icons">
+                <img src="assets/images/lock-icon.png" alt="password">
+              </div>
+              <input placeholder="Password" type="password" formControlName="password" class="form-control">
+            </div>
+            <!-- OTP -->
+            <div class="input-group">
+              <div class="inputGroup-icons">
+                <img src="assets/images/lock-icon.png" alt="password">
+              </div>
+              <input placeholder="OTP (If 2FA Enabled)" type="text" formControlName="tfaCode" class="form-control">
+            </div>
+            <div class="form-group">
+              <a class="forgot-pass" [routerLink]="['/reset-password']">Forgot password?</a>
+            </div>
+            <div class="captcha-wrapper">
+              <re-captcha formControlName="recaptchaReactive"></re-captcha>
+            </div>
+            <div class="button-wrapper">
+              <button class="btn-login" [disabled]="form.invalid" (click)="login(form.value)" value="Login">Login</button>
+              <p class="redirection-link">Don't have an account?
+                <a [routerLink]="['/signup']" class="register-login">Sign Up</a>. </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

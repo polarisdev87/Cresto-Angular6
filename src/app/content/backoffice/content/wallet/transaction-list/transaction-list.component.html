@@ -1,0 +1,21 @@
+<div class="transaction-table-wrapper">
+  <h2>History</h2>
+  <div class="transaction-tabletransaction-table">
+    <app-backoffice-table
+      [dashboardTableHead]="transactionsHistoryHead"
+      [rounds]="transactions"
+      [columns]="[
+        {value: 'created_at'},
+        {value: 'currency'},
+        {value: 'amount'},
+        {value: 'transaction_type'},
+        {value: 'status'},
+        {value: 'hash'}
+      ]"
+      [scroll]="false"
+      [emptyMassege]="'transactions'"
+
+    ></app-backoffice-table>
+
+  </div>
+</div>

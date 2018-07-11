@@ -1,15 +1,10 @@
-import { TWO_FACTOR_LOGIN } from './../actions/auth.action';
 import {
-  DELETE_TWOFACTOR_SUCCESS,
-  TWOFACTOR_SETUP_SUCCESS,
-  VERIFY_TWOFACTOR_SUCCESS,
-} from '../actions/twofactor.action';
-import * as fromAuth from '../actions/auth.action';
-import * as fromSettingsActions from '../actions/personal-info.actions';
+  LOGIN, LOGIN_FAIL,
+  LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS
+} from '../actions/auth.action';
 
 export const initialState: AuthState = {
   isLogged: false,
-  user: {},
   loaded: false,
   loading: false,
   loginError: '',
@@ -20,33 +15,22 @@ export const initialState: AuthState = {
 export function reducer(state: AuthState = initialLoggedState(), action: any): AuthState {
   switch (action.type) {
 
-    case TWOFACTOR_SETUP_SUCCESS:
-    case DELETE_TWOFACTOR_SUCCESS: {
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          ...action.payload
-        }
-      };
-    }
 
-    case fromAuth.SIGN_UP_SUCCESS: {
+    case SIGN_UP_SUCCESS: {
       return {
         ...state,
         loading: false
       };
     }
 
-    case fromAuth.LOGIN:
-    case TWO_FACTOR_LOGIN: {
+    case LOGIN: {
       return {
         ...state,
         loading: true
       };
     }
 
-    case fromAuth.LOGIN_SUCCESS: {
+    case LOGIN_SUCCESS: {
       return {
         ...state,
         loaded: true,
@@ -54,33 +38,10 @@ export function reducer(state: AuthState = initialLoggedState(), action: any): A
         isLogged: true,
         loginError: '',
         signUpError: '',
-        user: action.payload,
       };
     }
 
-    case fromAuth.TWO_FACTOR_LOGIN_SUCCESS: {
-      return {
-        ...state,
-        loaded: true,
-        loading: false,
-        isLogged: true,
-        loginError: '',
-        signUpError: '',
-        user: action.payload,
-      };
-    }
-
-    case VERIFY_TWOFACTOR_SUCCESS: {
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          tfa: true
-        }
-      };
-    }
-
-    case fromAuth.LOGIN_FAIL: {
+    case LOGIN_FAIL: {
       return {
         ...state,
         loaded: false,
@@ -90,14 +51,14 @@ export function reducer(state: AuthState = initialLoggedState(), action: any): A
       };
     }
 
-    case fromAuth.SIGN_UP: {
+    case SIGN_UP: {
       return {
         ...state,
         loading: true
       };
     }
 
-    case fromAuth.SIGN_UP_FAIL: {
+    case SIGN_UP_FAIL: {
       return {
         ...state,
         loaded: false,
@@ -107,14 +68,8 @@ export function reducer(state: AuthState = initialLoggedState(), action: any): A
       };
     }
 
-    case fromSettingsActions.EDIT_PERSONAL_INFO_SUCCESS: {
-      return {
-        ...state,
-        user: action.payload
-      };
-    }
 
-    case fromAuth.LOGOUT_SUCCESS: {
+    case LOGOUT_SUCCESS: {
       return {
         ...initialState
       };

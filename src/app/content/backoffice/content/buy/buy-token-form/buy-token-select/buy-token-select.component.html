@@ -1,0 +1,20 @@
+<div class="select-currency">
+  <div class="{{item.asset.code}}" (click)="selectCoin(item.asset.id)" [ngClass]="{active:currentCoin === item.asset.id}"  *ngFor="let item of wallets$ | async">
+    <div class="icon icon-{{item.asset.code}}">
+      <i class="{{item.icon}}"></i>
+    </div>
+    <div class="content">
+      <span class="icon-title">{{item.asset.code}} = {{item.balance}}</span>
+      <span>$ {{item.usd_balance}}</span>
+    </div>
+  </div>
+  <!-- <div class="eth" (click)="selectCoin(3)" [ngClass]="{active:currentCoin === 3}">
+    <div class="icon icon-eth">
+      <i class="icon-ether"></i>
+    </div>
+    <div class="content">
+      <span class="icon-title">ETH=37</span>
+      <span>$ 54,645</span>
+    </div>
+  </div> -->
+</div>

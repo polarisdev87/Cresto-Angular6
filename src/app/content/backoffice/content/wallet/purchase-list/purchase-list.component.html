@@ -1,0 +1,21 @@
+<div class="transaction-table-wrapper">
+  <h2>History</h2>
+  <div class="transaction-tabletransaction-table">
+    <app-backoffice-table
+      [dashboardTableHead]="purchaseHead"
+      [rounds]="purchase | async"
+      [columns]="[
+        {value: 'created_at'},
+        {value: 'coin'},
+        {value: 'amount'},
+        {value: 'unit_price'},
+        {value: 'paidWith'},
+        {value: 'paid_amount'}
+      ]"
+      [scroll]="false"
+      [emptyMassege]="'purchases'"
+
+    ></app-backoffice-table>
+
+  </div>
+</div>
