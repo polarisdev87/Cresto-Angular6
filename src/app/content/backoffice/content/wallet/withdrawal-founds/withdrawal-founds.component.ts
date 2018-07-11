@@ -67,12 +67,10 @@ export class WithdrawalFoundsComponent implements OnInit {
   public _checkTfaCode({value: tfaCode }: FormControl) {
     return this._tfaService.checkTfaCode({ tfaCode }).pipe(
       debounceTime(300),
-      switchMap((data: any) => {
-        console.log(data);
+      switchMap(() => {
         return of(null);
       }),
-      catchError((err: Error) => {
-        console.log(err);
+      catchError(() => {
         return of({ invalidCode: true });
       })
     );
