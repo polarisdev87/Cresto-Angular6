@@ -9,7 +9,7 @@ type TokenPrice = {
 };
 
 type CalculateFee = {
-  userId: string,
+  userId?: string,
   wallet_id?: number,
   amount: number,
 };
@@ -22,7 +22,7 @@ type WithdrawalRes = {
 
 
 type WithdrawalBody = {
-  userId: string,
+  userId?: string,
   amount: number,
   cstt_address: number
 };

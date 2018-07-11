@@ -1,10 +1,10 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appLable]',
   exportAs: 'lable'
 })
-export class LableDirective {
+export class LableDirective implements OnInit {
 
   public active = false;
 
@@ -13,6 +13,10 @@ export class LableDirective {
   ) {
   }
 
+  public ngOnInit() {
+    Promise.resolve().then(() => this.onBlur());
+
+  }
 
   @HostListener('focus')
   public onFocus() {
@@ -21,7 +25,8 @@ export class LableDirective {
 
   @HostListener('blur')
   public onBlur() {
-    this.active = this._elementRef.nativeElement.value
+    const value: string = this._elementRef.nativeElement.value;
+    this.active = value
       ? true
       : false;
   }
