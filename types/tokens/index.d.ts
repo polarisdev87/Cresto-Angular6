@@ -41,7 +41,7 @@ type WalletData = {
   balance: number
   usd_balance?: number
   top_up_address?: string
-  asset?: string
+  asset?: any
 };
 
 type PurchaseData = {

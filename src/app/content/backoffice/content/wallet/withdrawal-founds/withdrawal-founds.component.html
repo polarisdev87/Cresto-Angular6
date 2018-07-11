@@ -15,7 +15,7 @@
     </div>
     <div class="currency-btn">
       <app-button (click)="withdrawal()" [buttonState]="buttonStateBuy"
-                  [disabled]="withdrawalForm.invalid || withdrawalForm.get('tfaCode').pending"></app-button>
+                  [disabled]="withdrawalForm.invalid ||  withdrawalForm.get('tfaCode')?.pending"></app-button>
     </div>
     <div class="currency-wr">
 
