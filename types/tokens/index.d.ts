@@ -9,7 +9,7 @@ type TokenPrice = {
 };
 
 type CalculateFee = {
-  userId: string,
+  userId?: string,
   wallet_id?: number,
   amount: number,
 };
