@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 export class TransactionListComponent  {
   @Input()
   public transactions;
-  public transactionsHistoryHead = ['Created Date (JMT)', 'Coin', 'Amount', 'Type', 'Status', 'Hash'];
+  public transactionsHistoryHead = ['Created Date (GMT)', 'Coin', 'Amount', 'Type', 'Status', 'Hash'];
 
 }
