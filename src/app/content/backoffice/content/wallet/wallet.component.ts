@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter } from 'rxjs/operators';
 import { IRootState } from '../../../../store/reducers';
@@ -15,7 +16,7 @@ import { getWalletsListTransactions } from './store/selectors/transaction.select
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./wallet.component.sass']
 })
-export class WalletComponent implements OnInit {
+export class WalletComponent implements OnInit, OnDestroy {
 
   public assets$!: Observable<any>;
   public wallets$!: Observable<WalletData[]>;
@@ -23,19 +24,27 @@ export class WalletComponent implements OnInit {
   public purchase$!: Observable<any>;
 
   public crestokenBuySellTable = true;
-  public currentCoin = false ;
+  public currentCoin = false;
   public withdrawalToched = false;
 
+  private _routerSubscription!: Subscription;
+
   public constructor(
-    private _store: Store<IRootState>
+    private _store: Store<IRootState>,
+    private _router: Router
   ) {
   }
 
   public ngOnInit() {
+
+    this._routerSubscription = this._routerSubscription = this._router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe(this._resetRouterState.bind(this));
+
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select(getWalletsData);
     this.transactions$ = this._store.select(getWalletsListTransactions);
-    this.purchase$ = this._store.select( getWalletsListPurchase );
+    this.purchase$ = this._store.select(getWalletsListPurchase);
 
     this._store.select('backoffice', 'user', '_id')
       .pipe(
@@ -48,6 +57,10 @@ export class WalletComponent implements OnInit {
         this._store.dispatch(new TransactionRequest(id));
         this._store.dispatch(new PurchaseRequest(id));
       });
+  }
+
+  public ngOnDestroy(): void {
+    this._routerSubscription.unsubscribe();
   }
 
   public setCoin(coin) {
@@ -67,5 +80,11 @@ export class WalletComponent implements OnInit {
   public outputTable() {
     this.crestokenBuySellTable = false;
 
+  }
+
+  private _resetRouterState(): void {
+    this.crestokenBuySellTable = true;
+    this.currentCoin = false;
+    this.withdrawalToched = false;
   }
 }

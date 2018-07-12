@@ -24,7 +24,7 @@ import { PurchaseListComponent } from './purchase-list/purchase-list.component';
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      {path: '', component: WalletComponent}
+      { path: '', component: WalletComponent, runGuardsAndResolvers: 'always' }
     ]),
     SharedModule,
     ReactiveFormsModule,
