@@ -28,7 +28,7 @@
   .two-factor-auth__content
       font-size: 16px
       color: #8e9aa2
-      margin-top: 15px 
+      margin-top: 15px
 
   .form-group-factor
     display: grid
@@ -80,7 +80,7 @@
           height: 62px
           padding: 20px 0
           z-index: 1
-          margin-top: 25px 
+          margin-top: 25px
       .form-group-factor.toched
         label
           transition: ease all 1s
@@ -105,7 +105,7 @@
           text-align: center
           color: #c0c9d1
           font-size: 16px
-          margin-top: 10px 
+          margin-top: 10px
         .two-factor-auth__content
           font-size: 16px
       .QRcode-wrapper
@@ -116,7 +116,7 @@
         .QRcode-wrapper__content
           display: grid
           grid-gap: 12px 0
-          margin-left: 30px 
+          margin-left: 30px
       .two-factor-auth__content-name
         text-align: center
       .error
@@ -127,5 +127,27 @@
 
 
 
+@media only screen and (max-width: 1500px)
+  .two-factor-auth-wrapper
+    margin-left: 22px
+    padding: 18px 35px
+    min-height: 224px
 
 
+    .enableAuthenticatorSupport
+      grid-gap: 0
+
+      .two-factor-auth__title
+        font-size: 18px
+
+      .two-factor-auth__content-name
+        margin-top: 15px
+        font-size: 16px
+
+
+      .two-factor-auth__content
+        margin-top: 10px
+        font-size: 14px
+
+      button
+        margin-top: 30px
