@@ -48,7 +48,9 @@ import { SharedModule } from './content/backoffice/shared/modules/shared.module'
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot(effects),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,
+      { onSameUrlNavigation: 'reload' }
+    ),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router'
     }),
