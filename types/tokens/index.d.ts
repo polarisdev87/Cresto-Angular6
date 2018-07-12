@@ -28,7 +28,7 @@ type WithdrawalBody = {
 };
 
 type GenerateWalletAddress = {
-  userId: string,
+  userId?: string,
   wallet_id: number,
   address?: string,
 };
