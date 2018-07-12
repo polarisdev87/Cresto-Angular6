@@ -1,7 +1,8 @@
 import { BackofficeComponent } from './backoffice.component';
 import { AccessGuardService } from './access-guard.service';
+import { Route } from '@angular/router';
 
-export const routes = [
+export const routes: Route[] = [
   {
     path: '',
     component: BackofficeComponent,
