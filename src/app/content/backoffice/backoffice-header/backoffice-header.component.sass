@@ -1,5 +1,8 @@
 @import "../backoffice.component"
 
+.toggle-mnu
+  display: none
+  
 header
   width: 100%
   display: flex
@@ -62,11 +65,39 @@ header
     .logo
       margin-left: -10px
 @media only screen and (max-width: 800px)
+  .toggle-mnu
+    display: block
+    span
+      font-family: "OpenSans-SemiBold", sans-serif
+      z-index: 100
+      position: absolute
+      padding-left: 5px
+      &:before 
+        content: ""
+        position: absolute
+        top: -8px
+        left: 16px
+        width: 19px
+        height: 2px
+        border-top: 8px double $white
+        border-bottom: 3px solid $white
+  
   header
     background-color: #222833
     width: 100%
-    padding: 10px 0 14px 0px
+    padding: 21px 0 18px 0
     display: flex
     align-items: center
+    z-index: 1000
     .logo
-      margin-left: 100px
+      margin-left: 40px
+      position: absolute
+      left: 30px
+    .currency-date
+      display: flex
+      flex-direction: row
+      font-family: $OpenSansRegular
+      font-size: 16px
+      color: #c0c9d1
+      li
+        margin-left: 25px 

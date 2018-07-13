@@ -1,4 +1,5 @@
 @import "../backoffice.component"
+
 .sidebar::-webkit-scrollbar-thumb
   background: transparent
   -webkit-border-radius: 0
@@ -244,7 +245,7 @@
     border-radius: 3px
 
 @media only screen and (max-width: 1500px)
-  .sidebar
+  .toggle-mnu
     font-family: "OpenSans-SemiBold", sans-serif
     position: fixed
     z-index: 100
@@ -257,4 +258,10 @@
     padding: 25px 0 40px 0px
     transition: all 0.3s ease
     box-shadow: 1px 0 51px rgba(23, 24, 50, 0.27)
-
+@media only screen and (max-width: 800px)
+  .sidebar
+    position: fixed
+    z-index: 100
+    left: 0
+    top: 61px
+  
