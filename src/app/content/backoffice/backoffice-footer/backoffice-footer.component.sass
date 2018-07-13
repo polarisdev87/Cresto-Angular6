@@ -16,6 +16,10 @@ footer
     display: flex
     flex-direction: row
     align-items: center
+    justify-content: space-between
+  .contacts-wrapper
+    display: flex
+    flex-direction: row
   .chat-wrapper
     display: flex
     flex-direction: row
@@ -39,30 +43,70 @@ footer
     .emptyGreen
       min-height: 30px
       padding: 0 35px
-
-@media only screen and (min-width: 768px) and (max-width: 1023px)
+@media only screen and (max-width: 1200px)
+  footer
+    margin-left: 0
+    .tel-wrapper
+      margin-left: 40px
+    .help-wrapper
+      margin-left: 40px
+    .chat-wrapper 
+      ul 
+        li
+          margin-left: 40px
+          &:first-child
+            margin-left: 30px
+// @media only screen and (min-width: 768px) and (max-width: 1023px)
+//   footer
+//     margin-top: 35px
+//     margin-left: 5px
+//     display: flex
+//     flex-direction: column-reverse
+@media only screen and (max-width: 990px)
   footer
     margin-top: 35px
     margin-left: 5px
-
+    display: flex
+    flex-direction: column-reverse
+    .support-wrapper
+      width: 100%
 @media only screen and (max-width: 500px)
   footer
     display: flex
     flex-direction: column-reverse
-    justify-content: space-between
+    justify-content: space-around
+    align-items: center
     margin-top: 0
     font-size: 12px
+    margin-left: 0
     .support-wrapper
       display: flex
       flex-direction: column
       justify-content: space-between
-    .chat-wrapper
-      .support-text-wrapper
-        // font-size: 0
-      ul 
-        li
-          margin-left: 20px
+      .help-wrapper
+        margin: 0 auto 20px auto
       .contacts-wrapper
         display: flex
         flex-direction: row
-        justify-content: space-around
+        justify-content: flex-start
+        align-items: flex-start
+        margin-bottom: 20px
+        .tel-wrapper
+          margin-right: 20px
+        .chat-wrapper
+          .support-text-wrapper
+            display: none
+            ul 
+              li
+                margin-left: 20px
+      
+@media only screen and (max-width: 360px)
+  footer
+    .support-wrapper
+      .contacts-wrapper
+        .tel-wrapper
+          margin-right: 0
+        .chat-wrapper
+          ul
+            li
+              margin-left: 15px
