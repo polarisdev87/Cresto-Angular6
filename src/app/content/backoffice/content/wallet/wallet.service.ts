@@ -3,10 +3,11 @@ import { combineLatest, Observable } from 'rxjs';
 
 @Injectable()
 export class WalletService {
-  public constructor() {}
+  public constructor() {
+  }
 
   public calculateWithdrawalData(...sources: Observable<any>[]): Observable<CalculateFee> {
-   return combineLatest(
+    return combineLatest(
       sources,
       (userId: string, amount: number) => {
         return {
@@ -21,12 +22,13 @@ export class WalletService {
   public withdrawal(...sources: Observable<any>[]): Observable<WithdrawalBody> {
     return combineLatest(
       sources,
-      (userId: string, data: { amount: number, cstt_address: number }) => {
-        const {amount, cstt_address } = data;
+      (userId: string, data: { amount: number, address: number, wallet_id }) => {
+        const {amount, address, wallet_id} = data;
         return {
           userId,
-          cstt_address,
-          amount
+          address,
+          amount,
+          wallet_id
         };
       }
     );
