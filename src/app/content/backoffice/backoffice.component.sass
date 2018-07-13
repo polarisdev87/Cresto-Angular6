@@ -104,18 +104,16 @@ input:-webkit-autofill:focus
   .back-office
     padding: 5px 35px 0 90px
 
-@media only screen and (min-width: 768px) and (max-width: 1023px)
-      .back-office
-        padding: 0 10px 0 10px
-.hashLink
-  cursor: pointer
-  font-size: 14px
-  color: $white
 
-@media only screen and (min-width: 360px) and (max-width: 767px)
-    .back-office
-      padding: 0 15px 0 15px
+@media only screen and (max-width: 850px)
+  .back-office
+    padding: 0
+
+  .header-wrapper
+    height: 60px
+    background: $bg-sidebar
 
 @media only screen and (max-width: 500px)
-    .header-wrapper
-      display: none
+  .header-wrapper
+    height: 48px
+    overflow: hidden

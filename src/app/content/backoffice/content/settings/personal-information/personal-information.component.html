@@ -15,12 +15,8 @@
     <div class="input-wrapper">
       <label>Email</label>
       <input type="text" [value]="(user$ | async)?.email" readonly>
-
-      <div *ngIf="!switch">
-        <label>Sponsor</label>
-        <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
-      </div>
-
+      <label *ngIf="(user$ | async)?.sponsor?.username"  >Sponsor</label>
+      <input *ngIf="(user$ | async)?.sponsor?.username" type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
     </div>
   </form>
 </div>
