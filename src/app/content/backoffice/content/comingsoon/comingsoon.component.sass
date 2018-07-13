@@ -75,10 +75,11 @@
 
 @media screen and (max-width: 1366px)
     .coming-pay-wrappper
-        margin: -25px 0 0 0
+        margin: 0 0 0 0
         .elipse-big
-            width: 440px
-            height: 440px
+            width: 100%
+            max-width: 440px
+            max-height: 440px
             margin-top: 100px
             margin-bottom: 90px
             .text-in-circle
@@ -102,15 +103,54 @@
             left: 54px
             top: 38px
 
-// @media screen and (min-width: 1024px) and (max-width: 1365px)
-    
-
-@media screen and (min-width: 768px) and (max-width: 1023px)
+@media only screen and (max-width: 1024px)
     .coming-pay-wrappper
         .elipse-big
-            margin-top: 190px
-            margin-right: 150px
-            margin-bottom: 190px
-            margin-left: 150px
-
+            margin: 90px auto
     
+
+@media only screen and (max-width: 768px)
+    .coming-pay-wrappper
+        .elipse-big
+            margin: 190px auto 190px auto
+
+@media only screen and (max-width: 500px)
+    .coming-pay-wrappper
+        .elipse-big
+            margin: 120px auto 120px auto
+            width: 100%
+            max-width: 320px
+            max-height: 320px
+            .text-in-circle
+                .head-text
+                    h1
+                        font-size: 14px
+                .paragraph-text
+                    font-size: 12px
+                .come-soon
+                    letter-spacing: 11px
+                    h2
+                        font-size: 14px
+                    &:after
+                        max-width: 205px
+        .elipse-small
+            width: 23px
+            height: 23px
+            left: 47px
+            top: 25px
+
+// @media only screen and (max-width: 360px)
+//     .coming-pay-wrappper
+//         .elipse-big
+//             margin: 120px auto 120px auto
+//             width: 100%
+//             max-width: 320px
+//             max-height: 320px
+
+@media only screen and (max-width: 359px)
+    .coming-pay-wrappper
+        .elipse-big
+            margin: 55px auto 60px auto
+            width: 100%
+            max-width: 200px
+            max-height: 200px
