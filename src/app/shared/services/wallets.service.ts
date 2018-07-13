@@ -41,8 +41,9 @@ export class WalletsService {
   }
 
   public withdrawal(data: WithdrawalBody): Observable<WithdrawalRes> {
-    const { cstt_address, amount, userId } = data;
-    return this._http.authorizedRequest(`/user/${userId}/wallets/withdrawal_request`, { cstt_address, amount }, 'POST');
+    const { address, amount, userId, wallet_id } = data;
+    return this._http
+      .authorizedRequest(`/user/${userId}/wallets/withdrawal_request`, { address, amount, wallet_id }, 'POST');
   }
 
   public generateWalletAddress(data: GenerateWalletAddress): Observable<{ address: string }> {
