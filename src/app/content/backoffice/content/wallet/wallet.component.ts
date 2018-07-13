@@ -24,7 +24,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   public purchase$!: Observable<any>;
 
   public crestokenBuySellTable = true;
-  public currentCoin = false;
+  public currentCoin;
   public withdrawalToched = false;
 
   private _routerSubscription!: Subscription;
@@ -84,7 +84,7 @@ export class WalletComponent implements OnInit, OnDestroy {
 
   private _resetRouterState(): void {
     this.crestokenBuySellTable = true;
-    this.currentCoin = false;
+    this.currentCoin = null;
     this.withdrawalToched = false;
   }
 }

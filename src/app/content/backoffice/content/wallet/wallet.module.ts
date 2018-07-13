@@ -18,6 +18,7 @@ import { OtherCoinThumbnailComponent } from './other-coin-thumbnail/other-coin-t
 import { TransactionsPipePipe } from './transactions-pipe.pipe';
 import { WithdrawalFoundsComponent } from './withdrawal-founds/withdrawal-founds.component';
 import { PurchaseListComponent } from './purchase-list/purchase-list.component';
+import { CoinPipe } from './coin.pipe';
 
 @NgModule({
   imports: [
@@ -34,7 +35,7 @@ import { PurchaseListComponent } from './purchase-list/purchase-list.component';
   ],
   declarations: [WalletComponent, TransactionListComponent, HelpComponent,
     DepositviewComponent, OwnCoinThumbnailComponent,
-    OtherCoinThumbnailComponent, TransactionsPipePipe, WithdrawalFoundsComponent, PurchaseListComponent],
+    OtherCoinThumbnailComponent, TransactionsPipePipe, WithdrawalFoundsComponent, PurchaseListComponent, CoinPipe],
   providers: [WalletService]
 })
 export class WalletModule {
