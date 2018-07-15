@@ -35,3 +35,27 @@
 .btn-wr
   display: flex
   min-width: 160px
+
+@media screen and (max-width: 800px)
+  .buy-wr
+    display: flex
+    flex-direction: column-reverse
+    flex-wrap: wrap
+    margin-bottom: 35px 
+    .buy-cell
+      width: 50%
+      padding-left: 55px
+      &:last-child
+        width: 90%
+        padding-top: 90px
+        margin-top: 10px
+    .text-wr
+      padding-left: 8px 
+      .make-deposit-title
+        margin-top: 20px
+        margin-bottom: 10px
+        font-size: 21px
+
+  .make-deposit-wr
+    margin-left: 50px
+    margin-bottom: 0px 

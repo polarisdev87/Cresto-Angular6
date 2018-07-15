@@ -8,6 +8,9 @@ header
   align-items: center
   padding: 25px 0 25px 30px
 
+.drop-down-menu
+  display: none
+
 .logo
   display: flex
   flex-direction: row
@@ -49,3 +52,25 @@ header
         color: #65c636
       &.icon-Token
         color: #00e7c7
+@media only screen and (max-width: 800px)
+  header
+    padding: 10px 0 10px 0
+    background-color: #222833 
+  .drop-down-menu
+    display: block
+    position: absolute
+    span
+      position: absolute
+      left: 14px
+      top: -4px
+      border-top: 2px solid $white
+      border-bottom: 7px double $white
+      width: 17px
+      height: 11px
+.logo
+  position: relative
+  left: 65px
+.currency-date
+  font-size: 12px
+  justify-content: flex-end
+   
