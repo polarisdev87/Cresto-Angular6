@@ -1,6 +1,6 @@
 
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../../store/reducers';
 import { Logout } from '../../../store/actions/auth.action';
@@ -11,6 +11,9 @@ import { Logout } from '../../../store/actions/auth.action';
   styleUrls: ['./sidebar.component.sass']
 })
 export class SidebarComponent implements OnInit {
+@Input()
+public isOpen!: boolean;
+
   public user$!: Observable<User>;
   public assets$!: Observable<any>;
   public wallets$!: Observable<any>;
@@ -24,7 +27,6 @@ export class SidebarComponent implements OnInit {
     this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
   }
-
   public logout() {
     this._store.dispatch(new Logout());
   }

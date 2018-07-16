@@ -28,7 +28,7 @@
   .two-factor-auth__content
       font-size: 16px
       color: #8e9aa2
-      margin-top: 15px 
+      margin-top: 15px
 
   .form-group-factor
     display: grid
@@ -80,7 +80,7 @@
           height: 62px
           padding: 20px 0
           z-index: 1
-          margin-top: 25px 
+          margin-top: 25px
       .form-group-factor.toched
         label
           transition: ease all 1s
@@ -105,7 +105,7 @@
           text-align: center
           color: #c0c9d1
           font-size: 16px
-          margin-top: 10px 
+          margin-top: 10px
         .two-factor-auth__content
           font-size: 16px
       .QRcode-wrapper
@@ -116,7 +116,7 @@
         .QRcode-wrapper__content
           display: grid
           grid-gap: 12px 0
-          margin-left: 30px 
+          margin-left: 30px
       .two-factor-auth__content-name
         text-align: center
       .error
@@ -127,5 +127,147 @@
 
 
 
+@media only screen and (max-width: 1500px)
+  .two-factor-auth-wrapper
+    margin-left: 22px
+    padding: 18px 35px
+    min-height: 224px
 
 
+    .enableAuthenticatorSupport
+      grid-gap: 0
+
+      .two-factor-auth__title
+        font-size: 18px
+
+      .two-factor-auth__content-name
+        margin-top: 15px
+        font-size: 16px
+
+
+      .two-factor-auth__content
+        margin-top: 10px
+        font-size: 14px
+
+      button
+        margin-top: 30px
+
+
+      form
+        grid-gap: 0
+        padding: 10px 0px 0 4px
+
+        .form-group-enable
+          grid-gap: 0
+
+          label
+            text-align: center
+            font-size: 14px
+
+          input
+            font-size: 14px
+
+        .two-factor-auth__content
+          text-align: center
+
+        .QRcode-wrapper
+          margin-top: 39px
+          grid-template-columns: 172px 1fr
+          grid-gap: 0
+
+          .QRcode-wrapper__content
+            display: grid
+            grid-gap: 22px
+            margin-left: 27px
+            font-size: 12px
+            visibility: visible
+
+
+        .error
+          font-size: 14px
+          text-align: center
+        .form-group-factor.toched
+          label
+            top: 28px
+
+        .form-group-factor
+
+          input
+            margin-top: 40px
+            padding: 20px 0 0
+            font-size: 14px
+
+          label
+            top: 51px
+
+
+@media only screen and (max-width: 1100px)
+  .two-factor-auth-wrapper
+    margin-left: 0
+    margin-top: 24px
+
+
+@media only screen and (max-width: 600px)
+  .two-factor-auth-wrapper
+    margin-top: 20px
+    padding: 18px 16px
+    .enableAuthenticatorSupport
+      .two-factor-auth__title
+        font-size: 16px
+        margin-top: 12px
+
+      .two-factor-auth__content-name
+        font-size: 14px
+        margin-top: 19px
+
+      .two-factor-auth__content
+        margin-top: 13px
+        font-size: 12px
+
+      button
+        width: 120px
+        margin-top: 38px
+        font-size: 12px
+
+      form
+        padding: 0
+        .form-group-enable
+          label
+            font-size: 12px
+            margin-top: 13px
+          input
+            font-size: 12px
+
+        .two-factor-auth__content
+          margin-top: 10px
+          font-size: 13px
+
+        .QRcode-wrapper
+          grid-template-columns: 1fr
+          margin-top: 31px
+
+          img
+            order: 1
+            width: 171px
+            justify-self: center
+            margin-top: 18px
+
+          .QRcode-wrapper__content
+            margin-left: 0
+            grid-gap: 16px
+
+        .error
+          text-align: left
+          font-size: 12px
+          margin-top: 64px
+
+        .form-group-factor
+          input
+            margin-top: 33px
+            padding: 0
+            font-size: 12px
+            height: 30px
+
+          label
+            top: -11px
+            font-size: 12px

@@ -1,13 +1,54 @@
 .settings-wrapper
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    max-width: 1730px
-    margin-left: 35px 
-    > div 
-      width: 50%
-      &:first-child
-            display: flex
-            flex-direction: column
-            
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  max-width: 1730px
+  margin-left: 35px
+  > div
+    width: 50%
+    &:first-child
+      display: flex
+      flex-direction: column
+
+@media only screen and (max-width: 1500px)
+  .settings-wrapper
+    margin-left: 0
+
+    div
+      width: 50.7%
+
+    div:first-child
+      width: 49.3%
+
+@media only screen and (max-width: 1100px)
+  .settings-wrapper
+    flex-direction: column
+
+    div,
+    div:first-child
+      width: 68.1%
+    div
+
+
+
+@media only screen and (max-width: 850px)
+  .settings-wrapper
+    padding-top: 30px
+
+    div,
+    div:first-child
+      width: 75.8%
+      padding-left: 16px
+
+
+@media only screen and (max-width: 500px)
+  .settings-wrapper
+    div,
+    div:first-child
+      width: 95.6%
+
+
+
+
+
 
