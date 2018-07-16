@@ -26,6 +26,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   public crestokenBuySellTable = true;
   public currentCoin;
   public withdrawalToched = false;
+  public viewPort = innerWidth;
 
   private _routerSubscription!: Subscription;
 

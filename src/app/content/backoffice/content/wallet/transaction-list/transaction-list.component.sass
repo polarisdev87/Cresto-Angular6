@@ -2,6 +2,7 @@
 
 .transaction-table-wrapper
   width: 100%
+  position: relative
   h2
     margin-bottom: 20px
     font-size: 18px
@@ -21,7 +22,19 @@
   margin-bottom: 30px
   .back-office-table__item
     display: grid
-    grid-template-columns: 200px 50px 170px  200px 1fr 1fr
+    grid-template-columns: 200px 50px 170px 200px 1fr 1fr
     padding: 33px 0 26px 0
     border-bottom: solid 1px grey
 
+@media only screen and (max-width: 1500px)
+  .transaction-table-wrapper
+    h2
+      position: absolute
+      top: -29px
+      left: -9px
+      font-size: 14px
+
+@media only screen and (max-width: 768px)
+  .transaction-table-wrapper
+    h2
+      left: -40px
