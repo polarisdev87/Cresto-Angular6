@@ -1,7 +1,6 @@
 @import "../../../../assets/css/variables"
 
 footer
-  margin-top: 80px
   margin-left: 35px
   border-top: 1px solid #2b3c46
   font-family: $OpenSansRegular
@@ -39,3 +38,67 @@ footer
     .emptyGreen
       min-height: 30px
       padding: 0 35px
+
+
+@media screen and (max-width: 1560px)
+  footer
+    margin-left: 0px 
+@media screen and (max-width: 1190px)
+  footer
+    margin-left: 0px 
+    margin-right: 20px
+@media screen and (max-width: 800px)
+  footer
+    margin: 0px 15px 0 15px
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    .support-wrapper
+      margin: 15px 0
+      align-items: initial
+      .chat-wrapper
+        align-items: initial
+        ul
+          li
+            margin-left: 30px 
+      .tel-wrapper
+        max-width: 300px
+        margin-left: 35px
+      .help-wrapper
+        margin-left: 155px
+@media screen and (max-width: 580px)
+  footer
+    margin: 0px
+    font-size: 12px
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    position: relative
+    .copyright
+      margin-top: 20px 
+    .support-wrapper
+      margin: 15px 15px 45px 15px
+      align-items: initial
+      width: 100%
+      display: flex
+      justify-content: space-between
+      .chat-wrapper
+        width: 110px
+        align-items: initial
+        .support-off
+          display: none
+        ul
+          width: 100%
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+          li
+            margin-left: 0px 
+      .tel-wrapper
+        max-width: 300px
+        margin-left: 0px
+      .help-wrapper
+        position: absolute
+        left: calc(35%)
+        top: 70px
+        margin: 0px

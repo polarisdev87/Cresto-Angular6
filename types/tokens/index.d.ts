@@ -24,11 +24,12 @@ type WithdrawalRes = {
 type WithdrawalBody = {
   userId?: string,
   amount: number,
-  cstt_address: number
+  address: number,
+  wallet_id: number | undefined
 };
 
 type GenerateWalletAddress = {
-  userId: string,
+  userId?: string,
   wallet_id: number,
   address?: string,
 };

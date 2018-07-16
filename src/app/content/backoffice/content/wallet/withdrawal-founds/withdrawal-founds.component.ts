@@ -28,7 +28,7 @@ export class WithdrawalFoundsComponent implements OnInit {
 
   public buttonStateBuy = { name: 'Send', class: 'redBig' };
   public withdrawalForm: FormGroup = this._fb.group({
-    cstt_address: ['', Validators.required],
+    address: ['', Validators.required],
     amount: [1, [Validators.required, Validators.min(0)]],
     tfaCode: ['', Validators.required, this._checkTfaCode.bind(this)]
   });
@@ -56,8 +56,10 @@ export class WithdrawalFoundsComponent implements OnInit {
   }
 
   public withdrawal() {
-    const { cstt_address, amount } = this.withdrawalForm.value;
-    this._store.dispatch(new WithdrawalRequest({ cstt_address, amount }));
+    const { address, amount } = this.withdrawalForm.value;
+    // tslint:disable-next-line:variable-name
+    const { id: wallet_id } = this.coin;
+    this._store.dispatch(new WithdrawalRequest({ wallet_id, address, amount }));
   }
 
   public ngOnDestroy() {
