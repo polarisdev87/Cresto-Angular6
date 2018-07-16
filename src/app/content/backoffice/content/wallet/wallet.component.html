@@ -1,4 +1,4 @@
-<div class="wallets-wrapper">
+<div class="wallets-wrapper" (window:resize)="onResize($event)">
   <div class="wallets-list-wrapper"
        [ngClass]="{close: !crestokenBuySellTable || currentCoin }"
   >

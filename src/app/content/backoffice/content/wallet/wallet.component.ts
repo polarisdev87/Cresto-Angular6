@@ -83,6 +83,10 @@ export class WalletComponent implements OnInit, OnDestroy {
 
   }
 
+  public onResize(event) {
+    this.viewPort = event.target.innerWidth;
+  }
+
   private _resetRouterState(): void {
     this.crestokenBuySellTable = true;
     this.currentCoin = null;
