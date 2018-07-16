@@ -13,7 +13,7 @@ import { GetCurrentUser } from './store/actions/user.actions';
   styleUrls: ['./backoffice.component.sass']
 })
 export class BackofficeComponent implements OnInit {
-
+  public isOpen!: boolean;
   public constructor(
     private _store: Store<IRootState>
   ) {
@@ -33,5 +33,9 @@ export class BackofficeComponent implements OnInit {
         }
         this._store.dispatch(new WalletRequest(id));
       });
+  }
+
+  public changeSidebar() {
+    this.isOpen = !this.isOpen;
   }
 }

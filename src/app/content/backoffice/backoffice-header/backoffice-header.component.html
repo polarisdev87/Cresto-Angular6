@@ -1,5 +1,5 @@
 <header>
-  <a class="drop-down-menu"><span></span></a>
+  <a class="drop-down-menu" (click)="dropDownSidebar()"><span></span></a>
   <div routerLink="../backoffice/dashboard" class="logo">
     <img [src]="logo" alt="logo">
     <p>rest Token</p>
@@ -11,7 +11,7 @@
     </li>
   </ul>
   <div class="arrows">
-    <div>Curency</div>
+    <div class="currency-arrow">Currency</div>
     <div class="arrow right"></div>
   </div>
 </header>

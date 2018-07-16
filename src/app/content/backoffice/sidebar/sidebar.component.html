@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" [ngClass]="{'open': isOpen}">
   <ng-scrollbar class="sample">
   <div class="log-out">
     <a (click)="logout()">
