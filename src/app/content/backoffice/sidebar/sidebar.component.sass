@@ -1,4 +1,5 @@
 @import "../backoffice.component"
+
 .sidebar::-webkit-scrollbar-thumb
   background: transparent
   -webkit-border-radius: 0
@@ -13,7 +14,6 @@
 
 .sidebar::-webkit-scrollbar
   display: none !important
-
 
 .sidebar::-webkit-scrollbar
   display: none
@@ -43,6 +43,8 @@
   transition: $transition
   box-shadow: 1px 0 51px rgba(23, 24, 50, 0.27)
   color: #c0c9d1
+
+
   .sidebar-text,
   .balance-title
     opacity: 0
@@ -232,6 +234,7 @@
       opacity: 1
       width: auto
       color: #c0c9d1
+
 .sample
   ng-scrollbar
     background-color: #F8F8F8
@@ -240,3 +243,68 @@
     background-color: rgba(0, 0, 0, 0.15)
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5)
     border-radius: 3px
+
+@media only screen and (max-width: 1600px)
+  .sidebar
+    max-width: 60px
+    padding: 0px 0 40px 15px
+    .log-out
+      height: 45px
+    .balance-wr
+      padding-left: 0px
+      padding-top: 0px
+      padding-bottom: 20px
+      .sidebar-item  
+        margin-bottom: 15px
+        span
+          font-size: 12px
+      .balance-title
+        font-size: 14px
+        padding-right: 48px
+        margin-bottom: 11px
+     
+
+
+        
+    .navigate
+      padding-top: 25px
+      padding-left: 3px
+      li
+        padding-bottom: 0px
+        a
+          padding: 8px 0 5px 0
+          i
+            font-size: 16px
+    .settings-wr
+      display: flex
+      flex-direction: column
+      height: 100px
+      padding-left: 7px
+      font-size: 14px
+      .sidebar-item
+        margin-bottom: 0px
+        &.user
+          i
+            font-size: 17px
+        &.setting
+          i
+            font-size: 22px
+
+
+@media screen and (max-width: 800px)
+  .sidebar
+    display: block
+    max-width: 220px
+    width: 220px
+    transform: translateX(-220px)
+    transition: $transition
+    .sidebar-text,
+    .balance-title
+      opacity: 1
+    &.open
+      transform: translateX(0)
+      padding: 14px 0 0
+  .sidebar *
+    opacity: 1 !important
+    color: #c0c9d1 !important
+    

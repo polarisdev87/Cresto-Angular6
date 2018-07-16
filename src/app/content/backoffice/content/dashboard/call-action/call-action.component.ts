@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class CallActionComponent {
 
   public buttonState1 = {
-    name: 'Make deposit',
+    name: 'MAKE DEPOSIT',
     class: 'redBig'
   };
 }
