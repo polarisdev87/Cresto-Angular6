@@ -1,7 +1,6 @@
 @import "../../../../assets/css/variables"
 
 footer
-  margin-top: 80px
   margin-left: 35px
   border-top: 1px solid #2b3c46
   font-family: $OpenSansRegular
@@ -92,14 +91,15 @@ footer
       justify-content: space-between
       .help-wrapper
         margin: 0 auto 20px auto
+        left: 50%
       .contacts-wrapper
         display: flex
         flex-direction: row
-        justify-content: flex-start
+        justify-content: space-between
         align-items: flex-start
         margin-bottom: 20px
         .tel-wrapper
-          margin-right: 20px
+          margin-right: 0
         .chat-wrapper
           .support-text-wrapper
             display: none
@@ -107,13 +107,78 @@ footer
               li
                 margin-left: 20px
       
-@media only screen and (max-width: 360px)
+@media only screen and (max-width: 400px)
   footer
     .support-wrapper
       .contacts-wrapper
         .tel-wrapper
           margin-right: 0
+          .phone-support
+            display: none
         .chat-wrapper
           ul
             li
-              margin-left: 15px
+              margin-left: 20px
+
+@media screen and (max-width: 1560px)
+  footer
+    margin-left: 0px 
+@media screen and (max-width: 1190px)
+  footer
+    margin-left: 0px 
+    margin-right: 20px
+@media screen and (max-width: 800px)
+  footer
+    margin: 0px 15px 0 15px
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    .support-wrapper
+      margin: 30px 0 15px 0
+      align-items: initial
+      .chat-wrapper
+        align-items: initial
+        ul
+          li
+            margin-left: 40px 
+      .tel-wrapper
+        max-width: 300px
+        margin-left: 35px
+      .help-wrapper
+        // margin-left: 155px
+@media screen and (max-width: 580px)
+  footer
+    margin: 0px
+    font-size: 12px
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    position: relative
+    .contacts-wrapper
+      width: 100%
+      justify-content: space-between
+    .copyright
+      margin-top: 20px 
+    .support-wrapper
+      margin: 15px 15px 0 15px
+      align-items: initial
+      width: 100%
+      display: flex
+      justify-content: space-between
+      .chat-wrapper
+        width: 110px
+        align-items: initial
+        .support-off
+          display: none
+        ul
+          width: 100%
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+          li
+            margin-left: 20px 
+      .tel-wrapper
+        max-width: 300px
+        margin-left: 0px
+      .help-wrapper
+        margin: 0 auto

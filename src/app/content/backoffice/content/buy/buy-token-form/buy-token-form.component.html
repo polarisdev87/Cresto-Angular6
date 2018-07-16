@@ -9,7 +9,7 @@
       <div class="currency-title">Select currency:</div>
       <app-buy-token-select formControlName="currency"></app-buy-token-select>
       <div class="total">
-        <span class="total-title">Total ETH :</span>
+        <span class="total-title">Total {{currencies[tokensform?.value?.currency]}} :</span>
         <span>{{tokenPrice$ | async}} {{currencies[tokensform?.value?.currency]}}</span>
       </div>
     </div>

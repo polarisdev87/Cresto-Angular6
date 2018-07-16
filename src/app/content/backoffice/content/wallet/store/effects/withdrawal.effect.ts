@@ -57,7 +57,7 @@ export class WithdrawalEffects {
             data: {
               iconClose: 'icon-close',
               iconClass: 'icon-Exclamation',
-              message: 'Something went wrong!',
+              message: err.message,
             }
           });
           // tslint:disable-next-line

@@ -13,6 +13,8 @@
       padding-left: 0
   .buy-content
     max-width: 480px
+    .arrow
+      display: none
   .text-wr
     padding-left: 30px
     .make-deposit-title
@@ -35,3 +37,118 @@
 .btn-wr
   display: flex
   min-width: 160px
+
+@media screen and (max-width: 1560px)
+  .buy-wr
+    .buy-cell
+      max-width: 400px
+      padding-left: 0px 
+      &:last-child
+        max-width: 768px
+        padding-top: 0px
+        margin-top: 0px
+        margin-left: 80px
+        .make-deposit-wr
+          margin-left: 0px
+          margin-top: 40px 
+          margin-bottom: 0px
+    .text-wr
+      padding-left: 8px 
+      .make-deposit-title
+        margin-bottom: 10px
+        font-size: 21px
+
+@media screen and (max-width: 1190px)
+  .buy-wr
+    max-width: 768px
+    display: flex
+    flex-direction: column-reverse
+    flex-wrap: wrap
+    margin-bottom: 35px 
+    .buy-cell
+      width: 50%
+      &:last-child
+        width: 100%
+        margin-top: 90px
+        margin-left: 0px
+    .text-wr
+      padding-left: 8px 
+      .make-deposit-title
+        margin-top: 20px
+        margin-bottom: 10px
+        font-size: 21px
+
+  .make-deposit-wr
+    margin-left: 50px
+    margin-bottom: 0px 
+@media screen and (max-width: 800px)
+  .buy-wr
+    .buy-cell
+      max-width: 400px
+      padding-left: 0px 
+      &:last-child
+        max-width: 768px
+        padding-top: 0px
+        margin-top: 130px
+        margin-left: 0px
+        .make-deposit-wr
+          margin-left: 60px
+          margin-top: 40px 
+          margin-bottom: 0px
+    .text-wr
+      padding-left: 8px 
+      .make-deposit-title
+        margin-bottom: 10px
+        font-size: 21px
+@media screen and (max-width: 580px)
+  .buy-wr
+    .buy-cell
+      width: 100%
+      padding: 0px 15px
+      &:last-child
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        margin-left: 0px 
+        .make-deposit-wr
+          margin-left: 0px
+          margin-top: 0px 
+          display: flex
+          flex-direction: column-reverse
+          justify-content: center
+      .arrow
+        display: inline
+        width: 0px
+        height: 0px
+        border: 10px solid transparent
+        border-bottom-color: #00ebc9
+        border-radius: 9px
+        box-shadow: 0 0 0px 0px #00ebc9
+        margin-left: 0px
+        padding: 0
+        float: left
+        font-family: $OpenSansLight
+        position: relative
+        left: calc(44%)
+        bottom: 20px
+        &:before
+          display: block
+          content: ""
+          width: 0px
+          height: 0px
+          border: 8px solid transparent
+          border-bottom-color: #191f27
+          display: inline-block
+          -webkit-transform: translate(-8px, -6px)
+    .text-wr
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-left: 0px 
+      margin: 0px 45px 20px 45px 
+      .make-deposit-title
+        margin-top: 0px 
+        margin-bottom: 10px
+        padding: 0 auto
+        font-size: 21px
