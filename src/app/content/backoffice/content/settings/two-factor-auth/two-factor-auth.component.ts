@@ -5,7 +5,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IRootState } from '../../../../../store/reducers';
 import { DeleteTwoFactor, TwoFactorSetup, VerifyTwoFactor } from '../store/actions/twofactor.actions';
-import { skip } from 'rxjs/operators';
 
 @Component({
   selector: 'app-two-factor-auth',
@@ -33,9 +32,7 @@ export class TwoFactorAuthComponent implements OnInit {
   public ngOnInit() {
     this.isLoading$ = this._store.select('settings', 'tfa', 'isLoading');
     this.tfaData$ = this._store.select('settings', 'tfa', 'tfaData');
-    this._store.select('backoffice', 'user', 'twofactorEnabled').pipe(
-      skip(1)
-    ).subscribe((enabled: boolean) => {
+    this._store.select('backoffice', 'user', 'twofactorEnabled').subscribe((enabled: boolean) => {
       if (enabled) {
         this.twofactorState = 'desableAuthenticatorSupport';
         return;

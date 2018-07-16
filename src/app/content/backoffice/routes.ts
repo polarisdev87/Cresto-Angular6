@@ -29,7 +29,7 @@ export const routes: Route[] = [
         canLoad: [AccessGuardService]
       },
       {
-        path: 'exchenge',
+        path: 'exchange',
         loadChildren: './content/comingsoon/comingsoon.module#ComingsoonModule',
         data: {
           title: 'EXCHANGE',
