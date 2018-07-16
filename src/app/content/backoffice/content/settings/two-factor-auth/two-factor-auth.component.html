@@ -27,7 +27,7 @@
           </p>
         </div>
       </div>
-      <p class="two-factor-auth__content-name error" *ngIf="enableTfaCode.invalid">
+      <p class="two-factor-auth__content-name error" [style.visibility]="enableTfaCode.invalid==true?'visible':'hidden'">
         Enter the 2-step verification code provided by your authentication app
       </p>
       <div [ngClass]="{toched:c.active}" class="form-group-factor">

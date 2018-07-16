@@ -26,6 +26,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   public crestokenBuySellTable = true;
   public currentCoin;
   public withdrawalToched = false;
+  public viewPort = innerWidth;
 
   private _routerSubscription!: Subscription;
 
@@ -80,6 +81,10 @@ export class WalletComponent implements OnInit, OnDestroy {
   public outputTable() {
     this.crestokenBuySellTable = false;
 
+  }
+
+  public onResize(event) {
+    this.viewPort = event.target.innerWidth;
   }
 
   private _resetRouterState(): void {
