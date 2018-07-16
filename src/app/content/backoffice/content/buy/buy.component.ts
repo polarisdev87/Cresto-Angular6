@@ -8,7 +8,7 @@ import { IRootState } from '../../../../store/reducers';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.sass'],
+  styleUrls: ['./buy.component.sass']
 
 })
 export class BuyComponent implements OnInit {
@@ -25,7 +25,7 @@ export class BuyComponent implements OnInit {
   public assets$!: Observable<any>;
   public wallets$!: Observable<any>;
   public makeDepositLink = {
-    name: 'Make deposit',
+    name: 'MAKE DEPOSIT',
     class: 'emptyGreen'
   };
 
