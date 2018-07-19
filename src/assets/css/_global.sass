@@ -19,3 +19,12 @@ a
 li
   list-style: none
 
+.mat-menu-panel
+  display: none
+
+@media (max-width: 580px)
+  .mat-menu-panel
+    display: block
+    background-color: $widget-bg
+    .mat-menu-content
+      width: 150px

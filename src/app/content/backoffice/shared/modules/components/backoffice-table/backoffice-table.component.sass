@@ -28,7 +28,7 @@
 
       tr
         td
-          padding: 30px 0 30px 23px
+          padding: 30px 0 30px 10px
           position: relative
           cursor: pointer
           &:before
@@ -191,12 +191,15 @@
   table.scroll thead
     display: block
     width: 100%
-    td,
+    td
+      width: 12%
+      &.scrollTD
+        width: 7%
     th
-      width: 12.5%
-      min-width: 135px
-      &:nth-child(7)
-        min-width: 165px
+      width: 12%
+      &:nth-child(7), &:last-child
+        width: 14%
+
   table.scroll
     .sample
       display: block
@@ -238,52 +241,39 @@ h5
             text-overflow: ellipsis !important
             overflow: hidden !important
             white-space: nowrap !important
-
-//
-//        width: calc(100%/6);
-//max-width: 150px;
-//overflow: hidden;
-//font-size: 14px;
-//padding: 6px 0 36px 27px;
-@media only screen and (max-width: 1500px)
-  .back-office-table
+  &.m-table
     table
-      thead
-        th
-          font-size: 12px
-          padding-bottom: 22px
+      th
+        padding-left: 15px
+    display: none
 
-
-      tbody
-        tr
-          &.confirmed,
-          &.processed,
-          &.rejected
-            td
-              width: calc(100% / 6)
-              max-width: 150px
-              overflow: hidden
-              font-size: 14px
-              padding: 21px 0 21px 27px
-
-
-@media only screen and (max-width: 920px)
+@media (min-width: 1200px) and (max-width: 1300px)
   .back-office-table
     table
       tbody
+        font-size: 14px
         tr
-          &.confirmed,
-          &.processed,
-          &.rejected
-            td
-              padding: 21px 10px
+          td
+            &.scrollTD
+              width: 10%
 
-
-@media only screen and (max-width: 1500px)
+@media (max-width: 968px)
   .back-office-table
-    padding: 10px
-
     table
-      thead
-        th
-          padding-left: 5px
+      th
+        font-size: 13px
+      tbody
+        font-size: 14px
+        tr
+          td
+            padding: 20px 0px 20px 5px
+
+@media (max-width: 768px)
+  .back-office-table
+    border-radius: 0px
+
+@media (max-width: 650px)
+  .back-office-table
+    display: none
+    &.m-table
+      display: block 

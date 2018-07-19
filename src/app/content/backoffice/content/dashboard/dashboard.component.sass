@@ -1,13 +1,42 @@
 @import "../../backoffice.component"
 .dashboard-wr
   display: flex
-  flex-wrap: nowrap
-  .dashboard-cell
-    width: 34%
+  flex-wrap: wrap
+  justify-content: space-between
+
+  .dashboard-info
+    flex: 0 0 34%
     padding-right: 60px
     padding-left: 35px
-    &:last-child
-      width: 73%
-      padding-right: 0
-      padding-left: 0
+  .dashboard-table
+    flex: 0 0 63%
+    app-timer
+      display: none
+
+@media (max-width: 1200px)
+  .dashboard-wr
+    flex-direction: column-reverse
+
+    .dashboard-info
+      app-timer
+        display: none
+    .dashboard-table
+      padding-right: 60px
+      padding-left: 35px
+      app-timer
+        display: block
+
+@media (max-width: 968px)
+  .dashboard-wr
+    .cell
+      padding: 30px
+    .dashboard-table
+      app-timer
+        text-align: center
+ 
+@media (max-width: 768px)
+  .dashboard-wr
+    .dashboard-table
+      padding: 0px
+      padding-top: 30px
 

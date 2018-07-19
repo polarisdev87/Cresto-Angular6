@@ -9,7 +9,7 @@
       <ng-scrollbar *ngIf="scroll" class="sample">
         <tbody>
         <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
-          <td [class]="item.type" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
+          <td [class]="item.type + ' scrollTD'" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
         </tr>
         </tbody>
       </ng-scrollbar>
@@ -19,6 +19,33 @@
       </tr>
       </tbody>
     </table>
+</div>
+<div class='back-office-table m-table'>
+  <table [ngClass]="{'scroll': scroll}">
+    <thead>
+    <tr>
+      <th>ICO Round</th>
+      <th>Price ($)</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <ng-scrollbar *ngIf="scroll" class="sample">
+      <tbody>
+      <ng-container *ngFor="let round of rounds, let ind=index ">
+        <tr [class]="round.stage | lowercase">
+          <td class="m-table-cell"><span>{{round['title']}}</span></td>
+          <td class="m-table-cell"><span>{{round['price']}}</span></td>
+          <td class="m-table-cell"><span>{{round['status']}}</span></td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </ng-scrollbar>
+    <tbody *ngIf="!scroll">
+      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status || round.coin+'tr' | lowercase">
+        <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div class="emptyMassege-wrapper" *ngIf="rounds.length === 0 ">
   <h5>
