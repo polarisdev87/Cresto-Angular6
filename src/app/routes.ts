@@ -31,6 +31,10 @@ export const routes = [
     loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
     canLoad: [AuthGuardService]
   },
+  {
+    path: 'FAQ',
+    loadChildren: './content/faq/faq.module#FAQModule',
+  },
   {path: ':referralHash', loadChildren: './content/landing/landing.module#LandingModule'},
   {
     path: '**',
