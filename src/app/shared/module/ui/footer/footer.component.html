@@ -1,5 +1,8 @@
 <footer class="footer">
   <div class="main-container">
+    <div [ngClass] = "['faq-btn-wrapper', customClass]" >
+      <a [routerLink]="['/FAQ']" (click)="scrollTop()">Crest FAQ</a>
+    </div>
     <div class="sub-title white">Any questions? Let’s talk.</div>
     <div class="contacts-row">
       <div class="contacts">
