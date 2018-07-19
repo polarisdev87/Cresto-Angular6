@@ -1,4 +1,7 @@
-import {GENERATE_WALLET_ADDRESS_SUCCESS, WALLET_FAIL, WALLET_REQUEST, WALLET_SUCCESS} from './../actions/wallets.action';
+import {
+  GENERATE_WALLET_ADDRESS_SUCCESS,
+  WALLET_FAIL, WALLET_REQUEST, WALLET_SUCCESS
+} from './../actions/wallets.action';
 
 export const initialState: WalletState = {
   isLoading: false,
@@ -19,15 +22,10 @@ export function reducer(state: any = initialState, action: { type: string, paylo
     }
 
     case WALLET_SUCCESS: {
-      let wallets = [];
-      if (action.payload && action.payload.wallets) {
-        wallets = [...action.payload.wallets, {
-          asset: {code: 'usd'},
-          balance: action.payload.total_usd
-        }];
-
-      }
-      const data = action.payload && action.payload.wallets ? wallets : [];
+      const data = action.payload && action.payload.wallets ? [...action.payload.wallets, {
+        asset: { code: 'usd' },
+        balance: action.payload.total_usd
+      }] : [];
 
       return {
         ...state,
@@ -47,7 +45,7 @@ export function reducer(state: any = initialState, action: { type: string, paylo
     case GENERATE_WALLET_ADDRESS_SUCCESS: {
       const data = state.data.slice();
       const index: number = data.findIndex((item: WalletData) => item.id === action.payload.wallet_id);
-      data[index] = {...data[index], top_up_address: action.payload.address};
+      data[index] = { ...data[index], top_up_address: action.payload.address };
 
       return {
         ...state,

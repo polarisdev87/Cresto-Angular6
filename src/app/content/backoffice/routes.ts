@@ -1,7 +1,8 @@
-import {BackofficeComponent} from './backoffice.component';
-import {AccessGuardService} from './access-guard.service';
+import { BackofficeComponent } from './backoffice.component';
+import { AccessGuardService } from './access-guard.service';
+import { Route } from '@angular/router';
 
-export const routes = [
+export const routes: Route[] = [
   {
     path: '',
     component: BackofficeComponent,
@@ -28,7 +29,7 @@ export const routes = [
         canLoad: [AccessGuardService]
       },
       {
-        path: 'exchenge',
+        path: 'exchange',
         loadChildren: './content/comingsoon/comingsoon.module#ComingsoonModule',
         data: {
           title: 'EXCHANGE',
@@ -42,7 +43,8 @@ export const routes = [
         loadChildren: './content/comingsoon/comingsoon.module#ComingsoonModule',
         data: {
           title: 'STAKING',
-          subtitle: `Our staking platform allows you to earn monthly dividends in the form of CSTT tokens (up to 10%), when you tokens for 30 days or more.`,
+          subtitle: `Our staking platform allows you to earn monthly dividends in the
+          form of CSTT tokens (up to 10%), when you stake tokens for 30 days or more.`,
           backgroundImg: '../../../assets/images/staking.png'
         },
         canLoad: [AccessGuardService]

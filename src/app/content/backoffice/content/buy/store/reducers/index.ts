@@ -1,11 +1,11 @@
-import {ActionReducerMap} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 import * as fromBuyToken from './buy-tokens.reducer';
 
-export interface BuyState {
+export interface IBuyState {
   tokenPurchase: any;
 }
 
-export const reducers: ActionReducerMap<BuyState> = {
+export const reducers: ActionReducerMap<IBuyState> = {
   tokenPurchase: fromBuyToken.reducer,
 };

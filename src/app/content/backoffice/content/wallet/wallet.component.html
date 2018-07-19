@@ -1,26 +1,40 @@
-<div class="wallets-wrapper">
-  <div class="wallets-list-wrapper">
+<div class="wallets-wrapper" (window:resize)="onResize($event)">
+  <div class="wallets-list-wrapper"
+       [ngClass]="{close: !crestokenBuySellTable || currentCoin,
+                   active: currentCoin}"
+  >
 
     <ng-template ngFor let-item [ngForOf]="wallets$ | async">
-      <div [ngClass]=" {close: currentCoin, active: currentCoin?.asset?.code === item.asset.code } "
-           class="wallet {{item.asset.code}} " *ngIf="item.asset.code !== 'cstt'">
-        <app-other-coin-thumbnail
-          [item]="item"
-          [fullMode]="!currentCoin"
-          (setDeposit)="currentCoin = $event"
-          (click)="setCoin(item)"
-        ></app-other-coin-thumbnail>
+      <div [ngClass]=" {close: currentCoin || withdrawalToched || !crestokenBuySellTable ,
+                        active: currentCoin?.asset?.code === item.asset.code || withdrawalToched?.asset?.code === item.asset.code,
+                        crestokenBuySellTable: !crestokenBuySellTable } " class="wallet {{item.asset.code}} "
+           *ngIf="item.asset.code !== 'cstt'">
+        <app-other-coin-thumbnail [item]="item" [fullMode]="!currentCoin && !withdrawalToched "
+                                  [crestokenBuySellTableBoolean]="crestokenBuySellTable"
+                                  (setWithdrawal)="withdrawalToched = $event" (setDeposit)="currentCoin = $event"
+                                  (click)="setCoin(item)"
+                                  (click)="withdrawalTochedActive(item)"></app-other-coin-thumbnail>
 
       </div>
-      <div class="wallet {{item.asset.code}} " *ngIf="item.asset.code === 'cstt' && !currentCoin">
-        <app-own-coin-thumbnail [item]="item"></app-own-coin-thumbnail>
+      <div class="wallet {{item.asset.code}} " [ngClass]="{close: !crestokenBuySellTable }" (click)="outputTable()"
+           *ngIf="item.asset.code === 'cstt'  && !currentCoin && !withdrawalToched">
+        <app-own-coin-thumbnail [item]="item"
+                                [crestokenBuySellTableBoolean]="crestokenBuySellTable"></app-own-coin-thumbnail>
       </div>
 
     </ng-template>
+
+    <app-depositview *ngIf="currentCoin && viewPort <= 1500"
+                     [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
   </div>
 
 
-  <app-depositview *ngIf="currentCoin" [coin]="currentCoin"></app-depositview>
+  <app-depositview *ngIf="currentCoin && viewPort > 1500"
+                   [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
+  <app-withdrawal-founds *ngIf="withdrawalToched" [coin]="withdrawalToched"></app-withdrawal-founds>
   <!--<app-help></app-help>-->
-  <app-transaction-list [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+  <app-transaction-list *ngIf="crestokenBuySellTable"
+                        [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+  <app-purchase-list *ngIf="!crestokenBuySellTable" [purchase]="purchase$ "></app-purchase-list>
+  <!--<app-transaction-list [transactions]="purchase$ | async "></app-transaction-list>-->
 </div>

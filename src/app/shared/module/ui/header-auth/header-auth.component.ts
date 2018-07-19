@@ -9,9 +9,9 @@ export class HeaderAuthComponent implements OnInit {
 
   public show = false;
 
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     const el1 = document.createElement('script');
     const el2 = document.createElement('script');
     const el3 = document.createElement('script');

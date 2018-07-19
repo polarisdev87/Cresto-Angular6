@@ -19,4 +19,3 @@ export class RoundsLoadFail implements Action {
   public constructor(public payload: Error) {}
 }
 
-

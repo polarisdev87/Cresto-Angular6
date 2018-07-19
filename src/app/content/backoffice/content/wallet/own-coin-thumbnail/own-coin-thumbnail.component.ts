@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-own-coin-thumbnail',
@@ -10,17 +10,12 @@ export class OwnCoinThumbnailComponent {
   @Input()
   public item;
 
-  CSTTBtnState = {
+  @Input()
+  public crestokenBuySellTableBoolean;
+
+  // tslint:disable-next-line
+  public CSTTBtnState = {
     name: 'Buy',
     class: 'redBig'
   };
-
-  depositBtnState = {
-    name: 'Deposit',
-    class: 'emptyGreen'
-  };
-
-  withdrawalBtnState = {
-    name: 'Withdrawal',
-    class: 'emptyRed'
-  };}
+}

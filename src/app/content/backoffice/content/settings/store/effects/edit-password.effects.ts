@@ -1,5 +1,8 @@
 import { MatDialog } from '@angular/material';
-import { CheckUserPassword, CheckUserPasswordSuccess, CheckUserPasswordFail, EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordSuccess, EditUserPasswordFail } from './../actions/edit-pasword.actions';
+import {
+  CheckUserPassword, CheckUserPasswordFail,
+  CheckUserPasswordSuccess, EDIT_USER_PASSWORD, EditUserPassword, EditUserPasswordFail, EditUserPasswordSuccess
+} from './../actions/edit-pasword.actions';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
@@ -20,13 +23,22 @@ export class EditPasswordEffects {
         map((data: boolean) => new CheckUserPasswordSuccess(data)),
         catchError((err: Error) => {
           // TODO figure out design for error handling
-          this._dialog.open(PopupComponent, { data: { message: 'Current password is not valid' } }),
-          // tslint:disable-next-line
-          console.log(err);
+          this._dialog.open(PopupComponent, {
+            data: {
+              iconClose: 'icon-close',
+              iconClass: 'icon-Exclamation',
+              message: 'Current password is not valid',
+              btnClass: '',
+              btnTextContent: ''
+            }
+
+          }),
+            // tslint:disable-next-line
+            console.log(err);
           return of(new CheckUserPasswordFail(err));
         })
       )),
-  );
+    );
 
   @Effect()
   public editUserPassword$: Observable<Action> = this.actions$
@@ -34,24 +46,43 @@ export class EditPasswordEffects {
       map((action: EditUserPassword) => action.payload),
       switchMap((passwordData: EditPasswordData) => this._settingsService.editUserPassword(passwordData).pipe(
         map((user: User) => new EditUserPasswordSuccess(user)),
-        tap(() => this._dialog.open(PopupComponent, { data: { message: 'Success' } })),
+        tap(() => this._dialog.open(PopupComponent, {
+          data: {
+            iconClose: 'icon-close',
+            iconClass: 'icon-tick',
+            message: 'Success',
+            btnClass: '',
+            btnTextContent: ''
+          }
+        })),
         catchError((err: any) => {
-          const message: string = err && err.error && err.error.error
-            ? err.error.error
-            : 'Something went wrong';
-          this._dialog.open(PopupComponent, { data: { message } }),
+          // Don't delete this commit!
+          // const message: string = err && err.error && err.error.error
+          //   ? err.error.error
+          //   : 'Something went wrong';
+          this._dialog.open(PopupComponent, {
+            data: {
+              iconClose: 'icon-close',
+              iconClass: 'icon-Exclamation',
+              message: 'Something went wrong',
+              btnClass: '',
+              btnTextContent: ''
+            }
 
-          // tslint:disable-next-line
-          console.log(err);
+          }),
+
+            // tslint:disable-next-line
+            console.log(err);
           return of(new EditUserPasswordFail(err));
         })
       )),
-  );
+    );
 
 
   public constructor(
     private actions$: Actions,
     private _settingsService: SettingsService,
     private _dialog: MatDialog,
-  ) { }
+  ) {
+  }
 }

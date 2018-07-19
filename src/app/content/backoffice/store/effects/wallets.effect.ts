@@ -1,3 +1,4 @@
+import { IRootState } from './../../content/myreferrals/store/reducers/index';
 import {
   GENERATE_WALLET_ADDRESS_REQUEST,
   GenerateWalletAddressFail,
@@ -8,12 +9,11 @@ import {
   WalletLoadSuccess,
   WalletRequest
 } from './../actions/wallets.action';
-import {Injectable} from '@angular/core';
-import {Actions, Effect} from '@ngrx/effects';
-import {Action} from '@ngrx/store';
-import {Observable, of} from 'rxjs';
-import {catchError, map, switchMap, tap} from 'rxjs/operators';
-import {MatDialog} from '@angular/material';
+import { Injectable } from '@angular/core';
+import { Actions, Effect } from '@ngrx/effects';
+import { Action, Store } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { WalletsService } from '../../../../shared/services/wallets.service';
 
 @Injectable()
@@ -37,7 +37,8 @@ export class WalletsEffects {
   @Effect()
   public generateWalletAddress$: Observable<Action> = this.actions$
     .ofType(GENERATE_WALLET_ADDRESS_REQUEST).pipe(
-      map((action: GenerateWalletAddressRequest) => action.payload),
+      withLatestFrom(this._store.select('backoffice', 'user', '_id')),
+      map(([action, userId]: [GenerateWalletAddressRequest, string]) => ({...action.payload, userId})),
       switchMap((data: GenerateWalletAddress) => this._walletsService.generateWalletAddress(data).pipe(
         map((res: { address: string }) => new GenerateWalletAddressSuccess({...data, ...res})),
         catchError((err: Error) => {
@@ -51,7 +52,7 @@ export class WalletsEffects {
   public constructor(
     private actions$: Actions,
     private _walletsService: WalletsService,
-    private _dialog: MatDialog,
+    private _store: Store<IRootState>,
   ) {
   }
 }

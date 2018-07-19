@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, combineLatest } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 
 @Injectable()
 export class WalletService {
-  public constructor() {}
+  public constructor() {
+  }
 
-  calculateWithdrawalData(...sources: Observable<any>[]): Observable<CalculateFee> {
-   return combineLatest(
+  public calculateWithdrawalData(...sources: Observable<any>[]): Observable<CalculateFee> {
+    return combineLatest(
       sources,
       (userId: string, amount: number) => {
         return {
@@ -18,15 +19,16 @@ export class WalletService {
   }
 
 
-  withdrawal(...sources: Observable<any>[]): Observable<WithdrawalBody> {
+  public withdrawal(...sources: Observable<any>[]): Observable<WithdrawalBody> {
     return combineLatest(
       sources,
-      (userId: string, data: { amount: number, cstt_address: number }) => {
-        const {amount, cstt_address } = data;
+      (userId: string, data: { amount: number, address: number, wallet_id }) => {
+        const {amount, address, wallet_id} = data;
         return {
           userId,
-          cstt_address,
-          amount
+          address,
+          amount,
+          wallet_id
         };
       }
     );

@@ -1,33 +1,3 @@
-<!--<div  class="container-fluid full-width-container value-added-detail-page">-->
-  <!--<h2>Transaction List</h2>-->
-  <!--<div  class="table-responsive pmd-card pmd-z-depth">-->
-    <!--<table class="table table-mc-red pmd-table table-striped">-->
-      <!--<thead >-->
-      <!--<tr>-->
-        <!--<th >Created Date</th>-->
-        <!--<th >Coin</th>-->
-        <!--<th >Amount</th>-->
-        <!--<th >Type</th>-->
-        <!--<th >Status</th>-->
-        <!--<th >Hash</th>-->
-      <!--</tr>-->
-      <!--</thead>-->
-      <!--<tbody >-->
-      <!--<tr class="table_row" *ngFor="let item of transactions">-->
-        <!--<th>{{item.created_at}}</th>-->
-        <!--<th>{{item.asset_code | uppercase}}</th>-->
-        <!--<th>{{item.amount}}</th>-->
-        <!--<th>{{item.transaction_type}}</th>-->
-        <!--<th>{{item.status}}</th>-->
-        <!--<th *ngIf="item.hash"><a target="_blank" [href]="item.check_hash_url">{{item.hash}}</a></th>-->
-        <!--<th *ngIf="!item.hash">-</th>-->
-      <!--</tr>-->
-      <!--</tbody>-->
-    <!--</table>-->
-  <!--</div>-->
-<!--</div>-->
-
-
 <div class="transaction-table-wrapper">
   <h2>History</h2>
   <div class="transaction-tabletransaction-table">
@@ -36,37 +6,16 @@
       [rounds]="transactions"
       [columns]="[
         {value: 'created_at'},
-        {value: 'asset_code'},
+        {value: 'currency'},
         {value: 'amount'},
         {value: 'transaction_type'},
         {value: 'status'},
-        {value: 'hash'}
+        {value: 'linkHash'}
       ]"
       [scroll]="false"
+      [emptyMassege]="'transactions'"
 
     ></app-backoffice-table>
 
   </div>
 </div>
-
-<!--<div class="back-office-table">-->
-  <!--<div class="back-office-table__item">-->
-    <!--<p>Created</p>-->
-    <!--<p>Date (JMT)	</p>-->
-    <!--<p>Coin</p>-->
-    <!--<p>Amount</p>-->
-    <!--<p>Type</p>-->
-    <!--<p>Status</p>-->
-    <!--<p>Hash</p>-->
-  <!--</div>-->
-  <!--<div class="back-office-table__item" *ngFor="let item of transactions">-->
-    <!--<div>{{item.created_at}}</div>-->
-    <!--<div>{{item.asset_code | uppercase}}</div>-->
-    <!--<div>{{item.amount}}</div>-->
-    <!--<div>{{item.transaction_type}}</div>-->
-    <!--<div>{{item.status}}</div>-->
-    <!--<div *ngIf="item.hash"><a target="_blank" [href]="item.check_hash_url">{{item.hash}}</a></div>-->
-    <!--<div *ngIf="!item.hash">-</div>-->
-  <!--</div>-->
-<!--</div>-->
-

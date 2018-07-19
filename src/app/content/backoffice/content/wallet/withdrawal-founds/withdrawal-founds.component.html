@@ -1,0 +1,28 @@
+<div class="buy-form">
+  <h2 class="buy-form-title">Withdrawal funds</h2>
+  <form [formGroup]="withdrawalForm">
+    <div [ngClass]="{focused:v.active}" class="form-group" >
+      <label class="form-label" >Wallet address</label>
+      <input appLable #v="lable" formControlName="address" class="form-input" type="text" />
+    </div>
+    <div  [ngClass]="{focused:c.active}" class="form-group" >
+      <label class="form-label" >Amount</label>
+      <input  appLable #c="lable" formControlName="amount" class="form-input" type="number" />
+    </div>
+    <div  [ngClass]="{focused:g.active}"  class="form-group" >
+      <label class="form-label" >Please input your 2FA code</label>
+      <input  appLable #g="lable" formControlName="tfaCode" class="form-input" type="text" />
+    </div>
+    <div class="currency-btn">
+      <app-button (click)="withdrawal()" [buttonState]="buttonStateBuy"
+                  [disabled]="withdrawalForm.invalid ||  withdrawalForm.get('tfaCode')?.pending"></app-button>
+    </div>
+    <div class="currency-wr">
+
+      <div class="total">
+        <span class="total-title">Fee: {{(withdrawalData$ | async)?.fee }} {{coin?.asset?.code | uppercase}} ( Deducted from balance ) </span>
+      </div>
+    </div>
+
+  </form>
+</div>

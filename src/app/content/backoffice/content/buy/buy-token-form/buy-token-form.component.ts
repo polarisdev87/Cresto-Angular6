@@ -3,7 +3,7 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
-import { CalculateSumRequest, BuyTokensRequest } from '../store/actions/buy-tokens.action';
+import { BuyTokensRequest, CalculateSumRequest } from '../store/actions/buy-tokens.action';
 import { IRootState } from '../../../../../store/reducers';
 
 @Component({
@@ -13,7 +13,7 @@ import { IRootState } from '../../../../../store/reducers';
 })
 export class BuyTokenFormComponent implements OnInit {
   // TODO select from store
-  currencies = {
+  public currencies = {
     1: 'BTC',
     3: 'ETH'
   };
@@ -25,24 +25,23 @@ export class BuyTokenFormComponent implements OnInit {
   };
 
   // total$: Observable<number>;
-  userId$: Observable<string>;
-  tokenPrice$: Observable<number>;
+  public userId$!: Observable<string>;
+  public tokenPrice$!: Observable<number>;
 
-  tokensform: FormGroup;
+  public tokensform = new FormGroup({
+    amount: new FormControl('', [Validators.pattern('0123456789')]),
+    currency: new FormControl(1, [Validators.required])
+  });
 
-  constructor(
+  public constructor(
     private _store: Store<IRootState>,
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price)
     );
-    this.tokensform = new FormGroup({
-      amount: new FormControl('', [Validators.pattern('0123456789')]),
-      currency: new FormControl(1, [Validators.required])
-    });
     this.userId$ = this._store.select('backoffice', 'user', '_id');
 
     combineLatest(
@@ -52,10 +51,10 @@ export class BuyTokenFormComponent implements OnInit {
         // filter(( data: { amount: number, currency: number }) => Boolean(data.amount > 0 ))
       ),
       (userId: string, data: { amount: number, currency: number }) => {
-        const { amount, currency: quote_asset_id } = data;
+        const { amount, currency: quoteAssetId } = data;
         return {
           userId,
-          quote_asset_id,
+          quote_asset_id: quoteAssetId,
           amount
         };
       }
@@ -64,15 +63,15 @@ export class BuyTokenFormComponent implements OnInit {
     });
   }
 
-  buy() {
+  public buy() {
     combineLatest(
       this.userId$,
       of(this.tokensform.value),
       (userId: string, data: { amount: number, currency: number }) => {
-        const { amount, currency: quote_asset_id } = data;
+        const { amount, currency: quoteAssetId } = data;
         return {
           userId,
-          quote_asset_id,
+          quote_asset_id: quoteAssetId,
           amount
         };
       }

@@ -24,7 +24,8 @@ import { reducers } from './store/reducers';
     StoreModule.forFeature('buy', reducers),
     EffectsModule.forFeature(effects),
   ],
-  declarations: [BuyComponent, BuyInstructionComponent, BuyTokenFormComponent, DepositPopupComponent, BuyTokenSelectComponent],
+  declarations: [BuyComponent, BuyInstructionComponent,
+    BuyTokenFormComponent, DepositPopupComponent, BuyTokenSelectComponent],
   entryComponents: [DepositPopupComponent]
 })
 export class BuyModule {

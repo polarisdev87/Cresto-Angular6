@@ -1,4 +1,4 @@
-import {createFeatureSelector, createSelector} from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 const ASSETS = {
   btc: {
@@ -14,9 +14,6 @@ const ASSETS = {
     tittle: 'CSTT wallet'
   },
 };
-
-
-
 
 export const getAssets = createSelector(
   createFeatureSelector<any>('backoffice'),
@@ -37,4 +34,13 @@ export const getWalletsData = createSelector(
   }
 );
 
+
+export const getWalletsDatas = createSelector(
+  createFeatureSelector<any>('backoffice'),
+  (backoffice: any) => {
+    return backoffice.wallets.data.slice(0, 2).map((wallet) => {
+      return {...wallet, icon: ASSETS[wallet.asset.code].icon, tittle: ASSETS[wallet.asset.code].tittle };
+    });
+  }
+);
 

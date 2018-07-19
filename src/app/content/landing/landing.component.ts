@@ -8,13 +8,13 @@ import { LocalStorageService } from '../../shared/services/localStorage.service'
   styleUrls: ['./landing.component.sass']
 })
 export class LandingComponent implements OnInit {
-  constructor(
+  public constructor(
     private _activateroute: ActivatedRoute,
     private _localStorageService: LocalStorageService,
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.params['referralHash'];
     if (referralHash) {
       this._localStorageService.setItem('referralHash', referralHash);
@@ -43,15 +43,19 @@ export class LandingComponent implements OnInit {
     };
 
     function scrollFunction() {
-      if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-        document.getElementById('to-top').style.display = 'flex';
-      } else {
-        document.getElementById('to-top').style.display = 'none';
+      const el = document.getElementById('to-top');
+      if (el === null) {
+        return;
       }
+      if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+        el.style.display = 'flex';
+        return;
+      }
+      el.style.display = 'none';
     }
   }
 
-  scrollTotop() {
+  public scrollTotop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }

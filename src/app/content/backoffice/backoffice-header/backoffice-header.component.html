@@ -1,5 +1,6 @@
 <header>
-  <div class="logo">
+  <a class="drop-down-menu" (click)="dropDownSidebar()"><span></span></a>
+  <div routerLink="../backoffice/dashboard" class="logo">
     <img [src]="logo" alt="logo">
     <p>rest Token</p>
   </div>
@@ -9,4 +10,8 @@
       {{item.code | uppercase}} = {{item.usd_price}}
     </li>
   </ul>
+  <div class="arrows">
+    <div class="currency-arrow">Currency</div>
+    <div class="arrow right"></div>
+  </div>
 </header>

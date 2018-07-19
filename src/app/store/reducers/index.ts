@@ -4,7 +4,7 @@ import { routerReducer, RouterReducerState, RouterStateSerializer } from '@ngrx/
 
 import * as fromAuth from './auth.reducer';
 
-import { LOGOUT_SUCCESS, AuthActions } from '../actions/auth.action';
+import { AuthActions, LOGOUT_SUCCESS } from '../actions/auth.action';
 
 
 export interface IRouterStateUrl {

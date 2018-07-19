@@ -1,4 +1,4 @@
-import {ASSETS_FAIL, ASSETS_REQUEST, ASSETS_SUCCESS} from '../actions/assets.actions';
+import { ASSETS_FAIL, ASSETS_REQUEST, ASSETS_SUCCESS } from '../actions/assets.actions';
 
 export const initialState: any = {
   isLoading: false,

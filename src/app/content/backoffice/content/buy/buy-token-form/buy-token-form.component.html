@@ -1,7 +1,7 @@
 <div class="buy-form">
   <h2 class="buy-form-title">Buy CSTT</h2>
   <form [formGroup]="tokensform" role="form">
-    <div class="form-group" [ngClass]="{focused: isActive || tokensform.get('amount').value || tokensform.value.amount === 0 }">
+    <div class="form-group" [ngClass]="{focused: isActive || tokensform.get('amount')?.value || tokensform?.value?.amount === 0 }">
       <label class="form-label" for="amount">CSTT Amount :</label>
       <input (focus)='toggleClass()' (blur)='toggleClass()' id="amount" formControlName="amount" class="form-input" type="number" />
     </div>
@@ -9,8 +9,8 @@
       <div class="currency-title">Select currency:</div>
       <app-buy-token-select formControlName="currency"></app-buy-token-select>
       <div class="total">
-        <span class="total-title">Total ETH :</span>
-        <span>{{tokenPrice$ | async}} {{currencies[tokensform.value.currency]}}</span>
+        <span class="total-title">Total {{currencies[tokensform?.value?.currency]}} :</span>
+        <span>{{tokenPrice$ | async}} {{currencies[tokensform?.value?.currency]}}</span>
       </div>
     </div>
     <div class="currency-btn">

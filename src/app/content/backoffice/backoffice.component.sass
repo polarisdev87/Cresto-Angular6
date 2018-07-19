@@ -27,7 +27,7 @@ img
   display: inline-block
 
 .back-office
-  padding: 0 35px 0 105px
+  padding: 5px 35px 0 105px
 
 .backoffice-btn
   line-height: 60px
@@ -83,3 +83,48 @@ img
 
 input
   border: none
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+  transition: background-color 5000s ease-in-out 0s
+
+input:-webkit-autofill
+  //-webkit-box-shadow: 0 0 0 50px white inset /* Change the color to your own background color */
+  -webkit-text-fill-color: $grey-light
+
+input:-webkit-autofill:focus
+  //-webkit-box-shadow: 0 0 0 50px white inset /*your box-shadow*/,0 0 0 50px white inset;
+  -webkit-text-fill-color: $grey-light
+
+
+@media screen and (max-width: 1560px)
+  .back-office
+    padding: 5px 35px 0 90px
+  .form-input
+    padding: 5px 3px 50px 5px
+
+@media screen and (max-width: 850px)
+  .back-office
+    padding: 0px
+
+  .header-wrapper
+    height: 60px
+    background: $bg-sidebar
+
+@media screen and (max-width: 580px)
+  .back-office
+    padding: 0px
+    margin: 0px
+  .footer-wrapper
+    padding: 0px 15px
+
+@media only screen and (max-width: 500px)
+
+  .header-wrapper
+    height: 48px
+    overflow: hidden
+

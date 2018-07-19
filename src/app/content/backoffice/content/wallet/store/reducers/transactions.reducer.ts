@@ -1,4 +1,4 @@
-import { TRANSACTION_REQUEST, TRANSACTION_SUCCESS, TRANSACTION_FAIL } from '../actions/transaction.actions';
+import { TRANSACTION_FAIL, TRANSACTION_REQUEST, TRANSACTION_SUCCESS } from '../actions/transaction.actions';
 
 export const initialState: any = {
   isLoading: false,
