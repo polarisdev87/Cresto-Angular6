@@ -10,7 +10,4 @@ export class FooterComponent {
 
   @Input() public customClass: String = '';
 
-  public scrollTop() {
-    scrollTo(1, 1);
-  }
 }
