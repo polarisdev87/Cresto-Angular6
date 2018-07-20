@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Script } from 'vm';
 
 @Component({
   selector: 'app-footer',

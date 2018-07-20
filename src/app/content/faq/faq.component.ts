@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FAQComponent implements OnInit {
   public hide = 'none';
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 
