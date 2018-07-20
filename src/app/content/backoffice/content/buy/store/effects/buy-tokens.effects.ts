@@ -40,8 +40,8 @@ export class BuyTokensEffects {
             data: {
               iconClose: 'icon-close',
               iconClass: 'icon-Exclamation',
-              message: 'You don\'t have enough BTC on your account. Please, make a deposit to buy CSTT',
-              btnClass: 'emptyGreen',
+              message: 'Error: ' + err.message,
+              btnClass: '',
               btnTextContent: 'Deposit BTC'
             }
           });
