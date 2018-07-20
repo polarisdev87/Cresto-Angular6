@@ -107,13 +107,20 @@ input:-webkit-autofill:focus
   .form-input
     padding: 5px 3px 50px 5px
 
-@media screen and (max-width: 850px)
+@media (max-width: 968px)
+  .back-office
+    padding-left: 0px
+    padding-right: 0px
+
+
+@media screen and (max-width: 800px)
   .back-office
     padding: 0px
 
   .header-wrapper
-    height: 60px
+    height: 55px
     background: $bg-sidebar
+    overflow: hidden
 
 @media screen and (max-width: 580px)
   .back-office
@@ -121,10 +128,4 @@ input:-webkit-autofill:focus
     margin: 0px
   .footer-wrapper
     padding: 0px 15px
-
-@media only screen and (max-width: 500px)
-
-  .header-wrapper
-    height: 48px
-    overflow: hidden
 

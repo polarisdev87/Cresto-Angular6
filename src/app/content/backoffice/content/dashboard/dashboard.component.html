@@ -1,9 +1,10 @@
 <div class="dashboard-wr">
-  <div class="dashboard-cell">
+  <div class="cell dashboard-info">
     <app-timer></app-timer>
     <app-instruction></app-instruction>
   </div>
-  <div class="dashboard-cell" *ngIf="rounds$ | async as rounds">
+  <div class="cell dashboard-table" *ngIf="rounds$ | async as rounds">
+    <app-timer></app-timer>
     <app-call-action></app-call-action>
     <app-backoffice-table
       [dashboardTableHead]="dashboardTableHead"
