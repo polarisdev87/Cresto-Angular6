@@ -45,7 +45,7 @@
                  type="text">
       </form>
       <div class="button-copy-adress">
-          <app-button (click)="c.copy()" [buttonState]="depositBtn" ></app-button>
+          <app-button (click)="c.copy();openPopupCopyAddress()" [buttonState]="depositBtn" ></app-button>
       </div>
     </div>
   </div>

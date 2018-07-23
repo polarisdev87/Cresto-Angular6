@@ -11,6 +11,6 @@
     value="{{referralLink}}">
   </form>
   <div class="buttonWrapper">
-    <app-button [buttonState]='copyButton' (click)="c.copy()"></app-button>
+    <app-button [buttonState]='copyButton' (click)="c.copy();openPopupCopyAddress()"></app-button>
   </div>
 </div>

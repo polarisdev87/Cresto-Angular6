@@ -7,12 +7,18 @@
       </tr>
       </thead>
       <ng-scrollbar *ngIf="scroll" class="sample">
-        <tbody>
+        <tbody *ngIf="emptyMassege=='ICO Round'">
         <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
-          <td [class]="item.type + ' scrollTD'" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
+          <td [class]="item.type + ' scrollTD dashboard'" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
         </tr>
         </tbody>
+        <tbody *ngIf="emptyMassege!='ICO Round'">
+          <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
+            <td [class]="item.type + ' scrollTD'" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>
+          </tr>
+        </tbody>
       </ng-scrollbar>
+      <!-- Dashboard table view always use scroll! ,hence this view below never called for Dashboard-->
       <tbody *ngIf="!scroll">
       <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status || round.coin+'tr' | lowercase">
         <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td>
@@ -20,27 +26,54 @@
       </tbody>
     </table>
 </div>
+
+<!-- Separate view for small devices @class "m-table" -->
 <div class='back-office-table m-table'>
   <table [ngClass]="{'scroll': scroll}">
     <thead>
-    <tr>
+    <tr *ngIf="emptyMassege=='ICO Round'">
       <th>ICO Round</th>
       <th>Price ($)</th>
       <th>Status</th>
     </tr>
+    <tr *ngIf="emptyMassege=='transactions'">
+      <th>Coin</th>
+      <th>Amount</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngIf="emptyMassege!='ICO Round' && emptyMassege!='transactions'">
+      <th *ngFor="let i of dashboardTableHead, let ind=index ">{{i}}</th>
+    </tr>
     </thead>
-    <ng-scrollbar *ngIf="scroll" class="sample">
+    <!-- If scroll is enabled -->
+    <ng-scrollbar *ngIf="scroll && emptyMassege=='ICO Round'" class="sample">
       <tbody>
       <ng-container *ngFor="let round of rounds, let ind=index ">
         <tr [class]="round.stage | lowercase">
-          <td class="m-table-cell"><span>{{round['title']}}</span></td>
-          <td class="m-table-cell"><span>{{round['price']}}</span></td>
-          <td class="m-table-cell"><span>{{round['status']}}</span></td>
+          <td class="m-dashboard-title"><span>{{round['title']}}</span></td>
+          <td class="m-dashboard-price"><span>{{round['price']}}</span></td>
+          <td class="m-dashboard-status"><span>{{round['status']}}</span></td>
         </tr>
       </ng-container>
       </tbody>
     </ng-scrollbar>
-    <tbody *ngIf="!scroll">
+    <!-- If scroll is not enabled-->
+    <tbody *ngIf="!scroll && emptyMassege=='ICO Round'">
+      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status || round.coin+'tr' | lowercase">
+        <td class="m-dashboard-title"><span>{{round['title']}}</span></td>
+        <td class="m-dashboard-price"><span>{{round['price']}}</span></td>
+        <td class="m-dashboard-status"><span>{{round['status']}}</span></td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!scroll && emptyMassege=='transactions'">
+      <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status || round.coin+'tr' | lowercase">
+        <td [class]="round['currency']+1 "><span>{{round['currency']}}</span></td>
+        <td [class]="round['amount']+1 "><span>{{round['amount']}}</span></td>
+        <td [class]="round['status']+1 "><span>{{round['status']}}</span></td>
+        <!-- <td [class]="item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td> -->
+      </tr>
+    </tbody>
+    <tbody *ngIf="!scroll && (emptyMassege=='referrals' || emptyMassege=='purchases')">
       <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage || round.status || round.coin+'tr' | lowercase">
         <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td>
       </tr>

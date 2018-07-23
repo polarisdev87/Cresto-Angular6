@@ -14,7 +14,7 @@
     border-radius: 9px
     th
       font-size: 14px
-      color: #8b8e9b
+      color: #fff
       padding-bottom: 15px
       padding-left: 25px
     td,
@@ -51,7 +51,7 @@
             width: 100%
             height: 1px
             z-index: 0
-          &:first-child
+          &.dashboard:first-child, &.m-dashboard-title
             span
               display: inline-block
               padding-left: 17px
@@ -80,12 +80,12 @@
             &:after
               bottom: -7px
           td
-            &:first-child span
+            &.dashboard:first-child span, &.m-dashboard-title span
               display: inline-block
               &:after
                 background-color: #00ebc9
                 box-shadow: 0 0 21px rgba(0, 235, 201, 0.71)
-            &:last-child span
+            &.dashboard:last-child span, &.m-dashboard-status span
               color: #00ebc9
         &.next,
         &.processed
@@ -100,12 +100,12 @@
             &:after
               bottom: -7px
           td
-            &:first-child span
+            &.dashboard:first-child span, &.m-dashboard-title span
               display: inline-block
               &:after
                 background-color: #00bdff
                 box-shadow: 0 0 21px rgba(0, 189, 255, 0.71)
-            &:last-child span
+            &.dashboard:last-child span, &.m-dashboard-status span
               color: #00bdff
               display: block
               background: url("../../../../../../../assets/images/next-icon.png") no-repeat 0 4px
@@ -122,12 +122,12 @@
             &:after
               bottom: -7px
           td
-            &:first-child span
+            &.dashboard:first-child span, &.m-dashboard-title span
               display: inline-block
               &:after
                 background-color: #fec700
                 box-shadow: 0 0 21px rgba(254, 199, 0, 0.71)
-            &:last-child span
+            &.dashboard:last-child span, &.m-dashboard-status span
               color: #fec700
               display: block
               background: url("../../../../../../../assets/images/prnding-icon.png") no-repeat 0 5px
@@ -139,13 +139,13 @@
             width: 12.5%
             max-width: 100px
             overflow: hidden
-            &:first-child span
+            &.dashboard:first-child span, &.m-dashboard-title span
               padding-left: 0
               &:after
                 background: none
                 box-shadow: none
                 color: inherit
-            &:last-child span
+            &.dashboard:last-child span, &.m-dashboard-status span
               background: none
               box-shadow: none
               color: inherit
@@ -277,3 +277,12 @@ h5
     display: none
     &.m-table
       display: block 
+
+@media (max-width: 480px)
+  .back-office-table
+    table
+      tbody
+        tr
+          td
+            span
+              max-width: 150px
