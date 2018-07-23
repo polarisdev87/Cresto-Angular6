@@ -1,7 +1,9 @@
+import { MatDialog } from '@angular/material';
 import { IRootState } from './../../myreferrals/store/reducers/index';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { GenerateWalletAddressRequest } from '../../../store/actions/wallets.action';
+import { PopupComponent } from '../../buy/popup/popup.component';
 
 @Component({
   selector: 'app-depositview',
@@ -31,12 +33,23 @@ export class DepositviewComponent  {
   public confirmButton = true;
   public constructor(
     private _store: Store<IRootState>,
+    private _dialog: MatDialog
   ) {
 
   }
 
   public confirmSelected() {
     this.confirmButton = !this.confirmButton;
+  }
+
+  public openPopupCopyAddress() {
+    this._dialog.open(PopupComponent, {
+      data: {
+        iconClose: 'icon-close',
+        iconClass: 'icon-tick',
+        message: 'The address has been copied to the clipboard',
+      }
+    });
   }
 
 }

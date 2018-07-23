@@ -19,7 +19,7 @@
     width: 33%
     margin: 0 20px
     max-width: 561px
-    padding: 43px 100px 43px 80px
+    padding: 43px 80px 43px 80px
     border-radius: 15px
     background: $widget-bg
     box-sizing: border-box
@@ -40,7 +40,7 @@
         padding-left: 40px
         .wallet-name
           font-family: $OpenSansSemiBold
-          font-size: 18px
+          font-size: 16px
           color: $grey-light
           margin-bottom: 21px
           position: relative
@@ -69,7 +69,7 @@
           flex-direction: column
           span
             display: inline-flex
-            font-size: 16px
+            font-size: 14px
             color: #8e9aa2
             &:first-child
               font-family: $OpenSansSemiBold
@@ -248,9 +248,9 @@
       grid-template-rows: 100px 1fr
 
 
-@media only screen and (max-width: 920px)
+@media only screen and (max-width: 968px)
   .wallets-wrapper
-
+    padding-left: 80px
     .wallets-list-wrapper
       padding: 32px 16px
       grid-template-columns: 396px
@@ -260,6 +260,10 @@
 
     .wallets-list-wrapper.close
       grid-template-rows: repeat(2, 100px) 1fr
+
+@media only screen and (max-width: 800px)
+  .wallets-wrapper
+    padding-left: 0px
 
 @media only screen and (max-width: 430px)
   .wallets-wrapper
@@ -303,7 +307,6 @@
         .wallet-item-wrapper
           .left-col
             width: 100%
-            .wallet-name
 
 //@media only screen and (max-width: 850px)
 //

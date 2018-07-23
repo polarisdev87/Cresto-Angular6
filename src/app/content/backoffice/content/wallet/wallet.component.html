@@ -1,7 +1,7 @@
 <div class="wallets-wrapper" (window:resize)="onResize($event)">
   <div class="wallets-list-wrapper"
-       [ngClass]="{close: !crestokenBuySellTable || currentCoin,
-                   active: currentCoin}"
+       [ngClass]="{'close': !crestokenBuySellTable || currentCoin || withdrawalToched,
+                   'active': currentCoin}"
   >
 
     <ng-template ngFor let-item [ngForOf]="wallets$ | async">
@@ -24,14 +24,17 @@
 
     </ng-template>
 
-    <app-depositview *ngIf="currentCoin && viewPort <= 1500"
+    <app-depositview *ngIf="currentCoin && viewPort <= 1600"
                      [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
+    <app-withdrawal-founds *ngIf="withdrawalToched && viewPort <= 1600"
+                     [coin]="withdrawalToched"></app-withdrawal-founds>
   </div>
 
 
-  <app-depositview *ngIf="currentCoin && viewPort > 1500"
+  <app-depositview *ngIf="currentCoin && viewPort > 1600"
                    [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
-  <app-withdrawal-founds *ngIf="withdrawalToched" [coin]="withdrawalToched"></app-withdrawal-founds>
+  <app-withdrawal-founds *ngIf="withdrawalToched && viewPort > 1600"
+                   [coin]="withdrawalToched"></app-withdrawal-founds>
   <!--<app-help></app-help>-->
   <app-transaction-list *ngIf="crestokenBuySellTable"
                         [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
