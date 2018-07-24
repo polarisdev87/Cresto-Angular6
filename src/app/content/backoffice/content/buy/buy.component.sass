@@ -11,6 +11,9 @@
       padding-right: 0
       padding-top: 90px
       padding-left: 0
+    &.right    
+      app-timer
+        display: none
   .buy-content
     max-width: 480px
     .arrow
@@ -26,6 +29,7 @@
       font-family: $OpenSansRegular
       font-size: 16px
       color: #737d84
+
 .make-deposit-wr
   display: flex
   flex-direction: row
@@ -35,7 +39,6 @@
   margin-bottom: 85px
   .btn-wr
     display: flex
-    min-width: 165px
 
 @media screen and (max-width: 1560px)
   .buy-wr
@@ -52,13 +55,14 @@
           margin-top: 40px
           margin-bottom: 0px
     .text-wr
-      padding-left: 8px
+      padding-left: 18px
       .make-deposit-title
         margin-bottom: 10px
         font-size: 21px
 
 @media screen and (max-width: 1190px)
   .buy-wr
+    margin-left: 100px
     max-width: 768px
     display: flex
     flex-direction: column-reverse
@@ -68,10 +72,14 @@
       width: 50%
       &:last-child
         width: 100%
-        margin-top: 90px
         margin-left: 0px
+      &.left
+        app-timer
+          display: none
+      &.right
+        app-timer
+          display: block
     .text-wr
-      padding-left: 8px
       .make-deposit-title
         margin-top: 20px
         margin-bottom: 10px
@@ -82,30 +90,31 @@
     margin-bottom: 0px
 @media screen and (max-width: 800px)
   .buy-wr
+    margin-left: 0px
     .buy-cell
       max-width: 400px
+      width: 100%;
       padding-left: 0px
       &:last-child
         max-width: 768px
         padding-top: 0px
-        margin-top: 130px
+        margin-top: 50px
         margin-left: 0px
         .make-deposit-wr
           margin-left: 60px
           margin-top: 40px
           margin-bottom: 0px
+        app-timer
+          text-align: center
     .text-wr
-      padding-left: 8px
       .make-deposit-title
         margin-bottom: 10px
         font-size: 21px
 @media screen and (max-width: 580px)
   .buy-wr
     .buy-cell
-      width: 100%
       padding: 0px 15px
       &:last-child
-        width: 100%
         display: flex
         flex-direction: column
         justify-content: center
@@ -146,6 +155,7 @@
       align-items: center
       padding-left: 0px
       margin: 0px 45px 20px 45px
+      text-align: center
       .make-deposit-title
         margin-top: 0px
         margin-bottom: 10px

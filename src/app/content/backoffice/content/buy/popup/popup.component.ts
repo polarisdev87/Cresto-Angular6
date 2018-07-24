@@ -20,8 +20,8 @@ export class PopupComponent {
   //   class: 'emptyGreen',
   // };
 
-public toWallet(): void {
-  this.router.navigate(['backoffice/wallet']);
+  public toWallet(): void {
+    this.router.navigate(['backoffice/wallet']);
   }
 
 }
