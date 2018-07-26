@@ -27,6 +27,7 @@ export class BuyTokenFormComponent implements OnInit {
   // total$: Observable<number>;
   public userId$!: Observable<string>;
   public tokenPrice$!: Observable<number>;
+  public firstPurchase$!: Observable<boolean>;
 
   public tokensform = new FormGroup({
     amount: new FormControl('', [Validators.pattern('0123456789')]),
@@ -43,6 +44,9 @@ export class BuyTokenFormComponent implements OnInit {
       map((data: any) => data.price)
     );
     this.userId$ = this._store.select('backoffice', 'user', '_id');
+    this.firstPurchase$ = this._store.select('buy', 'tokenPurchase').pipe(
+      map((data: any) => data.firstPurchase)
+    );
 
     combineLatest(
       this.userId$,

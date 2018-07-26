@@ -17,4 +17,7 @@
       <app-button (click)="buy()" [buttonState]="buttonStateBuy"></app-button>
     </div>
   </form>
+  <!-- Offer Goal Conversion: Sales ­­-->
+  <img *ngIf="firstPurchase$ | async" src="https://cresttoken.go2cloud.org/aff_goal?a=l&goal_id=1" width="1" height="1"/>
+  <!-- // End Offer Goal Conversion ­­-->
 </div>
