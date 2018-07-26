@@ -2,7 +2,14 @@ import { AuthGuardService } from './auth-guard.service';
 
 export const routes = [
 
-  {path: '', loadChildren: './content/landing/landing.module#LandingModule'},
+  {
+    path: '',
+    loadChildren: './content/landing/landing.module#LandingModule'
+  },
+  {
+    path: 'pre-ico',
+    loadChildren: './content/landing/landing.module#LandingModule'
+  },
   {
     path: 'email/verification/check/:hash',
     loadChildren: './content/email-verification/email-verification.module#EmailVerificationModule',
@@ -27,13 +34,13 @@ export const routes = [
     canLoad: [AuthGuardService]
   },
   {
+    path: 'FAQ',
+    loadChildren: './content/faq/faq.module#FAQModule',
+  },
+  {
     path: 'backoffice',
     loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
     canLoad: [AuthGuardService]
-  },
-  {
-    path: 'FAQ',
-    loadChildren: './content/faq/faq.module#FAQModule',
   },
   {path: ':referralHash', loadChildren: './content/landing/landing.module#LandingModule'},
   {

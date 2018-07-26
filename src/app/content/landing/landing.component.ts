@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
@@ -8,7 +8,10 @@ import { LocalStorageService } from '../../shared/services/localStorage.service'
   styleUrls: ['./landing.component.sass']
 })
 export class LandingComponent implements OnInit {
+
   public constructor(
+
+    private _router: Router,
     private _activateroute: ActivatedRoute,
     private _localStorageService: LocalStorageService,
   ) {
@@ -16,10 +19,34 @@ export class LandingComponent implements OnInit {
 
   public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.params['referralHash'];
+    // Determine if visiting /pre-ico page
+    const url = this._router.url;
+    const isPreico = url.match('/pre-ico') ? true : false;
+
     if (referralHash) {
       this._localStorageService.setItem('referralHash', referralHash);
+
       // TODO should changed with
       // this._store.dispatch(new SetReferalLink(referralHash));
+    }
+
+    if (isPreico) {
+      const pixelScript = document.createElement('script');
+      pixelScript.type = 'text/javascript';
+      pixelScript.text = `
+        (function(d, a) {
+          var h = d.getElementsByTagName("head")[0], p = d.location.protocol, s;
+          wl_ef_uid = a;
+          s = d.createElement("script");
+          s.type = "text/javascript";
+          s.charset = "utf-8";
+          s.async = true;
+          s.defer = true;
+          s.src = "//app.wishloop.com/js/ef_embed.min.js";
+          h.appendChild(s);
+        })(document, '23973');
+      `;
+      document.body.appendChild(pixelScript);
     }
 
     const el1 = document.createElement('script');
