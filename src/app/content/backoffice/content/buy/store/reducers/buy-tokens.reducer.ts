@@ -3,7 +3,7 @@ import { BUY_TOKENS_FAIL, BUY_TOKENS_SUCCESS, CALCULATE_SUMM_SUCCESS } from '../
 export const initialState = {
   price: 0,
   error: null,
-  firstPurchase: true
+  firstPurchase: false
 };
 
 export function reducer(
