@@ -22,7 +22,7 @@ export function reducer(
     case BUY_TOKENS_SUCCESS: {
       return {
         ...state,
-        firstPurchase: (action.payload && parseInt(action.payload.first_purchases) === 1 ? true : false)
+        firstPurchase: action.payload && parseInt(action.payload.first_purchases) === 1
       };
     }
 
