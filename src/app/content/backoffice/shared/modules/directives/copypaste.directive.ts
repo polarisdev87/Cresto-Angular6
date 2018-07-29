@@ -18,6 +18,7 @@ export class CopypasteDirective {
     const range = document.createRange();
     el.contenteditable = true;
     el.readonly = false;
+    el.focus();
     range.selectNodeContents(el);
     const s = window.getSelection();
     s.removeAllRanges();
