@@ -71,7 +71,8 @@ export const routes: Route[] = [
       },
       {
         path: '**',
-        loadChildren: './content/dashboard/dashboard.module#DashboardModule',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
         canLoad: [AccessGuardService]
       }
     ]
