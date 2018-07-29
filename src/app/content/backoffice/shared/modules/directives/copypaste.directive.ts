@@ -14,7 +14,17 @@ export class CopypasteDirective {
 
 
   public copy(): void {
-    this._elementRef.nativeElement.select();
+    const el = this._elementRef.nativeElement;
+    const range = document.createRange();
+    el.contenteditable = true;
+    el.readonly = false;
+    range.selectNodeContents(el);
+    const s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(range);
+
+    el.setSelectionRange(0, 999999);
+    el.select();
     document.execCommand('copy');
   }
 
