@@ -26,6 +26,7 @@ export class CopypasteDirective {
 
     el.setSelectionRange(0, 999999);
     el.select();
+    alert(el.value);
     document.execCommand('copy');
   }
 
