@@ -25,7 +25,7 @@ export class AuthGuardService implements CanLoad {
         }
 
         if (isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
-          this._router.navigate(['/backoffice']);
+          this._router.navigate(['/dashboard']);
           return of(false);
         }
 

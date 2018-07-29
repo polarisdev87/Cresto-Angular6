@@ -38,11 +38,11 @@ export const routes = [
     loadChildren: './content/faq/faq.module#FAQModule',
   },
   {
-    path: 'backoffice',
+    path: '',
     loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
     canLoad: [AuthGuardService]
   },
-  {path: ':referralHash', loadChildren: './content/landing/landing.module#LandingModule'},
+  // {path: ':referralHash', loadChildren: './content/landing/landing.module#LandingModule'},
   {
     path: '**',
     redirectTo: 'login'

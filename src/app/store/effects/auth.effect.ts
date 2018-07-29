@@ -28,7 +28,7 @@ export class AuthEffects {
         switchMap((data: User) => this._authService.tokenToLocalStorage(data)),
         map((data: User) => new LoginSuccess(data)),
         tap(() => {
-          this._router.navigate(['/backoffice']);
+          this._router.navigate(['/dashboard']);
           this._localStorageService.removeItem('referralHash');
         }),
         catchError((err: any) => {
@@ -79,7 +79,7 @@ export class AuthEffects {
       switchMap((result: any) => this._socialNetworkService.successFbLogin(result.authResponse.accessToken).pipe(
         switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
         map((user: User) => new LoginSuccess(user)),
-        tap(() => this._router.navigate(['/backoffice'])),
+        tap(() => this._router.navigate(['/dashboard'])),
         catchError((err: Error) => {
           alert('Email already exists or somethink went wrong');
           return of(new FacebookLoginFail(err));
@@ -95,7 +95,7 @@ export class AuthEffects {
       switchMap((token: string) => this._socialNetworkService.googleSuccessLogin(token).pipe(
         switchMap((user: User) => this._authService.tokenToLocalStorage(user)),
         map((user: User) => new LoginSuccess(user)),
-        tap(() => this._router.navigate(['/backoffice'])),
+        tap(() => this._router.navigate(['/dashboard'])),
         catchError((err: Error) => {
           alert('Email already exists or somethink went wrong');
           return of(new GoogleLoginFail(err));
