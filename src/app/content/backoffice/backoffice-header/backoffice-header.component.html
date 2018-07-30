@@ -1,9 +1,9 @@
 <header>
   <a class="drop-down-menu" (click)="dropDownSidebar()"><span></span></a>
-  <div routerLink="../backoffice/dashboard" class="logo">
+  <a [routerLink]="['/dashboard']" class="logo">
     <img [src]="logo" alt="logo">
     <p>Crest Token</p>
-  </div>
+  </a>
   <ul id="currency-list" class="currency-date">
     <li *ngFor="let item of assets$ | async">
       <i class="{{item.icon}}"></i>

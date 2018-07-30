@@ -14,7 +14,7 @@
       </a>
     </div>
     <div class="sidebar-item setting">
-      <a routerLinkActive="active" [routerLink]="['settings']">
+      <a routerLinkActive="active" [routerLink]="['/settings']">
         <i class="icon-settings"></i>
         <span class="sidebar-text">Settings</span>
       </a>
@@ -29,43 +29,43 @@
   </div>
   <ul class="navigate">
     <li>
-      <a routerLinkActive="active" [routerLink]="['dashboard']">
+      <a routerLinkActive="active" [routerLink]="['/dashboard']">
         <i class="icon-home"></i>
         <span>Dashboard</span>
       </a>
     </li>
     <li>
-      <a routerLinkActive="active" [routerLink]="['buy']">
+      <a routerLinkActive="active" [routerLink]="['/buy']">
         <i class="icon-shoppingCart"></i>
         <span>Buy Tokens</span>
       </a>
     </li>
     <li>
-      <a routerLinkActive="active" [routerLink]="['wallet']">
+      <a routerLinkActive="active" [routerLink]="['/wallet']">
         <i class="icon-wallet"></i>
         <span>Wallet</span>
       </a>
     </li>
     <li>
-      <a routerLinkActive="active" [routerLink]="['/backoffice', 'myreferrals']">
+      <a routerLinkActive="active" [routerLink]="['/myreferrals']">
         <i class="icon-team"></i>
         <span>My Team</span>
       </a>
     </li>
     <li>
-      <a routerLinkActive="active" [routerLink]="['/backoffice/campaign']"  *appNgAcl="['campaign', 'GET']">
+      <a routerLinkActive="active" [routerLink]="['/campaign']"  *appNgAcl="['campaign', 'GET']">
         <i class="icon-building"></i>
         <span>Campaign</span>
       </a>
     </li>
     <li>
-        <a routerLinkActive="active" [routerLink]="['/backoffice/exchange']" *appNgAcl="['exchange', 'GET']">
+        <a routerLinkActive="active" [routerLink]="['/exchange']" *appNgAcl="['exchange', 'GET']">
           <i class="icon-transfer"></i>
           <span>Exchange</span>
         </a>
       </li>
       <li>
-          <a routerLinkActive="active" [routerLink]="['/backoffice/staking']" *appNgAcl="['staking', 'GET']">
+          <a routerLinkActive="active" [routerLink]="['/staking']" *appNgAcl="['staking', 'GET']">
             <i class="icon-dollar-symbol"></i>
             <span>Staking</span>
           </a>

@@ -18,7 +18,7 @@ export class LandingComponent implements OnInit {
   }
 
   public ngOnInit() {
-    const referralHash: string = this._activateroute.snapshot.params['referralHash'];
+    const referralHash: string = this._activateroute.snapshot.queryParams['ref'];
     // Determine if visiting /pre-ico page
     const url = this._router.url;
     const isPreico = url.match('/pre-ico') ? true : false;

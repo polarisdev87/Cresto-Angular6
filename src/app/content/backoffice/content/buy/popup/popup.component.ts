@@ -21,7 +21,7 @@ export class PopupComponent {
   // };
 
   public toWallet(): void {
-    this.router.navigate(['backoffice/wallet']);
+    this.router.navigate(['/wallet']);
   }
 
 }

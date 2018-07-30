@@ -33,7 +33,7 @@ export class MyreferralsComponent implements OnInit, OnDestroy {
 
     this.userSubscription = this._store.select('backoffice', 'user', 'referralHash')
       .subscribe((referralHash: string) => {
-        this.referralLink = `${environment.domain}/${referralHash}`;
+        this.referralLink = `${environment.domain}/?ref=${referralHash}`;
       });
   }
 
