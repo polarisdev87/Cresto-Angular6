@@ -1,0 +1,64 @@
+@import "../landing.component"
+@import "../landing.component"
+
+.status-wr
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin: 0px auto 20px auto
+  .progress-wr
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    align-items: center
+    padding: 10px
+    background-color: #6b6b6b
+    border-radius: 50px
+    width: 150%
+    max-width: 700px
+    position: relative
+    span
+      border-radius: 50px
+      height: 40px
+      font-size: 25px
+      &.active
+        background-color: $green
+        border-top-right-radius: 0px
+        border-bottom-right-radius: 0px
+      &.inactive
+        background-color: #30ba67
+        border-top-left-radius: 0px
+        border-bottom-left-radius: 0px
+      &.percent
+        position: absolute
+        font-family: $montserrat-regular
+        color: $white
+        height: auto
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        
+  h2.token-sold
+    font-family: $montserrat-bold
+    color: $yellow
+    font-size: 30px
+    letter-spacing: 1.2px
+    margin-bottom: 20px
+  h2.total-users
+    font-family: $montserrat-semibold
+    color: $white
+    font-size: 30px
+    margin-top: 20px
+    letter-spacing: 1.2px
+    span
+      color: $green
+
+@media (max-width: 768px)
+  .status-wr
+    .progress-wr
+      width: 100%
+      padding: 7px
+      span
+        height: 30px
+        font-size: 20px
