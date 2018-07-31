@@ -12,6 +12,7 @@ import { TokenSaleComponent } from './token-sale/token-sale.component';
 import { TeamComponent } from './team/team.component';
 import { ParticipateComponent } from './participate/participate.component';
 import { MembersComponent } from './members/members.component';
+import { StatusComponent } from './status/status.component';
 import { UiModule } from '../../shared/module/ui/ui.module';
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UiModule } from '../../shared/module/ui/ui.module';
     TokenSaleComponent,
     ParticipateComponent,
     MembersComponent,
-    TeamComponent
+    TeamComponent,
+    StatusComponent
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })
