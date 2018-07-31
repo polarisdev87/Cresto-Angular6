@@ -19,8 +19,8 @@ export class StatusComponent implements OnInit {
   }
   public ngOnInit() {
     this._http.nonAuthorizedRequest('/auth/total', {}, 'GET').subscribe((data: number) => {
-      this.tokensCounter = 635271;
-      this.percentCounter = Math.trunc(this.tokensCounter * 100 / 1000000);
+      this.tokensCounter = 385764;
+      this.percentCounter = Math.round(this.tokensCounter * 100 / 1000000);
       this.usersCounter = data;
     });
   }
