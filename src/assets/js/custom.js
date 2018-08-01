@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+  /*
   let clock;
   let clock2;
   const options = {
@@ -21,7 +22,7 @@ $(document).ready(function () {
   clock2.setTime(1600);
   clock2.setCountdown(true);
   clock2.start();
-
+  */
 
   const particlesOptionsTeam = {
     "particles": {
