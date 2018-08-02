@@ -52,8 +52,8 @@ export class AuthEffects {
           this._router.navigate(['/login']);
           this._localStorageService.removeItem('referralHash');
         }),
-        catchError((err: Error) => {
-          alert('Invalid username or email already exists');
+        catchError((err: any) => {
+          alert(err.error.error);
           return of(new SignUpFail(err));
         })
       )),
@@ -81,7 +81,7 @@ export class AuthEffects {
         map((user: User) => new LoginSuccess(user)),
         tap(() => this._router.navigate(['/dashboard'])),
         catchError((err: Error) => {
-          alert('Email already exists or somethink went wrong');
+          alert('Email already exists or something went wrong');
           return of(new FacebookLoginFail(err));
         })
       )
@@ -97,7 +97,7 @@ export class AuthEffects {
         map((user: User) => new LoginSuccess(user)),
         tap(() => this._router.navigate(['/dashboard'])),
         catchError((err: Error) => {
-          alert('Email already exists or somethink went wrong');
+          alert('Email already exists or something went wrong');
           return of(new GoogleLoginFail(err));
         })
       )

@@ -18,9 +18,14 @@ export class BuyTokenFormComponent implements OnInit {
     3: 'ETH'
   };
 
+  public tokenEquivalents = {
+    1: 0,
+    3: 0
+  };
+
   public isActive = false;
   public buttonStateBuy = {
-    name: 'Click To Purchase',
+    name: 'Buy Now',
     class: 'redBig'
   };
 
@@ -28,6 +33,9 @@ export class BuyTokenFormComponent implements OnInit {
   public userId$!: Observable<string>;
   public tokenPrice$!: Observable<number>;
   public firstPurchase$!: Observable<boolean>;
+
+  public tokensByBTC: number = 0;
+  public tokensByETH: number = 0;
 
   public tokensform = new FormGroup({
     amount: new FormControl('', [Validators.pattern('0123456789')]),
@@ -40,6 +48,10 @@ export class BuyTokenFormComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this._store.select('backoffice', 'wallets').subscribe((walletsData: any) => {
+      this.tokenEquivalents[1] = walletsData.data[0] ? Math.floor(walletsData.data[0].cstt_equivalent) : 0;
+      this.tokenEquivalents[3] = walletsData.data[1] ? Math.floor(walletsData.data[1].cstt_equivalent) : 0;
+    });
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price)
     );
@@ -67,6 +79,10 @@ export class BuyTokenFormComponent implements OnInit {
     });
   }
 
+  public selectAll() {
+    const csttEquivalent = this.tokenEquivalents[this.tokensform.value.currency];
+    this.tokensform.patchValue({amount: csttEquivalent});
+  }
   public buy() {
     combineLatest(
       this.userId$,
