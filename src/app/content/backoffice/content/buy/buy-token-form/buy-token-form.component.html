@@ -4,6 +4,8 @@
     <div class="form-group" [ngClass]="{focused: isActive || tokensform.get('amount')?.value || tokensform?.value?.amount === 0 }">
       <label class="form-label" for="amount">CSTT Amount :</label>
       <input (focus)='toggleClass()' (blur)='toggleClass()' id="amount" formControlName="amount" class="form-input" type="number" />
+      <button class="btn" [ngClass]="{btc: currencies[tokensform?.value?.currency]=='BTC', eth: currencies[tokensform?.value?.currency]=='ETH'}"
+            (click)='selectAll()'>Select All of Balance</button>
     </div>
     <div class="currency-wr">
       <div class="currency-title">Select currency:</div>
