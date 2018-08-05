@@ -9,7 +9,7 @@ import { IRootState } from '../../../store/reducers';
 @Component({
   selector: 'app-reset-password-form',
   templateUrl: './reset-password-form.component.html',
-  styleUrls: ['./reset-password-form.component.css'],
+  styleUrls: ['./reset-password-form.component.sass'],
   encapsulation: ViewEncapsulation.None
 })
 export class ResetPasswordFormComponent {

@@ -7,7 +7,7 @@ import { IRootState } from '../../../store/reducers';
 @Component({
   selector: 'app-reset-password-email',
   templateUrl: './reset-password-email.component.html',
-  styleUrls: ['./reset-password-email.component.css'],
+  styleUrls: ['./reset-password-email.component.sass'],
   encapsulation: ViewEncapsulation.None
 })
 export class ResetPasswordEmailComponent {
