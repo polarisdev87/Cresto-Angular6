@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { ResetPasswordFormComponent } from './reset-password-form/reset-password-form.component';
 import { ResetPasswordEmailComponent } from './reset-password-email/reset-password-email.component';
 import { ResetPasswordComponent } from '../reset-password/reset-password.component';
+import { UiModule } from '../../shared/module/ui/ui.module';
 import { routes } from './state';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -18,6 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
     RouterModule.forChild(routes),
     StoreModule.forFeature('reset-password', {}),
     EffectsModule.forFeature([PasswordEffects]),
+    UiModule
   ],
   declarations: [
     ResetPasswordComponent,
