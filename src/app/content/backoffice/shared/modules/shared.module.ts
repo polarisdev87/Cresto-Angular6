@@ -8,6 +8,7 @@ import { ScrollbarModule } from 'ngx-scrollbar';
 import { NgAclDirective } from './directives/ngAcl.directive';
 import { CopypasteDirective } from './directives/copypaste.directive';
 import { LableDirective } from './directives/lable.directive';
+import { TelegramPopupComponent } from './components/telegram-popup/telegram-popup.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { LableDirective } from './directives/lable.directive';
     BackofficeTableComponent,
     ButtonComponent,
     TimerComponent,
-    RowPipe
+    RowPipe,
+    TelegramPopupComponent
   ],
   exports: [
     BackofficeTableComponent,
@@ -29,7 +31,8 @@ import { LableDirective } from './directives/lable.directive';
     TimerComponent,
     NgAclDirective,
     CopypasteDirective,
-    LableDirective
+    LableDirective,
+    TelegramPopupComponent
   ]
 })
 export class SharedModule {
