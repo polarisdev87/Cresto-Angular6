@@ -21,9 +21,28 @@ export class AuthGuardService implements CanLoad {
       take(1),
       switchMap((isLogged: boolean) => {
         if (!isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
+          // Insert Useproof pixel script only when user is logged in
+          // <!--PROOF PIXEL-->
+          if (!document.getElementById('useproof_scr')) {
+            const pixel = document.createElement('script');
+            pixel.id = 'useproof_scr';
+            pixel.src = 'https://cdn.useproof.com/proof.js?acc=3xhiSICM81Xs32RqfCshk86aiNs1';
+            pixel.async = true;
+            document.head.appendChild(pixel);
+          }
+          // <!--END PROOF PIXEL-->
           return of(true);
         }
 
+        if (isLogged) {
+          // Remove Useproof pixel script when user is logged in
+          // <!--PROOF PIXEL-->
+          const pixel = document.getElementById('useproof_scr');
+          if (pixel && pixel.parentNode) {
+            pixel.parentNode.removeChild(pixel);
+          }
+          // <!--END PROOF PIXEL-->
+        }
         if (isLogged && (url === 'login' || url === 'signup' || url === 'reset-password')) {
           this._router.navigate(['/dashboard']);
           return of(false);
