@@ -31,6 +31,10 @@ export class LandingComponent implements OnInit {
     }
 
     if (isPreico) {
+      const transactionId: string = this._activateroute.snapshot.queryParams['transaction_id'];
+      if (transactionId) {
+        this._localStorageService.setItem('transId', transactionId);
+      }
       const pixelScript = document.createElement('script');
       pixelScript.type = 'text/javascript';
       pixelScript.text = `

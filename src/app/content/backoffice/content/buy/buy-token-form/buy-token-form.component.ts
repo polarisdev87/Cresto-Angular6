@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
 import { BuyTokensRequest, CalculateSumRequest } from '../store/actions/buy-tokens.action';
 import { IRootState } from '../../../../../store/reducers';
+import { LocalStorageService } from '../../../../../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-buy-token-form',
@@ -18,6 +19,7 @@ export class BuyTokenFormComponent implements OnInit {
     3: 'ETH'
   };
 
+  // Equivalet number of CSTT tokens with BTC/ETH balance
   public tokenEquivalents = {
     1: 0,
     3: 0
@@ -32,6 +34,8 @@ export class BuyTokenFormComponent implements OnInit {
   // total$: Observable<number>;
   public userId$!: Observable<string>;
   public tokenPrice$!: Observable<number>;
+  public tokenPriceUSD$!: Observable<number>;
+  public transId: string = '';
   public firstPurchase$!: Observable<boolean>;
 
   public tokensByBTC: number = 0;
@@ -44,10 +48,15 @@ export class BuyTokenFormComponent implements OnInit {
 
   public constructor(
     private _store: Store<IRootState>,
+    private _localStorageService: LocalStorageService
   ) {
   }
 
   public ngOnInit() {
+
+    // Get Transaction ID if available
+    this.transId = this._localStorageService.getItem('transId');
+
     this._store.select('backoffice', 'wallets').subscribe((walletsData: any) => {
       this.tokenEquivalents[1] = walletsData.data[0] ? Math.floor(walletsData.data[0].cstt_equivalent) : 0;
       this.tokenEquivalents[3] = walletsData.data[1] ? Math.floor(walletsData.data[1].cstt_equivalent) : 0;
@@ -55,6 +64,10 @@ export class BuyTokenFormComponent implements OnInit {
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price)
     );
+    this.tokenPriceUSD$ = this._store.select('buy', 'tokenPurchase').pipe(
+      map((data: any) => data.price_usd)
+    );
+
     this.userId$ = this._store.select('backoffice', 'user', '_id');
     this.firstPurchase$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.firstPurchase)

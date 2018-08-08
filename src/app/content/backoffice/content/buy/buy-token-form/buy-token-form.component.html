@@ -22,4 +22,7 @@
   <!-- Offer Goal Conversion: Sales ­­-->
   <img *ngIf="firstPurchase$ | async" src="https://cresttoken.go2cloud.org/aff_goal?a=l&goal_id=1" style="visibility: hidden;" />
   <!-- // End Offer Goal Conversion ­­-->
+  <!-- AffiliChain Pixel -->
+  <img *ngIf="(firstPurchase$ | async) && (tokenPriceUSD$ | async) > 0 && (transId !== '')" src="http://tracking.affilichain.com/aff_lsr?offer_id=25&amount={{ tokenPriceUSD$ | async }}&transaction_id={{ transId }}" style="visibility: hidden;" />
+  <!-- // End AffiliChain Pixel -->
 </div>

@@ -10,7 +10,6 @@ import {
 } from '../actions/buy-tokens.action';
 import { PopupComponent } from '../../popup/popup.component';
 import { WalletsService } from '../../../../../../shared/services/wallets.service';
-
 @Injectable()
 export class BuyTokensEffects {
 
@@ -19,7 +18,7 @@ export class BuyTokensEffects {
     .ofType(CALCULATE_SUMM_REQUEST).pipe(
       map((action: CalculateSumRequest) => action.payload),
       switchMap((data: CalculateTokensSum) => this._walletsService.calculateTokens(data).pipe(
-        map((res: TokenPrice) => new CalculateSumSuccess(res.price)),
+        map((res: TokenPrice) => new CalculateSumSuccess(res)),
         catchError((err: Error) => {
           // tslint:disable-next-line
           console.log(err);

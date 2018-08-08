@@ -2,6 +2,7 @@ import { BUY_TOKENS_FAIL, BUY_TOKENS_SUCCESS, CALCULATE_SUMM_SUCCESS } from '../
 
 export const initialState = {
   price: 0,
+  price_usd: 0,
   error: null,
   firstPurchase: false
 };
@@ -15,7 +16,8 @@ export function reducer(
     case CALCULATE_SUMM_SUCCESS: {
       return {
         ...state,
-        price: action.payload
+        price: action.payload.price,
+        price_usd: action.payload.price_usd
       };
     }
 
