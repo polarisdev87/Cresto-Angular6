@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 import { Store } from '@ngrx/store';
 import { AclRequest } from './store/actions/acl.actions';
 import { AssetsRequest } from './store/actions/assets.actions';
@@ -14,12 +15,16 @@ import { GetCurrentUser } from './store/actions/user.actions';
 })
 export class BackofficeComponent implements OnInit {
   public isOpen!: boolean;
+
+  // Biggico clickId
+  public clickId: string = '';
   public constructor(
-    private _store: Store<IRootState>
+    private _store: Store<IRootState>,
+    private _localStorageService: LocalStorageService
   ) {
   }
 
-  public ngOnInit() {
+  public async ngOnInit() {
     this._store.dispatch(new GetCurrentUser());
     this._store.dispatch(new AclRequest());
     this._store.dispatch(new AssetsRequest());
@@ -33,6 +38,8 @@ export class BackofficeComponent implements OnInit {
         }
         this._store.dispatch(new WalletRequest(id));
       });
+
+    this.clickId = this._localStorageService.getItem('clickId');
   }
 
   public changeSidebar() {
