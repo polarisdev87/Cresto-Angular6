@@ -35,7 +35,8 @@ export class BuyTokenFormComponent implements OnInit {
   public userId$!: Observable<string>;
   public tokenPrice$!: Observable<number>;
   public tokenPriceUSD$!: Observable<number>;
-  public transId: string = '';
+  public transId: string = '';  // AffiliChain id per user
+  public clickId: string = ''; // Biggico id per user
   public firstPurchase$!: Observable<boolean>;
 
   public tokensByBTC: number = 0;
@@ -54,8 +55,9 @@ export class BuyTokenFormComponent implements OnInit {
 
   public ngOnInit() {
 
-    // Get Transaction ID if available
+    // Get ids for pixels if available
     this.transId = this._localStorageService.getItem('transId');
+    this.clickId = this._localStorageService.getItem('clickId');
 
     this._store.select('backoffice', 'wallets').subscribe((walletsData: any) => {
       this.tokenEquivalents[1] = walletsData.data[0] ? Math.floor(walletsData.data[0].cstt_equivalent) : 0;

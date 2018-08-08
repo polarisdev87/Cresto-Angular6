@@ -19,6 +19,8 @@ export class LandingComponent implements OnInit {
 
   public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.queryParams['ref'];
+    const clickId: string = this._activateroute.snapshot.queryParams['click_id'];
+
     // Determine if visiting /pre-ico page
     const url = this._router.url;
     const isPreico = url.match('/pre-ico') ? true : false;
@@ -28,6 +30,10 @@ export class LandingComponent implements OnInit {
 
       // TODO should changed with
       // this._store.dispatch(new SetReferalLink(referralHash));
+    }
+
+    if (clickId) {
+      this._localStorageService.setItem('clickId', clickId);
     }
 
     if (isPreico) {
