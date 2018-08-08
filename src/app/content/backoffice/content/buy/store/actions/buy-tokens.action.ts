@@ -17,7 +17,7 @@ export class CalculateSumRequest implements Action {
 
 export class CalculateSumSuccess implements Action {
   public readonly type: string = CALCULATE_SUMM_SUCCESS;
-  public constructor(public payload: number) {}
+  public constructor(public payload: any) {}
 }
 
 export class CalculateSumFail implements Action {
