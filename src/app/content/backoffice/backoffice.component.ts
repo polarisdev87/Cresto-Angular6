@@ -42,6 +42,9 @@ export class BackofficeComponent implements OnInit {
 
     this.clickId = this._localStorageService.getItem('clickId');
     this.signupCallback = this._localStorageService.getItem('signup_callback') ? true : false;
+    if (this.signupCallback) {
+      this._localStorageService.removeItem('signup_callback');
+    }
   }
 
   public changeSidebar() {
