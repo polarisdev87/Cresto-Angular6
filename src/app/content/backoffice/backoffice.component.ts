@@ -16,8 +16,9 @@ import { GetCurrentUser } from './store/actions/user.actions';
 export class BackofficeComponent implements OnInit {
   public isOpen!: boolean;
 
-  // Biggico clickId
+  // Biggico clickId & signup callback
   public clickId: string = '';
+  public signupCallback: boolean = false;
   public constructor(
     private _store: Store<IRootState>,
     private _localStorageService: LocalStorageService
@@ -40,6 +41,7 @@ export class BackofficeComponent implements OnInit {
       });
 
     this.clickId = this._localStorageService.getItem('clickId');
+    this.signupCallback = this._localStorageService.getItem('signup_callback') ? true : false;
   }
 
   public changeSidebar() {
