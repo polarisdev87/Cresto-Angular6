@@ -34,6 +34,7 @@ export class LandingComponent implements OnInit {
 
     if (clickId) {
       this._localStorageService.setItem('clickId', clickId);
+      this._localStorageService.setItem('signup_callback', 1);
     }
 
     if (isPreico) {
