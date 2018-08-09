@@ -28,6 +28,6 @@
   <!-- // End AffiliChain Pixel -->
 
   <!-- Biggico Pixel -->
-  <img *ngIf="(tokenPrice$ | async) > 0 && (clickId !== '')" src="https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId={{ clickId }}&currency={{ currencies[tokensform?.value?.currency] | lowercase }}&amount={{ tokenPrice$ | async }}" style="visibility: hidden;" />
+  <img *ngIf="(firstPurchase$ | async) && (tokenPrice$ | async) > 0 && (clickId !== '')" src="https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId={{ clickId }}&currency={{ currencies[tokensform?.value?.currency] | lowercase }}&amount={{ tokenPrice$ | async }}" style="visibility: hidden;" />
   <!-- // End Biggico Pixel -->
 </div>
