@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { combineLatest, Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime, map, tap } from 'rxjs/operators';
 import { BuyTokensRequest, CalculateSumRequest } from '../store/actions/buy-tokens.action';
 import { IRootState } from '../../../../../store/reducers';
 import { LocalStorageService } from '../../../../../shared/services/localStorage.service';
@@ -39,8 +39,6 @@ export class BuyTokenFormComponent implements OnInit {
   public clickId: string = ''; // Biggico id per user
   public firstPurchase$!: Observable<boolean>;
 
-  public tokensByBTC: number = 0;
-  public tokensByETH: number = 0;
 
   public tokensform = new FormGroup({
     amount: new FormControl('', [Validators.pattern('0123456789')]),
@@ -64,7 +62,12 @@ export class BuyTokenFormComponent implements OnInit {
       this.tokenEquivalents[3] = walletsData.data[1] ? Math.floor(walletsData.data[1].cstt_equivalent) : 0;
     });
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
-      map((data: any) => data.price)
+      map((data: any) => data.price),
+      tap((price: number) => {
+        const CURRENCY = this.currencies[this.tokensform.value.currency];
+        this._localStorageService.setItem('buy_currency', CURRENCY.toLowerCase());
+        this._localStorageService.setItem('buy_price', price);
+      })
     );
     this.tokenPriceUSD$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price_usd)
