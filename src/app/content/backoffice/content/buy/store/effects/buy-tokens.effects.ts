@@ -10,6 +10,7 @@ import {
 } from '../actions/buy-tokens.action';
 import { PopupComponent } from '../../popup/popup.component';
 import { WalletsService } from '../../../../../../shared/services/wallets.service';
+import { LocalStorageService } from '../../../../../../shared/services/localStorage.service';
 @Injectable()
 export class BuyTokensEffects {
 
@@ -33,7 +34,18 @@ export class BuyTokensEffects {
       map((action: BuyTokensRequest) => action.payload),
       switchMap((data: CalculateTokensSum) => this._walletsService.buyTokens(data).pipe(
         map((res: any) => new BuyTokensSuccess(res)),
-        tap(() => alert('Success')),
+        tap(() => {
+          const clickId = this._localStorageService.getItem('clickId');
+          const currency = this._localStorageService.getItem('buy_currency');
+          const price = this._localStorageService.getItem('buy_price');
+          if (clickId && currency && price) {
+            const pixel = document.createElement('img');
+            const url = `https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId=${clickId}&currency=${currency}&amount=${price}`;
+            pixel.src = url;
+            document.body.appendChild(pixel);
+          }
+          alert('Success');
+        }),
         catchError((err: Error) => {
           this._dialog.open(PopupComponent, {
             data: {
@@ -54,6 +66,7 @@ export class BuyTokensEffects {
   public constructor(
     private actions$: Actions,
     private _walletsService: WalletsService,
+    private _localStorageService: LocalStorageService,
     private _dialog: MatDialog,
   ) {
   }
