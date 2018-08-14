@@ -32,6 +32,7 @@ export class HttpService extends HttpClient {
       // tslint:disable-next-line
       console.log(err);
     }
+
     const headers: HttpHeaders = new HttpHeaders(
       {
         'Authorization': `Bearer ${token}`,
