@@ -4,6 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IRootState } from '../../../store/reducers';
 import { Logout } from '../../../store/actions/auth.action';
+import { HttpService } from '../../../http.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,7 +20,8 @@ public isOpen!: boolean;
   public wallets$!: Observable<any>;
 
   public constructor(
-    private _store: Store<IRootState>
+    private _store: Store<IRootState>,
+    private _http: HttpService
   ) {}
 
   public ngOnInit() {
@@ -28,6 +30,8 @@ public isOpen!: boolean;
     this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
   }
   public logout() {
-    this._store.dispatch(new Logout());
+    this._http.authorizedRequest('/auth/signout', {}, 'GET').subscribe(() => {
+      this._store.dispatch(new Logout());
+    });
   }
 }
