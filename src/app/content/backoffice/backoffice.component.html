@@ -3,6 +3,6 @@
   <div class="header-wrapper"><app-backoffice-header  (onOpen)="changeSidebar()"></app-backoffice-header></div>
   <router-outlet></router-outlet>
   <div class="footer-wrapper"><app-backoffice-footer></app-backoffice-footer></div>
-  <img *ngIf="clickId !== '' && signupCallback" src="https://biggi.co/api/v4/trackconversion/sdB92nyLSM/?clickId={{ clickId }}" style="display: none" />
+  <img *ngIf="clickId && signupCallback" src="https://biggi.co/api/v4/trackconversion/sdB92nyLSM/?clickId={{ clickId }}" style="display: none" />
 </section>
 
