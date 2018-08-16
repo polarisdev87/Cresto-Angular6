@@ -20,7 +20,7 @@ export class LandingComponent implements OnInit {
   public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.queryParams['ref'];
     const clickId: string = this._activateroute.snapshot.queryParams['click_id'];
-    const esubId: string = this._activateroute.snapshot.queryParamMap['esub'];
+    const esubId: string = this._activateroute.snapshot.queryParams['esub'];
 
     // Determine if visiting /pre-ico page
     const url = this._router.url;

@@ -51,7 +51,7 @@ export class BuyTokensEffects {
             const url = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
             pixelBitcomo.src = url;
             document.body.appendChild(pixelBitcomo);
-          } 
+          }
           alert('Success');
         }),
         catchError((err: Error) => {
