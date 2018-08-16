@@ -46,7 +46,7 @@ export class BuyTokensEffects {
             pixel.src = url;
             document.body.appendChild(pixel);
           }
-          if (esubId && priceUSD) {
+          if (esubId) {
             const pixelBitcomo = document.createElement('img');
             const url = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
             pixelBitcomo.src = url;
