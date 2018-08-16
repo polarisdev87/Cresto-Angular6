@@ -62,6 +62,9 @@ export class BuyTokenFormComponent implements OnInit {
       this.tokenEquivalents[3] = walletsData.data[1] ? Math.floor(walletsData.data[1].cstt_equivalent) : 0;
     });
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
+      tap((data: any) => {
+        this._localStorageService.setItem('buy_price_usd', data.price_usd);
+      }),
       map((data: any) => data.price),
       tap((price: number) => {
         const CURRENCY = this.currencies[this.tokensform.value.currency];

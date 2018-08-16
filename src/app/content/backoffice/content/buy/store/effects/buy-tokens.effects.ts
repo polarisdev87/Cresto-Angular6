@@ -36,14 +36,22 @@ export class BuyTokensEffects {
         map((res: any) => new BuyTokensSuccess(res)),
         tap(() => {
           const clickId = this._localStorageService.getItem('clickId');
+          const esubId = this._localStorageService.getItem('esubId');
           const currency = this._localStorageService.getItem('buy_currency');
           const price = this._localStorageService.getItem('buy_price');
+          const priceUSD = this._localStorageService.getItem('buy_price_usd');
           if (clickId && currency && price) {
             const pixel = document.createElement('img');
             const url = `https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId=${clickId}&currency=${currency}&amount=${price}`;
             pixel.src = url;
             document.body.appendChild(pixel);
           }
+          if (esubId && priceUSD) {
+            const pixelBitcomo = document.createElement('img');
+            const url = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
+            pixelBitcomo.src = url;
+            document.body.appendChild(pixelBitcomo);
+          } 
           alert('Success');
         }),
         catchError((err: Error) => {
