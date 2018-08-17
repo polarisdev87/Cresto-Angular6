@@ -42,7 +42,7 @@ export const getWalletsData = createSelector(
 export const getWalletsDatas = createSelector(
   createFeatureSelector<any>('backoffice'),
   (backoffice: any) => {
-    return backoffice.wallets.data.slice(0, 2).map((wallet) => {
+    return backoffice.wallets.data.slice(0, 3).map((wallet) => {
       return {...wallet, icon: ASSETS[wallet.asset.code].icon, tittle: ASSETS[wallet.asset.code].tittle };
     });
   }
