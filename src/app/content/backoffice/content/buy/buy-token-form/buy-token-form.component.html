@@ -26,7 +26,7 @@
   <!-- AffiliChain Pixel -->
   <img *ngIf="(firstPurchase$ | async) && (tokenPriceUSD$ | async) > 0 && (transId !== '')" src="http://tracking.affilichain.com/aff_lsr?offer_id=25&amount={{ tokenPriceUSD$ | async }}&transaction_id={{ transId }}" style="visibility: hidden;" />
   <!-- // End AffiliChain Pixel -->
-
+  
   <!-- Biggico Pixel -->
   <!-- <img *ngIf="(firstPurchase$ | async) && (tokenPrice$ | async) > 0 && (clickId !== '')" src="https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId={{ clickId }}&currency={{ currencies[tokensform?.value?.currency] | lowercase }}&amount={{ tokenPrice$ | async }}" style="visibility: hidden;" /> -->
   <!-- // End Biggico Pixel -->

@@ -1,22 +1,27 @@
 @font-face {
-  font-family: "Icons";
-  src: url('assets/fonts/icons/Icons.eot');
-  src: url('assets/fonts/icons/Icons.eot?#iefix') format('eot'),
-  url('assets/fonts/icons/Icons.woff2') format('woff2'),
-  url('assets/fonts/icons/Icons.ttf') format('truetype'),
-  url('assets/fonts/icons/Icons.svg#Icons') format('svg');
+  font-family: 'icomoon';
+  src:  url('assets/fonts/icons/Icons.eot');
+  src:  url('assets/fonts/icons/Icons.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/icons/Icons.ttf') format('truetype'),
+    url('assets/fonts/icons/Icons.woff') format('woff'),
+    url('assets/fonts/icons/Icons.svg?#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
+
 @mixin icon-styles {
-  font-family: "Icons";
+  font-family: "icomoon" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
   text-decoration: none;
   text-transform: none;
+  line-height: 1;
 }
 
 %icon {
@@ -27,88 +32,109 @@
   $char: "";
 
   @if $filename == Exclamation  {
-    $char: "\E001";
-  }
-  @if $filename == Logog-crest-token {
-    $char: "\E002";
+    $char: "\e90a";
   }
   @if $filename == Token {
-    $char: "\E003";
+    $char: "\e922";
   }
   @if $filename == USD {
-    $char: "\E004";
+    $char: "\e924";
   }
   @if $filename == bitcoin {
-    $char: "\E005";
+    $char: "\e902";
   }
   @if $filename == building {
-    $char: "\E006";
+    $char: "\e903";
   }
   @if $filename == close {
-    $char: "\E007";
+    $char: "\e904";
   }
   @if $filename == dollar-symbol {
-    $char: "\E008";
+    $char: "\e905";
   }
   @if $filename == edit {
-    $char: "\E009";
+    $char: "\e906";
   }
   @if $filename == email {
-    $char: "\E00A";
+    $char: "\e908";
   }
   @if $filename == email_adress {
-    $char: "\E00B";
+    $char: "\e907";
   }
   @if $filename == ether {
-    $char: "\E00C";
+    $char: "\e909";
   }
   @if $filename == eye-01 {
-    $char: "\E00D";
+    $char: "\e90c";
   }
   @if $filename == eye_hide {
-    $char: "\E00E";
+    $char: "\e90b";
   }
   @if $filename == home {
-    $char: "\E00F";
+    $char: "\e90d";
   }
   @if $filename == live_chat {
-    $char: "\E010";
+    $char: "\e90e";
   }
   @if $filename == logout {
-    $char: "\E011";
+    $char: "\e913";
   }
   @if $filename == next {
-    $char: "\E012";
+    $char: "\e914";
   }
   @if $filename == noun_accepted_1494985 {
-    $char: "\E013";
+    $char: "\e915";
+  }
+  @if $filename == noun_discount_191910 {
+    $char: "\e916";
+  }
+  @if $filename == noun_graph_963252 {
+    $char: "\e917";
+  }
+  @if $filename == noun_link_1194317 {
+    $char: "\e918"; 
+  }
+  @if $filename == monero {
+    $char: "\e919";
   }
   @if $filename == pending {
-    $char: "\E014";
+    $char: "\e91c";
   }
   @if $filename == send-mail {
-    $char: "\E015";
+    $char: "\e91d";
   }
   @if $filename == settings {
-    $char: "\E016";
+    $char: "\e91e";
   }
   @if $filename == shoppingCart {
-    $char: "\E017";
+    $char: "\e91f";
   }
   @if $filename == team {
-    $char: "\E018";
+    $char: "\e920";
   }
   @if $filename == tick {
-    $char: "\E019";
+    $char: "\e921";
   }
   @if $filename == transfer {
-    $char: "\E01A";
+    $char: "\e923";
   }
   @if $filename == user {
-    $char: "\E01B";
+    $char: "\e925";
+  }
+  @if $filename == users {
+    $char: "\e91b";
   }
   @if $filename == wallet {
-    $char: "\E01C";
+    $char: "\e926";
+  }
+  @if $filename == baseline-chevron_right {
+    $char: "\e900";
+  }
+  @if $filename == baseline-menu {
+    $char: "\e901";
+  }
+  @if $filename == up-arrow {
+    $char: "\e91a";
   }
 
   @return $char;
@@ -126,10 +152,29 @@
 }
 
 .icon-Exclamation  {
-  @include icon(Exclamation );
+  @include icon(Exclamation);
 }
 .icon-Logog-crest-token {
   @include icon(Logog-crest-token);
+}
+.icon-Logog-crest-token .path1:before {
+  content: "\e90f";
+  color: rgb(255, 255, 255);
+}
+.icon-Logog-crest-token .path2:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Logog-crest-token .path3:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Logog-crest-token .path4:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
 .icon-Token {
   @include icon(Token);
@@ -176,11 +221,23 @@
 .icon-logout {
   @include icon(logout);
 }
+.icon-monero {
+  @include icon(monero);
+}
 .icon-next {
   @include icon(next);
 }
 .icon-noun_accepted_1494985 {
   @include icon(noun_accepted_1494985);
+}
+.icon-noun_discount_191910 {
+  @include icon(noun_discount_191910);
+}
+.icon-noun_graph_963252 {
+  @include icon(noun_graph_963252);
+}
+.icon-noun_link_1194317 {
+  @include icon(noun_link_1194317);
 }
 .icon-pending {
   @include icon(pending);
@@ -206,6 +263,18 @@
 .icon-user {
   @include icon(user);
 }
+.icon-users {
+  @include icon(users);
+}
+.icon-up-arrow {
+  @include icon(up-arrow);
+}
 .icon-wallet {
   @include icon(wallet);
+}
+.icon-baseline-chevron_right {
+  @include icon(baseline-chevron_right)
+}
+.icon-baseline-menu {
+  @include icon(baseline-menu)
 }
