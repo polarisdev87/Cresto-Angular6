@@ -16,13 +16,15 @@ export class BuyTokenFormComponent implements OnInit {
   // TODO select from store
   public currencies = {
     1: 'BTC',
-    3: 'ETH'
+    3: 'ETH',
+    5: 'XMR'
   };
 
   // Equivalet number of CSTT tokens with BTC/ETH balance
   public tokenEquivalents = {
     1: 0,
-    3: 0
+    3: 0,
+    5: 0
   };
 
   public isActive = false;

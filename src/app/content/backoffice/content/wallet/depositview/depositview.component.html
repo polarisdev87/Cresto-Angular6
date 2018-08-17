@@ -23,21 +23,27 @@
       <div class="circle-okay">
         <i class="icon-tick"></i>
       </div>
-      <p>The adress has been copied to the clipboard</p>
+      <p>The addess has been copied to the clipboard</p>
     </div>
     <div class="deposit-currency-wrapper" *ngIf="!confirmButton">
       <div class="pay-attention">
-        <h1> Deposit {{coin.asset.code === 'btc' ? 'Bitcoin': 'Ethereum' }}</h1>
+        <h1> Deposit 
+          {{coin.asset.code === 'btc' ? 'Bitcoin': '' }}
+          {{coin.asset.code === 'eth' ? 'Ethereum': '' }}
+          {{coin.asset.code === 'xmr' ? 'Monero': '' }}
+        </h1>
       </div>
       <div class="deposit-currency">
         <p>Only send
-          {{coin.asset.code === 'btc' ? 'bitcoin': 'ethereum' }}
+          {{coin.asset.code === 'btc' ? 'bitcoin' : '' }}
+          {{coin.asset.code === 'eth' ? 'ethereum' : '' }}
+          {{coin.asset.code === 'xmr' ? 'monero' : '' }}
           ({{coin.asset.code | uppercase}}) to this address. Sending any other digital asset, including
           {{coin.asset.code === 'btc' ? 'Bitcoin': 'Ethereum' }}
           Cash, will result in permanent loss.</p>
       </div>
       <div class="deposit-attention">
-        <h2>Your {{coin.asset.code | uppercase}} adress is</h2>
+        <h2>Your {{coin.asset.code | uppercase}} address is</h2>
       </div>
       <form>
           <input readonly [value]="coin.top_up_address"

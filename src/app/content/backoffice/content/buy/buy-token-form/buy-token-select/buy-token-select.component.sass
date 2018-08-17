@@ -5,8 +5,9 @@
   justify-content: space-between
   padding-bottom: 35px
   .btc,
-  .eth
-    width: 47%
+  .eth,
+  .xmr
+    width: 32%
     display: flex
     align-items: center
     justify-content: center
@@ -26,6 +27,8 @@
         color: #daa126
       &.icon-eth
         color: #65c636
+      &.icon-xmr
+        color: #7d55b9
     .content
       span
         display: block
@@ -43,15 +46,20 @@
     &:hover,
     &.active
       box-shadow: 0 0 24px rgba(101, 198, 54, 0.5)
+  .xmr
+    &:hover,
+    &.active
+      box-shadow: 0 0 24px rgba(167, 108, 247, 0.5)
 
 
 @media screen and (max-width: 1024px)
    .select-currency
       padding-bottom: 30px
       .btc,
-      .eth
+      .eth,
+      .xmr
         padding: 10px 0
-@media screen and (max-width: 580px)
+@media screen and (max-width: 700px)
    .select-currency
       padding-bottom: 30px
       display: flex
@@ -59,6 +67,7 @@
       align-items: center
       padding-bottom: 5px 
       .btc,
-      .eth
+      .eth,
+      .xmr
         width: 280px
         margin-bottom: 20px
