@@ -8,9 +8,23 @@
     &.none
         display: none
     a
-      color: #c2c2c2
-      font-size: 20px
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      background: $green
+      color: $black
+      border-radius: 30px
+      padding: 0 30px
+      min-height: 43px
+      text-transform: uppercase
       font-family: $montserrat-bold
+      font-size: 20px
+      border: 1px solid transparent
+      transition: $transition
+      &:hover
+        background: transparent
+        color: $green
+        border: 1px solid $green
 
   .sub-title.white
     color: #c2c2c2
