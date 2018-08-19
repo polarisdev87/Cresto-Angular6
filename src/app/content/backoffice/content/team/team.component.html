@@ -1,0 +1,50 @@
+<div id="team-panel" class="light-bg">
+  <h3>Earn 10% Commissions Promoting Crest</h3>
+  <div class="block-buttons">
+    <div class="button" (click)="view='referrals'" [ngClass]="{active: view=='referrals'}">
+      <i class="icon-noun_graph_963252"></i>
+      <span class="icon-text">Referrals</span>
+    </div>
+    <div class="button" (click)="view='resources'" [ngClass]="{active: view=='resources'}">
+      <i class="icon-noun_link_1194317"></i>
+      <span class="icon-text">Resources</span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="view === 'referrals'" class="info">
+  <h3>Referral stats</h3>
+  <div class="inner">
+    <div class="item">
+      <i class="icon-user"></i>
+      <span *ngIf="(referrals$ | async) as referrals">Total users:<strong>{{ referrals.length }}</strong></span>
+    </div>
+    <div class="item">
+      <i class="icon-noun_discount_191910"></i>
+      <span>Total Commissions:<strong>CSTT 15.439</strong></span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="view === 'resources'" class="info">
+  <h3>Earn 10% Commissions for each person you refer</h3>
+  <p class="small">Share your personal referral link given below and when people signup for new account with it,<br>
+    you will earn 10% of their CSTT purchase during Pre-ICO/ICO and also their campaign contribution.
+  </p>
+  <div class="referral-link">
+    <div class="texts">
+      <span>Your personal referral link:</span>
+      <input type="text" appCopypaste #c="copypaste" value="{{ referralLink }}" />
+    </div>
+    <div class="buttonWrapper">
+      <app-button [buttonState]="copyButton" (click)="c.copy();openPopupCopyAddress()"></app-button>
+    </div>
+  </div>
+</div>
+  
+
+<app-referrals-component
+  *ngIf="view === 'referrals' && (referrals$ | async) as referrals"
+  [referrals] = "referrals"
+></app-referrals-component>
+<app-resources-component *ngIf="view === 'resources'"></app-resources-component>

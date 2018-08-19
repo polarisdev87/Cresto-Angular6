@@ -1,0 +1,16 @@
+<ngu-carousel
+  [inputs]="bannerCarousel"
+  (carouselLoad)="myfunc($event)"
+  (onMove)="onmoveFn($event)">
+  <ngu-item NguCarouselItem *ngFor="let slide of slides">
+    <div class="slide">
+      <div class="imgWrapper"></div>
+      <div class="code">{{ slide.html }}</div>
+      <div class="buttonWrapper">
+        <app-button [buttonState]="downloadButton"></app-button>
+      </div>
+    </div>
+  </ngu-item>
+  <button NguCarouselPrev class='leftRs'><i class="icon-baseline-chevron_right"></i></button>
+  <button NguCarouselNext class='rightRs'><i class="icon-baseline-chevron_right"></i></button>
+</ngu-carousel>

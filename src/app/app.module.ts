@@ -53,7 +53,7 @@ import { SharedModule } from './content/backoffice/shared/modules/shared.module'
     ),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router'
-    }),
+    })
   ],
   providers: [
     HttpService,
