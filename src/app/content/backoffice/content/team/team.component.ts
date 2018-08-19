@@ -19,7 +19,7 @@ export class TeamComponent implements OnInit, OnDestroy {
   public referralLink;
   public userSubscription!: Subscription;
   public loader$!: Observable<boolean>;
-  public view: string = 'resources';
+  public view: string = 'referrals';
   public copyButton = {
     name: 'Copy address',
     class: 'emptyGreen'
