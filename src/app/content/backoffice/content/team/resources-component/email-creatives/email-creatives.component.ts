@@ -12,7 +12,7 @@ export class EmailCreativesComponent implements OnInit {
   public slides: any[] = [];
   public constructor() {
     this.emailCarousel = {
-      grid: { xs: 2, sm: 3, md: 4, lg: 5, all: 0},
+      grid: { xs: 1, sm: 3, md: 4, lg: 5, all: 0},
       speed: 500,
       point: {
         visible: false

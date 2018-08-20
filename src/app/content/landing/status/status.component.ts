@@ -18,10 +18,10 @@ export class StatusComponent implements OnInit {
     this.tokensCounter = this.percentCounter = this.usersCounter = 0;
   }
   public ngOnInit() {
-    this._http.nonAuthorizedRequest('/auth/total', {}, 'GET').subscribe((data: number) => {
-      this.tokensCounter = 385764;
+    this._http.nonAuthorizedRequest('/auth/total', {}, 'GET').subscribe((data: any) => {
+      this.tokensCounter = Math.floor(data.tokens_sold);
       this.percentCounter = Math.floor(this.tokensCounter * 100 / 1000000);
-      this.usersCounter = data;
+      this.usersCounter = data.total_users;
     });
   }
 

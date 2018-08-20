@@ -19,8 +19,35 @@
       <tr *ngFor="let referral of referrals, let $index=index">
         <td><span class="username">{{ referral.username }}</span></td>
         <td>{{ referral.createdAt | date: 'dd.MM.y hh:mm' }}</td>
-        <td><span class="yes">Yes</span></td>
-        <td>1,500</td>
+        <td>
+          <span class="yes" *ngIf="referral.commission">Yes</span>
+          <span class="no" *ngIf="!referral.commission">No</span>
+        </td>
+        <td>{{ referral.commission }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="mobile-only">
+    <colgroup>
+      <col style="width: 40%;" />
+      <col style="width: 30%;" />
+      <col style="width: 30%;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <td>Username</td>
+        <td>Commission</td>
+        <td>Amount<br>(CSTT)</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let referral of referrals, let $index=index">
+        <td><i class="icon-baseline-chevron_right"></i> <span class="username">{{ referral.username }}</span></td>
+        <td>
+          <span class="yes" *ngIf="referral.commission">Yes</span>
+          <span class="no" *ngIf="!referral.commission">No</span>
+        </td>
+        <td>{{ referral.commission }}</td>
       </tr>
     </tbody>
   </table>

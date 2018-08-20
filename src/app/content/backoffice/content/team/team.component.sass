@@ -1,5 +1,14 @@
 @import "../../../../../assets/css/variables"
 
+.team-upper
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  flex-wrap: wrap
+
+  & > div
+    flex: 0 0 100%
+    
 #team-panel
   display: flex
   flex-direction: column
@@ -131,3 +140,48 @@
         outline: none
     .buttonWrapper
       margin-left: 40px
+
+@media (max-width: 800px)
+  .team-upper
+    margin: 30px 15px
+
+    #team-panel
+      flex: 0 0 53%
+      padding: 25px 50px
+      h3
+        font-size: 22px
+        text-align: center
+      .block-buttons
+        flex-direction: column
+        min-width: auto
+        .button
+          min-width: 264px
+          margin-bottom: 25px
+    .info
+      flex: 0 0 42%
+      max-width: auto
+      margin: 30px 0px 0px
+      h3
+        font-size: 22px
+        text-align: center
+      .inner .item
+        flex: 0 0 100%
+        margin-bottom: 20px
+        span
+          font-size: 13px
+          strong
+            font-size: 16px
+      p.small
+        margin-bottom: 20px
+      .referral-link
+        .buttonWrapper
+          margin: 20px 0px 0px
+
+@media (max-width: 720px)
+  .team-upper
+    margin: 30px 0px
+    #team-panel, .info
+      flex: 0 0 100%
+    .info
+      margin: 0px
+      padding: 30px

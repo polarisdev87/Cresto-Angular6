@@ -16,6 +16,8 @@ h5
   table
     width: 100%
     border-collapse: collapse
+    &.mobile-only
+      display: none
     thead
       font-family: $OpenSansSemiBold
       color: $h-color
@@ -80,3 +82,21 @@ h5
           color: #bec6ce
           td:before, td:after
             display: block
+    &.mobile-only
+      tbody tr td:first-child
+        i
+          position: absolute
+          top: 17px
+          left: 14px
+          font-size: 20px
+          color: #00e7c7
+          text-shadow: 0px 0px 12px rgba(24, 248, 188, 1)
+        .username
+          &:before
+            display: none
+@media (max-width: 600px)
+  #referrals
+    table
+      display: none
+      &.mobile-only
+        display: table
