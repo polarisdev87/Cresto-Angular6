@@ -16,6 +16,7 @@ import { getReferralUsers } from './store/selectors/referralUsers.selector';
 export class TeamComponent implements OnInit, OnDestroy {
 
   public referrals$!: Observable<User[]>;
+  public totalCommissions: number = 0;
   public referralLink;
   public userSubscription!: Subscription;
   public loader$!: Observable<boolean>;
@@ -33,6 +34,11 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.referrals$ = this._store.select(getReferralUsers);
+    this.referrals$.subscribe((referrals: any[]) => {
+      this.totalCommissions = referrals.reduce((referral: any, total: number) => {
+        return referral.commission + total;
+      });
+    })
     this.loader$ = this._store.select('referrals', 'referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
 
