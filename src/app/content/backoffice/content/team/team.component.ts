@@ -37,7 +37,7 @@ export class TeamComponent implements OnInit, OnDestroy {
     this.referrals$.subscribe((referrals: any[]) => {
       this.totalCommissions = referrals.reduce((referral: any, total: number) => {
         return referral.commission + total;
-      });
+      }, 0);
     })
     this.loader$ = this._store.select('referrals', 'referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
