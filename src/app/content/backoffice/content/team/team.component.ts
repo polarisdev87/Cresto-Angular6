@@ -35,12 +35,8 @@ export class TeamComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.referrals$ = this._store.select(getReferralUsers);
     this.referrals$.subscribe((referrals: any[]) => {
-      if (referrals.length) {
-        this.totalCommissions = referrals.reduce((ref1: any, ref2: any) => {
-          return ref1.commission + ref2.commission;
-        }, { commission: 0 });
-      }
-    })
+      referrals.forEach((ref: any) => this.totalCommissions += parseInt(ref.commission));
+    });
     this.loader$ = this._store.select('referrals', 'referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
 
