@@ -55,16 +55,20 @@ export class TextAdsComponent implements OnInit {
         text: `ICO is on FIRE! Click Here`
       },
       {
-        label: 'Daily Passive Crypto 1-2% Daily Guaranteed ICO - LIMITED SPOTS',
-        text: `ALERT: Daily Passive Income 2% Daily. Meet The Team`
+        label: 'Daily Passive Crypto 1.15-2.25% Daily',
+        text: `Guaranteed ICO - LIMITED SPOTS`
       },
-      // {
-      //   label: 'WARNING: Earn 1.15% to 2.25% Daily Interest. Guaranteed + Verified. ALERT: 1.15% to 2.25% Paid Daily. Proven + Guaranteed!',
-      //   text: `LIMITED: $1 million sold out in 3 Hours. JOIN ICO NOW! HURRY! $3.5 Million Sold in 24 Hours. 20k Telegram Group. JOIN NOW! OMG! $2.7 Million Sold in 3 Days. 20k Telegram Group. LIMITED ICO`
-      // },
       {
-        label: 'ALERT: 1.15% to 2.25% Paid Daily. Proven + Guaranteed!JOIN ICO NOW!',
-        text: `LIMITED! Grab $92.50 in FREE Tokens. Crest Platform Pre-ICO is almost SOLD OUT!`
+        label: 'ALERT: Daily Passive Income Daily',
+        text: `Meet The Team`
+      },
+      {
+        label: 'ALERT: 1.15% to 2.25% Paid Daily.',
+        text: `Proven + Guaranteed!JOIN ICO NOW!`
+      },
+      {
+        label: 'LIMITED! Grab $92.50 in FREE Tokens.',
+        text: `Crest Platform Pre-ICO is almost SOLD OUT!`
       }
     ];
   }
