@@ -2,12 +2,14 @@
   [inputs]="bannerCarousel"
   (carouselLoad)="myfunc($event)"
   (onMove)="onmoveFn($event)">
-  <ngu-item NguCarouselItem *ngFor="let slide of slides">
+  <ngu-item NguCarouselItem *ngFor="let banner of banners">
     <div class="slide">
-      <div class="imgWrapper"></div>
-      <div class="code">{{ slide.html }}</div>
+      <div class="imgWrapper">
+        <img src="{{ banner }}" />
+      </div>
+      <!-- <div class="code">{{ slide.html }}</div> -->
       <div class="buttonWrapper">
-        <app-button [buttonState]="downloadButton"></app-button>
+        <app-button [buttonState]="downloadButton" (click)="openImg(banner)"></app-button>
       </div>
     </div>
   </ngu-item>

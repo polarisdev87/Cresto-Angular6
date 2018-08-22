@@ -27,34 +27,44 @@ export class TextAdsComponent implements OnInit {
   public ngOnInit() {
     this.slides = [
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Affiliate Marketing Crypto Profit Sharing',
+        text: `JOIN ICO NOW! Click Here`
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Crest Token - Crypto Profit Sharing',
+        text: `ICO is Now Live. Join Today `
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Crypto Profit Sharing With AI',
+        text: `Join ICO Now. Selling FAST! Click Here`
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'WOW. Crypto Cash Daily.',
+        text: `Crest Token. ICO NOW LIVE. Click Here`
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Crest DigiAd Platform.',
+        text: `Crypto Profit Sharing. Join Live ICO.`
+      },
+      {
+        label: 'Affiliate Marketing AI Profit Sharing.',
+        text: `Earn Cash with Crest. Join ICO. Click Here`
+      },
+      {
+        label: 'Crypto Cash Daily with Crest.',
+        text: `ICO is on FIRE! Click Here`
+      },
+      {
+        label: 'Daily Passive Crypto 1-2% Daily Guaranteed ICO - LIMITED SPOTS',
+        text: `ALERT: Daily Passive Income 2% Daily. Meet The Team`
+      },
+      {
+        label: 'WARNING: Earn 1.15% to 2.25% Daily Interest. Guaranteed + Verified. ALERT: 1.15% to 2.25% Paid Daily. Proven + Guaranteed!',
+        text: `LIMITED: $1 million sold out in 3 Hours. JOIN ICO NOW! HURRY! $3.5 Million Sold in 24 Hours. 20k Telegram Group. JOIN NOW! OMG! $2.7 Million Sold in 3 Days. 20k Telegram Group. LIMITED ICO`
+      },
+      {
+        label: 'ALERT: 1.15% to 2.25% Paid Daily. Proven + Guaranteed!JOIN ICO NOW!',
+        text: `LIMITED! Grab $92.50 in FREE Tokens. Crest Platform Pre-ICO is almost SOLD OUT!`
       }
     ];
   }

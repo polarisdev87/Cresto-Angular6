@@ -27,34 +27,84 @@ export class TrafficResourcesComponent implements OnInit {
   public ngOnInit() {
     this.slides = [
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'CoinZilla',
+        link: 'https://coinzilla.io',
+        text: ``
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Coin Ad',
+        link: 'https://coinad.com/?a=Advertise',
+        text: ``
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Crypto Ad Network',
+        link: 'https://token.ad',
+        text: ``
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Bit Traffic',
+        link: 'https://bittraffic.com',
+        text: ``
       },
       {
-        label: 'Lorem ipsum dolor sit amet, consectetur',
-        link: 'http://www.eample.com/deals',
-        text: `Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit, sed do eiusmod tempor incididunt ut, labore et`
+        label: 'Coin Market Cap',
+        link: 'https://coinmarketcap.com',
+        text: ``
+      },
+      {
+        label: 'Traffic For Me',
+        link: 'https://www.trafficforme.com/',
+        text: ``
+      },
+      {
+        label: 'Udimi',
+        link: 'https://udimi.com/',
+        text: ``
+      },
+      {
+        label: 'Google Adwords',
+        link: 'https://ads.google.com/home/',
+        text: ``
+      },
+      {
+        label: 'Bitcoin Advertising Platform',
+        link: 'https://bitmedia.io',
+        text: ``
+      },
+      {
+        label: 'A - Ads',
+        link: 'https://a-ads.com',
+        text: ``
+      },
+      {
+        label: 'Bing Ads',
+        link: 'https://bingads.microsoft.com',
+        text: ``
+      },
+      {
+        label: 'Start App - ICO Advertising',
+        link: 'https://lp.startapp.com/ico_campaign/',
+        text: ``
+      },
+      {
+        label: 'AdEx',
+        link: 'https://www.adex.network',
+        text: ``
+      },
+      {
+        label: 'AdBit',
+        link: 'https://adbit.biz',
+        text: ``
+      },
+      {
+        label: 'Coinverti',
+        link: 'https://coinverti.com',
+        text: ``
+      },
+      {
+        label: 'AB Chain',
+        link: 'https://ab-chain.com/',
+        text: ``
       }
     ];
   }
