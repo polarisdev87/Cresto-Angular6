@@ -22,7 +22,7 @@ export class BannerAdsComponent implements OnInit {
       point: {
         visible: false
       },
-      interval: 50000,
+      interval: 5000,
       touch: true,
       loop: true
     };
