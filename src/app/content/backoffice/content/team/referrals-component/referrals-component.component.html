@@ -1,0 +1,54 @@
+<h5>My team members</h5>
+<div id="referrals">
+  <table>
+    <colgroup>
+      <col style="width: 30%;" />
+      <col style="width: 30%;" />
+      <col style="width: 30%;" />
+      <col style="width: 10%;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <td>Username <i class="icon-up-arrow"></i></td>
+        <td>Date Registered <i class="icon-up-arrow"></i></td>
+        <td>Commission</td>
+        <td>Amount(CSTT)</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let referral of referrals, let $index=index">
+        <td><span class="username">{{ referral.username }}</span></td>
+        <td>{{ referral.createdAt | date: 'dd.MM.y hh:mm' }}</td>
+        <td>
+          <span class="yes" *ngIf="referral.commission">Yes</span>
+          <span class="no" *ngIf="!referral.commission">No</span>
+        </td>
+        <td>{{ referral.commission }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="mobile-only">
+    <colgroup>
+      <col style="width: 40%;" />
+      <col style="width: 30%;" />
+      <col style="width: 30%;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <td>Username</td>
+        <td>Commission</td>
+        <td>Amount<br>(CSTT)</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let referral of referrals, let $index=index">
+        <td><i class="icon-baseline-chevron_right"></i> <span class="username">{{ referral.username }}</span></td>
+        <td>
+          <span class="yes" *ngIf="referral.commission">Yes</span>
+          <span class="no" *ngIf="!referral.commission">No</span>
+        </td>
+        <td>{{ referral.commission }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

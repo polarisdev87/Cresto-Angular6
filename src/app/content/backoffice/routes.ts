@@ -70,6 +70,11 @@ export const routes: Route[] = [
         canLoad: [AccessGuardService]
       },
       {
+        path: 'team',
+        loadChildren: './content/team/team.module#TeamModule',
+        canLoad: [AccessGuardService]
+      },
+      {
         path: '**',
         redirectTo: 'dashboard',
         pathMatch: 'full',
