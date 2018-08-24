@@ -62,6 +62,7 @@ export class BuyTokenFormComponent implements OnInit {
     this._store.select('backoffice', 'wallets').subscribe((walletsData: any) => {
       this.tokenEquivalents[1] = walletsData.data[0] ? Math.floor(walletsData.data[0].cstt_equivalent) : 0;
       this.tokenEquivalents[3] = walletsData.data[1] ? Math.floor(walletsData.data[1].cstt_equivalent) : 0;
+      this.tokenEquivalents[5] = walletsData.data[2] ? Math.floor(walletsData.data[2].cstt_equivalent) : 0;
     });
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       tap((data: any) => {
