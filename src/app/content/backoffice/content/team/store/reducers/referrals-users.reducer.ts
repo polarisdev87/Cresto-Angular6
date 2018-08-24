@@ -6,7 +6,8 @@ import {
 export const initialState: any = {
   isLoading: false,
   isLoaded: false,
-  data: []
+  data: [],
+  total: 0
 };
 
 export function reducer(state: any = initialState, action: any): any {
@@ -22,7 +23,8 @@ export function reducer(state: any = initialState, action: any): any {
       return {
         ...state,
         isLoading: false,
-        data: action.payload
+        data: action.payload.referrals,
+        total: action.payload.totalBonus
       };
     }
     case GET_REFERRAL_USERS_FAIL: {

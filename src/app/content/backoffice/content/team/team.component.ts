@@ -6,7 +6,7 @@ import { MatDialog } from '@angular/material';
 import { PopupComponent } from '../buy/popup/popup.component';
 import { GetReferralUsers } from './store/actions/referrals-users.action';
 import { IRootState } from '../../../../store/reducers';
-import { getReferralUsers } from './store/selectors/referralUsers.selector';
+import { getReferralUsers, getTotalCommission } from './store/selectors/referralUsers.selector';
 
 @Component({
   selector: 'app-team',
@@ -16,7 +16,7 @@ import { getReferralUsers } from './store/selectors/referralUsers.selector';
 export class TeamComponent implements OnInit, OnDestroy {
 
   public referrals$!: Observable<User[]>;
-  public totalCommissions: number = 0;
+  public totalCommission$!: Observable<number>;
   public referralLink;
   public userSubscription!: Subscription;
   public loader$!: Observable<boolean>;
@@ -34,12 +34,8 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.referrals$ = this._store.select(getReferralUsers);
-    this.referrals$.subscribe((referrals: any[]) => {
-      referrals.forEach((ref: any) => this.totalCommissions += ref.commission);
-      if (!this.totalCommissions) {
-        this.totalCommissions = 0;
-      }
-    });
+    this.totalCommission$ = this._store.select(getTotalCommission);
+
     this.loader$ = this._store.select('referrals', 'referralUsers', 'isLoading');
     this._store.dispatch(new GetReferralUsers());
 

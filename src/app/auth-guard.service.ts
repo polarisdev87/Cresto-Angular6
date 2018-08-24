@@ -22,14 +22,14 @@ export class AuthGuardService implements CanLoad {
       switchMap((isLogged: boolean) => {
         if (isLogged) {
           // Remove Useproof pixel script when user is logged in
-          const pixel_useproof = document.getElementById('useproof_scr');
-          if (pixel_useproof && pixel_useproof.parentNode) {
-            pixel_useproof.parentNode.removeChild(pixel_useproof);
+          const pixelUseproof = document.getElementById('useproof_scr');
+          if (pixelUseproof && pixelUseproof.parentNode) {
+            pixelUseproof.parentNode.removeChild(pixelUseproof);
           }
           // Remove linkedin ad pixel
-          const pixel_lnk = document.getElementById('_lnk_ad');
-          if (pixel_lnk && pixel_lnk.parentNode) {
-            pixel_lnk.parentNode.removeChild(pixel_lnk);
+          const pixelLnk = document.getElementById('_lnk_ad');
+          if (pixelLnk && pixelLnk.parentNode) {
+            pixelLnk.parentNode.removeChild(pixelLnk);
           }
         } else {
           // Insert Useproof/Linkedin pixel script only when user is not logged in
@@ -57,7 +57,7 @@ export class AuthGuardService implements CanLoad {
   s.parentNode.insertBefore(b, s);})();
 </script>
 <noscript>
-  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=452953&fmt=gif" />
+  <img height="1" width="1" style="display:none;" src="https://dc.ads.linkedin.com/collect/?pid=452953&fmt=gif"/>
 </noscript>
             `;
             document.body.appendChild(pixel2);

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+section#contest {margin:0px; padding-right:0!important; font-family: 'Roboto', sans-serif;} 
+#contest ul{list-style-type:none; margin:0; padding:0;}
+#contest a{text-decoration:none; outline:none; -webkit-transition:all .4s ease-in-out; -moz-transition:all .4s ease-in-out; -o-transition:all .4s ease-in-out; -ms-transition:all .4s ease-in-out;}
+#contest a:hover{text-decoration:none; outline:none;}
+#contest a:focus{text-decoration:none; outline:none;}
+#contest img{border:0;}
+#contest .btn-primary.focus, .btn-primary:focus{-webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;}
+#contest .img-thumbnail{background:none; border:none; padding:0; border:0; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0;}
+#contest .thumbnail img{margin:auto; display:block; padding:0; border:none; max-width:100%;}
+#contest textarea.form-control{resize: vertical;}
+
+
+@font-face {
+  font-family: 'Gobold';
+  src: url('/assets/fonts/Gobold.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/Gobold.woff') format('woff'), url('/assets/fonts/Gobold.ttf')  format('truetype'), url('/assets/fonts/Gobold.svg#Gobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+.clear {clear:both;}
+.container{width:100%; max-width:1170px; padding:0;}
+
+#contest header{position: relative; background:url(/assets/images/header-bg.jpg) no-repeat center top; background-size:cover;}
+#contest header h1{font-size:48px; font-weight:900; color:#00e65c; padding-top:58px;}
+#contest header h2{font-family: 'Gobold'; font-size:100px; color:#FFF;}
+#contest header p{font-size:20px; font-weight:400; color:#FFF; margin:0; padding:0;}
+
+header .navbar-light {}
+header .navbar-light .logo-text {display:inline-flex; font-size:25px; color:#00e65c; font-family:'Montserrat', sans-serif; font-weight:700; padding-left:7px;}
+
+#particles {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1250px;
+}
+
+.timer-area {text-align:center; padding-bottom:70px;}
+ul#countdown li {display:inline-block; background:transparent url("/assets/images/contest/timer-piece.png") no-repeat left bottom; width:112px; text-align:center;}
+ul#countdown li span {font-size:3em; font-weight:bold; color:#FFF; height:80px; line-height:57px; position:relative; display:block; width:86px; margin:auto; padding-left: 6px; letter-spacing: 20px;}
+ul#countdown li span::before{content: ''; width: 100%; height:1px; border-top:1px solid #00a140; position:absolute; top:27px; left:0;}
+ul#countdown li p{color:#FFF; text-transform:uppercase; font-size:14px; padding:10px 0 10px 0;}
+
+
+.grey-bg{background:#ededed; padding:0 15px 70px;}
+.grey-bg .container{max-width:860px;}
+.grey-bg h2{font-size:36px; font-weight:700; color:#032a11; padding:70px 0 15px 0;}
+.grey-bg p{font-size:18px; font-weight:400; color:#000;}
+.grey-bg p a{color:#000;}
+.grey-bg .table-responsive{top:-54px; position:relative; margin-bottom:-54px; -webkit-box-shadow:0 10px 30px rgba(0, 0, 0, 0.12); -moz-box-shadow:0 10px 30px rgba(0, 0, 0, 0.12); box-shadow:0 10px 30px rgba(0, 0, 0, 0.12); -webkit-border-radius:14px; -moz-border-radius:14px; border-radius:14p; text-align:center;}
+.grey-bg .table-striped thead tr th{background:#000; color:#FFF; font-size:20px; font-weight:600; border-top:0; text-align:center;}
+.grey-bg .table-striped thead tr th:first-child{-webkit-border-radius:14px 0 0 0; -moz-border-radius:14px 0 0 0; border-radius:14px 0 0 0;}
+.grey-bg .table-striped thead tr th:last-child{-webkit-border-radius:0 14px 0 0; -moz-border-radius:0 14px 0 0; border-radius:0 14px 0 0;}
+.grey-bg .table-striped tbody tr td{background:#f5f5f5; color:#252525; font-size:17px; font-weight:600; vertical-align: middle;}
+.grey-bg .table-striped tbody tr:nth-child(2n+2) td{background:#FFF;}
+.grey-bg .table-striped tbody tr td img{margin:0 0 0 10px;}
+.grey-bg .table-striped tbody tr:last-child td:first-child{-webkit-border-radius:0 0 0 14px; -moz-border-radius:0 0 0 14px; border-radius:0 0 0 14px;}
+.grey-bg .table-striped tbody tr:last-child td:last-child{-webkit-border-radius:0 0 14px 0; -moz-border-radius:0 0 14px 0; border-radius:0 0 14px 0;}
+
+footer{background:#000; color:#FFF; padding:30px 15px;}
+
+
+@media screen and (min-width:100px) and (max-width:767px){
+	
+  #contest header h1{font-size:38px; padding-top:40px;}
+  #contest header h2{font-size:60px;}
+  #contest .timer-area{padding-bottom:65px;}
+  #contest ul#countdown {max-width:290px; margin:auto;}
+  
+  .grey-bg{padding:0 15px 30px;}
+  .grey-bg h2{font-size:28px; padding:40px 0 15px 0;}
+    
+  }
+  
