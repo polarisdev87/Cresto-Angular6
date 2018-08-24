@@ -22,18 +22,45 @@ export class AuthGuardService implements CanLoad {
       switchMap((isLogged: boolean) => {
         if (isLogged) {
           // Remove Useproof pixel script when user is logged in
-          const pixel = document.getElementById('useproof_scr');
-          if (pixel && pixel.parentNode) {
-            pixel.parentNode.removeChild(pixel);
+          const pixel_useproof = document.getElementById('useproof_scr');
+          if (pixel_useproof && pixel_useproof.parentNode) {
+            pixel_useproof.parentNode.removeChild(pixel_useproof);
+          }
+          // Remove linkedin ad pixel
+          const pixel_lnk = document.getElementById('_lnk_ad');
+          if (pixel_lnk && pixel_lnk.parentNode) {
+            pixel_lnk.parentNode.removeChild(pixel_lnk);
           }
         } else {
-          // Insert Useproof pixel script only when user is logged in
+          // Insert Useproof/Linkedin pixel script only when user is not logged in
           if (!document.getElementById('useproof_scr')) {
-            const pixel = document.createElement('script');
-            pixel.id = 'useproof_scr';
-            pixel.src = 'https://cdn.useproof.com/proof.js?acc=3xhiSICM81Xs32RqfCshk86aiNs1';
-            pixel.async = true;
-            document.head.appendChild(pixel);
+            const pixel1 = document.createElement('script');
+            pixel1.id = 'useproof_scr';
+            pixel1.src = 'https://cdn.useproof.com/proof.js?acc=3xhiSICM81Xs32RqfCshk86aiNs1';
+            pixel1.async = true;
+            document.head.appendChild(pixel1);
+          }
+          if (!document.getElementById('useproof_scr')) {
+            const pixel2 = document.createElement('div');
+            pixel2.id = '_lnk_ad';
+            pixel2.innerHTML = `
+<script type="text/javascript">
+  _linkedin_partner_id = "452953";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=452953&fmt=gif" />
+</noscript>
+            `;
+            document.body.appendChild(pixel2);
           }
         }
 
