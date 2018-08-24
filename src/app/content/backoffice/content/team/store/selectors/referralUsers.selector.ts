@@ -11,3 +11,10 @@ export const getReferralUsers = createSelector(
     });
   }
 );
+
+export const getTotalCommission = createSelector(
+  createFeatureSelector<any>('referrals'),
+  (referrals: any) => {
+    return referrals.referralUsers.total;
+  }
+);
