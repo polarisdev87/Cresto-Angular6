@@ -38,11 +38,14 @@ export const routes = [
     loadChildren: './content/faq/faq.module#FAQModule',
   },
   {
+    path: 'contest',
+    loadChildren: './content/contest/contest.module#ContestModule',
+  },
+  {
     path: '',
     loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
     canLoad: [AuthGuardService]
   },
-  // {path: ':referralHash', loadChildren: './content/landing/landing.module#LandingModule'},
   {
     path: '**',
     redirectTo: 'login'
