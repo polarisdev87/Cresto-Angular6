@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import { HttpService } from '../../http.service';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-contest',
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContestComponent implements OnInit {
 
-  public constructor() { }
+  public winners: any[] = [];
+  public candidates: any[] = [];
+  public prizes = {
+    1: '$5,000',
+    2: '$2,000',
+    3: '$1,500',
+    4: '$1,000',
+    5: '$500',
+    6: '$250',
+    8: '$200',
+    10: '$100',
+  };
+  public missingWinners: number[] = [1, 2, 3, 4, 5, 6, 8, 10];
+  public constructor(
+    // private _http: HttpService,
+    private _localStorage: LocalStorageService
+  ) { }
 
   public ngOnInit() {
+    // Get contest data
+    // this._http.nonAuthorizedRequest('/auth/contest', {}, 'GET').subscribe((data: any) => {
+    //   this.winners = data.winners;
+    //   this.candidates = data.candidates;
+    //   this._localStorage.setItem('winners', this.winners);
+    //   this._localStorage.setItem('candidates', this.candidates);
+    // });
+    this.winners = this._localStorage.getItem('winners');
+    this.candidates = this._localStorage.getItem('candidates');
+    if (this.winners.length) {
+      const topPosition: number = this.winners[0].position;
+      const topIndex: number = this.missingWinners.indexOf(topPosition);
+      this.missingWinners = this.missingWinners.slice(0, topIndex);
+    }
+
+    // Prepare frontend
     const roboto = document.createElement('link');
     roboto.href = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900';
     roboto.rel = 'stylesheet';
