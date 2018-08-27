@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { HttpService } from '../../http.service';
+import { HttpService } from '../../http.service';
 import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { LocalStorageService } from '../../shared/services/localStorage.service'
 })
 export class ContestComponent implements OnInit {
 
+  public loading: Boolean = true;
   public winners: any[] = [];
   public candidates: any[] = [];
   public prizes = {
@@ -23,25 +24,24 @@ export class ContestComponent implements OnInit {
   };
   public missingWinners: number[] = [1, 2, 3, 4, 5, 6, 8, 10];
   public constructor(
-    // private _http: HttpService,
+    private _http: HttpService,
     private _localStorage: LocalStorageService
   ) { }
 
   public ngOnInit() {
     // Get contest data
-    // this._http.nonAuthorizedRequest('/auth/contest', {}, 'GET').subscribe((data: any) => {
-    //   this.winners = data.winners;
-    //   this.candidates = data.candidates;
-    //   this._localStorage.setItem('winners', this.winners);
-    //   this._localStorage.setItem('candidates', this.candidates);
-    // });
-    this.winners = this._localStorage.getItem('winners');
-    this.candidates = this._localStorage.getItem('candidates');
-    if (this.winners.length) {
-      const topPosition: number = this.winners[0].position;
-      const topIndex: number = this.missingWinners.indexOf(topPosition);
-      this.missingWinners = this.missingWinners.slice(0, topIndex);
-    }
+    this._http.nonAuthorizedRequest('/auth/contest', {}, 'GET').subscribe((data: any) => {
+      this.winners = data.winners;
+      this.candidates = data.candidates;
+      this._localStorage.setItem('winners', this.winners);
+      this._localStorage.setItem('candidates', this.candidates);
+      if (this.winners.length) {
+        const topPosition: number = this.winners[0].position;
+        const topIndex: number = this.missingWinners.indexOf(topPosition);
+        this.missingWinners = this.missingWinners.slice(0, topIndex);
+      }
+      this.loading = false;
+    });
 
     // Prepare frontend
     const roboto = document.createElement('link');

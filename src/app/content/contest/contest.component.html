@@ -31,7 +31,7 @@
   <div class="container">
     
     <div class="table-responsive">
-      <table class="table table-striped" border="0" cellspacing="0" cellpadding="0" width="100%">
+      <table *ngIf="!loading" class="table table-striped" border="0" cellspacing="0" cellpadding="0" width="100%">
       <thead>
         <tr>
         <th>Position</th>
