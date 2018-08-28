@@ -14,16 +14,16 @@ export class ContestComponent implements OnInit {
   public candidates: any[] = [];
 
   public minimums = {
-    1: '16,000 CSTT',
-    2: '8,000 CSTT',
-    3: '6,000 CSTT',
-    4: '4,000 CSTT',
-    5: '2,000 CSTT',
-    6: '1,000 CSTT',
-    7: '1,000 CSTT',
-    8: '800 CSTT',
-    9: '800 CSTT',
-    10: '400 CSTT'
+    1: '50,000 CSTT',
+    2: '20,000 CSTT',
+    3: '15,000 CSTT',
+    4: '10,000 CSTT',
+    5: '5,000 CSTT',
+    6: '2,500 CSTT',
+    7: '2,500 CSTT',
+    8: '2,000 CSTT',
+    9: '2,000 CSTT',
+    10: '1,000 CSTT'
   };
   public prizes = {
     1: '$5,000',
