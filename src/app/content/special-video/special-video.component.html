@@ -19,27 +19,30 @@
    <div class="container">
      <div class="row mt-6 mb-6">
         <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 video_thumbnail">
-          <img src="/assets/images/special-video/video_thumb.png" class="img-fluid" />
-            <a class="video_play_icon"><img src="/assets/images/special-video/play-icon.png" /></a>
-         </div>
+            <iframe style="width: 100%;" height="438"
+            src="https://www.youtube.com/embed/bw4_kOMqYJg">
+            </iframe>
+        </div>
          <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 mt-xs-4 contact_form">
           <h3>ICO Selling Fast!</h3>
              <div class="contact-form-block">
-              <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Name" required/>
+              <form [formGroup]="form" (ngSubmit)="save(form.value)">
+                <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Name" formControlName="name" />
                  </div>
                  <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Username" required/>
+                 <input type="text" class="form-control" placeholder="Username" formControlName="username" />
                  </div>
                  <div class="form-group">
-                 <input type="email" class="form-control" placeholder="Email Address" required/>
+                 <input type="email" class="form-control" placeholder="Email Address" formControlName="email" />
                  </div>
                  <div class="form-group">
-                 <input type="password" class="form-control" placeholder="Password" required/>
+                 <input type="password" class="form-control" placeholder="Password" formControlName="password" />
                  </div>
                  <div class="form-group text-center">
-                  <button type="submit" class="btn btn-danger">Sign Up</button>
+                  <button class="btn btn-danger">Sign Up</button>
                  </div>
+              </form>
              </div>
          </div>
        </div>

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
+import { ValidatorsService } from '../../shared/services/validators.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { IRootState } from '../../store/reducers';
+import { SignUp } from '../../store/actions/auth.action';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-special-video',
@@ -7,9 +13,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpecialVideoComponent implements OnInit {
 
-  public constructor() { }
+  public form!: FormGroup;
+  public constructor(
+    private _fb: FormBuilder,
+    private _store: Store<IRootState>,
+    private _validatorsService: ValidatorsService,
+    private _sanitizer: DomSanitizer
+  ) { }
 
   public ngOnInit() {
+    // Form init
+    this.form = this._fb.group({
+      username: ['', Validators.required],
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      name: ['', Validators.required],
+      recaptchaReactive: [null, Validators.required]
+    },
+      {
+        validator: this._validatorsService.checkPasswordsMatch
+    });
+
     // Prepare frontend
     const roboto = document.createElement('link');
     roboto.href = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900';
@@ -43,4 +67,13 @@ export class SpecialVideoComponent implements OnInit {
     document.body.appendChild(el1);
   }
 
+  public save(user: UserToCreate): void {
+    const sanitizedName = this._sanitizer.sanitize(SecurityContext.HTML, user.name) || '';
+    const sanitizedUsername = this._sanitizer.sanitize(SecurityContext.HTML, user.username) || '';
+    if (user.name !== sanitizedName || user.username !== sanitizedUsername) {
+      alert('Name or Username is not valid. Try again.');
+      return;
+    }
+    this._store.dispatch(new SignUp(user));
+  }
 }
