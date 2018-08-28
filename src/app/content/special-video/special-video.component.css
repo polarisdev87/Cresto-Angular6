@@ -1,0 +1,90 @@
+#special-video{ height: 100%;}
+section#special-video {margin:0px; padding-right:0!important; font-family: 'Roboto', sans-serif; min-height: 100%;
+                        margin:0px; padding:0px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+#special-video ul{list-style-type:none; margin:0; padding:0;}
+#special-video a{text-decoration:none; outline:none; -webkit-transition:all .4s ease-in-out; -moz-transition:all .4s ease-in-out; -o-transition:all .4s ease-in-out; -ms-transition:all .4s ease-in-out;}
+#special-video a:hover{text-decoration:none; outline:none;}
+#special-video a:focus{text-decoration:none; outline:none;}
+#special-video img{border:0;}
+.btn-primary.focus, .btn-primary:focus{-webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;}
+.img-thumbnail{background:none; border:none; padding:0; border:0; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0;}
+.thumbnail img{margin:auto; display:block; padding:0; border:none; max-width:100%;}
+textarea.form-control{resize: vertical;}
+
+@font-face {
+  font-family: 'Gobold';
+  src: url('/assets/fonts/Gobold.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/Gobold.woff') format('woff'), url('/assets/fonts/Gobold.ttf')  format('truetype'), url('/assets/fonts/Gobold.svg#Gobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.clear {clear:both;}
+.container{width:100%; max-width:1170px; padding:0;}
+
+#particles {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1250px;
+}
+
+#special-video {position: relative; background:url(/assets/images/header-bg.jpg) no-repeat center top; background-size:cover;}
+#special-video header h1{font-size:48px; font-weight:900; color:#00e65c; padding-top:58px;}
+#special-video header h2{font-family: 'Gobold'; font-size:100px; color:#FFF;}
+#special-video header p{font-size:20px; font-weight:400; color:#FFF; margin:0; padding:35px 0 0 0;}
+
+footer{background:#000; color:#FFF; padding:30px 15px;}
+
+
+/*************************** Video PAge **********************************/ header h1{}
+.mt-6{margin-top: 4em;}
+.mb-6{margin-bottom: 4em;}
+.full-height{min-height: 100%;display: flex;flex-wrap: wrap;justify-content: space-around;left: 0;position: absolute;
+right: 0;top: 0;align-items: center;}
+.page_video header h1{padding-top: 45px; line-height: 57px;}
+.page_video header h1 span{ color: #fff;}
+.page_video .video_thumbnail{ position: relative; }
+.page_video .video_play_icon{ min-height: 100%;display: flex;flex-wrap: wrap;justify-content: space-around;left: 0;
+position: absolute;right: 0;top: 0;align-items: center; }
+.page_video .contact_form h3{ font-size: 40px; color: #fd1900; text-align: center}
+.page_video .contact-form-block{ background: #000; border-radius: 3px; padding: 22px;}
+.page_video .contact-form-block .form-control{ background: #fff; color: #444; font-size: 16px; padding: 13px 13px; height: auto; line-height:25px; border: 0px;}
+.page_video .contact-form-block .form-control:focus{ border-color: #000;}
+
+.page_video .contact-form-block .btn-danger{color: #fff;font-size: 26px;padding:0 2.6em; border: 3px solid #9f0101; line-height: 52px; cursor: pointer;
+-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;background: rgb(206, 0, 0);
+background: -moz-linear-gradient(90deg, rgb(206, 0, 0) 28%, rgb(254, 25, 0) 97%);
+background: -webkit-linear-gradient(90deg, rgb(206, 0, 0) 28%, rgb(254, 25, 0) 97%);
+background: -o-linear-gradient(90deg, rgb(206, 0, 0) 28%, rgb(254, 25, 0) 97%);
+background: -ms-linear-gradient(90deg, rgb(206, 0, 0) 28%, rgb(254, 25, 0) 97%);
+background: linear-gradient(0deg, rgb(206, 0, 0) 28%, rgb(254, 25, 0) 97%);
+}
+.page_video h3.h3_box{ border: 2px solid #404040; padding: 1.4em 1.2em; font-size: 40px; color: #fff; line-height: 66px; text-align: center; background: rgba(0,0,0,.5)}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+  /**************************************************** Video Page *****************************************/
+  .page_video header h1{ font-size: 35px; line-height:50px;}
+  .page_video .contact_form h3{ margin: 0 0 10px;font-size: 30px;}
+  .page_video h3.h3_box { font-size: 30px; line-height: 49px;}
+  .page_video .video_thumbnail img{ height: 100% !important}
+}
+@media screen and (min-width:100px) and (max-width:767px){
+ 
+
+header h1{font-size:38px; padding-top:40px;}
+header h2{font-size:60px;}
+.timer-area{padding-bottom:65px;}
+ul#countdown {max-width:290px; margin:auto;}
+
+.grey-bg{padding:0 15px 30px;}
+.grey-bg h2{font-size:28px; padding:40px 0 15px 0;}
+/**************************************************** Video Page *****************************************/
+  .page_video header h1{ font-size: 28px; line-height: 40px;}
+  .page_video .contact_form h3{ margin: 20px 0; font-size: 26px;}
+  .page_video h3.h3_box { font-size: 26px; line-height: 49px; margin: 0 1.2em !important;}
+}

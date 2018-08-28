@@ -42,6 +42,10 @@ export const routes = [
     loadChildren: './content/contest/contest.module#ContestModule',
   },
   {
+    path: 'special-video',
+    loadChildren: './content/special-video/special-video.module#SpecialVideoModule',
+  },
+  {
     path: '',
     loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
     canLoad: [AuthGuardService]

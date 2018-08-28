@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../http.service';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-contest',
@@ -7,9 +9,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContestComponent implements OnInit {
 
-  public constructor() { }
+  public loading: Boolean = true;
+  public winners: any[] = [];
+  public candidates: any[] = [];
+
+  public minimums = {
+    1: '50,000 CSTT',
+    2: '20,000 CSTT',
+    3: '15,000 CSTT',
+    4: '10,000 CSTT',
+    5: '5,000 CSTT',
+    6: '2,500 CSTT',
+    7: '2,500 CSTT',
+    8: '2,000 CSTT',
+    9: '2,000 CSTT',
+    10: '1,000 CSTT'
+  };
+  public prizes = {
+    1: '$5,000',
+    2: '$2,000',
+    3: '$1,500',
+    4: '$1,000',
+    5: '$500',
+    6: '$250',
+    7: '$250',
+    8: '$200',
+    9: '$200',
+    10: '$100'
+  };
+  public missingWinners: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  public missingCandidates: number[] = [11, 12, 13, 14, 15];
+  public constructor(
+    private _http: HttpService,
+    private _localStorage: LocalStorageService
+  ) { }
 
   public ngOnInit() {
+    // Get contest data
+    this._http.nonAuthorizedRequest('/auth/contest', {}, 'GET').subscribe((data: any) => {
+      this.winners = data.winners;
+      this.candidates = data.candidates;
+      this._localStorage.setItem('winners', this.winners);
+      this._localStorage.setItem('candidates', this.candidates);
+      if (this.winners.length) {
+        const topPosition: number = this.winners[0].position;
+        const topIndex: number = this.missingWinners.indexOf(topPosition);
+        this.missingWinners = this.missingWinners.slice(0, topIndex);
+      }
+      if (this.candidates.length) {
+        this.missingCandidates = this.missingCandidates.slice(0, 5 - this.candidates.length);
+      }
+      this.loading = false;
+    });
+
+    // Prepare frontend
     const roboto = document.createElement('link');
     roboto.href = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900';
     roboto.rel = 'stylesheet';

@@ -10,9 +10,9 @@
 			</nav>
 			<div class="text-center">
 			<h1>Crest Token</h1>
-			<h2>$10,000</h2>
+			<h2>$11,000</h2>
 			<img src="/assets/images/contest/yellow-txt.svg" class="img-thumbnail" width="410" height="103" />
-			<p>Contest Ends on 02/26/2018 at midnight EST</p>
+			<p>Contest Ends on 12th September at 8am EST</p>
 			<div class="timer-area">
 			<ul id="countdown">
 					<li><p>days</p><span class="days">00</span></li>					
@@ -31,137 +31,60 @@
   <div class="container">
     
     <div class="table-responsive">
-      <table class="table table-striped" border="0" cellspacing="0" cellpadding="0" width="100%">
+      <table *ngIf="!loading" class="table table-striped" border="0" cellspacing="0" cellpadding="0" width="100%">
       <thead>
         <tr>
         <th>Position</th>
-        <th>Affiliate</th>
-        <th>Results</th>
-        <th>Minimums</th>
-        <th>Price</th>
+        <th>Username</th>
+        <th>Total Sales</th>
+        <th>Minimum</th>
+        <th>Prize</th>
         </tr>
       </thead>
       
       <tbody>
-        <tr>
-        <td>1. <img src="/assets/images/contest/price-first.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
+        <tr *ngFor="let missing of missingWinners">
+          <td>
+            <span *ngIf="missing === 10">{{missing}}. </span>
+            <span *ngIf="missing !== 10">&nbsp;&nbsp;{{missing}}. </span>
+            <img src="{{'/assets/images/contest/prize-'+missing+'.png'}}" />
+          </td>
+          <td></td>
+          <td></td>
+          <td>{{minimums[missing]}}</td>
+          <td>{{prizes[missing]}}</td>
         </tr>
-        
-        <tr>
-        <td>2. <img src="/assets/images/contest/price-second.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
+        <tr *ngFor="let winner of winners">
+          <td>
+            <span *ngIf="missing === 10">{{winner.position}}. </span>
+            <span *ngIf="missing !== 10">&nbsp;&nbsp;{{winner.position}}. </span>
+            <img src="{{'/assets/images/contest/prize-'+winner.position+'.png'}}" />
+          </td>
+          <td>
+            <span *ngIf="winner.username !== ''">{{winner.username}}</span>
+            <span *ngIf="winner.username === ''"><i>Anonymous</i></span>
+          </td>
+          <td>{{winner.total_sold}}</td>
+          <td>{{minimums[winner.position]}}</td>
+          <td>{{prizes[winner.position]}}</td>
         </tr>
-        
-        <tr>
-        <td>3. <img src="/assets/images/contest/price-third.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
+
+        <tr *ngFor="let missing of missingCandidates">
+          <td>{{missing}}.</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
-        
-        <tr>
-        <td>4. <img src="/assets/images/contest/price-4th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-        
-        
-        <tr>
-        <td>5. <img src="/assets/images/contest/price-5th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-        
-        <tr>
-        <td>6. <img src="/assets/images/contest/price-6th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-        
-        <tr>
-        <td>7. <img src="/assets/images/contest/price-7th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-        
-        <tr>
-        <td>8. <img src="/assets/images/contest/price-8th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>9. <img src="/assets/images/contest/price-9th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>10. <img src="/assets/images/contest/price-10th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>11. <img src="/assets/images/contest/price-11th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>12. <img src="/assets/images/contest/price-11th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>13. <img src="/assets/images/contest/price-11th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>14. <img src="/assets/images/contest/price-11th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
-        </tr>
-          
-          <tr>
-        <td>15. <img src="/assets/images/contest/price-11th.png" /></td>
-        <td>856</td>
-        <td>253 Conversions</td>
-        <td>35</td>
-        <td>$5,000.00</td>
+        <tr *ngFor="let candidate of candidates, let i = index">
+          <td><span>{{11+i}}.</span></td>
+          <td>
+            <span *ngIf="candidate.username !== ''">{{candidate.username}}</span>
+            <span *ngIf="candidate.username === ''"><i>Anonymous</i></span>
+          </td>
+          <td>{{candidate.total_sold}}</td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
       
@@ -169,22 +92,26 @@
     </div>
       
     <h2>Terms & Conditions</h2>
-    <p>Contest runs for exactly two weeks from 2/5 to 2/19 ending at midnight.<br/> <br/>
-
-    <strong>Any Fraud Sales will be voided, Your Affiliate Account Deleted and all commissions will be forefitted, along with prize money. Sorry, don't play dirty.</strong><br/><br/>
+    <p>Contest runs for exactly 14 days from 29th August to 12th September ending at 8am EST.<br/> <br/>
 
     Contest Minimums are as follows:<br/>
-    1st: 35 Sales<br/>
-    2nd: 20 Sales<br/>
-    3rd: 15 Sales<br/>
-    4th: 10 Sales<br/>
-    5th - 10th: 5 Sales<br/><br/>
+    1st: Earn 50,000 CSTT in Total Sales<br/>
+    2nd: Earn 20,000 CSTT in Total Sales<br/>
+    3rd: Earn 15,000 CSTT in Total Sales<br/>
+    4th: Earn 10,000 CSTT in Total Sales<br/>
+    5th: Earn 5,000 CSTT in Total Sales<br/>
+    6th: Earn 2,500 CSTT in Total Sales<br/>
+    7th: Earn 2,500 CSTT in Total Sales<br/>
+    8th: Earn 2,000 CSTT in Total Sales<br/>
+    9th: Earn 2,000 CSTT in Total Sales<br/>
+    10th: Earn 1,000 CSTT in Total Sales<br/>
+    <br/>
 
-    If Minimums aren't hit for your prize level, the prize according to the lowest qualifying minimum will be paid out. EG: if you come in 4th and only have 5 sales, you will be paid according to the higest prize level that qualified at 5 sales, in this contest you'd be paid 5th place prize money. 
+    If Minimums aren't hit for your prize level, the prize according to the lowest qualifying minimum will be paid out. EG: if you come in 4th and only have 5,000 CSTT in total sales, you will be paid according to the highest prize level that qualified at 5,000 CSTT, in this contest you'd be paid 5th place prize money. 
     <br/><br/>
-    Prize money will be paid the following pay cycle after the contest ends. 
+    Prize money will be paid directly into your Bitcoin wallet on your Crest dashboard after the contest ends.
     <br/><br/>
-    Any Questions or concerns, please contact your Affliate Manager Colton Strickland at <strong><a href="mailto:hello@cresttoken.com">hello@cresttoken.com</a></strong></p>
+    Any Questions or concerns, please contact Lead Community Manager Dean Matthew on telegram (@Dean_Matthew) or email <strong><a href="mailto:contact@cresttoken.com">contact@cresttoken.com</a></strong></p>
   </div>
 </div>
   
