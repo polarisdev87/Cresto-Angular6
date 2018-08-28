@@ -12,6 +12,17 @@ export class ContestComponent implements OnInit {
   public loading: Boolean = true;
   public winners: any[] = [];
   public candidates: any[] = [];
+
+  public minimums = {
+    1: '16,000 CSTT',
+    2: '8,000 CSTT',
+    3: '6,000 CSTT',
+    4: '4,000 CSTT',
+    5: '2,000 CSTT',
+    6: '1,000 CSTT',
+    8: '800 CSTT',
+    10: '400 CSTT'
+  };
   public prizes = {
     1: '$5,000',
     2: '$2,000',
@@ -20,7 +31,7 @@ export class ContestComponent implements OnInit {
     5: '$500',
     6: '$250',
     8: '$200',
-    10: '$100',
+    10: '$100'
   };
   public missingWinners: number[] = [1, 2, 3, 4, 5, 6, 8, 10];
   public constructor(

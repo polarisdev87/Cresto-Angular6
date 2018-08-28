@@ -111,7 +111,7 @@ $(document).ready(function(){
   };
   particlesJS("particles", particlesOptions);
   $("#countdown").countdown({
-    date: "9 September 2018 00:00:00",
+    date: "7 September 2018 08:00:00",
     format: "on"
   },
   

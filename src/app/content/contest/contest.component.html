@@ -12,7 +12,7 @@
 			<h1>Crest Token</h1>
 			<h2>$10,000</h2>
 			<img src="/assets/images/contest/yellow-txt.svg" class="img-thumbnail" width="410" height="103" />
-			<p>Contest Ends on 6th September at midnight GMT</p>
+			<p>Contest Ends on 7th September at 8am EST</p>
 			<div class="timer-area">
 			<ul id="countdown">
 					<li><p>days</p><span class="days">00</span></li>					
@@ -36,9 +36,9 @@
         <tr>
         <th>Position</th>
         <th>Username</th>
-        <th>Total Signups</th>
-        <th>Total Commission</th>
-        <th>Cash Price</th>
+        <th>Total Sales</th>
+        <th>Minimum</th>
+        <th>Prize</th>
         </tr>
       </thead>
       
@@ -51,7 +51,7 @@
           </td>
           <td></td>
           <td></td>
-          <td></td>
+          <td>{{minimums[missing]}}</td>
           <td>{{prizes[missing]}}</td>
         </tr>
         <tr *ngFor="let winner of winners">
@@ -64,19 +64,19 @@
             <span *ngIf="winner.username !== ''">{{winner.username}}</span>
             <span *ngIf="winner.username === ''"><i>Anonymous</i></span>
           </td>
-          <td>{{winner.affilliates}}</td>
-          <td>{{winner.total_commissions}}</td>
+          <td>{{winner.total_sold}}</td>
+          <td>{{minimums[winner.position]}}</td>
           <td>{{prizes[winner.position]}}</td>
         </tr>
 
         <tr *ngFor="let candidate of candidates, let i = index">
-          <td><span *ngIf="i==0">Waiting List<br>(advancing in<br>Rank).<br><img src="/assets/images/contest/candidates.png" /></span></td>
+          <td><span>&nbsp;&nbsp;&nbsp;&nbsp;{{11+i}}.</span></td>
           <td>
             <span *ngIf="candidate.username !== ''">{{candidate.username}}</span>
             <span *ngIf="candidate.username === ''"><i>Anonymous</i></span>
           </td>
-          <td>{{candidate.affilliates}}</td>
-          <td>{{candidate.total_commissions}}</td>
+          <td>{{candidate.total_sold}}</td>
+          <td></td>
           <td></td>
         </tr>
       </tbody>
@@ -85,7 +85,7 @@
     </div>
       
     <h2>Terms & Conditions</h2>
-    <p>Contest runs for exactly 10 days from 27th August to 6th September ending at midnight GMT.<br/> <br/>
+    <p>Contest runs for exactly 10 days from 28th August to 7th September ending at 8am EST.<br/> <br/>
 
     Contest Minimums are as follows:<br/>
     1st: Earn 16,000 CSTT in Total Commissions<br/>
@@ -99,8 +99,6 @@
     <br/>
 
     If Minimums aren't hit for your prize level, the prize according to the lowest qualifying minimum will be paid out. EG: if you come in 4th and only earn 2000 CSTT in total commissions, you will be paid according to the highest prize level that qualified at 2000 CSTT, in this contest you'd be paid 5th place prize money. 
-    <br/><br/>
-    There can be more than 1 winner per Cash Price. For instance, if 2 people earn over 2000 CSTT in total commissions, they will both receive the 5th position cash price of $500 each.
     <br/><br/>
     Prize money will be paid directly into your Bitcoin wallet on your Crest dashboard after the contest ends.
     <br/><br/>
