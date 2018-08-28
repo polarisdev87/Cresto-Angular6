@@ -45,9 +45,8 @@
       <tbody>
         <tr *ngFor="let missing of missingWinners">
           <td>
-            <span *ngIf="missing !== 6 && missing !== 8 && missing !== 10">&nbsp;&nbsp;&nbsp;&nbsp;{{missing}}. </span>
-            <span *ngIf="missing === 10">&nbsp;&nbsp;&nbsp;{{missing}}. </span>
-            <span *ngIf="missing === 6 || missing === 8">{{missing}}-{{missing+1}}. </span>
+            <span *ngIf="missing === 10">{{missing}}. </span>
+            <span *ngIf="missing !== 10">&nbsp;&nbsp;{{missing}}. </span>
             <img src="{{'/assets/images/contest/prize-'+missing+'.png'}}" />
           </td>
           <td></td>
@@ -57,9 +56,8 @@
         </tr>
         <tr *ngFor="let winner of winners">
           <td>
-            <span *ngIf="winner.position !== 6 && winner.position !== 8 && winner.position !== 10">&nbsp;&nbsp;&nbsp;&nbsp;{{winner.position}}. </span>
-            <span *ngIf="winner.position === 10">&nbsp;&nbsp;&nbsp;{{winner.position}}. </span>
-            <span *ngIf="winner.position === 6 || winner.position === 8">{{winner.position}}-{{winner.position+1}}. </span>
+            <span *ngIf="missing === 10">{{winner.position}}. </span>
+            <span *ngIf="missing !== 10">&nbsp;&nbsp;{{winner.position}}. </span>
             <img src="{{'/assets/images/contest/prize-'+winner.position+'.png'}}" />
           </td>
           <td>
@@ -71,8 +69,15 @@
           <td>{{prizes[winner.position]}}</td>
         </tr>
 
+        <tr *ngFor="let missing of missingCandidates">
+          <td>{{missing}}.</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
         <tr *ngFor="let candidate of candidates, let i = index">
-          <td><span>&nbsp;&nbsp;&nbsp;{{11+i}}.</span></td>
+          <td><span>{{11+i}}.</span></td>
           <td>
             <span *ngIf="candidate.username !== ''">{{candidate.username}}</span>
             <span *ngIf="candidate.username === ''"><i>Anonymous</i></span>

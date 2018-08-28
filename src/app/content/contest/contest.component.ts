@@ -20,7 +20,9 @@ export class ContestComponent implements OnInit {
     4: '4,000 CSTT',
     5: '2,000 CSTT',
     6: '1,000 CSTT',
+    7: '1,000 CSTT',
     8: '800 CSTT',
+    9: '800 CSTT',
     10: '400 CSTT'
   };
   public prizes = {
@@ -30,10 +32,13 @@ export class ContestComponent implements OnInit {
     4: '$1,000',
     5: '$500',
     6: '$250',
+    7: '$250',
     8: '$200',
+    9: '$200',
     10: '$100'
   };
-  public missingWinners: number[] = [1, 2, 3, 4, 5, 6, 8, 10];
+  public missingWinners: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  public missingCandidates: number[] = [11, 12, 13, 14, 15];
   public constructor(
     private _http: HttpService,
     private _localStorage: LocalStorageService
@@ -50,6 +55,9 @@ export class ContestComponent implements OnInit {
         const topPosition: number = this.winners[0].position;
         const topIndex: number = this.missingWinners.indexOf(topPosition);
         this.missingWinners = this.missingWinners.slice(0, topIndex);
+      }
+      if (this.candidates.length) {
+        this.missingCandidates = this.missingCandidates.slice(0, 5 - this.candidates.length);
       }
       this.loading = false;
     });
