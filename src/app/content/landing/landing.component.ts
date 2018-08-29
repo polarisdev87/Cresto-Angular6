@@ -19,6 +19,7 @@ export class LandingComponent implements OnInit {
 
   public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.queryParams['ref'];
+    const referralMedia: string = this._activateroute.snapshot.queryParams['subid'];
     const clickId: string = this._activateroute.snapshot.queryParams['click_id'];
     const esubId: string = this._activateroute.snapshot.queryParams['esub'];
 
@@ -31,6 +32,9 @@ export class LandingComponent implements OnInit {
 
       // TODO should changed with
       // this._store.dispatch(new SetReferalLink(referralHash));
+    }
+    if (referralMedia) {
+      this._localStorageService.setItem('referralMedia', referralMedia);
     }
 
     if (clickId) {

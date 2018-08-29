@@ -4,7 +4,8 @@
     <colgroup>
       <col style="width: 30%;" />
       <col style="width: 30%;" />
-      <col style="width: 30%;" />
+      <col style="width: 15%;" />
+      <col style="width: 15%;" />
       <col style="width: 10%;" />
     </colgroup>
     <thead>
@@ -13,6 +14,7 @@
         <td>Date Registered <i class="icon-up-arrow"></i></td>
         <td>Commission</td>
         <td>Amount(CSTT)</td>
+        <td>Source</td>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +26,7 @@
           <span class="no" *ngIf="!referral.commission">No</span>
         </td>
         <td>{{ referral.commission }}</td>
+        <td>{{ referral.source }}</td>
       </tr>
     </tbody>
   </table>

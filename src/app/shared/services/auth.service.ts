@@ -34,13 +34,15 @@ export class AuthService {
 
   public signUp(user: User): Observable<User> {
     let referredBy = '';
+    let referredFrom = '';
     try {
       referredBy = this._localStorageService.getItem('referralHash');
+      referredFrom = this._localStorageService.getItem('referralMedia');
     } catch (err) {
       // tslint:disable-next-line:no-console
       console.log(err);
     }
-    return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy });
+    return this._http.nonAuthorizedRequest(`/auth/signup`, {...user, referredBy, referredFrom });
   }
 
   public tokenToLocalStorage(user: User): Observable<User | null> {

@@ -28,8 +28,12 @@ export class SpecialVideoComponent implements OnInit {
   public ngOnInit() {
     // Referral link
     const referralHash: string = this._router.snapshot.queryParams['ref'];
+    const referralMedia: string = this._router.snapshot.queryParams['subid'];
     if (referralHash) {
       this._localStorageService.setItem('referralHash', referralHash);
+    }
+    if (referralMedia) {
+      this._localStorageService.setItem('referralMedia', referralMedia);
     }
 
     // Form init

@@ -35,13 +35,15 @@ export class SocialNetworkService {
 
   public successFbLogin(accessToken): Observable<User> {
     let referredBy = '';
+    let referredFrom = '';
     try {
       referredBy = this._localStorageService.getItem('referralHash');
+      referredFrom = this._localStorageService.getItem('referralMedia');
     } catch (err) {
       // tslint:disable-next-line
       console.log(err);
     }
-    return this._http.nonAuthorizedRequest('/facebook', { access_token: accessToken, referredBy }, 'POST');
+    return this._http.nonAuthorizedRequest('/facebook', { access_token: accessToken, referredBy, referredFrom }, 'POST');
 
   }
 
@@ -55,12 +57,14 @@ export class SocialNetworkService {
 
   public googleSuccessLogin(accessToken: string): Observable<User> {
     let referredBy = '';
+    let referredFrom = '';
     try {
       referredBy = this._localStorageService.getItem('referralHash');
+      referredFrom = this._localStorageService.getItem('referralMedia');
     } catch (err) {
       // tslint:disable-next-line
       console.log(err);
     }
-    return this._http.nonAuthorizedRequest('/google', { access_token: accessToken, referredBy }, 'POST');
+    return this._http.nonAuthorizedRequest('/google', { access_token: accessToken, referredBy, referredFrom }, 'POST');
   }
 }
