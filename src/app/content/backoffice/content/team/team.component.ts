@@ -17,7 +17,8 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   public referrals$!: Observable<User[]>;
   public totalCommission$!: Observable<number>;
-  public referralLink;
+  public referralLink1;
+  public referralLink2;
   public userSubscription!: Subscription;
   public loader$!: Observable<boolean>;
   public view: string = 'referrals';
@@ -41,7 +42,8 @@ export class TeamComponent implements OnInit, OnDestroy {
 
     this.userSubscription = this._store.select('backoffice', 'user', 'referralHash')
       .subscribe((referralHash: string) => {
-        this.referralLink = `${environment.domain}/?ref=${referralHash}`;
+        this.referralLink1 = `${environment.domain}/?ref=${referralHash}`;
+        this.referralLink2 = `${environment.domain}/special-video?ref=${referralHash}`;
       });
   }
 

@@ -34,11 +34,21 @@
   </p>
   <div class="referral-link">
     <div class="texts">
-      <span>Your personal referral link:</span>
-      <input type="text" appCopypaste #c="copypaste" value="{{ referralLink }}" />
+      <span>Your personal referral link (Main Landing Page):</span>
+      <input type="text" appCopypaste #c="copypaste" value="{{ referralLink1 }}" />
     </div>
     <div class="buttonWrapper">
       <app-button [buttonState]="copyButton" (click)="c.copy();openPopupCopyAddress()"></app-button>
+    </div>
+  </div>
+  <br>
+  <div class="referral-link">
+    <div class="texts">
+      <span>Your personal referral link (Video Landing Page):</span>
+      <input type="text" appCopypaste #d="copypaste" value="{{ referralLink2 }}" />
+    </div>
+    <div class="buttonWrapper">
+      <app-button [buttonState]="copyButton" (click)="d.copy();openPopupCopyAddress()"></app-button>
     </div>
   </div>
 </div>

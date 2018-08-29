@@ -5,6 +5,8 @@ import { Store } from '@ngrx/store';
 import { IRootState } from '../../store/reducers';
 import { SignUp } from '../../store/actions/auth.action';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-special-video',
@@ -18,10 +20,18 @@ export class SpecialVideoComponent implements OnInit {
     private _fb: FormBuilder,
     private _store: Store<IRootState>,
     private _validatorsService: ValidatorsService,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    private _router: ActivatedRoute,
+    private _localStorageService: LocalStorageService
   ) { }
 
   public ngOnInit() {
+    // Referral link
+    const referralHash: string = this._router.snapshot.queryParams['ref'];
+    if (referralHash) {
+      this._localStorageService.setItem('referralHash', referralHash);
+    }
+
     // Form init
     this.form = this._fb.group({
       username: ['', Validators.required],
