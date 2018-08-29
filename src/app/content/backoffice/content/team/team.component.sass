@@ -115,13 +115,30 @@
     text-align: center
     margin-top: -10px
     margin-bottom: 30px
+  .referral-source
+    margin-bottom: 30px
+    span
+      color: #bec6ce
+      font-size: 14px
+    input
+      width: 200px
+      height: 30px
+      border: none
+      font-family: "OpenSans-Regular", sans-serif
+      background-color: #3a4758
+      outline: none
+      font-size: 14px
+      padding-left: 10px
+      color: #fff
+      text-align: left
   .referral-link
     display: flex
-    flex-direction: row
+    flex-direction: column
     flex-wrap: wrap
     justify-content: center
     align-items: center
     .texts
+      width: 100%
       display: flex
       flex-direction: column
       span
@@ -134,13 +151,15 @@
         font-family: $OpenSansRegular
         font-size: 16px
         color: #00e7c7
-        width: 400px
-        text-align: center
+        width: 95%
+        max-width: 500px
         background: transparent
+        margin: 0 auto
+        text-align: center
         border: none
         outline: none
     .buttonWrapper
-      margin-left: 40px
+      margin: 20px auto
 
 @media (max-width: 800px)
   .team-upper

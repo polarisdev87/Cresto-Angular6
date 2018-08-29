@@ -17,6 +17,7 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   public referrals$!: Observable<User[]>;
   public totalCommission$!: Observable<number>;
+  public source;
   public referralLink1;
   public referralLink2;
   public userSubscription!: Subscription;
@@ -55,6 +56,10 @@ export class TeamComponent implements OnInit, OnDestroy {
         message: 'The address has been copied to the clipboard',
       }
     });
+  }
+
+  public appendSource(link: string) {
+    return this.source && this.source.trim() ? (link + '&subid=' + this.source.trim()) : link;
   }
 
   public ngOnDestroy(): void {
