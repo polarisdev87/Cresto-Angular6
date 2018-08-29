@@ -56,8 +56,8 @@
         </tr>
         <tr *ngFor="let winner of winners">
           <td>
-            <span *ngIf="missing === 10">{{winner.position}}. </span>
-            <span *ngIf="missing !== 10">&nbsp;&nbsp;{{winner.position}}. </span>
+            <span *ngIf="winner.position === 10">{{winner.position}}. </span>
+            <span *ngIf="winner.position !== 10">&nbsp;&nbsp;{{winner.position}}. </span>
             <img src="{{'/assets/images/contest/prize-'+winner.position+'.png'}}" />
           </td>
           <td>
