@@ -6,6 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollbarModule } from 'ngx-scrollbar';
+import { ContestPopupComponent } from './contest-popup/contest-popup.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { ScrollbarModule } from 'ngx-scrollbar';
   declarations: [
     HeaderAuthComponent,
     FooterComponent,
+    ContestPopupComponent,
   ],
   exports: [
     MatDialogModule,

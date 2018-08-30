@@ -1,0 +1,55 @@
+#contest-popup
+  position: fixed
+  background-color: #fff
+  border: 2px solid #555
+  width: 200px
+  height: 200px
+  right: 0
+  bottom: 0
+  z-index: 999
+  box-shadow: -5px -5px 30px 0px rgba(255, 255, 255, 0.3)
+  font-family: sans-serif
+
+  span.close
+    position: absolute
+    top: 0
+    right: 0
+    width: 20px
+    height: 20px
+    background-color: #fb3131
+    font-size: 15px
+    text-align: center
+    color: #fff
+    cursor: pointer
+  .images
+    position: absolute
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+    top: 88px
+    left: -5px
+    img
+      flex: 1
+  a.link
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 100%
+    text-decoration: none
+    h3.alert
+      color: #ca1212
+      font-weight: 700
+      font-size: 24px
+      line-height: 35px
+      margin-top: 15px
+      text-align: center
+    h3.notice
+      color: #000
+      font-size: 19px
+      line-height: 32px
+    span.link
+      color: rgb(0, 123, 221)
+      text-decoration: underline
+      font-size: 23px
