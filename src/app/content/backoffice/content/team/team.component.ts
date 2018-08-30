@@ -28,6 +28,8 @@ export class TeamComponent implements OnInit, OnDestroy {
     class: 'emptyGreen'
   };
 
+  public isActive: Boolean = false;
+
   public constructor(
     private _store: Store<IRootState>,
     private _dialog: MatDialog
@@ -66,4 +68,7 @@ export class TeamComponent implements OnInit, OnDestroy {
     this.userSubscription.unsubscribe();
   }
 
+  public toggleClass() {
+    this.isActive = !this.isActive;
+  }
 }

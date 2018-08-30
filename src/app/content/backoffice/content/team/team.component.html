@@ -32,13 +32,9 @@
   <p class="small">Share your personal referral link given below and when people signup for new account with it,<br>
     you will earn 10% of their CSTT purchase during Pre-ICO/ICO and also their campaign contribution.
   </p>
-  <div class="referral-source">
-    <span>Source: </span>
-    <input type="text" [(ngModel)]="source" />
-  </div>
   <div class="referral-link">
     <div class="texts">
-      <span>Your personal referral link (Main Landing Page):</span>
+      <span>Main Landing Page</span>
       <input type="text" appCopypaste #c="copypaste" value="{{ appendSource(referralLink1) }}" />
     </div>
     <div class="buttonWrapper">
@@ -48,12 +44,16 @@
   <br>
   <div class="referral-link">
     <div class="texts">
-      <span>Your personal referral link (Video Landing Page):</span>
+      <span>Video Landing Page</span>
       <input type="text" appCopypaste #d="copypaste" value="{{ appendSource(referralLink2) }}" />
     </div>
     <div class="buttonWrapper">
       <app-button [buttonState]="copyButton" (click)="d.copy();openPopupCopyAddress()"></app-button>
     </div>
+  </div>
+  <div class="referral-source">
+    <span>You can add a source</span>
+    <input type="text" [(ngModel)]="source" placeholder="Optional" />
   </div>
 </div>
 </div>
