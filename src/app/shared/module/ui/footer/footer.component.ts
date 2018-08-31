@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -6,8 +7,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./footer.component.sass']
 })
 
-export class FooterComponent {
-
+export class FooterComponent implements OnInit {
+  public isPreico;
   @Input() public customClass: String = '';
+  public constructor(
+    private _router: Router
+  ) { }
 
+  public ngOnInit() {
+    this.isPreico = this._router.url.match('/pre-ico') ? true : false;
+  }
 }
