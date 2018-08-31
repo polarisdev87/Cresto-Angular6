@@ -52,12 +52,20 @@ export class ContestComponent implements OnInit {
       this._localStorage.setItem('winners', this.winners);
       this._localStorage.setItem('candidates', this.candidates);
       if (this.winners.length) {
-        const topPosition: number = this.winners[0].position;
-        const topIndex: number = this.missingWinners.indexOf(topPosition);
-        this.missingWinners = this.missingWinners.slice(0, topIndex);
+        this.winners.forEach((winner: any) => {
+          const index = this.missingWinners.indexOf(winner.position);
+          if (index > -1) {
+            this.missingWinners.splice(index, 1);
+          }
+        });
       }
       if (this.candidates.length) {
-        this.missingCandidates = this.missingCandidates.slice(0, 5 - this.candidates.length);
+        this.candidates.forEach((candidate: any) => {
+          const index = this.missingWinners.indexOf(candidate.position);
+          if (index > -1) {
+            this.missingCandidates.splice(index, 1);
+          }
+        });
       }
       this.loading = false;
     });
@@ -93,6 +101,25 @@ export class ContestComponent implements OnInit {
       document.body.appendChild(el5);
     } ;
     document.body.appendChild(el1);
+  }
+
+  public winnersOf(position: number): any[] {
+    const results: {
+      position: number,
+      username?: string,
+      total_sold?: number
+    }[] = [];
+
+    if (this.missingWinners.indexOf(position) !== -1) {
+      results.push({ position });
+    } else {
+      this.winners.forEach((winner: any) => {
+        if (winner.position === position) {
+          results.push(winner);
+        }
+      });
+    }
+    return results;
   }
 
 }
