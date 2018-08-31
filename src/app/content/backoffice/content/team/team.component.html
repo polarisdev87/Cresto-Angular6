@@ -34,12 +34,26 @@
   </p>
   <div class="referral-link">
     <div class="texts">
-      <span>Your personal referral link:</span>
-      <input type="text" appCopypaste #c="copypaste" value="{{ referralLink }}" />
+      <span>Main Landing Page</span>
+      <input type="text" appCopypaste #c="copypaste" value="{{ appendSource(referralLink1) }}" />
     </div>
     <div class="buttonWrapper">
       <app-button [buttonState]="copyButton" (click)="c.copy();openPopupCopyAddress()"></app-button>
     </div>
+  </div>
+  <br>
+  <div class="referral-link">
+    <div class="texts">
+      <span>Video Landing Page</span>
+      <input type="text" appCopypaste #d="copypaste" value="{{ appendSource(referralLink2) }}" />
+    </div>
+    <div class="buttonWrapper">
+      <app-button [buttonState]="copyButton" (click)="d.copy();openPopupCopyAddress()"></app-button>
+    </div>
+  </div>
+  <div class="referral-source">
+    <span>You can add a source</span>
+    <input type="text" [(ngModel)]="source" placeholder="Optional" />
   </div>
 </div>
 </div>

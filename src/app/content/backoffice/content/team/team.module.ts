@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { TeamComponent } from './team.component';
 import { ReferralsComponentComponent } from './referrals-component/referrals-component.component';
 import { ResourcesComponentComponent } from './resources-component/resources-component.component';
@@ -20,6 +21,7 @@ import { TrafficResourcesComponent } from './resources-component/traffic-resourc
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     StoreModule.forFeature('referrals', reducers),
     EffectsModule.forFeature(effects),

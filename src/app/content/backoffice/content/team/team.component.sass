@@ -117,30 +117,53 @@
     margin-bottom: 30px
   .referral-link
     display: flex
-    flex-direction: row
+    flex-direction: column
     flex-wrap: wrap
     justify-content: center
     align-items: center
     .texts
+      width: 100%
       display: flex
       flex-direction: column
       span
         font-family: $OpenSansSemiBold
-        font-size: 14px
+        font-size: 18px
         color: #bec6ce
         text-align: center
         margin-bottom: 5px
       input
         font-family: $OpenSansRegular
-        font-size: 16px
+        font-size: 14px
         color: #00e7c7
-        width: 330px
-        text-align: center
+        width: 95%
+        max-width: 500px
         background: transparent
+        margin: 0 auto
+        text-align: center
         border: none
         outline: none
     .buttonWrapper
-      margin-left: 40px
+      margin: 20px auto
+  .referral-source
+    display: flex
+    flex-direction: column
+    margin-top: 30px
+    text-align: center
+    span
+      color: #bec6ce
+      font-size: 18px
+    input
+      width: 200px
+      height: 30px
+      border: none
+      font-family: "OpenSans-Regular", sans-serif
+      background-color: #3a4758
+      outline: none
+      font-size: 14px
+      padding-left: 10px
+      color: #fff
+      margin: 10px auto
+      text-align: left
 
 @media (max-width: 800px)
   .team-upper

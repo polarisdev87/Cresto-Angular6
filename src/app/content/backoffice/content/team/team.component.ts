@@ -17,7 +17,9 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   public referrals$!: Observable<User[]>;
   public totalCommission$!: Observable<number>;
-  public referralLink;
+  public source;
+  public referralLink1;
+  public referralLink2;
   public userSubscription!: Subscription;
   public loader$!: Observable<boolean>;
   public view: string = 'referrals';
@@ -25,6 +27,8 @@ export class TeamComponent implements OnInit, OnDestroy {
     name: 'Copy address',
     class: 'emptyGreen'
   };
+
+  public isActive: Boolean = false;
 
   public constructor(
     private _store: Store<IRootState>,
@@ -41,7 +45,8 @@ export class TeamComponent implements OnInit, OnDestroy {
 
     this.userSubscription = this._store.select('backoffice', 'user', 'referralHash')
       .subscribe((referralHash: string) => {
-        this.referralLink = `${environment.domain}/?ref=${referralHash}`;
+        this.referralLink1 = `${environment.domain}/pre-ico?ref=${referralHash}`;
+        this.referralLink2 = `${environment.domain}/special-video?ref=${referralHash}`;
       });
   }
 
@@ -55,8 +60,15 @@ export class TeamComponent implements OnInit, OnDestroy {
     });
   }
 
+  public appendSource(link: string) {
+    return this.source && this.source.trim() ? (link + '&subid=' + this.source.trim()) : link;
+  }
+
   public ngOnDestroy(): void {
     this.userSubscription.unsubscribe();
   }
 
+  public toggleClass() {
+    this.isActive = !this.isActive;
+  }
 }
