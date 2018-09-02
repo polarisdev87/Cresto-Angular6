@@ -10,11 +10,11 @@
     </colgroup>
     <thead>
       <tr>
-        <td>Username <i class="icon-up-arrow"></i></td>
-        <td>Date Registered <i class="icon-up-arrow"></i></td>
-        <td>Commission</td>
-        <td>Amount(CSTT)</td>
-        <td>Source</td>
+        <td (click)="sort('username')">Username</td>
+        <td (click)="sort('createdAt')">Date Registered</td>
+        <td (click)="sort('commission')">Commission</td>
+        <td (click)="sort('commission')">Amount(CSTT)</td>
+        <td (click)="sort('source')">Source</td>
       </tr>
     </thead>
     <tbody>
