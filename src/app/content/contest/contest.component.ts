@@ -60,12 +60,7 @@ export class ContestComponent implements OnInit {
         });
       }
       if (this.candidates.length) {
-        this.candidates.forEach((candidate: any) => {
-          const index = this.missingWinners.indexOf(candidate.position);
-          if (index > -1) {
-            this.missingCandidates.splice(index, 1);
-          }
-        });
+        this.missingCandidates.splice(0, this.candidates.length);
       }
       this.loading = false;
     });
