@@ -50,8 +50,7 @@ export class BuyTokenFormComponent implements OnInit {
 
   public constructor(
     private _store: Store<IRootState>,
-    private _localStorageService: LocalStorageService,
-    gtag: Gtag
+    private _localStorageService: LocalStorageService
   ) {
   }
 
