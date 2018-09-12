@@ -32,7 +32,6 @@ import { UiModule } from './shared/module/ui/ui.module';
 import { PopupComponent } from './content/backoffice/content/buy/popup/popup.component';
 import { routes } from './routes';
 import { SharedModule } from './content/backoffice/shared/modules/shared.module';
-import { GtagModule } from 'angular-gtag';
 
 @NgModule({
   declarations: [
@@ -54,8 +53,7 @@ import { GtagModule } from 'angular-gtag';
     ),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router'
-    }),
-    GtagModule.forRoot({ trackingId: 'AW-796101166', trackPageviews: false })
+    })
   ],
   providers: [
     HttpService,
