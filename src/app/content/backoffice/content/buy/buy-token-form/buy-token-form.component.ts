@@ -6,6 +6,7 @@ import { debounceTime, map, tap } from 'rxjs/operators';
 import { BuyTokensRequest, CalculateSumRequest } from '../store/actions/buy-tokens.action';
 import { IRootState } from '../../../../../store/reducers';
 import { LocalStorageService } from '../../../../../shared/services/localStorage.service';
+import { GtagModule } from 'angular-gtag';
 
 @Component({
   selector: 'app-buy-token-form',
@@ -49,7 +50,8 @@ export class BuyTokenFormComponent implements OnInit {
 
   public constructor(
     private _store: Store<IRootState>,
-    private _localStorageService: LocalStorageService
+    private _localStorageService: LocalStorageService,
+    gtag: Gtag
   ) {
   }
 
@@ -108,6 +110,9 @@ export class BuyTokenFormComponent implements OnInit {
     this.tokensform.patchValue({amount: csttEquivalent});
   }
   public buy() {
+    alert("before gtag");
+    gtag('event', 'conversion', { 'send_to': 'AW-796101166/B6MNCIn55ogBEK6UzvsC', 'value': 1.0, 'currency': 'USD', 'transaction_id': '' });
+    alert("after gtag");
     combineLatest(
       this.userId$,
       of(this.tokensform.value),
