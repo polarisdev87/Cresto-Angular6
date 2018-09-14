@@ -41,7 +41,8 @@ export class BuyTokensEffects {
           const currency = this._localStorageService.getItem('buy_currency');
           const price = this._localStorageService.getItem('buy_price');
           const priceUSD = this._localStorageService.getItem('buy_price_usd');
-          const purchaseID = this._localStorageService.getItem('purchase_id');
+          // const purchaseID = this._localStorageService.getItem('purchase_id');
+          const purchaseID = (new Date()).valueOf();
 
           if (clickId && currency && price) {
             const pixel = document.createElement('img');
