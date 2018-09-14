@@ -41,9 +41,9 @@ export class WalletsService {
   }
 
   public withdrawal(data: WithdrawalBody): Observable<WithdrawalRes> {
-    const { address, amount, userId, wallet_id } = data;
+    const { address, amount, userId, wallet_id, tfaCode } = data;
     return this._http
-      .authorizedRequest(`/user/${userId}/wallets/withdrawal_request`, { address, amount, wallet_id }, 'POST');
+      .authorizedRequest(`/user/${userId}/wallets/withdrawal_request`, { address, amount, wallet_id, tfaCode }, 'POST');
   }
 
   public generateWalletAddress(data: GenerateWalletAddress): Observable<{ address: string }> {

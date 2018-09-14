@@ -67,6 +67,7 @@ export class BuyTokenFormComponent implements OnInit {
     this.tokenPrice$ = this._store.select('buy', 'tokenPurchase').pipe(
       tap((data: any) => {
         this._localStorageService.setItem('buy_price_usd', data.price_usd);
+        this._localStorageService.setItem('purchase_id', data.purchaseId);
       }),
       map((data: any) => data.price),
       tap((price: number) => {
@@ -78,12 +79,11 @@ export class BuyTokenFormComponent implements OnInit {
     this.tokenPriceUSD$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.price_usd)
     );
-
-    this.userId$ = this._store.select('backoffice', 'user', '_id');
     this.firstPurchase$ = this._store.select('buy', 'tokenPurchase').pipe(
       map((data: any) => data.firstPurchase)
     );
 
+    this.userId$ = this._store.select('backoffice', 'user', '_id');
     combineLatest(
       this.userId$,
       this.tokensform.valueChanges.pipe(

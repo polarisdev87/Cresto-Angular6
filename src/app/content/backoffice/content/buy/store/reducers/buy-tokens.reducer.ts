@@ -4,7 +4,8 @@ export const initialState = {
   price: 0,
   price_usd: 0,
   error: null,
-  firstPurchase: false
+  firstPurchase: false,
+  purchaseId: ''
 };
 
 export function reducer(
@@ -24,7 +25,8 @@ export function reducer(
     case BUY_TOKENS_SUCCESS: {
       return {
         ...state,
-        firstPurchase: action.payload && parseInt(action.payload.first_purchases) === 1
+        firstPurchase: action.payload && parseInt(action.payload.first_purchases) === 1,
+        purchaseId: action.payload.purchase_id
       };
     }
 
