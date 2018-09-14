@@ -30,7 +30,7 @@ export class WithdrawalFoundsComponent implements OnInit {
   public withdrawalForm: FormGroup = this._fb.group({
     address: ['', Validators.required],
     amount: [1, [Validators.required, Validators.min(0)]],
-    tfaCode: ['', Validators.required, this._checkTfaCode.bind(this)]
+    tfaCode: ['', Validators.required]
   });
   public withdrawalData$!: Observable<WithdrawalRes>;
   public error$!: Observable<string>;
