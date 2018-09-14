@@ -56,10 +56,10 @@ export class WithdrawalFoundsComponent implements OnInit {
   }
 
   public withdrawal() {
-    const { address, amount } = this.withdrawalForm.value;
+    const { address, amount, tfaCode } = this.withdrawalForm.value;
     // tslint:disable-next-line:variable-name
     const { id: wallet_id } = this.coin;
-    this._store.dispatch(new WithdrawalRequest({ wallet_id, address, amount }));
+    this._store.dispatch(new WithdrawalRequest({ wallet_id, address, amount, tfaCode }));
   }
 
   public ngOnDestroy() {

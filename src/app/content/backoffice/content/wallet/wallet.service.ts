@@ -22,13 +22,14 @@ export class WalletService {
   public withdrawal(...sources: Observable<any>[]): Observable<WithdrawalBody> {
     return combineLatest(
       sources,
-      (userId: string, data: { amount: number, address: number, wallet_id }) => {
-        const {amount, address, wallet_id} = data;
+      (userId: string, data: { amount: number, address: number, wallet_id, tfaCode: string }) => {
+        const {amount, address, wallet_id, tfaCode} = data;
         return {
           userId,
           address,
           amount,
-          wallet_id
+          wallet_id,
+          tfaCode
         };
       }
     );

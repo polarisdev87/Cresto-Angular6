@@ -25,7 +25,8 @@ type WithdrawalBody = {
   userId?: string,
   amount: number,
   address: number,
-  wallet_id: number | undefined
+  wallet_id: number | undefined,
+  tfaCode: string
 };
 
 type GenerateWalletAddress = {
