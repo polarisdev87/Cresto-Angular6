@@ -110,12 +110,37 @@ $(document).ready(function(){
     "retina_detect": true
   };
   particlesJS("particles", particlesOptions);
-  $("#countdown").countdown({
-    date: "23 September 2018 20:00:00",
-    format: "on"
-  },
-  
-  function() {
-    // callback function
-  });
+  const deadline = new Date("24 Sep 2018 00:00:00 GMT").getTime();
+  var timer = setInterval(function() {
+ 
+    var now = new Date().getTime();
+    var t = deadline - now;
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((t % (1000 * 60)) / 1000);
+    if (days < 10) {
+      days = '0' + days;
+    }
+    if (hours < 10) {
+      hours = '0' + hours;
+    }
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+      seconds = '0' + seconds;
+    }
+    $('#countdown .days').text(days);
+    $('#countdown .hours').text(hours);
+    $('#countdown .minutes').text(minutes);
+    $('#countdown .seconds').text(seconds);
+    if (t < 0) {
+      clearInterval(timer);
+      $('#countdown .days').text('00');
+      $('#countdown .hours').text('00');
+      $('#countdown .minutes').text('00');
+      $('#countdown .seconds').text('00');
+    }
+  }, 1000);
 });
