@@ -20,6 +20,7 @@
     <div class="currency-wr">
 
       <div class="total">
+        <h4>You can withdraw up to {{(withdrawalData$ | async)?.available - (withdrawalData$ | async)?.fee | number:'1.2-6' }} {{coin?.asset?.code | uppercase}}</h4>
         <span class="total-title">Fee: {{(withdrawalData$ | async)?.fee }} {{coin?.asset?.code | uppercase}} ( Deducted from balance ) </span>
       </div>
     </div>
