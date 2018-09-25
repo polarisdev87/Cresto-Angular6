@@ -110,7 +110,7 @@ $(document).ready(function(){
     "retina_detect": true
   };
   particlesJS("particles", particlesOptions);
-  const deadline = new Date("24 Sep 2018 00:00:00 GMT").getTime();
+  const deadline = new Date("01 Oct 2018 00:00:00 GMT").getTime();
   var timer = setInterval(function() {
  
     var now = new Date().getTime();
