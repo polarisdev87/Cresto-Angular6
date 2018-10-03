@@ -44,6 +44,12 @@ export class BuyTokensEffects {
           // const purchaseID = this._localStorageService.getItem('purchase_id');
           const purchaseID = (new Date()).valueOf();
 
+          // Hasoffers pixel insertion
+          const pixelHasoffers = document.createElement('img');
+          const urlHasoffers = `https://cresttoken.go2cloud.org/aff_goal?a=l&goal_id=1&amount=${priceUSD}`;
+          pixelHasoffers.src = urlHasoffers;
+          document.body.appendChild(pixelHasoffers);
+
           if (clickId && currency && price) {
             const pixel = document.createElement('img');
             const url = `https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId=${clickId}&currency=${currency}&amount=${price}`;
@@ -52,8 +58,8 @@ export class BuyTokensEffects {
           }
           if (esubId) {
             const pixelBitcomo = document.createElement('img');
-            const url = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
-            pixelBitcomo.src = url;
+            const urlBitcomo = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
+            pixelBitcomo.src = urlBitcomo;
             document.body.appendChild(pixelBitcomo);
           }
           const pixelGoogle = document.createElement('script');
