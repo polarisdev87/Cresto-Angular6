@@ -54,13 +54,13 @@ export class BuyTokensEffects {
             const pixel = document.createElement('img');
             const url = `https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId=${clickId}&currency=${currency}&amount=${price}`;
             pixel.src = url;
-            document.body.appendChild(pixel);
+            // document.body.appendChild(pixel);
           }
           if (esubId) {
             const pixelBitcomo = document.createElement('img');
             const urlBitcomo = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
             pixelBitcomo.src = urlBitcomo;
-            document.body.appendChild(pixelBitcomo);
+            // document.body.appendChild(pixelBitcomo);
           }
           const pixelGoogle = document.createElement('script');
           pixelGoogle.text = `
