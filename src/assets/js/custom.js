@@ -245,15 +245,15 @@ $(document).ready(function () {
     "retina_detect": true
   };
 
-  // if ($('#particles-js').length) {
-  //   particlesJS("particles-js", particlesOptions);
-  // }
-  // if ($('#particles-token').length) {
-  //   particlesJS("particles-token", particlesOptions);
-  // }
-  // if ($('#particles-team').length) {
-  //   particlesJS("particles-team", particlesOptionsTeam);
-  // }
+  if ($('#particles-js').length) {
+    particlesJS("particles-js", particlesOptions);
+  }
+  if ($('#particles-token').length) {
+    particlesJS("particles-token", particlesOptions);
+  }
+  if ($('#particles-team').length) {
+    particlesJS("particles-team", particlesOptionsTeam);
+  }
 
   /// Cache selectors
   let lastId,
