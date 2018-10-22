@@ -306,4 +306,11 @@ $(document).ready(function () {
         .end().filter("[href='#" + id + "']").parent().addClass("active");
     }
   });
+
+  // Whitepaper dropdown
+  $('.main-nav .whitepaper').hover(function() {
+    $(this).find('.submenu').show();    
+  }, function() {
+    $(this).find('.submenu').hide();
+  })
 });

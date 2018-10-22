@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   public rounds$!: Observable<any>;
   public scroll;
   public dashboardTableHead = [
-    'ICO Round', 'CSTT Supply', 'Price ($)', 'Minimum', 'Maximum', 'Free Tokens', 'Free Tokens Recipients', 'Status'
+    'ICO Round', 'CSTT Supply', 'Price ($)', 'Status'
   ];
 
   public constructor(
