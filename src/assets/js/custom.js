@@ -265,9 +265,12 @@ $(document).ready(function () {
   menuItems = topMenu.find(".scroll");
   // Anchors corresponding to menu items
   scrollItems = menuItems.map(function () {
-    let item = $($(this).attr("href"));
-    if (item.length) {
-      return item;
+    let href = $(this).attr("href");
+    if (href.indexOf('#') === 0) {
+      let item = $(href);
+      if (item.length) {
+        return item;
+      }
     }
   });
 
@@ -306,4 +309,11 @@ $(document).ready(function () {
         .end().filter("[href='#" + id + "']").parent().addClass("active");
     }
   });
+
+  // Whitepaper dropdown
+  $('.main-nav .whitepaper').hover(function() {
+    $(this).find('.submenu').show();
+  }, function() {
+    $(this).find('.submenu').hide();
+  })
 });

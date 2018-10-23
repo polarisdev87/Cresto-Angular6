@@ -7,6 +7,7 @@
       </tr>
       </thead>
       <ng-scrollbar *ngIf="scroll" class="sample">
+        <!-- If Dashboard Table -->
         <tbody *ngIf="emptyMassege=='ICO Round'">
         <tr *ngFor="let round of rounds, let ind=index " [class]="round.stage | lowercase">
           <td [class]="item.type + ' scrollTD dashboard'" *ngFor="let item of round | row:columns"><span>{{item.value}}</span></td>

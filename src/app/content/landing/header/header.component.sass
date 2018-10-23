@@ -56,7 +56,7 @@ header
   font-family: $montserrat-regular
   li
     display: inline-flex
-    margin-left: 35px
+    margin-left: 20px
     &:first-child
       margin-left: 0
     a
@@ -68,12 +68,29 @@ header
       &:hover,
       &.active
         color: $green
-    &.whitepaper
-      a
-        font-family: $montserrat-bold
     &.active
       a
         color: $green
+    &.whitepaper-mobile
+      display: none
+    &.whitepaper
+      position: relative
+      display: flex
+      align-items: center
+      height: 70px
+      .submenu
+        position: absolute
+        display: none
+        top: 60px
+        left: -10px
+        background: #000000
+        padding: 15px
+        width: 160px
+
+        li
+          margin: 0 0 10px 0
+      a
+        font-family: $montserrat-bold
 
 .header-btn-wrapper
   margin-left: 45px
@@ -251,6 +268,10 @@ h3.perks
       li
         margin-left: 0
         margin-bottom: 15px
+        &.whitepaper-mobile
+          display: block
+        &.whitepaper
+          display: none
     .header-btn-wrapper
       margin-left: 0
 
