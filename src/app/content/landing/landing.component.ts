@@ -67,6 +67,15 @@ export class LandingComponent implements OnInit {
         })(document, '23973');
       `;
       document.body.appendChild(pixelScript);
+
+      // Pixel test for bitcoinben2020
+      if (referralHash === '8io080ru') {
+        const imgPxl = document.createElement('img');
+        imgPxl.src = 'https://secure.adnxs.com/px?id=1046336&seg=15157291&t=2';
+        imgPxl.width = 1;
+        imgPxl.height = 1;
+        document.body.appendChild(imgPxl);
+      }
     }
 
     const el1 = document.createElement('script');
