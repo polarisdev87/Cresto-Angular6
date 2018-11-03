@@ -68,13 +68,40 @@ export class LandingComponent implements OnInit {
       `;
       document.body.appendChild(pixelScript);
 
-      // Pixel test for bitcoinben2020
+      // Pixel for bitcoinben2020
       if (referralHash === '8io080ru') {
         const imgPxl = document.createElement('img');
         imgPxl.src = 'https://secure.adnxs.com/px?id=1046336&seg=15157291&t=2';
         imgPxl.width = 1;
         imgPxl.height = 1;
         document.body.appendChild(imgPxl);
+      }
+      // Pixel for CryptoBob
+      if (referralHash === '3wj3bl08') {
+        alert(123);
+        const fbPxlScript = document.createElement('script');
+        fbPxlScript.type = 'text/javascript';
+        fbPxlScript.text = `
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '191090788477317');
+          fbq('track', 'PageView');
+        `;
+        document.body.appendChild(fbPxlScript);
+
+        const fbPxlNoscript = document.createElement('noscript');
+        fbPxlNoscript.innerHTML = `
+          <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=191090788477317&ev=PageView&noscript=1"
+          />
+        `;
+        document.body.appendChild(fbPxlNoscript);
       }
     }
 
