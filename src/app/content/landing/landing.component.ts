@@ -78,7 +78,6 @@ export class LandingComponent implements OnInit {
       }
       // Pixel for CryptoBob
       if (referralHash === '3wj3bl08') {
-        alert(123);
         const fbPxlScript = document.createElement('script');
         fbPxlScript.type = 'text/javascript';
         fbPxlScript.text = `
@@ -96,11 +95,10 @@ export class LandingComponent implements OnInit {
         document.body.appendChild(fbPxlScript);
 
         const fbPxlNoscript = document.createElement('noscript');
-        fbPxlNoscript.innerHTML = `
-          <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=191090788477317&ev=PageView&noscript=1"
-          />
-        `;
+        const fbPxlImg = document.createElement('img');
+        fbPxlImg.src = 'https://www.facebook.com/tr?id=191090788477317&ev=PageView&noscript=1';
+        fbPxlImg.setAttribute ('style', 'display:none');
+        fbPxlNoscript.appendChild(fbPxlImg);
         document.body.appendChild(fbPxlNoscript);
       }
     }
