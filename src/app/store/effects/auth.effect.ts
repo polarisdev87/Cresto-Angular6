@@ -47,10 +47,34 @@ export class AuthEffects {
       switchMap((user: User) => this._authService.signUp(user).pipe(
         map((data: User) => new SignUpSuccess(data)),
         tap(() => {
+          const referralHash = this._localStorageService.getItem('referralHash');
           alert('Thanks for registration. You can now login to dashboard.');
-          // alert('A verification mail has sent to your email. Please verify it.');
           this._router.navigate(['/login']);
           this._localStorageService.removeItem('referralHash');
+          if (referralHash === '8io080ru') {
+            const imgPxl = document.createElement('img');
+            imgPxl.src = 'https://secure.adnxs.com/px?id=1046337&seg=15157293&t=2';
+            imgPxl.width = 1;
+            imgPxl.height = 1;
+            document.body.appendChild(imgPxl);
+          }
+          if (referralHash === '3wj3bl08') {
+            const fbPxlScript = document.createElement('script');
+            fbPxlScript.type = 'text/javascript';
+            fbPxlScript.text = `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '191090788477317');
+              fbq('track', 'Lead');
+            `;
+            document.body.appendChild(fbPxlScript);
+          }
         }),
         catchError((err: any) => {
           alert(err.error.error);
