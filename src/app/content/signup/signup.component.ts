@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import { IRootState } from '../../store/reducers';
 import { FacebookLogin, GoogleLogin, SignUp } from '../../store/actions/auth.action';
 import { DomSanitizer } from '@angular/platform-browser';
-import { LocalStorageService } from '../../shared/services/localStorage.service';
 
 @Component({
   selector: 'app-signup',
@@ -20,8 +19,7 @@ export class SignupComponent implements OnInit {
     private _fb: FormBuilder,
     private _store: Store<IRootState>,
     private _validatorsService: ValidatorsService,
-    private _sanitizer: DomSanitizer,
-    private _localStorageService: LocalStorageService
+    private _sanitizer: DomSanitizer
   ) {
   }
 
@@ -36,15 +34,6 @@ export class SignupComponent implements OnInit {
       {
         validator: this._validatorsService.checkPasswordsMatch
       });
-
-    const referralHash = this._localStorageService.getItem('referralHash');
-    if (referralHash === '8io080ru') {
-      const imgPxl = document.createElement('img');
-      imgPxl.src = 'https://secure.adnxs.com/px?id=1046337&seg=15157293&t=2';
-      imgPxl.width = 1;
-      imgPxl.height = 1;
-      document.body.appendChild(imgPxl);
-    }
   }
 
   public save(user: UserToCreate): void {
