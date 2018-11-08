@@ -1,37 +1,55 @@
 <footer class="footer">
   <div class="main-container">
-    <div [ngClass] = "['faq-btn-wrapper', customClass]" >
-      <a [routerLink]="['/FAQ']" target="_blank">Crest FAQ</a>
+    <div class="column">
+      <a class="logo_link heading">
+        <img src="/assets/images/logo.png" />
+        <span>Crest Token</span>
+      </a>
+      <ul>
+        <li><a href="#">What is Crest Token</a></li>
+        <li><a href="#">Prototype Ready</a></li>
+        <li><a href="#">Token Allocation and Sale</a></li>
+        <li><a href="#">Milestones and Roadmap</a></li>
+        <li><a href="#">How to Participate</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Video and Press</a></li>
+      </ul>
     </div>
-    <div class="sub-title white">Any questions? Let’s talk.</div>
-    <div class="contacts-row">
-      <div class="contacts">
-        <span class="contacts-img"><img src="assets/images/footer-email.png" alt="email"></span>
-        <a href="mailto:contact@cresttoken.com">contact@cresttoken.com</a>
-      </div>
-      <div class="contacts">
-        <a target="_blank" href="https://twitter.com/CrestToken">
-          <span class="contacts-img"><img src="assets/images/footer-twitter.png" alt="twitter"></span>
-          <span>Follow us on Twitter</span>
-        </a>
-      </div>
-      <div class="contacts">
-        <a target="_blank" href="https://t.me/cresttoken">
-          <div class="contacts-img"><img src="assets/images/telegram.png" alt="telegram"></div>
-          <span>Join us on Telegram</span>
-        </a>
-      </div>
+    <div class="column">
+      <span class="heading">Information</span>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Whitepaper</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
     </div>
-    <ul class="social">
-      <li><a target="_blank" href="https://m.facebook.com/thecresttoken"><i class="fa fa-facebook"></i></a></li>
-      <li><a target="_blank" href="https://bitcointalk.org/index.php?topic=4148297.new#new"><i class="fa fa-bitcoin"></i></a></li>
-      <li><a class="medium" target="_blank" href="https://medium.com/@cresttoken"><i class="fa fa-medium"></i></a></li>
-      <li><a class="instagram" target="_blank" href="https://www.instagram.com/cresttoken/"><i class="fa fa-instagram"></i></a></li>
-    </ul>
-    <div class="copyright">
-      <p>Copyright &copy; 2018, Crest Token. All trademarks and copyrights belong to their respective owners.</p>
-      <a href="https://beta.companieshouse.gov.uk/company/11020910" target="_blank"><img src="/assets/images/Companies House.png" /></a>
+    <div class="column">
+      <span class="heading">Contact us</span>
+      <ul>
+        <li><a href="mailto:support@cresttoken.com" style="text-decoration: underline;">support@cresttoken.com</a></li>
+        <li><a href="tel:618372636376" style="text-decoration: underline;">+618372636376</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <span class="heading">Social</span>
+      <div class="links">
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/twitter.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/facebook.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/telegram.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/medium.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/youtube.png" /></a>
+      </div>
+      <div class="links" style="margin-bottom: 50px">
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/instagram.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/bitcoin.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/reddit.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/linkedin.png" /></a>
+        <a href="#" target="_blank" class="link"><img src="/assets/images/landing/github.png" /></a>
+      </div>
+      <a class="btn-green" href="https://crestplatform.com/demo" target="_blank">Go to Demo</a>
     </div>
     <!-- <app-contest-popup *ngIf="!isPreico"></app-contest-popup> -->
   </div>
+  <div id="copyright">Copyright © 2018, Crest Token. All trademarks and copyrights belong to their respective owners.</div>
 </footer>

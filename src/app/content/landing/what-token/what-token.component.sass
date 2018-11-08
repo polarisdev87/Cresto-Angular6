@@ -1,8 +1,15 @@
 @import "../landing.component"
 .what-token-wr
-  background-color: #f8f8f8
   padding-top: 118px
   padding-bottom: 80px
+  .landing-title
+    font-family: $montserrat-bold
+    font-size: 42px
+    font-weight: 600
+    line-height: 1.36
+    color: $white
+    span
+      color: #00c258
   .landing-row
     width: 100%
     display: flex
@@ -14,17 +21,11 @@
       flex-wrap: wrap
       align-items: center
       &:last-child
-        margin-left: 35px
-  .what-token-text
-    display: flex
-    align-self: baseline
-    flex-wrap: wrap
+        margin-left: 75px
   .what-token-title
     font-size: 21px
-    color: #032a11
+    color: $white
     font-family: $montserrat-regular
-    padding-left: 25px
-    border-left: 2px solid $green
     margin-bottom: 75px
     span
       display: block
@@ -33,6 +34,11 @@
       font-weight: normal
       font-family: $montserrat-bold
       color: $green
+  .landing-text
+    font-family: $montserrat-regular
+    font-size: 15px
+    line-height: 1.73
+    color: $white
 
 @media only screen and (max-width: 900px)
   .what-token-wr
@@ -43,11 +49,15 @@
 @media only screen and (max-width: 768px)
   .what-token-wr
     padding-top: 60px
+    .landing-title
+      font-size: 32px
     .landing-row
       flex-wrap: wrap
+      flex-direction: column-reverse
       .cell
         width: 100%
         &:last-child
+          margin-bottom: 20px
           margin-left: 0
       .what-token-img
         width: 100%

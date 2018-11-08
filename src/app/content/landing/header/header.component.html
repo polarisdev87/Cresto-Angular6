@@ -34,29 +34,40 @@
             <li><a class="scroll" href="https://crestplatform.com/demo/" target="_blank">Demo</a></li>
           </ul>
           <div class="header-btn-wrapper">
-            <a class="login btn-green"  [routerLink]="['/dashboard']" target="_blank">login</a>
-            <a class="signup btn-green" [routerLink]="['/signup']" target="_blank">sign up</a>
+            <a class="login btn-green"  [routerLink]="['/dashboard']" target="_blank">Login</a>
+            <a class="signup btn-green" [routerLink]="['/signup']" target="_blank">Sign up</a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="main-container">
-    <div class="wrapper">
+    <div class="wrapper home">
+      <div class="video">
+        Video placeholder
+      </div>
       <div class="banner">
         <h1>
-          Crypto Currency Profit-Sharing System
-          <span>Using Affiliate Marketing AI Technology</span>
+          <span>DigiAd</span>
+          Platform
         </h1>
-
-        <div class="timer-wrapper">
-          <p>Pre ICO SOLD OUT!</p>
-          <div class="clock" style="display: none;"></div>
+        <h2>
+            Profit-Sharing System using <br>
+            Affiliate Marketing AI Technology
+        </h2>
+        <p>
+          <a class="btn-green" href="https://crestplatform.com/demo" target="_blank" style="margin-right: 15px">Go to Demo</a>
+          <a class="btn-green" [routerLink]="['/signup']" target="_blank">Sign Up</a>
+        </p>
+        <h6><span>{{ usersCount | number }}</span> total members</h6>
+        <!-- <a class="banner-btn" [routerLink]="['/signup']" target="_blank">sign up now</a>
+          <h3 class="perks">Earn 1.15% to 2.25% Cash Daily</h3> -->
         </div>
-        <app-status></app-status>
-        <a class="banner-btn" [routerLink]="['/signup']" target="_blank">sign up now</a>
-        <h3 class="perks">Earn 1.15% to 2.25% Cash Daily</h3>
       </div>
+      <div class="timer-wrapper">
+        <p>Pre ICO is SOLD OUT!</p>
+        <div class="clock" style="display: none;"></div>
+        <app-status></app-status>
     </div>
   </div>
 </header>

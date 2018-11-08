@@ -1,119 +1,80 @@
 @import "../landing.component"
 
 .token-sale
-  width: 100%
-  padding: 115px 0
-  background: url("../../../../../src/assets/images/header-bg.jpg") no-repeat top center/cover
-  .wrapper
-    flex-direction: column
-
-.header-wrapper
-  width: 100%
-  margin-bottom: 80px
-  position: relative
-  z-index: 5
-  h3
-    padding-bottom: 5px
-
-.items-wrapper
-  width: 100%
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: space-between
-  position: relative
-  z-index: 5
-  margin-bottom: 30px
-  &:before
-    content: ''
-    display: inline-block
-    background: radial-gradient(circle, rgba(29, 29, 29, 1) 40%, rgba(29, 29, 29, 0) 70%)
-    width: 800px
-    height: 800px
-    border-radius: 50%
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    z-index: -1
-  .item
+  font-family: $montserrat-regular
+  .landing-title
+    font-size: 42px
+    padding-bottom: 20px
+    color: $white
+    line-height: 1.36
+    span
+      color: #0cc05d
+  .desc
     width: 100%
-    max-width: 345px
-    display: inline-flex
-    flex-direction: column
-    margin-bottom: 55px
-    h6
-      font-family: $montserrat-light
-      font-size: 18px
-      color: $green
-      margin-bottom: 10px
-    p
-      font-family: $montserrat-bold
-      color: $white
-      font-size: 28px
-      margin-bottom: 12px
-    .sub-info
-      color: $white
-      text-align: left
-      font-size: 21px
-      font-family: $montserrat-light
+    text-align: center
+    color: $white
+    font-size: 15px
+    line-height: 1.67
+
+  .items-wrapper
+    width: 837px
+    max-width: 100%
+    list-style: none
+    margin: 50px auto
+    font-family: $montserrat-regular
+    color: $white
+    li
+      font-size: 16px
+      color: rgba(255,255,255,0.6)
+      padding: 14px 92px
+      position: relative
       span
+        color: $white
         display: inline-block
-        &.ml-15
-          margin-left: 15px
+        width: 50%
+      &:nth-child(2n+1)
+        background-color: rgba(255,255,255,0.05)
+        border-radius: 4px
+      &:before
+        content: ''
+        display: inline-block
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 39px
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        border: none
+        background: #fff
+      &:nth-child(1):before
+        background-image: linear-gradient(62deg, #227a5e, #00e55d)
+      &:nth-child(2):before
+        background-image: linear-gradient(to bottom, #fad961, #f76b1c)
+      &:nth-child(3):before
+        background-image: linear-gradient(8deg, #0581d7, #7cd4ec)
+      &:nth-child(4):before
+        background-image: linear-gradient(62deg, #227a5e, #33b182)
+      &:nth-child(5):before
+        background-image: linear-gradient(186deg, #f9954c, #f15c25)
+      &:nth-child(6):before
+        background-image: linear-gradient(186deg, #f9954c, #f15c25)
+      &:nth-child(7):before
+        background-image: linear-gradient(62deg, #227a5e, #00e55d)
+      &:nth-child(8):before
+        background-image: linear-gradient(to bottom, #fad961, #f76b1c)
+      &:nth-child(9):before
+        background-image: linear-gradient(8deg, #0581d7, #7cd4ec)
+      &:nth-child(10):before
+        background-image: linear-gradient(62deg, #227a5e, #33b182)
+      &:nth-child(11):before
+        background-image: linear-gradient(186deg, #f9954c, #f15c25)
 
-#particles-token
-  position: absolute
-  top: 0
-  bottom: 0
-  right: 0
-  left: 0
-
-.bottom-block
-  display: flex
-  flex-direction: column
-  align-items: center
-  position: relative
-  z-index: 5
-  .timer-wrapper
-    position: relative
-    z-index: 5
-    display: flex
-    align-items: center
-    flex-direction: column
-    p
-      font-family: $montserrat-bold
-      color: $white
-      font-size: 32px
-      margin-bottom: 30px
-
-@media screen and (max-width: 1200px)
-  .items-wrapper
-    .item
-      text-align: center
-      padding: 0 10px
-      .sub-info
-        display: inline-flex
-        align-items: center
-        justify-content: center
-
-@media screen and (max-width: 1065px)
-  .items-wrapper
-    .item
-      width: 50%
-      max-width: inherit
-      text-align: center
-      padding: 0 10px
-
-@media screen and (max-width: 800px)
-  .items-wrapper
-    &:before
-      display: none
-    .item
-      width: 100%
-  #particles-token
-    display: none
-
-@media screen and (max-width: 600px)
+@media (max-width: 768px)
   .token-sale
-    padding: 60px 0
+    .items-wrapper
+      li
+        padding: 14px 36px
+        font-size: 14px
+        &:before
+          left: 14px

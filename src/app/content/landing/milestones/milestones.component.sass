@@ -1,0 +1,155 @@
+@import "../landing.component"
+.milestones-wr
+  margin-top: 70px
+  margin-bottom: 100px
+  .landing-title
+    font-size: 42px
+    font-family: $montserrat-bold
+    color: $white
+    line-height: 1.36
+    span
+      color: #0cc05d
+
+.milestones-row
+  width: 100%
+  padding: 220px 0
+  .line
+    width: 90%
+    margin: 0 auto
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    background: linear-gradient(to right, #227a5e, #00ad5d)
+    height: 1px
+    font-family: $montserrat-regular
+    padding: 0px 70px
+    li
+      display: inline-block
+      margin-right: 12%
+      width: 11px
+      height: 11px
+      min-width: 11px
+      min-height: 11px
+      border-radius: 50%
+      background: linear-gradient(80deg, #227a5e, #00e55d)
+      transform: translateY(-50%)
+      position: relative
+      &:last-child
+        margin-right: 0
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        width: 19px
+        height: 19px
+        border-radius: 50%
+        border: 1px solid #227a5e
+        background: transparent
+        left: -5px
+        top: -5px
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        background: linear-gradient(to bottom, rgba(34, 122, 94, 0.23), #00e55d)
+        width: 1px
+        height: 50px
+        bottom: 99.8%
+        left: 5px
+      .line-content
+        position: absolute
+        width: 200px
+        bottom: 70px
+        text-align: center
+        left: 0px
+        transform: translateX(-50%)
+        span
+          display: block
+        .title
+          text-transform: uppercase
+          font-size: 16px
+          color: #0aae5a
+          padding-bottom: 10px
+        .text
+          font-size: 15px
+          line-height: 1.47
+          color: $white
+          opacity: 0.6
+      &:nth-child(even)
+        &:after
+          background: linear-gradient(to top, rgba(34, 122, 94, 0.23), #00e55d)
+          bottom: inherit
+          top: 100%
+        .line-content
+          bottom: inherit
+          top: 70px
+      .mobile-title, .mobile-text
+        display: none
+        position: absolute
+      .mobile-title
+        text-transform: uppercase
+        font-size: 16px
+        color: #0aae5a
+      .mobile-text
+        font-size: 15px
+        line-height: 1.47
+        color: $white
+        opacity: 0.6
+
+@media only screen and (max-width: 1150px)
+  .milestones-row .line li .line-content
+    .title
+      font-size: 15px
+    .text
+      font-size: 14px
+
+@media only screen and (max-width: 840px)
+  .milestones-row
+    padding: 40px 0
+    br
+      display: none
+    .line
+      width: 100%
+      padding-top: 0
+      height: auto
+      width: 1px
+      padding: 120px 0px 0px 0px
+      display: block
+      margin: 0
+      margin-left: 150px
+      li
+        margin-bottom: 100px
+        transform: translate(-50%, 0%)
+        &:before
+          left: -5px
+          top: -5px
+        &:after
+          bottom: 5px
+          height: 1px
+          width: 50px
+        .line-content
+          display: none
+        .mobile-title, .mobile-text
+          display: block
+          top: -5px
+        .mobile-title
+          left: -120px
+          width: 120px
+        .mobile-text
+          left: 70px
+          width: 200px
+        &:nth-child(even)
+          &:after
+            top: 50%
+
+@media only screen and (max-width: 768px)
+  .milestones-wr
+    padding-top: 60px
+    .landing-title
+      font-size: 32px
+    .milestones-row
+      padding: 30px 0 0
+      .line
+        li
+          &:last-child
+            margin-bottom: 0
