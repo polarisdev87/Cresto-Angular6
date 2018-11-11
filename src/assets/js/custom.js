@@ -62,47 +62,62 @@ $(document).ready(function () {
     $(this).find('.submenu').hide();
   })
 
-  $('#prototypes').slick({
-    centerMode: true,
-    centerPadding: '200px',
-    slidesToShow: 1,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          arrows: true,
-          centerMode: true,
-          centerPadding: '60px',
-          slidesToShow: 1
+  if ($('.slick-slider').length) {
+    $('.slick-slider').slick({
+      centerMode: true,
+      centerPadding: '200px',
+      slidesToShow: 1,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 360,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
         }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '60px',
-          slidesToShow: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      },
-      {
-        breakpoint: 360,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
+      ]
+    });
+  }
+
+  $('.faq-wr li').click(function() {
+    if ($(this).hasClass('open')) {
+      $(this).find('.text').slideUp();
+      $(this).find('.sign').html('+');
+      $(this).removeClass('open');
+    }
+    else {
+      $(this).find('.text').slideDown();
+      $(this).find('.sign').html('-');
+      $(this).addClass('open');
+    }
+  })
 });

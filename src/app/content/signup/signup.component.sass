@@ -3,145 +3,116 @@
   header
     padding-bottom: 0
   .main-content
-    padding: 75px 0 100px 0
-    background: #f8f8f8
+    padding: 125px 0 100px 0
+    background: #161921
+    background-image: url("/assets/images/landing/bg-1.png")
+    background-position: bottom
+    background-repeat: no-repeat
+    background-size: 100% auto
     .wrapper
       flex-direction: column
+      width: 100%
+      max-width: 535px
+      margin: 0 auto
+      background-color: rgba(255,255,255,0.05)
   h1
     font-family: $poppins-bold
     font-size: 36px
-    color: #032a11
+    color: $white
     margin-bottom: 30px
     width: 100%
     text-align: center
-  .loginBtnSocial
+    padding-top: 70px
+    padding-bottom: 35px
+  
+  .loginBtn
+    margin: 15px 0px
+    display: block
     width: 100%
-    max-width: 535px
-    margin: 0 auto 40px auto
-    display: flex
-    justify-content: space-between
-    .loginBtn
-      width: 250px
-      display: inline-flex
-      justify-content: center
-      align-items: center
-      height: 52px
-      border: none
-      outline: none
-      border-radius: 3px
-      color: $white
-      font-family: $poppins-semibold
-      font-size: 16px
-      cursor: pointer
-      &__facebook
-        background: #4267b2
-        .fa
-          display: inline-flex
-          margin-right: 15px
-          font-size: 29px
-      &__google
-        margin: 0 auto
-        background: #4285f4
-        justify-content: flex-start
-        img
-          display: inline-flex
-          margin-left: 10px
-          margin-right: 20px
-          width: auto
-
-  .form-wrapper
-    width: 100%
-    max-width: 535px
-    background: $white
-    margin: 0 auto
-    padding: 35px 30px 50px 30px
-    .inputGroup
-      width: 100%
-      display: flex
-      flex-direction: row
-      position: relative
-      margin-bottom: 15px
-      .inputGroup-icons
-        position: absolute
+    min-height: 40px
+    border: none
+    border-radius: 4px
+    outline: none
+    font-family: $poppins-medium
+    font-size: 14px
+    color: $white
+    cursor: pointer
+    &__facebook
+      background: #4267b2
+      .fa
         display: inline-flex
-        width: 58px
-        left: 0
+        margin-right: 15px
+        font-size: 29px
+    &__google
+      padding-left: 40px
+      background: #4286f5
+      justify-content: flex-start
+      position: relative
+      img
+        position: absolute
         top: 0
-        bottom: 0
-        background: #f8f8f8
-        border: 1px solid #dfdfdf
-        justify-content: center
-        align-items: center
-        z-index: 10
-        img
-          width: auto
-      input
+        left: 0
+        height: 40px
+        width: auto
+        border-top-left-radius: 4px
+        border-bottom-left-radius: 4px
+  .form-wrapper
+    width: 340px
+    margin: 0 auto
+    padding: 0
+    color: $white
+    font-family: $poppins-regular
+    font-size: 14px
+    text-align: center
+    padding-bottom: 40px
+    a
+      font-family: $poppins-regular
+      color: #0aa456
+      &.forgot-pass
+        text-align: right
         width: 100%
-        height: 50px
-        padding-left: 70px
-        outline: none
-        border: 1px solid #dfdfdf
-        color: $black
-        font-size: 18px
-        font-family: $poppins-regular
+        display: block
+    input
+      width: 100%
+      padding: 7px 0px
+      outline: none
+      border: 1px solid #dfdfdf
+      color: $white
+      font-size: 14px
+      border: none
+      border-bottom: 1px solid rgba(255, 255, 255, 0.53)
+      background: transparent
+      margin-bottom: 25px
     .captcha-wrapper
       width: 100%
       display: flex
       justify-content: center
-      margin-top: 35px
+      margin-top: 15px
       margin-bottom: 35px
-    .button-wrapper
+    .btn-green
+      display: inline-flex
       width: 100%
-      display: flex
-      flex-direction: column
       align-items: center
-      .btn-signin
-        display: inline-flex
-        width: 100%
-        justify-content: center
-        align-items: center
-        cursor: pointer
-        max-width: 304px
-        border-radius: 35px
-        height: 53px
-        border: 1px solid transparent
-        background: $green
-        color: $black
-        text-transform: uppercase
-        font-family: $poppins-bold
-        font-size: 18px
-        transition: $transition
-        margin-bottom: 38px
+      justify-content: center
+      background-image: linear-gradient(78deg, #227a5e, #00e55d);
+      color: $white
+      border: none
+      border-radius: 4px
+      line-height: 40px
+      min-height: 40px
+      font-family: $poppins-medium
+      font-size: 14px
+      margin: 15px 0px
+      cursor: pointer
+      &:hover
+        background: transparent
+        border-radius: 4px
+        border-width: 1px
+        border-style: solid
+        border-image-source: linear-gradient(77deg, #227a5e, #00e55d)
+        border-image-slice: 1
+      &:disabled, &[disabled]
+        background-image: linear-gradient(78deg, #757776, #bcbfbe)
         &:hover
           background: transparent
-          border-color: $green
-          color: $green
-        &[disabled]
-          background: #f8f8f8
-          cursor: default
-          &:hover
-            border: transparent
-            background-color: #f8f8f8
-            color: $black
-    .redirection-link
-      font-family: $poppins-light
-      color: $black
-      font-size: 16px
-      padding: 0 !important
-      margin: 0 !important
-      .register-login
-        font-family: $poppins-bold
-        color: $black
-        cursor: pointer
-
-@media only screen and (max-width: 400px)
-  .sign-up-wrapper
-    .form-wrapper
-      padding: 20px 10px 30px 10px
-      .input-group
-        input
-          font-size: 14px
-      .redirection-link
-        font-size: 14px
-    .forgot-pass
-      font-size: 14px
+          border-image-source: linear-gradient(78deg, #757776, #bcbfbe)

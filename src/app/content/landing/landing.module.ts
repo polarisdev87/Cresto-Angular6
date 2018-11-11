@@ -15,6 +15,10 @@ import { TeamComponent } from './team/team.component';
 import { ParticipateComponent } from './participate/participate.component';
 import { MembersComponent } from './members/members.component';
 import { StatusComponent } from './status/status.component';
+import { VideoComponent } from './video/video.component';
+import { PressComponent } from './press/press.component';
+import { FaqComponent } from './faq/faq.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 import { UiModule } from '../../shared/module/ui/ui.module';
 
 @NgModule({
@@ -41,7 +45,11 @@ import { UiModule } from '../../shared/module/ui/ui.module';
     ParticipateComponent,
     MembersComponent,
     TeamComponent,
-    StatusComponent
+    StatusComponent,
+    VideoComponent,
+    FaqComponent,
+    SubscribeComponent,
+    PressComponent
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })

@@ -33,7 +33,7 @@ export class AuthEffects {
         }),
         catchError((err: any) => {
           if (err.status !== 402) {
-            alert('Invalid username or password');
+            alert(err.error.error);
           }
           return of(new LoginFail(err));
         })

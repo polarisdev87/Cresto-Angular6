@@ -1,92 +1,58 @@
 @import "../landing.component"
 .members-wr
-  background-color: #f8f8f8
   padding: 150px 0
   .landing-title
-    padding-bottom: 75px
+    font-size: 42px
+    font-family: $poppins-bold
+    color: $white
+    line-height: 1.36
+    span
+      color: #0cc05d
 
 .members-row
-  .members-item
-    width: 32%
-    max-width: 360px
-
-.members-second-row
-  .members-item
-    width: 48%
-    max-width: 575px
-
-.members-row,
-.members-second-row
   width: 100%
   display: flex
+  flex-wrap: wrap
   justify-content: space-between
-  .members-content
-    background-color: #ffffff
-    padding: 30px 30px 0 30px
-    margin-bottom: 15px
-    height: 100%
   .members-item
-    margin-bottom: 105px
+    flex: 0 0 48.5%
+    display: flex
+    flex-direction: column
+    max-width: 575px
+    border-radius: 4px
+    padding: 35px 36px
+    margin-bottom: 36px
+    background-color: rgba(255,255,255,0.05)
+    color: $white
+    font-family: $poppins-regular
+    
     .desc
-      font-family: $poppins-light
-      font-size: 13px
-      color: #7d7d7d
-      padding-left: 2px
-      padding-right: 5px
-      display: block
-  .members-item-img
-    padding-bottom: 30px
-    img
-      width: auto
-      height: 52px
-      max-width: 60px
-  .members-title
-    font-family: $poppins-bold
-    color: $green
-    font-size: 21px
-    padding-bottom: 24px
-  .members-text
-    font-family: $poppins-light
-    font-size: 18px
-    color: #000
-    line-height: 1.4
-
-@media only screen and (max-width: 1000px)
-  .members-row,
-  .members-second-row
-    .members-text
-      font-size: 16px
-
-@media only screen and (max-width: 850px)
-  .members-row,
-  .members-second-row
-    .members-item-img img
-      height: 40px
-      max-width: 45px
-    .members-text
       font-size: 14px
+      opacity: 0.4
+      margin-top: 17px
+    .members-item-img
+      img
+        width: auto
+        max-width: 52px
+        height: auto
     .members-title
-      font-size: 18px
-    .members-content
-      padding: 20px 20px 0 20px
+      font-size: 20px
+      font-weight: 600
+      margin: 18px 0px
+    .members-text
+      font-size: 15px
+      line-height: 1.73
 
 @media only screen and (max-width: 768px)
   .members-wr
     padding-top: 60px
     padding-bottom: 60px
-  .members-row,
-  .members-second-row
-    text-align: center
-    .members-item
-      margin-bottom: 75px
   .members-row
-    flex-wrap: wrap
+    justify-content: center
     .members-item
-      width: 48%
-      &:last-child
-        width: 100%
-        max-width: 100%
-        margin-bottom: 75px
+      flex: 0 0 100%
+      padding: 30px 20px
+      margin-bottom: 20px
 
 @media only screen and (max-width: 600px)
   .members-row,
