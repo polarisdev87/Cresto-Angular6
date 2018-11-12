@@ -111,10 +111,12 @@ export class LandingComponent implements OnInit {
     el1.onload = () => {
       el2.src = 'assets/js/slick.min.js';
       // el3.src = 'assets/js/particles.js';
-      el4.src = 'assets/js/custom.js';
       document.body.appendChild(el2);
+      el2.onload = () => {
+        el4.src = 'assets/js/custom.js';
+        document.body.appendChild(el4);
+      }
       // document.body.appendChild(el3);
-      document.body.appendChild(el4);
     };
     document.body.appendChild(el1);
 
