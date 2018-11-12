@@ -42,6 +42,7 @@
             width: 200px
             img
               width: 100%
+              border-radius: 4px
           &__name
             font-family: $poppins-bold
             font-size: 20px
@@ -96,6 +97,52 @@
               align-items: center
               justify-content: center
               transition: $transition
+        .modal
+          .modal-content
+            background-color: #1d2028
+            border-radius: 2px
+            .modal-body
+              padding: 16px 40px 68px 40px
+            .close
+              padding-right: 10px
+              text-align: right
+              opacity: 1
+              color: $white
+              font-weight: 100
+              text-shadow: none
+            .profile
+              display: flex
+              flex-wrap: wrap
+              justify-content: space-between
+              font-family: $poppins-regular
+              color: $white
+              .photo
+                flex: 0 0 32%
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: center
+                img
+                  width: 100%
+                  max-width: 221px
+                  border-radius: 4px
+              .text
+                flex: 0 0 65%
+                display: flex
+                flex-direction: column
+                h4
+                  font-family: $poppins-medium
+                  font-size: 20px
+                  margint-top: 9px
+                p
+                  font-size: 14px
+                  opacity: 0.6
+                  margin-top: 10px
+                  margin-bottom: 17px
+                h6
+                  font-size: 14px
+                  line-height: 1.73
+                  
   .team-join
     width: 70%
     margin: 0 auto
@@ -184,3 +231,15 @@
             flex: 100%
             &:last-child
               margin-bottom: 0 !important
+          .modal
+            .modal-content
+              .modal-body
+                padding: 30px 20px
+              .profile
+                .photo
+                  flex: 0 0 100%
+                  margin-bottom: 20px
+                  .social-linkedin
+                    display: none
+                .text
+                  flex: 0 0 100%

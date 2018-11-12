@@ -103,20 +103,26 @@ export class LandingComponent implements OnInit {
       }
     }
 
+    // Load CSS/JS libraries
+    const bootstrap = document.createElement('link');
+    bootstrap.href = '/assets/css/bootstrap.min.css';
+    bootstrap.rel = 'stylesheet';
+    bootstrap.type = 'text/css';
+    document.head.appendChild(bootstrap);
     const el1 = document.createElement('script');
     const el2 = document.createElement('script');
-    // const el3 = document.createElement('script');
+    const el3 = document.createElement('script');
     const el4 = document.createElement('script');
     el1.src = 'assets/js/jquery.bundle.js';
     el1.onload = () => {
       el2.src = 'assets/js/slick.min.js';
-      // el3.src = 'assets/js/particles.js';
+      el3.src = 'assets/js/bootstrap.min.js';
       document.body.appendChild(el2);
+      document.body.appendChild(el3);
       el2.onload = () => {
         el4.src = 'assets/js/custom.js';
         document.body.appendChild(el4);
       }
-      // document.body.appendChild(el3);
     };
     document.body.appendChild(el1);
 
