@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="107" height="107" viewBox="0 0 107 107">
+    <defs>
+        <filter id="a" width="201.7%" height="201.7%" x="-50.8%" y="-50.8%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="nonzero" transform="translate(24 24)">
+        <circle cx="29.5" cy="29.5" r="29" fill="#62BA67" fill-opacity=".091" stroke="#62BA67"/>
+        <circle cx="29.5" cy="29.5" r="28" stroke="#62BA67" stroke-width="3" filter="url(#a)"/>
+        <path fill="#60BA65" d="M25.795 37.752a.802.802 0 0 1-.795-.807V22.808c0-.446.356-.808.795-.808l12.922 7.27s.596.606 0 1.212-12.922 7.27-12.922 7.27z"/>
+    </g>
+</svg>
