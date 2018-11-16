@@ -34,10 +34,6 @@ export const routes = [
     canLoad: [AuthGuardService]
   },
   {
-    path: 'FAQ',
-    loadChildren: './content/faq/faq.module#FAQModule',
-  },
-  {
     path: 'contest',
     loadChildren: './content/contest/contest.module#ContestModule',
   },

@@ -44,10 +44,12 @@
               width: 100%
               border-radius: 4px
           &__name
-            font-family: $poppins-bold
-            font-size: 20px
-            color: $white
-            margin-bottom: 10px
+            a
+              font-family: $poppins-bold
+              font-size: 20px
+              color: $white
+              text-decoration: none
+              margin-bottom: 10px
           &__position
             font-family: $poppins-regular
             font-size: 14px
@@ -98,6 +100,8 @@
               justify-content: center
               transition: $transition
         .modal
+          .modal-dialog
+            margin: 70px auto
           .modal-content
             background-color: #1d2028
             border-radius: 2px
@@ -232,6 +236,8 @@
             &:last-child
               margin-bottom: 0 !important
           .modal
+            .modal-dialog
+              margin: 30px auto
             .modal-content
               .modal-body
                 padding: 30px 20px

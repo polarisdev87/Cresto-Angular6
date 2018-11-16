@@ -14,8 +14,16 @@
   padding: 50px 0
   img
     width: 100%
+    &.mobile-only
+      display: none
 
 @media (max-width: 768px)
   .roadmap-wr
     .landing-title
       font-size: 32px
+    .roadmap-row
+      img
+        display: none
+        &.mobile-only
+          display: inline
+          width: 360px
