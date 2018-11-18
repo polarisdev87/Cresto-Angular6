@@ -36,10 +36,6 @@ export class BuyTokensEffects {
         map((res: any) => new BuyTokensSuccess(res)),
         tap(() => {
           // Add pixel/conversion codes right after purchase
-          const clickId = this._localStorageService.getItem('clickId');
-          const esubId = this._localStorageService.getItem('esubId');
-          const currency = this._localStorageService.getItem('buy_currency');
-          const price = this._localStorageService.getItem('buy_price');
           const priceUSD = this._localStorageService.getItem('buy_price_usd');
           // const purchaseID = this._localStorageService.getItem('purchase_id');
           const purchaseID = (new Date()).valueOf();
@@ -50,18 +46,6 @@ export class BuyTokensEffects {
           pixelHasoffers.src = urlHasoffers;
           document.body.appendChild(pixelHasoffers);
 
-          if (clickId && currency && price) {
-            const pixel = document.createElement('img');
-            const url = `https://biggi.co/api/v4/trackconversion/XFfqsyRjCD/?clickId=${clickId}&currency=${currency}&amount=${price}`;
-            pixel.src = url;
-            // document.body.appendChild(pixel);
-          }
-          if (esubId) {
-            const pixelBitcomo = document.createElement('img');
-            const urlBitcomo = `https://notify.bitcomo.com/aln/?esub=${esubId}&revenue=${priceUSD}`;
-            pixelBitcomo.src = urlBitcomo;
-            // document.body.appendChild(pixelBitcomo);
-          }
           const pixelGoogle = document.createElement('script');
           pixelGoogle.text = `
             gtag('event', 'conversion', {
