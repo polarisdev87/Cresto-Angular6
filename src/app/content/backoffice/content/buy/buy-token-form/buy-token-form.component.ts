@@ -33,6 +33,11 @@ export class BuyTokenFormComponent implements OnInit {
     class: 'redBig'
   };
 
+  public buttonStateBonus = {
+    name: 'Buy Tokens with USD Bonus',
+    class: 'redBig'
+  };
+
   // total$: Observable<number>;
   public userId$!: Observable<string>;
   public tokenPrice$!: Observable<number>;
@@ -40,7 +45,7 @@ export class BuyTokenFormComponent implements OnInit {
   public transId: string = '';  // AffiliChain id per user
   public clickId: string = ''; // Biggico id per user
   public firstPurchase$!: Observable<boolean>;
-
+  public bonusAvailable: boolean = false;
 
   public tokensform = new FormGroup({
     amount: new FormControl('', [Validators.pattern('0123456789')]),
@@ -84,6 +89,11 @@ export class BuyTokenFormComponent implements OnInit {
     );
 
     this.userId$ = this._store.select('backoffice', 'user', '_id');
+    this._store.select('backoffice', 'wallets', 'data').subscribe((data: any) => {
+      if (data[4] && data[4].bonus) {
+        this.bonusAvailable = data[4].bonus === '$0' ? false : true;
+      }
+    });
     combineLatest(
       this.userId$,
       this.tokensform.valueChanges.pipe(
@@ -107,12 +117,16 @@ export class BuyTokenFormComponent implements OnInit {
     const csttEquivalent = this.tokenEquivalents[this.tokensform.value.currency];
     this.tokensform.patchValue({amount: csttEquivalent});
   }
-  public buy() {
+  public buy(isBonus: boolean = false) {
     combineLatest(
       this.userId$,
       of(this.tokensform.value),
       (userId: string, data: { amount: number, currency: number }) => {
-        const { amount, currency: quoteAssetId } = data;
+        let { amount, currency: quoteAssetId } = data;
+        if (isBonus) {
+          amount = 100;
+          quoteAssetId = 10;
+        }
         return {
           userId,
           quote_asset_id: quoteAssetId,

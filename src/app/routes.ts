@@ -11,6 +11,10 @@ export const routes = [
     loadChildren: './content/landing/landing.module#LandingModule'
   },
   {
+    path: 'ico',
+    loadChildren: './content/landing/landing.module#LandingModule'
+  },
+  {
     path: 'email/verification/check/:hash',
     loadChildren: './content/email-verification/email-verification.module#EmailVerificationModule',
   },

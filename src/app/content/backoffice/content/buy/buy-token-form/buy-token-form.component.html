@@ -18,6 +18,12 @@
     <div class="currency-btn">
       <app-button (click)="buy()" [buttonState]="buttonStateBuy"></app-button>
     </div>
+    <div *ngIf="bonusAvailable">
+      <p class="bonus_desc">* You can also grab 100 free CSTT tokens with your $30 bonus.</p>
+      <div class="currency-btn">
+        <app-button (click)="buy(true)" [buttonState]="buttonStateBonus"></app-button>
+      </div>
+    </div>
   </form>
   
   <!-- AffiliChain Pixel -->

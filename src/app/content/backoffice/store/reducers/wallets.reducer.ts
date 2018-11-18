@@ -24,7 +24,8 @@ export function reducer(state: any = initialState, action: { type: string, paylo
     case WALLET_SUCCESS: {
       const data = action.payload && action.payload.wallets ? [...action.payload.wallets, {
         asset: { code: 'usd' },
-        balance: action.payload.total_usd
+        bonus: action.payload.bonus_balance,
+        balance: action.payload.total_usd_with_bonus
       }] : [];
 
       return {
