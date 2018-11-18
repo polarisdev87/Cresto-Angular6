@@ -63,7 +63,7 @@ $(document).ready(function () {
   })
 
   if ($('.slick-slider').length) {
-    $('.slick-slider').slick({
+    let options = {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -105,7 +105,10 @@ $(document).ready(function () {
           }
         }
       ]
-    });
+    };
+    $('.slick-slider.prototypes').slick(options);
+    options.centerPadding = '300px';
+    $('.slick-slider.videos').slick(options);
   }
 
   $('.faq-wr li').click(function() {
