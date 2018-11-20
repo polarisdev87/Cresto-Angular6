@@ -103,19 +103,19 @@ header
   flex-wrap: wrap
   justify-content: space-between
   .video
-    flex: 0 0 50%
-    text-align: center
+    flex: 0 0 55%
+    text-align: left
     iframe
       width: 90%
-      max-width: 500px
-      height: 320px
+      max-width: 600px
+      height: 310px
   .banner
-    flex: 0 0 50%
+    flex: 0 0 45%
     display: flex
     text-align: center
     flex-direction: column
     align-items: center
-    padding-top: 38px
+    padding-top: 18px
     position: relative
     z-index: 10
     h1
@@ -138,7 +138,7 @@ header
       margin-bottom: 40px
     .btn-green
       width: 174px
-      height: 50px
+      height: 45px
       font-size: 16px
     h6
       color: $white
@@ -146,7 +146,7 @@ header
       font-size: 20px
       font-weight: 500
       line-height: 1.1
-      margin-top: 20px
+      margin-top: 10px
       span
         color: #0aae5a
 
@@ -249,6 +249,11 @@ h3.perks
 
 
 @media screen and (max-width: 1200px)
+  header
+    padding-top: 100px
+  .home
+    .video
+      text-align: center
   #hamburger-icon
     display: inline-flex
     z-index: 20
@@ -284,9 +289,6 @@ h3.perks
     flex-direction: column-reverse
     .video, .banner
       flex: none
-    .video
-      iframe
-        height: 280px
     .banner
       h1
         font-size: 36px
