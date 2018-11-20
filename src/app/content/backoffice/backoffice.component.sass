@@ -7,12 +7,11 @@ body, html
 
 .back-office
   background-color: $bg-back-office
-  // min-height: 100vh
   position: relative
-  // overflow: hidden
-  //min-height: 100vh
   overflow-y: scroll
-  height: 100vh
+  min-height: 100vh
+  padding-top: 56px
+  font-family: $lato-regular
 
 a
   text-decoration: none
@@ -115,15 +114,7 @@ input:-webkit-autofill:focus
   .back-office
     padding: 0px
 
-  .header-wrapper
-    height: 55px
-    background: $bg-sidebar
-    overflow: hidden
-
 @media screen and (max-width: 580px)
   .back-office
     padding: 0px
     margin: 0px
-  .footer-wrapper
-    padding: 0px 15px
-

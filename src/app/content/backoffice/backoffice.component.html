@@ -1,7 +1,8 @@
 <section class="back-office">
+  <app-topbar></app-topbar>
   <app-sidebar [isOpen]="isOpen"></app-sidebar>
-  <div class="header-wrapper"><app-backoffice-header  (onOpen)="changeSidebar()"></app-backoffice-header></div>
+  <app-backoffice-header  (onOpen)="changeSidebar()"></app-backoffice-header>
   <router-outlet></router-outlet>
-  <div class="footer-wrapper"><app-backoffice-footer></app-backoffice-footer></div>
+  <app-backoffice-footer></app-backoffice-footer>
 </section>
 
