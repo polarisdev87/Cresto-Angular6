@@ -104,6 +104,11 @@ header
   justify-content: space-between
   .video
     flex: 0 0 50%
+    text-align: center
+    iframe
+      width: 90%
+      max-width: 500px
+      height: 320px
   .banner
     flex: 0 0 50%
     display: flex
@@ -279,6 +284,16 @@ h3.perks
     flex-direction: column-reverse
     .video, .banner
       flex: none
+    .video
+      iframe
+        height: 280px
+    .banner
+      h1
+        font-size: 36px
+      h2
+        font-size: 24px
+      h6
+        font-size: 18px
 
 @media screen and (max-width: 500px)
   .banner
@@ -291,6 +306,10 @@ h3.perks
       max-height: 55px
     &__text
       font-size: 20px
+  .home
+    .video
+      iframe
+        height: 250px
   .timer-wrapper
     padding: 0
     margin: 0
