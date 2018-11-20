@@ -7,7 +7,7 @@ header
   overflow: hidden
   padding-top: 180px
 .top-header-wrapper
-  padding: 20px 0
+  padding: 10px 0
   width: 100%
   display: flex
   position: absolute
@@ -32,11 +32,11 @@ header
   width: 100%
   &__images
     margin-right: 10px
-    max-width: 36px
-    max-height: 36px
+    max-width: 55px
+    max-height: 55px
   &__text
     display: inline-flex
-    font-size: 16px
+    font-size: 22px
     color: $green
     font-family: $poppins-bold
 
@@ -53,6 +53,7 @@ header
   align-items: center
   flex-direction: row
   font-family: $poppins-regular
+  margin: 0px
   li
     display: inline-flex
     margin-left: 20px
@@ -106,9 +107,7 @@ header
     flex: 0 0 55%
     text-align: left
     iframe
-      width: 90%
-      max-width: 600px
-      height: 310px
+      max-width: 100%
   .banner
     flex: 0 0 45%
     display: flex
@@ -120,7 +119,7 @@ header
     z-index: 10
     h1
       color: $white
-      font-size: 42px
+      font-size: 45px
       font-family: $poppins-semibold
       line-height: 1.4
       margin-bottom: 5px
@@ -131,8 +130,8 @@ header
         -webkit-text-fill-color: transparent;
     h2
       color: $white
-      font-family: $poppins-bold
-      font-size: 28px
+      font-family: $poppins-regular
+      font-size: 30px
       line-height: 1.48;
       letter-spacing: 0.3px;
       margin-bottom: 40px
@@ -143,7 +142,7 @@ header
     h6
       color: $white
       font-family: $poppins-bold
-      font-size: 20px
+      font-size: 23px
       font-weight: 500
       line-height: 1.1
       margin-top: 10px
@@ -157,7 +156,7 @@ header
   p
     font-family: $poppins-bold
     color: $white
-    font-size: 28px
+    font-size: 36px
     font-weight: 600
     margin-bottom: 30px
 
@@ -291,23 +290,21 @@ h3.perks
       flex: none
     .banner
       h1
-        font-size: 36px
+        font-size: 40px
       h2
-        font-size: 24px
+        font-size: 28px
       h6
-        font-size: 18px
+        font-size: 20px
+        margin-bottom: 20px
+  .timer-wrapper
+    p
+      font-size: 30px
 
 @media screen and (max-width: 500px)
   .banner
     margin: 15px auto 0 auto
     h1
       font-size: 30px
-  .logo
-    &__images
-      max-width: 55px
-      max-height: 55px
-    &__text
-      font-size: 20px
   .home
     .video
       iframe
