@@ -1,113 +1,69 @@
 @import "../../../../content/landing/landing.component"
 .footer
-  background-color: #000
-  padding: 104px 0 90px 0
-  font-family: $montserrat-light
-  .faq-btn-wrapper
-    margin: 0 auto 80px auto
-    &.none
-        display: none
-    a
-      display: inline-flex
-      align-items: center
-      justify-content: center
-      background: $green
-      color: $black
-      border-radius: 30px
-      padding: 0 30px
-      min-height: 43px
-      text-transform: uppercase
-      font-family: $montserrat-bold
-      font-size: 20px
-      border: 1px solid transparent
-      transition: $transition
-      &:hover
-        background: transparent
-        color: $green
-        border: 1px solid $green
-
-  .sub-title.white
-    color: #c2c2c2
-    padding-bottom: 50px
-  .copyright
-    width: 100%
-    text-align: center
-    color: #636363
-    font-size: 14px
-    img
-      width: 225px
-
-.contacts-row
-  padding-bottom: 50px
-  display: flex
-  width: 100%
-  justify-content: center
-  color: #c2c2c2
-  font-size: 18px
-  margin-bottom: 50px
-  a, span
-    color: #c2c2c2
-    display: inline-block
-  .contacts
-    min-height: 50px
-    width: 33.3%
-    display: flex
-    flex-wrap: wrap
-    align-items: center
-    justify-content: center
-    padding: 9px 0 21px 0
-    border-right: 1px solid #363636
-    &:last-child
-      border-right: 0
-    a
-      display: inline-block
-    .contacts-img
+  padding: 104px 0px 0px 0px
+  font-family: $montserrat-regular
+  color: $white
+  .column
+    flex: 0 0 25%
+    .heading
       display: block
-      padding-bottom: 23px
-      width: 100%
-      img
-        max-width: 42px
-        max-height: 32px
-        width: auto
-        display: block
-        margin: 0 auto
-.social
-  text-align: center
-  display: block
+      min-height: 50px
+      font-size: 16px
+      letter-spacing: 0.5px
+      &.logo_link
+        display: inline-flex
+        align-items: center
+        color: #00e55d
+        margin-top: -15px
+        margin-bottom: 15px
+        img
+          width: 36px
+          height: 36px
+          margin-right: 5px
+        span
+          font-weight: bold
+    ul
+      list-style: none
+      font-size: 14px
+      margin: 0
+      li
+        opacity: 0.6
+        margin-bottom: 12px
+        &:hover
+          opacity: 1
+        a
+          text-decoration: none
+          color: $white
+    .links
+      margin-left: -10px
+      .link
+        margin-right: 3px
+        img
+          width: 48px
+          height: auto
+        &:last-child
+          margin-right: 0px
+
+#copyright
+  background-color: rgba(255,255,255,0.05)
+  font-size: 12px
+  color: rgba(255,255,255,0.6)
   width: 100%
-  padding-bottom: 70px
-  li
-    display: inline-block
-    vertical-align: top
-    padding-left: 13px
-    padding-right: 13px
-    a
-      display: inline-block
-      width: 33px
-      height: 33px
-      border-radius: 50%
-      color: #000
-      background-color: $green
-      font-size: 21px
-      line-height: 33px
-      text-align: center
-      &.instagram,
-      &.medium
-        background-color: transparent
-        color: $green
-        font-size: 27px
+  min-height: 50px
+  margin-top: 40px
+  padding: 0px 30px
+  display: flex
+  justify-content: center
+  align-items: center
 
+@media (max-width: 1100px)
+  .footer
+    .column
+      flex: 0 0 50%
+      padding-left: 10%
+      margin-bottom: 20px
 
-@media only screen and (max-width: 800px)
-  .contacts-row
-    font-size: 14px
-
-@media only screen and (max-width: 620px)
-  .contacts-row
-    flex-wrap: wrap
-    .contacts
-      width: 100%
-      border-right: 0
-      border-bottom: 1px solid #363636
-      &:last-child
-        border: 0
+@media (max-width: 650px)
+  .footer
+    .column
+      flex: 0 0 100%

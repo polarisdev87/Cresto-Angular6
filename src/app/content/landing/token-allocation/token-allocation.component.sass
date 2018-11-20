@@ -2,51 +2,141 @@
 .token-allocation-wr
   padding-top: 120px
   padding-bottom: 120px
-  font-family: $montserrat-regular
+  font-family: $poppins-regular
   .landing-title
+    font-size: 42px
     padding-bottom: 80px
-.allocation-row
-  display: flex
-  width: 100%
-  flex-wrap: wrap
-  .allocation-cell
-    width: 50%
-    text-align: center
-    &:last-child
-      .allocation-img
-        padding-top: 4px
-        img
-          width: 84%
-          max-width: 510px
-  .allocation-title
-    font-family: $montserrat-bold
-    font-size: 24px
-    color: #032a11
-    padding-bottom: 65px
-  .allocation-img
-    position: relative
-    left: -19px
-    img
-      width: 90%
-      max-width: 540px
+    color: $white
+    line-height: 1.36
+    span
+      color: #0cc05d
+  .allocation-row
+    display: flex
+    width: 100%
+    flex-wrap: wrap
+    justify-content: space-between
+    .allocation-cell
+      flex: 0 0 49%
+      text-align: center
+      background-color: rgba(255,255,255,0.05)
+      .allocation-title
+        font-family: $poppins-bold
+        font-size: 20px
+        line-height: 1.6
+        color: $white
+        padding-top: 40px
+        padding-bottom: 55px
+      .inner
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        margin-bottom: 40px
+        .allocation-graph
+          flex: 0 0 45%
+          display: flex
+          justify-content: center
+          align-items: center
+          flex-direction: column
+          color: $white
+          background-repeat: no-repeat
+          background-size: contain
+          background-position: center
+          min-height: 270px
+          span:first-child
+            font-family: $poppins-bold
+            font-size: 30px
+            margin-bottom: 15px
+          span:last-child
+            font-family: $poppins-regular
+            font-size: 18px
+        .info
+          flex: 0 0 45%
+          padding-left: 80px
+          ul
+            list-style: none
+            margin-left: 0
+            padding-left: 0
+            font-family: $poppins-regular
+            font-size: 18px
+            color: $white
+            li
+              margin-bottom: 25px
+              margin-right: 20px
+              position: relative
+              text-align: left
+              line-height: 0.9
+              span
+                font-size: 12px
+                opacity: 0.63
+              &:before
+                content: ''
+                display: inline-block
+                position: absolute
+                top: 5px
+                left: -20px
+                width: 8px
+                height: 8px
+                border-radius: 50%
+                border: none
+              &.color1:before
+                background-color: #56bc62
+              &.color2:before
+                background-color: #9cd578
+              &.color3:before
+                background-color: #00e65c
+              &.color4:before
+                background-color: #107e1e
+              &.color5:before
+                background-color: #e9c539
+              &.color6:before
+                background-color: #57bc62
+              &.color7:before
+                background-color: #a1d579
+              &.color8:before
+                background-color: #81cd9f
+              &.color9:before
+                background-color: #00e55c
+              &.color10:before
+                background-color: #107e1f
+      &:last-child .info
+        flex: 0 0 50%
+        padding-left: 50px
+
+@media only screen and (max-width: 1020px)
+  .token-allocation-wr
+    .allocation-row
+      .allocation-cell
+        .inner
+          .allocation-graph
+            margin-bottom: 20px
+            flex: 0 0 90%
+          .info
+            flex: 0 0 90%
+            padding-left: 70px
+        &:first-child .info ul
+          column-count: 2
 
 @media only screen and (max-width: 768px)
-  .allocation-row
-    .allocation-cell
-      width: 100%
-      margin-bottom: 60px
-@media only screen and (max-width: 640px)
-  .allocation-row
-    .allocation-img
-      position: relative
-      left: -10px
+  .token-allocation-wr
+    .landing-title
+      font-size: 32px
+    .allocation-row
+      .allocation-cell
+        flex: 0 0 100%
+        margin-bottom: 10px
+      
 @media only screen and (max-width: 600px)
-  .token-allocation-wr,
-  .what-makes-wr
-    padding-top: 60px
-  .allocation-row
-    .allocation-cell
-      &:last-child
-        margin-bottom: 0
-    .allocation-title
-      padding-bottom: 25px
+  .token-allocation-wr
+    .allocation-row
+      .allocation-cell
+        .inner
+          .allocation-graph
+            flex: 0 0 100%
+          .info
+            flex: 0 0 100%
+            padding-left: 50px
+        &:last-child
+          margin-bottom: 0
+      .allocation-title
+        padding-bottom: 25px

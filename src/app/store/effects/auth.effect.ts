@@ -30,10 +30,11 @@ export class AuthEffects {
         tap(() => {
           this._router.navigate(['/dashboard']);
           this._localStorageService.removeItem('referralHash');
+          this._localStorageService.removeItem('promoUser');
         }),
         catchError((err: any) => {
           if (err.status !== 402) {
-            alert('Invalid username or password');
+            alert(err.error.error);
           }
           return of(new LoginFail(err));
         })

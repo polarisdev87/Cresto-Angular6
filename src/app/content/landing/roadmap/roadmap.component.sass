@@ -1,153 +1,29 @@
 @import "../landing.component"
 .roadmap-wr
-  background-color: #f8f8f8
-  padding-top: 118px
-  padding-bottom: 80px
-  overflow: hidden
+  .landing-title
+    font-size: 42px
+    font-family: $poppins-bold
+    color: $white
+    line-height: 1.36
+    span
+      color: #0cc05d
 
 .roadmap-row
-  width: 100%
-  padding: 250px 0
-  .line
-    width: 85%
-    margin: 0 auto
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    height: 45px
-    background: linear-gradient(#b2e0c3, #b2e0c3) no-repeat center 22px
-    background-size: 99% 3px
-    padding-top: 16px
-    font-family: $montserrat-regular
-    li
-      display: inline-block
-      margin-right: 12%
-      width: 15px
-      height: 15px
-      min-width: 15px
-      min-height: 15px
-      border-radius: 50%
-      background-color: $green
-      position: relative
-      &:last-child
-        margin-right: 0
-      &:before
-        content: ''
-        display: block
-        position: absolute
-        width: 45px
-        height: 45px
-        border-radius: 50%
-        background-color: rgba(0, 230, 92, 0.1)
-        left: 48%
-        top: 48%
-        transform: translate(-50%, -50%)
-      &:after
-        content: ''
-        display: block
-        position: absolute
-        background-color: #bee4cc
-        width: 1px
-        height: 83px
-        bottom: 99.8%
-        left: 7px
-      .line-content
-        position: absolute
-        width: 340px
-        bottom: 80px
-        text-align: center
-        left: -156px
-        transform: translateY(-50%)
-        span
-          display: block
-        .title
-          font-family: $montserrat-bold
-          text-transform: uppercase
-          font-size: 21px
-          color: $green
-          padding-bottom: 10px
-        .text
-          font-size: 18px
-          color: #363636
-      &:nth-child(even)
-        &:after
-          bottom: inherit
-          top: 100%
-        .line-content
-          bottom: inherit
-          top: 175px
-          min-height: 125px
-
-@media only screen and (max-width: 1150px)
-  .roadmap-row .line li .line-content
-    .title
-      font-size: 18px
-    .text
-      font-size: 14px
-
-@media only screen and (max-width: 840px)
-  .roadmap-row
-    padding: 40px 0
-    br
+  width: 90%
+  margin: 0 auto
+  padding: 50px 0
+  img
+    width: 100%
+    &.mobile-only
       display: none
-    .line
-      width: 100%
-      padding-top: 0
-      height: auto
-      display: block
-      background: linear-gradient(#b2e0c3, #b2e0c3) no-repeat 21px center
-      background-size: 3px 93%
-      li
-        display: block
-        width: 100%
-        height: auto
-        border-radius: 0
-        background: 0 0
-        padding-left: 80px
-        margin-right: 0
-        margin-bottom: 40px
-        min-height: auto
-        &:nth-child(even)
-          .line-content
-            min-height: auto
-          &:after
-            display: block
-            position: absolute
-            width: 15px
-            height: 15px
-            min-width: 15px
-            min-height: 15px
-            border-radius: 50%
-            background-color: $green
-            left: 15px
-            top: 15px
-        &:before
-          left: 0
-          top: 0
-          transform: inherit
-        &:after
-          display: block
-          position: absolute
-          width: 15px
-          height: 15px
-          min-width: 15px
-          min-height: 15px
-          border-radius: 50%
-          background-color: $green
-          left: 15px
-          top: 15px
-        .line-content
-          position: static
-          width: 100%
-          transform: inherit
-          text-align: left
 
-@media only screen and (max-width: 768px)
+@media (max-width: 768px)
   .roadmap-wr
-    padding-top: 60px
+    .landing-title
+      font-size: 32px
     .roadmap-row
-      padding: 30px 0 0
-      .line
-        li
-          &:last-child
-            margin-bottom: 0
+      img
+        display: none
+        &.mobile-only
+          display: inline
+          width: 360px

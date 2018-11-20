@@ -58,13 +58,15 @@ export class SocialNetworkService {
   public googleSuccessLogin(accessToken: string): Observable<User> {
     let referredBy = '';
     let referredFrom = '';
+    let isPromoUser = false;
     try {
       referredBy = this._localStorageService.getItem('referralHash');
       referredFrom = this._localStorageService.getItem('referralMedia');
+      isPromoUser = this._localStorageService.getItem('promoUser') === 1 ? true : false;
     } catch (err) {
       // tslint:disable-next-line
       console.log(err);
     }
-    return this._http.nonAuthorizedRequest('/google', { access_token: accessToken, referredBy, referredFrom }, 'POST');
+    return this._http.nonAuthorizedRequest('/google', { access_token: accessToken, referredBy, referredFrom, isPromoUser }, 'POST');
   }
 }

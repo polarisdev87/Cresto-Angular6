@@ -1,9 +1,10 @@
 <div class="status-wr">
-  <h2 class="token-sold">{{ tokensCounter | number }} of 1,000,000 Tokens Sold</h2>
   <div class="progress-wr">
-    <span class="active" [ngStyle]="{'flex': '0 0 ' + percentCounter +'%'}"></span>
+    <span class="active" [ngStyle]="{'flex': '0 0 ' + percentCounter +'%'}"><span class="oval"><span class="measure"></span></span></span>
     <span class="inactive" [ngStyle]="{'flex': '0 0 ' + (100-percentCounter) +'%'}"></span>
     <span class="percent">{{ percentCounter }}%</span>
   </div>
-  <h2 class="total-users"><span>{{ usersCounter | number }}</span> Total Users</h2>
+  <h2 class="token-sold">MAIN ICO STARTS <span>27TH NOV 2018</span></h2>
+  <!-- <h2 class="token-sold"><span>{{ tokensCounter | number }}</span> Tokens Sold</h2> -->
+  <!-- <h2 class="total-users"><span>{{ usersCounter | number }}</span> Total Users</h2> -->
 </div>

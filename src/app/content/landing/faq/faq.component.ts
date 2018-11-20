@@ -5,12 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.sass']
 })
-export class FAQComponent implements OnInit {
-  public hide = 'none';
+export class FaqComponent implements OnInit {
+
   public constructor() { }
 
   public ngOnInit() {
   }
-
 
 }

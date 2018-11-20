@@ -1,10 +1,13 @@
 @import "../landing.component"
 .what-makes-wr
-  background-color: #f8f8f8
-  padding-top: 118px
   padding-bottom: 80px
   .landing-title
-    padding-bottom: 80px
+    font-size: 42px
+    font-family: $poppins-bold
+    color: $white
+    line-height: 1.36
+    span
+      color: #0cc05d
 
 .what-makes-row
   display: flex
@@ -17,21 +20,19 @@
   padding: 0 10px
   margin: 0 auto 80px auto
   min-height: 30px
-  font-family: $montserrat-light
-  font-size: 17px
-  color: #000
-  line-height: 1.4
+  font-family: $poppins-regular
+  font-size: 15px
+  color: $white
+  line-height: 1.47
   text-align: center
   .item-img
     display: flex
     align-items: center
     justify-content: center
     margin: 0 auto 25px auto
-    width: 127px
-    height: 127px
+    width: 97px
+    height: 97px
     border-radius: 50%
-    border: 5px solid $green
-    background-color: #fff
     img
       width: 70%
 
@@ -44,13 +45,11 @@
     margin-bottom: 40px
 
 @media only screen and (max-width: 768px)
-  .what-token-wr
-    padding-top: 60px
   .what-makes-wr
     padding-top: 60px
+    .landing-title
+      font-size: 32px
 @media only screen and (max-width: 600px)
-  .what-token-wr
-    padding-top: 30px
   .what-makes-row
     .cell
       width: 100%

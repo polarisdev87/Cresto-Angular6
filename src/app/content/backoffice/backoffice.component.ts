@@ -15,9 +15,6 @@ import { GetCurrentUser } from './store/actions/user.actions';
 })
 export class BackofficeComponent implements OnInit {
   public isOpen!: boolean;
-
-  // Biggico clickId & signup callback
-  public clickId: string = '';
   public signupCallback: boolean = false;
   public constructor(
     private _store: Store<IRootState>,
@@ -40,7 +37,6 @@ export class BackofficeComponent implements OnInit {
         this._store.dispatch(new WalletRequest(id));
       });
 
-    this.clickId = this._localStorageService.getItem('clickId');
     this.signupCallback = this._localStorageService.getItem('signup_callback') ? true : false;
     if (this.signupCallback) {
       this._localStorageService.removeItem('signup_callback');

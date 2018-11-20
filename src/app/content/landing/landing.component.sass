@@ -1,9 +1,16 @@
 @import "../../../assets/css/variables"
+
+#landing-wrapper
+  background-color: #161921
+  background-image: url("/assets/images/landing/bg-1.png"), url("/assets/images/landing/bg-2.png"), url("/assets/images/landing/bg-3.png"), url("/assets/images/landing/bg-5.png"), url("/assets/images/landing/bg-1.png"), url("/assets/images/landing/bg-3.png"), url("/assets/images/landing/bg-1.png"), url("/assets/images/landing/bg-4.png"), url("/assets/images/landing/bg-2.png"), url("/assets/images/landing/bg-5.png"), url("/assets/images/landing/bg-3.png"), url("/assets/images/landing/bg-4.png"), url("/assets/images/landing/bg-4.png"), url("/assets/images/landing/bg-1.png"), url("/assets/images/landing/bg-4.png")
+  background-position: center 1%, center 12%, center 23%, center 30%, center 35%, center 40%, center 45%, center 55%, center 60%, center 67%, center 74%, center 77%, center 85%, center 90%, center 95%
+  background-repeat: no-repeat
+  background-size: 100% auto
 *
   box-sizing: border-box
 
 a
-  text-decoration: none
+  text-decoration: none !important
 
 a, button
   &:focus
@@ -32,7 +39,7 @@ h3
   &.landing-title
     display: block
     width: 100%
-    font-family: $montserrat-bold
+    font-family: $poppins-bold
     padding-bottom: 30px
     text-align: center
     font-size: 36px
@@ -42,7 +49,7 @@ h3
     color: $green
 
 .landing-text
-  font-family: $montserrat-light
+  font-family: $poppins-light
   font-size: 18px
   color: #000
   line-height: 1.8
@@ -55,26 +62,25 @@ h3
     width: 50%
     min-height: 100px
 
-.banner-btn
-  color: $black
+.btn-green
   display: inline-flex
   align-items: center
   justify-content: center
-  background: $yellow
-  font-size: 26px
-  height: 67px
-  width: 100%
-  max-width: 340px
-  text-transform: uppercase
-  font-family: $montserrat-extraBold
-  border-radius: 35px
-  cursor: pointer
-  border: 1px solid transparent
-  transition: $transition
+  // background: $green
+  background-image: linear-gradient(78deg, #227a5e, #00e55d);
+  color: $white
+  border-radius: 4px
+  padding: 0 30px
+  min-height: 36px
+  font-family: $poppins-medium
+  font-size: 14px
   &:hover
     background: transparent
-    border: 1px solid $yellow
-    color: $yellow
+    border-radius: 4px
+    border-width: 1px
+    border-style: solid
+    border-image-source: linear-gradient(77deg, #227a5e, #00e55d)
+    border-image-slice: 1
 
 #to-top
   position: fixed
@@ -82,47 +88,10 @@ h3
   bottom: 70px
   cursor: pointer
   display: none
-  font-size: 20px
-  width: 40px
-  height: 40px
   align-items: center
   justify-content: center
-  background: $green
-  border-radius: 50%
-  color: $white
   z-index: 40
-.sub-title
-  width: 100%
-  text-align: center
-  font-family: $montserrat-light
-  font-size: 18px
-  color: #032a11
-  &.white
-    color: $white
 
-input::-webkit-input-placeholder
-  color: #a1a1a1
-  font-size: 18px
-  font-family: $montserrat-light
-  opacity: 1
-
-input::-moz-placeholder
-  color: #a1a1a1
-  font-size: 18px
-  font-family: $montserrat-light
-  opacity: 1
-
-input:-ms-input-placeholder
-  color: #a1a1a1
-  font-size: 18px
-  font-family: $montserrat-light
-  opacity: 1
-
-input:-moz-placeholder
-  color: #a1a1a1
-  font-size: 18px
-  font-family: $montserrat-light
-  opacity: 1
 
 @media only screen and (max-width: 900px)
   .landing-text
@@ -150,22 +119,22 @@ input:-moz-placeholder
   input::-webkit-input-placeholder
     color: #a1a1a1
     font-size: 14px
-    font-family: $montserrat-light
+    font-family: $poppins-light
     opacity: 1
   input::-moz-placeholder
     color: #a1a1a1
     font-size: 14px
-    font-family: $montserrat-light
+    font-family: $poppins-light
     opacity: 1
   input:-ms-input-placeholder
     color: #a1a1a1
     font-size: 14px
-    font-family: $montserrat-light
+    font-family: $poppins-light
     opacity: 1
   input:-moz-placeholder
     color: #a1a1a1
     font-size: 14px
-    font-family: $montserrat-light
+    font-family: $poppins-light
     opacity: 1
   .login-wr,
   .sign-up-wrapper

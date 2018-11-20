@@ -1,5 +1,4 @@
 <header>
-  <div id="particles-js"></div>
   <div [class]="'top-header-wrapper '+ fixed">
     <div class="main-container">
       <div class="wrapper">
@@ -21,7 +20,7 @@
             <li class="whitepaper-mobile"><a target="_blank" href="assets/Crest_Token_Whitepaper.pdf">Whitepaper</a></li>
             <li class="whitepaper-mobile"><a target="_blank" href="assets/Crest_Token_Onepager.pdf">Onepager</a></li>
             <li class="whitepaper">
-              <a href="#">Whitepaper&nbsp;&nbsp;<i style="font-size: 12px;line-height: 18px;" class="fa fa-chevron-down"></i></a>
+              <a href="#">Documentation&nbsp;&nbsp;<i style="font-size: 12px;line-height: 18px;" class="fa fa-chevron-down"></i></a>
               <ul class="submenu">
                 <li>
                   <a target="_blank" href="assets/Crest_Token_Whitepaper.pdf">Whitepaper</a>
@@ -34,29 +33,40 @@
             <li><a class="scroll" href="https://crestplatform.com/demo/" target="_blank">Demo</a></li>
           </ul>
           <div class="header-btn-wrapper">
-            <a class="login btn-green"  [routerLink]="['/dashboard']" target="_blank">login</a>
-            <a class="signup btn-green" [routerLink]="['/signup']" target="_blank">sign up</a>
+            <a class="login btn-green"  [routerLink]="['/dashboard']" target="_blank">Login</a>
+            <a class="signup btn-green" [routerLink]="['/signup']" target="_blank">Sign up</a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="main-container">
-    <div class="wrapper">
+    <div class="wrapper home">
+      <div class="video">
+        <iframe src="https://player.vimeo.com/video/301752150" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
       <div class="banner">
         <h1>
-          Crypto Currency Profit-Sharing System
-          <span>Using Affiliate Marketing AI Technology</span>
+          <span>DigiAd</span>
+          Platform
         </h1>
-
-        <div class="timer-wrapper">
-          <p>Pre ICO SOLD OUT!</p>
-          <div class="clock" style="display: none;"></div>
-        </div>
-        <app-status></app-status>
-        <a class="banner-btn" [routerLink]="['/signup']" target="_blank">sign up now</a>
-        <h3 class="perks">Earn 1.15% to 2.25% Cash Daily</h3>
+        <h2>
+            Profit-Sharing System using <br>
+            Affiliate Marketing AI Technology
+        </h2>
+        <p>
+          <a class="btn-green" href="https://crestplatform.com/demo" target="_blank" style="margin-right: 15px">Go to Demo</a>
+          <a class="btn-green" [routerLink]="['/signup']" target="_blank">Sign Up</a>
+        </p>
+        <h6><span>{{ usersCount | number }}</span> total members</h6>
+        <!-- <a class="banner-btn" [routerLink]="['/signup']" target="_blank">sign up now</a>
+          <h3 class="perks">Earn 1.15% to 2.25% Cash Daily</h3> -->
       </div>
+    </div>
+    <div class="timer-wrapper">
+      <p>Pre ICO is SOLD OUT!</p>
+      <div class="clock" style="display: none;"></div>
+      <app-status></app-status>
     </div>
   </div>
 </header>

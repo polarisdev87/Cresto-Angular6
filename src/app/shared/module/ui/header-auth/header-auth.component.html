@@ -1,31 +1,43 @@
 <header>
-  <div id="particles-js"></div>
   <div class="top-header-wrapper">
-    <div class="main-container">
-      <div class="wrapper">
-        <div class="logo-wrapper">
-          <a href="#" class="logo">
-            <img class="logo__images" src="assets/images/logo.png" alt="logo">
-            <span class="logo__text">Crest Token</span>
+      <div class="main-container">
+        <div class="wrapper">
+          <div class="logo-wrapper">
+            <a href="#" class="logo">
+              <img class="logo__images" src="assets/images/logo.png" alt="logo">
+              <span class="logo__text">Crest Token</span>
+            </a>
+          </div>
+          <a id="hamburger-icon" title="Menu" (click)="show = !show" [ngClass]="{active: show}">
+            <span class="line"></span>
           </a>
-        </div>
-        <a id="hamburger-icon" title="Menu" (click)="show = !show" [ngClass]="{active: show}">
-          <span class="line"></span>
-        </a>
-        <div class="navigation-wrapper" [ngClass]="{open: show}">
-          <ul class="main-nav">
-            <li><a class="scroll" href="#intro">What is Crest Token</a></li>
-            <li><a class="scroll" href="#tokenSale">Token Sale</a></li>
-            <li><a class="scroll" href="#roadmap">Roadmap</a></li>
-            <li><a class="scroll" href="#team">Team</a></li>
-            <li class="whitepaper"><a target="_blank" href="assets/Crest_Token_Whitepaper_Rev_2.3.01.pdf">Whitepaper</a></li>
-          </ul>
-          <div class="header-btn-wrapper">
-            <a class="login btn-green"  [routerLink]="['/dashboard']" target="_blank">login</a>
-            <a class="signup btn-green" [routerLink]="['/signup']" target="_blank">sign up</a>
+          <div class="navigation-wrapper" [ngClass]="{open: show}">
+            <ul class="main-nav">
+              <li><a class="scroll" href="#intro">What is Crest Token</a></li>
+              <li><a class="scroll" href="#tokenSale">Token Sale</a></li>
+              <li><a class="scroll" href="#roadmap">Roadmap</a></li>
+              <li><a class="scroll" href="#team">Team</a></li>
+              <li class="whitepaper-mobile"><a target="_blank" href="assets/Crest_Token_Whitepaper.pdf">Whitepaper</a></li>
+              <li class="whitepaper-mobile"><a target="_blank" href="assets/Crest_Token_Onepager.pdf">Onepager</a></li>
+              <li class="whitepaper">
+                <a href="#">Whitepaper&nbsp;&nbsp;<i style="font-size: 12px;line-height: 18px;" class="fa fa-chevron-down"></i></a>
+                <ul class="submenu">
+                  <li>
+                    <a target="_blank" href="assets/Crest_Token_Whitepaper.pdf">Whitepaper</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="assets/Crest_Token_Onepager.pdf">Onepager</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="scroll" href="https://crestplatform.com/demo/" target="_blank">Demo</a></li>
+            </ul>
+            <div class="header-btn-wrapper">
+              <a class="login btn-green"  [routerLink]="['/dashboard']" target="_blank">Login</a>
+              <a class="signup btn-green" [routerLink]="['/signup']" target="_blank">Sign up</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </header>

@@ -1,0 +1,59 @@
+@import "../landing.component"
+
+.press-wr
+  width: 75%
+  margin: 70px auto
+  .landing-title
+    font-size: 42px
+    font-family: $poppins-bold
+    color: $white
+    line-height: 1.36
+    padding-bottom: 10px
+    span
+      color: #0cc05d
+  
+  .articles
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    margin-top: 50px
+    font-family: $poppins-light
+    color: $white
+    .item
+      flex: 0 0 31%
+      display: flex
+      flex-direction: column
+      border-radius: 8px
+      padding: 0px
+      max-width: 500px
+      background-color: rgba(255,255,255,0.04)
+      .image img
+        width: 100%
+        border-top-left-radius: 8px
+        border-top-right-radius: 8px
+      .text
+        display: flex
+        flex-direction: column
+        padding: 30px
+        h5
+          font-family: $poppins-regular
+          font-size: 20px
+          line-height: 1.5
+        p
+          font-size: 15px
+          opacity: 0.6
+          margin: 7px 0px 14px 0px
+        h6
+          font-size: 15px
+          line-height: 1.47
+
+@media (max-width: 1200px)
+  .press-wr
+    width: 90%
+
+@media (max-width: 900px)
+  .press-wr
+    .articles
+      .item
+        flex: 0 0 100%
+        margin-bottom: 30px

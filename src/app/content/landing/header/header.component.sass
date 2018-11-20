@@ -2,23 +2,22 @@
 
 header
   width: 100%
-  background: url("/assets/images/header-bg.jpg") no-repeat top center/cover
   padding-bottom: 50px
   position: relative
   overflow: hidden
-  padding-top: 120px
+  padding-top: 180px
 .top-header-wrapper
-  padding: 20px 0
+  padding: 10px 0
   width: 100%
   display: flex
   position: absolute
   top: 0
-  z-index: 25
+  z-index: 100
   transition: $transition
+  background: #161921
   &.fixed
     position: fixed
-    background: #000
-    z-index: 15
+    z-index: 100
     top: 0
     padding: 10px 0
     transition: $transition
@@ -33,13 +32,13 @@ header
   width: 100%
   &__images
     margin-right: 10px
-    max-width: 85px
-    max-height: 85px
+    max-width: 55px
+    max-height: 55px
   &__text
     display: inline-flex
-    font-size: 25px
+    font-size: 22px
     color: $green
-    font-family: $montserrat-bold
+    font-family: $poppins-bold
 
 .navigation-wrapper
   width: 100%
@@ -53,7 +52,8 @@ header
   display: inline-flex
   align-items: center
   flex-direction: row
-  font-family: $montserrat-regular
+  font-family: $poppins-regular
+  margin: 0px
   li
     display: inline-flex
     margin-left: 20px
@@ -63,7 +63,7 @@ header
       display: inline-flex
       color: $white
       cursor: pointer
-      font-size: 16px
+      font-size: 14px
       transition: $transition
       &:hover,
       &.active
@@ -83,84 +83,87 @@ header
         display: none
         top: 60px
         left: -10px
-        background: #000000
+        background: #161921
         padding: 15px
         width: 160px
 
         li
           margin: 0 0 10px 0
       a
-        font-family: $montserrat-bold
+        font-family: $poppins-bold
 
 .header-btn-wrapper
   margin-left: 45px
   a
-    margin-right: 5px
+    margin-right: 10px
     &:last-child
       margin-right: 0
-.btn-green
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  background: $green
-  color: $black
-  border-radius: 30px
-  padding: 0 30px
-  min-height: 43px
-  text-transform: uppercase
-  font-family: $montserrat-bold
-  font-size: 15px
-  border: 1px solid transparent
-  transition: $transition
-  &:hover
-    background: transparent
-    color: $green
-    border: 1px solid $green
 
-
-.banner
-  text-align: center
+.home
   display: flex
-  flex-direction: column
-  align-items: center
-  max-width: 950px
-  margin: 80px auto 0 auto
-  position: relative
-  z-index: 10
-  &:before
-    content: ''
-    display: inline-block
-    background: radial-gradient(circle, rgba(29, 29, 29, 1) 40%, rgba(29, 29, 29, 0) 70%)
-    width: 800px
-    height: 800px
-    border-radius: 50%
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    z-index: -1
-  h1
-    color: $white
-    font-size: 42px
-    font-family: $montserrat-bold
-    line-height: 1.3
-    margin-bottom: 5px
-    span
-      display: inline-block
-      color: $green
+  flex-wrap: wrap
+  justify-content: space-between
+  .video
+    flex: 0 0 55%
+    text-align: left
+    iframe
+      max-width: 100%
+  .banner
+    flex: 0 0 45%
+    display: flex
+    text-align: center
+    flex-direction: column
+    align-items: center
+    padding-top: 18px
+    position: relative
+    z-index: 10
+    h1
+      color: $white
+      font-size: 45px
+      font-family: $poppins-semibold
+      line-height: 1.4
+      margin-bottom: 5px
+      span
+        background-image: linear-gradient(81deg, #227a5e, #00e55d);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    h2
+      color: $white
+      font-family: $poppins-regular
+      font-size: 30px
+      line-height: 1.48;
+      letter-spacing: 0.3px;
+      margin-bottom: 40px
+    .btn-green
+      width: 174px
+      height: 45px
+      font-size: 16px
+    h6
+      color: $white
+      font-family: $poppins-bold
+      font-size: 23px
+      font-weight: 500
+      line-height: 1.1
+      margin-top: 10px
+      span
+        color: #0aae5a
 
 .timer-wrapper
-  margin-top: 45px
+  margin-top: 55px
+  text-align: center
+  width: 100%
   p
-    font-family: $montserrat-bold
+    font-family: $poppins-bold
     color: $white
-    font-size: 32px
+    font-size: 36px
+    font-weight: 600
     margin-bottom: 30px
 
 h3.perks
   color: $green
   font-size: 20px
-  font-family: $montserrat-bold
+  font-family: $poppins-bold
   line-height: 1.3
   margin-top: 120px
 
@@ -175,7 +178,7 @@ h3.perks
   width: 100%
   max-width: 340px
   text-transform: uppercase
-  font-family: $montserrat-extraBold
+  font-family: $poppins-bold
   border-radius: 35px
   cursor: pointer
   border: 1px solid transparent
@@ -245,6 +248,11 @@ h3.perks
 
 
 @media screen and (max-width: 1200px)
+  header
+    padding-top: 100px
+  .home
+    .video
+      text-align: center
   #hamburger-icon
     display: inline-flex
     z-index: 20
@@ -255,7 +263,7 @@ h3.perks
       position: absolute
       top: -20px
       left: -15px
-      background: #262626
+      background: #161921
       width: 100vw
       height: 100vh
       z-index: 15
@@ -275,17 +283,32 @@ h3.perks
     .header-btn-wrapper
       margin-left: 0
 
+@media screen and (max-width: 968px)
+  .home
+    flex-direction: column-reverse
+    .video, .banner
+      flex: none
+    .banner
+      h1
+        font-size: 40px
+      h2
+        font-size: 28px
+      h6
+        font-size: 20px
+        margin-bottom: 20px
+  .timer-wrapper
+    p
+      font-size: 30px
+
 @media screen and (max-width: 500px)
   .banner
     margin: 15px auto 0 auto
     h1
       font-size: 30px
-  .logo
-    &__images
-      max-width: 55px
-      max-height: 55px
-    &__text
-      font-size: 20px
+  .home
+    .video
+      iframe
+        height: 250px
   .timer-wrapper
     padding: 0
     margin: 0
