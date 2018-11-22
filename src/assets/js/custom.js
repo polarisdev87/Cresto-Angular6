@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+  // ICO CountDown
+  var diff = (1543219200000 - (new Date()).getTime() )/1000;
+  $('.ico-countdown').FlipClock(diff, {
+    clockFace: 'DailyCounter',
+		countdown: true,
+    autoStart: false
+  });
+
   /// Cache selectors
   let lastId,
     topMenu = $(".main-nav");
