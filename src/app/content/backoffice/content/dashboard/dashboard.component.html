@@ -1,11 +1,14 @@
 <div class="dashboard-wr">
-  <div class="cell dashboard-info">
-    <app-timer></app-timer>
-    <app-instruction></app-instruction>
-  </div>
+  <!-- <app-instruction></app-instruction> -->
+  <!-- <app-call-action></app-call-action> -->
+  <!-- <app-timer></app-timer> -->
+  <ul class="assets">
+    <li *ngFor="let item of assets$ | async">
+      <i class="{{item.icon}}"></i>
+      {{item.code | uppercase}} = {{item.usd_price}}
+    </li>
+  </ul>
   <div class="cell dashboard-table" *ngIf="rounds$ | async as rounds">
-    <app-timer></app-timer>
-    <app-call-action></app-call-action>
     <app-backoffice-table
       [dashboardTableHead]="dashboardTableHead"
       [rounds]="rounds"

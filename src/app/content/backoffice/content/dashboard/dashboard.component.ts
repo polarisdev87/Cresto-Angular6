@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { RoundsRequest } from './store/actions/rounds.actions';
 import { IRootState } from '../../../../store/reducers';
+import { getAssets } from '../../store/selectors/assets.selector';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,8 @@ import { IRootState } from '../../../../store/reducers';
 })
 export class DashboardComponent implements OnInit {
   public rounds$!: Observable<any>;
-  public scroll;
+  public assets$!: Observable<any>;
+  public wallets$!: Observable<any>;
   public dashboardTableHead = [
     'ICO Round', 'CSTT Supply', 'Price ($)', 'Status'
   ];
@@ -24,6 +26,8 @@ export class DashboardComponent implements OnInit {
 
   public ngOnInit() {
     this.rounds$ = this._store.select('dashboard', 'rounds', 'data');
+    this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
+    this.assets$ = this._store.select(getAssets);
 
     this._store.select('backoffice', 'user', '_id')
       .pipe(

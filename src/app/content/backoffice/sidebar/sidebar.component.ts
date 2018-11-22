@@ -15,8 +15,6 @@ export class SidebarComponent implements OnInit {
 @Input()
 public isOpen!: boolean;
 
-  public user$!: Observable<User>;
-  public assets$!: Observable<any>;
   public wallets$!: Observable<any>;
 
   public constructor(
@@ -25,8 +23,6 @@ public isOpen!: boolean;
   ) {}
 
   public ngOnInit() {
-    this.user$ = this._store.select('backoffice', 'user');
-    this.assets$ = this._store.select('backoffice', 'assets', 'data');
     this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
   }
   public logout() {

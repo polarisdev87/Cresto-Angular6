@@ -1,15 +1,21 @@
 <header>
   <a class="drop-down-menu" (click)="dropDownSidebar()"><span></span></a>
-  <a [routerLink]="['/dashboard']" class="logo">
-    <img [src]="logo" alt="logo">
+  <a [routerLink]="['/']" class="logo">
+    <img src="/assets/images/logo.png" alt="logo">
     <p>Crest Token</p>
   </a>
-  <ul id="currency-list" class="currency-date">
+  <div class="log-out">
+    <span>{{(user$ | async)?.name}}</span>
+    <a (click)="logout()">
+      <i class="icon-logout"></i>
+    </a>
+  </div>
+  <!-- <ul id="currency-list" class="currency-date">
     <li *ngFor="let item of assets$ | async">
       <i class="{{item.icon}}"></i>
       {{item.code | uppercase}} = {{item.usd_price}}
     </li>
-  </ul>
+  </ul> -->
   <div id="currency-dropdown">
     <button class="dropdown-trigger" [matMenuTriggerFor]="menu">
       Currency &nbsp;&nbsp;<i class="fa fa-chevron-down"></i>

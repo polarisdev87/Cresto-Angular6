@@ -4,16 +4,23 @@
   display: none
   
 header
+  position: fixed
+  top: 0
+  left: 0
+  height: 56px
+  background: #fff
   width: 100%
   display: flex
   flex-direction: row
   justify-content: space-between
   align-items: center
-  padding: 25px 0 25px 30px
+  z-index: 100
+  padding: 14px
+  box-shadow: 0 2px 32px 0 rgba(40, 46, 54, 0.05);
 .arrows
   display: none
   .currency-arrow
-    font-family: $OpenSansRegular
+    font-family: $lato-regular
 
 
 .drop-down-menu
@@ -23,22 +30,25 @@ header
   display: flex
   flex-direction: row
   align-items: center
-  width: 100%
-  max-width: 190px
-  cursor: pointer
   outline: none
   img
     max-width: 35px
   p
     font-size: 18px
-    font-family: $OpenSansLight
-    color: $accent-color
-    text-shadow: 0 0 15px rgba(0, 231, 199, 1)
+    font-family: $montserrat-bold
+    color: #0a9413
+    margin-left: 15px
+.log-out
+  font-size: 14px
+  span
+    margin-right: 40px
+    letter-spacing: 0.5px
+    color: #0f0f0f
 
 .currency-date
   display: flex
   flex-direction: row
-  font-family: $OpenSansRegular
+  font-family: $lato-regular
   font-size: 16px
   color: #c0c9d1
   li
