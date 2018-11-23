@@ -7,7 +7,7 @@ $(document).ready(function () {
 	// 	countdown: true,
   //   autoStart: false
   // });
-  var countDownDate = 1543255200000;
+  var countDownDate = 1543341600000;
   // Update the count down every 1 second
   var timer = setInterval(function() {
     // Get todays date and time
