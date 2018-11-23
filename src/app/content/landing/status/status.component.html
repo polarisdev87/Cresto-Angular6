@@ -4,8 +4,26 @@
     <span class="inactive" [ngStyle]="{'flex': '0 0 ' + (100-percentCounter) +'%'}"></span>
     <span class="percent">{{ percentCounter }}%</span>
   </div>
-  <h2 class="token-sold">MAIN ICO STARTS <span>NOV 27<sup>th</sup> 2018</span></h2>
-  <div class="ico-countdown"></div>
+  <h2 class="token-sold">Main ICO starts <span>Nov 27th 2018</span></h2>
+  <div class="ico-countdown">
+    <ul>
+      <li>
+        <span class="days">00</span><span class="unit">Days</span>
+      </li>
+      <li class="separator">:</li>
+      <li>
+        <span class="hours">00</span><span class="unit">Hours</span>
+      </li>
+      <li class="separator">:</li>
+      <li>
+        <span class="minutes">00</span><span class="unit">Min</span>
+      </li>
+      <li class="separator">:</li>
+      <li>
+        <span class="seconds">00</span><span class="unit">Sec</span>
+      </li>
+    </ul>
+  </div>
   <!-- <h2 class="token-sold"><span>{{ tokensCounter | number }}</span> Tokens Sold</h2> -->
   <!-- <h2 class="total-users"><span>{{ usersCounter | number }}</span> Total Users</h2> -->
 </div>
