@@ -1,3 +1,4 @@
+/* Slick Slider */
 .slick-slider {
   width: 75%;
   margin: 100px auto;
@@ -55,6 +56,41 @@
 .slick-current .item {
   margin-top: 0px;
 }
+
+/* FlipClock */
+.flip-clock-wrapper ul {
+  width: 40px;
+  height: 50px;
+  font-size: 35px;
+  line-height: 50px;
+}
+.flip-clock-divider {
+  width: 12px;
+  height: 60px;
+}
+.flip-clock-divider .flip-clock-label {
+  display: none;
+}
+.flip-clock-wrapper ul li {
+  line-height: 50px;
+}
+.flip-clock-wrapper ul li a div div.inn {
+  font-size: 40px;
+  background: linear-gradient(to top, #121212, #333);
+}
+.flip-clock-dot {
+  width: 7px;
+  height: 7px;
+  left: 3px;
+  background: #fff;
+}
+.flip-clock-dot.top {
+  top: 20px;
+}
+.flip-clock-dot.bottom {
+  bottom: 20px;
+}
+
 @media (max-width: 1200px)
 {
   .slick-slider button.slick-prev {
@@ -71,6 +107,37 @@
   }
   .slick-slider button.slick-arrow {
     display: none;
+  }
+}
+@media (max-width: 600px)
+{
+  .flip-clock-wrapper ul {
+    width: 32px;
+    height: 42px;
+    font-size: 30px;
+    line-height: 42px;
+    margin: 2px;
+  }
+  .flip-clock-divider {
+    width: 10px;
+    height: 54px;
+  }
+  .flip-clock-wrapper ul li {
+    line-height: 42px;
+  }
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 30px;
+  }
+  .flip-clock-dot {
+    width: 5px;
+    height: 5px;
+    left: 2px;
+  }
+  .flip-clock-dot.top {
+    top: 15px;
+  }
+  .flip-clock-dot.bottom {
+    bottom: 15px;
   }
 }
 @media (max-width: 480px)

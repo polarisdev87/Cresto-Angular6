@@ -54,7 +54,7 @@
   h2.token-sold
     font-family: $poppins-bold
     color: $white
-    font-size: 30px
+    font-size: 25px
     font-weight: bold
     line-height: 1.4
     margin-top: 20px
@@ -69,6 +69,35 @@
     letter-spacing: 1.2px
     span
       color: $green
+  
+  .ico-countdown
+    background: linear-gradient(84deg, #227a5e, #00e55d)
+    border-radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 345px
+    min-height: 70px
+    padding-top: 5px
+    ul
+      display: inline-block
+      margin: 0 auto
+      li
+        display: inline-block
+        vertical-align: top
+        font-family: $poppins-light
+        font-size: 32px
+        color: #fff
+        text-align: center
+        letter-spacing: 1px
+        line-height: 27px
+        span.unit
+          display: block
+          font-size: 12px
+        &.separator
+          padding: 0px
+          margin: 0px 5px
+          line-height: 25px
 
 @media (max-width: 968px)
   .status-wr
@@ -83,3 +112,8 @@
           right: -60px
     h2.token-sold
       font-size: 26px
+
+@media (max-width: 600px)
+  .status-wr
+    .ico-countdown
+      width: 335px
