@@ -116,32 +116,26 @@ export class LandingComponent implements OnInit {
     bootstrap.href = '/assets/css/bootstrap.min.css';
     bootstrap.rel = 'stylesheet';
     bootstrap.type = 'text/css';
-    const flipclock = document.createElement('link');
-    flipclock.href = '/assets/css/flipclock.css';
-    flipclock.rel = 'stylesheet';
-    flipclock.type = 'text/css';
-    flipclock.onload = () => {
-      const landing = document.createElement('link');
-      landing.href = '/assets/css/landing.css';
-      landing.rel = 'stylesheet';
-      landing.type = 'text/css';
-      document.head.appendChild(landing);
-    };
+    const landing = document.createElement('link');
+    landing.href = '/assets/css/landing.css';
+    landing.rel = 'stylesheet';
+    landing.type = 'text/css';
+    document.head.appendChild(landing);
     document.head.appendChild(bootstrap);
-    document.head.appendChild(flipclock);
+    document.head.appendChild(landing);
     const el1 = document.createElement('script');
     const el2 = document.createElement('script');
     const el3 = document.createElement('script');
-    const el4 = document.createElement('script');
+    // const el4 = document.createElement('script');
     const el5 = document.createElement('script');
     el1.src = 'assets/js/jquery.bundle.js';
     el1.onload = () => {
       el2.src = 'assets/js/slick.min.js';
       el3.src = 'assets/js/bootstrap.min.js';
-      el4.src = 'assets/js/flipclock.min.js';
+      // el4.src = 'assets/js/flipclock.min.js';
       document.body.appendChild(el2);
       document.body.appendChild(el3);
-      document.body.appendChild(el4);
+      // document.body.appendChild(el4);
       el2.onload = () => {
         el5.src = 'assets/js/custom.js';
         document.body.appendChild(el5);
