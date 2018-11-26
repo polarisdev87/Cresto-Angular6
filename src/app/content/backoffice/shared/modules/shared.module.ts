@@ -9,6 +9,7 @@ import { NgAclDirective } from './directives/ngAcl.directive';
 import { CopypasteDirective } from './directives/copypaste.directive';
 import { LableDirective } from './directives/lable.directive';
 import { TelegramPopupComponent } from './components/telegram-popup/telegram-popup.component';
+import { AssetsComponent } from './components/assets/assets.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { TelegramPopupComponent } from './components/telegram-popup/telegram-pop
     ButtonComponent,
     TimerComponent,
     RowPipe,
-    TelegramPopupComponent
+    TelegramPopupComponent,
+    AssetsComponent
   ],
   exports: [
     BackofficeTableComponent,
@@ -32,7 +34,8 @@ import { TelegramPopupComponent } from './components/telegram-popup/telegram-pop
     NgAclDirective,
     CopypasteDirective,
     LableDirective,
-    TelegramPopupComponent
+    TelegramPopupComponent,
+    AssetsComponent
   ]
 })
 export class SharedModule {

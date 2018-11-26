@@ -3,7 +3,7 @@
 .btn
   background: transparent
   border: none
-  font-family: $OpenSansSemiBold
+  font-family: $lato-semibold
   color: $accent-color
   font-size: 14px
   border-radius: 30px
@@ -16,11 +16,12 @@
   min-height: 40px
   transition: $transition
   &.emptyGreen
-    color: $accent-color
-    background: rgba(34,40,51,0.6)
-    box-shadow: 0 0 21px 2px rgba(24,248,188, 0.31)
+    border-radius: 4px
+    border: 1px solid #62ba67
+    color: #62ba67
+    background: transparent
     &:hover
-      box-shadow: 0 0 21px 3px rgba(24,248,188, 0.59)
+      box-shadow: 0 0 30px 1px #b2e4b5
   &.emptyRed
     color: $backoffice-red-text
     background: rgba(34,40,51,0.6)
@@ -29,7 +30,7 @@
       box-shadow: 0 0 21px 4px rgba(235,34,72, 0.59)
   &.redBig
     color: $white
-    background: linear-gradient(to right, #ff3b44 50%, #ec3e5f 100%)
+    background: linear-gradient(287deg, #ea676f, #f03e5a)
     position: relative
     font-size: 16px
     min-width: 220px
@@ -47,7 +48,7 @@
       box-shadow: 0 0 31px 4px rgba(235,34,72, 0.59)
   &.redSmall
     color: $white
-    background: linear-gradient(to right, #ff3b44 50%, #ec3e5f 100%)
+    background: linear-gradient(287deg, #ea676f, #f03e5a)
     position: relative
     &:before
       content: ''

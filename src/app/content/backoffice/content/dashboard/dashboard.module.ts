@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from './store/effects';
 import { reducers } from './store/reducers';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { reducers } from './store/reducers';
     StoreModule.forFeature('dashboard', reducers),
     EffectsModule.forFeature(effects),
   ],
-  declarations: [DashboardComponent, CallActionComponent, InstructionComponent]
+  declarations: [DashboardComponent, CallActionComponent, InstructionComponent, BalanceComponent]
 })
 export class DashboardModule {
 }

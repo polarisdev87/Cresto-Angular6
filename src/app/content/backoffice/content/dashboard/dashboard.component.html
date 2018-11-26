@@ -1,18 +1,21 @@
 <div class="dashboard-wr">
-  <!-- <app-instruction></app-instruction> -->
-  <!-- <app-call-action></app-call-action> -->
-  <!-- <app-timer></app-timer> -->
-  <ul class="assets">
-    <li *ngFor="let item of assets$ | async">
-      <i class="{{item.icon}}"></i>
-      {{item.code | uppercase}} = {{item.usd_price}}
-    </li>
-  </ul>
+  <app-balance></app-balance>
+  <h5 class="text">Welcome to Crest Members Area</h5>
+  <div class="member-area">
+    <div class="video">
+        <iframe _ngcontent-c1="" allowfullscreen="" height="360" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/301752150" webkitallowfullscreen="" width="640"></iframe>
+    </div>
+    <div class="board">
+      <app-timer></app-timer>
+      <app-call-action></app-call-action>
+    </div>
+  </div>
+  <h5 class="text">Transactions</h5>
   <div class="cell dashboard-table" *ngIf="rounds$ | async as rounds">
     <app-backoffice-table
       [dashboardTableHead]="dashboardTableHead"
       [rounds]="rounds"
-      [scroll]="true"
+      [scroll]="false"
       [columns]="[
         {value: 'title'},
         {value: 'supply'},
@@ -20,6 +23,7 @@
         {value: 'stage'}
         ]"
       [emptyMassege]="'ICO Round'"
+      [extraClass]="'dashboard'"
     >
     </app-backoffice-table>
   </div>

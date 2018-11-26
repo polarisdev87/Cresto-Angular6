@@ -10,7 +10,7 @@ body, html
   position: relative
   overflow-y: scroll
   min-height: 100vh
-  padding-top: 56px
+  padding: 80px 35px 0 105px
   font-family: $lato-regular
 
 a
@@ -24,21 +24,6 @@ a, button
 img
   width: 100%
   display: inline-block
-
-.back-office
-  padding: 65px 35px 0 105px
-
-.backoffice-btn
-  line-height: 60px
-  border-radius: 30px
-  color: #51565e
-  font-family: $lato-bold
-  font-size: 24px
-  display: inline-block
-  padding-left: 40px
-  padding-right: 40px
-  &.yellow
-    background: linear-gradient(to right, #fde040 0%, #ffc000 100%) no-repeat 0 0
 
 .form-group
   position: relative
@@ -83,8 +68,6 @@ img
 input
   border: none
 
-
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -99,22 +82,18 @@ input:-webkit-autofill:focus
   //-webkit-box-shadow: 0 0 0 50px white inset /*your box-shadow*/,0 0 0 50px white inset;
   -webkit-text-fill-color: $grey-light
 
+.inner-content
+  margin: 0 auto
+  max-width: 1230px
 
-@media screen and (max-width: 1560px)
-  .back-office
-    padding: 5px 35px 0 90px
-
-@media (max-width: 968px)
+@media (max-width: 768px)
   .back-office
     padding-left: 0px
     padding-right: 0px
+    .inner-content
+      padding-left: 20px
+      padding-right: 20px
 
-
-@media screen and (max-width: 800px)
+@media screen and (max-width: 480px)
   .back-office
-    padding: 0px
-
-@media screen and (max-width: 580px)
-  .back-office
-    padding: 0px
     margin: 0px

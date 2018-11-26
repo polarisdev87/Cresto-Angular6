@@ -1,0 +1,72 @@
+@import "../../../backoffice.component"
+.balance-wr
+  h5.title
+    font-family: $lato-bold
+    font-size: 16px
+    color: #637576
+  .assets
+    margin-top: 15px
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    .asset
+      min-width: 186px
+      margin-right: 17px
+      margin-bottom: 20px
+      background: $white
+      border-radius: 10px
+      box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+      padding: 11px 17px 11px 30px
+      display: flex
+      flex-direction: column
+      &:last-child
+        margin-right: 0px
+      .currency
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 5px
+        .name
+          position: relative
+          font-family: $lato-bold
+          font-size: 14px
+          color: #7f8fa4
+          &:before
+            content: ''
+            position: absolute
+            top: 2px
+            left: -18px
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            opacity: 0.2
+          &:after
+            content: ''
+            position: absolute
+            top: 4px
+            left: -16px
+            width: 6px
+            height: 6px
+            border-radius: 50%
+            opacity: 0.7
+          &.btc:before, &.btc:after
+            background-image: linear-gradient(267deg, #f7cf3e, #ff8e00)
+          &.eth:before, &.eth:after
+            background-image: linear-gradient(290deg, #828384, #2f3030)
+          &.xmr:before, &.xmr:after
+            background-image: linear-gradient(315deg, #ff6600, #f7bd9d 99%)
+          &.cstt:before, &.cstt:after
+            background-image: linear-gradient(to left, #62ba67, #006706)
+          &.usd:before, &.usd:after
+            background-image: linear-gradient(135deg, #03aa9c, #3fe5cc)
+
+        .code
+          font-family: $lato-regular
+          font-size: 12px
+          text-transform: capitalize
+          opacity: 0.6
+          color: #7f8fa4
+      .balance
+        font-family: $lato-regular
+        font-size: 14px
+        color: #7f8fa4

@@ -15,6 +15,7 @@ export class BackofficeHeaderComponent implements OnInit {
   public logo = 'assets/images/backoffice-logo.png';
   public user$!: Observable<User>;
   public assets$!: Observable<any>;
+  public sidebar: boolean = false;
 
   @Output() public onOpen: EventEmitter<any> = new EventEmitter();
   public constructor(
@@ -23,7 +24,8 @@ export class BackofficeHeaderComponent implements OnInit {
   ) { }
 
   public dropDownSidebar() {
-    this.onOpen.emit();
+    // this.onOpen.emit();
+    this.sidebar = !this.sidebar;
   }
   public ngOnInit() {
     this.user$ = this._store.select('backoffice', 'user');

@@ -14,6 +14,7 @@
   transition: $transition
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04)
   color: #c0c9d1
+  overflow: hidden
 
   .navigate
     li
@@ -44,54 +45,7 @@
           span
             opacity: 1
 
-@media only screen and (max-width: 1600px)
-  .sidebar
-    max-width: 60px
-    padding: 0px 0 40px 15px
-    .log-out
-      height: 45px
-    .balance-wr
-      padding-left: 0px
-      padding-top: 0px
-      padding-bottom: 20px
-      .sidebar-item  
-        margin-bottom: 15px
-        span
-          font-size: 12px
-      .balance-title
-        font-size: 14px
-        padding-right: 48px
-        margin-bottom: 11px
-     
-
-
-        
-    .navigate
-      padding-top: 25px
-      padding-left: 3px
-      li
-        padding-bottom: 0px
-        a
-          padding: 8px 0 5px 0
-          i
-            font-size: 16px
-    .settings-wr
-      display: flex
-      flex-direction: column
-      height: 100px
-      padding-left: 7px
-      font-size: 14px
-      .sidebar-item
-        margin-bottom: 0px
-        &.user
-          i
-            font-size: 17px
-        &.setting
-          i
-            font-size: 22px
-
-
-@media screen and (max-width: 800px)
+@media screen and (max-width: 768px)
   .sidebar
     display: block
     max-width: 220px

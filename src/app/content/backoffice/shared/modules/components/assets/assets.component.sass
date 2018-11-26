@@ -1,0 +1,25 @@
+@import "../../../../backoffice.component"
+
+.assets
+  display: inline-flex
+  flex-direction: row
+  justify-content: flex-end
+  font-family: $lato-regular
+  font-size: 14px
+  font-weight: 600
+  color: #7f8fa4
+  width: 100%
+  li
+    display: inline-flex
+    align-items: center
+    margin-right: 30px
+    &:last-child
+      margin-right: 0px
+    img
+      width: 16px
+      height: auto
+      margin-right: 5px
+
+@media (max-width: 768px)
+  .assets
+    display: none

@@ -1,0 +1,6 @@
+<ul class="assets">
+  <li *ngFor="let item of assets$ | async">
+    <img src="/assets/images/backoffice/{{item.code}}.png" />
+    {{item.code | uppercase}} = {{item.usd_price}}
+  </li>
+</ul>

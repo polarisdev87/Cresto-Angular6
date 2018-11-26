@@ -2,237 +2,58 @@
 
 .back-office-table
   width: 100%
-  font-family: $OpenSansRegular
+  font-family: $lato-bold
   background-color: $widget-bg
-  border-radius: 8px
-  padding: 10px 28px 28px 25px
-  color: $backoffice-white
+  border-radius: 10px
+  box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+  padding: 24px 25px
+  color: #7f8fa4
   margin-bottom: 30px
   table
     width: 100%
     border-collapse: collapse
-    border-radius: 9px
     th
-      font-size: 14px
-      color: #fff
-      padding-bottom: 15px
-      padding-left: 25px
+      font-size: 12px
+      color: #9fa9ba
+      height: 56px
+      background-color: #f5f6f8
+      &:first-child
+        padding-left: 25px
     td,
     th
       text-align: left
       &:last-child
         text-align: center
     tbody
-      font-size: 16px
-      opacity: 0.8
-
+      font-size: 14px
       tr
+        border-bottom: 1px solid #f5f6f8
         td
-          padding: 30px 0 30px 10px
+          padding: 16px 0
           position: relative
           cursor: pointer
-          &:before
-            content: ''
-            position: absolute
-            top: 0
-            left: 0
-            right: 0
-            width: 100%
-            height: 1px
-            z-index: 0
-            background: #5b5f69
-          &:after
-            content: ''
-            position: absolute
-            bottom: -1px
-            left: 0
-            right: 0
-            background: #5b5f69
-            width: 100%
-            height: 1px
-            z-index: 0
-          &.dashboard:first-child, &.m-dashboard-title
+          &:first-child
+            padding-left: 25px
+        &.dashboard
+          td:last-child
             span
-              display: inline-block
-              padding-left: 17px
-              position: relative
-              &:after
-                content: ''
-                position: absolute
-                left: 3px
-                top: 8px
-                display: block
-                width: 6px
-                height: 6px
-                border-radius: 50%
-                background-color: transparent
-                box-shadow: 0 0 21px transparent
-        &.ongoing,
-        &.confirmed
-          &:hover td
-            &:before,
-            &:after
-              z-index: 2
-              background: url("../../../../../../../assets/images/ongoing-line.png") repeat-x 0 0
-              height: 13px
-            &:before
-              top: -6px
-            &:after
-              bottom: -7px
-          td
-            &.dashboard:first-child span, &.m-dashboard-title span
-              display: inline-block
-              &:after
-                background-color: #00ebc9
-                box-shadow: 0 0 21px rgba(0, 235, 201, 0.71)
-            &.dashboard:last-child span, &.m-dashboard-status span
-              color: #00ebc9
-        &.next,
-        &.processed
-          &:hover td
-            &:before,
-            &:after
-              z-index: 2
-              height: 13px
-              background: url("../../../../../../../assets/images/next-line.png") repeat-x 0 0
-            &:before
-              top: -6px
-            &:after
-              bottom: -7px
-          td
-            &.dashboard:first-child span, &.m-dashboard-title span
-              display: inline-block
-              &:after
-                background-color: #00bdff
-                box-shadow: 0 0 21px rgba(0, 189, 255, 0.71)
-            &.dashboard:last-child span, &.m-dashboard-status span
-              color: #00bdff
-              display: block
-              background: url("../../../../../../../assets/images/next-icon.png") no-repeat 0 4px
-        &.pending,
-        &.rejected
-          &:hover td
-            &:before,
-            &:after
-              z-index: 2
-              height: 13px
-              background: url("../../../../../../../assets/images/pending-line.png") repeat-x 0 0
-            &:before
-              top: -6px
-            &:after
-              bottom: -7px
-          td
-            &.dashboard:first-child span, &.m-dashboard-title span
-              display: inline-block
-              &:after
-                background-color: #fec700
-                box-shadow: 0 0 21px rgba(254, 199, 0, 0.71)
-            &.dashboard:last-child span, &.m-dashboard-status span
-              color: #fec700
-              display: block
-              background: url("../../../../../../../assets/images/prnding-icon.png") no-repeat 0 5px
-
-        &.confirmed,
-        &.processed,
-        &.rejected
-          td
-            width: 12.5%
-            max-width: 100px
-            overflow: hidden
-            &.dashboard:first-child span, &.m-dashboard-title span
-              padding-left: 0
-              &:after
-                background: none
-                box-shadow: none
-                color: inherit
-            &.dashboard:last-child span, &.m-dashboard-status span
-              background: none
-              box-shadow: none
-              color: inherit
-          .confirmed1 span
-            color: #00ebc9
-          .processed1 span
-            color: #00bdff
-
-          .rejected1 span
-            color: #fec700
-
-          .Bitcoin1 span,
-          .Ethereum1 span,
-          .Monero1 span
-            &:after
-              content: ''
-              position: absolute
-              left: 3px
-              top: 8px
-              display: block
-              width: 6px
-              height: 6px
-              border-radius: 50%
-              background-color: #fec700
-              box-shadow: 0 0 21px rgba(254, 199, 0, 0.71)
-            position: relative
-            display: inline-block
-            padding-left: 17px
-
-          .Ethereum1 span
-            &:after
-              background-color: #65c636
-              box-shadow: 0 0 21px rgba(0, 235, 201, 0.71)
-          .Monero1 span
-            &:after
-              background-color: #a76cf7
-              box-shadow: 0 0 21px rgba(167, 108, 247, 0.71)
-
-    .sample
-      display: none
-  table.scroll
-    width: 100%
-    border-collapse: collapse
-    border-spacing: 0
-    max-width: 1155px
-    margin: 0 auto
-  table.scroll tbody,
-  table.scroll thead
-    display: block
-    width: 100%
-    td
-      width: 12%
-      &.scrollTD
-        width: 7%
-    th
-      width: 12%
-      &:nth-child(7), &:last-child
-        width: 14%
-
-  table.scroll
-    .sample
-      display: block
-      height: 650px
-      ng-scrollbar
-        background-color: #F8F8F8
-      .ng-scrollbar
-        background-color: rgba(0, 0, 0, 0.15)
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5)
-        border-radius: 3px
-    tbody
-      max-height: 550px
-      padding-top: 5px
-      padding-bottom: 5px
-      padding-right: 5px
-
-.scroll-wr
-  height: 600px
-  ng-scrollbar
-    background-color: transparent
-  .ng-scrollbar
-    background-color: transparent
-    box-shadow: none
-
+              font-size: 11px
+              padding: 7px 17px
+              border-radius: 15px
+        &.dashboard.next
+          td:last-child
+            span
+              border: 1px solid #44aff2
+              color: #44aff2
+        &.dashboard.pending
+          td:last-child
+            span
+              border: 1px solid #f8ad45
+              color: #f8ad45
 h5
   font-family: $poppins-light
   font-size: 18px
-  color: $grey-light
+  color: #7f8fa4
   text-align: center
   margin-bottom: 15px
 
@@ -242,40 +63,21 @@ h5
       tr
         td
           span
-            display: block !important
             text-overflow: ellipsis !important
             overflow: hidden !important
             white-space: nowrap !important
   &.m-table
-    table
-      th
-        padding-left: 15px
+    border-radius: 0px
     display: none
-
-@media (min-width: 1200px) and (max-width: 1300px)
-  .back-office-table
     table
-      tbody
-        font-size: 14px
-        tr
-          td
-            &.scrollTD
-              width: 10%
-
-@media (max-width: 968px)
-  .back-office-table
-    table
-      th
-        font-size: 13px
-      tbody
-        font-size: 14px
-        tr
-          td
-            padding: 20px 0px 20px 5px
+      th:first-child, tbody tr td:first-child
+        padding-left: 15px
 
 @media (max-width: 768px)
   .back-office-table
-    border-radius: 0px
+    display: none
+    &.m-table
+      display: block
 
 @media (max-width: 650px)
   .back-office-table
@@ -285,6 +87,7 @@ h5
 
 @media (max-width: 480px)
   .back-office-table
+    padding: 14px 15px
     table
       tbody
         tr
