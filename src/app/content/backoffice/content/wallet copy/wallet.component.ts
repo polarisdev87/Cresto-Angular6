@@ -20,31 +20,10 @@ export class WalletComponent implements OnInit, OnDestroy {
 
   public assets$!: Observable<any>;
   public wallets$!: Observable<WalletData[]>;
-  public walletNames = {
-    btc: 'Bitcoin',
-    eth: 'Ethereum',
-    xmr: 'Monero',
-    cstt: 'Crest Token'
-  };
-
-  public depositBtn = {
-    name: 'Deposit',
-    class: 'emptyGreen'
-  };
-
-  public withdrawBtn = {
-    name: 'Withdrawal',
-    class: 'emptyRed'
-  };
-  public buyBtn = {
-    name: 'BUY',
-    class: 'redBig'
-  };
   public transactions$!: Observable<any>;
   public purchase$!: Observable<any>;
 
-  public showHistory = true;
-  public purchaseHistory = false;
+  public crestokenBuySellTable = true;
   public currentCoin;
   public withdrawalToched = false;
   public viewPort = innerWidth;
@@ -99,12 +78,17 @@ export class WalletComponent implements OnInit, OnDestroy {
     this.withdrawalToched = coin;
   }
 
+  public outputTable() {
+    this.crestokenBuySellTable = false;
+
+  }
+
   public onResize(event) {
     this.viewPort = event.target.innerWidth;
   }
 
   private _resetRouterState(): void {
-    this.showHistory = true;
+    this.crestokenBuySellTable = true;
     this.currentCoin = null;
     this.withdrawalToched = false;
   }

@@ -1,333 +1,95 @@
 @import "../../../../../assets/css/variables"
 
-.wallets-wrapper
-  width: 100%
-  padding-left: 35px
-  box-sizing: border-box
-
-
-.wallets-list-wrapper
+.titles
+  margin-top: 20px
   display: flex
-  width: 100%
-  flex-direction: row
-  align-items: center
-  justify-content: center
-  box-sizing: border-box
-  margin-bottom: 20px
-  .wallet
-    height: 160px
-    width: 24%
-    margin: 0 auto
-    max-width: 561px
-    padding: 30px 25px
-    border-radius: 15px
-    background: $widget-bg
-    box-sizing: border-box
-    box-shadow: $box-shadow-block
-    &:last-child
-      margin-right: 0
-    &:first-child
-      margin-left: 0
-    .wallet-item-wrapper
+  justify-content: space-around
+  h5
+    font-family: $lato-bold
+    font-size: 16px
+    color: #637576
+    margin: 0px 0px 15px 0px
+  .wallet-title
+    flex: 0 0 25%
+  .history-title
+    flex: 0 0 75%
+.wallets-wr
+  display: flex
+  justify-content: space-around
+  
+  .wallets
+    flex: 0 0 25%
+    display: flex
+    flex-direction: column
+    .wallet
+      background-color: #f7f8fa
+      padding: 20px 28px
       display: flex
-      flex-direction: row
-      align-items: center
-      justify-content: space-between
-      .left-col
-        display: inline-flex
-        flex-direction: column
-        width: 50%
-        padding-left: 40px
-        .wallet-name
-          font-family: $OpenSansSemiBold
-          font-size: 16px
-          color: $grey-light
-          margin-bottom: 21px
-          position: relative
-          &:before
-            content: ''
-            position: absolute
-            left: -40px
-            top: 5px
-            border: 4px solid #ccc
-            border-radius: 50%
-            width: 16px
-            height: 16px
-            box-sizing: border-box
-            display: inline-block
-          &.bitcoin
-            &:before
-              border-color: $backoffice-yellow
-          &.ethereum
-            &:before
-              border-color: #65c636
-          &.monero
-            &:before
-              border-color: #a76cf7
-          &.cstt
-            &:before
-              border-color: $accent-color
-        .wallet-date
-          display: flex
-          flex-direction: column
-          span
-            display: inline-flex
-            font-size: 14px
-            color: #8e9aa2
-            &:first-child
-              font-family: $OpenSansSemiBold
-            &:last-child
-              font-family: $OpenSansRegular
-      .right-col
-        display: inline-flex
-        flex-direction: column
-        align-items: center
-        .btn
-          width: 150px
-          min-width: 150px
-        .depositBtn-wrap
-          margin-bottom: 20px
-        .btn.emptyGreen
-          margin: 0
-
+      flex-direction: column
+      border: 1px solid #d6d6d6
+      border-left: none
+      border-top: none
+      box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+      &.btc
+        border-top-left-radius: 10px
       &:last-child
-        margin-right: 0
-  //.close.active
-  //  box-shadow: 0 0 15px 3px rgba(0, 231, 199, .3)
-  //  .wallet-item-wrapper
-  //    .left-col
-  //      .wallet-name::before
-  //        border-color: rgba(0, 231, 199, .3)
-  //        background: #00e7c7
-  //        box-shadow: 0 0 15px 3px rgba(0, 231, 199, .3)
-  .btc.wallet
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #daa126
-  .eth.wallet
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #65c636
-  .xmr.wallet
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #a76cf7
-  .cstt.wallet
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #00e7c7
+        border-bottom: none
+        border-bottom-left-radius: 10px
+      .currency
+        margin-bottom: 10px
+        font-family: $lato-bold
+        font-size: 14px
+        color: #7f8fa4
+        &:before
+          content: ''
+          position: absolute
+          top: 2px
+          left: -18px
+          width: 10px
+          height: 10px
+          border-radius: 50%
+          opacity: 0.2
+        &:after
+          content: ''
+          position: absolute
+          top: 4px
+          left: -16px
+          width: 6px
+          height: 6px
+          border-radius: 50%
+          opacity: 0.7
+        &.btc:before, &.btc:after
+          background-image: linear-gradient(267deg, #f7cf3e, #ff8e00)
+        &.eth:before, &.eth:after
+          background-image: linear-gradient(290deg, #828384, #2f3030)
+        &.xmr:before, &.xmr:after
+          background-image: linear-gradient(315deg, #ff6600, #f7bd9d 99%)
+        &.cstt:before, &.cstt:after
+          background-image: linear-gradient(to left, #62ba67, #006706)
+        &.usd:before, &.usd:after
+          background-image: linear-gradient(135deg, #03aa9c, #3fe5cc)
+      .balance
+        font-family: $lato-regular
+        font-size: 14px
+        color: #7f8fa4
+        margin-bottom: 10px
+      .buttons
+        display: flex
+        justify-content: space-between
+        .btn-wr
+          flex: 0 0 48%
+          button
+            width: 100% !important
 
-  .btc.close
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #daa126
-          background: #daa126
-          box-shadow: 0 0 15px 3px rgba(218, 161, 38, .3)
-
-  .eth.close
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #65c636
-          background: #65c636
-          box-shadow: 0 0 15px 3px rgba(101, 198, 54, .3)
-
-  .xmr.close
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #7d55b9
-          background: #7d55b9
-          box-shadow: 0 0 15px 3px rgba(167, 108, 247, .3)
-
-  .cstt.close
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          border-color: #00e7c7
-          background: #00e7c7
-          box-shadow: 0 0 15px 3px rgba(101, 198, 54, .3)
-
-
-  .crestokenBuySellTable.close
-    .wallet-item-wrapper
-      .left-col
-        .wallet-name::before
-          box-shadow: none
-
-  .close.cstt
-    box-shadow: 0 0 21px rgba(0, 235, 201, 0.71)
-  .active.close.btc
-    box-shadow: 0 0 15px 3px rgba(218, 161, 38, .3)
-  .active.close.eth
-    box-shadow: 0 0 15px 3px rgba(101, 198, 54, .3)
-  .active.close.xmr
-    box-shadow: 0 0 15px 3px rgba(167, 108, 247, .3)
-
-  .close.btc:hover,
-  .close.eth:hover,
-  .close.xmr:hover
-    cursor: pointer
-
-  .close
-    padding: 20px 40px
-    height: 100px
-    position: relative
-    .wallet-item-wrapper
-      .left-col
-        width: 100%
-        .wallet-name
-          position: initial
-          margin-bottom: 10px
-        .wallet-name::before
-          top: 50%
-          left: 40px
-          margin-top: -8px
-        .wallet-date
-          flex-direction: row
-          justify-content: space-between
-
-
-
-@media only screen and (max-width: 1600px)
-  .wallets-wrapper
-    display: grid
-    grid-template-columns: 396px 1fr
-    padding: 0
-    grid-gap: 20px
-
-    .wallets-list-wrapper
-      display: grid
-      grid-template-rows: repeat(3, 160px)
-      grid-gap: 20px
-      padding: 0
-      margin: 0
-      flex-direction: initial
-      align-items: initial
-      justify-content: initial
-
-      .wallet
-        width: 100%
-        margin: 0
-        padding: 28px 20px 20px 20px
-
-        .wallet-item-wrapper
-          align-items: inherit
-
-          .left-col
-            padding-left: 35px
-            padding-top: 7px
-
-            .wallet-name
-              margin-bottom: 13px
-
-            .wallet-name::before
-              left: -35px
-              top: 4px
-
-            .wallet-data
-              padding-left: 2px
-
-          .right-col
-            padding-right: 10px
-
-    .wallets-list-wrapper.close
-      grid-template-rows: repeat(3, 100px)
-      .wallet.close
-        .wallet-item-wrapper
-          .left-col
-            padding-left: 35px
-            padding-top: 0px
-            .wallet-name
-              margin-bottom: 8px
-            .wallet-name::before
-              left: 20px
-              top: 49px
-
-    .wallets-list-wrapper.close
-      grid-template-rows: repeat(2, 100px) 1fr
-
-@media only screen and (max-width: 1270px)
-  .wallets-wrapper
-    display: grid
-    grid-template-columns: 1fr
-    grid-gap: 40px
-
-    .wallets-list-wrapper
-      grid-template-columns: 396px 396px
-      grid-template-rows: auto
-
-    .wallets-list-wrapper.close
-      grid-template-rows: 100px 1fr
-
-
-@media only screen and (max-width: 968px)
-  .wallets-wrapper
-    padding-left: 80px
-    .wallets-list-wrapper
-      padding: 32px 16px
-      grid-template-columns: 396px
-
-      .wallet
-        padding: 28px 20px 32px 20px
-
-    .wallets-list-wrapper.close
-      grid-template-rows: repeat(2, 100px) 1fr
-
-@media only screen and (max-width: 800px)
-  .wallets-wrapper
-    padding-left: 0px
-
-@media only screen and (max-width: 430px)
-  .wallets-wrapper
-
-    .wallets-list-wrapper
-      grid-template-columns: 328px
-
-      .wallet
-
-        .wallet-item-wrapper
-          justify-content: inherit
-
-          .left-col
-            padding-top: 10px
-            padding-left: 21px
-            width: 158px
-
-            .wallet-name
-              font-size: 13px
-
-            .wallet-name::before
-              left: -25px
-              top: 1px
-
-
-            .wallet-date
-              span
-                font-size: 14px
-
-                &:first-child
-                  margin-bottom: 3px
-
-          .right-col
-            .btn
-              width: 120px
-              min-width: inherit
-              font-size: 12px
-
-    .wallets-list-wrapper.close
-      .wallet.close
-        .wallet-item-wrapper
-          .left-col
-            width: 100%
-
-//@media only screen and (max-width: 850px)
-//
-//
-//
-//@media only screen and (max-width: 500px)
+  .history
+    flex: 0 0 75%
+    display: flex
+    flex-direction: column
+    background-color: $white
+    border-top-right-radius: 10px
+    border-bottom-right-radius: 10px
+    box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+    .back-office-table
+      border-radius: 0px
+      box-shadow: none
+  

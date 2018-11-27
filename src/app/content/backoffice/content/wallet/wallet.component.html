@@ -1,4 +1,34 @@
-<div class="wallets-wrapper" (window:resize)="onResize($event)">
+<div class="titles">
+  <div class="wallet-title"><h5>Your Wallets</h5></div>
+  <div class="history-title"><h5>History</h5></div>
+</div>
+<div class="wallets-wr">
+  <div class="wallets">
+    <ng-template ngFor let-item [ngForOf]="wallets$ | async">
+      <div *ngIf="item.asset.code !== 'cstt'" class="wallet {{item.asset.code}}" [ngClass]="{active: currentCoin?.asset?.code === item.asset.code}">
+        <span class="currency {{item.asset.code}}">{{ walletNames[item.asset.code] }}</span>
+        <span class="balance">{{ item.balance }} {{ item.asset.code | uppercase }}</span>
+        <div class="buttons">
+          <div class="btn-wr">
+            <app-button [buttonState]="depositBtn"></app-button>
+          </div>
+          <div class="btn-wr">
+            <app-button [buttonState]="withdrawBtn"></app-button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="item.asset.code === 'cstt'" class="wallet {{item.asset.code}}" [ngClass]="{active: purchaseHistory}">
+        <span class="currency">{{ walletNames[item.asset.code] }}</span>
+        <span class="balance">{{ item.balance }} {{ item.asset.code | uppercase }}</span>
+        <app-button [routerLink]="['/buy']" [buttonState]="buyBtn"></app-button>
+      </div>
+    </ng-template>
+  </div>
+  <div class="history">
+    <app-transaction-list *ngIf="showHistory" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+  </div>
+</div>
+<!-- <div class="wallets-wrapper" (window:resize)="onResize($event)">
   <div class="wallets-list-wrapper"
        [ngClass]="{'close': !crestokenBuySellTable || currentCoin || withdrawalToched,
                    'active': currentCoin}"
@@ -24,20 +54,12 @@
 
     </ng-template>
 
-    <app-depositview *ngIf="currentCoin && viewPort <= 1600"
-                     [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
-    <app-withdrawal-founds *ngIf="withdrawalToched && viewPort <= 1600"
-                     [coin]="withdrawalToched"></app-withdrawal-founds>
+    <app-depositview *ngIf="currentCoin" [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
+    <app-withdrawal-founds *ngIf="withdrawalToched" [coin]="withdrawalToched"></app-withdrawal-founds>
   </div>
 
-
-  <app-depositview *ngIf="currentCoin && viewPort > 1600"
-                   [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
-  <app-withdrawal-founds *ngIf="withdrawalToched && viewPort > 1600"
-                   [coin]="withdrawalToched"></app-withdrawal-founds>
+  <app-transaction-list *ngIf="crestokenBuySellTable" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list> -->
   <!--<app-help></app-help>-->
-  <app-transaction-list *ngIf="crestokenBuySellTable"
-                        [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
-  <app-purchase-list *ngIf="!crestokenBuySellTable" [purchase]="purchase$ "></app-purchase-list>
+  <!-- <app-purchase-list *ngIf="!crestokenBuySellTable" [purchase]="purchase$ | async"></app-purchase-list> -->
   <!--<app-transaction-list [transactions]="purchase$ | async "></app-transaction-list>-->
-</div>
+<!-- </div> -->

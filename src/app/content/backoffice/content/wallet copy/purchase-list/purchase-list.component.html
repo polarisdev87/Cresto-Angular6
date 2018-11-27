@@ -1,18 +1,19 @@
 <div class="transaction-table-wrapper">
+  <h2>History</h2>
   <div class="transaction-tabletransaction-table">
     <app-backoffice-table
-      [dashboardTableHead]="transactionsHistoryHead"
-      [rounds]="transactions"
+      [dashboardTableHead]="purchaseHead"
+      [rounds]="purchase | async"
       [columns]="[
         {value: 'created_at'},
-        {value: 'currency'},
+        {value: 'coin'},
         {value: 'amount'},
-        {value: 'transaction_type'},
-        {value: 'status'},
-        {value: 'linkHash'}
+        {value: 'unit_price'},
+        {value: 'paidWith'},
+        {value: 'paid_amount'}
       ]"
       [scroll]="false"
-      [emptyMassege]="'transactions'"
+      [emptyMassege]="'purchases'"
 
     ></app-backoffice-table>
 
