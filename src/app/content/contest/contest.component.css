@@ -71,10 +71,73 @@ ul#countdown li p{color:#FFF; text-transform:uppercase; font-size:14px; padding:
 
 footer{background:#000; color:#FFF; padding:30px 15px;}
 
-.tokens-sold {
+.status-wr {
+  text-align: center;
   padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
 }
-
+.status-wr .progress-wr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 9px;
+    background-color: #2c2f39;
+    border-radius: 17px;
+    width: 150%;
+    max-width: 537px;
+    position: relative;
+}
+.status-wr .progress-wr .active {
+  height: 6px;
+  border-radius: 7px;
+  background-image: linear-gradient(to bottom, #ffc80a, #f7ba1c);
+  position: relative;
+}
+.status-wr .progress-wr .active .oval {
+    position: absolute;
+    padding: 7px;
+    top: -13px;
+    right: -16px;
+    border: 1px solid #f7ba1c;
+    border-radius: 50%;
+}
+.status-wr .progress-wr .active .oval .measure {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #ffc80a;
+  border-radius: 50%;
+}
+.status-wr .progress-wr .inactive {
+  height: 2px;
+  background-color: #f7ba1c;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.status-wr .progress-wr .percent {
+  position: absolute;
+  color: #fff;
+  height: auto;
+  top: 50%;
+  right: -30px;
+  transform: translate(0%, -50%);
+}
+.status-wr h2.token-sold {
+    color: #fff;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 25px !important;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.status-wr .token-sold span {
+  color: #00af56;
+}
 
 @media screen and (min-width:100px) and (max-width:767px){
 	
