@@ -71,6 +71,10 @@ ul#countdown li p{color:#FFF; text-transform:uppercase; font-size:14px; padding:
 
 footer{background:#000; color:#FFF; padding:30px 15px;}
 
+.tokens-sold {
+  padding-bottom: 70px;
+}
+
 
 @media screen and (min-width:100px) and (max-width:767px){
 	

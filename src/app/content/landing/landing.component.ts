@@ -26,7 +26,6 @@ export class LandingComponent implements OnInit {
     // Determine if visiting /pre-ico page
     const url = this._router.url;
     const isPreico = url.match('/pre-ico') ? true : false;
-    const isICO = url.match('/ico') ? true : false;
 
     if (referralHash) {
       this._localStorageService.setItem('referralHash', referralHash);
@@ -104,12 +103,12 @@ export class LandingComponent implements OnInit {
       }
     }
 
-    if (isICO) {
-      const timestamp = (new Date()).valueOf();
-      if (timestamp >= 1542614400000 && timestamp <= 1543219200000) {
-        this._localStorageService.setItem('promoUser', 1);
-      }
-    }
+    // if (isICO) {
+    //   const timestamp = (new Date()).valueOf();
+    //   if (timestamp >= 1542614400000 && timestamp <= 1543219200000) {
+    //     this._localStorageService.setItem('promoUser', 1);
+    //   }
+    // }
 
     // Load CSS/JS libraries
     const bootstrap = document.createElement('link');
