@@ -9,6 +9,9 @@ import { LocalStorageService } from '../../shared/services/localStorage.service'
 })
 export class ContestComponent implements OnInit {
 
+  public tokensCounter: number = 0;
+  public percentCounter: number = 0;
+  public usersCounter: number = 0;
   public loading: Boolean = true;
   public winners: any[] = [];
   public candidates: any[] = [];
@@ -45,6 +48,13 @@ export class ContestComponent implements OnInit {
   ) { }
 
   public ngOnInit() {
+    // Get ICO Round data
+    this._http.nonAuthorizedRequest('/auth/total', {}, 'GET').subscribe((data: any) => {
+      this.tokensCounter = Math.floor(data.tokens_sold);
+      this.percentCounter = Math.floor(this.tokensCounter * 100 / 1000000);
+      this.usersCounter = data.total_users;
+    });
+
     // Get contest data
     this._http.nonAuthorizedRequest('/auth/contest', {}, 'GET').subscribe((data: any) => {
       this.winners = data.winners;
