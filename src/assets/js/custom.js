@@ -7,6 +7,7 @@ $(document).ready(function () {
 	// 	countdown: true,
   //   autoStart: false
   // });
+  /*
   var countDownDate = 1543341600000;
   // Update the count down every 1 second
   var timer = setInterval(function() {
@@ -46,7 +47,7 @@ $(document).ready(function () {
     $('.ico-countdown .minutes').html(minutes);
     $('.ico-countdown .seconds').html(seconds);
   }, 1000);
-
+  */
   /// Cache selectors
   let lastId,
     topMenu = $(".main-nav");
