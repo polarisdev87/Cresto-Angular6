@@ -51,7 +51,7 @@ export class ContestComponent implements OnInit {
     // Get ICO Round data
     this._http.nonAuthorizedRequest('/auth/total', {}, 'GET').subscribe((data: any) => {
       this.tokensCounter = Math.floor(data.tokens_sold);
-      this.percentCounter = Math.floor(this.tokensCounter * 100 / 1000000);
+      this.percentCounter = Math.floor(this.tokensCounter * 100 / 800000);
       this.usersCounter = data.total_users;
     });
 
