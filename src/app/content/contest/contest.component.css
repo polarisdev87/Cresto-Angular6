@@ -84,15 +84,15 @@ footer{background:#000; color:#FFF; padding:30px 15px;}
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    padding: 9px;
+    padding: 15px;
     background-color: #2c2f39;
-    border-radius: 17px;
+    border-radius: 50px;
     width: 150%;
     max-width: 537px;
     position: relative;
 }
 .status-wr .progress-wr .active {
-  height: 6px;
+  height: 10px;
   border-radius: 7px;
   background-image: linear-gradient(to bottom, #ffc80a, #f7ba1c);
   position: relative;
@@ -100,15 +100,15 @@ footer{background:#000; color:#FFF; padding:30px 15px;}
 .status-wr .progress-wr .active .oval {
     position: absolute;
     padding: 7px;
-    top: -13px;
-    right: -16px;
+    top: -14px;
+    right: -21px;
     border: 1px solid #f7ba1c;
     border-radius: 50%;
 }
 .status-wr .progress-wr .active .oval .measure {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   background-color: #ffc80a;
   border-radius: 50%;
 }
@@ -119,6 +119,8 @@ footer{background:#000; color:#FFF; padding:30px 15px;}
   border-bottom-left-radius: 0px;
 }
 .status-wr .progress-wr .percent {
+  font-size: 24px;
+  font-weight: bold;
   position: absolute;
   color: #fff;
   height: auto;
