@@ -125,7 +125,7 @@ footer{background:#000; color:#FFF; padding:30px 15px;}
   color: #fff;
   height: auto;
   top: 50%;
-  right: -30px;
+  left: 102%;
   transform: translate(0%, -50%);
 }
 .status-wr h2.token-sold {
