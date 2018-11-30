@@ -13,7 +13,7 @@
         </tr>
         </tbody>
       </ng-scrollbar>
-      <!-- Dashboard table view always use scroll! ,hence this view below never called for Dashboard-->
+
       <tbody *ngIf="!scroll">
       <tr *ngFor="let round of rounds, let ind=index " [class]="(round.stage || round.status || round.coin+'tr' | lowercase) + ' ' + extraClass">
         <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td>

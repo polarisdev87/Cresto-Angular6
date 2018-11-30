@@ -43,7 +43,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   public transactions$!: Observable<any>;
   public purchase$!: Observable<any>;
 
-  public showHistory = true;
+  public historyType = 'transaction';
   public purchaseHistory = false;
   public currentCoin;
   public withdrawalToched = false;
@@ -86,10 +86,13 @@ export class WalletComponent implements OnInit, OnDestroy {
   }
 
   public setCoin(coin) {
-    if (!this.currentCoin) {
-      return;
-    }
     this.currentCoin = coin;
+    this.historyType = 'transaction';
+  }
+
+  public setToken() {
+    this.currentCoin = null;
+    this.historyType = 'purchase';
   }
 
   public withdrawalTochedActive(coin) {
@@ -104,7 +107,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   }
 
   private _resetRouterState(): void {
-    this.showHistory = true;
+    this.historyType = 'transaction';
     this.currentCoin = null;
     this.withdrawalToched = false;
   }

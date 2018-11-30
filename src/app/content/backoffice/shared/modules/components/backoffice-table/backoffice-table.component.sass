@@ -13,7 +13,7 @@
     width: 100%
     border-collapse: collapse
     th
-      font-size: 12px
+      font-size: 13px
       color: #9fa9ba
       height: 56px
       background-color: #f5f6f8
@@ -22,8 +22,6 @@
     td,
     th
       text-align: left
-      &:last-child
-        text-align: center
     tbody
       font-size: 14px
       tr
@@ -36,22 +34,39 @@
           cursor: pointer
           &:first-child
             padding-left: 25px
+        &.dashboard:nth-child(2)
+          td:last-child
+            span
+              display: none
         &.dashboard
           td:last-child
             span
               font-size: 11px
               padding: 7px 17px
               border-radius: 15px
+              border: 1px solid #7f8fa4
+        &.dashboard.ongoing
+          td:last-child
+            span
+              border-color: #62ba67
+              color: #62ba67
         &.dashboard.next
           td:last-child
             span
-              border: 1px solid #44aff2
+              border-color: #44aff2
               color: #44aff2
         &.dashboard.pending
           td:last-child
             span
-              border: 1px solid #f8ad45
+              border-color: #f8ad45
               color: #f8ad45
+
+        &.confirmed td:last-child span
+          color: #62ba67
+        &.rejected td:last-child span
+          color: #fe4356
+        &.processed td:last-child span
+          color: #f8ad45
 h5
   font-family: $poppins-light
   font-size: 18px

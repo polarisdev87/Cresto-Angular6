@@ -2,10 +2,12 @@
   <div class="wallet-title"><h5>Your Wallets</h5></div>
   <div class="history-title"><h5>History</h5></div>
 </div>
-<div class="wallets-wr">
+<div class="wallets-wr" *ngIf="(wallets$ | async)?.length">
   <div class="wallets">
     <ng-template ngFor let-item [ngForOf]="wallets$ | async">
-      <div *ngIf="item.asset.code !== 'cstt'" class="wallet {{item.asset.code}}" [ngClass]="{active: currentCoin?.asset?.code === item.asset.code}">
+      <div *ngIf="item.asset.code !== 'cstt'" class="wallet {{item.asset.code}}" 
+      (click)="setCoin(item)"
+      [ngClass]="{active: currentCoin?.asset?.code === item.asset.code}">
         <span class="currency {{item.asset.code}}">{{ walletNames[item.asset.code] }}</span>
         <span class="balance">{{ item.balance }} {{ item.asset.code | uppercase }}</span>
         <div class="buttons">
@@ -17,49 +19,17 @@
           </div>
         </div>
       </div>
-      <div *ngIf="item.asset.code === 'cstt'" class="wallet {{item.asset.code}}" [ngClass]="{active: purchaseHistory}">
-        <span class="currency">{{ walletNames[item.asset.code] }}</span>
+      <div *ngIf="item.asset.code === 'cstt'" class="wallet {{item.asset.code}}" 
+      (click)="setToken()"
+      [ngClass]="{active: historyType==='purchase'}">
+        <span class="currency cstt">{{ walletNames[item.asset.code] }}</span>
         <span class="balance">{{ item.balance }} {{ item.asset.code | uppercase }}</span>
         <app-button [routerLink]="['/buy']" [buttonState]="buyBtn"></app-button>
       </div>
     </ng-template>
   </div>
   <div class="history">
-    <app-transaction-list *ngIf="showHistory" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+    <app-transaction-list *ngIf="historyType==='transaction'" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list>
+    <app-purchase-list *ngIf="historyType==='purchase'" [purchase]="purchase$ | async"></app-purchase-list>
   </div>
 </div>
-<!-- <div class="wallets-wrapper" (window:resize)="onResize($event)">
-  <div class="wallets-list-wrapper"
-       [ngClass]="{'close': !crestokenBuySellTable || currentCoin || withdrawalToched,
-                   'active': currentCoin}"
-  >
-
-    <ng-template ngFor let-item [ngForOf]="wallets$ | async">
-      <div [ngClass]=" {close: currentCoin || withdrawalToched || !crestokenBuySellTable ,
-                        active: currentCoin?.asset?.code === item.asset.code || withdrawalToched?.asset?.code === item.asset.code,
-                        crestokenBuySellTable: !crestokenBuySellTable } " class="wallet {{item.asset.code}} "
-           *ngIf="item.asset.code !== 'cstt'">
-        <app-other-coin-thumbnail [item]="item" [fullMode]="!currentCoin && !withdrawalToched "
-                                  [crestokenBuySellTableBoolean]="crestokenBuySellTable"
-                                  (setWithdrawal)="withdrawalToched = $event" (setDeposit)="currentCoin = $event"
-                                  (click)="setCoin(item)"
-                                  (click)="withdrawalTochedActive(item)"></app-other-coin-thumbnail>
-
-      </div>
-      <div class="wallet {{item.asset.code}} " [ngClass]="{close: !crestokenBuySellTable }" (click)="outputTable()"
-           *ngIf="item.asset.code === 'cstt'  && !currentCoin && !withdrawalToched">
-        <app-own-coin-thumbnail [item]="item"
-                                [crestokenBuySellTableBoolean]="crestokenBuySellTable"></app-own-coin-thumbnail>
-      </div>
-
-    </ng-template>
-
-    <app-depositview *ngIf="currentCoin" [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
-    <app-withdrawal-founds *ngIf="withdrawalToched" [coin]="withdrawalToched"></app-withdrawal-founds>
-  </div>
-
-  <app-transaction-list *ngIf="crestokenBuySellTable" [transactions]="transactions$ | async | transactionsPipe: currentCoin"></app-transaction-list> -->
-  <!--<app-help></app-help>-->
-  <!-- <app-purchase-list *ngIf="!crestokenBuySellTable" [purchase]="purchase$ | async"></app-purchase-list> -->
-  <!--<app-transaction-list [transactions]="purchase$ | async "></app-transaction-list>-->
-<!-- </div> -->
