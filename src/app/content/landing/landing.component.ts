@@ -20,8 +20,6 @@ export class LandingComponent implements OnInit {
   public ngOnInit() {
     const referralHash: string = this._activateroute.snapshot.queryParams['ref'];
     const referralMedia: string = this._activateroute.snapshot.queryParams['subid'];
-    const clickId: string = this._activateroute.snapshot.queryParams['click_id'];
-    const esubId: string = this._activateroute.snapshot.queryParams['esub'];
 
     // Determine if visiting /pre-ico page
     const url = this._router.url;
@@ -37,20 +35,7 @@ export class LandingComponent implements OnInit {
       this._localStorageService.setItem('referralMedia', referralMedia);
     }
 
-    if (clickId) {
-      this._localStorageService.setItem('clickId', clickId);
-      this._localStorageService.setItem('signup_callback', 1);
-    }
-
-    if (esubId) {
-      this._localStorageService.setItem('esubId', esubId);
-    }
-
     if (isPreico) {
-      const transactionId: string = this._activateroute.snapshot.queryParams['transaction_id'];
-      if (transactionId) {
-        this._localStorageService.setItem('transId', transactionId);
-      }
       const pixelScript = document.createElement('script');
       pixelScript.type = 'text/javascript';
       pixelScript.text = `
@@ -67,6 +52,17 @@ export class LandingComponent implements OnInit {
         })(document, '23973');
       `;
       document.body.appendChild(pixelScript);
+
+      // Tracking code for HubSpot
+      if (referralHash === 'awl49h3' && referralMedia === 'rema-tg') {
+        const hubspotScript = document.createElement('script');
+        hubspotScript.id = 'hs-script-loader';
+        hubspotScript.type = 'text/javascript';
+        hubspotScript.async = true;
+        hubspotScript.defer = true;
+        hubspotScript.src = '//js.hs-scripts.com/5195569.js';
+        document.body.appendChild(hubspotScript);
+      }
 
       // Pixel for bitcoinben2020
       if (referralHash === '8io080ru') {
