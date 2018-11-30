@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from '../../shared/services/localStorage.service';
 import { Store } from '@ngrx/store';
 import { AclRequest } from './store/actions/acl.actions';
 import { AssetsRequest } from './store/actions/assets.actions';
@@ -15,10 +14,8 @@ import { GetCurrentUser } from './store/actions/user.actions';
 })
 export class BackofficeComponent implements OnInit {
   public isOpen!: boolean;
-  public signupCallback: boolean = false;
   public constructor(
-    private _store: Store<IRootState>,
-    private _localStorageService: LocalStorageService
+    private _store: Store<IRootState>
   ) {
   }
 
@@ -36,11 +33,6 @@ export class BackofficeComponent implements OnInit {
         }
         this._store.dispatch(new WalletRequest(id));
       });
-
-    this.signupCallback = this._localStorageService.getItem('signup_callback') ? true : false;
-    if (this.signupCallback) {
-      this._localStorageService.removeItem('signup_callback');
-    }
   }
 
   public changeSidebar() {
