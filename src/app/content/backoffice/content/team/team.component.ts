@@ -45,7 +45,7 @@ export class TeamComponent implements OnInit, OnDestroy {
 
     this.userSubscription = this._store.select('backoffice', 'user', 'referralHash')
       .subscribe((referralHash: string) => {
-        this.referralLink1 = `${environment.domain}/pre-ico?ref=${referralHash}`;
+        this.referralLink1 = `${environment.domain}/ico?ref=${referralHash}`;
         this.referralLink2 = `${environment.domain}/special-video?ref=${referralHash}`;
       });
   }

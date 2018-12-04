@@ -23,6 +23,10 @@ export const routes = [
     loadChildren: './content/verification-notice/verification-notice.module#VerificationNoticeModule',
   },
   {
+    path: 'affiliates',
+    loadChildren: './content/affiliates/affiliates.module#AffiliatesModule'
+  },
+  {
     path: 'login',
     loadChildren: './content/login/login.module#LoginModule',
     canLoad: [AuthGuardService]
