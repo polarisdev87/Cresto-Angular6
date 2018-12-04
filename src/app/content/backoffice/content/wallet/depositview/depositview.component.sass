@@ -6,150 +6,76 @@
     justify-content: center
     align-items: center
     border-radius: 10px
-    background-color: $bg-sidebar
+    background-color: transparent
     .deposit-content
         text-align: center
         .pay-atention-wrapper
             .pay-attention
-                margin-top: 70px
-                margin-bottom: 10px
-                font-family: $OpenSansSemiBold
-                color: $grey-light
-                font-size: 16px
+                margin-top: 40px
+                font-family: $lato-regular
+                color: #637576
+                font-size: 24px
             .deposit-currency
                 display: flex
                 align-items: center
                 justify-content: center
-                margin-bottom: 16px
-                color: $backoffice-text-color
-                font-family: $OpenSansRegular
-                font-size: 24px
-                .icon-bitcoin,
-                .icon-ether,
-                .icon-monero
-                    font-size: 44px
-                    color: $bitcoin-color
-                    display: inline-flex
-                    margin-right: 20px
-                .icon-ether
-                  color: #65c636
-                .icon-monero
-                  color: #a76cf7
+                font-family: $lato-regular
+                padding: 30px 0px
+                img
+                    width: 22px
+                    margin-right: 10px
                 .sidebar-text
-                    display: inline-flex
+                    font-size: 14px
+                    color: #7f8fa4
             .deposit-attention
-                margin-bottom: 7px
-                color: $backoffice-text-color
-                font-family: $OpenSansSemiBold
+                margin-bottom: 40px
+                color: #637576
+                line-height: 1.69
+                font-family: $lato-regular
                 font-size: 16px
-            .deposit-no-mistake
-                margin-bottom: 42px
-                color: $backoffice-text-color
-                font-family: $OpenSansRegular
-                font-size: 16px
+                span
+                    color: #f03e5a
             .deposit-confirm
-                margin-bottom: 86px
-                font-size: 16px
+                margin-bottom: 40px
                 button
-                    width: 240px
-                    height: 50px
-                    font-family: $OpenSansSemiBold
-                    font-size: 16px
-                    background-color: $button-color-red
-                    border-radius: 50px
-                    color: $buttton-color-white
-                    border: none
-                    box-shadow: 0 0 5px 5px $button-red-shadow
+                    width: 173px
+                    height: 40px
+                    border-radius: 4px
+                    background-color: #62ba67
+                    font-family: $lato-regular
+                    font-size: 14px
+                    font-weight: 500
+                    color: $white
+                    cursor: pointer
 
         .deposit-currency-wrapper
             .pay-attention
-                margin-top: 75px
-                margin-bottom: 25px
-                font-family: $OpenSansSemiBold
-                color: $grey-light
+                margin-top: 40px
+                font-family: $lato-regular
+                color: #637576
                 font-size: 24px
             .deposit-currency
-                display: flex
-                align-items: center
-                justify-content: center
-                margin-bottom: 26px
-                color: $backoffice-text-color
-                font-family: $OpenSansRegular
-                font-size: 16px
+                font-family: $lato-regular
+                padding: 30px 0px
+                font-size: 14px
+                color: #7f8fa4
+                line-height: 1.69
             .deposit-attention
-                margin-bottom: 18px
-                color: $grey-light
-                font-family: $OpenSansSemiBold
-                font-size: 12px
+                margin-bottom: 40px
+                color: #f03e5a
+                line-height: 1.69
+                font-family: $lato-regular
+                font-size: 16px
             form
                 input
-                    width: 410px
+                    width: 350px
                     height: 30px
                     border: none
-                    font-family: $OpenSansRegular
+                    font-family: $lato-regular
                     background-color: $bg-back-office
                     outline: none
                     font-size: 16px
-                    color: $comingsoon-grey
+                    color: #637576
                     text-align: center
             button
-                margin: 46px 0 83px 0
-        .modal-adress-copy
-            display: none
-            width: 505px
-            height: 200px
-            background-color: $bg-back-office
-            border-radius: 10px
-            box-shadow: 0 0 5px 5px $button-red-shadow
-            .circle-okay
-                width: 50px
-                height: 50px
-
-                background-color: $bg-back-office
-                box-shadow: 0 0 5px 5px $button-red-shadow
-                border-radius: 100%
-
-@media only screen and (max-width: 1600px)
-  .deposit-wrapper
-    .deposit-content
-      .pay-atention-wrapper,
-      .deposit-currency-wrapper
-        padding: 0 20px
-
-        .deposit-currency,
-        .deposit-no-mistake
-          font-size: 14px
-
-        .deposit-currency
-          margin-bottom: 20px
-
-        .deposit-attention
-          margin-bottom: 12px
-          font-size: 12px
-
-        .pay-attention
-          margin-top: 28px
-          margin-bottom: 6px
-          font-size: 12px
-
-        form
-          input
-            width: 100%
-            font-size: 14px
-
-        .button-copy-adress
-          button
-            margin: 32px 0 38px
-
-
-      .pay-atention-wrapper
-        .deposit-no-mistake
-          margin-bottom: 44px
-
-        .deposit-confirm
-          margin-bottom: 38px
-
-          button
-            width: 140px
-            height: 40px
-            font-size: 14px
+                margin: 40px 0px

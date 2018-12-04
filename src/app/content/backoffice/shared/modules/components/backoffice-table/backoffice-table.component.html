@@ -36,7 +36,12 @@
       <th>Amount</th>
       <th>Status</th>
     </tr>
-    <tr *ngIf="emptyMassege!='ICO Round' && emptyMassege!='transactions'">
+    <tr *ngIf="emptyMassege=='purchases'">
+      <th>Amount</th>
+      <th>Paid with</th>
+      <th>Total paid</th>
+    </tr>
+    <tr *ngIf="emptyMassege!='ICO Round' && emptyMassege!='transactions' && emptyMassege!='purchases'">
       <th *ngFor="let i of dashboardTableHead, let ind=index ">{{i}}</th>
     </tr>
     </thead>
@@ -68,7 +73,15 @@
         <!-- <td [class]="item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td> -->
       </tr>
     </tbody>
-    <tbody *ngIf="!scroll && (emptyMassege=='referrals' || emptyMassege=='purchases')">
+    <tbody *ngIf="!scroll && emptyMassege=='purchases'">
+      <tr *ngFor="let round of rounds, let ind=index " [class]="(round.stage || round.status || round.coin+'tr' | lowercase) + ' ' + extraClass">
+        <td><span>{{round['amount']}}</span></td>
+        <td ><span>{{round['paidWith']}}</span></td>
+        <td><span>{{round['paid_amount']}}</span></td>
+        <!-- <td [class]="item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td> -->
+      </tr>
+    </tbody>
+    <tbody *ngIf="!scroll && emptyMassege=='referrals'">
       <tr *ngFor="let round of rounds, let ind=index " [class]="(round.stage || round.status || round.coin+'tr' | lowercase) + ' ' + extraClass">
         <td [class]="item.type || item.value+1 " *ngFor="let item of round | row:columns"><span [innerHTML]='sanitazedHtml(item.value)'></span></td>
       </tr>

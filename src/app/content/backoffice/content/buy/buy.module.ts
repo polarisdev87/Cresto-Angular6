@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BuyComponent } from './buy.component';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BuyTokenFormComponent } from './buy-token-form/buy-token-form.component';
 import { DepositPopupComponent } from './deposit-popup/deposit-popup.component';
 import { BuyTokenSelectComponent } from './buy-token-form/buy-token-select/buy-token-select.component';
@@ -16,6 +17,8 @@ import { reducers } from './store/reducers';
 @NgModule({
   imports: [
     CommonModule,
+    NgSelectModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: '', component: BuyComponent }

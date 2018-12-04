@@ -12,10 +12,10 @@
         <span class="balance">{{ item.balance }} {{ item.asset.code | uppercase }}</span>
         <div class="buttons">
           <div class="btn-wr">
-            <app-button [buttonState]="depositBtn"></app-button>
+            <app-button [buttonState]="depositBtn" (click)="setCoin(item);openModal('deposit');"></app-button>
           </div>
           <div class="btn-wr">
-            <app-button [buttonState]="withdrawBtn"></app-button>
+            <app-button [buttonState]="withdrawBtn" (click)="setCoin(item);openModal('withdraw');"></app-button>
           </div>
         </div>
       </div>
@@ -33,3 +33,19 @@
     <app-purchase-list *ngIf="historyType==='purchase'" [purchase]="purchase$ | async"></app-purchase-list>
   </div>
 </div>
+
+<app-modal id="deposit">
+  <div class="modal">
+      <div class="modal-body">
+        <app-depositview *ngIf="currentCoin" [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
+      </div>
+  </div>
+</app-modal>
+
+<app-modal id="withdraw">
+  <div class="modal">
+      <div class="modal-body">
+        <app-withdrawal-founds *ngIf="currentCoin" [coin]="wallets$ | async | coin:currentCoin"></app-withdrawal-founds>
+      </div>
+  </div>
+</app-modal>

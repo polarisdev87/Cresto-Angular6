@@ -1,163 +1,23 @@
 @import "../../backoffice.component"
 .buy-wr
-  display: flex
-  flex-wrap: nowrap
-  .buy-cell
-    width: 34%
-    padding-right: 0px
-    padding-left: 35px
-    &:last-child
-      width: 66%
-      padding-right: 0
-      padding-top: 90px
-      padding-left: 0
-    &.right    
-      app-timer
-        display: none
-  .buy-content
-    max-width: 480px
-    .arrow
-      display: none
-  .text-wr
-    padding-left: 30px
-    .make-deposit-title
-      font-family: $OpenSansSemiBold
-      font-size: 24px
-      color: #c0c9d1
-      margin-bottom: 10px
-    p
-      font-family: $OpenSansRegular
-      font-size: 16px
-      color: #737d84
-
-.make-deposit-wr
-  display: flex
-  flex-direction: row
-  justify-content: flex-start
-  align-items: center
-  margin-left: 170px
-  margin-bottom: 85px
-  .btn-wr
+  margin-top: 20px
+  h5.text
+    margin-top: 20px
+    margin-bottom: 15px
+    font-family: $lato-bold
+    font-size: 16px
+    color: #637576
+  .inner
     display: flex
-
-@media screen and (max-width: 1560px)
-  .buy-wr
-    .buy-cell
-      max-width: 400px
-      padding-left: 0px
-      &:last-child
-        max-width: 768px
-        padding-top: 0px
-        margin-top: 0px
-        margin-left: 80px
-        .make-deposit-wr
-          margin-left: 0px
-          margin-top: 40px
-          margin-bottom: 0px
-    .text-wr
-      padding-left: 18px
-      .make-deposit-title
-        margin-bottom: 10px
-        font-size: 21px
-
-@media screen and (max-width: 1190px)
-  .buy-wr
-    margin-left: 100px
-    max-width: 768px
-    display: flex
-    flex-direction: column-reverse
+    justify-content: space-between
     flex-wrap: wrap
-    margin-bottom: 35px
-    .buy-cell
-      width: 50%
-      &:last-child
-        width: 100%
-        margin-left: 0px
-      &.left
-        app-timer
-          display: none
-      &.right
-        app-timer
-          display: block
-    .text-wr
-      .make-deposit-title
-        margin-top: 20px
-        margin-bottom: 10px
-        font-size: 21px
-
-  .make-deposit-wr
-    margin-left: 50px
-    margin-bottom: 0px
-@media screen and (max-width: 800px)
-  .buy-wr
-    margin-left: 0px
-    .buy-cell
-      max-width: 400px
-      width: 100%;
-      padding-left: 0px
-      &:last-child
-        max-width: 768px
-        padding-top: 0px
-        margin-top: 50px
-        margin-left: 0px
-        .make-deposit-wr
-          margin-left: 60px
-          margin-top: 40px
-          margin-bottom: 0px
-        app-timer
-          text-align: center
-    .text-wr
-      .make-deposit-title
-        margin-bottom: 10px
-        font-size: 21px
-@media screen and (max-width: 580px)
-  .buy-wr
-    .buy-cell
-      padding: 0px 15px
-      &:last-child
-        display: flex
-        flex-direction: column
-        justify-content: center
-        margin-left: 0px
-        .make-deposit-wr
-          margin-left: 0px
-          margin-top: 0px
-          display: flex
-          flex-direction: column-reverse
-          justify-content: center
-      .arrow
-        display: inline
-        width: 0px
-        height: 0px
-        border: 10px solid transparent
-        border-bottom-color: #00ebc9
-        border-radius: 9px
-        box-shadow: 0 0 0px 0px #00ebc9
-        margin-left: 0px
-        padding: 0
-        float: left
-        font-family: $OpenSansLight
-        position: relative
-        left: calc(44%)
-        bottom: 20px
-        &:before
-          display: block
-          content: ""
-          width: 0px
-          height: 0px
-          border: 8px solid transparent
-          border-bottom-color: #191f27
-          display: inline-block
-          -webkit-transform: translate(-8px, -6px)
-    .text-wr
+    .primary
+      flex: 0 0 55%
       display: flex
       flex-direction: column
-      align-items: center
-      padding-left: 0px
-      margin: 0px 45px 20px 45px
-      text-align: center
-      .make-deposit-title
-        margin-top: 0px
-        margin-bottom: 10px
-        padding: 0 auto
-        font-size: 21px
+      justify-content: flex-start
+    .secondary
+      flex: 0 0 44%
+      display: flex
+      flex-direction: column
+      justify-content: flex-start

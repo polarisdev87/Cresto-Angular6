@@ -22,6 +22,7 @@
     "@angular/platform-browser": "6.0.9",
     "@angular/platform-browser-dynamic": "6.0.9",
     "@angular/router": "6.0.9",
+    "@ng-select/ng-select": "^2.13.0",
     "@ngrx/effects": "6.0.1",
     "@ngrx/entity": "6.0.1",
     "@ngrx/router-store": "6.0.1",

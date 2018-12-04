@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
+import { Component, forwardRef, OnInit, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { IRootState } from '../../../../../../store/reducers';
@@ -11,6 +11,7 @@ type Cb = (_: number) => void;
   selector: 'app-buy-token-select',
   templateUrl: './buy-token-select.component.html',
   styleUrls: ['./buy-token-select.component.sass'],
+  encapsulation: ViewEncapsulation.None,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -21,9 +22,8 @@ type Cb = (_: number) => void;
 })
 export class BuyTokenSelectComponent implements ControlValueAccessor, OnInit {
   public currentCoin: number = 1;
+  public currentCoinObj;
   public wallets$!: Observable<WalletData[]>;
-
-  public coinCur = 1;
 
   private _onChange!: Cb;
 
@@ -35,12 +35,20 @@ export class BuyTokenSelectComponent implements ControlValueAccessor, OnInit {
 
   public ngOnInit() {
     this.wallets$ = this._store.select(getWalletsDatas);
+    this.wallets$.subscribe((wallets) => {
+      wallets.forEach((wallet: any) => {
+        if (wallet.asset.id === this.currentCoin) {
+          this.currentCoinObj = wallet;
+          return;
+        }
+      });
+    });
   }
 
 
-  public selectCoin(coin: number) {
-    this.currentCoin = coin;
-    this._onChange(coin);
+  public selectCoin($event) {
+    this.currentCoin = $event.asset.id;
+    this._onChange(this.currentCoin);
   }
 
   public writeValue(coin: number): void {

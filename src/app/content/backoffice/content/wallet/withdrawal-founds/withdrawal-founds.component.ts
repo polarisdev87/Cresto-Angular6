@@ -26,7 +26,7 @@ export class WithdrawalFoundsComponent implements OnInit {
     }
   }
 
-  public buttonStateBuy = { name: 'Send', class: 'redBig' };
+  public buttonStateBuy = { name: 'Confirm', class: '' };
   public withdrawalForm: FormGroup = this._fb.group({
     address: ['', Validators.required],
     amount: [1, [Validators.required, Validators.min(0)]],

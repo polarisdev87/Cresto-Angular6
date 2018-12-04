@@ -9,6 +9,7 @@ import { getWalletsData } from '../../store/selectors/assets.selector';
 import { PurchaseRequest } from './store/actions/purchase.action';
 import { getWalletsListPurchase } from './store/selectors/purchase.selector';
 import { getWalletsListTransactions } from './store/selectors/transaction.selector';
+import { ModalService } from '../../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-wallet',
@@ -46,14 +47,14 @@ export class WalletComponent implements OnInit, OnDestroy {
   public historyType = 'transaction';
   public purchaseHistory = false;
   public currentCoin;
-  public withdrawalToched = false;
   public viewPort = innerWidth;
 
   private _routerSubscription!: Subscription;
 
   public constructor(
     private _store: Store<IRootState>,
-    private _router: Router
+    private _router: Router,
+    private _modalService: ModalService
   ) {
   }
 
@@ -95,11 +96,12 @@ export class WalletComponent implements OnInit, OnDestroy {
     this.historyType = 'purchase';
   }
 
-  public withdrawalTochedActive(coin) {
-    if (!this.withdrawalToched) {
-      return;
-    }
-    this.withdrawalToched = coin;
+  public openModal(id: string) {
+    this._modalService.open(id);
+  }
+
+  public closeModal(id: string) {
+    this._modalService.close(id);
   }
 
   public onResize(event) {
@@ -109,6 +111,5 @@ export class WalletComponent implements OnInit, OnDestroy {
   private _resetRouterState(): void {
     this.historyType = 'transaction';
     this.currentCoin = null;
-    this.withdrawalToched = false;
   }
 }

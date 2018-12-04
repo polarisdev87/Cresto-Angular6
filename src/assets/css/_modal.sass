@@ -1,0 +1,41 @@
+app-modal
+  /* modals are hidden by default */
+  display: none
+
+  .modal
+    /* modal container fixed across whole screen */
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+
+    /* z-index must be higher than .modal-background */
+    z-index: 1000
+    
+    /* enables scrolling for tall modals */
+    overflow: auto
+
+    .modal-body 
+      padding: 20px
+      background: #fff
+      box-shadow: 0 2px 13px 0 rgba(214, 214, 214, 0.5)
+      margin: 40px
+
+#backoffice.modal-open
+  overflow: hidden
+  filter: blur(12px)
+  -webkit-filter: blur(12px)
+  -webkit-backdrop-filter: blur(12px)
+  -ms-filter: blur(12px)
+  background-color: rgba(255, 255, 255, 0.2)
+
+@media (max-width: 480px)
+  app-modal
+    .modal
+      .modal-body
+        margin: 10px
+        
