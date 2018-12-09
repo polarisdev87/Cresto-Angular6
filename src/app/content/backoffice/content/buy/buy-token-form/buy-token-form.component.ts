@@ -27,7 +27,6 @@ export class BuyTokenFormComponent implements OnInit {
     5: 0
   };
 
-  public isActive = false;
   public buttonStateBuy = {
     name: 'Buy Now',
     class: 'redBig'
@@ -129,9 +128,5 @@ export class BuyTokenFormComponent implements OnInit {
     ).subscribe((data: CalculateTokensSum) => {
       this._store.dispatch(new BuyTokensRequest(data));
     });
-  }
-
-  public toggleClass() {
-    this.isActive = !this.isActive;
   }
 }

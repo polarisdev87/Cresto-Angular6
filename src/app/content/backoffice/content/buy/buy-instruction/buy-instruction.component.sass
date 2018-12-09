@@ -1,136 +1,36 @@
 @import "../../../backoffice.component"
 .buy-instruction-wr
-  padding-top: 20px
-  padding-bottom: 60px
+  margin-top: 15px
   .instruction-title
-    font-family: $OpenSansSemiBold
-    font-size: 24px
-    color: #c0c9d1
-    padding-bottom: 25px
-    border-bottom: 1px solid #303741
-    margin-bottom: 50px
-  .arrow
-    display: none
-  .buy-instruction-item
-    display: flex
-    flex-wrap: nowrap
-    align-items: center
-    margin-bottom: 35px
-    .index
-      min-width: 80px
-      span
-        display: inline-block
-        color: #17ecb4
-        font-family: $OpenSansSemiBold
-        font-size: 24px
-        width: 40px
-        height: 40px
-        line-height: 40px
-        text-align: center
-        background-color: #191f27
-        border-radius: 50%
-        box-shadow: 0 0 21px rgba(24, 248, 188, 0.31)
-
-    p
-      font-family: $OpenSansRegular
-      font-size: 14px
-      line-height: 18px
-      color: #737d84
-@media only screen and (min-width: 1300px) and (max-width: 1366px)
-  .buy-instruction-wr
-    .instruction-title
-      font-size: 22px
-      padding-bottom: 20px
-      margin-bottom: 22px
-    .buy-instruction-item
-      margin-bottom: 34px
+    font-family: $lato-bold
+    font-size: 16px
+    color: #637576
+    margin-bottom: 15px
+  .instructions
+    background-color: $white
+    padding: 30px 20px
+    box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+    border-radius: 10px
+    .item
+      display: flex
+      justify-content: flex-start
+      margin-bottom: 24px
+      .index
+        margin-right: 12px
+        span
+          display: block
+          background-color: $white
+          width: 20px
+          height: 20px
+          line-height: 20px
+          font-family: $lato-bold
+          font-size: 10px
+          color: #62ba67
+          text-align: center
+          border-radius: 50%
+          box-shadow: 0 3px 6px 0 rgba(40, 46, 54, 0.07)
       p
-        margin-left: -20px
-      .index
-        span
-          font-size: 16px
-          width: 30px
-          height: 30px
-          line-height: 30px
-
-
-
-@media screen and (max-width: 1560px)
-  .buy-instruction-wr
-    .instruction-title
-      padding-bottom: 18px
-      margin-bottom: 28px
-    .buy-instruction-item
-      margin-bottom: 34px 
-      .index
-        min-width: 65px
-        span
-          font-size: 16px
-          height: 30px
-          width: 30px
-          line-height: 30px
-@media screen and (max-width: 1190px)
-  .buy-instruction-wr
-    padding-bottom: 0px 
-    .instruction-title
-      padding-bottom: 18px
-      margin-bottom: 28px
-    .buy-instruction-item
-      margin-bottom: 34px 
-      .index
-        min-width: 65px
-        span
-          font-size: 16px
-          height: 30px
-          width: 30px
-          line-height: 30px
-@media screen and (max-width: 800px)
-  .buy-instruction-wr
-    padding-bottom: 0px
-    margin-left: 60px 
-    .instruction-title
-      font-size: 21px
-      margin-top: 15px
-      padding-bottom: 40px
-      margin-bottom: 0px
-      border: none 
-    .buy-instruction-item
-      margin-bottom: 27px 
-      .index
-        min-width: 55px
-        span
-          font-size: 16px
-          height: 30px
-          width: 30px
-          line-height: 30px
-
-@media screen and (max-width: 580px)
-  .buy-instruction-wr
-    padding-bottom: 0px
-    margin-left: 0px 
-    .instruction-title
-      font-size: 18px
-    .arrow
-      display: inline
-      width: 0px
-      height: 0px
-      border: 10px solid transparent
-      border-top-color: #00ebc9
-      border-radius: 9px
-      box-shadow: 0 0 0px 0px #00ebc9
-      margin-left: 5px
-      padding: 0
-      float: left
-      font-family: $OpenSansLight
-      position: relative
-      right: 9px
-      top: 21px
-      &:before
-        display: block
-        content: ""
-        width: 0px
-        height: 0px
-        border: 8px solid transparent
-        border-top-color: #191f27
-        display: inline-block
-        -webkit-transform: translate(-8px, -12px)
+        font-family: $lato-regular
+        font-size: 14px
+        color: #7f8fa4
+        line-height: 1.43

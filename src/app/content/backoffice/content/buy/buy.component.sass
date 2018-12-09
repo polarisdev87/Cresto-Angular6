@@ -1,7 +1,7 @@
 @import "../../backoffice.component"
 .buy-wr
   margin-top: 20px
-  h5.text
+  h5
     margin-top: 20px
     margin-bottom: 15px
     font-family: $lato-bold
@@ -12,12 +12,44 @@
     justify-content: space-between
     flex-wrap: wrap
     .primary
-      flex: 0 0 55%
+      flex: 0 0 58%
       display: flex
       flex-direction: column
       justify-content: flex-start
+      app-timer
+        display: none
+      .deposit-wr
+        background-color: $white
+        padding: 30px 34px
+        border-radius: 10px
+        box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+        text-align: center
+        margin-top: 20px
+        h6
+          font-family: $lato-bold
+          font-size: 16px
+          color: #637576
+        p
+          font-family: $lato-regular
+          font-size: 14px
+          color: #7f8fa4
+          line-height: 1.43
+          margin: 10px 0px 15px 0px
     .secondary
-      flex: 0 0 44%
+      flex: 0 0 40%
       display: flex
       flex-direction: column
       justify-content: flex-start
+
+@media (max-width: 992px)
+  .buy-wr
+    .inner
+      flex-direction: column
+      .primary
+        flex: 0 0 100%
+        app-timer
+          display: block
+      .secondary
+        flex: 0 0 100%
+        app-timer
+          display: none
