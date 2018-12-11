@@ -50,11 +50,6 @@ export class TeamComponent implements OnInit, OnDestroy {
       });
   }
 
-  public copy(el: any) {
-    el.select();
-    document.execCommand('copy');
-    this.openPopupCopyAddress();
-  }
   public openPopupCopyAddress() {
     this._dialog.open(PopupComponent, {
       data: {

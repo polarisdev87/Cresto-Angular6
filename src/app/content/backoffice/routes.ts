@@ -50,11 +50,6 @@ export const routes: Route[] = [
         canLoad: [AccessGuardService]
       },
       {
-        path: 'myreferrals',
-        loadChildren: './content/myreferrals/myreferrals.module#MyreferralsModule',
-        canLoad: [AccessGuardService]
-      },
-      {
         path: 'dashboard',
         loadChildren: './content/dashboard/dashboard.module#DashboardModule',
         canLoad: [AccessGuardService]
