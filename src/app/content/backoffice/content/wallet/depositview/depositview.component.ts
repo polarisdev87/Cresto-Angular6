@@ -25,17 +25,11 @@ export class DepositviewComponent  {
   }
 
   public coin!: WalletData;
-  public depositBtn = {
-    name: 'Copy address',
-    class: 'emptyGreen'
-  };
-
   public confirmButton = true;
   public constructor(
     private _store: Store<IRootState>,
     private _dialog: MatDialog
   ) {
-
   }
 
   public confirmSelected() {

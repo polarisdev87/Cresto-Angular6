@@ -44,7 +44,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   public transactions$!: Observable<any>;
   public purchase$!: Observable<any>;
 
-  public historyType = 'transaction';
+  public historyType: string = 'transaction';
   public purchaseHistory = false;
   public currentCoin;
   public viewPort = innerWidth;

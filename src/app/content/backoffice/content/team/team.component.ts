@@ -22,13 +22,26 @@ export class TeamComponent implements OnInit, OnDestroy {
   public referralLink2;
   public userSubscription!: Subscription;
   public loader$!: Observable<boolean>;
-  public view: string = 'referrals';
-  public copyButton = {
-    name: 'Copy address',
-    class: 'emptyGreen'
-  };
 
-  public isActive: Boolean = false;
+  public tabs = [
+    {
+      label: 'My team Members',
+      panel: 'referrals'
+    },
+    {
+      label: 'Banner Advertisements',
+      panel: 'banner'
+    },
+    {
+      label: 'Text Ad Copy',
+      panel: 'textcopy'
+    },
+    {
+      label: 'Traffic Resources',
+      panel: 'traffic'
+    }
+  ];
+  public currentTab = 'referrals';
 
   public constructor(
     private _store: Store<IRootState>,
@@ -50,11 +63,6 @@ export class TeamComponent implements OnInit, OnDestroy {
       });
   }
 
-  public copy(el: any) {
-    el.select();
-    document.execCommand('copy');
-    this.openPopupCopyAddress();
-  }
   public openPopupCopyAddress() {
     this._dialog.open(PopupComponent, {
       data: {
@@ -73,7 +81,7 @@ export class TeamComponent implements OnInit, OnDestroy {
     this.userSubscription.unsubscribe();
   }
 
-  public toggleClass() {
-    this.isActive = !this.isActive;
+  public viewTab(panel: string) {
+    this.currentTab = panel;
   }
 }

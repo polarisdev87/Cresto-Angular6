@@ -5,12 +5,12 @@
     <div class="link">
       <label for="main-link">Main Landing Page</label>
       <input type="text" id="main-link" #mainlink value="{{ appendSource(referralLink1) }}" />
-      <button class="copy" (click)="copy(mainlink)"><i class="fa fa-copy"></i></button>
+      <button class="copy" [ngxClipboard]="mainlink" (cbOnSuccess)="openPopupCopyAddress()"><i class="fa fa-copy"></i></button>
     </div>
     <div class="link">
       <label for="video-link">Video Landing Page</label>
       <input type="text" id="video-link" #videolink value="{{ appendSource(referralLink2) }}" />
-      <button class="copy" (click)="copy(videolink)"><i class="fa fa-copy"></i></button>
+      <button class="copy" [ngxClipboard]="videolink" (cbOnSuccess)="openPopupCopyAddress()"><i class="fa fa-copy"></i></button>
     </div>
     <p>Add a source (optional)</p>
     <div class="source">
@@ -30,4 +30,13 @@
 </div>
 
 <div class="resources">
+  <ul class="tab-links">
+    <li *ngFor="let tab of tabs" (click)="viewTab(tab.panel)" [ngClass]="{active: currentTab===tab.panel}">{{ tab.label }}</li>
+  </ul>
+  <div class="panel">
+    <app-referrals *ngIf="currentTab==='referrals' && (referrals$ | async) as referrals" [referrals]="referrals"></app-referrals>
+    <app-banner-ads *ngIf="currentTab==='banner'"></app-banner-ads>
+    <app-text-ads *ngIf="currentTab==='textcopy'"></app-text-ads>
+    <app-traffic-resources *ngIf="currentTab==='traffic'"></app-traffic-resources>
+  </div>
 </div>

@@ -37,11 +37,11 @@
       </div>
       <form>
           <input readonly [value]="coin.top_up_address"
-                 appCopypaste #c="copypaste"
+                 #address
                  type="text">
       </form>
       <div class="button-copy-adress">
-          <app-button (click)="c.copy();openPopupCopyAddress()" [buttonState]="depositBtn" ></app-button>
+        <button class="btn emptyGreen" [ngxClipboard]="address" (cbOnSuccess)="openPopupCopyAddress()">Copy address</button>
       </div>
     </div>
   </div>
