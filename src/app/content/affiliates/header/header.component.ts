@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../http.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { HttpService } from '../../../http.service';
 export class HeaderComponent implements OnInit {
 
   public show = false;
-  public fixed = '';
   public usersCount = 0;
   public constructor (
     private _http: HttpService
@@ -19,17 +18,5 @@ export class HeaderComponent implements OnInit {
     this._http.nonAuthorizedRequest('/auth/total', {}, 'GET').subscribe((data: any) => {
       this.usersCount = data.total_users;
     });
-  }
-
-  @HostListener('window:scroll', [])
-  public onWindowScroll() {
-    const scrollPosition = window.scrollY;
-    if ( scrollPosition > 150 ) {
-      this.fixed = 'fixed';
-      return;
-    }
-    if (this.fixed && scrollPosition < 50) {
-      this.fixed = '';
-    }
   }
 }
