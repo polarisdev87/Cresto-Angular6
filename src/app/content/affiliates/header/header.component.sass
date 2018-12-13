@@ -82,10 +82,12 @@ header
       font-weight: 600
       font-size: 34px
       line-height: 1.35
-      margin-bottom: 40px
+      margin-bottom: 0px
       text-align: center
       span
         color: #dc3e4a
+    iframe
+      max-width: 100%
   .features
     display: flex
     justify-content: space-between
@@ -311,3 +313,15 @@ header
           font-size: 40px
       .image
         justify-content: center
+
+@media (max-width: 768px)
+  .home
+    .banner
+      iframe
+        max-height: 400px
+
+@media (max-width: 480px)
+  .home
+    .banner
+      iframe
+        max-height: 300px
