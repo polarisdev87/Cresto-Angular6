@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NguCarousel } from '@ngu/carousel';
+import { MatDialog } from '@angular/material';
+import { PopupComponent } from '../../buy/popup/popup.component';
 
 @Component({
   selector: 'app-text-ads',
@@ -10,9 +12,11 @@ export class TextAdsComponent implements OnInit {
 
   public textCarousel: NguCarousel;
   public slides: any[] = [];
-  public constructor() {
+  public constructor(
+    private _dialog: MatDialog
+  ) {
     this.textCarousel = {
-      grid: {xs: 2, sm: 2, md: 3, lg: 3, all: 0},
+      grid: {xs: 1, sm: 2, md: 3, lg: 3, all: 0},
       slide: 3,
       speed: 500,
       point: {
@@ -73,4 +77,13 @@ export class TextAdsComponent implements OnInit {
     ];
   }
 
+  public openPopupCopyText() {
+    this._dialog.open(PopupComponent, {
+      data: {
+        iconClose: 'icon-close',
+        iconClass: 'icon-tick',
+        message: 'The text has been copied to the clipboard',
+      }
+    });
+  }
 }

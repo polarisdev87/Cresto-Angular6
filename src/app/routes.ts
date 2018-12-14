@@ -52,7 +52,7 @@ export const routes = [
   {
     path: '',
     loadChildren: './content/backoffice/backoffice.module#BackofficeModule',
-    canLoad: [AuthGuardService]
+    // canLoad: [AuthGuardService]
   },
   {
     path: '**',

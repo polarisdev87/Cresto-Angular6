@@ -30,9 +30,11 @@
 </div>
 
 <div class="resources">
-  <ul class="tab-links">
-    <li *ngFor="let tab of tabs" (click)="viewTab(tab.panel)" [ngClass]="{active: currentTab===tab.panel}">{{ tab.label }}</li>
-  </ul>
+  <div class="links-wr">
+    <ul class="tab-links">
+      <li *ngFor="let tab of tabs" (click)="viewTab(tab.panel)" [ngClass]="{active: currentTab===tab.panel}">{{ tab.label }}</li>
+    </ul>
+  </div>
   <div class="panel">
     <app-referrals *ngIf="currentTab==='referrals' && (referrals$ | async) as referrals" [referrals]="referrals"></app-referrals>
     <app-banner-ads *ngIf="currentTab==='banner'"></app-banner-ads>

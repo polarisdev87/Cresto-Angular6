@@ -26,33 +26,6 @@
     margin-bottom: 30px
     text-align: center
     max-width: 410px
-  .achievements
-    flex: 0 0 100%
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-between
-    margin-left: -20px
-    margin-right: -20px
-    .item
-      flex: 0 0 49.9%
-      background-color: #f5f6f8
-      min-height: 88px
-      display: flex
-      justify-content: center
-      align-items: center
-      font-family: $lato-regular
-      font-size: 12px
-      letter-spacing: 0.4px
-      color: #0f0f0f
-      img
-        width: 40px
-        margin-right: 16px
-      span
-        font-family: $lato-bold
-        font-size: 14px
-        letter-spacing: 0.2px
-        color: #1e9324
-        margin-left: 10px
   .referral-links
     background-color: $white
     border-radius: 10px
@@ -128,14 +101,46 @@
         outline: none
         text-shadow: none
         box-shadow: none
+  .achievements
+    flex: 0 0 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-left: -20px
+    margin-right: -20px
+    .item
+      flex: 0 0 49.9%
+      background-color: #f5f6f8
+      min-height: 88px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-family: $lato-regular
+      font-size: 12px
+      letter-spacing: 0.4px
+      color: #0f0f0f
+      img
+        width: 40px
+        margin-right: 16px
+      span
+        font-family: $lato-bold
+        font-size: 14px
+        letter-spacing: 0.2px
+        color: #1e9324
+        margin-left: 10px
+  
 .resources
   margin-top: 30px
   background-color: $white
   box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
   border-radius: 10px
   padding: 20px
+  .links-wr
+    width: 100%
+    overflow-x: auto
   ul.tab-links
     position: relative
+    min-width: 800px
     &:after
       content: ''
       bottom: 0
@@ -145,6 +150,7 @@
       height: 1px
       background-color: #eaeaea
       z-index: 1
+      overflow-x: auto
     li
       display: inline-block
       padding:  0px 30px 20px 30px
@@ -154,10 +160,25 @@
       cursor: pointer
       border-bottom: 2px solid transparent
       position: relative
-      z-index: 2
+      min-width: 177px
       margin-right: 10px
+      text-align: center
+      z-index: 2
       &:last-child
         margin-right: 0px
       &:hover, &.active
         border-bottom-color: #62ba67
         color: #62ba67
+@media (max-width: 700px)
+  .team-wr
+    h3
+      font-size: 20px
+    .referral-links
+      padding: 0px
+      box-shadow: none
+    .achievements
+      flex-direction: column
+      .item
+        flex: 0 0 100%
+        &:first-child
+          margin-bottom: 2px

@@ -1,4 +1,4 @@
-<div class="deposit-wrapper">
+<div class="deposit-wrapper" *ngIf="coin">
   <div class="deposit-content">
     <div class="pay-atention-wrapper" *ngIf="confirmButton">
       <div class="pay-attention">
@@ -41,7 +41,7 @@
                  type="text">
       </form>
       <div class="button-copy-adress">
-        <button class="btn emptyGreen" [ngxClipboard]="address" (cbOnSuccess)="openPopupCopyAddress()">Copy address</button>
+        <button class="btn emptyGreen" [ngxClipboard]="address" (cbOnSuccess)="copyAddress()">Copy address</button>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@ export class TrafficResourcesComponent implements OnInit {
   public slides: any[] = [];
   public constructor() {
     this.trafficCarousel = {
-      grid: {xs: 2, sm: 2, md: 3, lg: 3, all: 0},
+      grid: {xs: 1, sm: 2, md: 3, lg: 3, all: 0},
       slide: 3,
       speed: 500,
       point: {

@@ -36,16 +36,20 @@
 
 <app-modal id="deposit">
   <div class="modal">
-      <div class="modal-body">
-        <app-depositview *ngIf="currentCoin" [coin]="wallets$ | async | coin:currentCoin"></app-depositview>
-      </div>
+    <div class="modal-body">
+      <app-depositview *ngIf="currentCoin"
+      [coin]="wallets$ | async | coin:currentCoin"
+      (onClose)="closeModal('deposit');"></app-depositview>
+    </div>
   </div>
 </app-modal>
 
 <app-modal id="withdraw">
   <div class="modal">
-      <div class="modal-body">
-        <app-withdrawal-founds *ngIf="currentCoin" [coin]="wallets$ | async | coin:currentCoin"></app-withdrawal-founds>
-      </div>
+    <div class="modal-body">
+      <app-withdrawal-founds *ngIf="currentCoin"
+      [coin]="wallets$ | async | coin:currentCoin"
+      (onClose)="closeModal('withdraw');"></app-withdrawal-founds>
+    </div>
   </div>
 </app-modal>
