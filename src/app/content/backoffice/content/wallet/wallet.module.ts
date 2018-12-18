@@ -31,7 +31,7 @@ import { CoinPipe } from './coin.pipe';
     ReactiveFormsModule,
     FormsModule,
     StoreModule.forFeature('walletList', reducers),
-    EffectsModule.forFeature(effects),
+    EffectsModule.forFeature(effects)
   ],
   declarations: [WalletComponent, TransactionListComponent, HelpComponent,
     DepositviewComponent, OwnCoinThumbnailComponent,

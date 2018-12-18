@@ -1,17 +1,17 @@
 @import "../../../../assets/css/variables"
 
 footer
-  margin-left: 35px
-  border-top: 1px solid #2b3c46
-  font-family: $OpenSansRegular
+  border-top: 1px solid #cecccc
+  font-family: $lato-regular
   padding: 14px 0
-  color: $backoffice-text-color
-  font-size: 14px
+  color: #7f8fa4
+  font-size: 12px
   display: flex
   flex-direction: row
   align-items: center
   justify-content: space-between
   position: relative
+  margin-top: 30px
   .support-wrapper
     display: flex
     flex-direction: row
@@ -24,162 +24,27 @@ footer
     display: flex
     flex-direction: row
     align-items: center
+    font-family: $lato-bold
+    font-size: 14px
     ul
       display: flex
       flex-direction: row
       li
-        margin-left: 50px
+        margin-left: 20px
         a
           text-decoration: none
-          color: $backoffice-text-color
-          font-size: 16px
+          color: #7f8fa4
           transition: $transition
           &:hover
             color: $accent-color
-  .tel-wrapper
-    margin-left: 85px
   .help-wrapper
-    margin-left: 50px
+    margin-left: 20px
     .emptyGreen
-      min-height: 30px
+      min-height: 35px
       padding: 0 35px
 
-@media only screen and (max-width: 1366px)
+@media (max-width: 480px)
   footer
-    margin-left: 0
-    margin-top: 60px
-
-@media only screen and (max-width: 1200px)
-  footer
-    margin-left: 0
-    margin-top: 60px
-    .tel-wrapper
-      margin-left: 40px
-    .help-wrapper
-      margin-left: 40px
-    .chat-wrapper 
-      ul 
-        li
-          margin-left: 40px
-          &:first-child
-            margin-left: 30px
-// @media only screen and (min-width: 768px) and (max-width: 1023px)
-//   footer
-//     margin-top: 35px
-//     margin-left: 5px
-//     display: flex
-//     flex-direction: column-reverse
-@media only screen and (max-width: 990px)
-  footer
-    margin-top: 35px
-    margin-left: 5px
-    display: flex
     flex-direction: column-reverse
-    .support-wrapper
-      width: 100%
-@media only screen and (max-width: 500px)
-  footer
-    display: flex
-    flex-direction: column-reverse
-    justify-content: space-around
-    align-items: center
-    margin-top: 0
-    font-size: 12px
-    margin-left: 0
-    .support-wrapper
-      display: flex
-      flex-direction: column
-      justify-content: space-between
-      .help-wrapper
-        margin: 0 auto 20px auto
-        left: 50%
-      .contacts-wrapper
-        display: flex
-        flex-direction: row
-        justify-content: space-between
-        align-items: flex-start
-        margin-bottom: 20px
-        .tel-wrapper
-          margin-right: 0
-        .chat-wrapper
-          .support-text-wrapper
-            display: none
-            ul 
-              li
-                margin-left: 20px
-      
-@media only screen and (max-width: 400px)
-  footer
-    .support-wrapper
-      .contacts-wrapper
-        .tel-wrapper
-          margin-right: 0
-          .phone-support
-            display: none
-        .chat-wrapper
-          ul
-            li
-              margin-left: 20px
-
-@media screen and (max-width: 1560px)
-  footer
-    margin-left: 0px 
-@media screen and (max-width: 1190px)
-  footer
-    margin-left: 0px 
-    margin-right: 20px
-@media screen and (max-width: 800px)
-  footer
-    margin: 0px 15px 0 15px
-    display: flex
-    flex-direction: column-reverse
-    justify-content: center
-    .support-wrapper
-      margin: 30px 0 15px 0
-      align-items: initial
-      .chat-wrapper
-        align-items: initial
-        ul
-          li
-            margin-left: 40px 
-      .tel-wrapper
-        max-width: 300px
-        margin-left: 35px
-      .help-wrapper
-        // margin-left: 155px
-@media screen and (max-width: 580px)
-  footer
-    margin: 0px
-    font-size: 12px
-    display: flex
-    flex-direction: column-reverse
-    justify-content: center
-    position: relative
-    .contacts-wrapper
-      width: 100%
-      justify-content: space-between
     .copyright
-      margin-top: 20px 
-    .support-wrapper
-      margin: 15px 15px 0 15px
-      align-items: initial
-      width: 100%
-      display: flex
-      justify-content: space-between
-      .chat-wrapper
-        width: 110px
-        align-items: initial
-        .support-off
-          display: none
-        ul
-          width: 100%
-          display: flex
-          flex-direction: row
-          justify-content: space-between
-          li
-            margin-left: 20px 
-      .tel-wrapper
-        max-width: 300px
-        margin-left: 0px
-      .help-wrapper
-        margin: 0 auto
+      margin-top: 15px

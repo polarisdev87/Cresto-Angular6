@@ -1,211 +1,184 @@
 @import "../../../../../assets/css/variables"
 
-.team-upper
-  display: flex
-  justify-content: space-between
-  align-items: flex-start
-  flex-wrap: wrap
-
-  & > div
-    flex: 0 0 100%
-    
-#team-panel
+.team-wr
+  margin-top: 20px
+  border-radius: 10px
+  background-color: $white
+  box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+  padding: 50px 20px 0px 20px
   display: flex
   flex-direction: column
   justify-content: center
-  align-items: center
-  background: $widget-bg
-  border-radius: 5px
-  box-shadow: $box-shadow-block
-  margin-bottom: 16px
-  padding: 50px 0
-
-  h3
-    font-family: $OpenSansSemiBold
-    font-size: 18px
-    color: $h-color
-
-  .block-buttons
-    display: flex
-    justify-content: space-between
-    font-family: $OpenSansSemiBold
-    margin-top: 40px
-    min-width: 550px
-    
-    .button
-      width: 48%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #2c333d;
-      border-radius: 6px;
-      color: #808490;
-      padding: 10px 0;
-      cursor: pointer;
-      font-size: 14px
-      transition: all .3s ease;
-      &:hover, &.active
-        background-color: #1e242d
-        box-shadow: 0 0 21px rgba(24,248,188,.5)
-        color: #00e7c7
-
-      i
-        font-size: 27px
-        margin-right: 5px
-        padding-top: 7px
-
-.info
-  max-width: 650px
-  margin: 50px auto
-  font-family: $OpenSansSemiBold
+  text-align: center
+  overflow: hidden
   
   h3
-    color: $h-color
-    font-size: 18px
-    padding-bottom: 15px
-    border-bottom: 1px solid #4f575f
+    font-family: $lato-bold
+    font-size: 24px
+    color: #637576
+    margin-bottom: 20px
+  p.desc
+    font-family: $lato-regular
+    font-size: 14px
+    line-height: 1.43
+    color: #7f8fa4
+    margin: 0 auto
     margin-bottom: 30px
     text-align: center
-
-  .inner
+    max-width: 410px
+  .referral-links
+    background-color: $white
+    border-radius: 10px
+    box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+    padding: 40px 60px
+    margin: 0 auto
+    margin-bottom: 50px
+    width: 600px
+    max-width: 100%
+    .link
+      border: 1px solid #62ba67
+      border-radius: 6px
+      position: relative
+      background: transparent
+      height: 58px
+      overflow: hidden
+      margin-bottom: 22px
+      label
+        position: absolute
+        top: 9px
+        left: 12px
+        font-family: $lato-regular
+        font-size: 12px
+        color: #637576
+      input
+        position: absolute
+        bottom: 7px
+        left: 12px
+        border: none
+        border-radius: 0px
+        font-family: $lato-bold
+        font-size: 16px
+        color: #637576
+        line-height: 100%
+        padding: 0px
+        letter-spacing: 0.1px
+        outline: none
+        width: 90%
+      button
+        position: absolute
+        top: 0px
+        right: 0px
+        width: 52px
+        height: 58px
+        background-color: #62ba67
+        border: none
+        font-size: 20px
+        color: $white
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: .2s
+        cursor: pointer
+        &:hover
+          font-size: 25px
+    p
+      margin-top: 20px
+      margin-bottom: 7px
+      font-family: $lato-regular
+      font-size: 14px
+      color: #637576
+      text-align: left
+    .source
+      input
+        width: 100%
+        height: 40px
+        border-radius: 3px
+        border: 1px solid #e0e0e0
+        padding: 11px 15px
+        font-family: $lato-regular
+        font-size: 14px
+        color: #637576
+        outline: none
+        text-shadow: none
+        box-shadow: none
+  .achievements
+    flex: 0 0 100%
     display: flex
-    flex-direction: row
     flex-wrap: wrap
     justify-content: space-between
+    margin-left: -20px
+    margin-right: -20px
     .item
-      flex: 0 0 48%
+      flex: 0 0 49.9%
+      background-color: #f5f6f8
+      min-height: 88px
       display: flex
-      flex-direction: row
-      justify-content: flex-start
-      align-content: center
-      i
-        color: #00e7c7
-        box-shadow: 0 0 21px rgba(24,248,188,.5)
-        height: 45px
-        width: 45px
-        border-radius: 100%
-        position: relative
-        margin-right: 15px
-        &:before
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
-          font-size: 35px
-        &.icon-noun_discount_191910
-          padding: 20px
-          &:before
-            top: 29px
-            left: 22px
-            font-size: 60px
+      justify-content: center
+      align-items: center
+      font-family: $lato-regular
+      font-size: 12px
+      letter-spacing: 0.4px
+      color: #0f0f0f
+      img
+        width: 40px
+        margin-right: 16px
       span
-        color: #888e94
+        font-family: $lato-bold
         font-size: 14px
-        font-family: $OpenSansLight
-        line-height: 45px
-        strong
-          font-family: $OpenSansSemiBold
-          font-size: 18px
-          color: $h-color
-          padding-left: 10px
-  p.small
-    font-family: $OpenSansRegular
-    font-size: 14px
-    color: #888e94
-    text-align: center
-    margin-top: -10px
-    margin-bottom: 30px
-  .referral-link
-    display: flex
-    flex-direction: column
-    flex-wrap: wrap
-    justify-content: center
-    align-items: center
-    .texts
+        letter-spacing: 0.2px
+        color: #1e9324
+        margin-left: 10px
+  
+.resources
+  margin-top: 30px
+  background-color: $white
+  box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
+  border-radius: 10px
+  padding: 20px
+  .links-wr
+    width: 100%
+    overflow-x: auto
+  ul.tab-links
+    position: relative
+    min-width: 800px
+    &:after
+      content: ''
+      bottom: 0
+      left: 0
+      position: absolute
       width: 100%
-      display: flex
-      flex-direction: column
-      span
-        font-family: $OpenSansSemiBold
-        font-size: 18px
-        color: #bec6ce
-        text-align: center
-        margin-bottom: 5px
-      input
-        font-family: $OpenSansRegular
-        font-size: 14px
-        color: #00e7c7
-        width: 95%
-        max-width: 500px
-        background: transparent
-        margin: 0 auto
-        text-align: center
-        border: none
-        outline: none
-    .buttonWrapper
-      margin: 20px auto
-  .referral-source
-    display: flex
-    flex-direction: column
-    margin-top: 30px
-    text-align: center
-    span
-      color: #bec6ce
-      font-size: 18px
-    input
-      width: 200px
-      height: 30px
-      border: none
-      font-family: "OpenSans-Regular", sans-serif
-      background-color: #3a4758
-      outline: none
+      height: 1px
+      background-color: #eaeaea
+      z-index: 1
+      overflow-x: auto
+    li
+      display: inline-block
+      padding:  0px 30px 20px 30px
+      font-family: $lato-bold
       font-size: 14px
-      padding-left: 10px
-      color: #fff
-      margin: 10px auto
-      text-align: left
-
-@media (max-width: 800px)
-  .team-upper
-    margin: 30px 15px
-
-    #team-panel
-      flex: 0 0 53%
-      padding: 25px 50px
-      h3
-        font-size: 22px
-        text-align: center
-      .block-buttons
-        flex-direction: column
-        min-width: auto
-        .button
-          min-width: 264px
-          margin-bottom: 25px
-    .info
-      flex: 0 0 42%
-      max-width: auto
-      margin: 30px 0px 0px
-      h3
-        font-size: 22px
-        text-align: center
-      .inner .item
+      color: #7f8fa4
+      cursor: pointer
+      border-bottom: 2px solid transparent
+      position: relative
+      min-width: 177px
+      margin-right: 10px
+      text-align: center
+      z-index: 2
+      &:last-child
+        margin-right: 0px
+      &:hover, &.active
+        border-bottom-color: #62ba67
+        color: #62ba67
+@media (max-width: 700px)
+  .team-wr
+    h3
+      font-size: 20px
+    .referral-links
+      padding: 0px
+      box-shadow: none
+    .achievements
+      flex-direction: column
+      .item
         flex: 0 0 100%
-        margin-bottom: 20px
-        span
-          font-size: 13px
-          strong
-            font-size: 16px
-      p.small
-        margin-bottom: 20px
-      .referral-link
-        .buttonWrapper
-          margin: 20px 0px 0px
-
-@media (max-width: 720px)
-  .team-upper
-    margin: 30px 0px
-    #team-panel, .info
-      flex: 0 0 100%
-    .info
-      margin: 0px
-      padding: 30px
+        &:first-child
+          margin-bottom: 2px

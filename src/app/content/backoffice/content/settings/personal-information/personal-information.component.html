@@ -1,8 +1,7 @@
 <div class="personal-information-wrapper">
-  <h2>Personal  Information</h2>
   <form>
-    <div class="name-wrapper">
-      <label>Name</label>
+    <div class="input-wrapper">
+      <label>Name<span class="warning" *ngIf="name.invalid">Can not be empty</span></label>
       <button class="icon-edit"  *ngIf="switch" (click)="setDisabledState()"></button>
       <button class="icon-tick"
         *ngIf="!switch"
@@ -10,13 +9,14 @@
         [disabled]="name.invalid"
         (click)="editProfile()"></button>
       <input type="text" class="form-control" [formControl]="name">
-      <span class="warning" *ngIf="name.invalid">Can not be empty</span>
     </div>
     <div class="input-wrapper">
       <label>Email</label>
       <input type="text" [value]="(user$ | async)?.email" readonly>
-      <label *ngIf="(user$ | async)?.sponsor?.username"  >Sponsor</label>
-      <input *ngIf="(user$ | async)?.sponsor?.username" type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
+    </div>
+    <div class="input-wrapper" *ngIf="(user$ | async)?.sponsor?.username">
+      <label>Sponsor</label>
+      <input type="text" [value]="(user$ | async)?.sponsor?.username" readonly>
     </div>
   </form>
 </div>

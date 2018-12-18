@@ -1,0 +1,36 @@
+@import "../../../../../../assets/css/variables"
+
+.slide
+  padding: 20px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  min-height: 190px
+
+  .text-wr
+    background-color: #f5f6f8
+    padding: 20px 24px
+    border-radius: 18px
+    p
+      font-family: $lato-regular
+      font-size: 14px
+      color: #7f8fa4
+  .button-wr
+    text-align: center
+
+.leftRs, .rightRs
+  position: absolute
+  top: 25%
+  color: #62ba67
+  font-size: 1.5em
+  background: transparent
+  border: none
+  cursor: pointer
+  &:hover i:before
+    text-shadow: 0px 0px 30px rgba(24, 248, 188, 0.59)
+.leftRs
+  left: -20px
+  transform: rotate(180deg)
+.rightRs
+  right: -20px

@@ -1,7 +1,10 @@
-<section class="back-office">
+<section class="back-office" id="backoffice">
   <app-sidebar [isOpen]="isOpen"></app-sidebar>
-  <div class="header-wrapper"><app-backoffice-header  (onOpen)="changeSidebar()"></app-backoffice-header></div>
-  <router-outlet></router-outlet>
-  <div class="footer-wrapper"><app-backoffice-footer></app-backoffice-footer></div>
+  <app-backoffice-header  (onOpen)="changeSidebar()"></app-backoffice-header>
+  <div class="inner-content">
+    <app-assets></app-assets>
+    <router-outlet></router-outlet>
+    <app-backoffice-footer></app-backoffice-footer>
+  </div>
 </section>
 

@@ -1,29 +1,98 @@
-<header>
-  <a class="drop-down-menu" (click)="dropDownSidebar()"><span></span></a>
-  <a [routerLink]="['/dashboard']" class="logo">
-    <img [src]="logo" alt="logo">
-    <p>Crest Token</p>
-  </a>
-  <ul id="currency-list" class="currency-date">
-    <li *ngFor="let item of assets$ | async">
-      <i class="{{item.icon}}"></i>
-      {{item.code | uppercase}} = {{item.usd_price}}
-    </li>
-  </ul>
-  <div id="currency-dropdown">
-    <button class="dropdown-trigger" [matMenuTriggerFor]="menu">
-      Currency &nbsp;&nbsp;<i class="fa fa-chevron-down"></i>
-    </button>
-    <mat-menu #menu="matMenu">
-      <ul class="mobile-only currency-date">
-        <li mat-menu-item *ngFor="let item of assets$ | async">
-          <i class="{{item.icon}}"></i>
-          <div class="exchange-price">
-            <span>{{item.code | uppercase}}</span>
-            <span>{{item.usd_price}}</span>
-          </div>
-        </li>
-      </ul>
-    </mat-menu>
+<ng-sidebar-container>
+  <ng-sidebar 
+    [(opened)]="sidebar"
+    [showBackdrop]="[true]"
+    [closeOnClickOutside]="[true]"
+    [sidebarClass]="'mobile-sidebar'">
+    <div class="top">
+      <span class="name">{{(user$ | async)?.name}}</span>
+      <a class="close" closeSidebar>&times;</a>
+    </div>
+    <ul class="nav">
+      <li>
+        <a routerLinkActive="active" [routerLink]="['/dashboard']">
+          <i class="icon-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['/buy']">
+          <i class="icon-shoppingCart"></i>
+          <span>Buy Tokens</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['/wallet']">
+          <i class="icon-wallet"></i>
+          <span>Wallet</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['/team']">
+          <i class="icon-team"></i>
+          <span>My Team</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['/campaign']"  *appNgAcl="['campaign', 'GET']">
+          <i class="icon-building"></i>
+          <span>Campaign</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" *appNgAcl="['exchange', 'GET']">
+          <i class="icon-transfer"></i>
+          <span>Exchange</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" *appNgAcl="['staking', 'GET']">
+          <i class="icon-dollar-symbol"></i>
+          <span>Staking</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" *appNgAcl="['settings', 'GET']">
+          <i class="icon-settings"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" (click)="logout()">
+          <i class="icon-logout"></i>
+          <span>Log Out</span>
+        </a>
+      </li>
+    </ul>
+  </ng-sidebar>
+  <div ng-sidebar-content>
+    <header>
+      <div class="left">
+        <a class="drop-down-menu" (click)="dropDownSidebar()"><i class="fa fa-bars"></i></a>
+        <a [routerLink]="['/']" class="logo">
+          <img src="/assets/images/logo.png" alt="logo">
+          <p>Crest Token</p>
+        </a>
+      </div>
+      <div class="log-out">
+        <span>{{(user$ | async)?.name}}</span>
+        <a (click)="logout()">
+          <i class="icon-logout"></i>
+        </a>
+      </div>
+      <div id="currency-dropdown">
+        <button class="dropdown-trigger" [matMenuTriggerFor]="menu">
+          Currency &nbsp;&nbsp;<i class="fa fa-caret-down"></i>
+        </button>
+        <mat-menu #menu="matMenu">
+          <ul class="mobile-only currency-date">
+            <li mat-menu-item *ngFor="let item of assets$ | async">
+              <img src="/assets/images/backoffice/{{item.code}}.png" />
+              <span>{{item.code | uppercase}} = {{item.usd_price}}</span>
+            </li>
+          </ul>
+        </mat-menu>
+      </div>
+    </header>
   </div>
-</header>
+</ng-sidebar-container>

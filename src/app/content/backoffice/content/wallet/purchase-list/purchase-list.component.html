@@ -1,9 +1,8 @@
-<div class="transaction-table-wrapper">
-  <h2>History</h2>
-  <div class="transaction-tabletransaction-table">
+<div class="purchase-table-wrapper">
+  <div class="purchase-table">
     <app-backoffice-table
       [dashboardTableHead]="purchaseHead"
-      [rounds]="purchase | async"
+      [rounds]="purchase"
       [columns]="[
         {value: 'created_at'},
         {value: 'coin'},

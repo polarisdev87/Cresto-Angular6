@@ -1,15 +1,21 @@
 <div class="dashboard-wr">
-  <div class="cell dashboard-info">
-    <app-timer></app-timer>
-    <app-instruction></app-instruction>
+  <app-balance></app-balance>
+  <h5 class="text">Welcome to Crest Members Area</h5>
+  <div class="member-area">
+    <div class="video">
+      <iframe src="https://player.vimeo.com/video/303049569" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    <div class="board">
+      <app-timer></app-timer>
+      <app-call-action></app-call-action>
+    </div>
   </div>
+  <h5 class="text">Transactions</h5>
   <div class="cell dashboard-table" *ngIf="rounds$ | async as rounds">
-    <app-timer></app-timer>
-    <app-call-action></app-call-action>
     <app-backoffice-table
       [dashboardTableHead]="dashboardTableHead"
       [rounds]="rounds"
-      [scroll]="true"
+      [scroll]="false"
       [columns]="[
         {value: 'title'},
         {value: 'supply'},
@@ -17,6 +23,7 @@
         {value: 'stage'}
         ]"
       [emptyMassege]="'ICO Round'"
+      [extraClass]="'dashboard'"
     >
     </app-backoffice-table>
   </div>

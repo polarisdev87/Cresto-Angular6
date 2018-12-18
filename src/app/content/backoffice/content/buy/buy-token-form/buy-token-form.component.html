@@ -1,19 +1,29 @@
 <div class="buy-form">
-  <h2 class="buy-form-title">Buy CSTT</h2>
   <form [formGroup]="tokensform" role="form">
-    <div class="form-group" [ngClass]="{focused: isActive || tokensform.get('amount')?.value || tokensform?.value?.amount === 0 }">
-      <label class="form-label" for="amount">CSTT Amount :</label>
-      <input (focus)='toggleClass()' (blur)='toggleClass()' id="amount" formControlName="amount" class="form-input" type="number" />
-      <button class="btn" [ngClass]="{btc: currencies[tokensform?.value?.currency]=='BTC', eth: currencies[tokensform?.value?.currency]=='ETH'}"
-            (click)='selectAll()'>Select All of Balance</button>
-    </div>
-    <div class="currency-wr">
-      <div class="currency-title">Select currency:</div>
-      <app-buy-token-select formControlName="currency"></app-buy-token-select>
-      <div class="total">
-        <span class="total-title">Total {{currencies[tokensform?.value?.currency]}} :</span>
-        <span>{{tokenPrice$ | async}} {{currencies[tokensform?.value?.currency]}}</span>
+    <div class="form-wr">
+      <div class="currency-wr">
+        <div class="currency-title">Select currency:</div>
+        <app-buy-token-select formControlName="currency"></app-buy-token-select>
       </div>
+      <div class="form-header">
+        <label for="amount">Amount</label>
+        <button class="btn" [ngClass]="{btc: currencies[tokensform?.value?.currency]=='BTC', eth: currencies[tokensform?.value?.currency]=='ETH'}"
+              (click)='selectAll()'>Select All of Balance</button>
+      </div>
+      <div class="form-elements">
+        <div class="control">
+          <label>CSTT</label>
+          <input id="amount" formControlName="amount" #amount class="form-input" type="text" />
+        </div>
+        <div class="symbol">
+          <i class="fa fa-exchange"></i>
+        </div>
+        <div class="control">
+          <label>{{currencies[tokensform?.value?.currency]}}</label>
+          <input class="form-input" readonly value="{{tokenPrice$ | async}}" />
+        </div>
+      </div>
+      <h5 class="token-amount">CSTT Amount: <span>{{ amount.value }} CSTT</span></h5>
     </div>
     <div class="currency-btn">
       <app-button (click)="buy()" [buttonState]="buttonStateBuy"></app-button>

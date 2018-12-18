@@ -1,6 +1,5 @@
 <div class="transaction-table-wrapper">
-  <h2>History</h2>
-  <div class="transaction-tabletransaction-table">
+  <div class="transaction-table">
     <app-backoffice-table
       [dashboardTableHead]="transactionsHistoryHead"
       [rounds]="transactions"
@@ -9,8 +8,7 @@
         {value: 'currency'},
         {value: 'amount'},
         {value: 'transaction_type'},
-        {value: 'status'},
-        {value: 'linkHash'}
+        {value: 'status'}
       ]"
       [scroll]="false"
       [emptyMassege]="'transactions'"

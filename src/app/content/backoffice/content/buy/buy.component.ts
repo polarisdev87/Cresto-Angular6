@@ -25,7 +25,7 @@ export class BuyComponent implements OnInit {
   public assets$!: Observable<any>;
   public wallets$!: Observable<any>;
   public makeDepositLink = {
-    name: 'MAKE DEPOSIT',
+    name: 'Make deposit',
     class: 'emptyGreen'
   };
 

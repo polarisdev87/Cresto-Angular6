@@ -1,0 +1,12 @@
+<div class="balance-wr">
+  <h5 class="title">Your Balance</h5>
+  <div class="assets" *ngIf="wallets$ | async as wallets">
+    <div class="asset" *ngFor="let wallet of wallets">
+      <div class="currency">
+        <span class="name {{wallet.asset.code}}">{{assetNames[wallet.asset.code]}}</span>
+        <span class="code">{{wallet.asset.code | uppercase}}</span>
+      </div>
+      <div class="balance">{{wallet.balance}}</div>
+    </div>
+  </div>
+</div>

@@ -49,7 +49,6 @@ export class TwoFactorEffects {
               btnClass: '',
               btnTextContent: ''
             }
-
           });
           return of(new VerifyTwoFactorFail(err));
         }),
@@ -75,7 +74,15 @@ export class TwoFactorEffects {
       map((action: DeleteTwoFactor) => action.payload),
       switchMap((body: { token: string }) => this._twoFactorService.deleteTfoFactor(body).pipe(
         map((user: User) => new DeleteTwoFactorSuccess(user)),
-        tap(() => this._dialog.open(PopupComponent, {data: {message: 'Success'}})),
+        tap(() => this._dialog.open(PopupComponent, {
+          data: {
+            iconClose: 'icon-close',
+            iconClass: 'icon-tick',
+            message: 'Success',
+            btnClass: '',
+            btnTextContent: ''
+          }
+        })),
         catchError((err: any) => {
           // tslint:disable-next-line
           console.log(err);

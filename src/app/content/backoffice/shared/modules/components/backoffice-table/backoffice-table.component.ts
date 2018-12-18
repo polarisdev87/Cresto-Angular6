@@ -15,6 +15,7 @@ export class BackofficeTableComponent {
   @Input() public columns;
   @Input() public scroll;
   @Input() public emptyMassege;
+  @Input() public extraClass = '';
 
   @ViewChild(ScrollbarComponent) public scrollRef!: ScrollbarComponent;
 
@@ -25,6 +26,7 @@ export class BackofficeTableComponent {
   }
 
   public sanitazedHtml(html: string): SafeHtml {
+    html = html || '';
     return this._sanitazer.bypassSecurityTrustHtml(html);
   }
 }
