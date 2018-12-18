@@ -16,7 +16,7 @@ export class TimerComponent implements OnInit {
     this.timer = window.setInterval(() => { this.countDown(); }, 1000);
   }
   private countDown() {
-    const countDownDate = 1543341600000;
+    const countDownDate = 1549008000000;
     const now = new Date().getTime();
     const distance = countDownDate - now;
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
