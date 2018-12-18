@@ -1,6 +1,6 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 import { TwoFactorService } from './../../../../../shared/services/twofactor.service';
-import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -15,7 +15,10 @@ class StoreStates {
   styleUrls: ['./withdrawal-founds.component.sass']
 })
 export class WithdrawalFoundsComponent implements OnInit {
-  @Input('coin')
+  @Input()
+  public coin!: WalletData;
+  @Output()
+  public onClose = new EventEmitter();
   public set coinValue(coin: WalletData) {
     const amountField: FormControl = this.withdrawalForm && this.withdrawalForm.get('amount') as FormControl;
     if (coin && amountField) {
@@ -26,7 +29,7 @@ export class WithdrawalFoundsComponent implements OnInit {
     }
   }
 
-  public buttonStateBuy = { name: 'Send', class: 'redBig' };
+  public buttonStateBuy = { name: 'Confirm', class: '' };
   public withdrawalForm: FormGroup = this._fb.group({
     address: ['', Validators.required],
     amount: [1, [Validators.required, Validators.min(0)]],
@@ -34,9 +37,6 @@ export class WithdrawalFoundsComponent implements OnInit {
   });
   public withdrawalData$!: Observable<WithdrawalRes>;
   public error$!: Observable<string>;
-
-  public coin!: WalletData;
-
   public constructor(
     private _fb: FormBuilder,
     private _store: Store<StoreStates>,
@@ -56,6 +56,7 @@ export class WithdrawalFoundsComponent implements OnInit {
   }
 
   public withdrawal() {
+    this.onClose.emit();
     const { address, amount, tfaCode } = this.withdrawalForm.value;
     // tslint:disable-next-line:variable-name
     const { id: wallet_id } = this.coin;

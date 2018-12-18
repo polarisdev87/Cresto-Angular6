@@ -1,42 +1,40 @@
 @import "../../backoffice.component"
 .dashboard-wr
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-
-  .dashboard-info
-    flex: 0 0 34%
-    padding-right: 60px
-    padding-left: 35px
-  .dashboard-table
-    flex: 0 0 63%
-    app-timer
-      display: none
-
+  margin-top: 20px
+  h5.text
+    margin-top: 20px
+    margin-bottom: 15px
+    font-family: $lato-bold
+    font-size: 16px
+    color: #637576
+  .member-area
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .video
+      flex: 0 0 55%
+      iframe
+        max-width: 100%
+        border-radius: 10px
+    .board
+      flex: 0 0 44%
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+ 
 @media (max-width: 1200px)
   .dashboard-wr
-    flex-direction: column-reverse
-
-    .dashboard-info
-      app-timer
-        display: none
-    .dashboard-table
-      padding-right: 60px
-      padding-left: 35px
-      app-timer
-        display: block
-
-@media (max-width: 968px)
-  .dashboard-wr
-    .cell
-      padding: 30px
-    .dashboard-table
-      app-timer
+    .member-area
+      flex-direction: column-reverse
+      .video, .board
+        flex: 0 0 100%
+      .video
+        margin-top: 20px
         text-align: center
- 
-@media (max-width: 768px)
-  .dashboard-wr
-    .dashboard-table
-      padding: 0px
-      padding-top: 30px
 
+@media (max-width: 480px)
+  .dashboard-wr
+    .member-area
+      .video
+        iframe
+          height: 250px

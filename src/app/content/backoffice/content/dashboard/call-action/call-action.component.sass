@@ -1,37 +1,37 @@
 @import "../../../backoffice.component"
 .call-action-wr
   background-color: $widget-bg
-  border-radius: 14px
-  padding: 36px 115px 36px 130px
-  box-shadow: 0 0 51px rgba(0, 0, 0, 0.27)
-  margin-bottom: 40px
+  border-radius: 10px
+  padding: 35px
+  box-shadow: 0 12px 32px 0 rgba(40, 46, 54, 0.07)
   display: flex
-  flex-wrap: nowrap
+  justify-content: center
   align-items: center
-  justify-content: space-between
+  flex-direction: column
+  i
+    font-size: 43px
+    color: #ea676f
   .call-action-text
-    text-align: center
-    font-family: $OpenSansRegular
-    font-size: 30px
-    color: #c0c9d1
-    padding-right: 20px
+    font-family: $lato-bold
+    font-size: 24px
+    color: #637576
+    margin: 25px 0px
+    i
+      font-size: 26px
+      display: none
 
-@media (max-width: 1366px)
+@media (max-width:  1200px)
   .call-action-wr
-    padding: 20px 50px
-    
+    max-width: 480px
+    margin-left: auto
+    margin-right: auto
+
+@media (max-width: 480px)
+  .call-action-wr
+    max-width: 100%
+    i
+      display: none
     .call-action-text
-      font-size: 28px
-
-@media (max-width: 768px)
-  .call-action-wr
-    margin-left: 20px
-    margin-right: 20px
-
-@media (max-width: 650px)
-  .call-action-wr
-    padding: 20px 30px
-    flex-wrap: wrap
-    flex-direction: column
-    .call-action-text
-      margin-bottom: 20px 
+      font-size: 20px
+      i
+        display: inline

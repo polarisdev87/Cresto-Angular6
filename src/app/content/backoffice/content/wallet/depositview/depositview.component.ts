@@ -1,6 +1,6 @@
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { IRootState } from './../../myreferrals/store/reducers/index';
-import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { GenerateWalletAddressRequest } from '../../../store/actions/wallets.action';
 import { PopupComponent } from '../../buy/popup/popup.component';
@@ -13,7 +13,17 @@ import { PopupComponent } from '../../buy/popup/popup.component';
 })
 export class DepositviewComponent  {
 
-  @Input('coin')
+  @Input()
+  public coin!: WalletData;
+  @Output()
+  public onClose = new EventEmitter();
+  public confirmButton = true;
+  public constructor(
+    private _store: Store<IRootState>,
+    private _dialog: MatDialog
+  ) {
+  }
+
   public set currentCoin(coin: WalletData) {
     if (!coin) {
       return;
@@ -24,25 +34,12 @@ export class DepositviewComponent  {
     }
   }
 
-  public coin!: WalletData;
-  public depositBtn = {
-    name: 'Copy address',
-    class: 'emptyGreen'
-  };
-
-  public confirmButton = true;
-  public constructor(
-    private _store: Store<IRootState>,
-    private _dialog: MatDialog
-  ) {
-
-  }
-
   public confirmSelected() {
     this.confirmButton = !this.confirmButton;
   }
 
-  public openPopupCopyAddress() {
+  public copyAddress() {
+    this.onClose.emit();
     this._dialog.open(PopupComponent, {
       data: {
         iconClose: 'icon-close',

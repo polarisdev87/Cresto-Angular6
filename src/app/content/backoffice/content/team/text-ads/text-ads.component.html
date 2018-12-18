@@ -1,0 +1,15 @@
+<ngu-carousel
+  [inputs]="textCarousel">
+  <ngu-item NguCarouselItem *ngFor="let slide of slides">
+    <div class="slide">
+      <div class="text-wr">
+        <p>{{ slide.label }}<br>{{ slide.text }}</p>
+      </div>
+      <div class="button-wr">
+          <button class="btn emptyGreen" ngxClipboard [cbContent]="slide.label + slide.text" (cbOnSuccess)="openPopupCopyText()">Copy text</button>
+      </div>
+    </div>
+  </ngu-item>
+  <button NguCarouselPrev class='leftRs'><i class="icon-baseline-chevron_right"></i></button>
+  <button NguCarouselNext class='rightRs'><i class="icon-baseline-chevron_right"></i></button>
+</ngu-carousel>

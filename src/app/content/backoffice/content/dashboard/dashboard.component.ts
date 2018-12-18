@@ -12,7 +12,7 @@ import { IRootState } from '../../../../store/reducers';
 })
 export class DashboardComponent implements OnInit {
   public rounds$!: Observable<any>;
-  public scroll;
+  public wallets$!: Observable<any>;
   public dashboardTableHead = [
     'ICO Round', 'CSTT Supply', 'Price ($)', 'Status'
   ];
@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
 
   public ngOnInit() {
     this.rounds$ = this._store.select('dashboard', 'rounds', 'data');
+    this.wallets$ = this._store.select('backoffice', 'wallets', 'data');
 
     this._store.select('backoffice', 'user', '_id')
       .pipe(

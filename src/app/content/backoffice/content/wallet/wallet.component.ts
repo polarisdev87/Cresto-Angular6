@@ -9,6 +9,7 @@ import { getWalletsData } from '../../store/selectors/assets.selector';
 import { PurchaseRequest } from './store/actions/purchase.action';
 import { getWalletsListPurchase } from './store/selectors/purchase.selector';
 import { getWalletsListTransactions } from './store/selectors/transaction.selector';
+import { ModalService } from '../../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-wallet',
@@ -20,19 +21,40 @@ export class WalletComponent implements OnInit, OnDestroy {
 
   public assets$!: Observable<any>;
   public wallets$!: Observable<WalletData[]>;
+  public walletNames = {
+    btc: 'Bitcoin',
+    eth: 'Ethereum',
+    xmr: 'Monero',
+    cstt: 'Crest Token'
+  };
+
+  public depositBtn = {
+    name: 'Deposit',
+    class: 'emptyGreen'
+  };
+
+  public withdrawBtn = {
+    name: 'Withdrawal',
+    class: 'emptyRed'
+  };
+  public buyBtn = {
+    name: 'BUY',
+    class: 'redBig'
+  };
   public transactions$!: Observable<any>;
   public purchase$!: Observable<any>;
 
-  public crestokenBuySellTable = true;
+  public historyType: string = 'transaction';
+  public purchaseHistory = false;
   public currentCoin;
-  public withdrawalToched = false;
   public viewPort = innerWidth;
 
   private _routerSubscription!: Subscription;
 
   public constructor(
     private _store: Store<IRootState>,
-    private _router: Router
+    private _router: Router,
+    private _modalService: ModalService
   ) {
   }
 
@@ -65,22 +87,21 @@ export class WalletComponent implements OnInit, OnDestroy {
   }
 
   public setCoin(coin) {
-    if (!this.currentCoin) {
-      return;
-    }
     this.currentCoin = coin;
+    this.historyType = 'transaction';
   }
 
-  public withdrawalTochedActive(coin) {
-    if (!this.withdrawalToched) {
-      return;
-    }
-    this.withdrawalToched = coin;
+  public setToken() {
+    this.currentCoin = null;
+    this.historyType = 'purchase';
   }
 
-  public outputTable() {
-    this.crestokenBuySellTable = false;
+  public openModal(id: string) {
+    this._modalService.open(id);
+  }
 
+  public closeModal(id: string) {
+    this._modalService.close(id);
   }
 
   public onResize(event) {
@@ -88,8 +109,7 @@ export class WalletComponent implements OnInit, OnDestroy {
   }
 
   private _resetRouterState(): void {
-    this.crestokenBuySellTable = true;
+    this.historyType = 'transaction';
     this.currentCoin = null;
-    this.withdrawalToched = false;
   }
 }

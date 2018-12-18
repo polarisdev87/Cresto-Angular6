@@ -1,0 +1,49 @@
+@import "../../../../../../assets/css/variables"
+
+.slide
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-content: center
+  padding: 20px
+
+  .imgWrapper
+    // background: #191f28
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 280px
+    position: relative
+    img
+      transform: translate(-50%,-50%);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+  .code
+    font-family: $OpenSansRegular
+    font-size: 14px
+    color: #888e94
+    margin: 20px 0px
+    text-align: center
+  .buttonWrapper
+    text-align: center
+    margin-top: 30px
+
+.leftRs, .rightRs
+  position: absolute
+  top: 40%
+  color: #62ba67
+  font-size: 1.5em
+  background: transparent
+  border: none
+  cursor: pointer
+  &:hover i:before
+    text-shadow: 0px 0px 30px rgba(24, 248, 188, 0.59)
+.leftRs
+  left: -20px
+  transform: rotate(180deg)
+.rightRs
+  right: -20px

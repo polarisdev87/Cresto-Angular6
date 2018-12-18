@@ -1,11 +1,12 @@
 <div class="buy-instruction-wr">
-  <a class="arrow"></a>
   <div class="instruction-title">ICO rounds buying instruction</div>
-  <div *ngFor="let item of byInstruction; let i = index" class="buy-instruction-item">
-    <div class="index">
-      <span>{{i + 1}}</span>
-    </div>
+  <div class="instructions">
+    <div *ngFor="let item of byInstruction; let i = index" class="item">
+      <div class="index">
+        <span>{{i + 1}}</span>
+      </div>
 
-    <p>{{item.text}}</p>
+      <p>{{item.text}}</p>
+    </div>
   </div>
 </div>

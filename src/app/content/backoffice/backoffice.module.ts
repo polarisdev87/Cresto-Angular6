@@ -15,6 +15,7 @@ import { UiModule } from '../../shared/module/ui/ui.module';
 import { AclService } from './acl.service';
 import { AccessGuardService } from './access-guard.service';
 import { effects } from './store/effects';
+import { SidebarModule } from 'ng-sidebar';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { effects } from './store/effects';
     RouterModule.forChild(routes),
     StoreModule.forFeature('backoffice', reducers),
     EffectsModule.forFeature(effects),
+    SidebarModule.forRoot(),
   ],
   declarations: [BackofficeComponent, SidebarComponent, BackofficeHeaderComponent, BackofficeFooterComponent],
   providers: [
