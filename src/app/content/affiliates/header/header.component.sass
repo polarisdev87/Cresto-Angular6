@@ -167,7 +167,8 @@ header
     .info
       flex: 0 0 50%
       display: flex
-      justify-content: center
+      flex-direction: column
+      justify-content: flex-start
       align-items: center
       h1
         font-family: $montserrat-bold
@@ -180,6 +181,18 @@ header
         font-family: $montserrat-regular
         font-size: 40px
         color: #dc3e4a
+        &.form-btn
+          display: block
+          background-color: #ffa63c
+          width: 250px
+          height: 75px
+          line-height: 75px
+          font-size: 36px
+          color: $white
+          font-family: $poppins-bold
+          border-radius: 10px
+          box-shadow: 4px 20px 50px 0 rgba(84, 84, 88, 0.1)
+          text-align: center
     .image
       flex: 0 0 50%
       display: flex
