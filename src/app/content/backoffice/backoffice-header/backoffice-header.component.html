@@ -40,19 +40,19 @@
         </a>
       </li>
       <li>
-        <a routerLinkActive="active" *appNgAcl="['exchange', 'GET']">
+        <a routerLinkActive="active" [routerLink]="['/exchange']" *appNgAcl="['exchange', 'GET']">
           <i class="icon-transfer"></i>
           <span>Exchange</span>
         </a>
       </li>
       <li>
-        <a routerLinkActive="active" *appNgAcl="['staking', 'GET']">
+        <a routerLinkActive="active" [routerLink]="['/staking']" *appNgAcl="['staking', 'GET']">
           <i class="icon-dollar-symbol"></i>
           <span>Staking</span>
         </a>
       </li>
       <li>
-        <a routerLinkActive="active" *appNgAcl="['settings', 'GET']">
+        <a routerLinkActive="active" [routerLink]="['/settings']" *appNgAcl="['settings', 'GET']">
           <i class="icon-settings"></i>
           <span>Settings</span>
         </a>
