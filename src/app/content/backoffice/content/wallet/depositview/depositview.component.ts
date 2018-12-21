@@ -11,7 +11,7 @@ import { PopupComponent } from '../../buy/popup/popup.component';
   styleUrls: ['./depositview.component.sass'],
   encapsulation: ViewEncapsulation.None
 })
-export class DepositviewComponent  {
+export class DepositviewComponent {
 
   @Input()
   public coin!: WalletData;

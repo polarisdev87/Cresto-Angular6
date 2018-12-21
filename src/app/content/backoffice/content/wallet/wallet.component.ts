@@ -9,6 +9,7 @@ import { getWalletsData } from '../../store/selectors/assets.selector';
 import { PurchaseRequest } from './store/actions/purchase.action';
 import { getWalletsListPurchase } from './store/selectors/purchase.selector';
 import { getWalletsListTransactions } from './store/selectors/transaction.selector';
+import { GenerateWalletAddressRequest } from '../../store/actions/wallets.action';
 import { ModalService } from '../../../../shared/services/modal.service';
 
 @Component({
@@ -46,7 +47,7 @@ export class WalletComponent implements OnInit, OnDestroy {
 
   public historyType: string = 'transaction';
   public purchaseHistory = false;
-  public currentCoin;
+  public currentCoin!: WalletData | null;
   public viewPort = innerWidth;
 
   private _routerSubscription!: Subscription;
@@ -86,9 +87,12 @@ export class WalletComponent implements OnInit, OnDestroy {
     this._routerSubscription.unsubscribe();
   }
 
-  public setCoin(coin) {
+  public setCoin(coin: WalletData) {
     this.currentCoin = coin;
     this.historyType = 'transaction';
+    if (!this.currentCoin.top_up_address && this.currentCoin.id) {
+      this._store.dispatch(new GenerateWalletAddressRequest({ wallet_id: this.currentCoin.id }));
+    }
   }
 
   public setToken() {
