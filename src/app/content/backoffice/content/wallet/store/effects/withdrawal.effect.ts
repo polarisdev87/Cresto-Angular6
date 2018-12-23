@@ -51,7 +51,15 @@ export class WithdrawalEffects {
       map(([action, userId]: [WithdrawalRequest, string]) => ({...action.payload, userId})),
       switchMap((data: WithdrawalBody) => this._walletsService.withdrawal(data).pipe(
         map((res: any) => new WithdrawalSuccess(res)),
-        tap(() => alert('Success')),
+        tap(() => {
+          this._dialog.open(PopupComponent, {
+            data: {
+              iconClose: 'icon-close',
+              iconClass: 'icon-tick',
+              message: 'Success',
+            }
+          });
+        }),
         catchError((err: Error) => {
           this._dialog.open(PopupComponent, {
             data: {

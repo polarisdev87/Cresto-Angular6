@@ -54,7 +54,13 @@ export class BuyTokensEffects {
               'transaction_id': '${purchaseID}'
             });`;
           document.head.appendChild(pixelGoogle);
-          alert('Success');
+          this._dialog.open(PopupComponent, {
+            data: {
+              iconClose: 'icon-close',
+              iconClass: 'icon-tick',
+              message: 'Sucess',
+            }
+          });
         }),
         catchError((err: Error) => {
           this._dialog.open(PopupComponent, {
