@@ -27,7 +27,6 @@ export class TwoFactorAuthComponent implements OnInit {
     private _dialog: MatDialog
   ) {
     this.disableTfaForm = this._fb.group({
-      password: ['', Validators.required],
       token: ['', Validators.required]
     });
   }
