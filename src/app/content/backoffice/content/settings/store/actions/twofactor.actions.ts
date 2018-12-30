@@ -44,7 +44,7 @@ export class TwoFactorSetupFail implements Action {
 
 export class DeleteTwoFactor implements Action {
   public readonly type: string = DELETE_TWOFACTOR;
-  public constructor(public payload: {password: string, token: string }) {}
+  public constructor(public payload: {token: string }) {}
 }
 
 export class DeleteTwoFactorSuccess implements Action {

@@ -61,11 +61,6 @@
 
     <form [formGroup]="disableTfaForm" (ngSubmit)="disableTfa(disableTfaForm.value)">
       <div class="form-group-factor">
-        <label>Login Password</label>
-        <input type="password" formControlName="password">
-      </div>
-      <br>
-      <div class="form-group-factor">
         <label>Google Authentication code</label>
         <input type="text" formControlName="token">
       </div>
