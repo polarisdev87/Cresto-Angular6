@@ -1,0 +1,82 @@
+@import "../landing.component"
+
+.about-wr
+  margin-bottom: 100px
+  .feature
+    display: flex
+    flex-wrap: wrap
+    margin-top: 120px
+    width: 100%
+    .text
+      flex:  0 0 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      .text-wr
+        max-width: 400px
+        h3
+          font-family: $poppins-semibold
+          font-size: 36px
+          color: $white
+          margin-bottom: 20px
+          span
+            color: #0aae5a
+        p
+          font-family: $poppins-regular
+          font-size: 18px
+          color: $white
+          line-height: 1.56
+          letter-spacing: -0.3px
+    .image
+      flex: 0 0 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      img
+        max-height: 480px
+        width: auto
+        max-width: 100%
+  
+  .conclude
+    margin-top: 150px
+    text-align: center
+    width: 100%
+    h3
+      font-family: $poppins-semibold
+      font-size: 42px
+      color: $white
+      margin-bottom: 28px
+      text-align: center
+      span
+        color: #0aae5a
+    p
+      font-family: $poppins-regular
+      font-size: 24px
+      color: $white
+      line-height: 1.5
+      text-align: center
+      span
+        color: #0aae5a
+
+@media (max-width: 992px)
+  .about-wr
+    .feature
+      flex-wrap: wrap
+      margin-top: 0px
+      .text, .image
+        flex: 0 0 100%
+        margin-top: 30px
+        margin-bottom: 30px
+        .text-wr
+          h3
+            font-size: 28px
+          p
+            font-size: 14px
+      .image
+        max-width: 400px
+        margin: 30px auto
+    .conclude
+      h3
+        font-size: 36px
+      p
+        font-size: 18px

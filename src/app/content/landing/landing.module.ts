@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
 import { WhatTokenComponent } from './what-token/what-token.component';
 import { WhyTokenComponent } from './why-token/why-token.component';
 import { WhatMakesComponent } from './what-makes/what-makes.component';
@@ -34,6 +35,7 @@ import { UiModule } from '../../shared/module/ui/ui.module';
   declarations: [
     LandingComponent,
     HeaderComponent,
+    AboutComponent,
     WhatTokenComponent,
     WhyTokenComponent,
     WhatMakesComponent,
