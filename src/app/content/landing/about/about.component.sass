@@ -5,20 +5,22 @@
   .feature
     display: flex
     flex-wrap: wrap
+    justify-content: space-between
     margin-top: 120px
     width: 100%
     .text
-      flex:  0 0 50%
+      flex:  1
       display: flex
-      justify-content: center
+      justify-content: flex-start
       align-items: center
       .text-wr
-        max-width: 400px
+        max-width: 450px
         h3
           font-family: $poppins-semibold
           font-size: 36px
           color: $white
           margin-bottom: 20px
+          line-height: 1.4
           span
             color: #0aae5a
         p
@@ -28,14 +30,40 @@
           line-height: 1.56
           letter-spacing: -0.3px
     .image
-      flex: 0 0 50%
+      flex: 1
       display: flex
-      justify-content: center
+      flex-direction: column
+      justify-content: flex-end
       align-items: center
+      h4
+        font-family: $poppins-regular
+        font-size: 20px
+        line-height: 2
+        letter-spacing: 0.5px
+        color: #ffffff
+        text-align: center
+        span
+          color: #0cc05d
+          font-size: 18px
       img
-        max-height: 480px
+        max-height: 450px
         width: auto
         max-width: 100%
+      p
+        font-family: $poppins-regular
+        font-size: 16px
+        color: #ffffff
+        margin-top: 30px
+        margin-bottom: 0px
+        text-align: center
+        a
+          color: #ffffff
+          text-decoration: underline !important
+    &.reversed
+      .text
+        justify-content: flex-end
+      .image
+        justify-content: flex-start
   
   .conclude
     margin-top: 150px
@@ -45,10 +73,15 @@
       font-family: $poppins-semibold
       font-size: 42px
       color: $white
+      line-height: 1.48
       margin-bottom: 28px
       text-align: center
       span
         color: #0aae5a
+    img
+      width: 108px
+      display: block
+      margin: 50px auto
     p
       font-family: $poppins-regular
       font-size: 24px
@@ -63,20 +96,28 @@
     .feature
       flex-wrap: wrap
       margin-top: 0px
-      .text, .image
-        flex: 0 0 100%
-        margin-top: 30px
-        margin-bottom: 30px
+      flex-direction: column
+      margin-bottom: 30px
+      .text
+        display: block !important
+        margin: 30px auto
         .text-wr
           h3
-            font-size: 28px
+            font-size: 27px
+            text-align: center
           p
-            font-size: 14px
+            font-size: 18px
+            text-align: center
       .image
+        display: block !important
+        margin: 0px auto 40px auto
         max-width: 400px
-        margin: 30px auto
+      &.reversed
+        flex-direction: column-reverse
     .conclude
       h3
-        font-size: 36px
+        font-size: 27px
+        text-align: center
       p
         font-size: 18px
+        text-align: center

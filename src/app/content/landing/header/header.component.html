@@ -42,22 +42,25 @@
   </div>
   <div class="main-container">
     <div class="wrapper home">
+      <div class="mobile-only">
+        <p>
+          <a class="btn-green signup-big" [routerLink]="['/signup']" target="_blank">Buy Tokens</a>
+        </p>
+        <h6>{{ usersCount | number }} total members</h6>
+      </div>
       <div class="video">
         <iframe src="https://player.vimeo.com/video/301752150" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
       <div class="banner">
-        <h1>
-          <span>DigiAd</span>
-          Platform
-        </h1>
+        <h1>DigiAd Platform</h1>
         <h2>
             Profit-Sharing System using <br>
             Affiliate Marketing AI Technology
         </h2>
         <p>
-          <a class="btn-green signup-big" [routerLink]="['/signup']" target="_blank">Buy Tokens Now</a>
+          <a class="btn-green signup-big" [routerLink]="['/signup']" target="_blank">Buy Tokens</a>
         </p>
-        <h6><span>{{ usersCount | number }}</span> total members</h6>
+        <h6>{{ usersCount | number }} total members</h6>
         <!-- <a class="banner-btn" [routerLink]="['/signup']" target="_blank">sign up now</a>
           <h3 class="perks">Earn 1.15% to 2.25% Cash Daily</h3> -->
       </div>

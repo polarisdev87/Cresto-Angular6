@@ -31,11 +31,11 @@ header
   width: 100%
   &__images
     margin-right: 10px
-    max-width: 55px
-    max-height: 55px
+    max-width: 36px
+    max-height: 36px
   &__text
     display: inline-flex
-    font-size: 22px
+    font-size: 16px
     color: $green
     font-family: $poppins-bold
 
@@ -81,10 +81,10 @@ header
         position: absolute
         display: none
         top: 60px
-        left: -10px
+        left: 0px
         background: #161921
         padding: 15px
-        width: 160px
+        width: 140px
 
         li
           margin: 0 0 10px 0
@@ -95,6 +95,9 @@ header
   margin-left: 45px
   a
     margin-right: 10px
+    &:first-child
+      border: 1px solid #227a5e
+      background: transparent
     &:last-child
       margin-right: 0
 
@@ -105,6 +108,7 @@ header
   .video
     flex: 0 0 55%
     text-align: left
+    margin-bottom: 40px
     iframe
       max-width: 100%
   .banner
@@ -117,53 +121,48 @@ header
     position: relative
     z-index: 10
     h1
-      color: $white
+      color: #0cc05d
       font-size: 45px
       font-family: $poppins-semibold
       line-height: 1.4
       margin-bottom: 5px
-      span
-        background-image: linear-gradient(81deg, #227a5e, #00e55d);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
     h2
       color: $white
       font-family: $poppins-regular
       font-size: 30px
-      line-height: 1.48;
-      letter-spacing: 0.3px;
+      line-height: 1.48
+      letter-spacing: 0.3px
       margin-bottom: 40px
-    .btn-green
-      width: 160px
-      height: 45px
-      font-size: 16px
-    h6
-      color: $white
-      font-family: $poppins-bold
-      font-size: 23px
-      font-weight: 500
-      line-height: 1.1
-      margin-top: 10px
-      span
-        color: #0aae5a
-    .signup-big
-      font-family: $poppins-regular
-      width: 335px
-      font-size: 25px
-      min-height: 65px
-      line-height: 100%
+  h6
+    color: $white
+    font-family: $poppins-regular
+    font-size: 20px
+    font-weight: 500
+    line-height: 1.1
+    margin-top: 10px
+  .signup-big
+    font-family: $poppins-regular
+    width: 240px
+    font-size: 18px
+    font-weight: 600
+    min-height: 60px
+    line-height: 100%
+
+  .mobile-only
+    text-align: center
+    display: none
+    margin-bottom: 70px
 
 .timer-wrapper
   margin-top: 55px
   text-align: center
   width: 100%
   p
-    font-family: $poppins-bold
-    color: $white
-    font-size: 36px
+    font-family: $poppins-regular
+    color: #0cc05d
+    font-size: 28px
     font-weight: 600
-    margin-bottom: 15px
+    margin-bottom: 20px
 
 h3.perks
   color: $green
@@ -208,7 +207,7 @@ h3.perks
   top: 50%
   transform: translateY(-50%)
   width: 30px
-  height: 25px
+  height: 15px
   display: none
   align-items: center
   justify-content: center
@@ -216,9 +215,7 @@ h3.perks
   .line
     display: inline-block
     width: 100%
-    height: 3px
-    border-radius: 3px
-    background: $white
+    background: transparent
     transition: $transition
     &:before
       content: ''
@@ -290,7 +287,7 @@ h3.perks
 
 @media screen and (max-width: 968px)
   .home
-    flex-direction: column
+    flex-direction: column-reverse
     .video, .banner
       flex: none
     .banner
@@ -298,9 +295,10 @@ h3.perks
         font-size: 40px
       h2
         font-size: 28px
-      h6
-        font-size: 20px
-        margin-bottom: 20px
+      p, h6
+        display: none
+    .mobile-only
+      display: block
   .timer-wrapper
     p
       font-size: 30px
@@ -313,25 +311,35 @@ h3.perks
       padding-top: 0px
       margin-top: 0px
       h1
-        font-size: 38px
-        margin: 0px
+        font-size: 30px
+        margin-top: 30px
       h2
-        font-size: 23px
-        margin-bottom: 15px
+        font-size: 20px
+        margin-bottom: 30px
   .timer-wrapper
     margin-top: 10px
     p
       font-size: 26px
 
 @media screen and (max-width: 500px)
+  .logo
+    &__images
+      max-width: 40px
+      max-height: 40px
+    &__text
+      display: none
   .banner
     margin: 15px auto 0 auto
     h1
-      font-size: 30px
+      font-size: 27px
+    h2
+      font-size: 20px
   .home
     .video
       iframe
-        height: 250px
+        height: 200px
   .timer-wrapper
     padding: 0
     margin: 0
+    p
+      font-family: $poppins-bold

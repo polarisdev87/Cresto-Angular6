@@ -11,52 +11,53 @@
     flex-direction: row
     flex-wrap: nowrap
     align-items: center
-    padding: 15px
-    background-color: #2c2f39
+    padding: 9px 13px
+    background-color: #1a1a1a
     border-radius: 50px
     width: 150%
     max-width: 537px
     position: relative
     span
       &.active
-        height: 10px
+        height: 6px
         border-radius: 7px
         background-image: linear-gradient(to bottom, #ffc80a, #f7ba1c)
         position: relative
         .oval
           position: absolute
           padding: 7px
-          top: -14px
-          right: -21px
+          top: -13px
+          right: -17px
           border: 1px solid #f7ba1c
           border-radius: 50%
           .measure
             display: block
-            width: 22px
-            height: 22px
+            width: 16px
+            height: 16px
             background-color: #ffc80a
             border-radius: 50%
       &.inactive
-        height: 2px
-        background-color: #f7ba1c
-        border-top-left-radius: 0px
-        border-bottom-left-radius: 0px
+        height: 6px
+        background-color: #2a2a2a
+        border-radius: 10px
       &.percent
         position: absolute
-        font-size: 24px
-        font-family: $poppins-bold
+        font-size: 20px
+        font-family: $poppins-regular
+        line-height: 1.4
         color: $white
         height: auto
         top: 50%
-        left: 102%
+        left: 105%
+        opacity: 0.7
         transform: translate(0%, -50%)
         
   h2.token-sold
-    font-family: $poppins-bold
+    font-family: $poppins-regular
     color: $white
-    font-size: 25px
+    font-size: 22px
     font-weight: bold
-    line-height: 1.4
+    line-height: 1.45
     margin-top: 20px
     margin-bottom: 20px
     span
@@ -115,3 +116,6 @@
   .status-wr
     .ico-countdown
       width: 335px
+    .progress-wr
+      span.percent
+        font-size: 16px
