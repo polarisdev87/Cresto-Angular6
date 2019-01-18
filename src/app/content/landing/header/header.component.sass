@@ -95,11 +95,15 @@ header
   margin-left: 45px
   a
     margin-right: 10px
-    &:first-child
+    border: 1px solid black
+    box-sizing: border-box
+    &.login
       border: 1px solid #227a5e
       background: transparent
-    &:last-child
+    &.signup
       margin-right: 0
+      &:hover
+        border-color: #227a5e
 
 .home
   display: flex
